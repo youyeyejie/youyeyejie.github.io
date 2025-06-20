@@ -5,8 +5,11 @@ type: "about"
 layout: "about"
 ---
 
-# 关于我
+- Shanghai Jiao Tong University
+- School of Computer Science
+- Information Security
+- New to the Hexo blog
 
-上海交通大学计算机学院信息安全本科生，热爱编程与技术，喜欢探索前沿科技。
+---
 
 <img src="https://ghchart.rshah.org/0d6aae/youyeyejie" alt="youyeyejie's Github chart" />
