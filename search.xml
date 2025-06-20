@@ -4,19 +4,6 @@
   
     
     <entry>
-      <title></title>
-      <link href="/2025/06/20/test/"/>
-      <url>/2025/06/20/test/</url>
-      
-        <content type="html"><![CDATA[<p><code>python</code> </p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">hello_world</span>():<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">"Hello, World!"</span>)<br>hello_world()<br></code></pre></td></tr></tbody></table></figure><p></p><p><strong>bbbbb</strong> bbbbb</p><p><a href="https://blog.butanediol.me" name="https://blog.butanediol.me/media/avatar.png" class="LinkCard">一个测试链接</a></p><p><a href="https://youyeyejie.github.io" name="https://blog.butanediol.me/media/avatar.png" class="LinkCard">一个测试链接</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>抽象代数</title>
       <link href="/2025/06/18/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0/"/>
       <url>/2025/06/18/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0/</url>
