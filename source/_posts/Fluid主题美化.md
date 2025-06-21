@@ -1,14 +1,15 @@
 ---
 title: Fluid主题美化
-date: 2025-06-21 13:05:20
-updated: 2025-06-21 13:05:20
 tags:
-    - Hexo
-    - Fluid
+  - Hexo
+  - Fluid
 categories:
-    - Hexo Blog Building
+  - Hexo Blog Building
 excerpt: Fluid主题美化记录
 index_img: /img/cover/fluid.jpg
+abbrlink: 86b04e37
+date: 2025-06-21 13:05:20
+updated: 2025-06-21 13:05:20
 ---
 
 # Fluid主题美化
@@ -637,30 +638,15 @@ custom_js:
 
 # 标题颜色渐变
 
-实现标题颜色渐变效果的代码同样参考了的是moryHuang's Blog。
+实现标题颜色渐变效果的代码同样参考了的是moryHuang's Blog的实现并进行修改。
 
 在 `source/css/` 目录下新建一个 `gradient.css` 文件（如果不存在该目录则需要先创建），代码如下：
 ```css
 #subtitle {
-    background: linear-gradient(-45deg, #ecaa96, #e689ad, #80d2ef, #9de8d6);
-    background-size: 400% 400%;
-    -webkit-animation: Gradient 10s ease infinite;
-    -moz-animation: Gradient 10s ease infinite;
-    animation: Gradient 10s ease infinite;
-    -o-user-select: none;
-    -ms-user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
+    background: linear-gradient(-45deg, #0f76c1, #3a8dc0, #80d2ef, #ffffff);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-#subtitle:before {
-    background-color: rgba(0, 0, 0, 0);
 }
 ```
 

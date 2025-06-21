@@ -1,14 +1,15 @@
 ---
 title: Git Notes
 mermaid: true
-date: 2024-07-20 23:27:54
-updated: 2025-06-20 23:28:36
 tags:
   - Git
 categories:
   - Misc
 excerpt: 一个偶尔想不起某些Git命令的人的笔记
 index_img: /img/cover/git.jpg
+abbrlink: 8a2d4e6b
+date: 2024-07-20 23:27:54
+updated: 2025-06-20 23:28:36
 ---
 
 # Git Notes

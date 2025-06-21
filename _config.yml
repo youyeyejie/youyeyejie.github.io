@@ -7,23 +7,24 @@ title: youyeyejie
 subtitle: "YYYJ's Blog"
 description: '有野野芥的博客'
 keywords:
-  - hexo
-  - blog
   - yyyj
+  - YYYJ
   - youyeyejie
-  - personal blog
+  - 有野野芥
 author: youyeyejie
 language: zh-CN
 timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://youyeyejie.github.io
-permalink: :year/:month/:day/:title/
+url: https://youyeyejie.github.io
+permalink: posts/:title
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
   trailing_html: true # Set to false to remove trailing '.html' from permalinks
+sitemap:
+  path: sitemap.xml
 
 # Directory
 source_dir: source
