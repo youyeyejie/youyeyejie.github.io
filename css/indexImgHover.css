@@ -6,3 +6,24 @@
   /* 放大倍数 */
   transform: scale(1.05);    
 }
+
+.about-avatar img {
+  transition: .4s;
+}
+.about-avatar:hover img {
+  transform: scale(1.05);
+}
+
+.tagcloud a {
+  transition: .6s;
+}
+.tagcloud a:hover {
+  transform: scale(1.05);
+}
+
+.navbar-title {
+  transition: .4s;
+}
+.navbar-title:hover {
+  transform: scale(1.05);
+}
