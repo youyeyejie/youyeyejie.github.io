@@ -7,6 +7,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="msvalidate.01" content="DF9F232801BA9D0CABB002E4774A3228" />
 
   <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar/avatar2.png">
   <link rel="icon" href="/img/avatar/avatar2.png">
@@ -22,18 +23,18 @@
     <meta name="description" content="Fluid主题美化记录">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Fluid主题美化">
-<meta property="og:url" content="http://youyeyejie.github.io/2025/06/21/Fluid%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/index.html">
+<meta property="og:url" content="https://youyeyejie.github.io/posts/86b04e37.html">
 <meta property="og:site_name" content="youyeyejie">
 <meta property="og:description" content="Fluid主题美化记录">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://youyeyejie.github.io/img/cover/fluid.jpg">
+<meta property="og:image" content="https://youyeyejie.github.io/img/cover/fluid.jpg">
 <meta property="article:published_time" content="2025-06-21T05:05:20.000Z">
 <meta property="article:modified_time" content="2025-06-21T05:05:20.000Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Fluid">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://youyeyejie.github.io/img/cover/fluid.jpg">
+<meta name="twitter:image" content="https://youyeyejie.github.io/img/cover/fluid.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -252,7 +253,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          4.1k 字
+          4.2k 字
         
       </span>
     
@@ -447,6 +448,20 @@ fluid主题首页添加文章滑入动画</a></p>
 <code>custom_css</code> 部分添加以下内容： </p><figure class="shiki yaml"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #E06C75">custom_css</span><span style="color: #ABB2BF">:</span></span>
 <span class="line"><span style="color: #ABB2BF">  - </span><span style="color: #98C379">/css/indexImgHover.css</span></span></code></pre></div></div></figure><p></p>
 <p>至此，首页文章图片的动效就完成了。</p>
+<p>当然，你也可以借助浏览器开发者工具选取其他样式，并仿照这个方法进行修改。如修改“关于”页的头像与“标签页”的标签：
+</p><figure class="shiki css"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #D19A66">.about-avatar</span><span style="color: #C678DD"> </span><span style="color: #E06C75">img</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">  transition: </span><span style="color: #D19A66">.4</span><span style="color: #E06C75">s</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"><span style="color: #D19A66">.about-avatar</span><span style="color: #56B6C2">:hover</span><span style="color: #C678DD"> </span><span style="color: #E06C75">img</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">  transform: </span><span style="color: #56B6C2">scale</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">1.05</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D19A66">.tagcloud</span><span style="color: #C678DD"> </span><span style="color: #E06C75">a</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">  transition: </span><span style="color: #D19A66">.6</span><span style="color: #E06C75">s</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"><span style="color: #D19A66">.tagcloud</span><span style="color: #C678DD"> </span><span style="color: #E06C75">a</span><span style="color: #56B6C2">:hover</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">  transform: </span><span style="color: #56B6C2">scale</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">1.05</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure><p></p>
 <h1 id="链接卡片样式">链接卡片样式</h1>
 <p>在Fluid主题中，没有内置的链接卡片样式，因此参照丁丁の店的处理方式，并进行了一些修改和优化，为链接添加了卡片样式。</p>
 <p><a target="_blank" rel="noopener" href="https://blog.butanediol.me/2020/06/03/Hexo%20改良版知乎外链卡片/" name="https://blog.butanediol.me/media/avatar.png" class="LinkCard">Hexo
@@ -851,28 +866,14 @@ Blog</a></p>
 <span class="line"><span style="color: #ABB2BF">  - </span><span style="color: #98C379">/js/DynamicLine.js</span></span></code></pre></div></div></figure><p></p>
 <p>这样，在博客加载时就会自动添加动态线条效果。</p>
 <h1 id="标题颜色渐变">标题颜色渐变</h1>
-<p>实现标题颜色渐变效果的代码同样参考了的是moryHuang’s Blog。</p>
+<p>实现标题颜色渐变效果的代码同样参考了的是moryHuang’s
+Blog的实现并进行修改。</p>
 <p>在 <code>source/css/</code> 目录下新建一个 <code>gradient.css</code>
-文件（如果不存在该目录则需要先创建），代码如下： </p><figure class="shiki css"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">#subtitle</span><span style="color: #ABB2BF"> {</span></span>
-<span class="line"><span style="color: #ABB2BF">    background: </span><span style="color: #56B6C2">linear-gradient</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">-45</span><span style="color: #E06C75">deg</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">#ecaa96</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">#e689ad</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">#80d2ef</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">#9de8d6</span><span style="color: #ABB2BF">);</span></span>
-<span class="line"><span style="color: #ABB2BF">    background-size: </span><span style="color: #D19A66">400</span><span style="color: #E06C75">%</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">400</span><span style="color: #E06C75">%</span><span style="color: #ABB2BF">;</span></span>
-<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #56B6C2">-webkit-animation</span><span style="color: #ABB2BF">: Gradient </span><span style="color: #D19A66">10</span><span style="color: #E06C75">s</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">ease</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">infinite</span><span style="color: #ABB2BF">;</span></span>
-<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #56B6C2">-moz-animation</span><span style="color: #ABB2BF">: Gradient </span><span style="color: #D19A66">10</span><span style="color: #E06C75">s</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">ease</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">infinite</span><span style="color: #ABB2BF">;</span></span>
-<span class="line"><span style="color: #ABB2BF">    animation: Gradient </span><span style="color: #D19A66">10</span><span style="color: #E06C75">s</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">ease</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">infinite</span><span style="color: #ABB2BF">;</span></span>
-<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #56B6C2">-o-user-select</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">none</span><span style="color: #ABB2BF">;</span></span>
-<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #56B6C2">-ms-user-select</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">none</span><span style="color: #ABB2BF">;</span></span>
-<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #56B6C2">-webkit-user-select</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">none</span><span style="color: #ABB2BF">;</span></span>
-<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #56B6C2">-moz-user-select</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">none</span><span style="color: #ABB2BF">;</span></span>
-<span class="line"><span style="color: #ABB2BF">    user-select: </span><span style="color: #D19A66">none</span><span style="color: #ABB2BF">;</span></span>
+文件（如果不存在该目录则需要先创建），代码如下： </p><figure class="shiki css"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">#subtitle</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">    background: </span><span style="color: #56B6C2">linear-gradient</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">-45</span><span style="color: #E06C75">deg</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">#0f76c1</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">#3a8dc0</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">#80d2ef</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">#ffffff</span><span style="color: #ABB2BF">);</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #56B6C2">-webkit-background-clip</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">text</span><span style="color: #ABB2BF">;</span></span>
 <span class="line"><span style="color: #ABB2BF">    background-clip: </span><span style="color: #D19A66">text</span><span style="color: #ABB2BF">;</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #56B6C2">-webkit-text-fill-color</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">transparent</span><span style="color: #ABB2BF">;</span></span>
-<span class="line"><span style="color: #ABB2BF">    border-top-left-radius: </span><span style="color: #D19A66">10</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">;</span></span>
-<span class="line"><span style="color: #ABB2BF">    border-top-right-radius: </span><span style="color: #D19A66">10</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">;</span></span>
-<span class="line"><span style="color: #ABB2BF">}</span></span>
-<span class="line"></span>
-<span class="line"><span style="color: #61AFEF">#subtitle</span><span style="color: #56B6C2">:before</span><span style="color: #ABB2BF"> {</span></span>
-<span class="line"><span style="color: #ABB2BF">    background-color: </span><span style="color: #56B6C2">rgba</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">);</span></span>
 <span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure><p></p>
 <h1 id="修改滚动条样式">修改滚动条样式</h1>
 <p>原本页面右侧的滚动条和默认代码块、行间公式的滚动条样式都比较朴素，因此我参考了EmoryHuang’s
@@ -900,10 +901,10 @@ Blog的代码并进行了一些修改，为滚动条添加了样式。</p>
 <h1 id="使用mac风格代码块">使用Mac风格代码块</h1>
 
     <div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-b84cdd12" role="button" aria-expanded="false" aria-controls="collapse-b84cdd12">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-2fcde8e0" role="button" aria-expanded="false" aria-controls="collapse-2fcde8e0">
         <div class="fold-arrow">▶</div>此方式已被弃用，博主采用另一种方式实现
       </div>
-      <div class="fold-collapse collapse" id="collapse-b84cdd12">
+      <div class="fold-collapse collapse" id="collapse-2fcde8e0">
         <div class="fold-content">
           <p>原本的代码块风格比较朴素，因此我参考KEVIN’S
 BLOG的代码块样式，修改为MAC风格。</p>
@@ -1049,7 +1050,7 @@ Shiki Plugin</a></p>
   <div class="license-box my-3">
     <div class="license-title">
       <div>Fluid主题美化</div>
-      <div>http://youyeyejie.github.io/2025/06/21/Fluid主题美化/</div>
+      <div>https://youyeyejie.github.io/posts/86b04e37.html</div>
     </div>
     <div class="license-meta">
       
@@ -1081,7 +1082,7 @@ Shiki Plugin</a></p>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/06/20/Start-Point-of-my-Blog/" title="📍Start Point of my Blog">
+                      <a href="/posts/22ff5afe.html" title="📍Start Point of my Blog">
                         <span class="hidden-mobile">📍Start Point of my Blog</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>

@@ -20,10 +20,3 @@
 .tagcloud a:hover {
   transform: scale(1.05);
 }
-
-.navbar-title {
-  transition: .4s;
-}
-.navbar-title:hover {
-  transform: scale(1.05);
-}
