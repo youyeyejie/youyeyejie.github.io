@@ -177,6 +177,23 @@ custom_css:
 
 至此，首页文章图片的动效就完成了。
 
+当然，你也可以借助浏览器开发者工具选取其他样式，并仿照这个方法进行修改。如修改“关于”页的头像与“标签页”的标签：
+```css
+.about-avatar img {
+  transition: .4s;
+}
+.about-avatar:hover img {
+  transform: scale(1.05);
+}
+
+.tagcloud a {
+  transition: .6s;
+}
+.tagcloud a:hover {
+  transform: scale(1.05);
+}
+```
+
 # 链接卡片样式
 
 在Fluid主题中，没有内置的链接卡片样式，因此参照丁丁の店的处理方式，并进行了一些修改和优化，为链接添加了卡片样式。
