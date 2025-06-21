@@ -37,18 +37,18 @@ force_https: false
 code:
   # 是否开启复制代码的按钮
   # Enable copy code button
-  copy_btn: true
+  copy_btn: false
 
   # 代码语言
   # Code language
   language:
-    enable: true
+    enable: false
     default: "TEXT"
 
   # 代码高亮
   # Code highlight
   highlight:
-    enable: true
+    enable: false
 
     # 代码块是否显示行号
     # If true, the code block display line numbers
@@ -64,7 +64,7 @@ code:
       # Select a style in the link
       # See: https://highlightjs.org/demo/
       style: "github dark dimmed"
-      style_dark: "dark"
+      style_dark: "github dark dimmed"
 
     prismjs:
       # 在下方链接页面右侧的圆形按钮挑选 style 填入，也可以直接填入 css 链接
@@ -172,8 +172,8 @@ color:
 
   # 主面板背景色
   # Color of main board
-  board_color:  "#ffffffad"
-  board_color_dark: "#151722ad"
+  board_color:  "#ffffff80"
+  board_color_dark: "#15172280"
 
   # 文章正文字体色
   # Color of post text
@@ -241,7 +241,7 @@ font:
 # 指定自定义 .js 文件路径，支持列表；路径是相对 source 目录，如 /js/custom.js 对应存放目录 source/js/custom.js
 # Specify the path of your custom js file, support list. The path is relative to the source directory, such as `/js/custom.js` corresponding to the directory `source/js/custom.js`
 custom_js:
-  - /js/DynamicLine.js # 动态黑色线条
+  - /js/DynamicLine.js # 动态线条
   - /js/scrollAnimation.js # 首页文章滑入动画
   - /js/linkcard.js # 链接卡片效果
   - /js/headerWord.js # 离开/返回时头部打印颜文字
@@ -249,11 +249,14 @@ custom_js:
 # 指定自定义 .css 文件路径，用法和 custom_js 相同
 # The usage is the same as custom_js
 custom_css:
-  - /css/glassBg.css
+  - /css/glassBg.css # 文章界面毛玻璃
   - /css/scroll.css # 滚动条颜色
   - /css/gradient.css # 头部打字机颜色效果渐变
-  - /css/macpanel # Mac 风格的代码块
   - /css/scrollAnimation.css # 首页文章滑入动画
+  - /css/indexImgHover.css # 首页文章封面图片悬浮效果
+  # - /css/macpanel # Mac 风格的代码块
+  - /css/codefold.css # 代码折叠
+  - https://lib.baomitu.com/font-awesome/6.1.2/css/all.min.css
 
 # 网页访问统计
 # Analysis of website visitors
@@ -768,11 +771,11 @@ post:
   # 评论插件
   # Comment plugin
   comments:
-    enable: false
+    enable: true
     # 指定的插件，需要同时设置对应插件的必要参数
     # The specified plugin needs to set the necessary parameters at the same time
     # Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo | cusdis | giscus | discuss
-    type: disqus
+    type: giscus
 
 
 #---------------------------
@@ -913,10 +916,10 @@ cusdis:
 # Based on GitHub Discussions, similar to Utterances
 # See: https://giscus.app/
 giscus:
-  repo:
-  repo-id:
-  category:
-  category-id:
+  repo: youyeyejie/youyeyejie.github.io
+  repo-id: R_kgDOO-Uo1g
+  category: General
+  category-id: DIC_kwDOO-Uo1s4Crz5J
   theme-light: light
   theme-dark: dark
   mapping: pathname
