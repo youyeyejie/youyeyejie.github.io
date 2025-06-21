@@ -5,13 +5,13 @@ jQuery(document).ready(function() {
 
     function d() {
         if (document[b]) {
-            document.title = " (๑•́ ₃ •̀๑) ";
+            document.title = " 你去哪啦(๑•́ ₃ •̀๑) ";
             if (welcomeTimer) {
                 clearTimeout(welcomeTimer);
                 welcomeTimer = null;
             }
         } else {
-            document.title = " (*^▽^*) ";
+            document.title = " 你回来啦(*^▽^*) ";
             welcomeTimer = setTimeout(function() {
                 document.title = a;
             }, 2000);
