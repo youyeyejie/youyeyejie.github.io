@@ -7,9 +7,7 @@ categories:
   - Misc
 excerpt: 一个偶尔想不起某些Git命令的人的笔记
 index_img: /img/cover/git.jpg
-abbrlink: 8a2d4e6b
 date: 2024-07-20 23:27:54
-updated: 2025-06-20 23:28:36
 ---
 
 # Git Notes
@@ -45,16 +43,16 @@ git reset --hard HEAD
 
 3. **`3->0`（已 `commit` 后回到初始状态，不保留修改）**
 ```bash
-git reset --hard <初始提交的哈希值>
+git reset --hard [初始提交的哈希值]
 ```
 你需要先使用 `git log` 命令找到初始提交的哈希值，然后使用 `git reset --hard` 命令将当前分支重置到该提交，丢弃所有后续的提交和修改。
 
 4. **`4->0`（已 `push` 后回到初始状态，不保留修改）**
 ```bash
- 本地操作
-git reset --hard <初始提交的哈希值>
- 强制推送到远程仓库
-git push -f origin <分支名>
+# 本地操作
+git reset --hard [初始提交的哈希值]
+# 强制推送到远程仓库
+git push -f origin [分支名]
 ```
 先在本地使用 `git reset --hard` 回到初始提交，然后使用 `git push -f` 强制将本地的修改推送到远程仓库，覆盖远程仓库的历史记录。
 
@@ -72,10 +70,10 @@ git reset --mixed HEAD~1
 
 7. **`4->1`（已 `push` 后回到修改后状态，保留修改）**
 ```bash
- 本地操作
+# 本地操作
 git reset --mixed HEAD~1
- 撤销远程仓库的推送
-git push -f origin <分支名>
+# 撤销远程仓库的推送
+git push -f origin [分支名]
 ```
 先在本地使用 `git reset --mixed HEAD~1` 撤销上一次提交并将内容放回暂存区，然后使用 `git push -f` 强制推送到远程仓库，撤销远程仓库的推送。
 
@@ -87,19 +85,19 @@ git reset --soft HEAD~1
 
 9. **`4->2`（已 `push` 后回到已 `add` 状态，保留修改）**
 ```bash
- 本地操作
+# 本地操作
 git reset --soft HEAD~1
- 撤销远程仓库的推送
-git push -f origin <分支名>
+# 撤销远程仓库的推送
+git push -f origin [分支名]
 ```
 与 `4->1` 类似，先在本地撤销提交并将内容放回暂存区，然后强制推送到远程仓库撤销推送。
 
 10. **`4->3`（已 `push` 后回到已 `commit` 状态，保留修改）**
 ```bash
- 本地回退到上一个提交
+# 本地回退到上一个提交
 git reset --hard HEAD~1
- 强制推送到远程仓库
-git push -f origin <分支名>
+# 强制推送到远程仓库
+git push -f origin [分支名]
 ```
 先在本地使用 `git reset --hard HEAD~1` 回退到上一个提交，然后使用 `git push -f` 强制推送到远程仓库，使远程仓库也回到上一个提交状态。
 
@@ -108,14 +106,14 @@ git push -f origin <分支名>
 | --- | --- |
 | 1->0 | `git checkout -- .` |
 | 2->0 | `git reset --hard HEAD` |
-| 3->0 | `git reset --hard <初始提交的哈希值>` |
-| 4->0 | `git reset --hard <初始提交的哈希值>` && `git push -f origin <分支名>` |
+| 3->0 | `git reset --hard [初始提交的哈希值]` |
+| 4->0 | `git reset --hard [初始提交的哈希值]` && `git push -f origin [分支名]` |
 | 2->1 | `git reset HEAD .` |
 | 3->1 | `git reset --mixed HEAD~1` |
-| 4->1 | `git reset --mixed HEAD~1` AND `git push -f origin <分支名>` |
+| 4->1 | `git reset --mixed HEAD~1` AND `git push -f origin [分支名]` |
 | 3->2 | `git reset --soft HEAD~1` |
-| 4->2 | `git reset --soft HEAD~1` AND `git push -f origin <分支名>` |
-| 4->3 | `git reset --hard HEAD~1` AND `git push -f origin <分支名>` |
+| 4->2 | `git reset --soft HEAD~1` AND `git push -f origin [分支名]` |
+| 4->3 | `git reset --hard HEAD~1` AND `git push -f origin [分支名]` |
 
 # 取消跟踪
 
@@ -123,7 +121,7 @@ git push -f origin <分支名>
 
 1. **确认 `.gitignore` 文件配置**  
    确保 `.gitignore` 文件中已正确添加要忽略的文件或目录路径。例如：
-   ```gitignore
+   ```txt
    # .gitignore
    ignore_file.txt
    ignore_dir/
@@ -143,22 +141,22 @@ git push -f origin <分支名>
 4. **推送到远程仓库**  
    将提交推送到远程仓库，同步删除操作：
    ```bash
-   git push origin <branch-name>
+   git push origin [branch-name]
    ```
 
 # 子模块
 子模块是 Git 中的一种机制，用于在一个 Git 仓库中嵌套另一个 Git 仓库。它允许你将一个独立的 Git 仓库作为另一个仓库的子目录来管理。
 1. 子仓库的创建（正常创建）
     ```bash
-    cd <path_to_submodule>
+    cd [path_to_submodule]
     git init
-    git remote add origin <submodule-repository-url>
+    git remote add origin [submodule-repository-url]
     git push -u origin master
     ```
 2. 在主仓库中添加子模块
     ```bash
-    git submodule add <repository-url> <path-to-submodule>
-    git add .gitmodules <path-to-submodule>
+    git submodule add [repository-url] [path-to-submodule]
+    git add .gitmodules [path-to-submodule]
     git commit -m "Add submodule"
     git push
     ```
@@ -175,5 +173,5 @@ git push -f origin <分支名>
     在编辑器中，将需要修改的提交前的 `pick` 改为 `reword`，然后保存并退出编辑器。接下来，Git 会提示修改提交信息，修改后保存并退出编辑器即可。
 3. 如果需要修改远程仓库中的提交信息，可以使用 `push` 命令强制推送：
     ```bash
-    git push -f origin <branch-name>
+    git push -f origin [branch-name]
     ```

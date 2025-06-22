@@ -5,11 +5,9 @@ tags:
   - Fluid
 categories:
   - Hexo Blog Building
-excerpt: Fluid主题美化记录
+excerpt: Fluid 主题美化记录
 index_img: /img/cover/fluid.jpg
-abbrlink: 86b04e37
 date: 2025-06-21 13:05:20
-updated: 2025-06-21 13:05:20
 ---
 
 # Fluid主题美化
@@ -684,7 +682,7 @@ custom_js:
 
 <a href="https://blog.kevinchu.top/2023/07/17/hexo-theme-fluid-modify/" name="https://static.kevinchu.top/blog/assets/img/avatar_03.jpg" class="LinkCard">Hexo博客Fluid主题魔改记录</a>
 
-在 `source/css/` 目录下新建一个 `macpanne.styl` 文件，内容如下：
+在 `source/css/` 目录下新建一个 `macpanel.styl` 文件，内容如下：
 ```stylus
 .highlight
     background: #21252b
@@ -707,7 +705,7 @@ custom_js:
 并在 `_config.fluid.yml` 文件的 `custom_css` 部分添加以下内容：
 ```yaml
 custom_css:
-  - /css/macpanne
+  - /css/macpanel
 ```
 {% endfold %}
 

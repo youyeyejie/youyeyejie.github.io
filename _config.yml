@@ -68,7 +68,7 @@ prism_plugin:
   line_number: true    # default false
   custom_css: ''
 shiki:
-  theme: one-dark-pro # highlight-theme
+  theme: one-dark-pro # highlight-theme：one-dark-pro / github-light / github-dark / material-theme-palenight
   line_number: true # whether to show the line_number
   beautify: true # whether to add highlight tool true or false
   highlight_copy: true # copy button

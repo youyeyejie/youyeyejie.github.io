@@ -8,9 +8,7 @@ categories:
 excerpt: Start Point of youyeyejie's Blog
 index_img: /img/avatar/avatar.jpg
 banner_img: /img/banner/banner9.jpg
-abbrlink: 22ff5afe
 date: 2025-06-20 20:10:36
-updated: 2025-06-20 20:10:36
 ---
 
 # 本站的由来
