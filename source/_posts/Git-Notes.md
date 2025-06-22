@@ -1,6 +1,5 @@
 ---
 title: Git Notes
-mermaid: true
 tags:
   - Git
 categories:
