@@ -242,21 +242,26 @@ font:
 # Specify the path of your custom js file, support list. The path is relative to the source directory, such as `/js/custom.js` corresponding to the directory `source/js/custom.js`
 custom_js:
   - /js/DynamicLine.js # 动态线条
-  - /js/scrollAnimation.js # 首页文章滑入动画
-  - /js/linkcard.js # 链接卡片效果
-  - /js/headerWord.js # 离开/返回时头部打印颜文字
+  - /js/LinkCard.js # 链接卡片效果
+  - /js/RainbowLoading.js # 彩虹加载动画
+  - /js/ScrollAnimation.js # 首页文章滑入动画
+  - /js/TabDisplay.js # 标签页根据焦点切换显示
 
 # 指定自定义 .css 文件路径，用法和 custom_js 相同
 # The usage is the same as custom_js
 custom_css:
-  - /css/glassBg.css # 文章界面毛玻璃
-  - /css/scroll.css # 滚动条颜色
-  - /css/gradient.css # 头部打字机颜色效果渐变
-  - /css/scrollAnimation.css # 首页文章滑入动画
-  - /css/indexImgHover.css # 首页文章封面图片悬浮效果
-  # - /css/macpanel # Mac 风格的代码块
-  - /css/codefold.css # 代码折叠
-  - https://lib.baomitu.com/font-awesome/6.1.2/css/all.min.css
+  - /css/CodeBlock.css # 代码折叠
+  - /css/CodeInLine.css # 行内代码样式
+  - /css/FrostedGlassBg.css # 文章界面毛玻璃
+  - /css/IndexImgHover.css # 首页文章封面图片悬浮效果
+  - /css/LinkCard.css # 链接卡片效果
+  - /css/RainbowLoading.css # 彩虹加载动画
+  - /css/ScrollAnimation.css # 首页文章滑入动画
+  - /css/ScrollBar.css # 滚动条颜色
+  - /css/StrongInDark.css # 强化暗色模式加粗字体
+  - /css/TitleGradient.css # 文章标题颜色渐变效果
+  - /css/TitleNeon.css # 博客标题霓虹灯效
+  - https://lib.baomitu.com/font-awesome/6.1.2/css/all.min.css # Font Awesome 图标库
 
 # 网页访问统计
 # Analysis of website visitors
