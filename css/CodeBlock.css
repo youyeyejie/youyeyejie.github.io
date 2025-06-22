@@ -1,9 +1,3 @@
-.markdown-body code,
-.markdown-body pre {
-  font-family: "JetBrains Mono", "Fira Code", "Noto Sans SC", "Source Code Pro", monospace !important;
-  line-height: 1 !important;
-}
-
 /* 以下样式给 shiki 代码块使用 */
 .code-expand-btn i {
   color: #ffffff !important; /* 展开或隐藏代码块的按钮颜色 */

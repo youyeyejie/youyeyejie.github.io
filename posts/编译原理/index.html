@@ -5,10 +5,10 @@
 
 
 
-<head>
+<head><!-- hexo injector head_begin start --><meta name="msvalidate.01" content="DF9F232801BA9D0CABB002E4774A3228" />
+<meta name="google-site-verification" content="vOm5Zs9tuUlEh-wVBlpvs_spnOou-q2CoTiFQ1ZV1h4" />
+<!-- hexo injector head_begin end -->
   <meta charset="UTF-8">
-  <meta name="msvalidate.01" content="DF9F232801BA9D0CABB002E4774A3228" />
-  <meta name="google-site-verification" content="vOm5Zs9tuUlEh-wVBlpvs_spnOou-q2CoTiFQ1ZV1h4" />
 
   <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar/avatar2.png">
   <link rel="icon" href="/img/avatar/avatar2.png">
@@ -30,7 +30,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis2336.jpg">
 <meta property="article:published_time" content="2025-06-09T11:47:21.000Z">
-<meta property="article:modified_time" content="2025-06-22T04:54:40.221Z">
+<meta property="article:modified_time" content="2025-06-22T12:50:04.679Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU">
 <meta property="article:tag" content="编译原理">
@@ -71,12 +71,17 @@
 
 
   
-<link rel="stylesheet" href="/css/glassBg.css">
-<link rel="stylesheet" href="/css/scroll.css">
-<link rel="stylesheet" href="/css/gradient.css">
-<link rel="stylesheet" href="/css/scrollAnimation.css">
-<link rel="stylesheet" href="/css/indexImgHover.css">
-<link rel="stylesheet" href="/css/codefold.css">
+<link rel="stylesheet" href="/css/CodeBlock.css">
+<link rel="stylesheet" href="/css/CodeInLine.css">
+<link rel="stylesheet" href="/css/FrostedGlassBg.css">
+<link rel="stylesheet" href="/css/IndexImgHover.css">
+<link rel="stylesheet" href="/css/LinkCard.css">
+<link rel="stylesheet" href="/css/RainbowLoading.css">
+<link rel="stylesheet" href="/css/ScrollAnimation.css">
+<link rel="stylesheet" href="/css/ScrollBar.css">
+<link rel="stylesheet" href="/css/StrongInDark.css">
+<link rel="stylesheet" href="/css/TitleGradient.css">
+<link rel="stylesheet" href="/css/TitleNeon.css">
 <link rel="stylesheet" href="https://lib.baomitu.com/font-awesome/6.1.2/css/all.min.css">
 
 
@@ -84,7 +89,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"youyeyejie.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":false,"default":"TEXT"},"copy_btn":false,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading/loading1.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"youyeyejie.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":false,"default":"TEXT"},"copy_btn":false,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading/loading3.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -113,7 +118,26 @@
 
 
 <body>
-  
+  <div id="loader-container"> 
+    <div id="loader" class="loader"></div>
+    <div class="loader-inner">
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+    </div>
+</div>
 
   <header>
     
@@ -254,7 +278,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          7.6k 字
+          7.5k 字
         
       </span>
     
@@ -266,7 +290,7 @@
         
         
           <!-- compatible with older versions-->
-          64 分钟
+          63 分钟
         
       </span>
     
@@ -455,7 +479,7 @@
               <div class="markdown-body">
                 
                 <blockquote>
-<p>本笔记基于上海交通大学 <em>胡易坤教授</em> 2024-2025
+<p>本笔记基于上海交通大学 <em>胡易坤老师</em> 2024-2025
 学年春季学期教学内容进行整理，部分图片来自胡教授的PPT，若有侵权请联系删除。</p>
 </blockquote>
 <h1 id="quick-links">Quick Links</h1>
@@ -650,14 +674,22 @@ m，则用第m条产生式进行归约，pop栈顶的符号数目等于产生式
     </div>
 <h1 id="ch1-intro">Ch1 Intro</h1>
 <h2 id="编译流程">编译流程</h2>
-<p><img src="image-1.png" srcset="/img/loading/loading1.gif" lazyload> - 解释器 vs.&nbsp;编译器 (Interpreter
-vs.&nbsp;Compiler) - 解释器方便错误诊断 (Error Diagnosis) -
-编译器得到的代码更加高效 <img src="image-2.png" srcset="/img/loading/loading1.gif" lazyload></p>
+<p><img src="image-1.png" srcset="/img/loading/loading3.gif" lazyload></p>
+<ul>
+<li>解释器 vs.&nbsp;编译器 (Interpreter vs.&nbsp;Compiler)
+<ul>
+<li>解释器方便错误诊断 (Error Diagnosis)</li>
+<li>编译器得到的代码更加高效 <img src="image-2.png" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul></li>
+</ul>
 <h3 id="编译器">编译器</h3>
-<p><img src="image.png" srcset="/img/loading/loading1.gif" lazyload> - 前端：词法分析(Lexical
-Analysis)、语法分析(Syntax Analysis)、语义分析(Semantic
-Analysis)、中间代码生成(Intermediate Code Generation) -
-后端：代码优化(Optimization)、目标代码生成(Code Generation)</p>
+<p><img src="image.png" srcset="/img/loading/loading3.gif" lazyload></p>
+<ul>
+<li>前端：词法分析(Lexical Analysis)、语法分析(Syntax
+Analysis)、语义分析(Semantic Analysis)、中间代码生成(Intermediate Code
+Generation)</li>
+<li>后端：代码优化(Optimization)、目标代码生成(Code Generation)</li>
+</ul>
 <h2 id="词法分析lexical-analysis">词法分析：Lexical Analysis</h2>
 <ul>
 <li>Lexical Analysis: Scanning （词法分析：扫描）
@@ -877,13 +909,16 @@ open_stmt</li>
 </ul>
 <h2 id="文法和语言的分类classes-of-languages">文法和语言的分类：Classes
 of Languages</h2>
-<p><img src="image-3.png" srcset="/img/loading/loading1.gif" lazyload> - 范围由 Type 0 到 Type 3 逐渐缩小</p>
+<p><img src="image-3.png" srcset="/img/loading/loading3.gif" lazyload></p>
+<ul>
+<li>范围由 Type 0 到 Type 3 逐渐缩小</li>
+</ul>
 <h1 id="ch3-scanning">Ch3 Scanning</h1>
 <h2 id="词法分析lexical-analysis-1">词法分析：Lexical Analysis</h2>
 <h3 id="token-pattern-and-lexemes">Token, Pattern, and Lexemes</h3>
 <ul>
 <li>The Analysis Partitions Input String into Substrings.
-（分析将输入字符串划分为子字符串。） <img src="image-4.png" srcset="/img/loading/loading1.gif" lazyload></li>
+（分析将输入字符串划分为子字符串。） <img src="image-4.png" srcset="/img/loading/loading3.gif" lazyload></li>
 <li><strong>Token</strong>: &lt;token-name, attribute-value(opt.)&gt;
 <ul>
 <li>token-name: the role of lexical unit （词法单元的角色）
@@ -915,7 +950,7 @@ pattern （与模式匹配的字符序列）
 <li>Token vs.&nbsp;Lexeme: Class vs.&nbsp;Instance in C++</li>
 </ul></li>
 </ul>
-<p><img src="image-7.png" srcset="/img/loading/loading1.gif" lazyload></p>
+<p><img src="image-7.png" srcset="/img/loading/loading3.gif" lazyload></p>
 <h2 id="specification-of-tokens">Specification of Tokens</h2>
 <h3 id="strings-and-languages">Strings and Languages</h3>
 <ul>
@@ -1010,7 +1045,7 @@ denoting <span class="math inline"><em>L</em>(<em>r</em>)</span>
 （我们可以在表达式周围添加额外的括号。）</li>
 </ul></li>
 </ul></li>
-<li><strong>定律</strong>： <img src="image-6.png" srcset="/img/loading/loading1.gif" lazyload></li>
+<li><strong>定律</strong>： <img src="image-6.png" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul>
 <h3 id="regular-definitions">Regular Definitions</h3>
 <ul>
@@ -1038,14 +1073,23 @@ non-terminals derived by regular expressions.
 </ul>
 <h3 id="regular-language-grammar-and-regex">Regular Language / Grammar,
 and Regex</h3>
-<p><img src="image-5.png" srcset="/img/loading/loading1.gif" lazyload> - <strong>Regular Expression</strong> <span class="math inline"><em>r</em></span> denotes a Language <span class="math inline"><em>L</em>(<em>r</em>)</span>. - Regular Language is
-Type-3 Language （正则语言是类型3语言） - Regular Language is that
-denoted by Regular Expressions. （正则语言是由正则表达式表示的） -
-<strong>Regular Grammar</strong> is the grammar describes a Regular
-Language. - with the production form of <span class="math inline"><strong>A</strong> → <em>α</em></span> or <span class="math inline"><strong>A</strong> → <em>α</em><strong>B</strong></span></p>
+<p><img src="image-5.png" srcset="/img/loading/loading3.gif" lazyload></p>
+<ul>
+<li><strong>Regular Expression</strong> <span class="math inline"><em>r</em></span> denotes a Language <span class="math inline"><em>L</em>(<em>r</em>)</span>.
+<ul>
+<li>Regular Language is Type-3 Language （正则语言是类型3语言）</li>
+<li>Regular Language is that denoted by Regular Expressions.
+（正则语言是由正则表达式表示的）</li>
+</ul></li>
+<li><strong>Regular Grammar</strong> is the grammar describes a Regular
+Language.
+<ul>
+<li>with the production form of <span class="math inline"><strong>A</strong> → <em>α</em></span> or <span class="math inline"><strong>A</strong> → <em>α</em><strong>B</strong></span></li>
+</ul></li>
+</ul>
 <h2 id="recognition-of-tokens">Recognition of Tokens</h2>
 <h3 id="input-buffer">Input Buffer</h3>
-<p><img src="image-8.png" srcset="/img/loading/loading1.gif" lazyload></p>
+<p><img src="image-8.png" srcset="/img/loading/loading3.gif" lazyload></p>
 <h3 id="transition-diagrams">Transition Diagrams</h3>
 <ul>
 <li><strong>Transition Diagram = Nodes + Edges</strong>, a Flowchart
@@ -1070,7 +1114,7 @@ from one State to Another. （边：动作）
 <li><strong>Deterministic</strong>: at most ONE edge out of a given
 state with a given label. （确定性：在给定状态下，最多有一条边）</li>
 </ul></li>
-<li><strong>Example</strong>: <img src="image-51.png" srcset="/img/loading/loading1.gif" lazyload>
+<li><strong>Example</strong>: <img src="image-51.png" srcset="/img/loading/loading3.gif" lazyload>
 <ul>
 <li>*<strong>(Retract)</strong>: A Token has been accepted while another
 char has been read which must be unread.
@@ -1089,7 +1133,7 @@ char has been read which must be unread.
 keyword. （为每个关键字创建单独的转换图）
 <ul>
 <li>thenextone</li>
-<li><img src="image-52.png" srcset="/img/loading/loading1.gif" lazyload></li>
+<li><img src="image-52.png" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul></li>
 </ul>
 <h2 id="有穷自动机finite-automata">有穷自动机：Finite Automata</h2>
@@ -1139,7 +1183,7 @@ the same input symbol （同一输入符号可以有多个动作）
 <li>simply represents Regex, but less Precise
 （简单表示正则表达式，但不够精确）</li>
 </ul></li>
-<li><strong>Example</strong>: <img src="image-9.png" srcset="/img/loading/loading1.gif" lazyload></li>
+<li><strong>Example</strong>: <img src="image-9.png" srcset="/img/loading/loading3.gif" lazyload></li>
 <li>Lexical Analysis <strong>Workflow</strong> with FA:
 <ul>
 <li>Regex -&gt; NFA -&gt; DFA</li>
@@ -1176,7 +1220,7 @@ to one Accepting State, （存在一条路径从起始状态到一个接受状�
 <li><strong>Transition Tables</strong>：<strong>rows</strong> for
 States, <strong>columns</strong> for Input Symbols and 𝝐
 <ul>
-<li>Example: <img src="image-10.png" srcset="/img/loading/loading1.gif" lazyload></li>
+<li>Example: <img src="image-10.png" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul></li>
 </ul>
 <h3 id="deterministic-finite-automata-dfa">Deterministic Finite Automata
@@ -1266,17 +1310,17 @@ Diagram of NFA <strong>N</strong>.</li>
 <span class="line"><span style="color: #E06C75">    }</span></span>
 <span class="line"><span style="color: #E06C75">}</span></span></code></pre></div></div></figure></li>
 </ul></li>
-<li><strong>Example</strong>: <img src="image-11.png" srcset="/img/loading/loading1.gif" lazyload></li>
+<li><strong>Example</strong>: <img src="image-11.png" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul>
 <h3 id="conversion-regex-nfa">Conversion: Regex –&gt; NFA</h3>
 <ul>
 <li>McNaughton-Yamada-Thompson Algorithm</li>
 <li>Regex’s Definition:
 <ul>
-<li><strong>BASIS</strong>: <img src="image-12.png" srcset="/img/loading/loading1.gif" lazyload></li>
-<li><strong>INDUCTION</strong>: <img src="image-13.png" srcset="/img/loading/loading1.gif" lazyload></li>
+<li><strong>BASIS</strong>: <img src="image-12.png" srcset="/img/loading/loading3.gif" lazyload></li>
+<li><strong>INDUCTION</strong>: <img src="image-13.png" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul></li>
-<li><strong>Example</strong>: <img src="image-14.png" srcset="/img/loading/loading1.gif" lazyload></li>
+<li><strong>Example</strong>: <img src="image-14.png" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul>
 <h2 id="workflow">Workflow</h2>
 <ul>
@@ -1348,7 +1392,7 @@ and repeat Step 2, Step 4 otherwise. （如果<span class="math inline"><strong>
 <li>The resulting DFA is the minimized DFA.
 （得到的DFA是最小化的DFA）</li>
 </ol></li>
-<li><strong>Example</strong>:<img src="image-15.png" srcset="/img/loading/loading1.gif" lazyload></li>
+<li><strong>Example</strong>:<img src="image-15.png" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul>
 <h1 id="ch4-parsing">Ch4 Parsing</h1>
 <h2 id="词法分析lexical-analysis-2">词法分析：Lexical Analysis</h2>
@@ -1369,7 +1413,7 @@ Token Names Can Be Generated by the Grammar for the Source Language.
 Parsing</li>
 </ul></li>
 </ul>
-<p><img src="image-16.png" srcset="/img/loading/loading1.gif" lazyload></p>
+<p><img src="image-16.png" srcset="/img/loading/loading3.gif" lazyload></p>
 <h3 id="compiler-errors">Compiler Errors</h3>
 <ul>
 <li>Lexical Errors
@@ -1479,7 +1523,7 @@ Sentences generated by the Grammar <span class="math inline"><em>G</em></span></
 <li>A string of terminals $ L(G) $ if and only if $ $ is a Sentence of $
 G $ (or $ S $).</li>
 </ul></li>
-<li><p><strong>Example</strong>: <img src="image-17.png" srcset="/img/loading/loading1.gif" lazyload></p></li>
+<li><p><strong>Example</strong>: <img src="image-17.png" srcset="/img/loading/loading3.gif" lazyload></p></li>
 <li><p><strong>Leftmost Derivation</strong>: the Leftmost Non-terminal
 is always replaced at first （最左边的非终结符总是第一个被替换）</p>
 <ul>
@@ -1493,7 +1537,7 @@ is always replaced at first （最左边的非终结符总是第一个被替换�
 <li>filtering out the order in which productions applied to replace
 non-terminals （过滤出应用于替换非终结符的产生式的顺序）</li>
 </ul></li>
-<li><strong>Example</strong>： <img src="image-18.png" srcset="/img/loading/loading1.gif" lazyload></li>
+<li><strong>Example</strong>： <img src="image-18.png" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul></li>
 </ul>
 <h2 id="top-down-parsing">Top-Down Parsing</h2>
@@ -1536,7 +1580,7 @@ symbols （无需回溯，通过提前查看输入符号进行选择）</li>
 <span class="line"><span style="color: #E06C75">    }</span></span>
 <span class="line"><span style="color: #E06C75">}</span></span></code></pre></div></div></figure>
 <ul>
-<li>Example: <img src="image-19.png" srcset="/img/loading/loading1.gif" lazyload></li>
+<li>Example: <img src="image-19.png" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul>
 <h4 id="left-recursion-左递归">Left Recursion （左递归）</h4>
 <ul>
@@ -1553,7 +1597,7 @@ Left Recursion</strong>. （转换文法以消除左递归）
 <li>==<strong>Immediate Elimination</strong>: <span class="math inline"><strong>A</strong> → <strong>A</strong><em>α</em>|<em>β</em>   ⇒ <strong>A</strong> → <em>β</em><strong>A</strong><sup><strong>′</strong></sup>, <strong>A</strong><sup><strong>′</strong></sup> → <em>α</em><strong>A</strong><sup><strong>′</strong></sup>|<em>𝝐</em></span>==</li>
 <li>$ _1 | | _m &nbsp;| &nbsp;_1 | | _n &nbsp; (_1 | | _n) , (_1 | | _m) | $</li>
 </ul></li>
-<li><strong>Example</strong>: <img src="image-20.png" srcset="/img/loading/loading1.gif" lazyload></li>
+<li><strong>Example</strong>: <img src="image-20.png" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul>
 <h4 id="left-recursion-elimination-消除左递归">Left Recursion
 Elimination （消除左递归）</h4>
@@ -1575,7 +1619,7 @@ Recursions</strong> （没有左递归的等效文法）</li>
 <span class="line"><span style="color: #ABB2BF">    }</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E06C75">eliminate</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">the</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">Immediate</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">Left</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">Recursion</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">among</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">the</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">Ai</span><span style="color: #56B6C2">-</span><span style="color: #E06C75">productions</span></span>
 <span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure></li>
-<li><strong>Example</strong>: <img src="image-21.png" srcset="/img/loading/loading1.gif" lazyload></li>
+<li><strong>Example</strong>: <img src="image-21.png" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul>
 <h3 id="predictive-parsing">Predictive Parsing</h3>
 <ul>
@@ -1642,7 +1686,7 @@ and <span class="math inline"><em>ϵ</em> ∈ <strong>F</strong><strong>I</s
 and ··· and <span class="math inline"><em>ϵ</em> ∈ <strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>Y</strong><sub><strong>k</strong></sub><strong>)</strong></span></li>
 </ul></li>
 </ul></li>
-<li><strong>Example</strong>: <img src="image-22.png" srcset="/img/loading/loading1.gif" lazyload></li>
+<li><strong>Example</strong>: <img src="image-22.png" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul></li>
 <li><strong>FOLLOW</strong>: the set of terminals that can appear
 immediately to the right of a non-terminal in some sentential form.
@@ -1674,7 +1718,7 @@ to <span class="math inline"><strong>F</strong><strong>O</strong><strong>L</stro
 to <span class="math inline"><strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>N</strong><strong>)</strong></span></li>
 </ul></li>
 </ul></li>
-<li><strong>Example</strong>: <img src="image-23.png" srcset="/img/loading/loading1.gif" lazyload></li>
+<li><strong>Example</strong>: <img src="image-23.png" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul></li>
 </ul>
 <h4 id="ll1-grammar">LL(1) Grammar</h4>
@@ -1731,14 +1775,14 @@ and <span class="math inline"><strong>$</strong> ∈ <strong>F</strong><stro
 add <span class="math inline"><strong>A</strong> → <strong>α</strong></span> to
 <span class="math inline"><strong>M</strong><strong>[</strong><strong>A</strong><strong>,</strong> <strong>$</strong><strong>]</strong></span>.</li>
 </ol></li>
-<li><strong>Example</strong>: <img src="image-24.png" srcset="/img/loading/loading1.gif" lazyload> <img src="image-25.png" srcset="/img/loading/loading1.gif" lazyload></li>
+<li><strong>Example</strong>: <img src="image-24.png" srcset="/img/loading/loading3.gif" lazyload> <img src="image-25.png" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul></li>
 <li><strong>Implementation</strong>
 <ul>
 <li>Stack-based Method, mimicking a leftmost derivation
 （基于栈的方法，模仿最左派生）</li>
 </ul>
-<img src="image-26.png" srcset="/img/loading/loading1.gif" lazyload></li>
+<img src="image-26.png" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul>
 <h4 id="left-factoring">Left Factoring</h4>
 <ul>
@@ -1803,7 +1847,7 @@ reduction” （找到右侧派生的反向顺序：最左侧归约）</li>
 <li>“<strong>L</strong>eft-to-Right, <strong>R</strong>ightmost
 Derivation in Reverse”: <strong>LR Parsing</strong></li>
 </ul></li>
-<li><strong>Example</strong>： <img src="image-27.png" srcset="/img/loading/loading1.gif" lazyload>
+<li><strong>Example</strong>： <img src="image-27.png" srcset="/img/loading/loading3.gif" lazyload>
 <ul>
 <li><span class="math inline"><em>E</em> ⇒ <em>T</em> ⇒ <em>T</em> * <em>F</em> ⇒ <em>T</em> * <em>i</em><em>d</em> ⇒ <em>F</em> * <em>i</em><em>d</em> ⇒ <em>i</em><em>d</em> * <em>i</em><em>d</em></span></li>
 </ul></li>
@@ -1830,7 +1874,7 @@ non-terminals （识别句柄并将其归约到适当的最左非终结符）</l
 <li><strong>How</strong>: by using a stack to keep track of the current
 position in the input string and the corresponding production rules
 （使用栈来跟踪输入字符串中的当前位置和相应的产生式规则）</li>
-<li><strong>Example</strong>： <img src="image-28.png" srcset="/img/loading/loading1.gif" lazyload></li>
+<li><strong>Example</strong>： <img src="image-28.png" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul>
 <h3 id="shift-reduce-parsing-移进归约解析">Shift-Reduce Parsing
 （移进归约解析）</h3>
@@ -1848,7 +1892,7 @@ position in the input string and the corresponding production rules
 <li><strong>Error</strong>: discover syntax errors, and call for
 recovery</li>
 </ul></li>
-<li><strong>Example</strong>: <img src="image-29.png" srcset="/img/loading/loading1.gif" lazyload></li>
+<li><strong>Example</strong>: <img src="image-29.png" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul>
 <h3 id="operator-precedence-parsing-运算符优先解析">Operator-Precedence
 Parsing （运算符优先解析）</h3>
@@ -1897,7 +1941,7 @@ Symbol under processing （正在处理的输入符号）</li>
 <strong>Reduce</strong></li>
 </ul></li>
 </ul></li>
-<li><strong>Example</strong>: <img src="image-30.png" srcset="/img/loading/loading1.gif" lazyload> <img src="image-31.png" srcset="/img/loading/loading1.gif" lazyload></li>
+<li><strong>Example</strong>: <img src="image-30.png" srcset="/img/loading/loading3.gif" lazyload> <img src="image-31.png" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul>
 <h3 id="opp-precedence-relation-construction-优先级关系构造">OPP:
 Precedence Relation Construction （优先级关系构造）</h3>
@@ -1958,7 +2002,7 @@ we have:
 <li><span class="math inline"><strong>T</strong><strong>R</strong><strong>A</strong><strong>I</strong><strong>L</strong><strong>I</strong><strong>N</strong><strong>G</strong><strong>(</strong><strong>N</strong><strong>)</strong> ⊆ <strong>T</strong><strong>R</strong><strong>A</strong><strong>I</strong><strong>L</strong><strong>I</strong><strong>N</strong><strong>G</strong><strong>(</strong><strong>P</strong><strong>)</strong></span></li>
 </ul></li>
 </ul></li>
-<li><strong>Example</strong>: <img src="image-32.png" srcset="/img/loading/loading1.gif" lazyload></li>
+<li><strong>Example</strong>: <img src="image-32.png" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul>
 <h4 id="constructing-precedence-relations">Constructing Precedence
 Relations</h4>
@@ -2055,7 +2099,7 @@ and <span class="math inline"><strong>T</strong><strong>R</strong><strong>A</str
 <li><span class="math inline"><strong>T</strong><strong>R</strong><strong>A</strong><strong>I</strong><strong>L</strong><strong>I</strong><strong>N</strong><strong>G</strong><strong>(</strong><strong>S</strong><strong>)</strong> &gt; ·$</span></li>
 </ul></li>
 </ul></li>
-<li><strong>Example</strong>: <img src="image-33.png" srcset="/img/loading/loading1.gif" lazyload></li>
+<li><strong>Example</strong>: <img src="image-33.png" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul>
 <h3 id="opp-some-more">OPP: Some More</h3>
 <ul>
@@ -2158,7 +2202,7 @@ add <span class="math inline"><strong>B</strong> → ⋅<strong>γ</strong><
 <span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>I</strong><strong>)</strong></span>
 （如果<span class="math inline"><strong>A</strong> → <strong>α</strong> ⋅ <strong>B</strong><strong>β</strong></span>在<span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>I</strong><strong>)</strong></span>中，并且<span class="math inline"><strong>B</strong> → <strong>γ</strong></span>是<span class="math inline"><strong>G</strong></span>的一个产生式，则将<span class="math inline"><strong>B</strong> → ⋅<strong>γ</strong></span>添加到<span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>I</strong><strong>)</strong></span>中）</li>
 </ol></li>
-<li><strong>Example</strong>: <img src="image-34.png" srcset="/img/loading/loading1.gif" lazyload></li>
+<li><strong>Example</strong>: <img src="image-34.png" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul></li>
 <li><span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong><strong>(</strong><strong>I</strong><strong>,</strong> <strong>X</strong><strong>)</strong></span>:
 <ul>
@@ -2180,7 +2224,7 @@ in <span class="math inline"><strong>I</strong></span></li>
 <li>then every Item in <span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>A</strong> <strong>→</strong> <strong>α</strong><strong>X</strong> <strong>⋅</strong> <strong>β</strong><strong>)</strong></span>
 is added to <span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong><strong>(</strong><strong>I</strong><strong>,</strong> <strong>X</strong><strong>)</strong></span></li>
 </ol></li>
-<li><strong>Example</strong>: <img src="image-35.png" srcset="/img/loading/loading1.gif" lazyload></li>
+<li><strong>Example</strong>: <img src="image-35.png" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul></li>
 </ul>
 <h4 id="automaton-construction">Automaton Construction</h4>
@@ -2212,7 +2256,7 @@ to <span class="math inline"><strong>C</strong></span></li>
 </ul></li>
 <li>until no new Items are added to <span class="math inline"><strong>C</strong></span></li>
 </ol></li>
-<li><strong>Example</strong>: <img src="image-36.png" srcset="/img/loading/loading1.gif" lazyload></li>
+<li><strong>Example</strong>: <img src="image-36.png" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul>
 <h4 id="parsing-table-construction">Parsing Table Construction</h4>
 <ul>
@@ -2245,9 +2289,9 @@ is in <span class="math inline"><em>s</em><sub><em>m</em></sub></span>,
 then for each <strong>terminal</strong> <span class="math inline"><strong>a</strong></span>, <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, <em>a</em>] = <strong>A</strong><strong>C</strong><strong>C</strong><strong>E</strong><strong>P</strong><strong>T</strong></span>
 （记作a/acc）</li>
 </ul></li>
-<li><img src="image-37.png" srcset="/img/loading/loading1.gif" lazyload></li>
+<li><img src="image-37.png" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul></li>
-<li><strong>Example</strong>: <img src="image-38.png" srcset="/img/loading/loading1.gif" lazyload> &gt;
+<li><strong>Example</strong>: <img src="image-38.png" srcset="/img/loading/loading3.gif" lazyload> &gt;
 注：在上面的例子中，状态1、2、9均存在移进-归约冲突，因此不属于LR(0)文法。</li>
 </ul>
 <h4 id="alogrithm-and-implementation-算法与实现">Alogrithm and
@@ -2273,7 +2317,7 @@ the reduction steps of a bottom-up parse for <span class="math inline"><strong>�
 <span class="line"><span style="color: #E06C75">    </span><span style="color: #C678DD">else</span><span style="color: #E06C75"> </span><span style="color: #C678DD">if</span><span style="color: #E06C75"> (</span><span style="color: #E5C07B">ACTION</span><span style="color: #E06C75">[s</span><span style="color: #ABB2BF">,</span><span style="color: #E06C75"> a] </span><span style="color: #56B6C2">=</span><span style="color: #E06C75"> accept) </span><span style="color: #C678DD">break</span><span style="color: #E06C75"> </span><span style="color: #7F848E; font-style: italic">//如果ACTION[s, a] = accept，则结束</span></span>
 <span class="line"><span style="color: #E06C75">    </span><span style="color: #C678DD">else</span><span style="color: #E06C75"> call error</span><span style="color: #56B6C2">-</span><span style="color: #E06C75">handling routine</span></span>
 <span class="line"><span style="color: #E06C75">}</span></span></code></pre></div></div></figure><p></p></li>
-<li><p><strong>Example</strong>: <img src="image-39.png" srcset="/img/loading/loading1.gif" lazyload></p></li>
+<li><p><strong>Example</strong>: <img src="image-39.png" srcset="/img/loading/loading3.gif" lazyload></p></li>
 </ul>
 <h4 id="lr0-conflicts">LR(0) Conflicts</h4>
 <ul>
@@ -2323,7 +2367,7 @@ then <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, $] = 
 （只对$进行归约）</li>
 </ul></li>
 </ul></li>
-<li><strong>Example</strong>: <img src="image-40.png" srcset="/img/loading/loading1.gif" lazyload></li>
+<li><strong>Example</strong>: <img src="image-40.png" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul>
 <h4 id="slr1-conflicts">SLR(1) Conflicts</h4>
 <ul>
@@ -2407,7 +2451,7 @@ is in <span class="math inline"><strong>G</strong><strong>O</strong><strong>T</s
 state</strong> （从前一个状态继承的内核项）</li>
 </ul></li>
 </ul></li>
-<li><strong>Example</strong>: <img src="image-41.png" srcset="/img/loading/loading1.gif" lazyload></li>
+<li><strong>Example</strong>: <img src="image-41.png" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul>
 <h4 id="automaton-construction-1">Automaton Construction</h4>
 <ul>
@@ -2439,8 +2483,8 @@ to <span class="math inline"><strong>C</strong></span></li>
 </ol></li>
 <li><strong>Example</strong>:
 <ol type="1">
-<li><strong>Example</strong>: <img src="image-42.png" srcset="/img/loading/loading1.gif" lazyload></li>
-<li><strong>Exercise</strong>: <img src="image-44.png" srcset="/img/loading/loading1.gif" lazyload></li>
+<li><strong>Example</strong>: <img src="image-42.png" srcset="/img/loading/loading3.gif" lazyload></li>
+<li><strong>Exercise</strong>: <img src="image-44.png" srcset="/img/loading/loading3.gif" lazyload></li>
 </ol></li>
 </ul>
 <h4 id="parsing-table-construction-2">Parsing Table Construction</h4>
@@ -2469,7 +2513,7 @@ is in <span class="math inline"><em>s</em><sub><em>m</em></sub></span>,
 then <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, $] = <strong>A</strong><strong>C</strong><strong>C</strong><strong>E</strong><strong>P</strong><strong>T</strong></span></li>
 </ul></li>
 </ul></li>
-<li><strong>Example</strong>: <img src="image-43.png" srcset="/img/loading/loading1.gif" lazyload> &gt;
+<li><strong>Example</strong>: <img src="image-43.png" srcset="/img/loading/loading3.gif" lazyload> &gt;
 注：上表中<span class="math inline">[11, <em>i</em><em>d</em>]</span>应为<span class="math inline"><em>s</em>12</span>，即<span class="math inline">𝕋[11, <em>i</em><em>d</em>] = <em>s</em>12</span>。</li>
 </ul>
 <h3 id="lalr1-parsing">LALR(1) Parsing</h3>
@@ -2496,7 +2540,7 @@ grammars （比SLR(1)更强大，能处理更多文法）</li>
 and <span class="math inline">[<strong>A</strong> → <strong>α</strong>⋅, <strong>b</strong>]</span>
 are combined into one state</li>
 </ul></li>
-<li>Compared to <strong>LR(1)</strong>: <img src="image-45.png" srcset="/img/loading/loading1.gif" lazyload></li>
+<li>Compared to <strong>LR(1)</strong>: <img src="image-45.png" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul>
 <h4 id="automaton-construction-2">Automaton Construction</h4>
 <ul>
@@ -2545,34 +2589,10 @@ relationships.</li>
 relationships until the fixed point achieved （根据<span class="math inline"><strong>F</strong><strong>R</strong><strong>O</strong><strong>M</strong> <strong>−</strong> <strong>T</strong><strong>O</strong></span>关系传播前瞻符号，直到达到不变点）
 <ul>
 <li>in step 2, we calculate <strong>self-generated</strong> lookahead
-symbols. &lt;!– - Construct <strong>LR(0)</strong> items as
-<strong>LALR(1)</strong> items’ cores for the grammar <span class="math inline"><strong>G</strong><sup><strong>′</strong></sup></span>
-（为文法<span class="math inline"><strong>G</strong><sup><strong>′</strong></sup></span>构造LR(0)项作为LALR(1)项的核心）</li>
+symbols.</li>
 </ul></li>
 </ol></li>
-<li>Starting from <span class="math inline"><strong>I</strong><sub><strong>0</strong></sub> = <strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>[</strong><strong>S</strong> <strong>→</strong> <strong>⋅</strong><strong>S</strong><strong>,</strong> <strong>#</strong><strong>]</strong><strong>)</strong></span>,
-for each item set <span class="math inline"><strong>I</strong></span>
-（从<span class="math inline"><strong>I</strong><sub><strong>0</strong></sub></span>开始，对于每个项集<span class="math inline"><strong>I</strong></span>）
-<ul>
-<li>Compute the <span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>I</strong><strong>)</strong></span>,
-generating lookahead symbols （计算<span class="math inline"><strong>I</strong></span>的闭包，生成前瞻符号）
-<ul>
-<li>adopting <span class="math inline"><strong>#</strong></span> as the
-placeholder （采用<span class="math inline"><strong>#</strong></span>作为占位符）</li>
-</ul></li>
-<li>Consider the <strong>Kernel items</strong> of <span class="math inline"><strong>I</strong></span>, list the
-<strong>FROM-TO</strong> table</li>
-<li>Propagate the lookahead symbols according to <span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong></span>
-relationships
-<ul>
-<li>find the initial lookahead symbols</li>
-<li>propagate the lookahead symbols according to the
-<strong>FROM-TO</strong> relationships
-(根据FROM-TO关系传播前瞻符号)</li>
-</ul></li>
-<li>until the fixed point achieved （直到达到不变点） –&gt;</li>
-</ul></li>
-<li><strong>Example</strong>: <img src="image-54.png" srcset="/img/loading/loading1.gif" lazyload> <img src="image-46.png" srcset="/img/loading/loading1.gif" lazyload> &gt;
+<li><strong>Example</strong>: <img src="image-54.png" srcset="/img/loading/loading3.gif" lazyload> <img src="image-46.png" srcset="/img/loading/loading3.gif" lazyload> &gt;
 注：上右表中，前瞻符号在传播时，每一行的前瞻符号可以向右填满右侧列，最右一列是最终结果</li>
 </ul>
 <h4 id="parsing-table-construction-3">Parsing Table Construction</h4>
@@ -2602,7 +2622,7 @@ is in <span class="math inline"><em>s</em><sub><em>m</em></sub></span>,
 then <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, $] = <strong>A</strong><strong>C</strong><strong>C</strong><strong>E</strong><strong>P</strong><strong>T</strong></span></li>
 </ul></li>
 </ul></li>
-<li><strong>Example</strong>: <img src="image-53.png" srcset="/img/loading/loading1.gif" lazyload></li>
+<li><strong>Example</strong>: <img src="image-53.png" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul>
 <h4 id="capabilities-vs.-conflicts">Capabilities vs.&nbsp;Conflicts</h4>
 <ul>
@@ -2610,7 +2630,7 @@ then <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, $] = 
 <ul>
 <li><strong>SHIFT does not depend on lookaheads</strong></li>
 </ul></li>
-<li><strong>Example</strong>: <img src="image-47.png" srcset="/img/loading/loading1.gif" lazyload></li>
+<li><strong>Example</strong>: <img src="image-47.png" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul>
 <h3 id="summary">Summary</h3>
 <ul>
@@ -2628,7 +2648,7 @@ then <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, $] = 
 <li>LALR(1): Items Combined from SLR(1) and LR(1)</li>
 <li>LR(1): Items with Subset of FOLLOW</li>
 </ul>
-<img src="image-48.png" srcset="/img/loading/loading1.gif" lazyload></li>
+<img src="image-48.png" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul>
 <h2 id="using-ambiguous-grammars">Using Ambiguous Grammars</h2>
 <ul>
@@ -2651,10 +2671,10 @@ then <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, $] = 
 <li>isolate common syntactic constructs for special-case optimizations
 （隔离常见的语法结构以进行特殊情况优化）</li>
 </ul></li>
-<li>Example: <img src="image-49.png" srcset="/img/loading/loading1.gif" lazyload></li>
+<li>Example: <img src="image-49.png" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul>
 <h2 id="summary-1">Summary</h2>
-<p><img src="image-50.png" srcset="/img/loading/loading1.gif" lazyload></p>
+<p><img src="image-50.png" srcset="/img/loading/loading3.gif" lazyload></p>
 
                 
               </div>
@@ -3116,9 +3136,10 @@ then <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, $] = 
 
   
 <script src="/js/DynamicLine.js"></script>
-<script src="/js/scrollAnimation.js"></script>
-<script src="/js/linkcard.js"></script>
-<script src="/js/headerWord.js"></script>
+<script src="/js/LinkCard.js"></script>
+<script src="/js/RainbowLoading.js"></script>
+<script src="/js/ScrollAnimation.js"></script>
+<script src="/js/TabDisplay.js"></script>
 
 
 
