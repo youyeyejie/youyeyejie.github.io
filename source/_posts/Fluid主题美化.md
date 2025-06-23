@@ -368,7 +368,7 @@ custom_css:
 
 # 链接卡片样式
 
-在Fluid主题中，没有内置的链接卡片样式，因此参照丁丁の店的处理方式，并进行了一些修改和优化，为链接添加了卡片样式。
+在Fluid主题中，没有内置的链接卡片样式，因此参照丁丁の店的处理方式，并进行了一些修改和优化，为链接添加了卡片样式，使其背景颜色能跟随主题的日夜模式切换，且鼠标悬停时有放大效果。
 
 <a href="https://blog.butanediol.me/2020/06/03/Hexo%20改良版知乎外链卡片/" name="https://blog.butanediol.me/media/avatar.png" class="LinkCard">Hexo 改良版知乎“外链卡片”</a>
 
@@ -562,6 +562,7 @@ custom_js:
     color: inherit;
     text-decoration: none;
     background: var(--linkcard-bg-color);
+    transition: transform 0.4s ease-in;
 }
 .ztext { word-break: break-word; line-height: 1.6; }
 .LinkCard-backdrop {
@@ -613,6 +614,9 @@ custom_js:
     height: auto;
     border-radius: inherit;
     margin-bottom: 0 !important;
+}
+.LinkCard:hover {
+    transform: scale(1.02);
 }
 ```
 
@@ -732,9 +736,9 @@ custom_css:
   - /css/ScrollAnimation.css
 ```
 
-# 首页文章图片悬浮动效
+# 首页文章图片悬浮鼠标悬停动效
 
-在实现首页文章滑入动效后，我又参照Hugo@kkl's的博客为首页文章图片添加了悬浮动效
+在实现首页文章滑入动效后，我又参照Hugo@kkl's的博客为首页文章图片添加了鼠标悬停动效
 
 <a href="https://zhangkeliang0627.github.io/2024/07/31/关于Fluid主题拓展的N种配置/README/" name="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/sys/avatar.png" class="LinkCard">关于Fluid主题拓展的N种配置</a>
 
