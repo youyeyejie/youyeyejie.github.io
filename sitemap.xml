@@ -182,6 +182,13 @@
 
   
   <url>
+    <loc>https://youyeyejie.github.io/tags/Git/</loc>
+    <lastmod>2025-06-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://youyeyejie.github.io/tags/Hexo/</loc>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -196,21 +203,7 @@
   </url>
   
   <url>
-    <loc>https://youyeyejie.github.io/tags/Git/</loc>
-    <lastmod>2025-06-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://youyeyejie.github.io/tags/SJTU/</loc>
-    <lastmod>2025-06-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://youyeyejie.github.io/tags/%E4%B9%A0%E6%A6%82/</loc>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -224,14 +217,14 @@
   </url>
   
   <url>
-    <loc>https://youyeyejie.github.io/tags/%E5%86%9B%E4%BA%8B%E7%90%86%E8%AE%BA/</loc>
+    <loc>https://youyeyejie.github.io/tags/%E4%B9%A0%E6%A6%82/</loc>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://youyeyejie.github.io/tags/%E6%80%9D%E4%BF%AE/</loc>
+    <loc>https://youyeyejie.github.io/tags/%E5%86%9B%E4%BA%8B%E7%90%86%E8%AE%BA/</loc>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -245,7 +238,7 @@
   </url>
   
   <url>
-    <loc>https://youyeyejie.github.io/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</loc>
+    <loc>https://youyeyejie.github.io/tags/%E7%BD%91%E5%AE%89%E6%B3%95/</loc>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -266,14 +259,21 @@
   </url>
   
   <url>
-    <loc>https://youyeyejie.github.io/tags/%E9%A9%AC%E5%8E%9F/</loc>
+    <loc>https://youyeyejie.github.io/tags/%E6%80%9D%E4%BF%AE/</loc>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://youyeyejie.github.io/tags/%E7%BD%91%E5%AE%89%E6%B3%95/</loc>
+    <loc>https://youyeyejie.github.io/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</loc>
+    <lastmod>2025-06-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://youyeyejie.github.io/tags/%E9%A9%AC%E5%8E%9F/</loc>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -289,14 +289,14 @@
 
   
   <url>
-    <loc>https://youyeyejie.github.io/categories/Hexo-Blog-Building/</loc>
+    <loc>https://youyeyejie.github.io/categories/Misc/</loc>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://youyeyejie.github.io/categories/Misc/</loc>
+    <loc>https://youyeyejie.github.io/categories/Hexo-Blog-Building/</loc>
     <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
