@@ -30,7 +30,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis2337.jpg">
 <meta property="article:published_time" content="2025-04-22T17:36:32.000Z">
-<meta property="article:modified_time" content="2025-06-23T16:52:03.914Z">
+<meta property="article:modified_time" content="2025-06-24T01:17:16.770Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU">
 <meta property="article:tag" content="信息论">
@@ -82,6 +82,7 @@
 <link rel="stylesheet" href="/css/StrongInDark.css">
 <link rel="stylesheet" href="/css/TitleGradient.css">
 <link rel="stylesheet" href="/css/TitleNeon.css">
+<link rel="stylesheet" href="/css/UniformImgWidth.css">
 <link rel="stylesheet" href="https://lib.baomitu.com/font-awesome/6.1.2/css/all.min.css">
 
 
@@ -278,7 +279,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          48k 字
+          49k 字
         
       </span>
     
@@ -290,7 +291,7 @@
         
         
           <!-- compatible with older versions-->
-          403 分钟
+          405 分钟
         
       </span>
     
@@ -1906,12 +1907,13 @@ $$</span>
 <h2 id="离散序列信源的熵">2.4 离散序列信源的熵</h2>
 <h3 id="离散无记忆信源的序列熵">离散无记忆信源的序列熵</h3>
 <ul>
-<li><p>随机序列<span class="math inline"><em>X⃗</em> = (<em>X</em><sub>1</sub>, <em>X</em><sub>2</sub>, ⋯, <em>X</em><sub><em>L</em></sub>)</span>，其中<span class="math inline"><em>X</em><sub><em>l</em></sub> ∈ {<em>x</em><sub>1</sub>, <em>x</em><sub>2</sub>, ⋯, <em>x</em><sub><em>n</em></sub>}</span>，<span class="math inline"><em>l</em> = 1, 2, ⋯, <em>L</em></span></p></li>
-<li><p><span class="math inline">$p(\vec{X}=\vec{x_{i}}) = p(X_1 =
+<li><p>随机序列<span class="math inline">$\vec{X_{}}=(X_1, X_2, \cdots,
+X_L)$</span>，其中<span class="math inline"><em>X</em><sub><em>l</em></sub> ∈ {<em>x</em><sub>1</sub>, <em>x</em><sub>2</sub>, ⋯, <em>x</em><sub><em>n</em></sub>}</span>，<span class="math inline"><em>l</em> = 1, 2, ⋯, <em>L</em></span></p></li>
+<li><p><span class="math inline">$p(\vec{X_{}}=\vec{x_{i}}) = p(X_1 =
 x_{i1}, X_2 = x_{i2}, \cdots, X_L = x_{iL})$</span>，这里<span class="math inline"><em>i</em> = 1, 2, ⋯, <em>n</em><sup><em>L</em></sup></span>，<span class="math inline"><em>i</em><sub><em>l</em></sub> = 1, 2, ⋯, <em>n</em></span></p></li>
-<li><p><strong>定义信息熵<span class="math inline"><em>H</em>(<em>X⃗</em>)</span>为</strong>： <span class="math display">$$
+<li><p><strong>定义信息熵<span class="math inline">$H(\vec{X_{}})$</span>为</strong>： <span class="math display">$$
   \begin{align*}
-  H(\vec{X}) &amp;= -\sum_{i = 1}^{n^L}p(\vec{x_{i}})\log
+  H(\vec{X_{}}) &amp;= -\sum_{i = 1}^{n^L}p(\vec{x_{i}})\log
 p(\vec{x_{i}})\\
   &amp;=-\sum_{i_1 = 1}^{n}\sum_{i_2 = 1}^{n}\cdots\sum_{i_L =
 1}^{n}p(x_{i1}, x_{i2}, \cdots, x_{iL})\log p(x_{i1}, x_{i2}, \cdots,
@@ -1920,15 +1922,16 @@ x_{iL})
   $$</span></p></li>
 <li><p><span class="math display">$$
 \begin{align*}
-p(\vec{X}=\vec{x_{i}})&amp;=p(x_{i1}, x_{i2}, \cdots, x_{iL})\\
+p(\vec{X_{}}=\vec{x_{i}})&amp;=p(x_{i1}, x_{i2}, \cdots, x_{iL})\\
 &amp;=p(x_{i1})p(x_{i2}|x_{i1})p(x_{i3}|x_{i1}x_{i2})\cdots
 p(x_{iL}|x_{i1}x_{i2}\cdots x_{iL - 1})\\
 &amp;\overset{无记忆}{=}p(x_{i1})p(x_{i2})\cdots p(x_{iL})
 \end{align*}
 $$</span> 则 <span class="math display">$$
 \begin{align*}
-H(\vec{X})&amp;=-\sum_{i_1 = 1}^{n}\sum_{i_2 = 1}^{n}\cdots\sum_{i_L =
-1}^{n}p(x_{i1})p(x_{i2})\cdots p(x_{iL})[\log p(x_{i1})+\log p(x_{i2})\\
+H(\vec{X_{}})&amp;=-\sum_{i_1 = 1}^{n}\sum_{i_2 = 1}^{n}\cdots\sum_{i_L
+= 1}^{n}p(x_{i1})p(x_{i2})\cdots p(x_{iL})[\log p(x_{i1})+\log
+p(x_{i2})\\
 &amp;\quad +\cdots+\log p(x_{iL})]\\
 &amp;=-\sum_{i_1 = 1}^{n}p(x_{i1})\sum_{i_2 =
 1}^{n}p(x_{i2})\cdots\sum_{i_L = 1}^{n}p(x_{iL})\log p(x_{i1}) \quad
@@ -1941,26 +1944,23 @@ H(\vec{X})&amp;=-\sum_{i_1 = 1}^{n}\sum_{i_2 = 1}^{n}\cdots\sum_{i_L =
 &amp;=\sum_{l = 1}^{L}H(X_l)
 \end{align*}
 $$</span></p></li>
-<li><p>若信源是平稳的，即<span class="math inline"><em>H</em>(<em>X</em><sub>1</sub>) = <em>H</em>(<em>X</em><sub>2</sub>) = ⋯ = <em>H</em>(<em>X</em><sub><em>L</em></sub>) = <em>H</em>(<em>X</em>)</span>，则<span class="math display"><em>H</em>(<em>X⃗</em>) = <em>L</em><em>H</em>(<em>X</em>)</span>
-<strong>用 <span class="math inline"><em>H</em><sub><em>L</em></sub>(<em>X⃗</em>)</span>
-表示长度为 <span class="math inline"><em>L</em></span>
-的序列平均每个符号的熵</strong>，则 <span class="math display">$$H_L(\vec{X})=\frac{1}{L}H(\vec{X}) =
+<li><p>若信源是平稳的，即<span class="math inline"><em>H</em>(<em>X</em><sub>1</sub>) = <em>H</em>(<em>X</em><sub>2</sub>) = ⋯ = <em>H</em>(<em>X</em><sub><em>L</em></sub>) = <em>H</em>(<em>X</em>)</span>，则<span class="math display">$$H(\vec{X_{}}) = L H(X)$$</span> <strong>用 <span class="math inline">$H_L(\vec{X_{}})$</span> 表示长度为 <span class="math inline"><em>L</em></span>
+的序列平均每个符号的熵</strong>，则 <span class="math display">$$H_L(\vec{X_{}})=\frac{1}{L}H(\vec{X_{}}) =
 H(X)$$</span></p></li>
 <li><p>例题：<img src="image-119.png" srcset="/img/loading/loading3.gif" lazyload alt="例题"></p></li>
 </ul>
 <h3 id="离散有记忆信源的序列熵">离散有记忆信源的序列熵</h3>
 <ul>
-<li>长度为 <span class="math inline"><em>L</em></span> 的符号序列 <span class="math inline"><em>X⃗</em> = (<em>X</em><sub>1</sub>, <em>X</em><sub>2</sub>, ⋯, <em>X</em><sub><em>L</em></sub>)</span>
-<span class="math display">$$
+<li>长度为 <span class="math inline"><em>L</em></span> 的符号序列 <span class="math inline">$\vec{X_{}}=(X_1,X_2,\cdots,X_L)$</span> <span class="math display">$$
   \begin{align*}
-  H(\vec{X})&amp;=H(X_1,X_2,X_3,\cdots,X_L)\\
+  H(\vec{X_{}})&amp;=H(X_1,X_2,X_3,\cdots,X_L)\\
   &amp;=H(X_1)+H(X_2|X_1)+H(X_3|X_1X_2)+\cdots+H(X_L|X_1X_2,\cdots,X_{L
 - 1})
   \end{align*}
   $$</span></li>
-<li>记作 <span class="math display">$$H(\vec{X}) = H(X^L)=\sum_{l =
+<li>记作 <span class="math display">$$H(\vec{X_{}}) = H(X^L)=\sum_{l =
 1}^{L}H(X_l|X^{l - 1})$$</span></li>
-<li>平均每个符号的熵 <span class="math display">$$H_L(\vec{X})=\frac{1}{L}H(X^L)$$</span></li>
+<li>平均每个符号的熵 <span class="math display">$$H_L(\vec{X_{}})=\frac{1}{L}H(X^L)$$</span></li>
 <li>例题：<img src="image-120.png" srcset="/img/loading/loading3.gif" lazyload alt="例题"></li>
 </ul>
 <h3 id="离散平稳信源序列熵">离散平稳信源序列熵</h3>
@@ -1985,11 +1985,12 @@ H(X)$$</span></p></li>
   \end{align*}
   $$</span></li>
 </ul></li>
-<li><span class="math inline"><em>H</em><sub><em>L</em></sub>(<em>X⃗</em>) ≥ <em>H</em>(<em>X</em><sub><em>L</em></sub>|<em>X</em><sup><em>L</em> − 1</sup>)</span>
+<li><span class="math inline">$H_L(\vec{X_{}}) \geq H(X_L|X^{L -
+1})$</span>
 <ul>
 <li><strong>证明</strong>：<span class="math display">$$
   \begin{align*}
-  H_L(\vec{X})&amp;=\frac{1}{L}H(X_1,X_2,\cdots,X_L)\\
+  H_L(\vec{X_{}})&amp;=\frac{1}{L}H(X_1,X_2,\cdots,X_L)\\
   &amp;=\frac{1}{L}\sum_{l = 1}^{L}H(X_l|X^{l - 1})\\
   &amp;=\frac{1}{L}(H(X_1)+H(X_2|X_1)+H(X_3|X_1,X_2)+\cdots+H(X_L|X_1X_2,\cdots,X_{L
 - 1}))\\
@@ -1998,26 +1999,29 @@ H(X)$$</span></p></li>
   \end{align*}
   $$</span></li>
 </ul></li>
-<li><span class="math inline"><em>H</em><sub><em>L</em></sub>(<em>X⃗</em>)</span>
-是 <span class="math inline"><em>L</em></span> 的单调非增函数
+<li><span class="math inline">$H_L(\vec{X_{}})$</span> 是 <span class="math inline"><em>L</em></span> 的单调非增函数
 <ul>
 <li><strong>证明</strong>：<span class="math display">$$
   \begin{align*}
-  L H_L(\vec{X})&amp;=H(X_1,X_2,\cdots,X_L)\\
+  L H_L(\vec{X_{}})&amp;=H(X_1,X_2,\cdots,X_L)\\
   &amp;=H(X_1,X_2,\cdots,X_{L - 1})+H(X_L|X_1,X_2,\cdots,X_{L - 1})\\
-  &amp;=(L - 1)H_{L - 1}(\vec{X})+H(X_L|X_1,X_2,\cdots,X_{L - 1})\\
-  &amp;\leq (L - 1)H_{L - 1}(\vec{X})+H_L(\vec{X})\\
-  \therefore (L - 1)H_L(\vec{X})&amp;\leq (L - 1)H_{L - 1}(\vec{X})\\
-  H_L(\vec{X})&amp;\leq H_{L - 1}(\vec{X})
+  &amp;=(L - 1)H_{L - 1}(\vec{X_{}})+H(X_L|X_1,X_2,\cdots,X_{L - 1})\\
+  &amp;\leq (L - 1)H_{L - 1}(\vec{X_{}})+H_L(\vec{X_{}})\\
+  \therefore (L - 1)H_L(\vec{X_{}})&amp;\leq (L - 1)H_{L -
+1}(\vec{X_{}})\\
+  H_L(\vec{X_{}})&amp;\leq H_{L - 1}(\vec{X_{}})
   \end{align*}
   $$</span></li>
 </ul></li>
-<li>当 <span class="math inline"><em>L</em> → ∞</span> 时，定义<span class="math inline"><em>H</em><sub>∞</sub>(<em>X⃗</em>)</span>为<strong>极限熵</strong>，有
-<span class="math display"><em>H</em><sub>∞</sub>(<em>X⃗</em>) ≜ lim<sub><em>L</em> → ∞</sub><em>H</em><sub><em>L</em></sub>(<em>X⃗</em>) = lim<sub><em>L</em> → ∞</sub><em>H</em>(<em>X</em><sub><em>L</em></sub>|<em>X</em><sub>1</sub>, <em>X</em><sub>2</sub>, ⋯, <em>X</em><sub><em>L</em> − 1</sub>)</span>
+<li>当 <span class="math inline"><em>L</em> → ∞</span> 时，定义<span class="math inline">$H_{\infty}(\vec{X_{}})$</span>为<strong>极限熵</strong>，有
+<span class="math display">$$
+H_{\infty}(\vec{X_{}}) \triangleq \lim_{L \to \infty}
+H_{L}(\vec{X_{}})=\lim_{L \to \infty} H(X_L|X_1,X_2,\cdots,X_{L - 1})
+$$</span>
 <ul>
 <li><p><strong>证明</strong>： <span class="math display">$$
   \begin{align*}
-  H_{L + k}(\vec{X})&amp;=\frac{1}{L + k}[H(X_1,X_2,\cdots,X_{L -
+  H_{L + k}(\vec{X_{}})&amp;=\frac{1}{L + k}[H(X_1,X_2,\cdots,X_{L -
 1})+H(X_L|X_1X_2\cdots X_{L - 1})+\\
   &amp;\quad \cdots + H(X_{L + k}|X_1X_2\cdots X_{L + k - 1})]\\
   &amp;\leq\frac{1}{L + k}[H(X_1,X_2,\cdots,X_{L -
@@ -2027,26 +2031,35 @@ X_{L - 1})]\\
   &amp;=\frac{1}{L + k}H(X_1,X_2,\cdots,X_{L - 1})+\frac{k + 1}{L +
 k}H(X_L|X_1,X_2,\cdots,X_{L - 1})
   \end{align*}
-  $$</span> 当 <span class="math inline"><em>k</em> → ∞</span> 时，<span class="math inline">lim<sub><em>k</em> → ∞</sub><em>H</em><sub><em>L</em> + <em>k</em></sub>(<em>X⃗</em>) ≤ <em>H</em>(<em>X</em><sub><em>L</em></sub>|<em>X</em><sub>1</sub>, <em>X</em><sub>2</sub>, ⋯, <em>X</em><sub><em>L</em> − 1</sub>) ≤ <em>H</em><sub><em>L</em></sub>(<em>X⃗</em>)</span>
-当 <span class="math inline"><em>L</em> → ∞</span> 时，<span class="math inline"><em>H</em><sub><em>L</em></sub>(<em>X⃗</em>) = <em>H</em><sub><em>L</em> + <em>k</em></sub>(<em>X⃗</em>)</span>，得到
-<span class="math display">lim<sub><em>L</em> → ∞</sub><em>H</em><sub><em>L</em></sub>(<em>X⃗</em>) = lim<sub><em>L</em> → ∞</sub><em>H</em>(<em>X</em><sub><em>L</em></sub>|<em>X</em><sub>1</sub>, <em>X</em><sub>2</sub>, ⋯, <em>X</em><sub><em>L</em> − 1</sub>)</span></p>
+  $$</span> 当 <span class="math inline"><em>k</em> → ∞</span> 时，<span class="math inline">$\lim_{k \to \infty} H_{L + k}(\vec{X_{}}) \leq
+H(X_L|X_1,X_2,\cdots,X_{L - 1}) \leq H_{L}(\vec{X_{}})$</span> 当 <span class="math inline"><em>L</em> → ∞</span> 时，<span class="math inline">$H_{L}(\vec{X_{}}) = H_{L +
+k}(\vec{X_{}})$</span>，得到 <span class="math display">$$
+  \lim_{L \to \infty} H_{L}(\vec{X_{}})=\lim_{L \to \infty}
+H(X_L|X_1,X_2,\cdots,X_{L - 1})
+  $$</span></p>
 <p>若<span class="math inline"><em>H</em><sub>0</sub>(<em>X</em>)</span>
-为等概率无记忆信源单个符号熵，有 <span class="math display"><em>H</em><sub>0</sub>(<em>X</em>) ≥ <em>H</em><sub>1</sub>(<em>X</em>) ≥ <em>H</em><sub>2</sub>(<em>X⃗</em>) ≥ <em>H</em><sub>3</sub>(<em>X⃗</em>)⋯ ≥ <em>H</em><sub>∞</sub>(<em>X⃗</em>)</span></p>
+为等概率无记忆信源单个符号熵，有 <span class="math display">$$
+  H_0(X) \geq H_1(X) \geq H_2(\vec{X_{}}) \geq H_3(\vec{X_{}}) \cdots
+\geq H_{\infty}(\vec{X_{}})
+  $$</span></p>
 <p><strong>只有极限熵最真实地反映信源的实际情况。</strong></p></li>
 </ul></li>
 </ol>
 <h3 id="马尔可夫信源的极限熵">马尔可夫信源的极限熵</h3>
 <ul>
-<li><p><strong>定义</strong>： <span class="math display"><em>H</em><sub>∞</sub>(<em>X⃗</em>) = lim<sub><em>L</em> → ∞</sub><em>H</em><sub><em>L</em></sub>(<em>X⃗</em>) = lim<sub><em>L</em> → ∞</sub><em>H</em>(<em>X</em><sub><em>L</em></sub>|<em>X</em><sub>1</sub>, <em>X</em><sub>2</sub>, ⋯, <em>X</em><sub><em>L</em> − 1</sub>)</span></p></li>
+<li><p><strong>定义</strong>： <span class="math display">$$
+  H_{\infty}(\vec{X_{}})=\lim_{L \to \infty} H_{L}(\vec{X_{}}) = \lim_{L
+\to \infty} H(X_L|X_1,X_2,\cdots,X_{L - 1})
+  $$</span></p></li>
 <li><p>实际常取有限长度 <span class="math inline"><em>L</em></span>
 下的条件熵 <span class="math inline"><em>H</em>(<em>X</em><sub><em>L</em></sub>|<em>X</em><sup><em>L</em> − 1</sup>)</span>
-作为 <span class="math inline"><em>H</em><sub>∞</sub>(<em>X⃗</em>)</span>
+作为 <span class="math inline">$H_{\infty}(\vec{X_{}})$</span>
 的近似值。</p></li>
 <li><p><strong>m阶马尔可夫信源（齐次）的推导</strong> <span class="math display"><em>p</em>(<em>X</em><sub><em>t</em></sub>|<em>X</em><sub>1</sub>, <em>X</em><sub>2</sub>, ⋯, <em>X</em><sub><em>t</em> − 1</sub>) = <em>p</em>(<em>X</em><sub><em>t</em></sub>|<em>X</em><sub><em>t</em> − <em>m</em></sub>, ⋯, <em>X</em><sub><em>t</em> − 1</sub>)</span>
 <span class="math display">$$
   \begin{align*}
-  H_{\infty}(\vec{X})&amp;=\lim_{L \to \infty} H(X_L|X_1,X_2,\cdots,X_{L
-- 1}) \\
+  H_{\infty}(\vec{X_{}})&amp;=\lim_{L \to \infty}
+H(X_L|X_1,X_2,\cdots,X_{L - 1}) \\
   &amp;= \lim_{L \to \infty} H(X_L|X_{L - m},\cdots,X_{L - 1})\\
   &amp;=H(X_{m + 1}|X_1,X_2,\cdots,X_m)
   \end{align*}
@@ -2064,7 +2077,7 @@ p(x_{i1},x_{i2},\cdots,x_{im},x_{i_{m + 1}},s_i) \log p(x_{i_{m +
   &amp;=-\sum_{i_1,\cdots,i_{m + 1}} p(x_{i1},\cdots,x_{i_{m + 1}}) \log
 p(x_{i_{m + 1}}|x_{i1},\cdots,x_{im})\\
   &amp;=H(X_{m + 1}|X_1,X_2,\cdots,X_m)\\
-  &amp;=H_{\infty}(\vec{X})\\
+  &amp;=H_{\infty}(\vec{X_{}})\\
   \mathbf{Right}&amp;=-\sum_{i_1,\cdots,i_{m + 1};i}
 p(x_{i1},x_{i2},\cdots,x_{i_{m + 1}},s_i) \log p(x_{i_{m + 1}}|s_i)\\
   &amp;=-\sum_{i_1,\cdots,i_{m + 1};i}
@@ -2079,7 +2092,7 @@ p(x_{i_{m + 1}}|s_i)\\
   $$</span></p>
 <p><span class="math display">$$
   \begin{align*}
-  \therefore H_{\infty}(\vec{X}) &amp;= \sum_{i} p(s_i) H(X|s_i)\\
+  \therefore H_{\infty}(\vec{X_{}}) &amp;= \sum_{i} p(s_i) H(X|s_i)\\
   H(X|s_i)&amp;=-\sum_{j} p(x_j|s_i)\log p(x_j|s_i) \\
   &amp;= -\sum_{j} p(s_j|s_i)\log p(s_j|s_i)
   \end{align*}
@@ -2138,11 +2151,11 @@ p(x_{i_{m + 1}}|s_i)\\
 <li>平稳随机过程通过采样变换可得到平稳随机序列，例如：
 <ul>
 <li>随机过程 <span class="math inline"><em>x</em>(<em>t</em>)</span>
-变换为 <span class="math inline"><em>X⃗</em>(<em>X</em><sub>1</sub>, <em>X</em><sub>2</sub>, ⋯, <em>X</em><sub><em>L</em></sub>)</span>
-。</li>
+变换为 <span class="math inline">$\vec{X_{}}(X_1, X_2, \cdots,
+X_L)$</span> 。</li>
 <li>随机过程 <span class="math inline"><em>y</em>(<em>t</em>)</span>
-变换为 <span class="math inline"><em>Y⃗</em>(<em>Y</em><sub>1</sub>, <em>Y</em><sub>2</sub>, ⋯, <em>Y</em><sub><em>L</em></sub>)</span>
-。</li>
+变换为 <span class="math inline">$\vec{Y_{}}(Y_1, Y_2, \cdots,
+Y_L)$</span> 。</li>
 </ul></li>
 <li><figure>
 <img src="image-9.png" srcset="/img/loading/loading3.gif" lazyload alt="图例">
@@ -2150,24 +2163,27 @@ p(x_{i_{m + 1}}|s_i)\\
 </figure></li>
 <li>相关熵的计算公式如下：
 <ul>
-<li><span class="math inline">$H_c(\vec{X}) = H_c(X_1, X_2, \cdots,
-X_L)=-\int_{\vec{R}} P_{\vec{X}}(\vec{x})\log
-P_{\vec{X}}(\vec{x})d\vec{x_{}}$</span></li>
-<li><span class="math inline">$H_c(\vec{Y}|\vec{X}) = H_c(Y_1, Y_2,
-\cdots, Y_L|X_1, X_2, \cdots, X_L)=-\int_{\vec{R}}\int_{\vec{R}}
-P_{\vec{X}\vec{Y}}(\vec{x}, \vec{y})\log
-P_{\vec{Y}}(\vec{y}|\vec{x})d\vec{x}d\vec{y_{}}$</span></li>
+<li><span class="math inline">$H_c(\vec{X_{}}) = H_c(X_1, X_2, \cdots,
+X_L)=-\int_{\vec{R_{}}} P_{\vec{X_{}}}(\vec{x_{}})\log
+P_{\vec{X_{}}}(\vec{x_{}})d\vec{x_{}}$</span></li>
+<li><span class="math inline">$H_c(\vec{Y_{}}|\vec{X_{}}) = H_c(Y_1,
+Y_2, \cdots, Y_L|X_1, X_2, \cdots,
+X_L)=-\int_{\vec{R_{}}}\int_{\vec{R_{}}}
+P_{\vec{X_{}}\vec{Y_{}}}(\vec{x_{}}, \vec{y_{}})\log
+P_{\vec{Y_{}}}(\vec{y_{}}|\vec{x_{}})d\vec{x_{}}d\vec{y_{}}$</span></li>
 </ul></li>
 <li>波形信源熵由上述各项的极限表达式（<span class="math inline"><em>L</em> → ∞</span> ）给出：
 <ul>
-<li><span class="math inline"><em>H</em><sub><em>c</em></sub>(<em>x</em>(<em>t</em>)) ≜ lim<sub><em>L</em> → ∞</sub><em>H</em><sub><em>c</em></sub>(<em>X⃗</em>)</span></li>
-<li><span class="math inline"><em>H</em><sub><em>c</em></sub>(<em>y</em>(<em>t</em>)|<em>x</em>(<em>t</em>)) ≜ lim<sub><em>L</em> → ∞</sub><em>H</em><sub><em>c</em></sub>(<em>Y⃗</em>|<em>X⃗</em>)</span></li>
+<li><span class="math inline">$H_c(x(t)) \triangleq \lim_{L \to \infty}
+H_c(\vec{X_{}})$</span></li>
+<li><span class="math inline">$H_c(y(t)|x(t)) \triangleq \lim_{L \to
+\infty} H_c(\vec{Y_{}}|\vec{X_{}})$</span></li>
 </ul></li>
 <li>对于<strong>限频 <span class="math inline"><em>f</em><sub><em>m</em></sub></span>，限时 <span class="math inline"><em>t</em><sub><em>B</em></sub></span></strong>
 的平稳随机过程，可用 <span class="math inline"><em>L</em> = 2<em>f</em><sub><em>m</em></sub><em>t</em><sub><em>B</em></sub></span>
 随机矢量表示，且有： <span class="math display">$$
   \begin{align*}
-  H_c(\vec{X}) =&amp; H_c(X_1, X_2, \cdots, X_L)\\
+  H_c(\vec{X_{}}) =&amp; H_c(X_1, X_2, \cdots, X_L)\\
   =&amp;H_c(X_1)+H_c(X_2|X_1)+H_c(X_3|X_1X_2)+\\
   &amp;\cdots+H_c(X_L|X_1,X_2,\cdots,X_{L - 1})\\
   \leq&amp; H_c(X_1)+H_c(X_2)+\cdots + H_c(X_L)
@@ -2293,11 +2309,13 @@ bit/符号</span></p>
 <ul>
 <li>定义为 <span class="math display"><em>C</em><em>o</em><em>v</em>(<em>X</em>, <em>Y</em>) = <em>E</em>(<em>X</em> − <em>E</em><em>X</em>)(<em>Y</em> − <em>E</em><em>Y</em>) = <em>E</em>(<em>X</em><em>Y</em>) − <em>μ</em><sub><em>X</em></sub><em>μ</em><sub><em>Y</em></sub></span></li>
 </ul></li>
-<li><strong>对于随机变量 <span class="math inline"><em>X⃗</em> = [<em>X</em><sub>1</sub>, <em>X</em><sub>2</sub>, ⋯, <em>X</em><sub><em>n</em></sub>]<sup><em>T</em></sup></span>（列向量）</strong>：
+<li><strong>对于随机变量 <span class="math inline">$\vec{X_{}}=[X_1,X_2,\cdots,X_n]^T$</span>（列向量）</strong>：
 <ul>
-<li>其<strong>协方差矩阵</strong>定义为 <span class="math display"><em>K</em><sub><em>X⃗</em></sub> = <em>E</em>(<em>X⃗</em> − <em>E</em><em>X⃗</em>)(<em>X⃗</em> − <em>E</em><em>X⃗</em>)<sup><em>T</em></sup> = [<em>C</em><em>o</em><em>v</em>(<em>X</em><sub><em>i</em></sub>, <em>X</em><sub><em>j</em></sub>)]</span></li>
-<li>其<strong>相关矩阵</strong>定义为 <span class="math display"><em>K̃</em><sub><em>X⃗</em></sub> = <em>E</em>(<em>X⃗</em><em>X⃗</em><sup><em>T</em></sup>) = [<em>E</em>(<em>X</em><sub><em>i</em></sub><em>X</em><sub><em>j</em></sub>)]</span></li>
-<li>若 <span class="math inline">$E(\vec{X})=\vec{\mu}=\vec{0_{}}$</span>，则 <span class="math inline"><em>K</em><sub><em>X⃗</em></sub> = <em>K̃</em><sub><em>X⃗</em></sub></span></li>
+<li>其<strong>协方差矩阵</strong>定义为 <span class="math display">$$K_{\vec{X_{}}}=E(\vec{X_{}}-E\vec{X_{}})(\vec{X_{}}-E\vec{X_{}})^T
+= [Cov(X_i,X_j)]$$</span></li>
+<li>其<strong>相关矩阵</strong>定义为 <span class="math display">$$\widetilde{K}_{\vec{X_{}}}=E(\vec{X_{}}\vec{X_{}}^T)=[E(X_iX_j)]$$</span></li>
+<li>若 <span class="math inline">$E(\vec{X_{}})=\vec{\mu_{}}=\vec{0_{}}$</span>，则
+<span class="math inline">$K_{\vec{X_{}}}=\widetilde{K}_{\vec{X_{}}}$</span></li>
 </ul></li>
 <li><strong>高斯分布</strong></li>
 </ol>
@@ -2306,10 +2324,11 @@ bit/符号</span></p>
 表示均值为 <span class="math inline"><em>μ</em></span>，方差为 <span class="math inline"><em>σ</em><sup>2</sup></span>
 的<strong>高斯（正态）分布</strong>，即它的概率密度函数为 <span class="math display">$$f(x)=\frac{1}{\sqrt{2\pi\sigma^{2}}}e^{-\frac{(x
 - \mu)^{2}}{2\sigma^{2}}}$$</span></p></li>
-<li><p>令 <span class="math inline"><em>N</em>(<em>μ⃗</em>, <em>K</em>)</span> 表示均值为
-<span class="math inline"><em>μ⃗</em></span>，协方差矩阵为 <span class="math inline"><em>K</em></span>
-的<strong>多元高斯分布</strong>，即对所有的 <span class="math inline"><em>x⃗</em> ∈ <em>R</em><sup><em>n</em></sup></span>，其联合概率密度函数为
-<span class="math display">$$f(\vec{x})=\frac{1}{(\sqrt{2\pi})^n|K|^{\frac{1}{2}}}e^{-\frac{1}{2}(\vec{x}-\vec{\mu})^TK^{-1}(\vec{x}-\vec{\mu})}$$</span></p>
+<li><p>令 <span class="math inline">$N(\vec{\mu_{}},K)$</span>
+表示均值为 <span class="math inline">$\vec{\mu_{}}$</span>，协方差矩阵为
+<span class="math inline"><em>K</em></span>
+的<strong>多元高斯分布</strong>，即对所有的 <span class="math inline">$\vec{x_{}}\in R^n$</span>，其联合概率密度函数为
+<span class="math display">$$f(\vec{x_{}})=\frac{1}{(\sqrt{2\pi})^n|K|^{\frac{1}{2}}}e^{-\frac{1}{2}(\vec{x_{}}-\vec{\mu_{}})^TK^{-1}(\vec{x_{}}-\vec{\mu_{}})}$$</span></p>
 <p>其中 <span class="math inline">|<em>K</em>|</span> 表示 <span class="math inline"><em>K</em></span> 的行列式值，<span class="math inline"><em>K</em></span> 是正定对称矩阵。</p></li>
 </ul>
 <h3 id="基本结论">基本结论</h3>
@@ -2323,13 +2342,11 @@ bit/符号</span></p>
 <li><strong>定义（正定矩阵）</strong>：
 <ul>
 <li>一个 <span class="math inline"><em>n</em> × <em>n</em></span> 矩阵
-<span class="math inline"><em>K</em></span>，如果对所有非零 <span class="math inline"><em>n</em></span> 维列向量 <span class="math inline">$\vec{x_{}}$</span>，<span class="math inline"><em>x⃗</em><sup><em>T</em></sup><em>K</em><em>x⃗</em> &gt; 0</span>
-成立，则称矩阵 <span class="math inline"><em>K</em></span>
-为正定的；</li>
+<span class="math inline"><em>K</em></span>，如果对所有非零 <span class="math inline"><em>n</em></span> 维列向量 <span class="math inline">$\vec{x_{}}$</span>，<span class="math inline">$\vec{x_{}}^TK\vec{x_{}}&gt;0$</span> 成立，则称矩阵
+<span class="math inline"><em>K</em></span> 为正定的；</li>
 <li>如果对所有 <span class="math inline"><em>n</em></span> 维列向量
-<span class="math inline">$\vec{x_{}}$</span>，<span class="math inline"><em>x⃗</em><sup><em>T</em></sup><em>K</em><em>x⃗</em> ≥ 0</span>
-成立，则称矩阵 <span class="math inline"><em>K</em></span>
-为半正定的。</li>
+<span class="math inline">$\vec{x_{}}$</span>，<span class="math inline">$\vec{x_{}}^TK\vec{x_{}}\geq0$</span> 成立，则称矩阵
+<span class="math inline"><em>K</em></span> 为半正定的。</li>
 </ul></li>
 </ul>
 <h4 id="命题">命题</h4>
@@ -2355,58 +2372,58 @@ $$</span> 即 <span class="math inline">$\vec{q_{i}}$</span> 是矩阵 <span cla
 <li><strong>命题2</strong>：
 <ul>
 <li><p><strong>半正定矩阵的特征值是非负的</strong>。</p></li>
-<li><p><strong>证明</strong>： 令 <span class="math inline"><em>K</em></span> 表示一个半正定矩阵，<span class="math inline">$\vec{u_{}}$</span> 是矩阵 <span class="math inline"><em>K</em></span> 对应于特征值 <span class="math inline"><em>λ</em></span> 的特征向量，即 <span class="math display">$$K\vec{u}=\lambda\vec{u_{}}$$</span></p>
-<p>由于 <span class="math inline"><em>K</em></span> 是半正定的，有 <span class="math display"><em>u⃗</em><sup><em>T</em></sup><em>K</em><em>u⃗</em> = <em>u⃗</em><sup><em>T</em></sup><em>λ</em><em>u⃗</em> = <em>λ</em><em>u⃗</em><sup><em>T</em></sup><em>u⃗</em> ≥ 0</span></p>
-<p>又因为 <span class="math inline"><em>u⃗</em><sup><em>T</em></sup><em>u⃗</em> &gt; 0</span>，所以有
-<span class="math inline"><em>λ</em> ≥ 0</span>。</p></li>
+<li><p><strong>证明</strong>： 令 <span class="math inline"><em>K</em></span> 表示一个半正定矩阵，<span class="math inline">$\vec{u_{}}$</span> 是矩阵 <span class="math inline"><em>K</em></span> 对应于特征值 <span class="math inline"><em>λ</em></span> 的特征向量，即 <span class="math display">$$K\vec{u_{}}=\lambda\vec{u_{}}$$</span></p>
+<p>由于 <span class="math inline"><em>K</em></span> 是半正定的，有 <span class="math display">$$\vec{u_{}}^TK\vec{u_{}}=\vec{u_{}}^T\lambda\vec{u_{}}=\lambda\vec{u_{}}^T\vec{u_{}}\geq0$$</span></p>
+<p>又因为 <span class="math inline">$\vec{u_{}}^T\vec{u_{}}&gt;0$</span>，所以有 <span class="math inline"><em>λ</em> ≥ 0</span>。</p></li>
 </ul></li>
 <li><strong>命题3</strong>：
 <ul>
-<li>令 <span class="math inline">$\vec{Y} = A\vec{X_{}}$</span>，其中
+<li>令 <span class="math inline">$\vec{Y_{}} = A\vec{X_{}}$</span>，其中
 <span class="math inline">$\vec{X_{}}$</span> 和 <span class="math inline">$\vec{Y_{}}$</span>
-均为由几个随机变量构成的列向量，<span class="math inline"><em>A</em></span> 是 <span class="math inline"><em>m</em> × <em>n</em></span> 矩阵，则 <span class="math display"><em>K</em><sub><em>Y⃗</em></sub> = <em>A</em><em>K</em><sub><em>X⃗</em></sub><em>A</em><sup><em>T</em></sup></span>
-且 <span class="math display"><em>K̃</em><sub><em>Y⃗</em></sub> = <em>A</em><em>K̃</em><sub><em>X⃗</em></sub><em>A</em><sup><em>T</em></sup></span></li>
+均为由几个随机变量构成的列向量，<span class="math inline"><em>A</em></span> 是 <span class="math inline"><em>m</em> × <em>n</em></span> 矩阵，则 <span class="math display">$$K_{\vec{Y_{}}} = AK_{\vec{X_{}}}A^T$$</span> 且
+<span class="math display">$$\widetilde{K}_{\vec{Y_{}}} =
+A\widetilde{K}_{\vec{X_{}}}A^T$$</span></li>
 <li><strong>证明</strong>： <span class="math display">$$
   \begin{align*}
-  K_{\vec{Y}}&amp;=E(\vec{Y}-E\vec{Y})(\vec{Y}-E\vec{Y})^T\\
-  &amp;=E[A(\vec{X}-E\vec{X})][A(\vec{X}-E\vec{X})]^T\\
-  &amp;=E[A(\vec{X}-E\vec{X})(\vec{X}-E\vec{X})^TA^T]\\
-  &amp;=A[E(\vec{X}-E\vec{X})(\vec{X}-E\vec{X})^T]A^T\\
-  &amp;=AK_{\vec{X}}A^T
+  K_{\vec{Y_{}}}&amp;=E(\vec{Y_{}}-E\vec{Y_{}})(\vec{Y_{}}-E\vec{Y_{}})^T\\
+  &amp;=E[A(\vec{X_{}}-E\vec{X_{}})][A(\vec{X_{}}-E\vec{X_{}})]^T\\
+  &amp;=E[A(\vec{X_{}}-E\vec{X_{}})(\vec{X_{}}-E\vec{X_{}})^TA^T]\\
+  &amp;=A[E(\vec{X_{}}-E\vec{X_{}})(\vec{X_{}}-E\vec{X_{}})^T]A^T\\
+  &amp;=AK_{\vec{X_{}}}A^T
   \end{align*}
   $$</span></li>
 </ul></li>
 <li><strong>命题4</strong>
 <ul>
-<li><p>设<span class="math inline">$\vec{X_{}}$</span>和<span class="math inline">$\vec{Y_{}}$</span>均为由<span class="math inline"><em>n</em></span>个随机变量构成的列向量，且满足<span class="math display">$$\vec{Y} = Q^T\vec{X_{}}$$</span> 其中<span class="math inline"><em>Q</em><em>Λ</em><em>Q</em><sup><em>T</em></sup></span>是<span class="math inline"><em>K</em><sub><em>X⃗</em></sub></span>（<span class="math inline">$\vec{X_{}}$</span>的协方差矩阵）的一个对角化。则有<span class="math display"><em>K</em><sub><em>Y⃗</em></sub> = <em>Λ</em></span>
-即<span class="math inline">$\vec{Y_{}}$</span>中的随机变量是不相关的，且<span class="math inline"><em>V</em><em>a</em><em>r</em>(<em>Y</em><sub><em>i</em></sub>) = <em>λ</em><sub><em>i</em></sub></span>，<span class="math inline"><em>λ</em><sub><em>i</em></sub></span>是<span class="math inline"><em>Λ</em></span>的第<span class="math inline"><em>i</em></span>个对角元素。</p></li>
+<li><p>设<span class="math inline">$\vec{X_{}}$</span>和<span class="math inline">$\vec{Y_{}}$</span>均为由<span class="math inline"><em>n</em></span>个随机变量构成的列向量，且满足<span class="math display">$$\vec{Y_{}} = Q^T\vec{X_{}}$$</span> 其中<span class="math inline"><em>Q</em><em>Λ</em><em>Q</em><sup><em>T</em></sup></span>是<span class="math inline">$K_{\vec{X_{}}}$</span>（<span class="math inline">$\vec{X_{}}$</span>的协方差矩阵）的一个对角化。则有<span class="math display">$$K_{\vec{Y_{}}}=\Lambda$$</span> 即<span class="math inline">$\vec{Y_{}}$</span>中的随机变量是不相关的，且<span class="math inline"><em>V</em><em>a</em><em>r</em>(<em>Y</em><sub><em>i</em></sub>) = <em>λ</em><sub><em>i</em></sub></span>，<span class="math inline"><em>λ</em><sub><em>i</em></sub></span>是<span class="math inline"><em>Λ</em></span>的第<span class="math inline"><em>i</em></span>个对角元素。</p></li>
 <li><p><strong>证明</strong>： <span class="math display">$$
   \begin{align*}
-  K_{\vec{Y}}&amp;=Q^TK_{\vec{X}}Q\\
+  K_{\vec{Y_{}}}&amp;=Q^TK_{\vec{X_{}}}Q\\
   &amp;=Q^T(Q\Lambda Q^T)Q\\
   &amp;=(Q^TQ)\Lambda(Q^TQ)\\
   &amp;=\Lambda
   \end{align*}
   $$</span></p></li>
-<li><p><strong>推论</strong>：设<span class="math inline">$\vec{X_{}}$</span>是由<span class="math inline"><em>n</em></span>个随机变量构成的列向量，且<span class="math inline"><em>Q</em><em>Λ</em><em>Q</em><sup><em>T</em></sup></span>是<span class="math inline"><em>K</em><sub><em>X⃗</em></sub></span>的一个对角化，则<span class="math display">$$\vec{X}=Q\vec{Y_{}}$$</span> 其中<span class="math inline">$\vec{Y}=Q^T\vec{X_{}}$</span>是由<span class="math inline"><em>n</em></span>个不相关的随机变量构成的列向量。</p>
+<li><p><strong>推论</strong>：设<span class="math inline">$\vec{X_{}}$</span>是由<span class="math inline"><em>n</em></span>个随机变量构成的列向量，且<span class="math inline"><em>Q</em><em>Λ</em><em>Q</em><sup><em>T</em></sup></span>是<span class="math inline">$K_{\vec{X_{}}}$</span>的一个对角化，则<span class="math display">$$\vec{X_{}}=Q\vec{Y_{}}$$</span> 其中<span class="math inline">$\vec{Y_{}}=Q^T\vec{X_{}}$</span>是由<span class="math inline"><em>n</em></span>个不相关的随机变量构成的列向量。</p>
 <ul>
-<li>证明： <span class="math display">$$\vec{X}=QQ^T\vec{X}=Q(Q^T\vec{X})=Q\vec{Y_{}}$$</span></li>
+<li>证明： <span class="math display">$$\vec{X_{}}=QQ^T\vec{X_{}}=Q(Q^T\vec{X_{}})=Q\vec{Y_{}}$$</span></li>
 </ul></li>
 </ul></li>
 <li><strong>命题5</strong>
 <ul>
-<li>设<span class="math inline">$\vec{X_{}}$</span>，<span class="math inline">$\vec{Y_{}}$</span>和<span class="math inline">$\vec{Z_{}}$</span>是由<span class="math inline"><em>n</em></span>个随机变量构成的列向量，<span class="math inline">$\vec{X_{}}$</span>和<span class="math inline">$\vec{Z_{}}$</span>相互独立，且<span class="math inline">$\vec{Y}=\vec{X}+\vec{Z_{}}$</span>，则<span class="math display"><em>K</em><sub><em>Y⃗</em></sub> = <em>K</em><sub><em>X⃗</em></sub> + <em>K</em><sub><em>Z⃗</em></sub></span></li>
+<li>设<span class="math inline">$\vec{X_{}}$</span>，<span class="math inline">$\vec{Y_{}}$</span>和<span class="math inline">$\vec{Z_{}}$</span>是由<span class="math inline"><em>n</em></span>个随机变量构成的列向量，<span class="math inline">$\vec{X_{}}$</span>和<span class="math inline">$\vec{Z_{}}$</span>相互独立，且<span class="math inline">$\vec{Y_{}}=\vec{X_{}}+\vec{Z_{}}$</span>，则<span class="math display">$$K_{\vec{Y_{}}} = K_{\vec{X_{}}} +
+K_{\vec{Z_{}}}$$</span></li>
 </ul></li>
 <li><strong>命题6</strong>
 <ul>
-<li>设<span class="math inline">$\vec{Y}=Q\vec{X_{}}$</span>，其中<span class="math inline">$\vec{X_{}}$</span>和<span class="math inline">$\vec{Y_{}}$</span>是由<span class="math inline"><em>n</em></span>个随机变量构成的列向量，<span class="math inline"><em>Q</em></span>是一个正交矩阵，则<span class="math display">$$E(\sum_{i = 1}^{n}Y_{i}^{2}) = E(\sum_{i =
+<li>设<span class="math inline">$\vec{Y_{}}=Q\vec{X_{}}$</span>，其中<span class="math inline">$\vec{X_{}}$</span>和<span class="math inline">$\vec{Y_{}}$</span>是由<span class="math inline"><em>n</em></span>个随机变量构成的列向量，<span class="math inline"><em>Q</em></span>是一个正交矩阵，则<span class="math display">$$E(\sum_{i = 1}^{n}Y_{i}^{2}) = E(\sum_{i =
 1}^{n}X_{i}^{2})$$</span> 即随机变量的总能量在正交变换下不变</li>
 <li><strong>证明</strong>： <span class="math display">$$
   \begin{align*}
-  \sum_{i = 1}^{n}Y_{i}^{2}&amp;=\vec{Y}^T\vec{Y}\\
-  &amp;=(Q\vec{X})^T(Q\vec{X})\\
-  &amp;=\vec{X}^TQ^TQ\vec{X}\\
-  &amp;=\vec{X}^T\vec{X}\\
+  \sum_{i = 1}^{n}Y_{i}^{2}&amp;=\vec{Y_{}}^T\vec{Y_{}}\\
+  &amp;=(Q\vec{X_{}})^T(Q\vec{X_{}})\\
+  &amp;=\vec{X_{}}^TQ^TQ\vec{X_{}}\\
+  &amp;=\vec{X_{}}^T\vec{X_{}}\\
   &amp;=\sum_{i = 1}^{n}X_{i}^{2}
   \end{align*}
   $$</span> 上式两边取期望，得证。</li>
@@ -2483,38 +2500,38 @@ e\sigma^{2})$</span> 其中 <span class="math display"><em>σ</em><sup>2</sup>�
 </ol>
 <h3 id="联合微分熵条件微分熵及互信息">联合微分熵，条件微分熵及互信息</h3>
 <ol type="1">
-<li><p><strong>定义（联合微分熵）</strong> 联合概率密度函数为 <span class="math inline"><em>f</em>(<em>x⃗</em>)</span> 的随机向量 <span class="math inline">$\vec{x_{}}$</span> 的联合微分熵 <span class="math inline"><em>h</em>(<em>x⃗</em>)</span> 定义为 <span class="math display"><em>h</em>(<em>x⃗</em>) = −∫<sub><em>S</em></sub><em>f</em>(<em>x⃗</em>)log <em>f</em>(<em>x⃗</em>)<em>d</em><em>x⃗</em> = −<em>E</em>log <em>f</em>(<em>x⃗</em>)</span></p>
+<li><p><strong>定义（联合微分熵）</strong> 联合概率密度函数为 <span class="math inline">$f(\vec{x_{}})$</span> 的随机向量 <span class="math inline">$\vec{x_{}}$</span> 的联合微分熵 <span class="math inline">$h(\vec{x_{}})$</span> 定义为 <span class="math display">$$h(\vec{x_{}})=-\int_{S}f(\vec{x_{}})\log
+f(\vec{x_{}})d\vec{x_{}}=-E\log f(\vec{x_{}})$$</span></p>
 <p>如果 <span class="math inline"><em>X</em><sub>1</sub>, <em>X</em><sub>2</sub>, ⋯, <em>X</em><sub><em>n</em></sub></span>
-相互独立，则有 <span class="math display">$$h(\vec{x})=\sum_{i =
+相互独立，则有 <span class="math display">$$h(\vec{x_{}})=\sum_{i =
 1}^{n}h(X_i)$$</span></p></li>
 <li><p><strong>平移</strong> 令 <span class="math inline">$\vec{c_{}}$</span> 是 <span class="math inline">ℝ<sup><em>n</em></sup></span>（<span class="math inline"><em>n</em></span> 维实数空间）中的一个列向量，则
-<span class="math display"><em>h</em>(<em>x⃗</em> + <em>c⃗</em>) = <em>h</em>(<em>x⃗</em>)</span></p></li>
+<span class="math display">$$h(\vec{x_{}}+\vec{c_{}}) =
+h(\vec{x_{}})$$</span></p></li>
 <li><p><strong>缩放</strong> 令 <span class="math inline"><em>A</em></span> 是一个 <span class="math inline"><em>n</em> × <em>n</em></span> 的非奇异矩阵，则
-<span class="math display"><em>h</em>(<em>A</em><em>x⃗</em>) = <em>h</em>(<em>x⃗</em>) + log |det (<em>A</em>)|</span></p></li>
-<li><p><strong>多元高斯分布</strong> 设 <span class="math inline"><em>X⃗</em> ∼ <em>N</em>(<em>μ⃗</em>, <em>K</em>)</span>
-。 令 <span class="math inline"><em>N</em>(<em>μ⃗</em>, <em>K</em>)</span> 表示均值为
-<span class="math inline"><em>μ⃗</em></span>，协方差矩阵为 <span class="math inline"><em>K</em></span> 的多元高斯分布，即对于所有 <span class="math inline"><em>x⃗</em> ∈ ℝ<sup><em>n</em></sup></span>
-，其联合概率密度函数为： <span class="math display">$$f(\vec{x}) =
+<span class="math display">$$h(A\vec{x_{}})=h(\vec{x_{}})+\log|\det(A)|$$</span></p></li>
+<li><p><strong>多元高斯分布</strong> 设 <span class="math inline">$\vec{X_{}} \sim N(\vec{\mu_{}},K)$</span> 。 令
+<span class="math inline">$N(\vec{\mu_{}},K)$</span> 表示均值为 <span class="math inline">$\vec{\mu_{}}$</span>，协方差矩阵为 <span class="math inline"><em>K</em></span> 的多元高斯分布，即对于所有 <span class="math inline">$\vec{x_{}} \in \mathbb{R}^n$</span>
+，其联合概率密度函数为： <span class="math display">$$f(\vec{x_{}}) =
 \frac{1}{(\sqrt{2\pi})^n|K|^{\frac{1}{2}}}
-e^{-\frac{1}{2}(\vec{x}-\vec{\mu})^T
-K^{-1}(\vec{x}-\vec{\mu})}$$</span></p>
+e^{-\frac{1}{2}(\vec{x_{}}-\vec{\mu_{}})^T
+K^{-1}(\vec{x_{}}-\vec{\mu_{}})}$$</span></p>
 <p>其中 <span class="math inline"><em>K</em></span>
-是正定对称矩阵，<span class="math inline">|<em>K</em>|</span> 表示 <span class="math inline"><em>K</em></span> 的行列式值，<span class="math inline"><em>x⃗</em>, <em>μ⃗</em></span> 为列向量。</p>
-<p>其微分熵 <span class="math inline"><em>h</em>(<em>X⃗</em>)</span> 为：
-<span class="math display">$$h(\vec{X}) = \frac{1}{2} \log[(2\pi
+是正定对称矩阵，<span class="math inline">|<em>K</em>|</span> 表示 <span class="math inline"><em>K</em></span> 的行列式值，<span class="math inline">$\vec{x_{}},\vec{\mu_{}}$</span> 为列向量。</p>
+<p>其微分熵 <span class="math inline">$h(\vec{X_{}})$</span> 为： <span class="math display">$$h(\vec{X_{}}) = \frac{1}{2} \log[(2\pi
 e)^n|K|]$$</span></p>
 <p>这里 <span class="math inline">|<em>K</em>|</span> 为 <span class="math inline"><em>K</em></span> 的行列式值。</p>
 <ul>
 <li><strong>证明</strong>： 设 <span class="math inline"><em>K</em></span> 可以对角化为 <span class="math inline"><em>Q</em><em>Λ</em><em>Q</em><sup><em>T</em></sup></span>
-，记 <span class="math inline">$\vec{X} = Q\vec{Y_{}}$</span> ，其中
+，记 <span class="math inline">$\vec{X_{}} = Q\vec{Y_{}}$</span> ，其中
 <span class="math inline">$\vec{Y_{}}$</span> 中的随机变量不相关，且有
 <span class="math inline"><em>V</em><em>a</em><em>r</em>(<em>Y</em><sub><em>i</em></sub>) = <em>λ</em><sub><em>i</em></sub></span>
 ，为 <span class="math inline"><em>Λ</em></span> 中第 <span class="math inline"><em>i</em></span> 个对角元素。由于 <span class="math inline">$\vec{X_{}}$</span> 是高斯的，所以 <span class="math inline">$\vec{Y_{}}$</span> 也是高斯的。又由于 <span class="math inline">$\vec{Y_{}}$</span>
 中的随机变量是不相关的，可知它们相互独立。 <span class="math display">$$
   \begin{align*}
-  h(\vec{X})&amp;=h(Q\vec{Y})\\
-  &amp;=h(\vec{Y})+\log|\det(Q)|\\
-  &amp;=h(\vec{Y}) + 0\\
+  h(\vec{X_{}})&amp;=h(Q\vec{Y_{}})\\
+  &amp;=h(\vec{Y_{}})+\log|\det(Q)|\\
+  &amp;=h(\vec{Y_{}}) + 0\\
   &amp;=\sum_{i = 1}^{n}h(Y_i)\\
   &amp;=\sum_{i = 1}^{n}\frac{1}{2}\log(2\pi e\lambda_i)\\
   &amp;=\frac{1}{2}\log[(2\pi e)^n\prod_{i = 1}^{n}\lambda_i]\\
@@ -2569,8 +2586,8 @@ $$</span></p>
 1}^{n}h(X_i)$</span></li>
 </ul></li>
 </ul></li>
-<li><p><strong>Hadamard 阿达玛不等式</strong> 设 <span class="math inline"><em>X⃗</em> ∼ <em>N</em>(0, <em>K</em>)</span>
-是一个多元正态分布。 则有 <span class="math display">$$
+<li><p><strong>Hadamard 阿达玛不等式</strong> 设 <span class="math inline">$\vec{X_{}} \sim N(0,K)$</span> 是一个多元正态分布。
+则有 <span class="math display">$$
 \begin{align*}
 h(X_1,X_2,\cdots,X_n)&amp;=\frac{1}{2}\log((2\pi e)^n|K|)\\
 &amp;\leq \sum_{i = 1}^{n}\frac{1}{2}\log(2\pi e K_{ii})\\
@@ -2592,17 +2609,20 @@ $$</span></p>
 <img src="image-13.png" srcset="/img/loading/loading3.gif" lazyload alt="数学模型">
 <figcaption aria-hidden="true">数学模型</figcaption>
 </figure></li>
-<li><span class="math inline"><em>X⃗</em> = (<em>X</em><sub>1</sub>, <em>X</em><sub>2</sub>, ⋯, <em>X</em><sub><em>i</em></sub>, ⋯)</span>，<span class="math inline"><em>X</em><sub><em>i</em></sub> ∈ <em>A</em> = {<em>a</em><sub>1</sub>, <em>a</em><sub>2</sub>, ⋯, <em>a</em><sub><em>n</em></sub>}</span>为输入；</li>
-<li><span class="math inline"><em>Y⃗</em> = (<em>Y</em><sub>1</sub>, <em>Y</em><sub>2</sub>, ⋯, <em>Y</em><sub><em>j</em></sub>, ⋯)</span>，<span class="math inline"><em>Y</em><sub><em>j</em></sub> ∈ <em>B</em> = {<em>b</em><sub>1</sub>, <em>b</em><sub>2</sub>, ⋯, <em>b</em><sub><em>m</em></sub>}</span>为输出。</li>
-<li>用条件概率（转移概率）<span class="math inline"><em>p</em>(<em>Y⃗</em>|<em>X⃗</em>)</span>来描述输入、输出之间的依赖关系。</li>
+<li><span class="math inline">$\vec{X_{}}=(X_1, X_2, \cdots, X_i,
+\cdots)$</span>，<span class="math inline"><em>X</em><sub><em>i</em></sub> ∈ <em>A</em> = {<em>a</em><sub>1</sub>, <em>a</em><sub>2</sub>, ⋯, <em>a</em><sub><em>n</em></sub>}</span>为输入；</li>
+<li><span class="math inline">$\vec{Y_{}}=(Y_1, Y_2, \cdots, Y_j,
+\cdots)$</span>，<span class="math inline"><em>Y</em><sub><em>j</em></sub> ∈ <em>B</em> = {<em>b</em><sub>1</sub>, <em>b</em><sub>2</sub>, ⋯, <em>b</em><sub><em>m</em></sub>}</span>为输出。</li>
+<li>用条件概率（转移概率）<span class="math inline">$p(\vec{Y_{}}|\vec{X_{}})$</span>来描述输入、输出之间的依赖关系。</li>
 </ul>
 <h3 id="无干扰信道无噪声">无干扰信道（无噪声）</h3>
 <ul>
-<li><span class="math inline"><em>Y⃗</em> = <em>f</em>(<em>X⃗</em>)</span>，已知<span class="math inline">$\vec{X_{}}$</span>就能确知<span class="math inline">$\vec{Y_{}}$</span> <span class="math display">$$
-  p(\vec{Y}|\vec{X}) =
+<li><span class="math inline">$\vec{Y_{}} =
+f(\vec{X_{}})$</span>，已知<span class="math inline">$\vec{X_{}}$</span>就能确知<span class="math inline">$\vec{Y_{}}$</span> <span class="math display">$$
+  p(\vec{Y_{}}|\vec{X_{}}) =
   \begin{cases}
-  1, &amp;\vec{Y} = f(\vec{X}) \\
-  0, &amp;\vec{Y} \neq f(\vec{X})
+  1, &amp;\vec{Y_{}} = f(\vec{X_{}}) \\
+  0, &amp;\vec{Y_{}} \neq f(\vec{X_{}})
   \end{cases}
   $$</span></li>
 <li>例子：
@@ -2617,7 +2637,8 @@ $$</span></p>
 </ul>
 <h3 id="有干扰无记忆信道">有干扰无记忆信道</h3>
 <ul>
-<li>无记忆：<span class="math display"><em>p</em>(<em>Y⃗</em>|<em>X⃗</em>) = <em>p</em>(<em>y</em><sub>1</sub>|<em>x</em><sub>1</sub>)<em>p</em>(<em>y</em><sub>2</sub>|<em>x</em><sub>2</sub>)⋯<em>p</em>(<em>y</em><sub><em>l</em></sub>|<em>x</em><sub><em>l</em></sub>)</span></li>
+<li>无记忆：<span class="math display">$$p(\vec{Y_{}}|\vec{X_{}}) =
+p(y_1|x_1)p(y_2|x_2)\cdots p(y_l|x_l)$$</span></li>
 <li>只需分析单个符号的转移概率<span class="math inline"><em>p</em>(<em>y</em><sub><em>j</em></sub>|<em>x</em><sub><em>i</em></sub>)</span></li>
 </ul>
 <h4 id="二进制离散对称信道binary-symmetric-channelbsc">二进制离散对称信道（Binary
@@ -2666,16 +2687,19 @@ a_i)^2}{2\sigma^2}}$</span></li>
 <ul>
 <li>当 <span class="math inline"><em>t</em><sub><em>B</em></sub></span>、<span class="math inline"><em>f</em><sub><em>m</em></sub></span> 受限，<span class="math inline"><em>L</em> = 2<em>t</em><sub><em>B</em></sub><em>f</em><sub><em>m</em></sub></span>
 时</li>
-<li>输入 <span class="math inline"><em>X⃗</em> = (<em>X</em><sub>1</sub>, <em>X</em><sub>2</sub>, ⋯, <em>X</em><sub><em>L</em></sub>)</span></li>
-<li>输出 <span class="math inline"><em>Y⃗</em> = (<em>Y</em><sub>1</sub>, <em>Y</em><sub>2</sub>, ⋯, <em>Y</em><sub><em>L</em></sub>)</span></li>
+<li>输入 <span class="math inline">$\vec{X_{}} = (X_1, X_2, \cdots,
+X_L)$</span></li>
+<li>输出 <span class="math inline">$\vec{Y_{}} = (Y_1, Y_2, \cdots,
+Y_L)$</span></li>
 <li><figure>
 <img src="image-19.png" srcset="/img/loading/loading3.gif" lazyload alt="图例">
 <figcaption aria-hidden="true">图例</figcaption>
 </figure></li>
 <li><strong>时间离散，取值连续的多维连续信道</strong>，信道转移概率密度函数为：
-<span class="math display"><em>p</em><sub><em>Y</em></sub>(<em>y⃗</em>|<em>x⃗</em>) = <em>p</em><sub><em>y</em></sub>(<em>y</em><sub>1</sub>, <em>y</em><sub>2</sub>, ⋯, <em>y</em><sub><em>L</em></sub>|<em>x</em><sub>1</sub>, <em>x</em><sub>2</sub>, ⋯, <em>x</em><sub><em>L</em></sub>)</span></li>
-<li><strong>连续无记忆信道</strong>： <span class="math display">$$p_Y(\vec{y}|\vec{x}) = p_y(y_1 | x_1)p_y(y_2 |
-x_2)\cdots p_y(y_L | x_L) = \prod_{l = 1}^{L} p_Y (y_l|
+<span class="math display">$$p_Y(\vec{y_{}}|\vec{x_{}}) = p_y
+(y_1,y_2,\cdots,y_L | x_1,x_2,\cdots,x_L)$$</span></li>
+<li><strong>连续无记忆信道</strong>： <span class="math display">$$p_Y(\vec{y_{}}|\vec{x_{}}) = p_y(y_1 |
+x_1)p_y(y_2 | x_2)\cdots p_y(y_L | x_L) = \prod_{l = 1}^{L} p_Y (y_l|
 x_l)$$</span></li>
 </ul>
 <h4 id="因此无记忆时重点讨论单符号信道">因此无记忆时重点讨论单符号信道！</h4>
@@ -2703,8 +2727,10 @@ x_l)$$</span></li>
 称为<strong>噪声熵</strong></p></li>
 <li><p>在加性多维连续信道中</p>
 <ul>
-<li><span class="math display">$$\vec{y}=\vec{x}+\vec{n_{}}$$</span></li>
-<li>同理有 <span class="math inline"><em>p</em><sub><em>Y⃗</em></sub>(<em>y⃗</em>|<em>x⃗</em>) = <em>p</em><sub><em>n</em></sub>(<em>n⃗</em>)</span>，<span class="math inline"><em>H</em><sub><em>c</em></sub>(<em>y⃗</em>|<em>x⃗</em>) = <em>H</em><sub><em>c</em></sub>(<em>n⃗</em>)</span></li>
+<li><span class="math display">$$\vec{y_{}}=\vec{x_{}}+\vec{n_{}}$$</span></li>
+<li>同理有 <span class="math inline">$p_{\vec{Y_{}}}(\vec{y_{}}|\vec{x_{}}) =
+p_n(\vec{n_{}})$</span>，<span class="math inline">$H_c(\vec{y_{}}|\vec{x_{}}) =
+H_c(\vec{n_{}})$</span></li>
 </ul></li>
 </ul>
 <h3 id="有干扰有记忆信道">有干扰有记忆信道</h3>
@@ -2963,62 +2989,63 @@ P_2=\begin{bmatrix}0.7&amp;0.1&amp;0.2\\0.2&amp;0.1&amp;0.7\end{bmatrix}_{2\time
 <img src="image-24.png" srcset="/img/loading/loading3.gif" lazyload alt="信道模型">
 <figcaption aria-hidden="true">信道模型</figcaption>
 </figure></li>
-<li>输入矢量为<span class="math inline"><em>X⃗</em> = (<em>X</em><sub>1</sub>, <em>X</em><sub>2</sub>, ⋯, <em>X</em><sub><em>L</em></sub>)</span>，其中<span class="math inline"><em>X</em><sub><em>l</em></sub> ∈ {<em>a</em><sub>1</sub>, <em>a</em><sub>2</sub>, ⋯, <em>a</em><sub><em>n</em></sub>}</span></li>
-<li>输出矢量为<span class="math inline"><em>Y⃗</em> = (<em>Y</em><sub>1</sub>, <em>Y</em><sub>2</sub>, ⋯, <em>Y</em><sub><em>L</em></sub>)</span>，其中<span class="math inline"><em>Y</em><sub><em>l</em></sub> ∈ {<em>b</em><sub>1</sub>, <em>b</em><sub>2</sub>, ⋯, <em>b</em><sub><em>m</em></sub>}</span></li>
-<li>条件概率表示为<span class="math inline"><em>p</em>(<em>Y⃗</em>|<em>X⃗</em>)</span>
-，即给定输入<span class="math inline">$\vec{X_{}}$</span>时输出<span class="math inline">$\vec{Y_{}}$</span>的概率。</li>
+<li>输入矢量为<span class="math inline">$\vec{X_{}}=(X_1,X_2,\cdots,X_L)$</span>，其中<span class="math inline"><em>X</em><sub><em>l</em></sub> ∈ {<em>a</em><sub>1</sub>, <em>a</em><sub>2</sub>, ⋯, <em>a</em><sub><em>n</em></sub>}</span></li>
+<li>输出矢量为<span class="math inline">$\vec{Y_{}}=(Y_1,Y_2,\cdots,Y_L)$</span>，其中<span class="math inline"><em>Y</em><sub><em>l</em></sub> ∈ {<em>b</em><sub>1</sub>, <em>b</em><sub>2</sub>, ⋯, <em>b</em><sub><em>m</em></sub>}</span></li>
+<li>条件概率表示为<span class="math inline">$p(\vec{Y_{}}|\vec{X_{}})$</span> ，即给定输入<span class="math inline">$\vec{X_{}}$</span>时输出<span class="math inline">$\vec{Y_{}}$</span>的概率。</li>
 </ul>
 <h3 id="无记忆离散序列信道">无记忆离散序列信道</h3>
 <ul>
-<li>对于无记忆离散序列信道： <span class="math display">$$p(\vec{Y}|\vec{X}) =
+<li>对于无记忆离散序列信道： <span class="math display">$$p(\vec{Y_{}}|\vec{X_{}}) =
 p(Y_1,\cdots,Y_L|X_1,\cdots,X_L)=\prod_{l = 1}^{L}p(Y_l|X_l)$$</span>
 <ul>
-<li>若信道是平稳的： <span class="math display"><em>p</em>(<em>Y⃗</em>|<em>X⃗</em>) = (<em>p</em>(<em>y</em>|<em>x</em>))<sup><em>L</em></sup> = <em>p</em><sup><em>L</em></sup>(<em>y</em>|<em>x</em>)</span></li>
+<li>若信道是平稳的： <span class="math display">$$p(\vec{Y_{}}|\vec{X_{}})=(p(y|x))^{L}=p^{L}(y|x)$$</span></li>
 </ul></li>
 <li><strong>互信息与信道容量</strong>: <span class="math display">$$
   \begin{align*}
-  I(\vec{X};\vec{Y})&amp;=H(\vec{X}) - H(\vec{X}|\vec{Y})=\sum
-p(\vec{X},\vec{Y})\log\frac{p(\vec{X}|\vec{Y})}{p(\vec{X})}\\
-  &amp;=H(\vec{Y}) - H(\vec{Y}|\vec{X})=\sum
-p(\vec{X},\vec{Y})\log\frac{p(\vec{Y}|\vec{X})}{p(\vec{Y})}
+  I(\vec{X_{}};\vec{Y_{}})&amp;=H(\vec{X_{}}) -
+H(\vec{X_{}}|\vec{Y_{}})=\sum
+p(\vec{X_{}},\vec{Y_{}})\log\frac{p(\vec{X_{}}|\vec{Y_{}})}{p(\vec{X_{}})}\\
+  &amp;=H(\vec{Y_{}}) - H(\vec{Y_{}}|\vec{X_{}})=\sum
+p(\vec{X_{}},\vec{Y_{}})\log\frac{p(\vec{Y_{}}|\vec{X_{}})}{p(\vec{Y_{}})}
   \end{align*}
   $$</span>
 <ul>
-<li><strong>信道无记忆时</strong>： <span class="math display">$$I(\vec{X};\vec{Y})\leq\sum_{l =
+<li><strong>信道无记忆时</strong>： <span class="math display">$$I(\vec{X_{}};\vec{Y_{}})\leq\sum_{l =
 1}^{L}I(X_l;Y_l)$$</span>
 <ul>
-<li>证明： 由定义有：<span class="math inline"><em>I</em>(<em>X⃗</em>; <em>Y⃗</em>) = <em>H</em>(<em>Y⃗</em>) − <em>H</em>(<em>Y⃗</em>|<em>X⃗</em>)</span>和<span class="math inline"><em>I</em>(<em>X</em><sub><em>l</em></sub>; <em>Y</em><sub><em>l</em></sub>) = <em>H</em>(<em>Y</em><sub><em>l</em></sub>) − <em>H</em>(<em>Y</em><sub><em>l</em></sub>|<em>X</em><sub><em>l</em></sub>)</span>，利用<span class="math inline"><em>H</em>(<em>X</em>)</span>的链式法则有： ①<span class="math inline">$H(\vec{Y})=H(Y_1,Y_2,\cdots,Y_L)=H(Y_1)+H(Y_2|Y_1)+\cdots+H(Y_L|Y_1,Y_2,\cdots,Y_{L
-- 1})\leq \sum_{l = 1}^{L}H(Y_l)$</span> ②<span class="math inline">$H(\vec{Y}|\vec{X})=H(Y_1|\vec{X})+H(Y_2|Y_1,\vec{X})+\cdots+H(Y_L|Y_1,Y_2,\cdots,Y_{L
-- 1},\vec{X})=\sum_{l =
+<li>证明： 由定义有：<span class="math inline">$I(\vec{X_{}};\vec{Y_{}})=H(\vec{Y_{}})-H(\vec{Y_{}}|\vec{X_{}})$</span>和<span class="math inline"><em>I</em>(<em>X</em><sub><em>l</em></sub>; <em>Y</em><sub><em>l</em></sub>) = <em>H</em>(<em>Y</em><sub><em>l</em></sub>) − <em>H</em>(<em>Y</em><sub><em>l</em></sub>|<em>X</em><sub><em>l</em></sub>)</span>，利用<span class="math inline"><em>H</em>(<em>X</em>)</span>的链式法则有： ①<span class="math inline">$H(\vec{Y_{}})=H(Y_1,Y_2,\cdots,Y_L)=H(Y_1)+H(Y_2|Y_1)+\cdots+H(Y_L|Y_1,Y_2,\cdots,Y_{L
+- 1})\leq \sum_{l = 1}^{L}H(Y_l)$</span> ②<span class="math inline">$H(\vec{Y_{}}|\vec{X_{}})=H(Y_1|\vec{X_{}})+H(Y_2|Y_1,\vec{X_{}})+\cdots+H(Y_L|Y_1,Y_2,\cdots,Y_{L
+- 1},\vec{X_{}})=\sum_{l =
 1}^{L}H(Y_l|X_l)$</span>（无记忆信道下，给定&nbsp;<span class="math inline"><em>X</em><sub><em>l</em></sub></span>&nbsp;后，其他时刻的输入输出对确定&nbsp;<span class="math inline"><em>Y</em><sub><em>l</em></sub></span>&nbsp;的不确定性没有额外帮助）
-所以有：<span class="math inline">$I(\vec{X};\vec{Y})=H(\vec{Y})-H(\vec{Y}|\vec{X})\leq
+所以有：<span class="math inline">$I(\vec{X_{}};\vec{Y_{}})=H(\vec{Y_{}})-H(\vec{Y_{}}|\vec{X_{}})\leq
 \sum_{l = 1}^{L}H(Y_l)-\sum_{l = 1}^{L}H(Y_l|X_l)=\sum_{l =
 1}^{L}I(X_l;Y_l)$</span>。</li>
 </ul></li>
 <li><strong>输入矢量<span class="math inline">$\vec{X_{}}$</span>中各分量相互独立时</strong>：
-<span class="math display">$$I(\vec{X};\vec{Y})\geq\sum_{l =
+<span class="math display">$$I(\vec{X_{}};\vec{Y_{}})\geq\sum_{l =
 1}^{L}I(X_l;Y_l)$$</span>
 <ul>
-<li>证明： 由定义有：<span class="math inline"><em>I</em>(<em>X⃗</em>; <em>Y⃗</em>) = <em>H</em>(<em>X⃗</em>) − <em>H</em>(<em>X⃗</em>|<em>Y⃗</em>)</span>和<span class="math inline"><em>I</em>(<em>X</em><sub><em>l</em></sub>; <em>Y</em><sub><em>l</em></sub>) = <em>H</em>(<em>X</em><sub><em>l</em></sub>) − <em>H</em>(<em>X</em><sub><em>l</em></sub>|<em>Y</em><sub><em>l</em></sub>)</span>，利用<span class="math inline"><em>H</em>(<em>X</em>)</span>的链式法则有： ①<span class="math inline">$H(\vec{X})=H(X_1,X_2,\cdots,X_L)=H(X_1)+H(X_2|X_1)+\cdots+H(X_L|X_1,X_2,\cdots,X_{L
-- 1})=\sum_{l = 1}^{L}H(X_l)$</span>（由于各分量相互独立） ②<span class="math inline">$H(\vec{X}|\vec{Y})=H(X_1|\vec{Y})+H(X_2|X_1,\vec{Y})+\cdots+H(X_L|X_1,X_2,\cdots,X_{L
-- 1},\vec{Y})=\sum_{l = 1}^{L}H(X_l|\vec{Y})\leq \sum_{l =
+<li>证明： 由定义有：<span class="math inline">$I(\vec{X_{}};\vec{Y_{}})=H(\vec{X_{}}) -
+H(\vec{X_{}}|\vec{Y_{}})$</span>和<span class="math inline"><em>I</em>(<em>X</em><sub><em>l</em></sub>; <em>Y</em><sub><em>l</em></sub>) = <em>H</em>(<em>X</em><sub><em>l</em></sub>) − <em>H</em>(<em>X</em><sub><em>l</em></sub>|<em>Y</em><sub><em>l</em></sub>)</span>，利用<span class="math inline"><em>H</em>(<em>X</em>)</span>的链式法则有： ①<span class="math inline">$H(\vec{X_{}})=H(X_1,X_2,\cdots,X_L)=H(X_1)+H(X_2|X_1)+\cdots+H(X_L|X_1,X_2,\cdots,X_{L
+- 1})=\sum_{l = 1}^{L}H(X_l)$</span>（由于各分量相互独立） ②<span class="math inline">$H(\vec{X_{}}|\vec{Y_{}})=H(X_1|\vec{Y_{}})+H(X_2|X_1,\vec{Y_{}})+\cdots+H(X_L|X_1,X_2,\cdots,X_{L
+- 1},\vec{Y_{}})=\sum_{l = 1}^{L}H(X_l|\vec{Y_{}})\leq \sum_{l =
 1}^{L}H(X_l|Y_l)$</span>（已知更多信息&nbsp;<span class="math inline">$\vec{Y_{}}$</span>&nbsp;时，<span class="math inline"><em>X</em><sub><em>l</em></sub></span>&nbsp;的不确定性不会比仅知道&nbsp;<span class="math inline"><em>Y</em><sub><em>l</em></sub></span>&nbsp;时更大）
-所以有：<span class="math inline">$I(\vec{X};\vec{Y})=H(\vec{X})-H(\vec{X}|\vec{Y})\geq
-\sum_{l = 1}^{L}H(X_l)-\sum_{l = 1}^{L}H(X_l|\vec{Y})=\sum_{l =
+所以有：<span class="math inline">$I(\vec{X_{}};\vec{Y_{}})=H(\vec{X_{}})-H(\vec{X_{}}|\vec{Y_{}})\geq
+\sum_{l = 1}^{L}H(X_l)-\sum_{l = 1}^{L}H(X_l|\vec{Y_{}})=\sum_{l =
 1}^{L}I(X_l;Y_l)$</span>。</li>
 </ul></li>
 <li><strong>当输入矢量<span class="math inline">$\vec{X_{}}$</span>独立且信道无记忆时</strong>，上述两个性质统一取等号，此时<strong>信道容量</strong>：
 <span class="math display">$$
   \begin{align*}
-  C_L&amp;=\max_{p(x)}I(\vec{X};\vec{Y})=\max_{p(x)}\sum_{l =
+  C_L&amp;=\max_{p(x)}I(\vec{X_{}};\vec{Y_{}})=\max_{p(x)}\sum_{l =
 1}^{L}I(X_l;Y_l)\\
   &amp;=\sum_{l = 1}^{L}\max_{p(x)}I(X_l;Y_l)=\sum_{l = 1}^{L}C_l
   \end{align*}
   $$</span>
 <ul>
 <li>当信道平稳时<span class="math inline"><em>C</em><sub><em>L</em></sub> = <em>L</em><em>C</em><sub>1</sub></span></li>
-<li>一般情况下，<span class="math inline"><em>I</em>(<em>X⃗</em>; <em>Y⃗</em>) ≤ <em>L</em><em>C</em><sub>1</sub></span>
-，其中<span class="math inline"><em>C</em><sub>1</sub></span>是单个时刻的信道容量</li>
+<li>一般情况下，<span class="math inline">$I(\vec{X_{}};\vec{Y_{}})\leq
+LC_1$</span> ，其中<span class="math inline"><em>C</em><sub>1</sub></span>是单个时刻的信道容量</li>
 </ul></li>
 </ul></li>
 <li>输入矢量独立且信道无记忆时，相当于对单个信道进行<span class="math inline"><em>L</em></span>次扩展的信道，也相当于<span class="math inline"><em>L</em></span>个独立的信道并联在一起。</li>
@@ -3029,10 +3056,10 @@ p(\vec{X},\vec{Y})\log\frac{p(\vec{Y}|\vec{X})}{p(\vec{Y})}
 <li>图例: <img src="image-25.png" srcset="/img/loading/loading3.gif" lazyload alt="图例"></li>
 <li>每个信道输出<span class="math inline"><em>Y</em><sub><em>l</em></sub></span>只与本信道的输入<span class="math inline"><em>X</em><sub><em>l</em></sub></span>有关，即：
 <span class="math display"><em>p</em>(<em>Y</em><sub>1</sub>, <em>Y</em><sub>2</sub>, ⋯, <em>Y</em><sub><em>L</em></sub>|<em>X</em><sub>1</sub>, <em>X</em><sub>2</sub>, ⋯, <em>X</em><sub><em>L</em></sub>) = <em>p</em>(<em>Y</em><sub>1</sub>|<em>X</em><sub>1</sub>)<em>p</em>(<em>Y</em><sub>2</sub>|<em>X</em><sub>2</sub>)⋯<em>p</em>(<em>Y</em><sub><em>L</em></sub>|<em>X</em><sub><em>L</em></sub>)</span>
-<strong>信道无记忆</strong>, 并且有 <span class="math display">$$I(\vec{X};\vec{Y})\leq\sum_{l =
+<strong>信道无记忆</strong>, 并且有 <span class="math display">$$I(\vec{X_{}};\vec{Y_{}})\leq\sum_{l =
 1}^{L}I(X_l;Y_l)$$</span></li>
 <li>并联信道容量 <span class="math display">$$C_{12\cdots L}=\max
-I(\vec{X};\vec{Y})\leq\sum_{l = 1}^{L}C_l$$</span></li>
+I(\vec{X_{}};\vec{Y_{}})\leq\sum_{l = 1}^{L}C_l$$</span></li>
 <li>当输入符号<span class="math inline"><em>X</em><sub><em>l</em></sub></span>相互独立，且<span class="math inline"><em>p</em>(<em>X</em><sub>1</sub>, <em>X</em><sub>2</sub>, ⋯, <em>X</em><sub><em>L</em></sub>)</span>达到最佳分布时，容量最大，此时：
 <span class="math display">$$C_{12\cdots L}=\sum_{l =
 1}^{L}C_l$$</span></li>
@@ -3121,20 +3148,21 @@ H_c(Y|X) = H_n(n) = (2e ^2) $。</p></li>
 <li><span class="math inline"><em>σ</em><sub><em>l</em></sub><sup>2</sup></span>是第<span class="math inline"><em>l</em></span>个噪声的功率</li>
 </ul></li>
 <li>信道无记忆 <span class="math display">$$
-  p(\vec{y}|\vec{x}) = \prod_{l = 1}^{L} p(y_l|x_l)
+  p(\vec{y_{}}|\vec{x_{}}) = \prod_{l = 1}^{L} p(y_l|x_l)
   $$</span></li>
 <li>加性噪声各时刻独立 <span class="math display">$$
-  p_n(\vec{n}) = p_y(\vec{y}|\vec{x}) = \prod_{l = 1}^{L} p_n(n_l) \quad
-n_l \sim N(0, \sigma_l^2)
+  p_n(\vec{n_{}}) = p_y(\vec{y_{}}|\vec{x_{}}) = \prod_{l = 1}^{L}
+p_n(n_l) \quad n_l \sim N(0, \sigma_l^2)
   $$</span></li>
 </ul></li>
 <li><p><strong>互信息</strong>： <span class="math display">$$
-  I(\vec{X}; \vec{Y}) \leq \sum_{l = 1}^{L} I(X_l; Y_l) \leq \sum_{l =
-1}^{L} \frac{1}{2} \log(1 + \frac{P_l}{\sigma_l^2})
+  I(\vec{X_{}}; \vec{Y_{}}) \leq \sum_{l = 1}^{L} I(X_l; Y_l) \leq
+\sum_{l = 1}^{L} \frac{1}{2} \log(1 + \frac{P_l}{\sigma_l^2})
   $$</span></p></li>
 <li><p><strong>信道容量</strong>： <span class="math display">$$
-  C = \max_{p(x)} I(\vec{X}; \vec{Y}) = \sum_{l = 1}^{L} \frac{1}{2}
-\log(1 + \frac{P_l}{\sigma_l^2}) \quad \text{bit}/L \text{ 序列}
+  C = \max_{p(x)} I(\vec{X_{}}; \vec{Y_{}}) = \sum_{l = 1}^{L}
+\frac{1}{2} \log(1 + \frac{P_l}{\sigma_l^2}) \quad \text{bit}/L \text{
+序列}
   $$</span></p>
 <p>当且仅当输入随机变量 <span class="math inline">$\vec{X_{}}$</span>
 中各分量统计独立，且均值为0，方差为 <span class="math inline"><em>P</em><sub><em>l</em></sub></span>
@@ -3207,19 +3235,20 @@ $$</span></p>
 </ul></li>
 <li><strong>互信息</strong>： <span class="math display">$$
   \begin{align*}
-  I(x(t); y(t)) &amp;= \lim_{L \to \infty} I(\vec{X}; \vec{Y}) \\
-  &amp;= \lim_{L \to \infty} [H_c(\vec{X}) - H_c(\vec{X}|\vec{Y})] \\
-  &amp;= \lim_{L \to \infty} [H_c(\vec{Y}) - H_c(\vec{Y}|\vec{X})] \quad
-\text{bit/波形}
+  I(x(t); y(t)) &amp;= \lim_{L \to \infty} I(\vec{X_{}}; \vec{Y_{}}) \\
+  &amp;= \lim_{L \to \infty} [H_c(\vec{X_{}}) -
+H_c(\vec{X_{}}|\vec{Y_{}})] \\
+  &amp;= \lim_{L \to \infty} [H_c(\vec{Y_{}}) -
+H_c(\vec{Y_{}}|\vec{X_{}})] \quad \text{bit/波形}
   \end{align*}
   $$</span></li>
 <li><strong>单位时间内的信息传输率</strong> <span class="math inline"><em>R</em><sub><em>t</em></sub></span> 为： <span class="math display">$$
-  R_t=\lim_{t_B \to \infty}\frac{1}{t_B}I(\vec{X}; \vec{Y})\quad \text{
-bit/秒} \quad (t_B：\text{秒/波形})
+  R_t=\lim_{t_B \to \infty}\frac{1}{t_B}I(\vec{X_{}}; \vec{Y_{}})\quad
+\text{ bit/秒} \quad (t_B：\text{秒/波形})
   $$</span></li>
 <li><strong>信道容量</strong>: <span class="math display">$$
-  C_t=\max_{p(x)}[\lim_{t_B \to \infty}\frac{1}{t_B}I(\vec{X};
-\vec{Y})]\quad \text{ bit/秒}
+  C_t=\max_{p(x)}[\lim_{t_B \to \infty}\frac{1}{t_B}I(\vec{X_{}};
+\vec{Y_{}})]\quad \text{ bit/秒}
   $$</span></li>
 <li>带宽受限加性高斯白噪声 <span class="math inline"><em>n</em>(<em>t</em>)</span>，均值为0，功率谱密度
 <span class="math inline">$\frac{N_0}{2}$</span></li>
@@ -3999,7 +4028,9 @@ n}{\log m}$$</span>
 </ul>
 <h4 id="渐进均分性定理aep">渐进均分性定理（AEP）</h4>
 <ul>
-<li><strong>定理</strong>：<span class="math inline"><em>X⃗</em> = (<em>X</em><sub>1</sub><em>X</em><sub>2</sub>⋯<em>X</em><sub><em>L</em></sub>)</span>，为独立同分布（i.i.d）随机变量序列，具有渐近均分性质（AEP，Asymptotic
+<li><strong>定理</strong>：<span class="math inline">$\vec{X_{}}=(X_1
+X_2 \cdots
+X_L)$</span>，为独立同分布（i.i.d）随机变量序列，具有渐近均分性质（AEP，Asymptotic
 equipartition property）： <span class="math display">$$\forall
 \varepsilon &gt; 0，当 L \to \infty时，p(X_1,X_2,\cdots,X_L) \to 2^{-L
 H(X)}$$</span></li>
@@ -4007,16 +4038,15 @@ H(X)}$$</span></li>
 </ul>
 <h4 id="定长编码定理">定长编码定理</h4>
 <ul>
-<li><p><strong>定理</strong>：对于由 <span class="math inline"><em>L</em></span> 个符号组成的，每个符号的熵为 <span class="math inline"><em>H</em><sub><em>L</em></sub>(<em>X⃗</em>)</span>
-的无记忆平稳符号序列 <span class="math inline"><em>X</em><sub>1</sub>, <em>X</em><sub>2</sub>, ⋯, <em>X</em><sub><em>L</em></sub></span>，可用
+<li><p><strong>定理</strong>：对于由 <span class="math inline"><em>L</em></span> 个符号组成的，每个符号的熵为 <span class="math inline">$H_L(\vec{X_{}})$</span> 的无记忆平稳符号序列 <span class="math inline"><em>X</em><sub>1</sub>, <em>X</em><sub>2</sub>, ⋯, <em>X</em><sub><em>L</em></sub></span>，可用
 <span class="math inline"><em>K</em><sub><em>L</em></sub></span> 个符号
 <span class="math inline"><em>Y</em><sub>1</sub>, <em>Y</em><sub>2</sub>, ⋯, <em>Y</em><sub><em>K</em><sub><em>L</em></sub></sub></span>（每个符号有
 <span class="math inline"><em>m</em></span> 种可能值，即<span class="math inline"><em>m</em></span>进制编码）进行定长编码。对于任意
 <span class="math inline"><em>ε</em> &gt; 0</span>，<span class="math inline"><em>δ</em> &gt; 0</span>，只要 <span class="math display">$$\overline{K} = \frac{K_L}{L}\log m \geq
-H_L(\vec{X}) + \varepsilon$$</span></p>
+H_L(\vec{X_{}}) + \varepsilon$$</span></p>
 <p>则当 <span class="math inline"><em>L</em></span>
 足够大时，必可使译码差错小于 <span class="math inline"><em>δ</em></span>； 反之，当 <span class="math display">$$\overline{K} = \frac{K_L}{L}\log m \leq
-H_L(\vec{X}) - 2\varepsilon$$</span></p>
+H_L(\vec{X_{}}) - 2\varepsilon$$</span></p>
 <p>时，译码差错一定是有限值，当 <span class="math inline"><em>L</em> → ∞</span>
 时，译码几乎必定出错。</p></li>
 <li><p><strong>证明</strong>：<strong>见<a href="Ch5sup_无失真信源编码定理.md/#定长编码定理">无失真信源编码定理</a></strong></p></li>
@@ -4720,7 +4750,9 @@ encoding)</h4>
 <h1 id="第五章补充-无失真信源编码">第五章补充 无失真信源编码</h1>
 <h2 id="渐进均分性定理aep-1">渐进均分性定理（AEP）</h2>
 <ul>
-<li><p><strong>定理</strong>：<span class="math inline"><em>X⃗</em> = (<em>X</em><sub>1</sub><em>X</em><sub>2</sub>⋯<em>X</em><sub><em>L</em></sub>)</span>，为独立同分布（i.i.d）随机变量序列，具有渐近均分性质（AEP，Asymptotic
+<li><p><strong>定理</strong>：<span class="math inline">$\vec{X_{}}=(X_1
+X_2 \cdots
+X_L)$</span>，为独立同分布（i.i.d）随机变量序列，具有渐近均分性质（AEP，Asymptotic
 equipartition property）： <span class="math display">$$\forall
 \varepsilon &gt; 0，当 L \to \infty时，p(X_1,X_2,\cdots,X_L) \to 2^{-L
 H(X)}$$</span></p></li>
@@ -4733,17 +4765,17 @@ H(X)}$$</span></p></li>
 <ul>
 <li><strong>自信息量</strong>： <span class="math display">$$
   \begin{align*}
-  I(\vec{X}) &amp;= -\log p(X_1,X_2,\cdots,X_L)\\
+  I(\vec{X_{}}) &amp;= -\log p(X_1,X_2,\cdots,X_L)\\
   &amp;=-\log p(X_1)-\log p(X_2)-\cdots-\log p(X_L)\\
   &amp;=\sum_{i = 1}^{L} I(X_i)
   \end{align*}
   $$</span></li>
 <li><strong>均值</strong>(由i.i.d.)）： <span class="math display">$$
-  E\{I(\vec{X})\}=E\left\{\sum_{i = 1}^{L} I(X_i)\right\}=\sum_{i =
+  E\{I(\vec{X_{}})\}=E\left\{\sum_{i = 1}^{L} I(X_i)\right\}=\sum_{i =
 1}^{L} E\{I(X_i)\}=\sum_{i = 1}^{L} H(X_i)=L H(X)
   $$</span></li>
 <li><strong>方差</strong>(由i.i.d.)： <span class="math display">$$
-  D\{I(\vec{X})\}=D\left\{\sum_{i = 1}^{L} I(X_i)\right\}=\sum_{i =
+  D\{I(\vec{X_{}})\}=D\left\{\sum_{i = 1}^{L} I(X_i)\right\}=\sum_{i =
 1}^{L} D\{I(X_i)\}=L D(I(X))
   $$</span> 其中 <span class="math display">$$
   D(I(X)) = E\left[(I(X)-H(X))^2\right]=\sum_{i = 1}^{n} p(x_i)(-\log
@@ -4753,10 +4785,10 @@ p(x_i)-H(X))^2
       P_r\{|X - \mu| \geq \varepsilon\} \leq
 \frac{\sigma^2}{\varepsilon^2}\quad (\varepsilon&gt;0, \sigma&gt;0)
   $$</span> 有： <span class="math display">$$
-  P_r\left\{\left|I(\vec{X})-L H(X)\right| \geq L\varepsilon\right\}
+  P_r\left\{\left|I(\vec{X_{}})-L H(X)\right| \geq L\varepsilon\right\}
 \leq \frac{L D(I(X))}{(L\varepsilon)^2}
   $$</span> <span class="math display">$$
-  P_r\left\{\left|\frac{I(\vec{X})}{L}-H(X)\right| \geq
+  P_r\left\{\left|\frac{I(\vec{X_{}})}{L}-H(X)\right| \geq
 \varepsilon\right\} \leq \frac{D(I(X))}{L\varepsilon^2}
   $$</span> 当 <span class="math inline"><em>L</em> → ∞</span> 时 <span class="math display">$$
   \begin{align*}
@@ -4783,9 +4815,9 @@ p(x_i)-H(X))^2
 <ul>
 <li><p><strong>定义</strong> <span class="math display">$$
   \begin{align*}
-  &amp;A_{\varepsilon}=\left\{\vec{x}:\left|\frac{I(\vec{x})}{L}-H(X)\right|
+  &amp;A_{\varepsilon}=\left\{\vec{x_{}}:\left|\frac{I(\vec{x_{}})}{L}-H(X)\right|
 \leq \varepsilon\right\}\\
-  &amp;A_{\varepsilon}^c=\left\{\vec{x}:\left|\frac{I(\vec{x})}{L}-H(X)\right|
+  &amp;A_{\varepsilon}^c=\left\{\vec{x_{}}:\left|\frac{I(\vec{x_{}})}{L}-H(X)\right|
 &gt; \varepsilon\right\}\\
   &amp;A_{\varepsilon}+A_{\varepsilon}^c = X^L=\{\vec{x_{i}}\}\quad i =
 1,2,\cdots,n^L
@@ -4793,17 +4825,19 @@ p(x_i)-H(X))^2
   $$</span></p></li>
 <li><p><strong>性质</strong></p>
 <ol type="1">
-<li>若 <span class="math inline"><em>x⃗</em> ∈ <em>A</em><sub><em>ε</em></sub></span>，则典型集中的元素几乎是等概率出现的：
-<span class="math display">2<sup>−<em>L</em>(<em>H</em>(<em>X</em>) + <em>ε</em>)</sup> ≤ <em>p</em>(<em>x⃗</em>) ≤ 2<sup>−<em>L</em>(<em>H</em>(<em>X</em>) − <em>ε</em>)</sup></span></li>
+<li>若 <span class="math inline">$\vec{x_{}} \in
+A_{\varepsilon}$</span>，则典型集中的元素几乎是等概率出现的： <span class="math display">$$2^{-L(H(X)+\varepsilon)} \leq p(\vec{x_{}}) \leq
+2^{-L(H(X)-\varepsilon)}$$</span></li>
 <li>当 <span class="math inline"><em>L</em></span>
-充分大时，典型集的概率近似为1： <span class="math display"><em>P</em><sub><em>r</em></sub>(<em>A</em><sub><em>ε</em></sub>) = ∑<sub><em>x⃗</em> ∈ <em>A</em><sub><em>ε</em></sub></sub><em>p</em>(<em>x⃗</em>) &gt; 1 − <em>ε</em></span></li>
+充分大时，典型集的概率近似为1： <span class="math display">$$P_r(A_\varepsilon) = \sum_{\vec{x_{}} \in
+A_{\varepsilon}} p(\vec{x_{}})&gt;1 - \varepsilon$$</span></li>
 <li>典型集中元素的个数： <span class="math display">|<em>A</em><sub><em>ε</em></sub>| ≤ 2<sup><em>L</em>(<em>H</em>(<em>X</em>) + <em>ε</em>)</sup></span>
 <ul>
 <li>证明： <span class="math display">$$
   \begin{align*}
-  1&amp;=\sum_{\vec{x} \in X^L} p(\vec{x}) \geq \sum_{\vec{x} \in
-A_{\varepsilon}} p(\vec{x})\\
-  &amp;\geq \sum_{\vec{x} \in A_{\varepsilon}}
+  1&amp;=\sum_{\vec{x_{}} \in X^L} p(\vec{x_{}}) \geq \sum_{\vec{x_{}}
+\in A_{\varepsilon}} p(\vec{x_{}})\\
+  &amp;\geq \sum_{\vec{x_{}} \in A_{\varepsilon}}
 2^{-L(H(X)+\varepsilon)}=|A_{\varepsilon}|2^{-L(H(X)+\varepsilon)}\\
   \Rightarrow &amp;|A_{\varepsilon}| \leq 2^{L(H(X)+\varepsilon)}
   \end{align*}
@@ -4814,9 +4848,9 @@ A_{\varepsilon}} p(\vec{x})\\
 <ul>
 <li>证明： <span class="math display">$$
   \begin{align*}
-  1-\varepsilon &amp;\leq P_r(A_{\varepsilon}) = \sum_{\vec{x} \in
-A_{\varepsilon}} p(\vec{x})\\
-  &amp; \leq \sum_{\vec{x} \in A_{\varepsilon}}
+  1-\varepsilon &amp;\leq P_r(A_{\varepsilon}) = \sum_{\vec{x_{}} \in
+A_{\varepsilon}} p(\vec{x_{}})\\
+  &amp; \leq \sum_{\vec{x_{}} \in A_{\varepsilon}}
 2^{-L(H(X)-\varepsilon)}=|A_{\varepsilon}|2^{-L(H(X)-\varepsilon)}\\
   \Rightarrow |A_{\varepsilon}| &amp;\geq (1 -
 \varepsilon)2^{L(H(X)-\varepsilon)}
@@ -4828,15 +4862,14 @@ A_{\varepsilon}} p(\vec{x})\\
 </ul>
 <h2 id="定长编码定理-1">定长编码定理</h2>
 <ul>
-<li><p><strong>定理</strong>：对于由 <span class="math inline"><em>L</em></span> 个符号组成的，每个符号的熵为 <span class="math inline"><em>H</em><sub><em>L</em></sub>(<em>X⃗</em>)</span>
-的无记忆平稳符号序列 <span class="math inline"><em>X</em><sub>1</sub>, <em>X</em><sub>2</sub>, ⋯, <em>X</em><sub><em>L</em></sub></span>，可用
+<li><p><strong>定理</strong>：对于由 <span class="math inline"><em>L</em></span> 个符号组成的，每个符号的熵为 <span class="math inline">$H_L(\vec{X_{}})$</span> 的无记忆平稳符号序列 <span class="math inline"><em>X</em><sub>1</sub>, <em>X</em><sub>2</sub>, ⋯, <em>X</em><sub><em>L</em></sub></span>，可用
 <span class="math inline"><em>K</em><sub><em>L</em></sub></span> 个符号
 <span class="math inline"><em>Y</em><sub>1</sub>, <em>Y</em><sub>2</sub>, ⋯, <em>Y</em><sub><em>K</em><sub><em>L</em></sub></sub></span>（每个符号有
 <span class="math inline"><em>m</em></span> 种可能值，即<span class="math inline"><em>m</em></span>进制编码）进行定长编码。对于任意
-<span class="math inline"><em>ε</em> &gt; 0</span>，<span class="math inline"><em>δ</em> &gt; 0</span>，只要 <span class="math display">$$\frac{K_L}{L}\log m \geq H_L(\vec{X}) +
+<span class="math inline"><em>ε</em> &gt; 0</span>，<span class="math inline"><em>δ</em> &gt; 0</span>，只要 <span class="math display">$$\frac{K_L}{L}\log m \geq H_L(\vec{X_{}}) +
 \varepsilon$$</span></p>
 <p>则当 <span class="math inline"><em>L</em></span>
-足够大时，必可使译码差错小于 <span class="math inline"><em>δ</em></span>； 反之，当 <span class="math display">$$\frac{K_L}{L}\log m \leq H_L(\vec{X}) -
+足够大时，必可使译码差错小于 <span class="math inline"><em>δ</em></span>； 反之，当 <span class="math display">$$\frac{K_L}{L}\log m \leq H_L(\vec{X_{}}) -
 2\varepsilon$$</span></p>
 <p>时，译码差错一定是有限值，当 <span class="math inline"><em>L</em> → ∞</span>
 时，译码几乎必定出错。</p></li>
@@ -4845,7 +4878,7 @@ A_{\varepsilon}} p(\vec{x})\\
 <li><p>对 <span class="math inline"><em>A</em><sub><em>ε</em></sub></span>
 中的元素进行定长编码，为了唯一可译，码符号个数大于等于 <span class="math inline">|<em>A</em><sub><em>ε</em></sub>|</span>，即 <span class="math display"><em>m</em><sup><em>K</em><sub><em>L</em></sub></sup> ≥ |<em>A</em><sub><em>ε</em></sub>|</span></p>
 <p>此时<span class="math inline">|<em>A</em><sub><em>ε</em></sub>|</span>
-取上界，记平均符号熵<span class="math inline"><em>H</em><sub><em>L</em></sub>(<em>X⃗</em>)</span>
+取上界，记平均符号熵<span class="math inline">$H_L(\vec{X_{}})$</span>
 为 <span class="math inline"><em>H</em>(<em>X</em>)</span> <span class="math display">$$
   \begin{align*}
   m^{K_L} &amp;\geq 2^{L(H(X) + \varepsilon)}\\
@@ -4879,8 +4912,8 @@ P_r\{A_{\varepsilon}^c\} \leq
 个元素进行一对一编码， <span class="math display">$$
   \begin{align*}
   P_r(只出现A_{\varepsilon}中的m^{K_L}个元素) &amp;\leq m^{K_L} \cdot
-\max_{\vec{x} \in A_{\varepsilon}} p(\vec{x}) = m^{K_L}2^{-L(H(X) -
-\varepsilon)}\\
+\max_{\vec{x_{}} \in A_{\varepsilon}} p(\vec{x_{}}) = m^{K_L}2^{-L(H(X)
+- \varepsilon)}\\
   &amp;\leq 2^{L(H(X) - 2\varepsilon) - L(H(X) - \varepsilon)}\\
   &amp;= 2^{-L\varepsilon}
   \end{align*}
@@ -4962,27 +4995,28 @@ $$</span></p></li>
 </ul>
 <h2 id="离散平稳无记忆序列变长编码定理香农第一定理-1">离散平稳无记忆序列变长编码定理（香农第一定理）</h2>
 <ul>
-<li><p><strong>定理</strong>：对于平均符号熵为 <span class="math inline"><em>H</em><sub><em>L</em></sub>(<em>X⃗</em>)</span>
-的离散平稳无记忆信源，必存在一种无失真编码方法，使平均信息率 <span class="math inline">$\overline{K}$</span> 满足不等式： <span class="math display">$$H_L(\vec{X}) \leq \overline{K} &lt; H_L(\vec{X})
-+ \varepsilon$$</span></p>
+<li><p><strong>定理</strong>：对于平均符号熵为 <span class="math inline">$H_L(\vec{X_{}})$</span>
+的离散平稳无记忆信源，必存在一种无失真编码方法，使平均信息率 <span class="math inline">$\overline{K}$</span> 满足不等式： <span class="math display">$$H_L(\vec{X_{}}) \leq \overline{K} &lt;
+H_L(\vec{X_{}}) + \varepsilon$$</span></p>
 <p>其中 <span class="math inline"><em>ε</em></span> 为任意小正数，<span class="math inline">$\overline{K} = \frac{\overline{k}_L}{L} \log
 m$</span>，<span class="math inline">$\overline{k}_L$</span> 为 <span class="math inline"><em>L</em></span> 个符号的平均码长。</p></li>
-<li><p><strong>证明</strong> 将 <span class="math inline"><em>X⃗</em> = (<em>X</em><sub>1</sub><em>X</em><sub>2</sub>⋯<em>X</em><sub><em>L</em></sub>)</span>
+<li><p><strong>证明</strong> 将 <span class="math inline">$\vec{X_{}}=(X_1 X_2 \cdots X_L)$</span>
 作为一个整体，构成一个新的单符号信源。因此有： <span class="math display">$$
   \begin{align*}
-  \frac{L H_L(\vec{X})}{\log m} &amp;\leq \overline{k}_L &lt; \frac{L
-H_L(\vec{X})}{\log m} + 1\\
-  H_L(\vec{X}) &amp;\leq \frac{\overline{k}_L}{L} \log m &lt;
-H_L(\vec{X}) + \frac{\log m}{L}
+  \frac{L H_L(\vec{X_{}})}{\log m} &amp;\leq \overline{k}_L &lt; \frac{L
+H_L(\vec{X_{}})}{\log m} + 1\\
+  H_L(\vec{X_{}}) &amp;\leq \frac{\overline{k}_L}{L} \log m &lt;
+H_L(\vec{X_{}}) + \frac{\log m}{L}
   \end{align*}
   $$</span></p>
 <p>令 <span class="math inline">$\overline{K}= \frac{\overline{k}_L}{L}
-\log m$</span>，则有 <span class="math display">$$H_L(\vec{X}) \leq
-\overline{K} &lt; H_L(\vec{X}) + \varepsilon \quad (L \to
+\log m$</span>，则有 <span class="math display">$$H_L(\vec{X_{}}) \leq
+\overline{K} &lt; H_L(\vec{X_{}}) + \varepsilon \quad (L \to
 \infty)$$</span></p>
 <p>此时编码效率<span class="math display">$$\eta =
-\frac{H_L(\vec{X})}{\overline{K}} &gt; \frac{H_L(\vec{X})}{H_L(\vec{X})
-+ \frac{\log m}{L}}$$</span></p></li>
+\frac{H_L(\vec{X_{}})}{\overline{K}} &gt;
+\frac{H_L(\vec{X_{}})}{H_L(\vec{X_{}}) + \frac{\log
+m}{L}}$$</span></p></li>
 </ul>
 <h1 id="第六章-信道编码">第六章 信道编码</h1>
 <ul>
@@ -6521,24 +6555,24 @@ m)}$</span>，共有<span class="math inline"><em>n</em><sup><em>m</em></sup></s
 <h4 id="最小汉明距离译码">最小汉明距离译码</h4>
 <ul>
 <li><span class="math display">$$\hat{C}_i=\arg\max_{1\leq i\leq
-M}p(\vec{r}|\vec{C_{0}})p(\vec{C_{0}}),\quad M = q^k$$</span></li>
+M}p(\vec{r_{}}|\vec{C_{0}})p(\vec{C_{0}}),\quad M = q^k$$</span></li>
 <li>在二进制对称信道（BSC）中：
 <ul>
-<li><span class="math inline">$p(\vec{r}|\vec{C_{0}})=\prod_{j =
+<li><span class="math inline">$p(\vec{r_{}}|\vec{C_{0}})=\prod_{j =
 1}^{n}p(r_j|c_{ij})$</span> ，且 <span class="math inline">$p(r_j|c_{ij}) =
   \begin{cases}
   p, &amp; c_{ij} \neq r_j \\
   1 - p, &amp; c_{ij} = r_j
   \end{cases}$</span>，其中<span class="math inline">$p=P_e&lt;\frac{1}{2}$</span>。</li>
-<li>进一步推导可得<span class="math display">$$p(\vec{r}|\vec{C_{0}})=\prod_{j =
+<li>进一步推导可得<span class="math display">$$p(\vec{r_{}}|\vec{C_{0}})=\prod_{j =
 1}^{n}p(r_j|c_{ij})=p^d(1 - p)^{n - d}=(\frac{p}{1 - p})^d(1 -
 p)^n$$</span></li>
 <li>其中 <span class="math display">$$d =
-dis(\vec{r},\vec{C_{0}})=w(\vec{r}\oplus\vec{C_{0}})=\sum_{j =
+dis(\vec{r_{}},\vec{C_{0}})=w(\vec{r_{}}\oplus\vec{C_{0}})=\sum_{j =
 1}^{n}r_j\oplus c_{ij}$$</span> 即 <span class="math inline">$\vec{r_{}}$</span> 与 <span class="math inline">$\vec{C_{0}}$</span> 的汉明距离。</li>
 <li>由于 <span class="math inline">$\frac{p}{1 - p} \leq 1$</span>
 ，<span class="math inline">(1 − <em>p</em>)<sup><em>n</em></sup></span>
-是常数，所以 <span class="math inline"><em>d</em></span> 越大，<span class="math inline">$p(\vec{r}|\vec{C_{0}})$</span> 越小。求 <span class="math inline">$\max p(\vec{r}|\vec{C_{0}})$</span>
+是常数，所以 <span class="math inline"><em>d</em></span> 越大，<span class="math inline">$p(\vec{r_{}}|\vec{C_{0}})$</span> 越小。求 <span class="math inline">$\max p(\vec{r_{}}|\vec{C_{0}})$</span>
 的问题就转化成求最小汉明距离问题。</li>
 </ul></li>
 </ul>

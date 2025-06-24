@@ -70,8 +70,8 @@
 }
 .LinkCard-image {
     display: block;
-    width: 60px;
-    height: auto;
+    width: 60px !important;
+    height: auto !important;
     border-radius: inherit;
     margin-bottom: 0 !important;
 }
