@@ -1,0 +1,17 @@
+.markdown-body p > img,
+.markdown-body p > a > img,
+.markdown-body figure > img,
+.markdown-body figure > a > img {
+  width: 70%; /* 强制宽度为页面的70% */
+  height: auto; /* 保持图片比例 */
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto; /* 图片居中 */
+}
+.page-content img, .post-content img {
+  width: 70%; /* 强制宽度为页面的70% */
+  height: auto; /* 保持图片比例 */
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto; /* 图片居中 */
+}
