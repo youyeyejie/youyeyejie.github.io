@@ -610,8 +610,8 @@ custom_js:
 }
 .LinkCard-image {
     display: block;
-    width: 60px;
-    height: auto;
+    width: 60px !important;
+    height: auto !important;
     border-radius: inherit;
     margin-bottom: 0 !important;
 }
@@ -634,7 +634,8 @@ window.onload = function () {
         var LinkCard = LinkCards[i];
         var link = LinkCard.href;
         var title = LinkCard.innerText;
-        var logourl = LinkCard.name;
+        // 如果没有指定logo地址，则使用默认的loading图片
+        var logourl = LinkCard.name ? LinkCard.name : '/img/loading/loading1.gif';
         var displayLink = truncateLink(link, 32);
 
         LinkCard.innerHTML =
@@ -672,7 +673,42 @@ custom_js:
 <a href="" name="" class="LinkCard">标题</a>
 ```
 
-其中 `href` 是链接地址，`name` 是链接的logo地址，`标题` 处为连接卡片显示的标题。
+其中:
+
+- `href` 是链接地址，不填就只会收获一张空卡片哦
+- `name` 是链接的logo地址，若不指定或留空，则使用脚本中指定的默认logo地址（记得手动调整哦）
+- `class` 处为链接卡片的样式类名，必须为 `LinkCard`，否则无法应用样式。
+- `标题` 处为连接卡片显示的标题。
+
+# 统一文章图片宽度
+
+在发了若干篇文章后，我发现由于我笔记中插入的图片分辨率不一致，导致在文章列表中呈现出来的图片宽度不统一，观感较差。为了解决这个问题，我在 `source/css/` 目录下新建一个 `UnifyImgWidth.css` 文件（如果不存在该目录则需要先创建），强制统一文章图片的宽度。
+
+```css
+.markdown-body p > img,
+.markdown-body p > a > img,
+.markdown-body figure > img,
+.markdown-body figure > a > img {
+  width: 70%; /* 强制宽度为页面的70% */
+  height: auto; /* 保持图片比例 */
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto; /* 图片居中 */
+}
+.page-content img, .post-content img {
+  width: 70%; /* 强制宽度为页面的70% */
+  height: auto; /* 保持图片比例 */
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto; /* 图片居中 */
+}
+```
+
+并在 `_config.fluid.yml` 文件的 `custom_css` 部分添加以下内容：
+```yaml 
+custom_css:
+  - /css/UnifyImgWidth.css
+```
 
 # 首页文章滑入动效
 
@@ -1221,6 +1257,7 @@ custom_css:
   - /css/StrongInDark.css # 强化暗色模式加粗字体
   - /css/TitleGradient.css # 文章标题颜色渐变效果
   - /css/TitleNeon.css # 博客标题霓虹灯效
+  - /css/UnifyImgWidth.css # 统一文章图片宽度
   - https://lib.baomitu.com/font-awesome/6.1.2/css/all.min.css # Font Awesome 图标库
 ```
 

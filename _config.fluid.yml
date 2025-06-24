@@ -261,7 +261,7 @@ custom_css:
   - /css/StrongInDark.css # 强化暗色模式加粗字体
   - /css/TitleGradient.css # 文章标题颜色渐变效果
   - /css/TitleNeon.css # 博客标题霓虹灯效
-  - /css/UniformImgWidth.css # 文章图片宽度统一
+  - /css/UnifyImgWidth.css # 统一文章图片宽度
   - https://lib.baomitu.com/font-awesome/6.1.2/css/all.min.css # Font Awesome 图标库
 
 # 网页访问统计
