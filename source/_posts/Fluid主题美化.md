@@ -705,7 +705,7 @@ custom_js:
 ```
 
 并在 `_config.fluid.yml` 文件的 `custom_css` 部分添加以下内容：
-```yaml 
+```yaml
 custom_css:
   - /css/UnifyImgWidth.css
 ```

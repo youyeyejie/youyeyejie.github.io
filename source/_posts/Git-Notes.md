@@ -120,7 +120,7 @@ git push -f origin [分支名]
 
 1. **确认 `.gitignore` 文件配置**  
    确保 `.gitignore` 文件中已正确添加要忽略的文件或目录路径。例如：
-   ```txt
+   ```text
    # .gitignore
    ignore_file.txt
    ignore_dir/
