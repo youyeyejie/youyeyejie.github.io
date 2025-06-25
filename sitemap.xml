@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://youyeyejie.github.io/posts/%E6%95%B0%E5%AD%A6%E5%8F%B2/</loc>
+    
+    <lastmod>2025-06-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://youyeyejie.github.io/posts/Git-Notes/</loc>
     
     <lastmod>2025-06-25</lastmod>
@@ -306,6 +315,13 @@
   
   <url>
     <loc>https://youyeyejie.github.io/tags/%E7%BD%91%E5%AE%89%E6%B3%95/</loc>
+    <lastmod>2025-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://youyeyejie.github.io/tags/%E6%95%B0%E5%AD%A6%E5%8F%B2/</loc>
     <lastmod>2025-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
