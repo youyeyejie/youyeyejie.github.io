@@ -10,7 +10,7 @@ window.onload = function () {
         var LinkCard = LinkCards[i];
         var link = LinkCard.href;
         var title = LinkCard.innerText;
-        var logourl = LinkCard.name ? LinkCard.name : '/img/loading/loading1.gif';
+        var logourl = LinkCard.name ? LinkCard.name : '/img/loading/loading5.gif';
         var displayLink = truncateLink(link, 32);
 
         LinkCard.innerHTML =
