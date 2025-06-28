@@ -17,7 +17,7 @@ date: 2025-06-20 20:10:36
 
 最初打动我的其实是Boar酱的图库，毕竟作为同样一个喜欢摄影的人，我也希望有一个属于自己的网站来展示我的摄影作品。但是苦于技术力有限，我始终只敢远观。于是，我将眼光放在了无需自己从零开始手搓，而是可以站在前人的肩膀上，使用现成的框架和主题来搭建的博客上。
 
-<a href="https://gallery.boar.osaka/" name="/img/avatar.png" class="LinkCard">Boar's Gallery</a>
+<a href="https://gallery.boar.osaka/" class="LinkCard">Boar's Gallery</a>
 
 除此之外，Teruteru的博客也给了我很大的帮助和启发。事实上，过去的我并不十分热衷于记录和分享，但一次又一次在期末周借助Teruteru的学习笔记进行复习迎接考试的过程中，我逐渐意识到记录和分享的重要性。于是，我决定建立一个属于自己的博客，记录我的学习和生活点滴。
 
