@@ -183,7 +183,9 @@ hexo.extend.filter.register('theme_inject', function(injects) {
 
 # 页脚处添加一言
 
-一言是一个提供一句话服务的网站，Fluid主题内置了对一言的支持，但只能在首页作为副标题显示。而我希望保留首页的副标题，因此决定将一言添加到页脚处。具体的调用可以参考[一言开发者中心](https://developer.hitokoto.cn/sentence/)的文档。
+一言是一个提供一句话服务的网站，Fluid主题内置了对一言的支持，但只能在首页作为副标题显示。而我希望保留首页的副标题，因此决定将一言添加到页脚处。具体的调用可以参考一言开发者中心的文档。
+
+<a href="https://developer.hitokoto.cn/sentence/" name="https://developer.hitokoto.cn/logo.png" class="LinkCard">一言开发者中心</a>
 
 首先在 `source/js/` 目录下新建一个 `Hitokoto.js` 文件（如果不存在该目录则需要先创建），代码如下：
 
