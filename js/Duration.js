@@ -1,6 +1,6 @@
 !(function() {
   /** 计时起始时间，自行修改 **/
-  var start = new Date("2025/06/20 00:00:00");
+  var start = new Date("2025/06/19 23:36:01");
 
   function update() {
     var now = new Date();
@@ -22,10 +22,10 @@
     if(String(snum).length === 1 ){
       snum = "0" + snum;
     }
-    document.getElementById("timeDate").innerHTML = "本站已生存&nbsp"+dnum+"&nbsp天";
-    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";
+    document.getElementById("timeDate").innerHTML = "本站已存活&nbsp"+dnum+"&nbsp天";
+    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp";
   }
 
   update();
-  setInterval(update, 1000);
+  setInterval(update, 1000*60); // 每分钟更新一次
 })();
