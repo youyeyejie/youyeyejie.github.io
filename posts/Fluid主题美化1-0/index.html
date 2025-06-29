@@ -30,7 +30,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/fluid.jpg">
 <meta property="article:published_time" content="2025-06-21T05:05:20.000Z">
-<meta property="article:modified_time" content="2025-06-29T04:18:07.455Z">
+<meta property="article:modified_time" content="2025-06-29T12:50:38.973Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Fluid">
@@ -279,7 +279,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          6.8k 字
+          6.9k 字
         
       </span>
     
@@ -291,7 +291,7 @@
         
         
           <!-- compatible with older versions-->
-          57 分钟
+          58 分钟
         
       </span>
     
@@ -510,7 +510,7 @@ Blog的代码并进行了一些修改，为滚动条添加了样式。</p>
 <p>并在 <code>_config.fluid.yml</code> 文件的 <code>custom_css</code>
 部分添加以下内容： </p><figure class="shiki yaml"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #E06C75">custom_css</span><span style="color: #ABB2BF">:</span></span>
 <span class="line"><span style="color: #ABB2BF">  - </span><span style="color: #98C379">/css/ScrollBar.css</span></span></code></pre></div></div></figure><p></p>
-<h1 id="使用mac风格代码块样式">使用Mac风格代码块样式</h1>
+<h1 id="使用-mac-风格代码块样式">使用 Mac 风格代码块样式</h1>
 
     <div class="fold">
       <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-82a7ba27" role="button" aria-expanded="false" aria-controls="collapse-82a7ba27">
@@ -952,6 +952,7 @@ fluid 全屏背景图随日夜模式切换以及正文底页毛玻璃效果</a><
 <code>LinkCard</code>，否则无法应用样式。</li>
 <li><code>标题</code> 处为连接卡片显示的标题。</li>
 </ul>
+<p>同时在使用中我还发现了一个“特性”：对于外部链接，点击链接卡片中的标题时，浏览器会在新的标签页中打开链接，而点击连接卡片中的链接地址时，则会在当前标签页中打开链接；而对于内部链接，则始终在当前标签页中打开链接。（奇怪的知识增加了.jpg）</p>
 <h1 id="统一文章图片宽度">统一文章图片宽度</h1>
 <p>在发了若干篇文章后，我发现由于我笔记中插入的图片分辨率不一致，导致在文章列表中呈现出来的图片宽度不统一，观感较差。为了解决这个问题，我在
 <code>source/css/</code> 目录下新建一个 <code>UnifyImgWidth.css</code>
@@ -1449,6 +1450,7 @@ Blog的代码并进行一定修改。</p>
 <p>并在 <code>_config.fluid.yml</code> 文件的 <code>custom_js</code>
 部分添加以下内容： </p><figure class="shiki yaml"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #E06C75">custom_js</span><span style="color: #ABB2BF">:</span></span>
 <span class="line"><span style="color: #ABB2BF">  - </span><span style="color: #98C379">/js/TabDisplay.js</span></span></code></pre></div></div></figure><p></p>
+<h1 id="总结">总结</h1>
 <p>至此，我的博客就完成了当前所有的美化效果！最终，<code>_config.fluid.yml</code>
 文件的 <code>custom_js</code> 和 <code>custom_css</code> 部分如下所示：
 </p><figure class="shiki yaml"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #7F848E; font-style: italic"># 指定自定义 .js 文件路径，支持列表；路径是相对 source 目录，如 /js/custom.js 对应存放目录 source/js/custom.js</span></span>
@@ -1571,8 +1573,8 @@ Blog的代码并进行一定修改。</p>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/Start-Point-of-my-Blog/" title="📍Start Point of my Blog">
-                        <span class="hidden-mobile">📍Start Point of my Blog</span>
+                      <a href="/posts/%E4%B8%94%E4%BB%A5%E7%BE%A4%E8%AF%8D-%E6%B3%A8%E8%A7%A3%E6%88%91%E8%BF%99%E5%BA%A7%E8%8D%92%E5%B1%B1/" title="且以群词 注解我这座荒山">
+                        <span class="hidden-mobile">且以群词 注解我这座荒山</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -1713,7 +1715,7 @@ Blog的代码并进行一定修改。</p>
     <div class="footer-inner">
   
     <div class="footer-content">
-       <div class="powered-by"> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> </div> <div class="info" style="font-size: 0.85rem; margin: 0.15rem 0;"> <span id="duration" style="display: inline;"> <i class="fas fa-calendar"></i> <span id="timeDate">Getting date...</span> <span id="times">Getting time...</span> <script src="/js/Duration.js"></script> </span> <span id="wordcount" style="display: inline;"> <i class="fas fa-file-alt"></i> <span id="g-post-count-id">Getting word count...</span> </span> </div> <div class="hitokoto" style="font-size: 0.85rem; margin: 0.15rem 0;"> <i class="fas fa-quote-left"></i> <a target="_blank" rel="noopener" href="https://developer.hitokoto.cn/" id="hitokoto_text"><span id="hitokoto">Getting poem...</span></a> <script src="/js/Slogan.js" defer></script> </div> 
+       <div class="powered-by"> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> </div> <div class="info" style="font-size: 0.85rem; margin: 0.15rem 0.15rem;"> <span id="duration" style="display: inline;"> <i class="fas fa-calendar"></i> <span id="timeDate">Getting date...</span> <span id="times">Getting time...</span> <script src="/js/Duration.js"></script> </span> <span id="wordcount" style="display: inline;"> <i class="fas fa-file-alt"></i> <span id="g-post-count-id">Getting word count...</span> </span> </div> <div class="hitokoto" style="font-size: 0.85rem; margin: 0.15rem 0.15rem;"> <i class="fas fa-quote-left"></i> <a target="_blank" rel="noopener" href="https://developer.hitokoto.cn/" id="hitokoto_text"><span id="hitokoto">Getting poem...</span></a> <script src="/js/Hitokoto.js" defer></script> </div> 
     </div>
   
   
@@ -1905,7 +1907,7 @@ Blog的代码并进行一定修改。</p>
 
 
   <script type="text/javascript">
-    document.getElementById("g-post-count-id").innerHTML = "全站总字数 240k";
+  document.getElementById("g-post-count-id").innerHTML = "全站总字数 242k";
 </script>
 
   <noscript>
