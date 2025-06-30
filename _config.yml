@@ -127,5 +127,5 @@ theme: fluid
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/youyeyejie/youyeyejie.github.io.git
+  repo: git@github.com:youyeyejie/youyeyejie.github.io.git
   branch: main

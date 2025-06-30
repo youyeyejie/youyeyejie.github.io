@@ -19,8 +19,8 @@ index_img: /img/cover/xflops.jpg
 
 ## 信息素养是什么
 信息素养（Information Literacy）是指个体在信息社会中所具备的获取、评估、组织、利用和创造信息的综合能力，它是数字化时代每个人不可或缺的核心素养之一，其内涵不仅包括对信息工具和技术的操作能力，更强调对信息的批判性思维和伦理意识。然而，由于我国教育的局限性，绝大部分的高中生长期处于与外部社会相对隔绝的信息环境，在信息素养方面的认知和实践都相对薄弱，对于如何正确的获取和使用信息缺乏认知和经验。本文假设读者初次使用互联网，旨在提供一些具体指导，帮助读者高效获取信息并做出明智的判断。
-![chatgpt:信息素养是什么](https://notes.sjtu.edu.cn/uploads/upload_92d7426036b659853b0e084808308ef2.png)
-![chatgpt:信息素养的tips](https://notes.sjtu.edu.cn/uploads/upload_60efda32fa218e3c172267bc6577c597.png)
+![chatgpt:信息素养是什么](https://notes.sjtu.edu.cn/uploads/upload_26ba10c16291e180b4115220f6045a08.png)
+![chatgpt:信息素养的tips](https://notes.sjtu.edu.cn/uploads/upload_fe88bd386dcc86bf3cdc4535498157db.jpg)
 
 ### 信息从哪来?
 按照信息密度从高到低，可以将今天互联网的第一手信息来源大致分为以下几类：
@@ -49,8 +49,8 @@ index_img: /img/cover/xflops.jpg
 推荐阅读:
 
 - [交大生存手册：认识信息素养](https://survivesjtu.gitbook.io/survivesjtumanual/li-zhi-pian/ren-shi-xin-xi-su-yang)
-
-- [给新大学生的网上冲浪指南](https://github.com/mzdluo123/SurfingTutorial)
+- [给新大学生的网上冲浪指南](https://rainchan.win/SurfingTutorial/)
+- [大学生的百科全书](https://ac-wiki.org/)
 
 {% fold info @练习 %}
 1. 尝试梳理你对信息的需求，以及你日常生活中摄取新信息的途径和内容。
@@ -58,7 +58,6 @@ index_img: /img/cover/xflops.jpg
 3. (选做)选取一个对你来说陌生但是感兴趣的概念，尝试在两个小时内获得尽可能全面深入的理解。可以从基本原理，应用场景，发展脉络，未来方向等方面入手。
     - 参考词：深度学习，函数式编程，风险投资，量子计算，GPU，排队论···
 {% endfold %}
-
 
 
 ## 如何向他人求助
@@ -77,7 +76,7 @@ index_img: /img/cover/xflops.jpg
 推荐阅读:
 
 - [提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)  **(强烈推荐)** 
-- [别像弱智一样提问](https://github.com/tangx/Stop-Ask-Questions-The-Stupid-Ways/blob/master/README.md)
+- [别像弱智一样提问](https://github.com/tangx/Stop-Ask-Questions-The-Stupid-Ways)
 
 {% fold info @练习 %}
 1. 回忆你上一次编程/学习时遇到的困难，尝试写出一个清晰的问题描述。
@@ -107,9 +106,6 @@ index_img: /img/cover/xflops.jpg
         - 百科推荐使用[英文维基](http://en.wikipedia.org)
         - 编程问答社区：推荐Stackoverflow，不推荐CSDN
     - [信息甄别的建议](https://zhuanlan.zhihu.com/p/570534448)
-
-参考阅读：[南京大学 计算机系统基础 Introduction](https://nju-projectn.github.io/ics-pa-gitbook/ics2024/)
-
 
 ## AI的使用
 近年来，人工智能领域蓬勃发展，AI大语言模型已深度融入我们生活的方方面面。简单来讲，大语言模型通过对海量文本数据的学习训练，具备理解和生成类人自然语言的能力。这类模型可与人类对话交流、答疑解惑、提供建议，甚至进行内容创作。当下，围绕大语言模型（LLM）的应用丰富多样，下面为大家作初步介绍，助您快速入门。
@@ -166,6 +162,10 @@ index_img: /img/cover/xflops.jpg
 - **[讯飞智文](https://zhiwen.xfyun.cn/)** ：讯飞智文，可生成PPT
 - **[Suno AI](https://suno.com/)** ：Suno AI，可用于音频生成与处理。
 
+#### MCP服务
+- **[阿里云百炼](https://bailian.console.aliyun.com/)** ：阿里云百炼，全链路大模型服务与应用开发平台。
+- **[魔搭社区](https://modelscope.cn/home)** ：魔搭社区，开源模型社区，提供丰富的AI模型与工具，支持多种应用场景。
+
 {% fold info @练习 %}
 1. 试用2~3款大模型。
 2. 向大模型或者聊天智能体提问农夫过河问题，如“一个农夫需要将狼、羊、狐狸、鸡和米五种物品运送过河，每次只能带两件，且狼和羊/狐狸和鸡/鸡和米不能单独相处，每次运送时农夫必须在船上，最少需要过河几次？”，测试模型的推理能力。
@@ -207,10 +207,9 @@ index_img: /img/cover/xflops.jpg
 
 实际上，信息安全意识远远不是三言两语能说清楚的，其养成需要长期的学习和实践。以下是一些推荐的资源和文章，帮助你更深入地了解信息安全和隐私保护。
 
-- [CS教育中缺失的学期：隐私和安全](https://missing-semester-cn.github.io/2019/security/)
-- [基本安全指南](https://techsolidarity.org/resources/basic_security.html)
+- [知乎：什么是信息安全](https://www.zhihu.com/question/447543354)
+- [知乎：如何保护好自己的个人信息安全](https://www.zhihu.com/question/444763018)
+- [知乎：如何在互联网上尽可能的保护自己的隐私](https://www.zhihu.com/question/398551131)
+- [从“我”开始的安全指南](https://www.thepaper.cn/newsDetail_forward_30838925)
 - [上网和设备安全的建议](https://github.com/BushidoUK/Operational-Security-101)，适于对安全有较高追求的读者
-- 隐私保护
-    - [B站 如何安全上网避免隐私泄露？](https://www.bilibili.com/video/BV17p4y1Y7BB/)
-    - [知乎 如何在互联网上尽可能的保护自己的隐私?](https://www.zhihu.com/question/398551131)
 - [数据管理的建议](https://www.bilibili.com/video/BV1yA4y1U77y)
