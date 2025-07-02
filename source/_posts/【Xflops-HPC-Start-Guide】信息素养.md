@@ -179,7 +179,8 @@ index_img: /img/cover/xflops.jpg
 
 1. **使用强密码**：
     - 密码应包含大写字母、小写字母、数字和特殊字符，长度至少12位。
-    - 不要使用容易猜测的密码，如生日、姓名等。
+    - 不要使用容易猜测的密码，如生日、姓名等，推荐使用随机生成的强密码。
+    - 对于随机生成的强密码，推荐使用密码管理器进行生成与管理，如[KeePassXC](https://keepassxc.org/)或[Bitwarden](https://bitwarden.com/)等
     - 定期更换密码，并避免在多个账户上使用相同的密码。
 2. **启用双因素认证(2FA)**：
     - 在支持的服务上启用双因素认证，增加账户安全性，如Github、Google等。
@@ -207,8 +208,7 @@ index_img: /img/cover/xflops.jpg
 
 实际上，信息安全意识远远不是三言两语能说清楚的，其养成需要长期的学习和实践。以下是一些推荐的资源和文章，帮助你更深入地了解信息安全和隐私保护。
 
-- [知乎：什么是信息安全](https://www.zhihu.com/question/447543354)
-- [知乎：如何保护好自己的个人信息安全](https://www.zhihu.com/question/444763018)
+- [如何安全上网避免隐私泄露](https://www.bilibili.com/video/BV17p4y1Y7BB?vd_source=a03ab5db01c2fd1c452104c1fa0d9326)
 - [知乎：如何在互联网上尽可能的保护自己的隐私](https://www.zhihu.com/question/398551131)
 - [从“我”开始的安全指南](https://www.thepaper.cn/newsDetail_forward_30838925)
 - [上网和设备安全的建议](https://github.com/BushidoUK/Operational-Security-101)，适于对安全有较高追求的读者
