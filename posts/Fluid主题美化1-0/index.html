@@ -30,7 +30,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/fluid.jpg">
 <meta property="article:published_time" content="2025-06-21T05:05:20.000Z">
-<meta property="article:modified_time" content="2025-06-29T12:50:38.973Z">
+<meta property="article:modified_time" content="2025-07-03T15:16:11.045Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Fluid">
@@ -221,6 +221,18 @@
             </li>
           
         
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.travellings.cn/go-by-clouds.html" target="_self">
+                <i class="fas fa-train-subway"></i>
+                <span>开往</span>
+              </a>
+            </li>
+          
+        
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
@@ -334,6 +346,85 @@
   <div class="row nomargin-x">
     <div class="side-col d-none d-lg-block col-lg-2">
       
+  <aside class="sidebar category-bar" style="margin-right: -1rem">
+    
+
+
+
+
+
+<div class="category-list">
+  
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Hexo Blog Building"
+        id="heading-9b84d3ac4a7bc6fefd79d5872f3510b0" role="tab" data-toggle="collapse" href="#collapse-9b84d3ac4a7bc6fefd79d5872f3510b0"
+        aria-expanded="true"
+      >
+        Hexo Blog Building
+        <span class="list-group-count">(4)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-9b84d3ac4a7bc6fefd79d5872f3510b0"
+           role="tabpanel" aria-labelledby="heading-9b84d3ac4a7bc6fefd79d5872f3510b0">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/posts/Fluid%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%961-0/" title="Fluid主题美化1.0"
+           class="list-group-item list-group-item-action
+           active">
+          <span class="category-post">Fluid主题美化1.0</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/Fluid%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%962-0/" title="Fluid主题美化2.0"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Fluid主题美化2.0</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E4%B8%94%E4%BB%A5%E7%BE%A4%E8%AF%8D-%E6%B3%A8%E8%A7%A3%E6%88%91%E8%BF%99%E5%BA%A7%E8%8D%92%E5%B1%B1/" title="且以群词 注解我这座荒山"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">且以群词 注解我这座荒山</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E8%AE%A9%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E6%94%B6%E5%BD%95%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2/" title="让搜索引擎收录你的博客"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">让搜索引擎收录你的博客</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+</div>
+
+
+  </aside>
+
 
     </div>
 
@@ -817,9 +908,9 @@ fluid 全屏背景图随日夜模式切换以及正文底页毛玻璃效果</a><
         </div>
       </div>
     </div>
-<p>为了实现样式与功能分离，我将该博主的代码进行了修改：</p>
+<p>为了实现样式与功能分离，并为链接卡片提供悬浮效果，我将该博主的代码进行了修改：</p>
 <p>在 <code>source/css/</code> 目录下新建一个 <code>LinkCard.css</code>
-文件（如果不存在该目录则需要先创建），代码如下： </p><figure class="shiki css"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #56B6C2">:root</span><span style="color: #ABB2BF"> {</span></span>
+文件（如果不存在该目录则需要先创建），代码如下： </p><figure class="shiki css"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #56B6C2">:root</span><span style="color: #ABB2BF"> {</span></span>
 <span class="line"><span style="color: #ABB2BF">  </span><span style="color: #E06C75">--linkcard-bg-color</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">#eeefef</span><span style="color: #ABB2BF">;</span></span>
 <span class="line"><span style="color: #ABB2BF">}</span></span>
 <span class="line"><span style="color: #C678DD">[</span><span style="color: #D19A66">data-user-color-scheme</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"dark"</span><span style="color: #C678DD">]</span><span style="color: #ABB2BF"> {</span></span>
@@ -897,7 +988,8 @@ fluid 全屏背景图随日夜模式切换以及正文底页毛玻璃效果</a><
 <span class="line"><span style="color: #ABB2BF">    margin-bottom: </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">!important</span><span style="color: #ABB2BF">;</span></span>
 <span class="line"><span style="color: #ABB2BF">}</span></span>
 <span class="line"><span style="color: #D19A66">.LinkCard</span><span style="color: #56B6C2">:hover</span><span style="color: #ABB2BF"> {</span></span>
-<span class="line"><span style="color: #ABB2BF">    transform: </span><span style="color: #56B6C2">scale</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">1.02</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    transform: </span><span style="color: #56B6C2">translate3d</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">-2</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    box-shadow: </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">16</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">rgba</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">34</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">135</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">250</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">0.8</span><span style="color: #ABB2BF">);</span></span>
 <span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure><p></p>
 <p>然后还需要在 <code>source/js/</code> 目录下新建一个
 <code>LinkCard.js</code>
@@ -1548,7 +1640,7 @@ Blog的代码并进行一定修改。</p>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年6月29日</div>
+          <div>2025年7月3日</div>
         </div>
       
       
