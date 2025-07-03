@@ -1,5 +1,6 @@
 ---
 title: Fluid主题美化1.0
+category_bar: true
 tags:
   - Hexo
   - Fluid
@@ -534,7 +535,7 @@ custom_js:
 ```
 {% endfold %}
 
-为了实现样式与功能分离，我将该博主的代码进行了修改：
+为了实现样式与功能分离，并为链接卡片添加鼠标悬浮时的效果，我将该博主的代码进行了修改：
 
 在 `source/css/` 目录下新建一个 `LinkCard.css` 文件（如果不存在该目录则需要先创建），代码如下：
 ```css
@@ -616,7 +617,8 @@ custom_js:
     margin-bottom: 0 !important;
 }
 .LinkCard:hover {
-    transform: scale(1.02);
+    transform: translate3d(0, -2px, 0);
+    box-shadow: 0 0 16px 0 rgba(34, 135, 250, 0.8);
 }
 ```
 

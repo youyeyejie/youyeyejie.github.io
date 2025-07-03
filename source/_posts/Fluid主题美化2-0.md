@@ -1,5 +1,6 @@
 ---
 title: Fluid主题美化2.0
+category_bar: true
 tags:
   - Hexo
   - Fluid
