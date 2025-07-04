@@ -65,6 +65,7 @@
   
 <link rel="stylesheet" href="/css/CodeBlock.css">
 <link rel="stylesheet" href="/css/CodeInLine.css">
+<link rel="stylesheet" href="/css/Footer.css">
 <link rel="stylesheet" href="/css/FrostedGlassBg.css">
 <link rel="stylesheet" href="/css/IndexImgHover.css">
 <link rel="stylesheet" href="/css/LinkCard.css">
@@ -354,40 +355,54 @@
   <footer>
     <div class="footer-inner">
   
-    <div class="footer-content">
-       <div class="powered-by"> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> </div> <div class="info" style="font-size: 0.85rem; margin: 0.15rem 0.15rem;"> <span id="duration" style="display: inline;"> <i class="fas fa-calendar"></i> <span id="timeDate">Getting date...</span> <span id="times">Getting time...</span> <script src="/js/Duration.js"></script> </span> <span id="wordcount" style="display: inline;"> <i class="fas fa-file-alt"></i> <span id="g-post-count-id">Getting word count...</span> </span> </div> <div class="hitokoto" style="font-size: 0.85rem; margin: 0.15rem 0.15rem;"> <i class="fas fa-quote-left"></i> <a target="_blank" rel="noopener" href="https://developer.hitokoto.cn/" id="hitokoto_text"><span id="hitokoto">Getting poem...</span></a> <script src="/js/Hitokoto.js" defer></script> </div> 
+  
+  
+</div>
+<div class="footer-inner">
+    <div class="powered-by">
+        <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+        <i class="iconfont icon-love"></i>
+        <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
     </div>
-  
-  
-    <div class="statistics">
-  
-  
-
-  
-    
-      <span id="busuanzi_container_site_pv" style="display: none">
-        <i class="fas fa-shoe-prints"></i>  总访问量 
-        <span id="busuanzi_value_site_pv"></span>
-         次
-      </span>
-    
-    
-      <span id="busuanzi_container_site_uv" style="display: none">
-        <i class="fas fa-user-friends"></i>  总访客数 
-        <span id="busuanzi_value_site_uv"></span>
-         人
-      </span>
-    
-    
-
-  
-
+    <div class="hitokoto">
+        <i class="fas fa-quote-left"></i>
+        <a target="_blank" rel="noopener" href="https://developer.hitokoto.cn/" id="hitokoto_text"><span id="hitokoto">Getting poem...</span></a>
+        <script src="/js/Hitokoto.js" defer></script>
+    </div>
+    <div class="data">
+        <span class="total-word-container">
+            <i class="fas fa-chart-bar"></i>
+            <span id="g-total-word-id"></span>
+            字汇长河
+        </span>
+        &nbsp;
+        <span id="total-posts-container">
+            <i class="fas fa-file-alt"></i>
+            <span id="g-total-posts-id"></span>
+            <script src="/js/TotalPosts.js"></script>
+            文舟靠岸
+        </span>
+        &nbsp;
+        <span id="busuanzi_container_site_pv">
+            <i class="fas fa-eye"></i>
+            <span id="busuanzi_value_site_pv"></span>
+            目光所及
+        </span>
+        &nbsp;
+        <span id="busuanzi_container_site_uv">
+            <i class="fas fa-user-friends"></i>
+            <span id="busuanzi_value_site_uv"></span>
+            访客驻足
+        </span>
+        <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script>
+    </div>
+    <div class="duration">
+        <i class="fas fa-calendar"></i>
+        <span id="timeDate">Getting date...</span>
+        <span id="times">Getting time...</span>
+        <script src="/js/Duration.js"></script>
+    </div>
 </div>
-
-  
-  
-</div>
-
   </footer>
 
   <!-- Scripts -->
@@ -437,8 +452,6 @@
 
   <script  src="/js/local-search.js" ></script>
 
-  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
-
 
 
 
@@ -457,7 +470,7 @@
 
 
   <script type="text/javascript">
-  document.getElementById("g-post-count-id").innerHTML = "全站总字数 266k";
+  document.getElementById("g-total-word-id").innerHTML = "267k";
 </script>
 
   <noscript>

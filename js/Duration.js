@@ -22,10 +22,10 @@
     if(String(snum).length === 1 ){
       snum = "0" + snum;
     }
-    document.getElementById("timeDate").innerHTML = "本站已存活&nbsp"+dnum+"&nbsp天";
-    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp";
+    document.getElementById("timeDate").innerHTML = "须弥藏芥 已逾&nbsp"+dnum+"&nbsp日";
+    document.getElementById("times").innerHTML = hnum + "&nbsp时&nbsp" + mnum + "&nbsp分&nbsp"+ snum + "&nbsp秒";
   }
 
   update();
-  setInterval(update, 1000*60); // 每分钟更新一次
+  setInterval(update, 1000); 
 })();
