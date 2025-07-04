@@ -263,7 +263,6 @@ custom_css:
   - /css/TitleGradient.css # 文章标题颜色渐变效果
   - /css/TitleNeon.css # 博客标题霓虹灯效
   - /css/UnifyImgWidth.css # 统一文章图片宽度
-  - https://lib.baomitu.com/font-awesome/6.1.2/css/all.min.css # Font Awesome 图标库
 
 # 网页访问统计
 # Analysis of website visitors
@@ -361,8 +360,9 @@ lazyload:
 
 # 图标库，包含了大量社交类图标，主题依赖的不包含在内，因此可自行修改，详见 https://hexo.fluid-dev.com/docs/icon/
 # Icon library, which includes many social icons, does not include those theme dependent, so your can modify link by yourself. See: https://hexo.fluid-dev.com/docs/en/icon/
-iconfont: //at.alicdn.com/t/c/font_1736178_k526ubmyhba.css
-
+iconfont: 
+  - //at.alicdn.com/t/c/font_1736178_k526ubmyhba.css
+  - //lib.baomitu.com/font-awesome/6.1.2/css/all.min.css # Font Awesome 图标库
 
 #---------------------------
 # 页头

@@ -420,6 +420,9 @@ span#busuanzi_container_site_pv {
 span#busuanzi_container_site_uv {
     display: inline !important;
 }
+span#busuanzi_container_page_pv {
+    display: inline !important;
+}
 ```
 
 这样就完成了页脚的美化，最终的效果甚得我心！
