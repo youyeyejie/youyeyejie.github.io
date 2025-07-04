@@ -414,12 +414,8 @@ hexo.extend.filter.register('theme_inject', function(injects) {
 .powered-by {
     font-size: 1rem !important;
 }
-span#busuanzi_container_site_pv {
-    display: inline !important;
-}
-span#busuanzi_container_site_uv {
-    display: inline !important;
-}
+span#busuanzi_container_site_pv,
+span#busuanzi_container_site_uv,
 span#busuanzi_container_page_pv {
     display: inline !important;
 }
