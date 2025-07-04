@@ -5,6 +5,8 @@ hexo.extend.injector.register('head_begin', '<meta name="google-site-verificatio
 hexo.extend.filter.register('theme_inject', function(injects) {
   // 注入彩虹加载动画
   injects.bodyBegin.file('loader', 'source/html/RainbowLoading.html');
+  // 注入页脚
+  injects.footer.file('footer', 'source/html/Footer.html');
   // 全站字数统计
   injects.bodyEnd.file('WordCount', 'source/_inject/WordCount.ejs');
 });

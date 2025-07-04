@@ -116,25 +116,22 @@ giscus:
     if(String(snum).length === 1 ){
       snum = "0" + snum;
     }
-    document.getElementById("timeDate").innerHTML = "本站已存活&nbsp"+dnum+"&nbsp天";
-    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp";
+    document.getElementById("timeDate").innerHTML = "须弥藏芥 已逾&nbsp"+dnum+"&nbsp日";
+    document.getElementById("times").innerHTML = hnum + "&nbsp时&nbsp" + mnum + "&nbsp分&nbsp"+ snum + "&nbsp秒";
   }
 
   update();
-  setInterval(update, 1000*60); // 每分钟更新一次
+  setInterval(update, 1000); 
 })();
 ```
 
-由于我不希望页脚处显示太多信息，因此我只保留到分钟级别，并降低了更新的频率。脚本中 `start` 变量的值需要修改为你博客的创建时间，如果是部署在GitHub Pages上的博客，可以在仓库的提交记录中找到创建时间。
+脚本中 `start` 变量的值需要修改为你博客的创建时间，如果是部署在GitHub Pages上的博客，可以在仓库的提交记录中找到创建时间。
 
 在这之后，你还需要修改 `_config.fluid.yml` 文件，在 `footer` 的 `content` 中添加以下内容：
 
 ```yaml
 footer:
   content: '
-    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
-    <i class="iconfont icon-love"></i>
-    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
     <div style="font-size: 0.85rem">
       <span id="timeDate">Getting date...</span>
       <span id="times">Getting time...</span>
@@ -143,7 +140,7 @@ footer:
   '
 ```
 
-当然，由于我还在页脚处做了其他的美化，因此 `content` 的内容与此处使用的并不相同，你可以根据自己的需要进行调整，也可以跳转至[总结](#总结)部分查看我 `content` 的完整配置。
+当然，由于我还在页脚处做了其他的美化，因此 `content` 的内容与此处展示的并不相同，你可以根据自己的需要进行调整，也可以跳转至[总结](#总结)部分查看我的完整配置。
 
 # 页脚处添加全站字数统计
 
@@ -158,7 +155,7 @@ footer:
   content: '
     # 原有内容，下面是新加的
     <div style="font-size: 0.85rem">
-      <span id="g-post-count-id">Getting word count...</span>
+      <span id="g-total-word-id">Getting word count...</span>
     </div>
   '
 ```
@@ -167,7 +164,7 @@ footer:
 
 ```html
 <script type="text/javascript">
-  document.getElementById("g-post-count-id").innerHTML = "全站总字数 <%= wordtotal(site) %>";
+  document.getElementById("g-total-word-id").innerHTML = "全站总字数 <%= wordtotal(site) %>";
 </script>
 ```
 
@@ -181,6 +178,37 @@ hexo.extend.filter.register('theme_inject', function(injects) {
 ```
 
 这样就可以在页脚处显示全站字数统计。
+
+# 页脚处添加全站文章统计
+
+Fluid主题内置了对全站文章统计的支持，但只在归档页显示。由于我并不了解ejs语法，也不愿意修改主题的源代码，因此决定自行实现。
+
+在 `source/js/` 目录下新建一个 `TotalPosts.js` 文件（如果不存在该目录则需要先创建），代码如下：
+
+```javascript
+fetch('/local-search.xml')
+.then(response => response.text())
+.then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
+.then(data => {
+    const posts = data.querySelectorAll('entry');
+    document.getElementById('g-total-posts-id').textContent = posts.length;
+})
+```
+
+然后在 `_config.fluid.yml` 文件中修改 `footer` 的 `content` 字段，添加全站文章统计的调用代码：
+
+```yaml
+footer:
+  content: '
+    <div class="total-posts" style="font-size: 0.85rem; margin: 0.15rem 0.15rem;">
+      <i class="fas fa-file-alt"></i>
+      <span id="g-total-posts-id">Getting total posts...</span>
+      <script src="/js/TotalPosts.js"></script>
+    </div>
+  '
+```
+
+这样就可以在页脚处显示全站文章统计了。
 
 # 页脚处添加一言
 
@@ -237,15 +265,18 @@ footer:
 
 | 图标预览 | 类名 | 用途说明 |
 | :---: | :---: | :---: |
-| <i class="fas fa-calendar"></i> | `fas fa-calendar` | 网站运行时间 |
-| <i class="fas fa-file-alt"></i> | `fas fa-file-alt` | 全站字数统计 |
 | <i class="fas fa-quote-left"></i> | `fas fa-quote-left` | 一言 |
-| <i class="fas fa-shoe-prints"></i> | `fas fa-shoe-prints` | 总访问量 |
+| <i class="fas fa-chart-bar"></i> | `fas fa-chart-bar` | 全站字数统计 |
+| <i class="fas fa-file-alt"></i> | `fas fa-file-alt` | 全站文章统计 |
+| <i class="fas fa-eye"></i> | `fas fa-eye` | 总访问量 |
 | <i class="fas fa-user-friends"></i> | `fas fa-user-friends` | 总访客数 |
+| <i class="fas fa-calendar"></i> | `fas fa-calendar` | 网站运行时间 |
 
 # 总结
+{% fold info @如果对当前的样式已经满意，那么主题配置中的代码如折叠中所示。 %}
+至此，本次的美化就全部完成了！
 
-至此，本次的美化就全部完成了！最终，`_config.fluid.yml` 文件的 `footer` 的 `content` 和 `statistics` 部分如下所示：
+最终，`_config.fluid.yml` 文件的 `footer` 的 `content` 和 `statistics` 部分如下所示：
 
 ```yaml
 footer:
@@ -282,3 +313,113 @@ footer:
 ```
 
 其中，`content` 部分的第一个 `<div>` 是本博客的框架与主题信息，第二个 `<div>` 是网站运行时间和全站字数统计，第三个 `<div>` 是一言，后两者手动指定了样式。`statistics` 部分是网站的访问量和访客数统计。
+{% endfold %}
+
+但是很可惜，我希望把全站字数统计、文章统计和总访问量、总访客数统计在一行内显示，因此不得不继续折腾。
+
+首先把 `_config.fluid.yml` 文件的 `footer` 的 `content` 置空，`statistics` 部分的 `enable` 设置为 `false`，即
+
+```yaml
+footer:
+  content: ''
+  statistics:
+    enable: false
+```
+
+接着在 `source/html/` 目录下新建一个 `Footer.html` 文件（如果不存在该目录则需要先创建），并添加以下内容：
+
+```html
+<div class="footer-inner">
+    <div class="powered-by">
+        <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+        <i class="iconfont icon-love"></i>
+        <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+    </div>
+    <div class="hitokoto">
+        <i class="fas fa-quote-left"></i>
+        <a href="https://developer.hitokoto.cn/" id="hitokoto_text"><span id="hitokoto">Getting poem...</span></a>
+        <script src="/js/Hitokoto.js" defer></script>
+    </div>
+    <div class="data">
+        <span class="total-word-container">
+            <i class="fas fa-chart-bar"></i>
+            <span id="g-total-word-id"></span>
+            字汇长河
+        </span>
+        &nbsp;
+        <span id="total-posts-container">
+            <i class="fas fa-file-alt"></i>
+            <span id="g-total-posts-id"></span>
+            <script src="/js/TotalPosts.js"></script>
+            文舟靠岸
+        </span>
+        &nbsp;
+        <span id="busuanzi_container_site_pv">
+            <i class="fas fa-eye"></i>
+            <span id="busuanzi_value_site_pv"></span>
+            目光所及
+        </span>
+        &nbsp;
+        <span id="busuanzi_container_site_uv">
+            <i class="fas fa-user-friends"></i>
+            <span id="busuanzi_value_site_uv"></span>
+            访客驻足
+        </span>
+        <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script>
+    </div>
+    <div class="duration">
+        <i class="fas fa-calendar"></i>
+        <span id="timeDate">Getting date...</span>
+        <span id="times">Getting time...</span>
+        <script src="/js/Duration.js"></script>
+    </div>
+</div>
+```
+
+其中，我将页脚分为四行显示：
+
+- `powered-by` 是本博客的框架与主题信息；
+- `hitokoto` 是一言；
+- `data` 是全站字数统计、文章统计、总访问量和总访客数统计；
+- `duration` 是网站运行时间。
+
+然后需要用Hexo注入器将这个文件注入到页脚中。在 `scripts/injector.js` 文件中添加如下内容：
+
+```javascript
+hexo.extend.filter.register('theme_inject', function(injects) {
+  // 注入页脚
+  injects.footer.file('footer', 'source/html/Footer.html');
+  // 全站字数统计
+  injects.bodyEnd.file('WordCount', 'source/_inject/WordCount.ejs');
+});
+```
+
+接着修改 `source/_inject/WordCount.ejs` 文件，让其只返回字数统计的部分：
+
+```html
+<script type="text/javascript">
+  document.getElementById("g-total-word-id").innerHTML = "<%= wordtotal(site) %>";
+</script>
+```
+
+最后在 `source/css/` 目录下新建一个 `Footer.css` 文件（如果不存在该目录则需要先创建），覆盖原先的页脚样式，代码如下：
+
+```css
+.footer-inner {
+    padding: 1rem 0 2rem 0;
+    font-family: serif !important;
+    font-size: 0.85rem !important;
+    margin: 0.15rem 0.15rem !important;
+}
+.powered-by {
+    font-size: 1rem !important;
+}
+span#busuanzi_container_site_pv {
+    display: inline !important;
+}
+span#busuanzi_container_site_uv {
+    display: inline !important;
+}
+```
+
+这样就完成了页脚的美化，最终的效果甚得我心！

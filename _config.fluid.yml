@@ -252,6 +252,7 @@ custom_js:
 custom_css:
   - /css/CodeBlock.css # 代码折叠
   - /css/CodeInLine.css # 行内代码样式
+  - /css/Footer.css # 页脚样式
   - /css/FrostedGlassBg.css # 文章界面毛玻璃
   - /css/IndexImgHover.css # 首页文章封面图片悬浮效果
   - /css/LinkCard.css # 链接卡片效果
@@ -471,35 +472,12 @@ open_graph:
 footer:
   # 页脚第一行文字的 HTML，建议保留 Fluid 的链接，用于向更多人推广本主题
   # HTML of the first line of the footer, it is recommended to keep the Fluid link to promote this theme to more people
-  content: '
-    <div class="powered-by">
-      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
-      <i class="iconfont icon-love"></i>
-      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
-    </div>
-    <div class="info" style="font-size: 0.85rem; margin: 0.15rem 0.15rem;">
-      <span id="duration" style="display: inline;">
-        <i class="fas fa-calendar"></i>
-        <span id="timeDate">Getting date...</span>
-        <span id="times">Getting time...</span>
-        <script src="/js/Duration.js"></script>
-      </span>
-      <span id="wordcount" style="display: inline;">
-        <i class="fas fa-file-alt"></i>
-        <span id="g-post-count-id">Getting word count...</span>
-      </span>
-    </div>
-    <div class="hitokoto" style="font-size: 0.85rem; margin: 0.15rem 0.15rem;">
-      <i class="fas fa-quote-left"></i>
-      <a href="https://developer.hitokoto.cn/" id="hitokoto_text"><span id="hitokoto">Getting poem...</span></a>
-      <script src="/js/Hitokoto.js" defer></script>
-    </div>
-    '
+  content: ''
 
   # 展示网站的 PV、UV 统计数
   # Display website PV and UV statistics
   statistics:
-    enable: true
+    enable: false
 
     # 统计数据来源，使用 leancloud, umami 需要设置 `web_analytics` 中对应的参数；使用 busuanzi 不需要额外设置，但是有时不稳定，另外本地运行时 busuanzi 显示统计数据很大属于正常现象，部署后会正常
     # Data source. If use leancloud, umami, you need to set the parameter in `web_analytics`
