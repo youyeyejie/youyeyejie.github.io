@@ -1,7 +1,8 @@
 ---
 date: 2025-06-30 16:22:39
 archive: true
-title: 【Xflops-HPC Start Guide】1-2 信息安全意识
+category_bar: true
+title: 1-2 信息安全意识【Xflops-HPC Start Guide】
 tags:
     - Xflops
     - HPC

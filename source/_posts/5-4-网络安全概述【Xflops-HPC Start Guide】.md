@@ -1,7 +1,8 @@
 ---
 date: 2025-07-06 00:48:53
 archive: true
-title: 【Xflops-HPC Start Guide】5-4 网络安全概述
+category_bar: true
+title: 5-4 网络安全概述【Xflops-HPC Start Guide】
 tags:
     - Xflops
     - HPC

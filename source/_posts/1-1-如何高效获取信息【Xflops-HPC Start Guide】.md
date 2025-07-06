@@ -1,7 +1,8 @@
 ---
 date: 2025-06-29 21:02:16
 archive: true
-title: 【Xflops-HPC Start Guide】1-1 如何高效获取信息
+category_bar: true
+title: 1-1 如何高效获取信息【Xflops-HPC Start Guide】
 tags:
     - Xflops
     - HPC
