@@ -21,16 +21,16 @@
   <meta name="author" content="youyeyejie">
   <meta name="keywords" content="yyyj,YYYJ,youyeyejie,有野野芥">
   
-    <meta name="description" content="Xflops超算队HPC入门指南——信息素养">
+    <meta name="description" content="Xflops超算队HPC入门指南——编程语言学习：Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="1-2 信息安全意识【Xflops-HPC Start Guide】">
-<meta property="og:url" content="https://youyeyejie.github.io/posts/1-2-%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%84%8F%E8%AF%86%E3%80%90Xflops-HPC%20Start%20Guide%E3%80%91/index.html">
+<meta property="og:title" content="6-2-3 Pytorch基础【Xflops-HPC Start Guide】">
+<meta property="og:url" content="https://youyeyejie.github.io/posts/6-2-3-Pytorch%E5%9F%BA%E7%A1%80%E3%80%90Xflops-HPC%20Start%20Guide%E3%80%91/index.html">
 <meta property="og:site_name" content="有野野芥的博客">
-<meta property="og:description" content="Xflops超算队HPC入门指南——信息素养">
+<meta property="og:description" content="Xflops超算队HPC入门指南——编程语言学习：Python">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/xflops.jpg">
-<meta property="article:published_time" content="2025-06-30T08:22:39.000Z">
-<meta property="article:modified_time" content="2025-07-06T10:18:46.285Z">
+<meta property="article:published_time" content="2025-07-07T08:09:30.000Z">
+<meta property="article:modified_time" content="2025-07-06T15:12:46.696Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="Xflops">
 <meta property="article:tag" content="HPC">
@@ -41,7 +41,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>1-2 信息安全意识【Xflops-HPC Start Guide】 - 有野野芥的博客</title>
+  <title>6-2-3 Pytorch基础【Xflops-HPC Start Guide】 - 有野野芥的博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -263,7 +263,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="1-2 信息安全意识【Xflops-HPC Start Guide】"></span>
+            <span id="subtitle" data-typed-text="6-2-3 Pytorch基础【Xflops-HPC Start Guide】"></span>
           
         </div>
 
@@ -279,8 +279,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-06-30 16:22" pubdate>
-          2025年6月30日 下午
+        <time datetime="2025-07-07 16:09" pubdate>
+          2025年7月7日 下午
         </time>
       </span>
     
@@ -292,7 +292,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          1.1k 字
+          1.6k 字
         
       </span>
     
@@ -304,7 +304,7 @@
         
         
           <!-- compatible with older versions-->
-          9 分钟
+          14 分钟
         
       </span>
     
@@ -392,7 +392,7 @@
       
         <a href="/posts/1-2-%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%84%8F%E8%AF%86%E3%80%90Xflops-HPC%20Start%20Guide%E3%80%91/" title="1-2 信息安全意识【Xflops-HPC Start Guide】"
            class="list-group-item list-group-item-action
-           active">
+           ">
           <span class="category-post">1-2 信息安全意识【Xflops-HPC Start Guide】</span>
         </a>
       
@@ -428,7 +428,7 @@
       
         <a href="/posts/6-2-3-Pytorch%E5%9F%BA%E7%A1%80%E3%80%90Xflops-HPC%20Start%20Guide%E3%80%91/" title="6-2-3 Pytorch基础【Xflops-HPC Start Guide】"
            class="list-group-item list-group-item-action
-           ">
+           active">
           <span class="category-post">6-2-3 Pytorch基础【Xflops-HPC Start Guide】</span>
         </a>
       
@@ -451,7 +451,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">1-2 信息安全意识【Xflops-HPC Start Guide】</h1>
+            <h1 id="seo-header">6-2-3 Pytorch基础【Xflops-HPC Start Guide】</h1>
             
             
               <div class="markdown-body">
@@ -460,77 +460,123 @@
             <p>新学期即将来临，Xflops超算队招新以及超算校内赛正在火热筹备中。作为Xflops超算队的一员，我与其他成员将共同负责<a target="_blank" rel="noopener" href="https://xflops.sjtu.edu.cn/hpc-start-guide">HPC入门指南</a>的修订与编写。Xflops超算队的HPC入门指南系列文章旨在帮助新成员快速入门和了解HPC知识，为校内赛的参赛者提供必要的知识储备和技能指导。</p>
           </div>
 <p><a href="https://xflops.sjtu.edu.cn/hpc-start-guide" name="/img/cover/xflops.jpg" target="_blank" class="LinkCard">HPC入门指南</a></p>
-<h1 id="信息安全意识">信息安全意识</h1>
-<p>在使用互联网时，信息安全意识至关重要，因为网络攻击，数据泄露和隐私侵害随时可能发生。为了保护个人信息和数据安全，以下是一些基本的安全意识和实践建议：</p>
+<h1 id="pytorch基础">PyTorch基础</h1>
+<p>在前面的内容中，我们介绍了Python的基本语法和数据结构。本节将介绍PyTorch的基础知识，帮助你了解如何使用PyTorch进行张量运算和深度学习模型的构建。</p>
+<h2 id="pytorch简介">PyTorch简介</h2>
+<p><a target="_blank" rel="noopener" href="https://pytorch.org/">PyTorch</a> 是一个开源的 Python
+机器学习库，基于 Torch，用于自然语言处理等应用程序。它最初由 Facebook
+人工智能研究院（FAIR）在 2017 年 1
+月发布，现在已经成为人工智能领域最受欢迎的框架之一。PyTorch
+提供了两个主要功能：一是具有强大的 GPU
+加速的张量计算；二是包含自动微分系统的深度神经网络构建。</p>
+<p>随着深度学习的快速发展，PyTorch
+以其独特的优势在学术界和工业界得到了广泛的应用。这里简要列举几个 PyTorch
+的主要优势：</p>
 <ol type="1">
-<li><strong>使用强密码</strong>：
-<ul>
-<li>密码应包含大写字母、小写字母、数字和特殊字符，长度至少12位。</li>
-<li>不要使用容易猜测的密码，如生日、姓名等，推荐使用随机生成的强密码。</li>
-<li>对于随机生成的强密码，推荐使用密码管理器进行生成与管理，如<a target="_blank" rel="noopener" href="https://keepassxc.org/">KeePassXC</a>或<a target="_blank" rel="noopener" href="https://bitwarden.com/">Bitwarden</a>等</li>
-<li>定期更换密码，并避免在多个账户上使用相同的密码。</li>
-</ul></li>
+<li><strong>动态计算图</strong>：采用动态计算图机制，运行时可动态构建。相比静态计算图而言更加灵活，便于调试和修改模型结构，适合快速原型设计和研究。</li>
+<li><strong>易于使用</strong>：PyTorch 拥有简洁直观的 API
+设计，代码风格接近于标准
+Python，便于上手和开发，适合初学者和研究人员快速实现模型。</li>
+<li><strong>强大的社区支持</strong>：拥有庞大活跃的社区，可获取丰富学习资源、示例代码和解决方案。同时得到众多研究机构和企业支持，持续发展更新。</li>
+<li><strong>跨平台支持</strong>：支持 Windows、Linux 和 macOS
+等多种操作系统，可在 CPU 和 GPU
+上运行，满足不同环境下的开发和部署需求。</li>
 </ol>
+<h2 id="pytorch基础概念">PyTorch基础概念</h2>
+<h3 id="张量tensor">张量（Tensor）</h3>
+<p>张量是 PyTorch 中的基本数据结构，类似 NumPy
+的数组，可表示标量、向量、矩阵及更高维数据，能在 CPU 或 GPU 上运行，通过
+CUDA 技术加速计算。</p>
+<p><strong>创建张量</strong>有多种方式，其中使用较多的有直接创建和使用函数创建两种方式：</p>
+<figure class="shiki python"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">import</span><span style="color: #ABB2BF"> torch</span></span>
+<span class="line"><span style="color: #7F848E; font-style: italic"># 创建标量张量</span></span>
+<span class="line"><span style="color: #ABB2BF">scalar </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> torch.</span><span style="color: #61AFEF">tensor</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">5</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #7F848E; font-style: italic"># 创建向量张量</span></span>
+<span class="line"><span style="color: #ABB2BF">vector </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> torch.</span><span style="color: #61AFEF">tensor</span><span style="color: #ABB2BF">([</span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">2</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">3</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">4</span><span style="color: #ABB2BF">])</span></span>
+<span class="line"><span style="color: #7F848E; font-style: italic"># 创建矩阵张量</span></span>
+<span class="line"><span style="color: #ABB2BF">matrix </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> torch.</span><span style="color: #61AFEF">tensor</span><span style="color: #ABB2BF">([[</span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">2</span><span style="color: #ABB2BF">], [</span><span style="color: #D19A66">3</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">4</span><span style="color: #ABB2BF">]])</span></span>
+<span class="line"><span style="color: #7F848E; font-style: italic"># 创建3x3全零张量</span></span>
+<span class="line"><span style="color: #ABB2BF">zeros </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> torch.</span><span style="color: #61AFEF">zeros</span><span style="color: #ABB2BF">((</span><span style="color: #D19A66">3</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">3</span><span style="color: #ABB2BF">))</span></span>
+<span class="line"><span style="color: #7F848E; font-style: italic"># 创建2x2全一张量</span></span>
+<span class="line"><span style="color: #ABB2BF">ones </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> torch.</span><span style="color: #61AFEF">ones</span><span style="color: #ABB2BF">((</span><span style="color: #D19A66">2</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">2</span><span style="color: #ABB2BF">))</span></span>
+<span class="line"><span style="color: #7F848E; font-style: italic"># 创建3x3单位矩阵张量</span></span>
+<span class="line"><span style="color: #ABB2BF">eye_matrix </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> torch.</span><span style="color: #61AFEF">eye</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">3</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #7F848E; font-style: italic"># 创建2x3随机张量（正态分布）</span></span>
+<span class="line"><span style="color: #ABB2BF">random_tensor </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> torch.</span><span style="color: #61AFEF">randn</span><span style="color: #ABB2BF">((</span><span style="color: #D19A66">2</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">3</span><span style="color: #ABB2BF">))</span></span></code></pre></div></div></figure>
+<p>张量支持加减乘除、矩阵运算、索引和切片等数学运算，与 NumPy
+数组操作类似。 </p><figure class="shiki python"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #7F848E; font-style: italic"># 张量加法</span></span>
+<span class="line"><span style="color: #ABB2BF">result </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> matrix </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> random_tensor</span></span>
+<span class="line"><span style="color: #7F848E; font-style: italic"># 矩阵乘法</span></span>
+<span class="line"><span style="color: #ABB2BF">product </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> matrix </span><span style="color: #56B6C2">@</span><span style="color: #ABB2BF"> random_tensor.</span><span style="color: #61AFEF">t</span><span style="color: #ABB2BF">()  </span><span style="color: #7F848E; font-style: italic"># @表示矩阵乘法，t()用于转置张量</span></span>
+<span class="line"><span style="color: #7F848E; font-style: italic"># 索引和切片</span></span>
+<span class="line"><span style="color: #56B6C2">print</span><span style="color: #ABB2BF">(matrix[</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">])  </span><span style="color: #7F848E; font-style: italic"># 输出第一行第二列元素</span></span>
+<span class="line"><span style="color: #56B6C2">print</span><span style="color: #ABB2BF">(random_tensor[:, </span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">])  </span><span style="color: #7F848E; font-style: italic"># 输出所有行第二列元素</span></span></code></pre></div></div></figure><p></p>
+<h3 id="自动微分autograd">自动微分（Autograd）</h3>
+<p>自动微分是 PyTorch
+实现神经网络训练的关键，可自动计算张量梯度，通过反向传播更新模型参数，无需手动推导导数公式。可以通过将张量的
+<code>requires_grad</code> 属性设为 <code>True</code> 启用自动微分功能。
+</p><figure class="shiki python"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">x </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> torch.</span><span style="color: #61AFEF">tensor</span><span style="color: #ABB2BF">([</span><span style="color: #D19A66">1.0</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">2.0</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">3.0</span><span style="color: #ABB2BF">], </span><span style="color: #E06C75; font-style: italic">requires_grad</span><span style="color: #56B6C2">=</span><span style="color: #D19A66">True</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">y </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> x </span><span style="color: #56B6C2">*</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">2</span></span>
+<span class="line"><span style="color: #ABB2BF">z </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> y.</span><span style="color: #61AFEF">mean</span><span style="color: #ABB2BF">()</span></span>
+<span class="line"><span style="color: #ABB2BF">z.</span><span style="color: #61AFEF">backward</span><span style="color: #ABB2BF">()  </span><span style="color: #7F848E; font-style: italic"># 反向传播计算梯度</span></span>
+<span class="line"><span style="color: #56B6C2">print</span><span style="color: #ABB2BF">(x.grad)  </span><span style="color: #7F848E; font-style: italic"># 输出x的梯度</span></span></code></pre></div></div></figure><p></p>
+<p>训练神经网络时，每次迭代前需用 <code>zero_grad()</code>
+方法清零梯度，避免累加。</p>
+<figure class="shiki python"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">optimizer.</span><span style="color: #61AFEF">zero_grad</span><span style="color: #ABB2BF">()  </span><span style="color: #7F848E; font-style: italic"># 假设optimizer是优化器对象</span></span></code></pre></div></div></figure>
+<h3 id="神经网络模块nn.module">神经网络模块（nn.Module）</h3>
+<p><code>nn.Module</code>
+是构建神经网络的基类，继承该类可定义自己的神经网络模型，提供常用神经网络层，方便构建复杂结构。</p>
+<p>在定义神经网络模型时：需实现<code>__init__</code>
+方法（初始化层和参数）和 <code>forward</code>
+方法（定义前向传播过程）。</p>
+<figure class="shiki python"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">import</span><span style="color: #ABB2BF"> torch.nn </span><span style="color: #C678DD">as</span><span style="color: #ABB2BF"> nn</span></span>
+<span class="line"><span style="color: #C678DD">class</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">Net</span><span style="color: #ABB2BF">(</span><span style="color: #E5C07B">nn</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">Module</span><span style="color: #ABB2BF">):</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">def</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">__init__</span><span style="color: #ABB2BF">(</span><span style="color: #E5C07B; font-style: italic">self</span><span style="color: #ABB2BF">):</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #56B6C2">super</span><span style="color: #ABB2BF">(Net, </span><span style="color: #E5C07B">self</span><span style="color: #ABB2BF">).</span><span style="color: #56B6C2">__init__</span><span style="color: #ABB2BF">()</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">self</span><span style="color: #ABB2BF">.fc1 </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> nn.</span><span style="color: #61AFEF">Linear</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">784</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">256</span><span style="color: #ABB2BF">)  </span><span style="color: #7F848E; font-style: italic"># 输入层到隐藏层的线性层</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">self</span><span style="color: #ABB2BF">.relu </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> nn.</span><span style="color: #61AFEF">ReLU</span><span style="color: #ABB2BF">()  </span><span style="color: #7F848E; font-style: italic"># 激活函数层</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">self</span><span style="color: #ABB2BF">.fc2 </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> nn.</span><span style="color: #61AFEF">Linear</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">256</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">10</span><span style="color: #ABB2BF">)  </span><span style="color: #7F848E; font-style: italic"># 隐藏层到输出层的线性层</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">def</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">forward</span><span style="color: #ABB2BF">(</span><span style="color: #E5C07B; font-style: italic">self</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66; font-style: italic">x</span><span style="color: #ABB2BF">):</span></span>
+<span class="line"><span style="color: #ABB2BF">        x </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">self</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">fc1</span><span style="color: #ABB2BF">(x)</span></span>
+<span class="line"><span style="color: #ABB2BF">        x </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">self</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">relu</span><span style="color: #ABB2BF">(x)</span></span>
+<span class="line"><span style="color: #ABB2BF">        x </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">self</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">fc2</span><span style="color: #ABB2BF">(x)</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">return</span><span style="color: #ABB2BF"> x</span></span></code></pre></div></div></figure>
+<p>可以通过<code>parameters()</code>方法获取模型参数（权重和偏置），自动被自动微分系统跟踪，用于计算梯度和更新参数。</p>
+<figure class="shiki python"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">model </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">Net</span><span style="color: #ABB2BF">()</span></span>
+<span class="line"><span style="color: #C678DD">for</span><span style="color: #ABB2BF"> param </span><span style="color: #C678DD">in</span><span style="color: #ABB2BF"> model.</span><span style="color: #61AFEF">parameters</span><span style="color: #ABB2BF">():</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #56B6C2">print</span><span style="color: #ABB2BF">(param)</span></span></code></pre></div></div></figure>
+<h3 id="pytorch算子">PyTorch算子</h3>
+<p>PyTorch算子是指在PyTorch中定义的操作或函数，用于对张量进行计算和处理。算子可以是内置的，也可以是用户自定义的。内置算子包括常见的数学运算、激活函数、损失函数等。</p>
+<p>用户可以根据需要自定义算子，以实现特定的功能或优化性能。自定义算子通常需要使用C++或CUDA编写，并通过PyTorch提供的接口进行注册和调用。</p>
+<h2 id="小结">小结</h2>
+<p>通过本节内容，我们希望你对PyTorch的基本概念有一定了解。实际上，我们在这里介绍的只是PyTorch的冰山一角，并不要求你完全掌握所有内容。你只需要对PyTorch张量运算的基本规则有一定了解即可，如果感兴趣，可以自行查找资料学习编写PyTorch的算子的方法。</p>
+<p>这里我们给出一些有用的链接，供你进一步学习和参考：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/index.html">PyTorch官方文档</a></li>
+<li><a target="_blank" rel="noopener" href="https://pytorch.ac.cn/tutorials/beginner/basics/tensorqs_tutorial.html">PyTorch张量的基本运算</a></li>
+<li><a target="_blank" rel="noopener" href="https://pytorch.ac.cn/tutorials/beginner/basics/autogradqs_tutorial.html">PyTorch自动微分</a></li>
+<li><a target="_blank" rel="noopener" href="https://pytorch.ac.cn/tutorials/advanced/custom_ops_landing_page.html">PyTorch自定义算子手册</a></li>
+</ul>
 
     <div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-6c1e277b" role="button" aria-expanded="false" aria-controls="collapse-6c1e277b">
-        <div class="fold-arrow">▶</div>熵：密码强度的定量衡量
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-d997ea1c" role="button" aria-expanded="false" aria-controls="collapse-d997ea1c">
+        <div class="fold-arrow">▶</div>练习
       </div>
-      <div class="fold-collapse collapse" id="collapse-6c1e277b">
+      <div class="fold-collapse collapse" id="collapse-d997ea1c">
         <div class="fold-content">
-          <p>密码并非长度越长越安全，例如密码<code>123456</code>明显比<code>ejn4</code>更容易被破解。通常我们使用”熵”来定量衡量密码的复杂性。“熵”越大则代表密码越难被破解。这里的熵计算标准并不统一，因为其需要同时考虑弱密码字典与密码本身的字符串组合等因素。常见的密码管理器中均内置有熵的计算功能，一般来说，<strong>强度超过40bit的密码可以抵抗在线攻击，强度超过80bit的密码足以抵抗离线攻击</strong>。</p>
+          <ol type="1">
+<li>使用PyTorch的张量类型，编写程序使用定积分的定义计算<span class="math inline">$\int_{0}^{y} \frac{1}{x^2+1} \, dx$</span>的值
+<ul>
+<li>输入：一维torch.Tensor张量，每个数字代表一个y的取值。</li>
+<li>输出：一维torch.Tensor张量，每个位置对应于输入的y计算得到的定积分的值。</li>
+</ul></li>
+<li>（选做）自己编写一个PyTorch算子（基于C++或CUDA），输入一个张量x，返回张量<span class="math inline">$\frac{1}{x^2+1}$</span>。并在python中调用这个算子运用定积分的定义计算<span class="math inline">$\int_{0}^{y} \frac{1}{x^2+1} \,
+dx$</span>的值（输入输出要求与 1 中相同）</li>
+</ol>
         </div>
       </div>
     </div>
-<ol start="2" type="1">
-<li><strong>启用双因素认证(2FA)</strong>：
-<ul>
-<li>在支持的服务上启用双因素认证，增加账户安全性，如Github、Google等。</li>
-</ul></li>
-<li><strong>注意钓鱼攻击</strong>：
-<ul>
-<li>不要轻易点击不明链接或下载未知附件。</li>
-<li>验证发件人身份，尤其是涉及敏感信息或财务交易时。</li>
-<li>在交大，如果收到不以“<span class="citation" data-cites="sjtu.edu.cn">@sjtu.edu.cn</span>”结尾的邮件，内容是“财务报表”、“奖学金异常”、“账户异常”等的邮件，请务必不要点击链接或下载附件（哪怕是以“<span class="citation" data-cites="sjtu.edu.cn">@sjtu.edu.cn</span>”结尾的邮件也要谨慎对待），“你也不想让这些数字因你而归零吧”.jpg</li>
-</ul></li>
-<li><strong>妥善保管Jaccount账号与密码</strong>：
-<ul>
-<li>对于交大学生，Jaccount账号是你在校期间的最重要的身份标识，务必妥善保管。</li>
-<li>不要将Jaccount账号和密码告诉他人，尤其是陌生人。</li>
-<li>如果怀疑账号被盗，请立即修改密码并联系学校信息中心。</li>
-</ul></li>
-<li><strong>定期备份数据</strong>：
-<ul>
-<li>定期备份重要数据到外部存储设备或云存储服务</li>
-</ul></li>
-<li><strong>使用安全的网络连接</strong>：
-<ul>
-<li>避免在公共Wi-Fi网络上进行敏感操作，如网上银行或购物。</li>
-<li>不要连接不明的Wi-Fi热点，尤其是没有密码保护的网络。</li>
-</ul></li>
-<li><strong>保持软件更新</strong>：
-<ul>
-<li>定期更新操作系统、应用程序和防病毒软件，以修补已知的安全漏洞。</li>
-<li>启用自动更新功能，确保软件始终处于最新状态。</li>
-</ul></li>
-<li><strong>警惕不明U盘</strong>：
-<ul>
-<li>不要随意插入不明来源的U盘或其他外部存储设备，这可能会导致恶意软件感染。</li>
-</ul></li>
-<li><strong>了解隐私设置</strong>：
-<ul>
-<li>在社交媒体和在线服务中，了解并调整隐私设置，控制个人信息的公开程度。</li>
-<li>定期检查应用权限，确保只授予必要的权限。</li>
-</ul></li>
-</ol>
-<p>实际上，信息安全意识远远不是三言两语能说清楚的，其养成需要长期的学习和实践。以下是一些推荐的资源和文章，帮助你更深入地了解信息安全和隐私保护。</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV17p4y1Y7BB?vd_source=a03ab5db01c2fd1c452104c1fa0d9326">如何安全上网避免隐私泄露</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/398551131">知乎：如何在互联网上尽可能的保护自己的隐私</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.thepaper.cn/newsDetail_forward_30838925">从“我”开始的安全指南</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/BushidoUK/Operational-Security-101">上网和设备安全的建议</a>，适于对安全有较高追求的读者</li>
-<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1yA4y1U77y">数据管理的建议</a></li>
-</ul>
 
                 
               </div>
@@ -578,8 +624,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>1-2 信息安全意识【Xflops-HPC Start Guide】</div>
-      <div>https://youyeyejie.github.io/posts/1-2-信息安全意识【Xflops-HPC Start Guide】/</div>
+      <div>6-2-3 Pytorch基础【Xflops-HPC Start Guide】</div>
+      <div>https://youyeyejie.github.io/posts/6-2-3-Pytorch基础【Xflops-HPC Start Guide】/</div>
     </div>
     <div class="license-meta">
       
@@ -591,7 +637,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年6月30日</div>
+          <div>2025年7月7日</div>
         </div>
       
       
@@ -612,18 +658,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/5-4-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%A6%82%E8%BF%B0%E3%80%90Xflops-HPC%20Start%20Guide%E3%80%91/" title="5-4 网络安全概述【Xflops-HPC Start Guide】">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">5-4 网络安全概述【Xflops-HPC Start Guide】</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/1-1-%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E8%8E%B7%E5%8F%96%E4%BF%A1%E6%81%AF%E3%80%90Xflops-HPC%20Start%20Guide%E3%80%91/" title="1-1 如何高效获取信息【Xflops-HPC Start Guide】">
-                        <span class="hidden-mobile">1-1 如何高效获取信息【Xflops-HPC Start Guide】</span>
+                      <a href="/posts/6-2-2-Python%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80%E3%80%90Xflops-HPC%20Start%20Guide%E3%80%91/" title="6-2-2 Python语法基础【Xflops-HPC Start Guide】">
+                        <span class="hidden-mobile">6-2-2 Python语法基础【Xflops-HPC Start Guide】</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
