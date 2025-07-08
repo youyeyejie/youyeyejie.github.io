@@ -1,0 +1,8 @@
+.custom-gallery-svg {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: block;
+    line-height: 0;
+    transform: scale(1);
+    margin-top: -1px;
+}

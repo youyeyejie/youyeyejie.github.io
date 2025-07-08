@@ -30,7 +30,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/xflops.jpg">
 <meta property="article:published_time" content="2025-07-07T08:01:19.000Z">
-<meta property="article:modified_time" content="2025-07-06T15:13:03.931Z">
+<meta property="article:modified_time" content="2025-07-08T15:23:44.108Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="Xflops">
 <meta property="article:tag" content="HPC">
@@ -76,6 +76,7 @@
 <link rel="stylesheet" href="/css/CodeInLine.css">
 <link rel="stylesheet" href="/css/Footer.css">
 <link rel="stylesheet" href="/css/FrostedGlassBg.css">
+<link rel="stylesheet" href="/css/Gallery.css">
 <link rel="stylesheet" href="/css/IndexImgHover.css">
 <link rel="stylesheet" href="/css/LinkCard.css">
 <link rel="stylesheet" href="/css/RainbowLoading.css">
@@ -215,6 +216,18 @@
           
           
             <li class="nav-item">
+              <a class="nav-link" href="/tags/Photography/" target="_self">
+                <i class="fas fa-images"></i>
+                <span>相册</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
               <a class="nav-link" href="/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
                 <span>关于</span>
@@ -292,7 +305,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          1.1k 字
+          1.6k 字
         
       </span>
     
@@ -304,7 +317,7 @@
         
         
           <!-- compatible with older versions-->
-          10 分钟
+          14 分钟
         
       </span>
     
@@ -426,10 +439,10 @@
     
       
       
-        <a href="/posts/6-2-3-Pytorch%E5%9F%BA%E7%A1%80%E3%80%90Xflops-HPC%20Start%20Guide%E3%80%91/" title="6-2-3 Pytorch基础【Xflops-HPC Start Guide】"
+        <a href="/posts/6-2-3-PyTorch%E5%9F%BA%E7%A1%80%E3%80%90Xflops-HPC%20Start%20Guide%E3%80%91/" title="6-2-3 PyTorch基础【Xflops-HPC Start Guide】"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">6-2-3 Pytorch基础【Xflops-HPC Start Guide】</span>
+          <span class="category-post">6-2-3 PyTorch基础【Xflops-HPC Start Guide】</span>
         </a>
       
     
@@ -535,6 +548,11 @@
 <h2 id="python基础数据结构">Python基础数据结构</h2>
 <p>Python内置了多种数据结构，常用的有以下几种：</p>
 <ul>
+<li><strong>数字（Number）</strong>：支持证书整数（int）、浮点数（float）、布尔值（bool）和复数（complex）。
+<figure class="shiki python"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">integer </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">42</span><span style="color: #ABB2BF">  </span><span style="color: #7F848E; font-style: italic"># 整数</span></span>
+<span class="line"><span style="color: #ABB2BF">floating </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">3.14</span><span style="color: #ABB2BF">  </span><span style="color: #7F848E; font-style: italic"># 浮点数</span></span>
+<span class="line"><span style="color: #ABB2BF">boolean </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">True</span><span style="color: #ABB2BF">  </span><span style="color: #7F848E; font-style: italic"># 布尔值</span></span>
+<span class="line"><span style="color: #ABB2BF">complex_number </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">1</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">2</span><span style="color: #C678DD">j</span><span style="color: #ABB2BF">  </span><span style="color: #7F848E; font-style: italic"># 复数</span></span></code></pre></div></div></figure></li>
 <li><strong>字符串（String）</strong>：用于存储文本数据，可以使用单引号或双引号定义。
 <figure class="shiki python"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">greeting </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"Hello, World!"</span></span></code></pre></div></div></figure></li>
 <li><strong>列表（List）</strong>：有序可变的元素集合，可以包含不同类型的元素。
@@ -548,12 +566,46 @@
 </ul>
 <p>读者可以通过以下链接了解Python的基础数据结构：</p>
 <ul>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/python3/python3-number.html">Python数字</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.runoob.com/python3/python3-string.html">Python字符串</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.runoob.com/python3/python3-list.html">Python列表</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.runoob.com/python3/python3-tuple.html">Python元组</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.runoob.com/python3/python3-dictionary.html">Python字典</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.runoob.com/python3/python3-set.html">Python集合</a></li>
 </ul>
+<h2 id="可变与不可变类型">可变与不可变类型</h2>
+<p>在Python中，数据类型可以分为不可变类型和可变类型，以上面介绍的六种数据结构为例：</p>
+<ul>
+<li>不可变类型：数字（Number）、字符串（String）、元组（Tuple）</li>
+<li>可变类型：列表（List）、字典（Dictionary）、集合（Set）</li>
+</ul>
+<p>所谓“不可变类型”的数据对象，是指一旦创建后，其内容不能被修改；而用户视角下的修改操作实际上是创建了一个新的对象。相对的，“可变类型”的数据对象在创建之后，其值能够被修改，而且对象的身份保持不变。更进一步解释，当对不可变类型的对象进行修改时，其对应的内存地址会发生变化，而对可变类型的对象进行修改时，其内存地址保持不变。</p>
+<p>这里给出一个简单的例子来说明可变与不可变类型的区别：</p>
+<figure class="shiki python"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #7F848E; font-style: italic"># 示例1：字符串（不可变）</span></span>
+<span class="line"><span style="color: #ABB2BF">s </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"hello"</span></span>
+<span class="line"><span style="color: #56B6C2">print</span><span style="color: #ABB2BF">(</span><span style="color: #56B6C2">id</span><span style="color: #ABB2BF">(s))  </span><span style="color: #7F848E; font-style: italic"># 输出：140701435548848</span></span>
+<span class="line"><span style="color: #ABB2BF">s </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> s </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">" world"</span></span>
+<span class="line"><span style="color: #56B6C2">print</span><span style="color: #ABB2BF">(</span><span style="color: #56B6C2">id</span><span style="color: #ABB2BF">(s))  </span><span style="color: #7F848E; font-style: italic"># 输出：140701435549008（ID改变，说明创建了新对象）</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic"># 示例2：列表（可变）</span></span>
+<span class="line"><span style="color: #ABB2BF">lst </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> [</span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">2</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">3</span><span style="color: #ABB2BF">]</span></span>
+<span class="line"><span style="color: #56B6C2">print</span><span style="color: #ABB2BF">(</span><span style="color: #56B6C2">id</span><span style="color: #ABB2BF">(lst))  </span><span style="color: #7F848E; font-style: italic"># 输出：140701435550080</span></span>
+<span class="line"><span style="color: #ABB2BF">lst.</span><span style="color: #61AFEF">append</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">4</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #56B6C2">print</span><span style="color: #ABB2BF">(</span><span style="color: #56B6C2">id</span><span style="color: #ABB2BF">(lst))  </span><span style="color: #7F848E; font-style: italic"># 输出：140701435550080（ID未变，还是原来的对象）</span></span></code></pre></div></div></figure>
+<p>那么，这在实际应用中有什么影响呢？举两个例子：</p>
+<ul>
+<li>作为函数参数时：
+<ul>
+<li>不可变对象作为参数传递时，函数内部对其修改不会影响到外部的原始对象。</li>
+<li>可变对象作为参数传递时，函数内部对其修改会直接影响到外部的原始对象。</li>
+</ul></li>
+<li>在容器中的情况：
+<ul>
+<li>不可变对象可以作为dict的键或者set的元素，因为它们的哈希值不会改变。</li>
+<li>可变对象不能作为dict的键或者set的元素，因为它们的值可能会变化，导致哈希冲突。</li>
+</ul></li>
+</ul>
+<p>因此，理解可变和不可变对象的区别，对于编写可靠的代码、避免意外副作用以及进行性能优化都非常关键。</p>
 <h2 id="小结">小结</h2>
 <p>通过本节内容，我们希望你对Python的基本语法和数据结构有一定了解。Python是一种易于学习和使用的编程语言，具有丰富的内置数据结构和强大的功能。掌握这些基础知识后，你将能够更好地使用Python进行编程。</p>
 <p>至于更进阶的Python知识，可以自行查阅相关资料或参考书籍，例如：</p>
@@ -564,16 +616,23 @@
 </ul>
 
     <div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-e8070111" role="button" aria-expanded="false" aria-controls="collapse-e8070111">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-58ad0d12" role="button" aria-expanded="false" aria-controls="collapse-58ad0d12">
         <div class="fold-arrow">▶</div>练习
       </div>
-      <div class="fold-collapse collapse" id="collapse-e8070111">
+      <div class="fold-collapse collapse" id="collapse-58ad0d12">
         <div class="fold-content">
           <ol type="1">
-<li>编写一个Python程序，使用条件语句判断一个数字是正数、负数还是零，并输出相应的结果。</li>
-<li>编写一个Python程序，创建一个包含至少5个元素的列表，使用循环接受用户输入并将输入的值添加到列表中，然后输出列表的内容。</li>
-<li>编写一个Python程序，使用try-except语句处理除以零异常。</li>
-<li>编写一个Python程序，使用for循环计算1到100的累加和。</li>
+<li>编写一个Python程序，创建一个包含至少5个元素的列表，使用循环接受用户输入并将输入的值添加到列表中，然后判断每项的类型，并输出每项的类型和内容。</li>
+<li>尝试运行下述的Python代码，并解释<code>data1.txt</code>中的内容。
+<figure class="shiki python"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">import</span><span style="color: #ABB2BF"> time</span></span>
+<span class="line"><span style="color: #C678DD">def</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">save_data</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66; font-style: italic">filename</span><span style="color: #ABB2BF"> ,</span><span style="color: #D19A66; font-style: italic">datas</span><span style="color: #ABB2BF"> = []):</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #7F848E; font-style: italic"># add timestamp as header</span></span>
+<span class="line"><span style="color: #ABB2BF">    datas.</span><span style="color: #61AFEF">insert</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">, time.</span><span style="color: #61AFEF">time</span><span style="color: #ABB2BF">())</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">with</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">open</span><span style="color: #ABB2BF">(filename ,</span><span style="color: #98C379">'w'</span><span style="color: #ABB2BF">) </span><span style="color: #C678DD">as</span><span style="color: #ABB2BF"> f:</span></span>
+<span class="line"><span style="color: #ABB2BF">        f.</span><span style="color: #61AFEF">write</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"</span><span style="color: #56B6C2">\n</span><span style="color: #98C379">"</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">join</span><span style="color: #ABB2BF">(</span><span style="color: #56B6C2">map</span><span style="color: #ABB2BF">(</span><span style="color: #56B6C2">str</span><span style="color: #ABB2BF">,datas)))</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #61AFEF">save_data</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'data0.txt'</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #61AFEF">save_data</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'data1.txt'</span><span style="color: #ABB2BF">)</span></span></code></pre></div></div></figure></li>
 <li>（选做）不使用任何第三方库，尝试利用定积分的定义编写一个Python程序计算<span class="math inline">$\int_{0}^{1} \frac{1}{x^2+1} \,
 dx$</span>的值。</li>
 </ol>
@@ -646,7 +705,7 @@ dx$</span>的值。</li>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年7月6日</div>
+          <div>2025年7月8日</div>
         </div>
       
       
@@ -661,9 +720,9 @@ dx$</span>的值。</li>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/6-2-3-Pytorch%E5%9F%BA%E7%A1%80%E3%80%90Xflops-HPC%20Start%20Guide%E3%80%91/" title="6-2-3 Pytorch基础【Xflops-HPC Start Guide】">
+                      <a href="/posts/6-2-3-PyTorch%E5%9F%BA%E7%A1%80%E3%80%90Xflops-HPC%20Start%20Guide%E3%80%91/" title="6-2-3 PyTorch基础【Xflops-HPC Start Guide】">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">6-2-3 Pytorch基础【Xflops-HPC Start Guide】</span>
+                        <span class="hidden-mobile">6-2-3 PyTorch基础【Xflops-HPC Start Guide】</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -1019,7 +1078,7 @@ dx$</span>的值。</li>
 
 
   <script type="text/javascript">
-  document.getElementById("g-total-word-id").innerHTML = "278k";
+  document.getElementById("g-total-word-id").innerHTML = "279k";
 </script>
 
   <noscript>

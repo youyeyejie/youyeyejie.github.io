@@ -30,7 +30,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/xflops.jpg">
 <meta property="article:published_time" content="2025-07-06T10:01:53.000Z">
-<meta property="article:modified_time" content="2025-07-06T10:20:00.110Z">
+<meta property="article:modified_time" content="2025-07-08T15:22:29.160Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="Xflops">
 <meta property="article:tag" content="HPC">
@@ -76,6 +76,7 @@
 <link rel="stylesheet" href="/css/CodeInLine.css">
 <link rel="stylesheet" href="/css/Footer.css">
 <link rel="stylesheet" href="/css/FrostedGlassBg.css">
+<link rel="stylesheet" href="/css/Gallery.css">
 <link rel="stylesheet" href="/css/IndexImgHover.css">
 <link rel="stylesheet" href="/css/LinkCard.css">
 <link rel="stylesheet" href="/css/RainbowLoading.css">
@@ -215,6 +216,18 @@
           
           
             <li class="nav-item">
+              <a class="nav-link" href="/tags/Photography/" target="_self">
+                <i class="fas fa-images"></i>
+                <span>相册</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
               <a class="nav-link" href="/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
                 <span>关于</span>
@@ -292,7 +305,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          3k 字
+          3.5k 字
         
       </span>
     
@@ -304,7 +317,7 @@
         
         
           <!-- compatible with older versions-->
-          26 分钟
+          30 分钟
         
       </span>
     
@@ -426,10 +439,10 @@
     
       
       
-        <a href="/posts/6-2-3-Pytorch%E5%9F%BA%E7%A1%80%E3%80%90Xflops-HPC%20Start%20Guide%E3%80%91/" title="6-2-3 Pytorch基础【Xflops-HPC Start Guide】"
+        <a href="/posts/6-2-3-PyTorch%E5%9F%BA%E7%A1%80%E3%80%90Xflops-HPC%20Start%20Guide%E3%80%91/" title="6-2-3 PyTorch基础【Xflops-HPC Start Guide】"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">6-2-3 Pytorch基础【Xflops-HPC Start Guide】</span>
+          <span class="category-post">6-2-3 PyTorch基础【Xflops-HPC Start Guide】</span>
         </a>
       
     
@@ -461,14 +474,38 @@
           </div>
 <p><a href="https://xflops.sjtu.edu.cn/hpc-start-guide" name="/img/cover/xflops.jpg" target="_blank" class="LinkCard">HPC入门指南</a></p>
 <h1 id="python简介">Python简介</h1>
-<p>Python是一种广泛使用的高级编程语言，因其简洁易读的语法和强大的库支持而受到开发者的喜爱，近年来随着AI和数据科学的兴起，Python的使用越来越普及。Python支持多种编程范式，包括面向对象、函数式和命令式编程，并且拥有丰富的标准库和第三方库，使得开发者可以快速构建各种应用程序。因其适用于包括数据分析、机器学习、Web开发、自动化脚本等在内的多种应用场景，我们仍需要掌握基础的Python知识。</p>
+<p>Python是一种广泛使用的高级编程语言，因其简洁易读的语法和强大的库支持而受到开发者的喜爱，近年来随着AI和数据科学的兴起，Python的使用越来越普及。Python支持多种编程范式，包括面向对象、函数式和命令式编程，并且拥有丰富的标准库和第三方库，使得开发者可以快速构建各种应用程序。因其适用于包括数据分析、机器学习、Web开发、自动化脚本等在内的多种应用场景，我们需要掌握基础的Python知识。</p>
 <p>在本节内容中，我们将会向您介绍Python环境的搭建与管理，以便您能够在自己的计算机上进行Python编程和开发。而在后续的内容中，我们还将介绍Python的基本语法以及Pytorch库的使用。</p>
 <h1 id="python环境搭建">Python环境搭建</h1>
 <div class="note note-success">
-            <p>我们提供的标准开发环境中已经包含了Python环境和Conda，因此您可以直接使用该环境进行Python编程和开发。如果您希望在自己的计算机上搭建Python环境，可以参考以下内容。</p>
+            <p>我们提供的标准开发环境中已经包含了Python环境和Conda，因此您可以运行下面的命令激活conda环境进行Python编程和开发。
+</p><figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #56B6C2">source</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">~/scripts/conda.sh</span></span></code></pre></div></div></figure>
+如果您希望在自己的计算机上搭建Python环境，可以参考以下内容。<p></p>
           </div>
-<p>在开始Python编程之前，您需要在您的计算机上安装Python环境。一般来说，我们可以直接安装Python的官方版本，也可以使用Anaconda等发行版来管理Python环境和依赖库。</p>
+<p>在开始Python编程之前，您需要在您的计算机上安装Python环境。一般来说，我们可以直接安装Python的官方版本，也可以使用Miniconda等发行版来管理Python环境和依赖库。</p>
 <h2 id="安装python的官方版本">安装Python的官方版本</h2>
+
+    <div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-483ebe8a" role="button" aria-expanded="false" aria-controls="collapse-483ebe8a">
+        <div class="fold-arrow">▶</div>MacOS系统与Linux系统已预装Python
+      </div>
+      <div class="fold-collapse collapse" id="collapse-483ebe8a">
+        <div class="fold-content">
+          <p>事实上MacOS系统与Linux系统默认安装了<code>python</code>，可以在命令行中使用<code>python3</code>命令运行。但是预装的Python是一些系统工具的依赖，通常不建议使用这个Python作为您的开发环境。我们推荐您使用<code>conda</code>来创建Python开发环境。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-daaf6971" role="button" aria-expanded="false" aria-controls="collapse-daaf6971">
+        <div class="fold-arrow">▶</div>Windows上快速安装Python
+      </div>
+      <div class="fold-collapse collapse" id="collapse-daaf6971">
+        <div class="fold-content">
+          <p>新版本的Windows上有<code>winget</code>可以用于快速安装常用工具链。运行<code>winget install Python</code>即可自动完成Python的安装。但是如果有多Python环境管理的需求，我们仍然建议您使用<code>conda</code>来创建Python的开发环境。</p>
+        </div>
+      </div>
+    </div>
 <p>以下是安装Python官方版本的步骤：</p>
 <ol type="1">
 <li><strong>下载Python</strong>：访问<a target="_blank" rel="noopener" href="https://www.python.org/downloads/">Python官网</a>下载适合您操作系统的Python版本。建议下载最新的稳定版本。</li>
@@ -480,14 +517,14 @@ Python to PATH”选项，这样可以在命令行中直接使用Python命令。
 <code>pip</code> ，如果您的版本不包含，可以手动安装。验证
 <code>pip</code> 是否安装成功： <figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">pip</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--version</span></span></code></pre></div></div></figure></li>
 </ol>
-<h2 id="使用anaconda安装python">使用Anaconda安装Python</h2>
-<p>Anaconda是一个流行的Python发行版，包含了Python解释器和大量的科学计算和数据分析库。使用Anaconda可以更方便地管理Python环境和依赖库。而Miniconda是Anaconda的轻量级版本，适合需要更小安装包的用户。这里以Anaconda为例介绍安装步骤：</p>
+<h3 id="使用miniconda安装python">使用Miniconda安装Python</h3>
+<p>Anaconda是一个流行的Python发行版，包含了Python解释器和大量的科学计算和数据分析库。而Miniconda是Anaconda的轻量级版本，适合需要更小安装包的用户。这里以Miniconda为例介绍安装步骤：</p>
 <ol type="1">
-<li><strong>下载Anaconda</strong>：访问<a target="_blank" rel="noopener" href="https://www.anaconda.com/products/distribution">Anaconda官网</a>下载适合您操作系统的Anaconda安装包。</li>
-<li><strong>安装Anaconda</strong>：运行下载的安装程序，按照提示完成安装。在安装过程中，您可以选择将Anaconda添加到系统的环境变量中，这样可以在命令行中直接使用
+<li><strong>下载Miniconda</strong>：访问Anaconda官网的<a target="_blank" rel="noopener" href="https://www.anaconda.com/download/success">Miniconda下载界面</a>下载适合您操作系统的Miniconda安装包。</li>
+<li><strong>安装Miniconda</strong>：运行下载的安装程序，按照提示完成安装。在安装过程中，您可以选择将Miniconda添加到系统的环境变量中，这样可以在命令行中直接使用
 <code>conda</code> 命令。</li>
-<li><strong>验证安装</strong>：安装完成后，在命令行中输入以下命令来验证Anaconda是否安装成功：
-<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">conda</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--version</span></span></code></pre></div></div></figure> 如果安装成功，您将看到Anaconda的版本信息。</li>
+<li><strong>验证安装</strong>：安装完成后，在命令行中输入以下命令来验证Miniconda是否安装成功：
+<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">conda</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--version</span></span></code></pre></div></div></figure> 如果安装成功，您将看到conda的版本信息。</li>
 </ol>
 <h2 id="选择合适的ide">选择合适的IDE</h2>
 <p>Python只是一种编程语言，您还需要一个合适的集成开发环境（IDE）来编写和运行Python代码。我们推荐使用以下两种IDE：</p>
@@ -503,15 +540,15 @@ Python to PATH”选项，这样可以在命令行中直接使用Python命令。
 </ul>
 
     <div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-efe1e613" role="button" aria-expanded="false" aria-controls="collapse-efe1e613">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-268c7555" role="button" aria-expanded="false" aria-controls="collapse-268c7555">
         <div class="fold-arrow">▶</div>练习
       </div>
-      <div class="fold-collapse collapse" id="collapse-efe1e613">
+      <div class="fold-collapse collapse" id="collapse-268c7555">
         <div class="fold-content">
           <ol type="1">
 <li>在您的计算机上安装Python环境，并验证安装是否成功。</li>
-<li>安装一个合适的IDE，并尝试编写和运行一个简单的Python程序，例如打印“Hello,
-World!”。</li>
+<li>使用IDE通过SSH连接到标准开发环境，并尝试编写和运行一个简单的Python程序，例如打印“Hello,
+World!”，并在终端中运行该程序。</li>
 </ol>
         </div>
       </div>
@@ -565,6 +602,24 @@ conda 进行环境管理的常用指令：</p>
 <code>environment.yml</code> 文件创建一个新的conda环境：
 <figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">conda</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">env</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">create</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-f</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">environment.yml</span></span></code></pre></div></div></figure></li>
 </ul>
+
+    <div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-82fcff42" role="button" aria-expanded="false" aria-controls="collapse-82fcff42">
+        <div class="fold-arrow">▶</div>离线conda环境迁移
+      </div>
+      <div class="fold-collapse collapse" id="collapse-82fcff42">
+        <div class="fold-content">
+          <p>使用上述导出环境并根据依赖文件创建环境的的方式需要新conda环境安装的机器上能够连接互联网下载依赖文件。如果您需要将现有的conda环境迁移到无互联网连接的机器上，可以使用以下命令导出conda环境到单个文件中：
+</p><figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">conda</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">pack</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-n</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">your_env_name</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-o</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">env_packages.tar.gz</span></span></code></pre></div></div></figure>
+将此文件上传到需要安装此环境的机器上。并运行以下命令来安装此环境：
+<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">tar</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-xzf</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">env_packages.tar.gz</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-C</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">new_env_path</span></span></code></pre></div></div></figure>
+我们推荐<code>new_env_path</code>设置为该机器原有的conda环境的虚拟环境管理路径。例如对于标准开发环境来说应该是<code>/home/xflops/apps/miniconda3/envs/&lt;your_env_name&gt;</code>，这样之后你可以方便的使用该机器的<code>conda</code>管理此环境。你也可以设置为一个自选的<code>new_env_path</code>。这样你将需要运行下述命令来激活此环境：
+<figure class="shiki"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #abb2bf">source new_env_path/bin/activate  # Linux/macOS</span></span>
+<span class="line"><span style="color: #abb2bf">.\new_env_path\Scripts\activate   # Windows</span></span></code></pre></div></div></figure>
+<strong>但需要注意</strong>：该迁移方式直接将依赖项的代码与二进制进行迁移，因此需保证迁移前后的系统一致处理器架构一致，例如将linux上的环境按上述方法迁移到windows将无法使用。<p></p>
+        </div>
+      </div>
+    </div>
 
     <div class="fold">
       <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-0e4fc786" role="button" aria-expanded="false" aria-controls="collapse-0e4fc786">
@@ -736,7 +791,7 @@ VSCode中报错，提示找不到该模块，请思考可能的原因以及解�
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年7月6日</div>
+          <div>2025年7月8日</div>
         </div>
       
       
@@ -1109,7 +1164,7 @@ VSCode中报错，提示找不到该模块，请思考可能的原因以及解�
 
 
   <script type="text/javascript">
-  document.getElementById("g-total-word-id").innerHTML = "278k";
+  document.getElementById("g-total-word-id").innerHTML = "279k";
 </script>
 
   <noscript>
