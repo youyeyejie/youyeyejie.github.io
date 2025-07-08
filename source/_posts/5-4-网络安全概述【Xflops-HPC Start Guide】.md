@@ -88,7 +88,7 @@ index_img: /img/cover/xflops.jpg
 
 ## 公网IP
 
-> 本节的公网IP指公网的IPv4地址
+> 本节的IP地址均指IPv4协议下的IP地址。
 
 ### 什么是公网IP
 

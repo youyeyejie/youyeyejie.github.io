@@ -2,7 +2,7 @@
 date: 2025-07-07 16:09:30
 archive: true
 category_bar: true
-title: 6-2-3 Pytorch基础【Xflops-HPC Start Guide】
+title: 6-2-3 PyTorch基础【Xflops-HPC Start Guide】
 tags:
     - Xflops
     - HPC
@@ -86,6 +86,11 @@ print(x.grad)  # 输出x的梯度
 optimizer.zero_grad()  # 假设optimizer是优化器对象
 ```
 
+### PyTorch算子
+PyTorch算子是指在PyTorch中定义的操作或函数，用于对张量进行计算和处理。算子可以是内置的，也可以是用户自定义的。内置算子包括常见的数学运算、激活函数、损失函数等。
+
+用户可以根据需要自定义算子，以实现特定的功能或优化性能。自定义算子通常需要使用C++或CUDA编写，并通过PyTorch提供的接口进行注册和调用。
+
 ### 神经网络模块（nn.Module）
 
 `nn.Module` 是构建神经网络的基类，继承该类可定义自己的神经网络模型，提供常用神经网络层，方便构建复杂结构。
@@ -116,14 +121,104 @@ for param in model.parameters():
     print(param)
 ```
 
-### PyTorch算子
-PyTorch算子是指在PyTorch中定义的操作或函数，用于对张量进行计算和处理。算子可以是内置的，也可以是用户自定义的。内置算子包括常见的数学运算、激活函数、损失函数等。
+## 使用PyTorch进行模型训练
 
-用户可以根据需要自定义算子，以实现特定的功能或优化性能。自定义算子通常需要使用C++或CUDA编写，并通过PyTorch提供的接口进行注册和调用。
+### 数据准备
+
+1. **数据集加载**：使用`torch.utils.data.Dataset`和`torch.utils.data.DataLoader`类处理数据集。
+    ```python
+    import torchvision
+    import torchvision.transforms as transforms
+    # 定义数据转换操作（如归一化）
+    transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5,), (0.5,))])
+    # 加载训练集和测试集
+    trainset = torchvision.datasets.MNIST(root='./data', train=True, download=True, transform=transform)
+    testset = torchvision.datasets.MNIST(root='./data', train=False, download=True, transform=transform)
+    # 创建数据加载器
+    trainloader = torch.utils.data.DataLoader(trainset, batch_size=64, shuffle=True)
+    testloader = torch.utils.data.DataLoader(testset, batch_size=64, shuffle=False)
+    ```
+2. **数据预处理**：输入神经网络前，进行归一化、标准化、数据增强等预处理，`torchvision.transforms`模块提供丰富预处理函数。
+
+### 模型定义
+
+根据任务需求，使用`nn.Module`定义合适的神经网络模型，如全连接神经网络、卷积神经网络（CNN）、循环神经网络（RNN）等。
+
+### 损失函数和优化器选择
+
+1. **损失函数**：衡量模型预测结果与真实标签的差距，PyTorch 提供均方误差损失（MSELoss）、交叉熵损失（CrossEntropyLoss）等，依任务类型选择。
+    ```python
+    criterion = nn.CrossEntropyLoss()  # 分类任务常用
+    ```
+2. **优化器**：更新模型参数以最小化损失函数，支持随机梯度下降（SGD）、Adam、RMSprop 等优化算法。
+    ```python
+    optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+    ```
+
+### 模型训练
+1. **训练循环**：迭代处理小批量数据，包含前向传播、计算损失、反向传播和更新参数。
+    ```python
+    model.train()  # 设置模型为训练模式
+    for epoch in range(num_epochs):
+        running_loss = 0.0
+        for inputs, labels in trainloader:
+            # 梯度清零
+            optimizer.zero_grad()
+            # 前向传播
+            outputs = model(inputs.view(-1, 784))  # 将图像数据展平为向量
+            # 计算损失
+            loss = criterion(outputs, labels)
+            # 反向传播
+            loss.backward()
+            # 更新参数
+            optimizer.step()
+            running_loss += loss.item()
+        print(f'Epoch {epoch + 1}, Loss: {running_loss / len(trainloader)}')
+    ```
+2. **训练技巧**：训练中可使用学习率调整、正则化（L1/L2 正则化、Dropout）、数据增强等技巧提升模型性能。
+
+
+### 模型评估
+
+训练后用测试集评估模型泛化能力，计算准确率、精确率、召回率、F1 值等指标。
+
+```python
+model.eval()  # 设置模型为评估模式
+correct = 0
+total = 0
+with torch.no_grad():  # 不计算梯度，提高评估速度
+    for inputs, labels in testloader:
+        outputs = model(inputs.view(-1, 784))
+        _, predicted = torch.max(outputs.data, 1)
+        total += labels.size(0)
+        correct += (predicted == labels).sum().item()
+print(f'Accuracy on test set: {100 * correct / total}%')
+```
+
+### 模型保存和加载
+
+在训练完成后，通常需要保存模型以便后续使用或部署。PyTorch 提供了简单的模型保存和加载方法。
+
+1. **保存模型**：使用`torch.save()`函数保存模型参数或整个模型。
+    ```python
+    # 保存模型参数
+    torch.save(model.state_dict(),'model.pth')
+    # 保存整个模型
+    torch.save(model,'model.pkl')
+    ```
+
+2. **加载模型**：用`torch.load()`函数加载，加载参数需先创建模型实例再用`load_state_dict()`方法。
+    ```python
+    # 加载模型参数
+    model = Net()
+    model.load_state_dict(torch.load('model.pth'))
+    # 加载整个模型
+    model = torch.load('model.pkl')
+    ```
 
 ## 小结
 
-通过本节内容，我们希望你对PyTorch的基本概念有一定了解。实际上，我们在这里介绍的只是PyTorch的冰山一角，并不要求你完全掌握所有内容。你只需要对PyTorch张量运算的基本规则有一定了解即可，如果感兴趣，可以自行查找资料学习编写PyTorch的算子的方法。
+通过本节内容，我们希望你对PyTorch的基本概念有一定了解。实际上，我们在这里介绍的只是PyTorch的冰山一角，并不要求你完全掌握所有内容。你只需要对PyTorch张量运算的基本规则和PyTorch的基础工作流程有一定了解即可，如果感兴趣，可以自行查找资料学习编写PyTorch的算子的方法。
 
 这里我们给出一些有用的链接，供你进一步学习和参考：
 
@@ -137,4 +232,5 @@ PyTorch算子是指在PyTorch中定义的操作或函数，用于对张量进行
     - 输入：一维torch.Tensor张量，每个数字代表一个y的取值。
     - 输出：一维torch.Tensor张量，每个位置对应于输入的y计算得到的定积分的值。
 2. （选做）自己编写一个PyTorch算子（基于C++或CUDA），输入一个张量x，返回张量$\frac{1}{x^2+1}$。并在python中调用这个算子运用定积分的定义计算$\int_{0}^{y} \frac{1}{x^2+1} \, dx$的值（输入输出要求与 1 中相同）
+3. （选做）使用PyTorch构建一个简单的神经网络模型，对手写数字（MNIST 数据集）进行分类，并评估模型性能。
 {% endfold %}
