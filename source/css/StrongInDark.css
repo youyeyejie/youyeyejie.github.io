@@ -8,6 +8,3 @@
 .page-content strong, .post-content strong {
     color: var(--my-post-text-color);
 }
-.page-content em, .post-content em {
-    color: var(--my-post-text-color);
-}
