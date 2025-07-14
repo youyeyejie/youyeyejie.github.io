@@ -1,17 +1,17 @@
 ---
-title: Fluid主题美化2.0
+title: Fluid页脚美化
 category_bar: true
 tags:
   - Hexo
   - Fluid
 categories:
   - Hexo Blog Building
-excerpt: Fluid 主题美化记录
-index_img: /img/cover/fluid.jpg
+excerpt: Fluid 主题美化记录2.0——无侵入式页脚美化
+index_img: /posts/Fluid页脚美化/image.png
 date: 2025-06-29 01:47:43
 ---
 
-# Fluid主题美化2.0
+# 前言
 
 本期美化同样贯彻了上期美化的原则：**无侵入式美化**，即不修改主题的源代码，只通过修改配置文件、自定义样式以及Hexo注入器来实现美化。上一期的美化包括以下内容，可以点击下方的链接卡片查看。
 
@@ -374,6 +374,8 @@ footer:
         <script src="/js/Duration.js"></script>
     </div>
 </div>
+
+<link href="/css/Footer.css"type="text/css"rel="stylesheet"/>
 ```
 
 其中，我将页脚分为四行显示：

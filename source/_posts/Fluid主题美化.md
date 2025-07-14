@@ -1,17 +1,17 @@
 ---
-title: Fluid主题美化1.0
+title: Fluid主题美化
 category_bar: true
 tags:
   - Hexo
   - Fluid
 categories:
   - Hexo Blog Building
-excerpt: Fluid 主题美化记录
-index_img: /img/cover/fluid.jpg
+excerpt: Fluid 主题美化记录1.0——无侵入式全站美化
+index_img: /posts/Fluid主题美化/image.png
 date: 2025-06-21 13:05:20
 ---
 
-# Fluid主题美化1.0
+# 前言
 
 上一篇博客提到过，我在Fluid、Solitude、Matery、ShokaX等一众主题中选择了Fluid主题，但对于其他主体内置的一些功能，我还是十分眼馋的。那怎么办呢，当然是自己进行美化了。当然，作为一个新手，大部分美化都是参考其他博客的经验进行的，部分自己摸索的美化方式也比较粗糙，不够优雅，参考需谨慎。
 
@@ -441,15 +441,6 @@ window.onload = function () {
                 text-decoration: none;
             }
             .ztext { word-break: break-word; line-height: 1.6; }
-            .LinkCard-backdrop {
-                position: absolute;
-                top: 0; left: 0; right: 0; bottom: 0;
-                background-repeat: no-repeat;
-                -webkit-filter: blur(20px);
-                filter: blur(20px);
-                background-size: cover;
-                background-position: center;
-            }
             .LinkCard-content {
                 position: relative;
                 display: flex;
@@ -507,8 +498,7 @@ window.onload = function () {
         var displayLink = truncateLink(link, 32);
 
         LinkCard.innerHTML =
-            `<span class="LinkCard-backdrop" style="background-image:url(/images/logo.svg)"></span>
-            <span class="LinkCard-content">
+            `<span class="LinkCard-content">
                 <span class="LinkCard-text">
                     <span class="LinkCard-title">${title}</span>
                     <span class="LinkCard-meta">
@@ -566,15 +556,6 @@ custom_js:
     transition: transform 0.4s ease-in;
 }
 .ztext { word-break: break-word; line-height: 1.6; }
-.LinkCard-backdrop {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-repeat: no-repeat;
-    -webkit-filter: blur(20px);
-    filter: blur(20px);
-    background-size: cover;
-    background-position: center;
-}
 .LinkCard-content {
     position: relative;
     display: flex;
@@ -641,8 +622,7 @@ window.onload = function () {
         var displayLink = truncateLink(link, 32);
 
         LinkCard.innerHTML =
-            `<span class="LinkCard-backdrop" style="background-image:url(/images/logo.svg)"></span>
-            <span class="LinkCard-content">
+            `<span class="LinkCard-content">
                 <span class="LinkCard-text">
                     <span class="LinkCard-title">${title}</span>
                     <span class="LinkCard-meta">
@@ -987,8 +967,12 @@ loadScript('https://code.jquery.com/jquery-3.6.0.min.js', function() {
         </div>
     </div>
 </div>
+
+<script src="/js/RainbowLoading.js" type="text/javascript"></script>
+<link href="/css/RainbowLoading.css"type="text/css"rel="stylesheet"/>
 ```
 
+{% fold info @注：由于在html中已经引入了相关的js和css文件，因此这一步可省略 %}
 然后在 `_config.fluid.yml` 文件的 `custom_js` 和 `custom_css` 部分添加以下内容：
 ```yaml
 custom_js:
@@ -996,6 +980,7 @@ custom_js:
 custom_css:
   - /css/RainbowLoading.css
 ```
+{% endfold %}
 
 在这之后，还需要使用Hexo的注入功能来将加载动画的HTML代码注入到页面中。我们需要在博客根目录下新建 `scripts/` 目录，然后在该目录下新建一个 `injector.js` 文件，代码如下：
 ```javascript
@@ -1245,7 +1230,6 @@ custom_js:
 custom_js:
   - /js/DynamicLine.js # 动态线条
   - /js/LinkCard.js # 链接卡片效果
-  - /js/RainbowLoading.js # 彩虹加载动画
   - /js/ScrollAnimation.js # 首页文章滑入动画
   - /js/TabDisplay.js # 标签页根据焦点切换显示
 
@@ -1257,7 +1241,6 @@ custom_css:
   - /css/FrostedGlassBg.css # 文章界面毛玻璃
   - /css/IndexImgHover.css # 首页文章封面图片悬浮效果
   - /css/LinkCard.css # 链接卡片效果
-  - /css/RainbowLoading.css # 彩虹加载动画
   - /css/ScrollAnimation.css # 首页文章滑入动画
   - /css/ScrollBar.css # 滚动条颜色
   - /css/StrongInDark.css # 强化暗色模式加粗字体

@@ -243,7 +243,8 @@ font:
 custom_js:
   - /js/DynamicLine.js # 动态线条
   - /js/LinkCard.js # 链接卡片效果
-  - /js/RainbowLoading.js # 彩虹加载动画
+  # - /js/RainbowLoading.js # 彩虹加载动画
+  # - /js/RightMenu.js # 右键菜单
   - /js/ScrollAnimation.js # 首页文章滑入动画
   - /js/TabDisplay.js # 标签页根据焦点切换显示
 
@@ -252,12 +253,13 @@ custom_js:
 custom_css:
   - /css/CodeBlock.css # 代码折叠
   - /css/CodeInLine.css # 行内代码样式
-  - /css/Footer.css # 页脚样式
+  # - /css/Footer.css # 页脚样式
   - /css/FrostedGlassBg.css # 文章界面毛玻璃
   - /css/Gallery.css # 相册文章图片
   - /css/IndexImgHover.css # 首页文章封面图片悬浮效果
   - /css/LinkCard.css # 链接卡片效果
-  - /css/RainbowLoading.css # 彩虹加载动画
+  # - /css/RainbowLoading.css # 彩虹加载动画
+  # - /css/RightMenu.css # 右键菜单样式 
   - /css/ScrollAnimation.css # 首页文章滑入动画
   - /css/ScrollBar.css # 滚动条颜色
   - /css/StrongInDark.css # 强化暗色模式加粗字体
