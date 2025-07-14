@@ -66,13 +66,10 @@
   
 <link rel="stylesheet" href="/css/CodeBlock.css">
 <link rel="stylesheet" href="/css/CodeInLine.css">
-<link rel="stylesheet" href="/css/Footer.css">
 <link rel="stylesheet" href="/css/FrostedGlassBg.css">
 <link rel="stylesheet" href="/css/Gallery.css">
 <link rel="stylesheet" href="/css/IndexImgHover.css">
 <link rel="stylesheet" href="/css/LinkCard.css">
-<link rel="stylesheet" href="/css/RainbowLoading.css">
-<link rel="stylesheet" href="/css/RightMenu.css">
 <link rel="stylesheet" href="/css/ScrollAnimation.css">
 <link rel="stylesheet" href="/css/ScrollBar.css">
 <link rel="stylesheet" href="/css/StrongInDark.css">
@@ -133,10 +130,11 @@
             <div class="loader-line"></div>
         </div>
     </div>
-</div><div id="tooltip-rightmenu" class="tooltip-rightmenu">如需原始右键菜单请按下 <strong>Ctrl+右键</strong></div>
-<div id="tooltip-copy-link" class="tooltip-rightmenu">链接已复制到剪贴板</div>
-<div id="tooltip-copy-selected-text" class="tooltip-rightmenu">选中文本已复制到剪贴板</div>
-<div id="tooltip-download-image" class="tooltip-rightmenu">图片已下载</div>
+</div>
+
+<script src="/js/RainbowLoading.js" type="text/javascript"></script>
+<link href="/css/RainbowLoading.css"type="text/css"rel="stylesheet"/><div id="tooltip-rightmenu" class="tooltip-rightmenu">如需原始右键菜单请按下 <strong>Ctrl+右键</strong></div>
+<div id="tooltip-rightmenu-return" class="tooltip-rightmenu">图片已下载</div>
 
 <div id="rightmenu-wrapper">
   <ul class="list-v rightmenu" id="rightmenu-content">
@@ -145,6 +143,7 @@
             <a class="nav icon-only fix-cursor-default" onclick="history.forward()"><i class="fa-solid fa-chevron-right"></i></a>
             <a class="nav icon-only fix-cursor-default" onclick="window.location.reload()"><i class="fa-solid fa-rotate-right"></i></a>
             <a class="nav icon-only fix-cursor-default" aria-label="TOP" href="#" role="button"><i class="fa-solid fa-chevron-up"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="bottom" href="javascript:void(0);" role="button" onclick="window.scrollTo(0, document.body.scrollHeight);"><i class="fa-solid fa-chevron-down"></i></a>
 	    </li>
 
         <hr class="menuLoad-Content" style="display: block;" id="top-line" hidden>
@@ -247,13 +246,12 @@
             </span>
             </a>
         </li>
-
-	    <hr class="menuLoad-Content" style="display: block;">
     </ul>
 </div>
 
 
-
+<script src="/js/RightMenu.js" type="text/javascript"></script>
+<link href="/css/RightMenu.css"type="text/css"rel="stylesheet"/>
 
   <header>
     
@@ -420,6 +418,75 @@
               <div class="col-12 col-md-10 m-auto">
                 
 
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/posts/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/" target="_self">
+          <img src="/img/cover/nis2331.jpg" alt="计算机组成与系统结构">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/posts/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/" target="_self">
+          计算机组成与系统结构
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/posts/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/" target="_self">
+        <div>
+          NIS2331 计算机组成与系统结构 笔记
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-01-23 09:09" pubdate>
+              2025-01-23
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/SJTU-Notes/" class="category-chain-item">SJTU Notes</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/SJTU/">#SJTU</a>
+            
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/">#计算机组成</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
 
   <div class="row mx-auto index-card">
     
@@ -898,73 +965,6 @@
     </article>
   </div>
 
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/%E6%98%A5%E6%97%A5%E6%98%A0%E5%83%8F/" target="_self">
-          <img src="/posts/%E6%98%A5%E6%97%A5%E6%98%A0%E5%83%8F/%E5%B0%81%E9%9D%A2.webp" alt="春日映像">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/posts/%E6%98%A5%E6%97%A5%E6%98%A0%E5%83%8F/" target="_self">
-          春日映像
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt " href="/posts/%E6%98%A5%E6%97%A5%E6%98%A0%E5%83%8F/" target="_self">
-        <div>
-          春光不负人
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2024-04-06 00:00" pubdate>
-              2024-04-06
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/DayDream-Gallery/" class="category-chain-item">DayDream Gallery</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Photography/">#Photography</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
 
 
   <nav aria-label="navigation">
@@ -1066,6 +1066,8 @@
         <script src="/js/Duration.js"></script>
     </div>
 </div>
+
+<link href="/css/Footer.css"type="text/css"rel="stylesheet"/>
   </footer>
 
   <!-- Scripts -->
@@ -1121,8 +1123,6 @@
   
 <script src="/js/DynamicLine.js"></script>
 <script src="/js/LinkCard.js"></script>
-<script src="/js/RainbowLoading.js"></script>
-<script src="/js/RightMenu.js"></script>
 <script src="/js/ScrollAnimation.js"></script>
 <script src="/js/TabDisplay.js"></script>
 
@@ -1134,7 +1134,7 @@
 
 
   <script type="text/javascript">
-  document.getElementById("g-total-word-id").innerHTML = "282k";
+  document.getElementById("g-total-word-id").innerHTML = "286k";
 </script>
 
   <noscript>

@@ -66,13 +66,10 @@
   
 <link rel="stylesheet" href="/css/CodeBlock.css">
 <link rel="stylesheet" href="/css/CodeInLine.css">
-<link rel="stylesheet" href="/css/Footer.css">
 <link rel="stylesheet" href="/css/FrostedGlassBg.css">
 <link rel="stylesheet" href="/css/Gallery.css">
 <link rel="stylesheet" href="/css/IndexImgHover.css">
 <link rel="stylesheet" href="/css/LinkCard.css">
-<link rel="stylesheet" href="/css/RainbowLoading.css">
-<link rel="stylesheet" href="/css/RightMenu.css">
 <link rel="stylesheet" href="/css/ScrollAnimation.css">
 <link rel="stylesheet" href="/css/ScrollBar.css">
 <link rel="stylesheet" href="/css/StrongInDark.css">
@@ -133,10 +130,11 @@
             <div class="loader-line"></div>
         </div>
     </div>
-</div><div id="tooltip-rightmenu" class="tooltip-rightmenu">如需原始右键菜单请按下 <strong>Ctrl+右键</strong></div>
-<div id="tooltip-copy-link" class="tooltip-rightmenu">链接已复制到剪贴板</div>
-<div id="tooltip-copy-selected-text" class="tooltip-rightmenu">选中文本已复制到剪贴板</div>
-<div id="tooltip-download-image" class="tooltip-rightmenu">图片已下载</div>
+</div>
+
+<script src="/js/RainbowLoading.js" type="text/javascript"></script>
+<link href="/css/RainbowLoading.css"type="text/css"rel="stylesheet"/><div id="tooltip-rightmenu" class="tooltip-rightmenu">如需原始右键菜单请按下 <strong>Ctrl+右键</strong></div>
+<div id="tooltip-rightmenu-return" class="tooltip-rightmenu">图片已下载</div>
 
 <div id="rightmenu-wrapper">
   <ul class="list-v rightmenu" id="rightmenu-content">
@@ -145,6 +143,7 @@
             <a class="nav icon-only fix-cursor-default" onclick="history.forward()"><i class="fa-solid fa-chevron-right"></i></a>
             <a class="nav icon-only fix-cursor-default" onclick="window.location.reload()"><i class="fa-solid fa-rotate-right"></i></a>
             <a class="nav icon-only fix-cursor-default" aria-label="TOP" href="#" role="button"><i class="fa-solid fa-chevron-up"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="bottom" href="javascript:void(0);" role="button" onclick="window.scrollTo(0, document.body.scrollHeight);"><i class="fa-solid fa-chevron-down"></i></a>
 	    </li>
 
         <hr class="menuLoad-Content" style="display: block;" id="top-line" hidden>
@@ -247,13 +246,12 @@
             </span>
             </a>
         </li>
-
-	    <hr class="menuLoad-Content" style="display: block;">
     </ul>
 </div>
 
 
-
+<script src="/js/RightMenu.js" type="text/javascript"></script>
+<link href="/css/RightMenu.css"type="text/css"rel="stylesheet"/>
 
   <header>
     
@@ -496,6 +494,75 @@
     
     
       <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/posts/Fluid%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/" target="_self">
+          <img src="/posts/Fluid%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/image.png" alt="Fluid自定义右键菜单">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/posts/Fluid%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/" target="_self">
+          Fluid自定义右键菜单
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/posts/Fluid%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/" target="_self">
+        <div>
+          Fluid 主题美化记录3.0——无侵入式自定义右键菜单
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-07-14 13:20" pubdate>
+              2025-07-14
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Hexo-Blog-Building/" class="category-chain-item">Hexo Blog Building</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Hexo/">#Hexo</a>
+            
+              <a href="/tags/Fluid/">#Fluid</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
         <a href="/posts/%E8%94%B7%E8%96%87%E8%8A%B1%E5%8F%88%E5%BC%80/" target="_self">
           <img src="/posts/%E8%94%B7%E8%96%87%E8%8A%B1%E5%8F%88%E5%BC%80/%E5%B0%81%E9%9D%A2.webp" alt="蔷薇花又开">
         </a>
@@ -563,23 +630,23 @@
     
     
       <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/Fluid%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%962-0/" target="_self">
-          <img src="/img/cover/fluid.jpg" alt="Fluid主题美化2.0">
+        <a href="/posts/Fluid%E9%A1%B5%E8%84%9A%E7%BE%8E%E5%8C%96/" target="_self">
+          <img src="/posts/Fluid%E9%A1%B5%E8%84%9A%E7%BE%8E%E5%8C%96/image.png" alt="Fluid页脚美化">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/posts/Fluid%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%962-0/" target="_self">
-          Fluid主题美化2.0
+        <a href="/posts/Fluid%E9%A1%B5%E8%84%9A%E7%BE%8E%E5%8C%96/" target="_self">
+          Fluid页脚美化
         </a>
       </h2>
 
       
-      <a class="index-excerpt " href="/posts/Fluid%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%962-0/" target="_self">
+      <a class="index-excerpt " href="/posts/Fluid%E9%A1%B5%E8%84%9A%E7%BE%8E%E5%8C%96/" target="_self">
         <div>
-          Fluid 主题美化记录
+          Fluid 主题美化记录2.0——无侵入式页脚美化
         </div>
       </a>
 
@@ -900,75 +967,6 @@
     </article>
   </div>
 
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/Fluid%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%961-0/" target="_self">
-          <img src="/img/cover/fluid.jpg" alt="Fluid主题美化1.0">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/posts/Fluid%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%961-0/" target="_self">
-          Fluid主题美化1.0
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt " href="/posts/Fluid%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%961-0/" target="_self">
-        <div>
-          Fluid 主题美化记录
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2025-06-21 13:05" pubdate>
-              2025-06-21
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/Hexo-Blog-Building/" class="category-chain-item">Hexo Blog Building</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Hexo/">#Hexo</a>
-            
-              <a href="/tags/Fluid/">#Fluid</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
 
 
   <nav aria-label="navigation">
@@ -1070,6 +1068,8 @@
         <script src="/js/Duration.js"></script>
     </div>
 </div>
+
+<link href="/css/Footer.css"type="text/css"rel="stylesheet"/>
   </footer>
 
   <!-- Scripts -->
@@ -1125,8 +1125,6 @@
   
 <script src="/js/DynamicLine.js"></script>
 <script src="/js/LinkCard.js"></script>
-<script src="/js/RainbowLoading.js"></script>
-<script src="/js/RightMenu.js"></script>
 <script src="/js/ScrollAnimation.js"></script>
 <script src="/js/TabDisplay.js"></script>
 
@@ -1138,7 +1136,7 @@
 
 
   <script type="text/javascript">
-  document.getElementById("g-total-word-id").innerHTML = "282k";
+  document.getElementById("g-total-word-id").innerHTML = "286k";
 </script>
 
   <noscript>

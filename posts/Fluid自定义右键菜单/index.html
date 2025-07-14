@@ -1,0 +1,1590 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head><!-- hexo injector head_begin start --><meta name="msvalidate.01" content="DF9F232801BA9D0CABB002E4774A3228" />
+<meta name="google-site-verification" content="vOm5Zs9tuUlEh-wVBlpvs_spnOou-q2CoTiFQ1ZV1h4" />
+<!-- hexo injector head_begin end -->
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar/avatar2.png">
+  <link rel="icon" href="/img/avatar/avatar2.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="youyeyejie">
+  <meta name="keywords" content="yyyj,YYYJ,youyeyejie,有野野芥">
+  
+    <meta name="description" content="Fluid 主题美化记录3.0——无侵入式自定义右键菜单">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fluid自定义右键菜单">
+<meta property="og:url" content="https://youyeyejie.github.io/posts/Fluid%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/index.html">
+<meta property="og:site_name" content="有野野芥的博客">
+<meta property="og:description" content="Fluid 主题美化记录3.0——无侵入式自定义右键菜单">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://youyeyejie.github.io/posts/Fluid%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/image.png">
+<meta property="article:published_time" content="2025-07-14T05:20:46.000Z">
+<meta property="article:modified_time" content="2025-07-14T06:03:37.712Z">
+<meta property="article:author" content="youyeyejie">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Fluid">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://youyeyejie.github.io/posts/Fluid%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/image.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>Fluid自定义右键菜单 - 有野野芥的博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+<link rel="stylesheet" href="//lib.baomitu.com/font-awesome/6.1.2/css/all.min.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+
+
+  
+<link rel="stylesheet" href="/css/CodeBlock.css">
+<link rel="stylesheet" href="/css/CodeInLine.css">
+<link rel="stylesheet" href="/css/FrostedGlassBg.css">
+<link rel="stylesheet" href="/css/Gallery.css">
+<link rel="stylesheet" href="/css/IndexImgHover.css">
+<link rel="stylesheet" href="/css/LinkCard.css">
+<link rel="stylesheet" href="/css/ScrollAnimation.css">
+<link rel="stylesheet" href="/css/ScrollBar.css">
+<link rel="stylesheet" href="/css/StrongInDark.css">
+<link rel="stylesheet" href="/css/TitleGradient.css">
+<link rel="stylesheet" href="/css/TitleNeon.css">
+<link rel="stylesheet" href="/css/UnifyImgWidth.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"youyeyejie.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":false,"default":"TEXT"},"copy_btn":false,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading/loading3.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-shiki-plugin@latest/lib/codeblock.css">
+<style>:root{--hl-color:#abb2bf;--hl-bg:#282c34;--hltools-bg:#21252b;--hltools-color:#bbbbbc;--hlnumber-bg:#282c34;--hlnumber-color:#495162;--hlscrollbar-bg:#373c47;--hlexpand-bg:linear-gradient(180deg,rgba(40,44,52,0.1),rgba(40,44,52,0.9))}</style>
+    <style>
+    .code-expand-btn:not(.expand-done) ~ div.codeblock,
+    .code-expand-btn:not(.expand-done) ~ * div.codeblock {
+      overflow: hidden;
+      height: 360px;
+    }
+    </style>
+  <!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+
+<body>
+  <div id="loader-container"> 
+    <div id="loader" class="loader"></div>
+    <div class="loader-inner">
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/RainbowLoading.js" type="text/javascript"></script>
+<link href="/css/RainbowLoading.css"type="text/css"rel="stylesheet"/><div id="tooltip-rightmenu" class="tooltip-rightmenu">如需原始右键菜单请按下 <strong>Ctrl+右键</strong></div>
+<div id="tooltip-rightmenu-return" class="tooltip-rightmenu">图片已下载</div>
+
+<div id="rightmenu-wrapper">
+  <ul class="list-v rightmenu" id="rightmenu-content">
+	    <li class="navigation menuNavigation-Content">
+            <a class="nav icon-only fix-cursor-default" onclick="history.back()"><i class="fa-solid fa-chevron-left"></i></a>
+            <a class="nav icon-only fix-cursor-default" onclick="history.forward()"><i class="fa-solid fa-chevron-right"></i></a>
+            <a class="nav icon-only fix-cursor-default" onclick="window.location.reload()"><i class="fa-solid fa-rotate-right"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="TOP" href="#" role="button"><i class="fa-solid fa-chevron-up"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="bottom" href="javascript:void(0);" role="button" onclick="window.scrollTo(0, document.body.scrollHeight);"><i class="fa-solid fa-chevron-down"></i></a>
+	    </li>
+
+        <hr class="menuLoad-Content" style="display: block;" id="top-line" hidden>
+
+        <li class="menuLoad-Content" style="display: block;" id="copy-selected-text" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copySelectedText();">
+                <span>
+                    <i class="fa-solid fa-copy"></i>
+                    &nbsp;复制选中
+                </span>
+            </a>
+        </li>
+
+        <li class="menuLoad-Content" style="display: block;" id="search-selected-text-BING" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_blank" onclick="searchSelectedTextBing();">
+                <span>
+                    <i class="fa-solid fa-magnifying-glass-arrow-right"></i>
+                    &nbsp;必应搜索
+                </span>
+            </a>
+        </li>
+
+        <li class="menuLoad-Content" style="display: block;" id="go-to-link" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_blank" onclick="goToLink();">
+                <span>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    &nbsp;转到链接
+                </span>
+            </a>
+        </li>
+
+        <li class="menuLoad-Content" style="display: block;" id="download-image" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="downloadImage();">
+                <span>
+                    <i class="fa-solid fa-image"></i>
+                    &nbsp;下载图片
+                </span>
+            </a>
+        </li>
+
+        <li class="menuLoad-Content" style="display: block;" id="copy-image-link" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copyImageLink();">
+                <span>
+                    <i class="fa-solid fa-link"></i>
+                    复制图片链接
+                </span>
+            </a>
+        </li>
+
+		<hr class="menuLoad-Content" style="display: block;">
+
+        <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" onclick="RandomGo()">
+		        <span>
+			        <i class="fa-solid fa-paper-plane"></i>
+                    &nbsp;随便看看
+		        </span>
+		    </a>
+	    </li>
+	    <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+		        <span>
+			        <i class="fa-solid fa-magnifying-glass"></i>
+                    &nbsp;站内搜索
+		        </span>
+		    </a>
+	    </li>
+        <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" href="/categories/">
+		        <span>
+			        <i class="iconfont icon-category-fill"></i>
+                    &nbsp;博客分类
+		        </span>
+		    </a>
+	    </li>
+        <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" href="/tags/">
+		        <span>
+			        <i class="fa-solid fa-tags"></i>
+                    &nbsp;文章标签
+		        </span>
+		    </a>
+	    </li>
+        
+	    <hr class="menuLoad-Content" style="display: block;">
+
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copyLink();">
+                <span>
+                    <i class="fa-solid fa-copy"></i>
+                    &nbsp;复制链接
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="document.getElementById('color-toggle-btn').click();">
+            <span>
+                <i class="fa-solid fa-circle-half-stroke"></i>
+                &nbsp;切换昼夜
+            </span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+<script src="/js/RightMenu.js" type="text/javascript"></script>
+<link href="/css/RightMenu.css"type="text/css"rel="stylesheet"/>
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <!-- <strong>YYYJ&#39;s Blog</strong> -->
+       <strong class="navbar-title">YYYJ&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/DayDream-Gallery/" target="_self">
+                <i class="fas fa-images"></i>
+                <span>图集</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.travellings.cn/go-by-clouds.html" target="_self">
+                <i class="fas fa-train-subway"></i>
+                <span>开往</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/banner/banner.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Fluid自定义右键菜单"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        youyeyejie
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-07-14 13:20" pubdate>
+          2025年7月14日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          3.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          31 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar category-bar" style="margin-right: -1rem">
+    
+
+
+
+
+
+<div class="category-list">
+  
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Hexo Blog Building"
+        id="heading-9b84d3ac4a7bc6fefd79d5872f3510b0" role="tab" data-toggle="collapse" href="#collapse-9b84d3ac4a7bc6fefd79d5872f3510b0"
+        aria-expanded="true"
+      >
+        Hexo Blog Building
+        <span class="list-group-count">(5)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-9b84d3ac4a7bc6fefd79d5872f3510b0"
+           role="tabpanel" aria-labelledby="heading-9b84d3ac4a7bc6fefd79d5872f3510b0">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/posts/Fluid%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/" title="Fluid主题美化"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Fluid主题美化</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/Fluid%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/" title="Fluid自定义右键菜单"
+           class="list-group-item list-group-item-action
+           active">
+          <span class="category-post">Fluid自定义右键菜单</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/Fluid%E9%A1%B5%E8%84%9A%E7%BE%8E%E5%8C%96/" title="Fluid页脚美化"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Fluid页脚美化</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E4%B8%94%E4%BB%A5%E7%BE%A4%E8%AF%8D-%E6%B3%A8%E8%A7%A3%E6%88%91%E8%BF%99%E5%BA%A7%E8%8D%92%E5%B1%B1/" title="且以群词 注解我这座荒山"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">且以群词 注解我这座荒山</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E8%AE%A9%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E6%94%B6%E5%BD%95%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2/" title="让搜索引擎收录你的博客"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">让搜索引擎收录你的博客</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+</div>
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Fluid自定义右键菜单</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="前言">前言</h1>
+<p>本期美化同样贯彻了前两美化的原则：<strong>无侵入式美化</strong>，即不修改主题的源代码，只通过修改配置文件、自定义样式以及Hexo注入器来实现美化。前两期的美化可以点击下方的链接卡片查看。</p>
+<p><a href="/posts/Fluid主题美化/" name="/img/avatar/avatar.jpg" class="LinkCard">Fluid主题美化</a>
+<a href="/posts/Fluid页脚美化/" name="/img/avatar/avatar.jpg" class="LinkCard">Fluid页脚美化</a></p>
+<p>在本期中，我们将实现一个自定义的右键菜单，我参考了苍岚和loyeh两位博主的实现方式，在他们的基础上进行了改进和扩展，最终实现了一个更加美观和实用的右键菜单。如果不关心实现，可以直接跳转至
+<a href="#总结">总结</a> 获取完整代码和使用方法。</p>
+<p><a target="_blank" rel="noopener" href="https://www.zywvvd.com/notes/hexo/theme/fluid/fluid-custom-rightmenu/fluid-custom-rightmenu/" name="https://www.zywvvd.com/image/avatar.png" class="LinkCard">Fluid-39-自定义右键菜单</a>
+<a target="_blank" rel="noopener" href="https://lo-y-eh.github.io/posts/92dc.html" name="https://lo-y-eh.github.io/medias/avatar.jpg" class="LinkCard">右键菜单</a></p>
+<h1 id="功能设计">功能设计</h1>
+<p>在设计这个右键菜单时，我主要考虑了我个人的使用习惯，兼顾访客可能存在的需求。最终，我设计了以下功能：</p>
+<ol type="1">
+<li>在覆盖浏览器原本的右键菜单时，必须留有使用浏览器原生右键菜单的入口。</li>
+<li>提供常用的功能，如前进、后退、刷新等</li>
+<li>提供快速返回顶部和快速跳转到页脚的功能</li>
+<li>应对各种情况做出不同的响应，如：
+<ul>
+<li>选中文本时，提供复制文本、必应搜索等功能</li>
+<li>在图片上，提供复制图片链接、下载图片等功能</li>
+<li>在链接上，提供打开链接等功能</li>
+</ul></li>
+<li>常驻功能中，提供复制当前页面链接的功能和切换主题昼夜模式的功能</li>
+<li>提供站内搜索、快速访问博客分类和文章标签的入口</li>
+<li>为访客提供随机访问文章的功能</li>
+</ol>
+<p>综上，我们只需要依次设计实现这些功能即可。</p>
+<h1 id="实现步骤">实现步骤</h1>
+<ol type="1">
+<li>创建右键菜单的 HTML 结构</li>
+<li>使用 Hexo 注入器将 HTML 结构注入到页面中</li>
+<li>使用 CSS 美化右键菜单</li>
+<li>使用 JavaScript 实现右键菜单的显示与隐藏</li>
+<li>使用 JavaScript 实现右键菜单的各项功能</li>
+</ol>
+<h2 id="创建右键菜单的-html-结构">创建右键菜单的 HTML 结构</h2>
+<p>在 Hexo 的 <code>source/html</code> 目录下创建一个
+<code>RightMenu.html</code> 文件，内容如下：</p>
+<figure class="shiki html"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">id</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"tooltip-rightmenu"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"tooltip-rightmenu"</span><span style="color: #ABB2BF">&gt;如需原始右键菜单请按下 &lt;</span><span style="color: #E06C75">strong</span><span style="color: #ABB2BF">&gt;Ctrl+右键&lt;/</span><span style="color: #E06C75">strong</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">id</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"tooltip-rightmenu-return"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"tooltip-rightmenu"</span><span style="color: #ABB2BF">&gt;图片已下载&lt;/</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">id</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"rightmenu-wrapper"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">  &lt;</span><span style="color: #E06C75">ul</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"list-v rightmenu"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">id</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"rightmenu-content"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">	    &lt;</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"navigation menuNavigation-Content"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"nav icon-only fix-cursor-default"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">onclick</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"</span><span style="color: #E5C07B">history</span><span style="color: #98C379">.</span><span style="color: #61AFEF">back</span><span style="color: #98C379">()"</span><span style="color: #ABB2BF">&gt;&lt;</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"fa-solid fa-chevron-left"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"nav icon-only fix-cursor-default"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">onclick</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"</span><span style="color: #E5C07B">history</span><span style="color: #98C379">.</span><span style="color: #61AFEF">forward</span><span style="color: #98C379">()"</span><span style="color: #ABB2BF">&gt;&lt;</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"fa-solid fa-chevron-right"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"nav icon-only fix-cursor-default"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">onclick</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"</span><span style="color: #E5C07B">window</span><span style="color: #98C379">.</span><span style="color: #E5C07B">location</span><span style="color: #98C379">.</span><span style="color: #61AFEF">reload</span><span style="color: #98C379">()"</span><span style="color: #ABB2BF">&gt;&lt;</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"fa-solid fa-rotate-right"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"nav icon-only fix-cursor-default"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">aria-label</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"TOP"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">href</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"#"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">role</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"button"</span><span style="color: #ABB2BF">&gt;&lt;</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"fa-solid fa-chevron-up"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"nav icon-only fix-cursor-default"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">aria-label</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"bottom"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">href</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"javascript:void(0);"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">role</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"button"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">onclick</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"</span><span style="color: #E5C07B">window</span><span style="color: #98C379">.</span><span style="color: #61AFEF">scrollTo</span><span style="color: #98C379">(</span><span style="color: #D19A66">0</span><span style="color: #98C379">, </span><span style="color: #E5C07B">document</span><span style="color: #98C379">.</span><span style="color: #E5C07B">body</span><span style="color: #98C379">.</span><span style="color: #E06C75">scrollHeight</span><span style="color: #98C379">);"</span><span style="color: #ABB2BF">&gt;&lt;</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"fa-solid fa-chevron-down"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">	    &lt;/</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;</span><span style="color: #E06C75">hr</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"menuLoad-Content"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">style</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"display: block;"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">id</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"top-line"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">hidden</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"menuLoad-Content"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">style</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"display: block;"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">id</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"copy-selected-text"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">hidden</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"vlts-menu fix-cursor-default"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">target</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"_self"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">onclick</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"</span><span style="color: #61AFEF">copySelectedText</span><span style="color: #98C379">();"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">                &lt;</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">                    &lt;</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"fa-solid fa-copy"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #E06C75">&amp;nbsp;</span><span style="color: #ABB2BF">复制选中</span></span>
+<span class="line"><span style="color: #ABB2BF">                &lt;/</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;/</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;/</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"menuLoad-Content"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">style</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"display: block;"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">id</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"search-selected-text-BING"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">hidden</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"vlts-menu fix-cursor-default"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">target</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"_blank"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">onclick</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"</span><span style="color: #61AFEF">searchSelectedTextBing</span><span style="color: #98C379">();"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">                &lt;</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">                    &lt;</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"fa-solid fa-magnifying-glass-arrow-right"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #E06C75">&amp;nbsp;</span><span style="color: #ABB2BF">必应搜索</span></span>
+<span class="line"><span style="color: #ABB2BF">                &lt;/</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;/</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;/</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"menuLoad-Content"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">style</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"display: block;"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">id</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"go-to-link"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">hidden</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"vlts-menu fix-cursor-default"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">target</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"_blank"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">onclick</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"</span><span style="color: #61AFEF">goToLink</span><span style="color: #98C379">();"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">                &lt;</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">                    &lt;</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"fa-solid fa-arrow-up-right-from-square"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #E06C75">&amp;nbsp;</span><span style="color: #ABB2BF">转到链接</span></span>
+<span class="line"><span style="color: #ABB2BF">                &lt;/</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;/</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;/</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"menuLoad-Content"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">style</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"display: block;"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">id</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"download-image"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">hidden</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"vlts-menu fix-cursor-default"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">target</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"_self"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">onclick</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"</span><span style="color: #61AFEF">downloadImage</span><span style="color: #98C379">();"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">                &lt;</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">                    &lt;</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"fa-solid fa-image"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #E06C75">&amp;nbsp;</span><span style="color: #ABB2BF">下载图片</span></span>
+<span class="line"><span style="color: #ABB2BF">                &lt;/</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;/</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;/</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"menuLoad-Content"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">style</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"display: block;"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">id</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"copy-image-link"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">hidden</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"vlts-menu fix-cursor-default"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">target</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"_self"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">onclick</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"</span><span style="color: #61AFEF">copyImageLink</span><span style="color: #98C379">();"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">                &lt;</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">                    &lt;</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"fa-solid fa-link"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">                    复制图片链接</span></span>
+<span class="line"><span style="color: #ABB2BF">                &lt;/</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;/</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;/</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">		&lt;</span><span style="color: #E06C75">hr</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"menuLoad-Content"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">style</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"display: block;"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"menuLoad-Content"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">style</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"display: block;"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">		    &lt;</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"vlts-menu fix-cursor-default"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">target</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"_self"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">onclick</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"</span><span style="color: #61AFEF">RandomGo</span><span style="color: #98C379">()"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">		        &lt;</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">			        &lt;</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"fa-solid fa-paper-plane"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #E06C75">&amp;nbsp;</span><span style="color: #ABB2BF">随便看看</span></span>
+<span class="line"><span style="color: #ABB2BF">		        &lt;/</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">		    &lt;/</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">	    &lt;/</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">	    &lt;</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"menuLoad-Content"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">style</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"display: block;"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">		    &lt;</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"vlts-menu fix-cursor-default"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">target</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"_self"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">href</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"javascript:;"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">data-toggle</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"modal"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">data-target</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"#modalSearch"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">aria-label</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"Search"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">		        &lt;</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">			        &lt;</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"fa-solid fa-magnifying-glass"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #E06C75">&amp;nbsp;</span><span style="color: #ABB2BF">站内搜索</span></span>
+<span class="line"><span style="color: #ABB2BF">		        &lt;/</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">		    &lt;/</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">	    &lt;/</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"menuLoad-Content"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">style</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"display: block;"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">		    &lt;</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"vlts-menu fix-cursor-default"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">target</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"_self"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">href</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"/categories/"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">		        &lt;</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">			        &lt;</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"iconfont icon-category-fill"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #E06C75">&amp;nbsp;</span><span style="color: #ABB2BF">博客分类</span></span>
+<span class="line"><span style="color: #ABB2BF">		        &lt;/</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">		    &lt;/</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">	    &lt;/</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"menuLoad-Content"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">style</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"display: block;"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">		    &lt;</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"vlts-menu fix-cursor-default"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">target</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"_self"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">href</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"/tags/"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">		        &lt;</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">			        &lt;</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"fa-solid fa-tags"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #E06C75">&amp;nbsp;</span><span style="color: #ABB2BF">文章标签</span></span>
+<span class="line"><span style="color: #ABB2BF">		        &lt;/</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">		    &lt;/</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">	    &lt;/</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span></span>
+<span class="line"><span style="color: #ABB2BF">	    &lt;</span><span style="color: #E06C75">hr</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"menuLoad-Content"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">style</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"display: block;"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"menuLoad-Content"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">style</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"display: block;"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"vlts-menu fix-cursor-default"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">target</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"_self"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">onclick</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"</span><span style="color: #61AFEF">copyLink</span><span style="color: #98C379">();"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">                &lt;</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">                    &lt;</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"fa-solid fa-copy"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #E06C75">&amp;nbsp;</span><span style="color: #ABB2BF">复制链接</span></span>
+<span class="line"><span style="color: #ABB2BF">                &lt;/</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;/</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;/</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"menuLoad-Content"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">style</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"display: block;"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"vlts-menu fix-cursor-default"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">target</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"_self"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">onclick</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"</span><span style="color: #E5C07B">document</span><span style="color: #98C379">.</span><span style="color: #61AFEF">getElementById</span><span style="color: #98C379">('color-toggle-btn').</span><span style="color: #61AFEF">click</span><span style="color: #98C379">();"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">                &lt;</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"fa-solid fa-circle-half-stroke"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #E06C75">&amp;nbsp;</span><span style="color: #ABB2BF">切换昼夜</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;/</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;/</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;/</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;/</span><span style="color: #E06C75">ul</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">src</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"/js/RightMenu.js"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">type</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"text/javascript"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">link</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">href</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"/css/RightMenu.css"</span><span style="color: #D19A66">type</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"text/css"</span><span style="color: #D19A66">rel</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"stylesheet"</span><span style="color: #ABB2BF">/&gt;</span></span></code></pre></div></div></figure>
+<p>其中 <code>tooltip-rightmenu</code> 和
+<code>tooltip-rightmenu-return</code>
+是用于提示用户如何使用右键菜单的元素，<code>rightmenu-wrapper</code>
+是右键菜单的容器，<code>rightmenu-content</code>
+是右键菜单的内容列表，也是我们需要实现的功能项。</p>
+<p>在代码的最后，我们引入了 <code>RightMenu.js</code> 和
+<code>RightMenu.css</code>
+文件，这两个文件将分别用于实现右键菜单的逻辑和样式，因此我们不必在
+<code>_config.fluid.yml</code> 中再进行额外的配置。</p>
+<h2 id="使用-hexo-注入器将-html-结构注入到页面中">使用 Hexo 注入器将
+HTML 结构注入到页面中</h2>
+<p>在 Hexo 的 <code>scripts/injector.js</code> 文件中添加以下代码：</p>
+<figure class="shiki javascript"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #E5C07B">hexo</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">extend</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">filter</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">register</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'theme_inject'</span><span style="color: #ABB2BF">, </span><span style="color: #C678DD">function</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">injects</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">  </span><span style="color: #7F848E; font-style: italic">// 右键菜单</span></span>
+<span class="line"><span style="color: #ABB2BF">  </span><span style="color: #E5C07B">injects</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">bodyBegin</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">file</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'default'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">"source/html/RightMenu.html"</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">});</span></span></code></pre></div></div></figure>
+<p>这段代码将 <code>RightMenu.html</code> 文件注入到页面的
+<code>&lt;body&gt;</code> 标签开始的位置。这样，当页面加载时，右键菜单的
+HTML 结构就会被插入到页面中。</p>
+<h2 id="使用-css-美化右键菜单">使用 CSS 美化右键菜单</h2>
+<p>接下来我们将实现右键菜单的样式。在 <code>source/css</code>
+目录下创建一个 <code>RightMenu.css</code> 文件，内容如下：</p>
+<figure class="shiki css"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #E06C75">div</span><span style="color: #61AFEF">#rightmenu-wrapper</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">    display: -webkit-box </span><span style="color: #7F848E; font-style: italic">/* OLD - iOS 6-, Safari 3.1-6 */</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    display: -moz-box </span><span style="color: #7F848E; font-style: italic">/* OLD - Firefox 19- (buggy but mostly works) */</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    display: </span><span style="color: #D19A66">none</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    position: </span><span style="color: #D19A66">fixed</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    z-index: </span><span style="color: #D19A66">2147483648</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    user-select: </span><span style="color: #D19A66">none</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #56B6C2">-webkit-user-select</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">none</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #56B6C2">-moz-user-select</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">none</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #56B6C2">-ms-user-select</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">none</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"><span style="color: #E06C75">ul</span><span style="color: #D19A66">.list-v.rightmenu</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">    display: -webkit-box </span><span style="color: #7F848E; font-style: italic">/* OLD - iOS 6-, Safari 3.1-6 */</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    display: -moz-box </span><span style="color: #7F848E; font-style: italic">/* OLD - Firefox 19- (buggy but mostly works) */</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    display: </span><span style="color: #D19A66">block</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    background-color: </span><span style="color: #56B6C2">var</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">--body-bg-color</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    opacity: </span><span style="color: #D19A66">0.9</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    max-width: </span><span style="color: #D19A66">240</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    overflow: </span><span style="color: #D19A66">hidden</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"><span style="color: #E06C75">ul</span><span style="color: #D19A66">.list-v</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">    z-index: </span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    display: -webkit-box </span><span style="color: #7F848E; font-style: italic">/* OLD - iOS 6-, Safari 3.1-6 */</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    display: -moz-box </span><span style="color: #7F848E; font-style: italic">/* OLD - Firefox 19- (buggy but mostly works) */</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    display: </span><span style="color: #D19A66">none</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    position: </span><span style="color: #D19A66">absolute</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    box-shadow: </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">12</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">4</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">rgba</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">,</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">,</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">,</span><span style="color: #D19A66">0.8</span><span style="color: #ABB2BF">), </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">4</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">8</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">rgba</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">,</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">,</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">,</span><span style="color: #D19A66">0.08</span><span style="color: #ABB2BF">), </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">8</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">16</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">rgba</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">,</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">,</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">,</span><span style="color: #D19A66">0.08</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #56B6C2">-webkit-box-shadow</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">2</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">4</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">rgba</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">,</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">,</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">,</span><span style="color: #D19A66">0.08</span><span style="color: #ABB2BF">), </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">4</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">8</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">rgba</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">,</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">,</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">,</span><span style="color: #D19A66">0.08</span><span style="color: #ABB2BF">), </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">8</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">16</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">rgba</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">,</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">,</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">,</span><span style="color: #D19A66">0.08</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    margin-top: </span><span style="color: #D19A66">-6</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    border-radius: </span><span style="color: #D19A66">4</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #56B6C2">-webkit-border-radius</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">4</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    padding: </span><span style="color: #D19A66">8</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"><span style="color: #E06C75">ul</span><span style="color: #D19A66">.list-v.rightmenu</span><span style="color: #C678DD"> </span><span style="color: #E06C75">li</span><span style="color: #D19A66">.navigation</span><span style="color: #ABB2BF">,</span><span style="color: #C678DD"> </span><span style="color: #E06C75">ul</span><span style="color: #D19A66">.list-v.rightmenu</span><span style="color: #C678DD"> </span><span style="color: #E06C75">li</span><span style="color: #D19A66">.music</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">    display: -webkit-box </span><span style="color: #7F848E; font-style: italic">/* OLD - iOS 6-, Safari 3.1-6 */</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    display: -moz-box </span><span style="color: #7F848E; font-style: italic">/* OLD - Firefox 19- (buggy but mostly works) */</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    display: -ms-flexbox </span><span style="color: #7F848E; font-style: italic">/* TWEENER - IE 10 */</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    display: -webkit-flex </span><span style="color: #7F848E; font-style: italic">/* NEW - Chrome */</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    display: </span><span style="color: #D19A66">flex</span><span style="color: #ABB2BF"> </span><span style="color: #7F848E; font-style: italic">/* NEW, Spec - Opera 12.1, Firefox 20+ */</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    display: </span><span style="color: #D19A66">flex</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    margin: </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">12</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">12</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    justify-content: </span><span style="color: #D19A66">space-between</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #56B6C2">-webkit-justify-content</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">space-between</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #56B6C2">-khtml-justify-content</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">space-between</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #56B6C2">-moz-justify-content</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">space-between</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #56B6C2">-o-justify-content</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">space-between</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #56B6C2">-ms-justify-content</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">space-between</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"><span style="color: #E06C75">ul</span><span style="color: #D19A66">.list-v</span><span style="color: #C678DD"> </span><span style="color: #ABB2BF">&gt;</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">    white-space: </span><span style="color: #D19A66">nowrap</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    word-break: </span><span style="color: #D19A66">keep-all</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"><span style="color: #E06C75">ul</span><span style="color: #D19A66">.list-v</span><span style="color: #C678DD"> </span><span style="color: #E06C75">hr</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">    margin-top: </span><span style="color: #D19A66">8</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    margin-bottom: </span><span style="color: #D19A66">8</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"><span style="color: #E06C75">ul</span><span style="color: #D19A66">.list-v.rightmenu</span><span style="color: #C678DD"> </span><span style="color: #E06C75">li</span><span style="color: #D19A66">.navigation</span><span style="color: #C678DD"> </span><span style="color: #E06C75">a</span><span style="color: #D19A66">.nav</span><span style="color: #C678DD"> </span><span style="color: #E06C75">i</span><span style="color: #ABB2BF">,</span><span style="color: #C678DD"> </span><span style="color: #E06C75">ul</span><span style="color: #D19A66">.list-v.rightmenu</span><span style="color: #C678DD"> </span><span style="color: #E06C75">li</span><span style="color: #D19A66">.music</span><span style="color: #C678DD"> </span><span style="color: #E06C75">a</span><span style="color: #D19A66">.nav</span><span style="color: #C678DD"> </span><span style="color: #E06C75">i</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">    margin: </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    width: </span><span style="color: #D19A66">16</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    line-height: </span><span style="color: #D19A66">32</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"><span style="color: #E06C75">ul</span><span style="color: #D19A66">.list-v</span><span style="color: #C678DD"> </span><span style="color: #ABB2BF">&gt;</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">    white-space: </span><span style="color: #D19A66">nowrap</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    word-break: </span><span style="color: #D19A66">keep-all</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"><span style="color: #E06C75">ul</span><span style="color: #D19A66">.list-v.rightmenu</span><span style="color: #C678DD"> </span><span style="color: #E06C75">a</span><span style="color: #D19A66">.vlts-menu</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">    text-overflow: </span><span style="color: #D19A66">ellipsis</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    overflow: </span><span style="color: #D19A66">hidden</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    line-height: </span><span style="color: #D19A66">36</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    font-weight: </span><span style="color: #D19A66">normal</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    margin-left: </span><span style="color: #D19A66">10</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"><span style="color: #D19A66">.rightmenu-icon</span><span style="color: #ABB2BF">{</span></span>
+<span class="line"><span style="color: #ABB2BF">	margin: </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">110</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">8</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E06C75">ul</span><span style="color: #D19A66">.list-v</span><span style="color: #C678DD"> </span><span style="color: #ABB2BF">&gt;</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF">&gt;</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">    transition: </span><span style="color: #D19A66">all</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0.28</span><span style="color: #E06C75">s</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">ease</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #56B6C2">-webkit-transition</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">all</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0.28</span><span style="color: #E06C75">s</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">ease</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #56B6C2">-khtml-transition</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">all</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0.28</span><span style="color: #E06C75">s</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">ease</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #56B6C2">-moz-transition</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">all</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0.28</span><span style="color: #E06C75">s</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">ease</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #56B6C2">-o-transition</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">all</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0.28</span><span style="color: #E06C75">s</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">ease</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #56B6C2">-ms-transition</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">all</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0.28</span><span style="color: #E06C75">s</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">ease</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    display: -webkit-box </span><span style="color: #7F848E; font-style: italic">/* OLD - iOS 6-, Safari 3.1-6 */</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    display: -moz-box </span><span style="color: #7F848E; font-style: italic">/* OLD - Firefox 19- (buggy but mostly works) */</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    display: </span><span style="color: #D19A66">block</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    color: </span><span style="color: #56B6C2">var</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">--text-color</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    font-size: </span><span style="color: #D19A66">1</span><span style="color: #E06C75">rem</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    font-weight: </span><span style="color: #D19A66">bold</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    line-height: </span><span style="color: #D19A66">36</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    padding: </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">8</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">8</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    text-overflow: </span><span style="color: #D19A66">ellipsis</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    border-radius: </span><span style="color: #D19A66">4</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #56B6C2">-webkit-border-radius</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">4</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"><span style="color: #E06C75">ul</span><span style="color: #D19A66">.list-v</span><span style="color: #C678DD"> </span><span style="color: #ABB2BF">&gt;</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF">&gt;</span><span style="color: #E06C75">a</span><span style="color: #C678DD"> </span><span style="color: #56B6C2">:hover</span><span style="color: #ABB2BF">{</span></span>
+<span class="line"><span style="color: #ABB2BF">    color: </span><span style="color: #56B6C2">var</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">--link-hover-color</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E06C75">ul</span><span style="color: #D19A66">.list-v.rightmenu</span><span style="color: #C678DD"> </span><span style="color: #E06C75">a</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">    cursor: </span><span style="color: #D19A66">default</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">/* 信息提示框 */</span></span>
+<span class="line"><span style="color: #D19A66">.tooltip-rightmenu</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">    position: </span><span style="color: #D19A66">fixed</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    top: </span><span style="color: #D19A66">10</span><span style="color: #E06C75">%</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    left: </span><span style="color: #D19A66">50</span><span style="color: #E06C75">%</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    transform: </span><span style="color: #56B6C2">translate</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">-50</span><span style="color: #E06C75">%</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">-50</span><span style="color: #E06C75">%</span><span style="color: #ABB2BF">); </span><span style="color: #7F848E; font-style: italic">/* 居中 */</span></span>
+<span class="line"><span style="color: #ABB2BF">    background: </span><span style="color: #56B6C2">var</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">--tooltip-bg-color</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    color: </span><span style="color: #56B6C2">var</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">--tooltip-text-color</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    padding: </span><span style="color: #D19A66">10</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">25</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    border-radius: </span><span style="color: #D19A66">5</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    opacity: </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    z-index: </span><span style="color: #D19A66">99</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    transition: opacity </span><span style="color: #D19A66">1</span><span style="color: #E06C75">s</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">ease-in-out</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"><span style="color: #D19A66">.show-tooltip</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">    opacity: </span><span style="color: #D19A66">0.8</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure>
+<p>如果你想要更改右键菜单的样式，可以借助浏览器的开发者工具选择对应的元素，修改其
+CSS 属性。</p>
+<h2 id="使用-javascript-实现右键菜单的显示与隐藏">使用 JavaScript
+实现右键菜单的显示与隐藏</h2>
+<p>为了让我们自定义的右键菜单能够在用户右键点击时显示，我们需要使用
+JavaScript 来实现这一功能。在 <code>source/js</code> 目录下创建一个
+<code>RightMenu.js</code> 文件，内容如下：</p>
+<figure class="shiki javascript"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #7F848E; font-style: italic">// 右键菜单</span></span>
+<span class="line"><span style="color: #C678DD">var</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">right_click_num</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #C678DD">var</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">rect</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getElementById</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"rightmenu-content"</span><span style="color: #ABB2BF">).</span><span style="color: #61AFEF">getBoundingClientRect</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #E5C07B">window</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">oncontextmenu</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">function</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">e</span><span style="color: #ABB2BF">){</span></span>
+<span class="line"><span style="color: #ABB2BF">	</span><span style="color: #7F848E; font-style: italic">// 检查是否按下了Ctrl键</span></span>
+<span class="line"><span style="color: #ABB2BF">	</span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (</span><span style="color: #E5C07B">e</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">ctrlKey</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">		</span><span style="color: #C678DD">return</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">true</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">	}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">	</span><span style="color: #E5C07B">e</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">preventDefault</span><span style="color: #ABB2BF">(); </span><span style="color: #7F848E; font-style: italic">//阻止浏览器自带的右键菜单显示</span></span>
+<span class="line"><span style="color: #ABB2BF">	</span><span style="color: #C678DD">var</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">menu</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getElementById</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"rightmenu-wrapper"</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">	</span><span style="color: #E5C07B">menu</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">style</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">display</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"block"</span><span style="color: #ABB2BF">; </span><span style="color: #7F848E; font-style: italic">//将自定义的“右键菜单”显示出来</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (</span><span style="color: #E5C07B">e</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">clientX</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">rect</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">width</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">window</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">innerWidth</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">menu</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">style</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">left</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">e</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">clientX</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">rect</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">width</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"px"</span><span style="color: #ABB2BF">; </span><span style="color: #7F848E; font-style: italic">// 如果超出屏幕宽度，则调整位置</span></span>
+<span class="line"><span style="color: #ABB2BF">    } </span><span style="color: #C678DD">else</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">menu</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">style</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">left</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">e</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">clientX</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"px"</span><span style="color: #ABB2BF">; </span><span style="color: #7F848E; font-style: italic">// 设置位置，跟随鼠标</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (</span><span style="color: #E5C07B">e</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">clientY</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">rect</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">height</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">window</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">innerHeight</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">menu</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">style</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">top</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">e</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">clientY</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">rect</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">height</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"px"</span><span style="color: #ABB2BF">; </span><span style="color: #7F848E; font-style: italic">// 如果超出屏幕高度，则调整位置</span></span>
+<span class="line"><span style="color: #ABB2BF">    } </span><span style="color: #C678DD">else</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">menu</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">style</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">top</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">e</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">clientY</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"px"</span><span style="color: #ABB2BF">; </span><span style="color: #7F848E; font-style: italic">// 设置位置，跟随鼠标</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">	</span><span style="color: #E06C75">right_click_num</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">right_click_num</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">; </span><span style="color: #7F848E; font-style: italic">//右键点击次数加1</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">	</span><span style="color: #C678DD">if</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">right_click_num</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">==</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">){</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">tooltip</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getElementById</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'tooltip-rightmenu'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">tooltip</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">classList</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">add</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'show-tooltip'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #7F848E; font-style: italic">// 3秒后隐藏提示框</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">setTimeout</span><span style="color: #ABB2BF">(() </span><span style="color: #C678DD">=&gt;</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">		    </span><span style="color: #E5C07B">tooltip</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">classList</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">remove</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'show-tooltip'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        }, </span><span style="color: #D19A66">3000</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">	}</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"><span style="color: #E5C07B">window</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">onclick</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">function</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">e</span><span style="color: #ABB2BF">){ </span><span style="color: #7F848E; font-style: italic">//点击窗口，右键菜单隐藏</span></span>
+<span class="line"><span style="color: #ABB2BF">	</span><span style="color: #C678DD">var</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">menu</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getElementById</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"rightmenu-wrapper"</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">	</span><span style="color: #E5C07B">menu</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">style</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">display</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"none"</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure>
+<p>这样，我们就实现了一个基本的右键菜单显示与隐藏功能。当用户右键点击时，自定义的右键菜单会显示在鼠标位置，并且如果用户按下了
+<code>Ctrl</code> 键，则会显示浏览器原生的右键菜单。</p>
+<h2 id="使用-javascript-实现右键菜单的各项功能">使用 JavaScript
+实现右键菜单的各项功能</h2>
+<p>在上一步中，我们已经实现了右键菜单的显示与隐藏功能，但其中的部分选项仍旧是一个空壳。接下来，我们将为这些选项添加功能。同样是在
+<code>RightMenu.js</code> 文件中，我们将添加以下代码：</p>
+<figure class="shiki javascript"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">// 更新提示框样式</span></span>
+<span class="line"><span style="color: #C678DD">function</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">updateTooltipStyle</span><span style="color: #ABB2BF">() {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">userColorScheme</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">documentElement</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getAttribute</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'data-user-color-scheme'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (</span><span style="color: #E06C75">userColorScheme</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">===</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'dark'</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">documentElement</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">style</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">setProperty</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'--tooltip-bg-color'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'#eeeeeea4'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">documentElement</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">style</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">setProperty</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'--tooltip-text-color'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'#181c27'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    } </span><span style="color: #C678DD">else</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">documentElement</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">style</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">setProperty</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'--tooltip-bg-color'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'#181c27a4'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">documentElement</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">style</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">setProperty</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'--tooltip-text-color'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'#eeeeee'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (</span><span style="color: #E5C07B">window</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">MutationObserver</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">new</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">MutationObserver</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">updateTooltipStyle</span><span style="color: #ABB2BF">).</span><span style="color: #61AFEF">observe</span><span style="color: #ABB2BF">(</span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">documentElement</span><span style="color: #ABB2BF">, {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">attributes</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">true</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">attributeFilter</span><span style="color: #ABB2BF">: [</span><span style="color: #98C379">'data-user-color-scheme'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'data-default-color-scheme'</span><span style="color: #ABB2BF">]</span></span>
+<span class="line"><span style="color: #ABB2BF">    });</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">// 监听鼠标右键按下事件</span></span>
+<span class="line"><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">addEventListener</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'contextmenu'</span><span style="color: #ABB2BF">, </span><span style="color: #C678DD">function</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">event</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E06C75">rect</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getElementById</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"rightmenu-content"</span><span style="color: #ABB2BF">).</span><span style="color: #61AFEF">getBoundingClientRect</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #7F848E; font-style: italic">// 检查是否有选中的文本</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">copySelectedTextItem</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getElementById</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'copy-selected-text'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">searchSelectedTextItem</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getElementById</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'search-selected-text-BING'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">selectedText</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">window</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getSelection</span><span style="color: #ABB2BF">().</span><span style="color: #61AFEF">toString</span><span style="color: #ABB2BF">().</span><span style="color: #61AFEF">trim</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (</span><span style="color: #E06C75">selectedText</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">copySelectedTextItem</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">hidden</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">false</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">searchSelectedTextItem</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">hidden</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">false</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    } </span><span style="color: #C678DD">else</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">copySelectedTextItem</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">hidden</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">true</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">searchSelectedTextItem</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">hidden</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">true</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #7F848E; font-style: italic">// 检查是否有链接被点击</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">goToLinkItem</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getElementById</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'go-to-link'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">link</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">event</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">target</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">closest</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'a[href]'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (</span><span style="color: #E06C75">link</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">goToLinkItem</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">hidden</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">false</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">goToLinkItem</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">querySelector</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'a'</span><span style="color: #ABB2BF">).</span><span style="color: #61AFEF">setAttribute</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'href'</span><span style="color: #ABB2BF">, </span><span style="color: #E5C07B">link</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">href</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    } </span><span style="color: #C678DD">else</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">goToLinkItem</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">hidden</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">true</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #7F848E; font-style: italic">//检查是否有图片被点击</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">downloadImageItem</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getElementById</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'download-image'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">copyImageItem</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getElementById</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'copy-image-link'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">img</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">event</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">target</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">closest</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'img'</span><span style="color: #ABB2BF">) </span><span style="color: #56B6C2">||</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">event</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">target</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">closest</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'svg'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (</span><span style="color: #E06C75">img</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">downloadImageItem</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">hidden</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">false</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (</span><span style="color: #E5C07B">img</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">tagName</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">toLowerCase</span><span style="color: #ABB2BF">() </span><span style="color: #56B6C2">===</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'img'</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">copyImageItem</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">hidden</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">false</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">downloadImageItem</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">querySelector</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'a'</span><span style="color: #ABB2BF">).</span><span style="color: #61AFEF">setAttribute</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'onclick'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">`downloadImage('</span><span style="color: #C678DD">${</span><span style="color: #E5C07B">img</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">src</span><span style="color: #C678DD">}</span><span style="color: #98C379">')`</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">copyImageItem</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">querySelector</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'a'</span><span style="color: #ABB2BF">).</span><span style="color: #61AFEF">setAttribute</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'onclick'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">`copyImageLink('</span><span style="color: #C678DD">${</span><span style="color: #E5C07B">img</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">src</span><span style="color: #C678DD">}</span><span style="color: #98C379">')`</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        } </span><span style="color: #C678DD">else</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (</span><span style="color: #E5C07B">img</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">tagName</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">toLowerCase</span><span style="color: #ABB2BF">() </span><span style="color: #56B6C2">===</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'svg'</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&amp;&amp;</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">img</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">classList</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">contains</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'custom-gallery-svg'</span><span style="color: #ABB2BF">)) {</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">backgroundImage</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">img</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">style</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">backgroundImage</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">urlMatch</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">backgroundImage</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">match</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">/url</span><span style="color: #56B6C2">\(</span><span style="color: #D19A66">["']?</span><span style="color: #E06C75">(.</span><span style="color: #D19A66">*?</span><span style="color: #E06C75">)</span><span style="color: #D19A66">["']?</span><span style="color: #56B6C2">\)</span><span style="color: #E06C75">/</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (</span><span style="color: #E06C75">urlMatch</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&amp;&amp;</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">urlMatch</span><span style="color: #ABB2BF">[</span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">]) {</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">imageUrl</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">urlMatch</span><span style="color: #ABB2BF">[</span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">];</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #E5C07B">downloadImageItem</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">querySelector</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'a'</span><span style="color: #ABB2BF">).</span><span style="color: #61AFEF">setAttribute</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'onclick'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">`downloadImage('</span><span style="color: #C678DD">${</span><span style="color: #E06C75">imageUrl</span><span style="color: #C678DD">}</span><span style="color: #98C379">')`</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #E5C07B">copyImageItem</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">querySelector</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'a'</span><span style="color: #ABB2BF">).</span><span style="color: #61AFEF">setAttribute</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'onclick'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">`copyImageLink('</span><span style="color: #C678DD">${</span><span style="color: #E06C75">imageUrl</span><span style="color: #C678DD">}</span><span style="color: #98C379">')`</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">            }</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">    } </span><span style="color: #C678DD">else</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">downloadImageItem</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">hidden</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">true</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">copyImageItem</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">hidden</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">true</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #7F848E; font-style: italic">// 根据前三者判断第一栏是否有元素，需要分割线</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">topLineItem</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getElementById</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'top-line'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (</span><span style="color: #E5C07B">copySelectedTextItem</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">hidden</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&amp;&amp;</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">!</span><span style="color: #E06C75">link</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&amp;&amp;</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">!</span><span style="color: #E06C75">img</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">topLineItem</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">hidden</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">true</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    } </span><span style="color: #C678DD">else</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">topLineItem</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">hidden</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">false</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">// 复制选中-复制选中文本功能</span></span>
+<span class="line"><span style="color: #C678DD">function</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">copySelectedText</span><span style="color: #ABB2BF">() {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">selectedText</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">window</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getSelection</span><span style="color: #ABB2BF">().</span><span style="color: #61AFEF">toString</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (</span><span style="color: #E06C75">selectedText</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">navigator</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">clipboard</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">writeText</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">selectedText</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">tooltip</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getElementById</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'tooltip-rightmenu-return'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">tooltip</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">textContent</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'选中文本已复制到剪贴板'</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">tooltip</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">classList</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">add</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'show-tooltip'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">setTimeout</span><span style="color: #ABB2BF">(() </span><span style="color: #C678DD">=&gt;</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #E5C07B">tooltip</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">classList</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">remove</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'show-tooltip'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        }, </span><span style="color: #D19A66">1500</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">// 必应搜索-在Bing上搜索选中文本功能</span></span>
+<span class="line"><span style="color: #C678DD">function</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">searchSelectedTextBing</span><span style="color: #ABB2BF">() {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">selectedText</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">window</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getSelection</span><span style="color: #ABB2BF">().</span><span style="color: #61AFEF">toString</span><span style="color: #ABB2BF">().</span><span style="color: #61AFEF">trim</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (</span><span style="color: #E06C75">selectedText</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">bingSearchUrl</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">`https://www.bing.com/search?q=</span><span style="color: #C678DD">${</span><span style="color: #61AFEF">encodeURIComponent</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">selectedText</span><span style="color: #ABB2BF">)</span><span style="color: #C678DD">}</span><span style="color: #98C379">`</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">window</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">open</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">bingSearchUrl</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'_blank'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">// 转到链接-跳转到选中链接功能</span></span>
+<span class="line"><span style="color: #C678DD">function</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">goToLink</span><span style="color: #ABB2BF">() {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">goToLinkItem</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getElementById</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'go-to-link'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">href</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">goToLinkItem</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">querySelector</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'a'</span><span style="color: #ABB2BF">).</span><span style="color: #61AFEF">getAttribute</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'href'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (</span><span style="color: #E06C75">href</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">window</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">open</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">href</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'_blank'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">// 下载图片-下载选中图片功能</span></span>
+<span class="line"><span style="color: #C678DD">function</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">downloadImage</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">imgsrc</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (</span><span style="color: #56B6C2">!</span><span style="color: #E06C75">imgsrc</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">console</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">error</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'Image source is required'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">return</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">name</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">imgsrc</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">split</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'/'</span><span style="color: #ABB2BF">).</span><span style="color: #61AFEF">pop</span><span style="color: #ABB2BF">(); </span><span style="color: #7F848E; font-style: italic">// Extract the image name from the path</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #61AFEF">fetch</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">imgsrc</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">        .</span><span style="color: #61AFEF">then</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">response</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">response</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">blob</span><span style="color: #ABB2BF">())</span></span>
+<span class="line"><span style="color: #ABB2BF">        .</span><span style="color: #61AFEF">then</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">blob</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=&gt;</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">a</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">createElement</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'a'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">url</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">URL</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">createObjectURL</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">blob</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #E5C07B">a</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">href</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">url</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #E5C07B">a</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">download</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">name</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">body</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">appendChild</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #E5C07B">a</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">click</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #E5C07B">URL</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">revokeObjectURL</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">url</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">body</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">removeChild</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">tooltip</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getElementById</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'tooltip-rightmenu-return'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #E5C07B">tooltip</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">textContent</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'图片已下载'</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #E5C07B">tooltip</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">classList</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">add</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'show-tooltip'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #61AFEF">setTimeout</span><span style="color: #ABB2BF">(() </span><span style="color: #C678DD">=&gt;</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #E5C07B">tooltip</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">classList</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">remove</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'show-tooltip'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">            }, </span><span style="color: #D19A66">1500</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        })</span></span>
+<span class="line"><span style="color: #ABB2BF">        .</span><span style="color: #61AFEF">catch</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">error</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">console</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">error</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'Error downloading image:'</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75">error</span><span style="color: #ABB2BF">));</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">// 复制图片链接-复制选中图片链接功能</span></span>
+<span class="line"><span style="color: #C678DD">function</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">copyImageLink</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">imgsrc</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (</span><span style="color: #E06C75">imgsrc</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">navigator</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">clipboard</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">writeText</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">imgsrc</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">tooltip</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getElementById</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'tooltip-rightmenu-return'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">tooltip</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">textContent</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'链接已复制到剪贴板'</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">tooltip</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">classList</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">add</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'show-tooltip'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">setTimeout</span><span style="color: #ABB2BF">(() </span><span style="color: #C678DD">=&gt;</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #E5C07B">tooltip</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">classList</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">remove</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'show-tooltip'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        }, </span><span style="color: #D19A66">1500</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">// 随便看看-随机跳转到文章</span></span>
+<span class="line"><span style="color: #C678DD">function</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">RandomGo</span><span style="color: #ABB2BF">() {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">links</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">Array</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">from</span><span style="color: #ABB2BF">(</span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">querySelectorAll</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'a'</span><span style="color: #ABB2BF">)).</span><span style="color: #61AFEF">filter</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">link</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=&gt;</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">href</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">link</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getAttribute</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'href'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">return</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">href</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&amp;&amp;</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">href</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">startsWith</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'/posts/'</span><span style="color: #ABB2BF">) </span><span style="color: #56B6C2">&amp;&amp;</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">!</span><span style="color: #E5C07B">href</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">startsWith</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'//'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    });</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (</span><span style="color: #E5C07B">links</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">length</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">randomIndex</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">Math</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">floor</span><span style="color: #ABB2BF">(</span><span style="color: #E5C07B">Math</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">random</span><span style="color: #ABB2BF">() </span><span style="color: #56B6C2">*</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">links</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">length</span><span style="color: #ABB2BF">); </span><span style="color: #7F848E; font-style: italic">// 随机选择一个链接</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">randomLink</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">links</span><span style="color: #ABB2BF">[</span><span style="color: #E06C75">randomIndex</span><span style="color: #ABB2BF">].</span><span style="color: #E06C75">href</span><span style="color: #ABB2BF">; </span><span style="color: #7F848E; font-style: italic">// 获取链接的 href 属性</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">window</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">location</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">href</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">randomLink</span><span style="color: #ABB2BF">; </span><span style="color: #7F848E; font-style: italic">// 跳转到随机链接</span></span>
+<span class="line"><span style="color: #ABB2BF">    } </span><span style="color: #C678DD">else</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">console</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">warn</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'No links found on the page.'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">// 复制链接-复制当前地址功能</span></span>
+<span class="line"><span style="color: #C678DD">function</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">copyLink</span><span style="color: #ABB2BF">() {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">link</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">window</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">location</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">href</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E5C07B">navigator</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">clipboard</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">writeText</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">link</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">tooltip</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getElementById</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'tooltip-rightmenu-return'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E5C07B">tooltip</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">textContent</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'链接已复制到剪贴板'</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E5C07B">tooltip</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">classList</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">add</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'show-tooltip'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #7F848E; font-style: italic">// 3秒后隐藏提示框</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #61AFEF">setTimeout</span><span style="color: #ABB2BF">(() </span><span style="color: #C678DD">=&gt;</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">tooltip</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">classList</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">remove</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'show-tooltip'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    }, </span><span style="color: #D19A66">1500</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure>
+<p>这段代码实现了右键菜单的各项功能，包括复制选中文本、必应搜索、跳转到链接、下载图片、复制图片链接、随机跳转到文章以及复制当前页面链接。</p>
+<h1 id="总结">总结</h1>
+<p>通过以上步骤，我们成功实现了一个无侵入式的自定义右键菜单。这个右键菜单不仅美观，而且功能丰富，能够满足大部分用户的需求。以下是完整的使用方法：</p>
+<ol type="1">
+<li>在 Hexo 的 <code>source/html</code> 目录下创建
+<code>RightMenu.html</code> 文件，并将<a href="#创建右键菜单的-html-结构">上述HTML结构</a>复制到该文件中。</li>
+<li>在 Hexo 的 <code>scripts/injector.js</code> 文件中添加<a href="#使用-hexo-注入器将-html-结构注入到页面中">上述注入器代码</a>。</li>
+<li>在 Hexo 的 <code>source/css</code> 目录下创建
+<code>RightMenu.css</code> 文件，并将<a href="#使用-css-美化右键菜单">上述CSS样式</a>复制到该文件中。</li>
+<li>在 Hexo 的 <code>source/js</code> 目录下创建
+<code>RightMenu.js</code>
+文件，并将上述JavaScript代码复制到该文件中，<strong>注意</strong>需要包括<a href="#使用-javascript-实现右键菜单的显示与隐藏">右键菜单显示和隐藏</a>和<a href="#使用-javascript-实现右键菜单的各项功能">各项功能实现</a>两部分代码。</li>
+</ol>
+<p>如果你想要使用这个右键菜单，只需将上述代码复制到你的 Hexo
+博客中即可。你可以根据自己的需求进一步修改和扩展这个右键菜单的功能。如果你对这个右键菜单有任何疑问或建议，欢迎在评论区留言讨论。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Hexo-Blog-Building/" class="category-chain-item">Hexo Blog Building</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Hexo/" class="print-no-link">#Hexo</a>
+      
+        <a href="/tags/Fluid/" class="print-no-link">#Fluid</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Fluid自定义右键菜单</div>
+      <div>https://youyeyejie.github.io/posts/Fluid自定义右键菜单/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>youyeyejie</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年7月14日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2025年7月14日</div>
+        </div>
+      
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/%E8%94%B7%E8%96%87%E8%8A%B1%E5%8F%88%E5%BC%80/" title="蔷薇花又开">
+                        <span class="hidden-mobile">蔷薇花又开</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments">
+      
+    <div id="giscus" class="giscus"></div>
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#giscus', function() {
+        var options = {"repo":"youyeyejie/youyeyejie.github.io","repo-id":"R_kgDOO-Uo1g","category":"General","category-id":"DIC_kwDOO-Uo1s4Crz5J","theme-light":"light","theme-dark":"dark","mapping":"pathname","reactions-enabled":1,"emit-metadata":0,"input-position":"top","lang":"zh-CN"};
+        var attributes = {};
+        for (let option in options) {
+          if (!option.startsWith('theme-')) {
+            var key = option.startsWith('data-') ? option : 'data-' + option;
+            attributes[key] = options[option];
+          }
+        }
+        var light = 'light';
+        var dark = 'dark';
+        window.GiscusThemeLight = light;
+        window.GiscusThemeDark = dark;
+        attributes['data-theme'] = document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ? dark : light;
+        for (let attribute in attributes) {
+          var value = attributes[attribute];
+          if (value === undefined || value === null || value === '') {
+            delete attributes[attribute];
+          }
+        }
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://giscus.app/client.js');
+        s.setAttribute('crossorigin', 'anonymous');
+        for (let attribute in attributes) {
+          s.setAttribute(attribute, attributes[attribute]);
+        }
+        var ss = document.getElementsByTagName('script');
+        var e = ss.length > 0 ? ss[ss.length - 1] : document.head || document.documentElement;
+        e.parentNode.insertBefore(s, e.nextSibling);
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+  
+  
+</div>
+<div class="footer-inner">
+    <div class="powered-by">
+        <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+        <i class="iconfont icon-love"></i>
+        <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+    </div>
+    <div class="hitokoto">
+        <i class="fas fa-quote-left"></i>
+        <a target="_blank" rel="noopener" href="https://developer.hitokoto.cn/" id="hitokoto_text"><span id="hitokoto">Getting poem...</span></a>
+        <script src="/js/Hitokoto.js" defer></script>
+    </div>
+    <div class="data">
+        <span class="total-word-container">
+            <i class="fas fa-chart-bar"></i>
+            <span id="g-total-word-id"></span>
+            字汇长河
+        </span>
+        &nbsp;
+        <span id="total-posts-container">
+            <i class="fas fa-file-alt"></i>
+            <span id="g-total-posts-id"></span>
+            <script src="/js/TotalPosts.js"></script>
+            文舟靠岸
+        </span>
+        &nbsp;
+        <span id="busuanzi_container_site_pv">
+            <i class="fas fa-eye"></i>
+            <span id="busuanzi_value_site_pv"></span>
+            目光所及
+        </span>
+        &nbsp;
+        <span id="busuanzi_container_site_uv">
+            <i class="fas fa-user-friends"></i>
+            <span id="busuanzi_value_site_uv"></span>
+            访客驻足
+        </span>
+        <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script>
+    </div>
+    <div class="duration">
+        <i class="fas fa-calendar"></i>
+        <span id="timeDate">Getting date...</span>
+        <span id="times">Getting time...</span>
+        <script src="/js/Duration.js"></script>
+    </div>
+</div>
+
+<link href="/css/Footer.css"type="text/css"rel="stylesheet"/>
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    
+      <script  src="/js/img-lazyload.js" ></script>
+    
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="/js/DynamicLine.js"></script>
+<script src="/js/LinkCard.js"></script>
+<script src="/js/ScrollAnimation.js"></script>
+<script src="/js/TabDisplay.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  <script type="text/javascript">
+  document.getElementById("g-total-word-id").innerHTML = "286k";
+</script>
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start -->
+<script src="https://cdn.jsdelivr.net/npm/hexo-shiki-plugin@latest/lib/codeblock.js"></script>
+
+  <script>
+  const CODE_CONFIG = {
+    beautify: true,
+    highlightCopy: true,
+    highlightLang: true,
+    highlightHeightLimit: 360,
+    isHighlightShrink: false,
+    copy: {
+      success: 'Copy Success',
+      error: 'Copy Error',
+      noSupport: 'Browser Not Support',
+    }
+  };
+  console.log(
+    `%c hexo-shiki-plugin %c v1.0.27 %c https://github.com/nova1751/hexo-shiki-plugin`,
+    "color: #fff; background: #5f5f5f",
+    "color: #fff; background: #80c8f8",
+    ""
+  );
+  </script>
+  <!-- hexo injector body_end end --></body>
+</html>

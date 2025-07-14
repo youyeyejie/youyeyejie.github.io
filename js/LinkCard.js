@@ -14,8 +14,7 @@ window.onload = function () {
         var displayLink = truncateLink(link, 32);
 
         LinkCard.innerHTML =
-            `<span class="LinkCard-backdrop" style="background-image:url(/images/logo.svg)"></span>
-            <span class="LinkCard-content">
+            `<span class="LinkCard-content">
                 <span class="LinkCard-text">
                     <span class="LinkCard-title">${title}</span>
                     <span class="LinkCard-meta">
