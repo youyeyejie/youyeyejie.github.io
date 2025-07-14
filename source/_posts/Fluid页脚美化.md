@@ -211,10 +211,12 @@ if (posts.length === 0) {
             .map(link => link.substring(link.indexOf('/posts/')));
         sessionStorage.setItem('posts', JSON.stringify(posts)); // 保存到 sessionStorage
         console.log('Posts updated:', posts); // 调试输出更新后的链接列表
+        document.getElementById('g-total-posts-id').textContent = posts.length;
     })
     .catch(error => console.error('Error fetching sitemap:', error));
+} else {
+    document.getElementById('g-total-posts-id').textContent = posts.length;
 }
-document.getElementById('g-total-posts-id').textContent = posts.length;
 ```
 
 然后在 `_config.fluid.yml` 文件中修改 `footer` 的 `content` 字段，添加全站文章统计的调用代码：
