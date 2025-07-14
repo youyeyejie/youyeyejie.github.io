@@ -30,7 +30,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/posts/Fluid%E9%A1%B5%E8%84%9A%E7%BE%8E%E5%8C%96/image.png">
 <meta property="article:published_time" content="2025-06-28T17:47:43.000Z">
-<meta property="article:modified_time" content="2025-07-14T06:07:48.364Z">
+<meta property="article:modified_time" content="2025-07-14T08:44:54.608Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Fluid">
@@ -424,7 +424,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          3.3k 字
+          3.4k 字
         
       </span>
     
@@ -436,7 +436,7 @@
         
         
           <!-- compatible with older versions-->
-          28 分钟
+          29 分钟
         
       </span>
     
@@ -737,13 +737,40 @@ Pages上的博客，可以在仓库的提交记录中找到创建时间。</p>
 <p>Fluid主题内置了对全站文章统计的支持，但只在归档页显示。由于我并不了解ejs语法，也不愿意修改主题的源代码，因此决定自行实现。</p>
 <p>在 <code>source/js/</code> 目录下新建一个 <code>TotalPosts.js</code>
 文件（如果不存在该目录则需要先创建），代码如下：</p>
-<figure class="shiki javascript"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">fetch</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'/local-search.xml'</span><span style="color: #ABB2BF">)</span></span>
+
+    <div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-dfb167e8" role="button" aria-expanded="false" aria-controls="collapse-dfb167e8">
+        <div class="fold-arrow">▶</div>为了兼容Fluid自定义右键菜单中的其他功能，此方式已弃用，改为下面的实现方式。
+      </div>
+      <div class="fold-collapse collapse" id="collapse-dfb167e8">
+        <div class="fold-content">
+          <figure class="shiki javascript"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">fetch</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'/local-search.xml'</span><span style="color: #ABB2BF">)</span></span>
 <span class="line"><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">then</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">response</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">response</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">text</span><span style="color: #ABB2BF">())</span></span>
 <span class="line"><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">then</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">str</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=&gt;</span><span style="color: #ABB2BF"> (</span><span style="color: #C678DD">new</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">window</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">DOMParser</span><span style="color: #ABB2BF">()).</span><span style="color: #61AFEF">parseFromString</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">str</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">"text/xml"</span><span style="color: #ABB2BF">))</span></span>
 <span class="line"><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">then</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">data</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=&gt;</span><span style="color: #ABB2BF"> {</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">posts</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">data</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">querySelectorAll</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'entry'</span><span style="color: #ABB2BF">);</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getElementById</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'g-total-posts-id'</span><span style="color: #ABB2BF">).</span><span style="color: #E06C75">textContent</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">posts</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">length</span><span style="color: #ABB2BF">;</span></span>
 <span class="line"><span style="color: #ABB2BF">})</span></span></code></pre></div></div></figure>
+        </div>
+      </div>
+    </div>
+<figure class="shiki javascript"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">var</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">posts</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">JSON</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">parse</span><span style="color: #ABB2BF">(</span><span style="color: #E5C07B">sessionStorage</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getItem</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'posts'</span><span style="color: #ABB2BF">)) </span><span style="color: #56B6C2">||</span><span style="color: #ABB2BF"> [];</span></span>
+<span class="line"><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (</span><span style="color: #E5C07B">posts</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">length</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">===</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #61AFEF">fetch</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'/sitemap.xml'</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">    .</span><span style="color: #61AFEF">then</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">response</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">response</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">text</span><span style="color: #ABB2BF">())</span></span>
+<span class="line"><span style="color: #ABB2BF">    .</span><span style="color: #61AFEF">then</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">str</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=&gt;</span><span style="color: #ABB2BF"> (</span><span style="color: #C678DD">new</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">window</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">DOMParser</span><span style="color: #ABB2BF">()).</span><span style="color: #61AFEF">parseFromString</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">str</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">"text/xml"</span><span style="color: #ABB2BF">))</span></span>
+<span class="line"><span style="color: #ABB2BF">    .</span><span style="color: #61AFEF">then</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">data</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=&gt;</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">entries</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">data</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">querySelectorAll</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'url &gt; loc'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">posts</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">Array</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">from</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">entries</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">            .</span><span style="color: #61AFEF">map</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">entry</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">entry</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">textContent</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">            .</span><span style="color: #61AFEF">filter</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">link</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">link</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">includes</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'/posts/'</span><span style="color: #ABB2BF">))</span></span>
+<span class="line"><span style="color: #ABB2BF">            .</span><span style="color: #61AFEF">map</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">link</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">link</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">substring</span><span style="color: #ABB2BF">(</span><span style="color: #E5C07B">link</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">indexOf</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'/posts/'</span><span style="color: #ABB2BF">)));</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">sessionStorage</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">setItem</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'posts'</span><span style="color: #ABB2BF">, </span><span style="color: #E5C07B">JSON</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">stringify</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">posts</span><span style="color: #ABB2BF">)); </span><span style="color: #7F848E; font-style: italic">// 保存到 sessionStorage</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">console</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">log</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'Posts updated:'</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75">posts</span><span style="color: #ABB2BF">); </span><span style="color: #7F848E; font-style: italic">// 调试输出更新后的链接列表</span></span>
+<span class="line"><span style="color: #ABB2BF">    })</span></span>
+<span class="line"><span style="color: #ABB2BF">    .</span><span style="color: #61AFEF">catch</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">error</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">console</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">error</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'Error fetching sitemap:'</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75">error</span><span style="color: #ABB2BF">));</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getElementById</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'g-total-posts-id'</span><span style="color: #ABB2BF">).</span><span style="color: #E06C75">textContent</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">posts</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">length</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure>
 <p>然后在 <code>_config.fluid.yml</code> 文件中修改 <code>footer</code>
 的 <code>content</code> 字段，添加全站文章统计的调用代码：</p>
 <figure class="shiki yaml"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #E06C75">footer</span><span style="color: #ABB2BF">:</span></span>
@@ -841,10 +868,10 @@ Awesome官网</a>上根据版本搜索你想要的图标，并获取其类名。
 <h1 id="总结">总结</h1>
 
     <div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-5559c592" role="button" aria-expanded="false" aria-controls="collapse-5559c592">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-bb8702dc" role="button" aria-expanded="false" aria-controls="collapse-bb8702dc">
         <div class="fold-arrow">▶</div>如果对当前的样式已经满意，那么主题配置中的代码如折叠中所示。
       </div>
-      <div class="fold-collapse collapse" id="collapse-5559c592">
+      <div class="fold-collapse collapse" id="collapse-bb8702dc">
         <div class="fold-content">
           <p>至此，本次的美化就全部完成了！</p>
 <p>最终，<code>_config.fluid.yml</code> 文件的 <code>footer</code> 的
