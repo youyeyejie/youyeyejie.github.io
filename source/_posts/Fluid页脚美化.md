@@ -7,7 +7,7 @@ tags:
 categories:
   - Hexo Blog Building
 excerpt: Fluid 主题美化记录2.0——无侵入式页脚美化
-index_img: /posts/Fluid页脚美化/image.png
+index_img: /posts/Fluid页脚美化/image.webp
 date: 2025-06-29 01:47:43
 ---
 
@@ -32,7 +32,7 @@ date: 2025-06-29 01:47:43
 - 标签页根据焦点切换显示
 {% endnote %}
 
-<a href="/posts/Fluid主题美化1-0/" name="/img/avatar/avatar.jpg" class="LinkCard">Fluid主题美化1.0</a>
+<a href="/posts/Fluid主题美化1-0/" name="/img/avatar/avatar.webp" class="LinkCard">Fluid主题美化1.0</a>
 
 # 关于页添加 Github 热力图
 

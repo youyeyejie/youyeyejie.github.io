@@ -9,14 +9,14 @@ tags:
 categories:
     - Xflops-HPC Start Guide
 excerpt: Xflops超算队HPC入门指南——信息素养
-index_img: /img/cover/xflops.jpg
+index_img: /img/cover/xflops.webp
 ---
 
 {% note info %}
 新学期即将来临，Xflops超算队招新以及HelloHPC超算校内赛正在火热筹备中。作为Xflops超算队的一员，我与其他成员将共同负责[HPC入门指南](https://xflops.sjtu.edu.cn/hpc-start-guide)的修订与编写。Xflops超算队的HPC入门指南系列文章旨在帮助新成员快速入门和了解HPC知识，为校内赛的参赛者提供必要的知识储备和技能指导。
 {% endnote %}
 
-<a href="https://xflops.sjtu.edu.cn/hpc-start-guide" name="/img/cover/xflops.jpg" target="_blank" class="LinkCard">HPC入门指南</a>
+<a href="https://xflops.sjtu.edu.cn/hpc-start-guide" name="/img/cover/xflops.webp" target="_blank" class="LinkCard">HPC入门指南</a>
 
 # 信息安全意识
 在使用互联网时，信息安全意识至关重要，因为网络攻击，数据泄露和隐私侵害随时可能发生。为了保护个人信息和数据安全，以下是一些基本的安全意识和实践建议：

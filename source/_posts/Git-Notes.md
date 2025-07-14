@@ -5,7 +5,7 @@ tags:
 categories:
   - Misc
 excerpt: 一个偶尔想不起某些Git命令的人的笔记
-index_img: /img/cover/git.jpg
+index_img: /img/cover/git.webp
 date: 2024-07-20 23:27:54
 ---
 
@@ -24,7 +24,7 @@ date: 2024-07-20 23:27:54
 
 ## 状态转换
 状态转换图如下：
-![状态转换图](Git-Notes/image.png)
+![状态转换图](Git-Notes/image.webp)
 
 ## 各状态转换指令
 

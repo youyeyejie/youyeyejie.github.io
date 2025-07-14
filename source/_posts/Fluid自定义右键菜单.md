@@ -8,15 +8,15 @@ tags:
 categories:
   - Hexo Blog Building
 excerpt: Fluid 主题美化记录3.0——无侵入式自定义右键菜单
-index_img: /posts/Fluid自定义右键菜单/image.png
+index_img: /posts/Fluid自定义右键菜单/image.webp
 ---
 
 # 前言
 
 本期美化同样贯彻了前两美化的原则：**无侵入式美化**，即不修改主题的源代码，只通过修改配置文件、自定义样式以及Hexo注入器来实现美化。前两期的美化可以点击下方的链接卡片查看。
 
-<a href="/posts/Fluid主题美化/" name="/img/avatar/avatar.jpg" class="LinkCard">Fluid主题美化</a>
-<a href="/posts/Fluid页脚美化/" name="/img/avatar/avatar.jpg" class="LinkCard">Fluid页脚美化</a>
+<a href="/posts/Fluid主题美化/" name="/img/avatar/avatar.webp" class="LinkCard">Fluid主题美化</a>
+<a href="/posts/Fluid页脚美化/" name="/img/avatar/avatar.webp" class="LinkCard">Fluid页脚美化</a>
 
 在本期中，我们将实现一个自定义的右键菜单，我参考了苍岚和loyeh两位博主的实现方式，在他们的基础上进行了改进和扩展，最终实现了一个更加美观和实用的右键菜单。如果不关心实现，可以直接跳转至 [总结](#总结) 获取完整代码和使用方法。
 
@@ -54,7 +54,7 @@ index_img: /posts/Fluid自定义右键菜单/image.png
 
 ```html
 <div id="tooltip-rightmenu" class="tooltip-rightmenu">如需原始右键菜单请按下 <strong>Ctrl+右键</strong></div>
-<div id="tooltip-rightmenu-return" class="tooltip-rightmenu">图片已下载</div>
+<div id="tooltip-rightmenu-return" class="tooltip-rightmenu"></div>
 
 <div id="rightmenu-wrapper">
   <ul class="list-v rightmenu" id="rightmenu-content">

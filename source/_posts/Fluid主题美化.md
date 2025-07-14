@@ -7,7 +7,7 @@ tags:
 categories:
   - Hexo Blog Building
 excerpt: Fluid 主题美化记录1.0——无侵入式全站美化
-index_img: /posts/Fluid主题美化/image.png
+index_img: /posts/Fluid主题美化/image.webp
 date: 2025-06-21 13:05:20
 ---
 
@@ -1252,4 +1252,4 @@ custom_css:
 
 具体的代码可以参考我的博客仓库中的 `js` 和 `css` 目录。
 
-<a href="https://github.com/youyeyejie/youyeyejie.github.io" name="/img/avatar/avatar.jpg" class="LinkCard">GitHub 仓库</a>
+<a href="https://github.com/youyeyejie/youyeyejie.github.io" name="/img/avatar/avatar.webp" class="LinkCard">GitHub 仓库</a>
