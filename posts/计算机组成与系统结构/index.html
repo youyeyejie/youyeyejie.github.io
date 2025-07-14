@@ -10,8 +10,8 @@
 <!-- hexo injector head_begin end -->
   <meta charset="UTF-8">
 
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar/avatar2.png">
-  <link rel="icon" href="/img/avatar/avatar2.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar/avatar2.webp">
+  <link rel="icon" href="/img/avatar/avatar2.webp">
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
@@ -28,14 +28,14 @@
 <meta property="og:site_name" content="有野野芥的博客">
 <meta property="og:description" content="NIS2331 计算机组成与系统结构 笔记">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis2331.jpg">
+<meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis2331.webp">
 <meta property="article:published_time" content="2025-01-23T01:09:34.000Z">
-<meta property="article:modified_time" content="2025-06-23T10:20:58.236Z">
+<meta property="article:modified_time" content="2025-07-14T09:52:31.743Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU">
 <meta property="article:tag" content="计算机组成">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://youyeyejie.github.io/img/cover/nis2331.jpg">
+<meta name="twitter:image" content="https://youyeyejie.github.io/img/cover/nis2331.webp">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -142,7 +142,7 @@
 
 <script src="/js/RainbowLoading.js" type="text/javascript"></script>
 <link href="/css/RainbowLoading.css"type="text/css"rel="stylesheet"/><div id="tooltip-rightmenu" class="tooltip-rightmenu">如需原始右键菜单请按下 <strong>Ctrl+右键</strong></div>
-<div id="tooltip-rightmenu-return" class="tooltip-rightmenu">图片已下载</div>
+<div id="tooltip-rightmenu-return" class="tooltip-rightmenu"></div>
 
 <div id="rightmenu-wrapper">
   <ul class="list-v rightmenu" id="rightmenu-content">
@@ -389,7 +389,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/banner/banner.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/img/banner/banner.webp') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -825,7 +825,7 @@ $$</span></p>
 </ul></li>
 </ol>
 <figure>
-<img src="image-29.png" srcset="/img/loading/loading3.gif" lazyload alt="指令周期状态图">
+<img src="image-29.webp" srcset="/img/loading/loading3.gif" lazyload alt="指令周期状态图">
 <figcaption aria-hidden="true">指令周期状态图</figcaption>
 </figure>
 <h2 id="中断">中断</h2>
@@ -841,7 +841,7 @@ $$</span></p>
 <ul>
 <li>CPU必须等待IO操作完成才能执行自己的下一条指令，图中的④表示为IO操作做准备的一系列指令，⑤表示IO操作完成后用来完成操作（收尾，比如设置标志之类）的一系列指令。</li>
 <li><figure>
-<img src="image.png" srcset="/img/loading/loading3.gif" lazyload alt="无中断程序流">
+<img src="image.webp" srcset="/img/loading/loading3.gif" lazyload alt="无中断程序流">
 <figcaption aria-hidden="true">无中断程序流</figcaption>
 </figure></li>
 </ul></li>
@@ -853,7 +853,7 @@ $$</span></p>
 <li>处理器响应中断请求，挂起当前程序，执行中断处理程序（图中的⑤）。</li>
 <li>中断处理程序执行完成后，CPU恢复用户程序的执行。</li>
 <li><figure>
-<img src="image-1.png" srcset="/img/loading/loading3.gif" lazyload alt="有中断程序流">
+<img src="image-1.webp" srcset="/img/loading/loading3.gif" lazyload alt="有中断程序流">
 <figcaption aria-hidden="true">有中断程序流</figcaption>
 </figure></li>
 </ul></li>
@@ -1033,14 +1033,14 @@ $$</span></p>
 </ul>
 <h2 id="主存块与cache行之间的映射方式">主存块与Cache行之间的映射方式</h2>
 <figure>
-<img src="image-2.png" srcset="/img/loading/loading3.gif" lazyload alt="Cache映射">
+<img src="image-2.webp" srcset="/img/loading/loading3.gif" lazyload alt="Cache映射">
 <figcaption aria-hidden="true">Cache映射</figcaption>
 </figure>
 <h3 id="直接映射">直接映射</h3>
 <p><span class="math display"><em>i</em> = <em>j</em> mod &nbsp;<em>m</em></span></p>
 <p><span class="math inline"><em>i</em>=</span> 高速缓存行号；<span class="math inline"><em>j</em>=</span> 主存块号；<span class="math inline"><em>m</em>=</span> 高速缓存行总数。</p>
 <figure>
-<img src="image-31.png" srcset="/img/loading/loading3.gif" lazyload alt="直接映射">
+<img src="image-31.webp" srcset="/img/loading/loading3.gif" lazyload alt="直接映射">
 <figcaption aria-hidden="true">直接映射</figcaption>
 </figure>
 <ul>
@@ -1075,7 +1075,7 @@ $$</span></p>
 <h3 id="全关联映射">全关联映射：</h3>
 <p>允许每个主存块加载到任意Cache行，标签 = 主存块号</p>
 <figure>
-<img src="image-30.png" srcset="/img/loading/loading3.gif" lazyload alt="全关联映射">
+<img src="image-30.webp" srcset="/img/loading/loading3.gif" lazyload alt="全关联映射">
 <figcaption aria-hidden="true">全关联映射</figcaption>
 </figure>
 <ul>
@@ -1084,7 +1084,7 @@ $$</span></p>
 </ul>
 <h3 id="k路组关联映射">K路组关联映射</h3>
 <figure>
-<img src="image-32.png" srcset="/img/loading/loading3.gif" lazyload alt="组关联映射">
+<img src="image-32.webp" srcset="/img/loading/loading3.gif" lazyload alt="组关联映射">
 <figcaption aria-hidden="true">组关联映射</figcaption>
 </figure>
 <p><span class="math display">$$
@@ -1247,7 +1247,7 @@ bit；位扩展后，<span class="math inline">8</span>
 个芯片同时根据MAR信号输出 <span class="math inline">8</span>
 bit数据。</li>
 <li><figure>
-<img src="image-3.png" srcset="/img/loading/loading3.gif" lazyload alt="位扩展">
+<img src="image-3.webp" srcset="/img/loading/loading3.gif" lazyload alt="位扩展">
 <figcaption aria-hidden="true">位扩展</figcaption>
 </figure></li>
 </ul></li>
@@ -1257,7 +1257,7 @@ bit数据。</li>
 个，存储模块由 <span class="math inline"><em>M</em></span>
 组芯片构成，此时地址要增加 <span class="math inline">log<sub>2</sub><em>M</em></span> bit，用于选择 <span class="math inline"><em>M</em></span> 组芯片中的一组。</li>
 <li><figure>
-<img src="image-4.png" srcset="/img/loading/loading3.gif" lazyload alt="字扩展">
+<img src="image-4.webp" srcset="/img/loading/loading3.gif" lazyload alt="字扩展">
 <figcaption aria-hidden="true">字扩展</figcaption>
 </figure></li>
 </ul></li>
@@ -1289,12 +1289,12 @@ Byte的int型变量的地址通常为 <span class="math inline">4</span>
 <p>数据 <span class="math inline"><em>M</em></span> bit，校验码/纠错码
 <span class="math inline"><em>K</em></span> bit，实际存储 <span class="math inline">(<em>M</em> + <em>K</em>)</span> bit。</p>
 <figure>
-<img src="image-5.png" srcset="/img/loading/loading3.gif" lazyload alt="纠错码">
+<img src="image-5.webp" srcset="/img/loading/loading3.gif" lazyload alt="纠错码">
 <figcaption aria-hidden="true">纠错码</figcaption>
 </figure>
 <h3 id="以汉明码和文氏图为例">以汉明码和文氏图为例</h3>
 <figure>
-<img src="image-6.png" srcset="/img/loading/loading3.gif" lazyload alt="汉明码与文氏图!">
+<img src="image-6.webp" srcset="/img/loading/loading3.gif" lazyload alt="汉明码与文氏图!">
 <figcaption aria-hidden="true">汉明码与文氏图!</figcaption>
 </figure>
 <ul>
@@ -1317,7 +1317,7 @@ bit，则应满足：<span class="math inline">2<sup><em>K</em></sup> − 1�
 数据的位置，因此有上述关系式。</li>
 </ul>
 <figure>
-<img src="image-7.png" srcset="/img/loading/loading3.gif" lazyload alt="例子">
+<img src="image-7.webp" srcset="/img/loading/loading3.gif" lazyload alt="例子">
 <figcaption aria-hidden="true">例子</figcaption>
 </figure>
 <p>具体纠错过程为：</p>
@@ -1341,13 +1341,13 @@ bit，则应满足：<span class="math inline">2<sup><em>K</em></sup> − 1�
 <li>扇区：最小读写单位。一个磁道通常被划分成多个扇区，相邻扇区由扇区间隔隔开。</li>
 </ol>
 <figure>
-<img src="image-33.png" srcset="/img/loading/loading3.gif" lazyload alt="磁道与扇区">
+<img src="image-33.webp" srcset="/img/loading/loading3.gif" lazyload alt="磁道与扇区">
 <figcaption aria-hidden="true">磁道与扇区</figcaption>
 </figure>
 <h2 id="磁盘读写机制">磁盘读写机制</h2>
 <p>由于角速度相同时，线速度外大内小，必须补偿，使得磁头读取所有的位的速度相同。</p>
 <figure>
-<img src="image-8.png" srcset="/img/loading/loading3.gif" lazyload alt="磁盘读写机制!">
+<img src="image-8.webp" srcset="/img/loading/loading3.gif" lazyload alt="磁盘读写机制!">
 <figcaption aria-hidden="true">磁盘读写机制!</figcaption>
 </figure>
 <ol type="1">
@@ -1371,7 +1371,7 @@ bit，则应满足：<span class="math inline">2<sup><em>K</em></sup> − 1�
 </ul>
 <h2 id="多盘片">多盘片</h2>
 <figure>
-<img src="image-9.png" srcset="/img/loading/loading3.gif" lazyload alt="多盘片">
+<img src="image-9.webp" srcset="/img/loading/loading3.gif" lazyload alt="多盘片">
 <figcaption aria-hidden="true">多盘片</figcaption>
 </figure>
 <h2 id="ssd">SSD</h2>
@@ -1525,7 +1525,7 @@ bit，则应满足：<span class="math inline">2<sup><em>K</em></sup> − 1�
 </ul></li>
 </ul>
 <figure>
-<img src="image-35.png" srcset="/img/loading/loading3.gif" lazyload alt="外部设备">
+<img src="image-35.webp" srcset="/img/loading/loading3.gif" lazyload alt="外部设备">
 <figcaption aria-hidden="true">外部设备</figcaption>
 </figure>
 <h2 id="io模块">IO模块</h2>
@@ -1542,7 +1542,7 @@ bit，则应满足：<span class="math inline">2<sup><em>K</em></sup> − 1�
 </ul></li>
 </ul>
 <figure>
-<img src="image-34.png" srcset="/img/loading/loading3.gif" lazyload alt="IO模块">
+<img src="image-34.webp" srcset="/img/loading/loading3.gif" lazyload alt="IO模块">
 <figcaption aria-hidden="true">IO模块</figcaption>
 </figure>
 <h2 id="读io步骤">读IO步骤</h2>
@@ -1575,7 +1575,7 @@ bit，则应满足：<span class="math inline">2<sup><em>K</em></sup> − 1�
 <li>在IO模块操作未完成，CPU一直保持定期检查IO状态的周期，浪费CPU时间。</li>
 </ul>
 <figure>
-<img src="image-36.png" srcset="/img/loading/loading3.gif" lazyload alt="编程式IO">
+<img src="image-36.webp" srcset="/img/loading/loading3.gif" lazyload alt="编程式IO">
 <figcaption aria-hidden="true">编程式IO</figcaption>
 </figure></li>
 <li>中断驱动式IO：有中断，数据通过CPU传输，即IO-CPU-内存
@@ -1584,7 +1584,7 @@ bit，则应满足：<span class="math inline">2<sup><em>K</em></sup> − 1�
 <li>无需CPU一直周期性检查，克服了CPU等待的问题。</li>
 </ul>
 <figure>
-<img src="image-37.png" srcset="/img/loading/loading3.gif" lazyload alt="中断驱动式IO">
+<img src="image-37.webp" srcset="/img/loading/loading3.gif" lazyload alt="中断驱动式IO">
 <figcaption aria-hidden="true">中断驱动式IO</figcaption>
 </figure></li>
 <li>存储器直接存储（DMA）：有中断，数据通过DMA传输，即IO-DMA-CPU
@@ -1641,7 +1641,7 @@ bit能表示：<span class="math inline">[−2<sup><em>N</em> − 1</sup>,�
 </ul>
 <h2 id="无符号乘法">无符号乘法</h2>
 <figure>
-<img src="image-10.png" srcset="/img/loading/loading3.gif" lazyload alt="无符号乘法">
+<img src="image-10.webp" srcset="/img/loading/loading3.gif" lazyload alt="无符号乘法">
 <figcaption aria-hidden="true">无符号乘法</figcaption>
 </figure>
 <ul>
@@ -1657,7 +1657,7 @@ bit能表示：<span class="math inline">[−2<sup><em>N</em> − 1</sup>,�
 </ul>
 <h2 id="有符号乘法booth算法">有符号乘法：Booth算法</h2>
 <figure>
-<img src="image-11.png" srcset="/img/loading/loading3.gif" lazyload alt="Booth">
+<img src="image-11.webp" srcset="/img/loading/loading3.gif" lazyload alt="Booth">
 <figcaption aria-hidden="true">Booth</figcaption>
 </figure>
 <ul>
@@ -1674,7 +1674,7 @@ bit能表示：<span class="math inline">[−2<sup><em>N</em> − 1</sup>,�
 有几位，循环几个周期。最终结果为 <span class="math inline"><em>A</em><em>Q</em></span> 相拼接，不算 <span class="math inline"><em>Q</em><sub>−1</sub></span>！</li>
 </ul>
 <figure>
-<img src="image-12.png" srcset="/img/loading/loading3.gif" lazyload alt="例子">
+<img src="image-12.webp" srcset="/img/loading/loading3.gif" lazyload alt="例子">
 <figcaption aria-hidden="true">例子</figcaption>
 </figure>
 <h2 id="浮点数表示">浮点数表示</h2>
@@ -1700,10 +1700,10 @@ bit二进制，按照无符号数理解，得到在<span class="math inline">0&n
 <li>因此有正上溢、正下溢、负上溢、负下溢</li>
 </ul></li>
 </ul>
-<p><img src="image-13.png" srcset="/img/loading/loading3.gif" lazyload></p>
-<p><img src="image-14.png" srcset="/img/loading/loading3.gif" lazyload></p>
+<p><img src="image-13.webp" srcset="/img/loading/loading3.gif" lazyload></p>
+<p><img src="image-14.webp" srcset="/img/loading/loading3.gif" lazyload></p>
 <figure>
-<img src="image-15.png" srcset="/img/loading/loading3.gif" lazyload alt="32bit float">
+<img src="image-15.webp" srcset="/img/loading/loading3.gif" lazyload alt="32bit float">
 <figcaption aria-hidden="true">32bit float</figcaption>
 </figure>
 <h3 id="ieee754的一些特殊表示">IEEE754的一些特殊表示:</h3>
@@ -1732,7 +1732,7 @@ bit二进制，按照无符号数理解，得到在<span class="math inline">0&n
 <li>若加法结果最高位不为1，则左移有效位数并减小指数。若此操作产生了指数下溢，报错。</li>
 </ul></li>
 </ol>
-<p>注：有效数右移时可以在右边增加保护位以确保精度。 <img src="image-38.png" srcset="/img/loading/loading3.gif" lazyload alt="浮点数加减法"></p>
+<p>注：有效数右移时可以在右边增加保护位以确保精度。 <img src="image-38.webp" srcset="/img/loading/loading3.gif" lazyload alt="浮点数加减法"></p>
 <h2 id="浮点数乘法">浮点数乘法</h2>
 <ol type="1">
 <li>预处理
@@ -1756,7 +1756,7 @@ bit二进制，按照无符号数理解，得到在<span class="math inline">0&n
 </ul></li>
 </ol>
 <figure>
-<img src="image-39.png" srcset="/img/loading/loading3.gif" lazyload alt="浮点数乘法">
+<img src="image-39.webp" srcset="/img/loading/loading3.gif" lazyload alt="浮点数乘法">
 <figcaption aria-hidden="true">浮点数乘法</figcaption>
 </figure>
 <h2 id="浮点数除法">浮点数除法</h2>
@@ -1794,7 +1794,7 @@ bit二进制，按照无符号数理解，得到在<span class="math inline">0&n
 <li>逻辑右移1位相当于：无符号整数除以2</li>
 <li>逻辑左移1位相当于：无符号整数乘以2</li>
 <li><figure>
-<img src="image-16.png" srcset="/img/loading/loading3.gif" lazyload alt="逻辑移位">
+<img src="image-16.webp" srcset="/img/loading/loading3.gif" lazyload alt="逻辑移位">
 <figcaption aria-hidden="true">逻辑移位</figcaption>
 </figure></li>
 </ul></li>
@@ -1803,7 +1803,7 @@ bit二进制，按照无符号数理解，得到在<span class="math inline">0&n
 <li>算术右移1位相当于：带符号整数除以2</li>
 <li>算术左移1位相当于：带符号整数乘以2</li>
 <li><figure>
-<img src="image-17.png" srcset="/img/loading/loading3.gif" lazyload alt="逻辑移位">
+<img src="image-17.webp" srcset="/img/loading/loading3.gif" lazyload alt="逻辑移位">
 <figcaption aria-hidden="true">逻辑移位</figcaption>
 </figure></li>
 </ul></li>
@@ -1812,7 +1812,7 @@ bit二进制，按照无符号数理解，得到在<span class="math inline">0&n
 <li>保留所有被处理的位，检查某一位的状态，高低位交换</li>
 <li>循环右移 &amp; 循环左移</li>
 <li><figure>
-<img src="image-18.png" srcset="/img/loading/loading3.gif" lazyload alt="循环移位">
+<img src="image-18.webp" srcset="/img/loading/loading3.gif" lazyload alt="循环移位">
 <figcaption aria-hidden="true">循环移位</figcaption>
 </figure></li>
 </ul></li>
@@ -1848,7 +1848,7 @@ bit二进制，按照无符号数理解，得到在<span class="math inline">0&n
 <li>优点：只需要一次内存引用。</li>
 <li>缺点：地址范围受限。</li>
 <li><figure>
-<img src="image-19.png" srcset="/img/loading/loading3.gif" lazyload alt="直接寻址">
+<img src="image-19.webp" srcset="/img/loading/loading3.gif" lazyload alt="直接寻址">
 <figcaption aria-hidden="true">直接寻址</figcaption>
 </figure></li>
 </ul>
@@ -1858,7 +1858,7 @@ bit二进制，按照无符号数理解，得到在<span class="math inline">0&n
 <li>优点：地址范围更大。</li>
 <li>缺点：需要两次内存引用（第一次获取真正地址，第二次获取实际数据）。</li>
 <li><figure>
-<img src="image-20.png" srcset="/img/loading/loading3.gif" lazyload alt="间接寻址">
+<img src="image-20.webp" srcset="/img/loading/loading3.gif" lazyload alt="间接寻址">
 <figcaption aria-hidden="true">间接寻址</figcaption>
 </figure></li>
 </ul>
@@ -1873,7 +1873,7 @@ bit二进制，按照无符号数理解，得到在<span class="math inline">0&n
 <li><span class="math inline"><em>E</em><em>A</em> = (<em>R</em>)</span>，即指令中存储的地址指向一个寄存器，该寄存器存储着实际访问位置的真正地址。</li>
 <li>优点：地址范围更大；相比间接寻址只需一次内存访问；指令内地址更短。</li>
 <li><figure>
-<img src="image-21.png" srcset="/img/loading/loading3.gif" lazyload alt="寄存器间接寻址">
+<img src="image-21.webp" srcset="/img/loading/loading3.gif" lazyload alt="寄存器间接寻址">
 <figcaption aria-hidden="true">寄存器间接寻址</figcaption>
 </figure></li>
 </ul>
@@ -1897,7 +1897,7 @@ bit二进制，按照无符号数理解，得到在<span class="math inline">0&n
 </ul></li>
 </ul></li>
 <li><figure>
-<img src="image-22.png" srcset="/img/loading/loading3.gif" lazyload alt="偏移寻址">
+<img src="image-22.webp" srcset="/img/loading/loading3.gif" lazyload alt="偏移寻址">
 <figcaption aria-hidden="true">偏移寻址</figcaption>
 </figure></li>
 </ul>
@@ -1913,7 +1913,7 @@ bit二进制，按照无符号数理解，得到在<span class="math inline">0&n
 <li>内部处理器总线用于在ALU和寄存器间传递数据，因ALU仅能操作CPU内部存储数据。</li>
 </ul>
 <figure>
-<img src="image-40.png" srcset="/img/loading/loading3.gif" lazyload alt="CPU内部结构">
+<img src="image-40.webp" srcset="/img/loading/loading3.gif" lazyload alt="CPU内部结构">
 <figcaption aria-hidden="true">CPU内部结构</figcaption>
 </figure>
 <h2 id="寄存器组织">寄存器组织</h2>
@@ -1941,7 +1941,7 @@ bit二进制，按照无符号数理解，得到在<span class="math inline">0&n
 <li>下条指令地址：PC → MAR → 地址总线 → 主存。</li>
 <li>指令：主存 → 数据总线 → MBR → IR，同时PC++（除非指令修改PC）。</li>
 <li><figure>
-<img src="image-41.png" srcset="/img/loading/loading3.gif" lazyload alt="取值周期">
+<img src="image-41.webp" srcset="/img/loading/loading3.gif" lazyload alt="取值周期">
 <figcaption aria-hidden="true">取值周期</figcaption>
 </figure></li>
 </ul></li>
@@ -1949,7 +1949,7 @@ bit二进制，按照无符号数理解，得到在<span class="math inline">0&n
 <ul>
 <li>MBR的低N位 → MAR → 地址总线。</li>
 <li><figure>
-<img src="image-42.png" srcset="/img/loading/loading3.gif" lazyload alt="间接寻址">
+<img src="image-42.webp" srcset="/img/loading/loading3.gif" lazyload alt="间接寻址">
 <figcaption aria-hidden="true">间接寻址</figcaption>
 </figure></li>
 </ul></li>
@@ -1962,7 +1962,7 @@ bit二进制，按照无符号数理解，得到在<span class="math inline">0&n
 <li>PC复制到MBR，特定地址由控制单元给MAR，MBR数据存至主存。</li>
 <li>PC装载中断服务程序地址</li>
 <li><figure>
-<img src="image-43.png" srcset="/img/loading/loading3.gif" lazyload alt="中断周期">
+<img src="image-43.webp" srcset="/img/loading/loading3.gif" lazyload alt="中断周期">
 <figcaption aria-hidden="true">中断周期</figcaption>
 </figure></li>
 </ul></li>
@@ -1981,7 +1981,7 @@ bit二进制，按照无符号数理解，得到在<span class="math inline">0&n
 <li>条件转移与流水线总清：
 <ul>
 <li>条件转移可能导致流水线停顿，需清空流水线并重新取指。</li>
-<li><img src="image-44.png" srcset="/img/loading/loading3.gif" lazyload></li>
+<li><img src="image-44.webp" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul></li>
 <li>流水线性能增强的限制：
 <ul>
@@ -2028,7 +2028,7 @@ bit二进制，按照无符号数理解，得到在<span class="math inline">0&n
 </ul></li>
 </ul>
 <figure>
-<img src="image-45.png" srcset="/img/loading/loading3.gif" lazyload alt="2位预测">
+<img src="image-45.webp" srcset="/img/loading/loading3.gif" lazyload alt="2位预测">
 <figcaption aria-hidden="true">2位预测</figcaption>
 </figure>
 <h2 id="转移历史表">转移历史表</h2>
@@ -2076,7 +2076,7 @@ bit二进制，按照无符号数理解，得到在<span class="math inline">0&n
 </ol>
 <h2 id="对hll操作的研究">对HLL操作的研究</h2>
 <figure>
-<img src="image-23.png" srcset="/img/loading/loading3.gif" lazyload alt="HLL操作动态频度">
+<img src="image-23.webp" srcset="/img/loading/loading3.gif" lazyload alt="HLL操作动态频度">
 <figcaption aria-hidden="true">HLL操作动态频度</figcaption>
 </figure>
 <ul>
@@ -2105,12 +2105,12 @@ bit二进制，按照无符号数理解，得到在<span class="math inline">0&n
 <li><p>发生过程调用时，直接切换到另一个寄存器组（将过程调用优化为寄存器访问）</p></li>
 <li><p>对程序，任何时刻只有一组寄存器可见</p></li>
 <li><p>解决参数和返回值传递：</p>
-<p><img src="image-24.png" srcset="/img/loading/loading3.gif" lazyload></p></li>
+<p><img src="image-24.webp" srcset="/img/loading/loading3.gif" lazyload></p></li>
 <li><p>解决全局变量：用一组全局寄存器，所有过程可见</p></li>
 <li><p>解决深度过深：将一部分寄存器存储在内存中</p></li>
 <li><p>进一步优化：环形寄存器组织</p>
 <figure>
-<img src="image-25.png" srcset="/img/loading/loading3.gif" lazyload alt="环形寄存器组织">
+<img src="image-25.webp" srcset="/img/loading/loading3.gif" lazyload alt="环形寄存器组织">
 <figcaption aria-hidden="true">环形寄存器组织</figcaption>
 </figure></li>
 </ul>
@@ -2130,14 +2130,14 @@ bit二进制，按照无符号数理解，得到在<span class="math inline">0&n
 <li>着色，若有n个真实寄存器，则尽量用n种颜色给图上色，要求相邻（有连线）的节点颜色不能相同；无法上色的节点就存在内存里。</li>
 </ol>
 <figure>
-<img src="image-26.png" srcset="/img/loading/loading3.gif" lazyload alt="图着色法">
+<img src="image-26.webp" srcset="/img/loading/loading3.gif" lazyload alt="图着色法">
 <figcaption aria-hidden="true">图着色法</figcaption>
 </figure></li>
 </ol>
 <h2 id="risc流水线">RISC流水线</h2>
 <h3 id="流水线的效果">流水线的效果</h3>
 <figure>
-<img src="image-46.png" srcset="/img/loading/loading3.gif" lazyload alt="流水线的效果">
+<img src="image-46.webp" srcset="/img/loading/loading3.gif" lazyload alt="流水线的效果">
 <figcaption aria-hidden="true">流水线的效果</figcaption>
 </figure>
 <h3 id="流水线优化">流水线优化</h3>
@@ -2145,14 +2145,14 @@ bit二进制，按照无符号数理解，得到在<span class="math inline">0&n
 <li>空指令（NOOP）：在流水线阶段插入空操作，解决数据相关性，保证指令顺序执行。
 <ul>
 <li><figure>
-<img src="image-47.png" srcset="/img/loading/loading3.gif" lazyload alt="空指令">
+<img src="image-47.webp" srcset="/img/loading/loading3.gif" lazyload alt="空指令">
 <figcaption aria-hidden="true">空指令</figcaption>
 </figure></li>
 </ul></li>
 <li>延迟转移：交换分支指令与前序指令位置，使分支延迟期间执行有效指令，适用于无条件分支。
 <ul>
 <li><figure>
-<img src="image-48.png" srcset="/img/loading/loading3.gif" lazyload alt="延迟分支">
+<img src="image-48.webp" srcset="/img/loading/loading3.gif" lazyload alt="延迟分支">
 <figcaption aria-hidden="true">延迟分支</figcaption>
 </figure></li>
 </ul></li>
@@ -2166,7 +2166,7 @@ bit二进制，按照无符号数理解，得到在<span class="math inline">0&n
 <li>超流水：流水线阶段时间短于时钟周期，内部时钟速率加倍，外部周期内发两条指令。</li>
 </ul>
 <figure>
-<img src="image-49.png" srcset="/img/loading/loading3.gif" lazyload alt="超标量与超流水">
+<img src="image-49.webp" srcset="/img/loading/loading3.gif" lazyload alt="超标量与超流水">
 <figcaption aria-hidden="true">超标量与超流水</figcaption>
 </figure>
 <h2 id="指令相关性">指令相关性</h2>
@@ -2294,7 +2294,7 @@ bit二进制，按照无符号数理解，得到在<span class="math inline">0&n
 <li>S（Shared）：共享，数据在本Cache和主存，其他Cache有副本。</li>
 <li>I（Invalid）：失效，数据不在本Cache或已过时。</li>
 </ul>
-<p><img src="image-28.png" srcset="/img/loading/loading3.gif" lazyload> <img src="image-27.png" srcset="/img/loading/loading3.gif" lazyload alt="MESI协议状态转换"></p>
+<p><img src="image-28.webp" srcset="/img/loading/loading3.gif" lazyload> <img src="image-27.webp" srcset="/img/loading/loading3.gif" lazyload alt="MESI协议状态转换"></p>
 <h2 id="松耦合如集群">松耦合（如集群）</h2>
 <ul>
 <li>独立处理器或SMP互联，分布式存储器，通信通过网络。</li>
@@ -2389,7 +2389,7 @@ bit二进制，按照无符号数理解，得到在<span class="math inline">0&n
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年6月23日</div>
+          <div>2025年7月14日</div>
         </div>
       
       
@@ -2600,7 +2600,7 @@ bit二进制，按照无符号数理解，得到在<span class="math inline">0&n
             <span id="busuanzi_value_site_uv"></span>
             访客驻足
         </span>
-        <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script>
+        <script src="https://npm.elemecdn.com/penndu@1.0.0/bsz.js" defer></script>
     </div>
     <div class="duration">
         <i class="fas fa-calendar"></i>
@@ -2812,7 +2812,7 @@ bit二进制，按照无符号数理解，得到在<span class="math inline">0&n
 
 
   <script type="text/javascript">
-  document.getElementById("g-total-word-id").innerHTML = "286k";
+  document.getElementById("g-total-word-id").innerHTML = "287k";
 </script>
 
   <noscript>
