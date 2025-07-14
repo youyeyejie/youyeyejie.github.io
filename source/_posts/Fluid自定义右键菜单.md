@@ -302,7 +302,7 @@ ul.list-v.rightmenu a {
 /* 信息提示框 */
 .tooltip-rightmenu {
     position: fixed;
-    top: 10%;
+    top: 13%;
     left: 50%;
     transform: translate(-50%, -50%); /* 居中 */
     background: var(--tooltip-bg-color);
