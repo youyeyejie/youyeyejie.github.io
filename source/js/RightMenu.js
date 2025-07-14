@@ -192,17 +192,10 @@ function copyImageLink(imgsrc) {
 
 // 随便看看-随机跳转到文章
 function RandomGo() {
-    const links = Array.from(document.querySelectorAll('a')).filter(link => {
-        const href = link.getAttribute('href');
-        return href && href.startsWith('/posts/') && !href.startsWith('//');
-    });
-    if (links.length > 0) {
-        const randomIndex = Math.floor(Math.random() * links.length); // 随机选择一个链接
-        const randomLink = links[randomIndex].href; // 获取链接的 href 属性
-        window.location.href = randomLink; // 跳转到随机链接
-    } else {
-        console.warn('No links found on the page.');
-    }
+    var posts = JSON.parse(sessionStorage.getItem('posts'));
+    const randomIndex = Math.floor(Math.random() * posts.length);
+    const randomLink = posts[randomIndex];
+    window.location.href = randomLink;
 }
 
 // 复制链接-复制当前地址功能

@@ -185,6 +185,7 @@ Fluid主题内置了对全站文章统计的支持，但只在归档页显示。
 
 在 `source/js/` 目录下新建一个 `TotalPosts.js` 文件（如果不存在该目录则需要先创建），代码如下：
 
+{% fold info @为了兼容Fluid自定义右键菜单中的其他功能，此方式已弃用，改为下面的实现方式。 %}
 ```javascript
 fetch('/local-search.xml')
 .then(response => response.text())
@@ -193,6 +194,27 @@ fetch('/local-search.xml')
     const posts = data.querySelectorAll('entry');
     document.getElementById('g-total-posts-id').textContent = posts.length;
 })
+```
+{% endfold %}
+
+```javascript
+var posts = JSON.parse(sessionStorage.getItem('posts')) || [];
+if (posts.length === 0) {
+    fetch('/sitemap.xml')
+    .then(response => response.text())
+    .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
+    .then(data => {
+        const entries = data.querySelectorAll('url > loc');
+        posts = Array.from(entries)
+            .map(entry => entry.textContent)
+            .filter(link => link.includes('/posts/'))
+            .map(link => link.substring(link.indexOf('/posts/')));
+        sessionStorage.setItem('posts', JSON.stringify(posts)); // 保存到 sessionStorage
+        console.log('Posts updated:', posts); // 调试输出更新后的链接列表
+    })
+    .catch(error => console.error('Error fetching sitemap:', error));
+}
+document.getElementById('g-total-posts-id').textContent = posts.length;
 ```
 
 然后在 `_config.fluid.yml` 文件中修改 `footer` 的 `content` 字段，添加全站文章统计的调用代码：

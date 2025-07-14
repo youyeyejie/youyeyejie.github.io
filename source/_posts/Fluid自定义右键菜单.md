@@ -293,7 +293,6 @@ ul.list-v >li>a {
 ul.list-v >li>a :hover{
     color: var(--link-hover-color)
 }
-
 ul.list-v.rightmenu a {
     cursor: default;
 }
@@ -373,7 +372,6 @@ window.onclick = function(e){ //点击窗口，右键菜单隐藏
 在上一步中，我们已经实现了右键菜单的显示与隐藏功能，但其中的部分选项仍旧是一个空壳。接下来，我们将为这些选项添加功能。同样是在 `RightMenu.js` 文件中，我们将添加以下代码：
 
 ```javascript
-
 // 更新提示框样式
 function updateTooltipStyle() {
     const userColorScheme = document.documentElement.getAttribute('data-user-color-scheme');
@@ -527,17 +525,10 @@ function copyImageLink(imgsrc) {
 
 // 随便看看-随机跳转到文章
 function RandomGo() {
-    const links = Array.from(document.querySelectorAll('a')).filter(link => {
-        const href = link.getAttribute('href');
-        return href && href.startsWith('/posts/') && !href.startsWith('//');
-    });
-    if (links.length > 0) {
-        const randomIndex = Math.floor(Math.random() * links.length); // 随机选择一个链接
-        const randomLink = links[randomIndex].href; // 获取链接的 href 属性
-        window.location.href = randomLink; // 跳转到随机链接
-    } else {
-        console.warn('No links found on the page.');
-    }
+    var posts = JSON.parse(sessionStorage.getItem('posts'));
+    const randomIndex = Math.floor(Math.random() * posts.length);
+    const randomLink = posts[randomIndex];
+    window.location.href = randomLink;
 }
 
 // 复制链接-复制当前地址功能
@@ -557,6 +548,38 @@ function copyLink() {
 
 这段代码实现了右键菜单的各项功能，包括复制选中文本、必应搜索、跳转到链接、下载图片、复制图片链接、随机跳转到文章以及复制当前页面链接。
 
+其中，随即跳转到文章的功能需要在页面加载时将所有文章链接存储在 `sessionStorage` 中，这一点我在[Fluid页脚美化](/posts/Fluid页脚美化/)中就已经实现了。你可以参考上一期的实现，也可以将 `RightMenu.js` 中的 `RandomGo()` 函数替换为以下代码：
+
+```javascript
+function RandomGo() {
+    var posts = JSON.parse(sessionStorage.getItem('posts')) || [];
+    if (posts.length === 0) {
+        fetch('/sitemap.xml')
+        .then(response => response.text())
+        .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
+        .then(data => {
+            const entries = data.querySelectorAll('url > loc');
+            posts = Array.from(entries)
+                .map(entry => entry.textContent)
+                .filter(link => link.includes('/posts/'))
+                .map(link => link.substring(link.indexOf('/posts/')));
+            sessionStorage.setItem('posts', JSON.stringify(posts)); // 保存到 sessionStorage
+            console.log('Posts updated:', posts); // 调试输出更新后的链接列表
+        })
+        .catch(error => console.error('Error fetching sitemap:', error));
+        if (posts.length > 0) {
+            const randomIndex = Math.floor(Math.random() * posts.length);
+            const randomLink = posts[randomIndex];
+            window.location.href = randomLink;
+        }
+    } else {
+        const randomIndex = Math.floor(Math.random() * posts.length);
+        const randomLink = posts[randomIndex];
+        window.location.href = randomLink;
+    }
+}
+```
+
 # 总结
 
 通过以上步骤，我们成功实现了一个无侵入式的自定义右键菜单。这个右键菜单不仅美观，而且功能丰富，能够满足大部分用户的需求。以下是完整的使用方法：
@@ -564,6 +587,6 @@ function copyLink() {
 1. 在 Hexo 的 `source/html` 目录下创建 `RightMenu.html` 文件，并将[上述HTML结构](#创建右键菜单的-html-结构)复制到该文件中。
 2. 在 Hexo 的 `scripts/injector.js` 文件中添加[上述注入器代码](#使用-hexo-注入器将-html-结构注入到页面中)。
 3. 在 Hexo 的 `source/css` 目录下创建 `RightMenu.css` 文件，并将[上述CSS样式](#使用-css-美化右键菜单)复制到该文件中。
-4. 在 Hexo 的 `source/js` 目录下创建 `RightMenu.js` 文件，并将上述JavaScript代码复制到该文件中，**注意**需要包括[右键菜单显示和隐藏](#使用-javascript-实现右键菜单的显示与隐藏)和[各项功能实现](#使用-javascript-实现右键菜单的各项功能)两部分代码。
+4. 在 Hexo 的 `source/js` 目录下创建 `RightMenu.js` 文件，并将上述JavaScript代码复制到该文件中，**注意**需要包括[右键菜单显示和隐藏](#使用-javascript-实现右键菜单的显示与隐藏)和[各项功能实现](#使用-javascript-实现右键菜单的各项功能)两部分代码，必要时需要替换 `RandomGo()` 函数的实现。
 
 如果你想要使用这个右键菜单，只需将上述代码复制到你的 Hexo 博客中即可。你可以根据自己的需求进一步修改和扩展这个右键菜单的功能。如果你对这个右键菜单有任何疑问或建议，欢迎在评论区留言讨论。
