@@ -27,7 +27,7 @@ window.onload = function () {
                     </span>
                 </span>
                 <span class="LinkCard-imageCell">
-                    <img class="LinkCard-image" alt="logo" src="${logourl}">
+                    <img class="LinkCard-image" alt="logo" src="${logourl}" onerror="this.src='/img/loading/loading6.gif'">
                 </span>
             </span>`;
     }
