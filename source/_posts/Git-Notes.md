@@ -5,7 +5,6 @@ tags:
 categories:
   - Misc
 excerpt: 一个偶尔想不起某些Git命令的人的笔记
-index_img: /img/cover/git.webp
 date: 2024-07-20 23:27:54
 ---
 

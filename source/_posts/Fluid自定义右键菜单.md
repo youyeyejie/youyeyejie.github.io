@@ -13,7 +13,7 @@ index_img: /posts/Fluid自定义右键菜单/image.webp
 
 # 前言
 
-本期美化同样贯彻了前两美化的原则：**无侵入式美化**，即不修改主题的源代码，只通过修改配置文件、自定义样式以及Hexo注入器来实现美化。前两期的美化可以点击下方的链接卡片查看。
+本期美化同样贯彻了前两期美化的原则：**无侵入式美化**，即不修改主题的源代码，只通过修改配置文件、自定义样式以及Hexo注入器来实现美化。前两期的美化可以点击下方的链接卡片查看。
 
 <a href="/posts/Fluid主题美化/" name="/img/avatar/avatar.webp" class="LinkCard">Fluid主题美化</a>
 <a href="/posts/Fluid页脚美化/" name="/img/avatar/avatar.webp" class="LinkCard">Fluid页脚美化</a>
@@ -170,7 +170,7 @@ index_img: /posts/Fluid自定义右键菜单/image.webp
 </div>
 
 <script src="/js/RightMenu.js" type="text/javascript"></script>
-<link href="/css/RightMenu.css"type="text/css"rel="stylesheet"/>
+<link href="/css/RightMenu.css" type="text/css" rel="stylesheet"/>
 ```
 
 其中 `tooltip-rightmenu` 和 `tooltip-rightmenu-return` 是用于提示用户如何使用右键菜单的元素，`rightmenu-wrapper` 是右键菜单的容器，`rightmenu-content` 是右键菜单的内容列表，也是我们需要实现的功能项。

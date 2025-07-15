@@ -399,7 +399,7 @@ footer:
     </div>
 </div>
 
-<link href="/css/Footer.css"type="text/css"rel="stylesheet"/>
+<link href="/css/Footer.css" type="text/css" rel="stylesheet"/>
 ```
 
 其中，我将页脚分为四行显示：

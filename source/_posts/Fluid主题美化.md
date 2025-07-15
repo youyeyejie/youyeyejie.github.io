@@ -635,9 +635,9 @@ window.onload = function () {
                     </span>
                 </span>
                 <span class="LinkCard-imageCell">
-                    <img class="LinkCard-image" alt="logo" src="${logourl}">
+                    <img class="LinkCard-image" alt="logo" src="${logourl}" onerror="this.src='/img/loading/loading1.gif'">
                 </span>
-            </span>`;
+            </span>`; // 如果获取指定logo地址失败，则使用默认的loading图片
     }
 }
 ```
@@ -967,7 +967,7 @@ loadScript('https://code.jquery.com/jquery-3.6.0.min.js', function() {
 </div>
 
 <script src="/js/RainbowLoading.js" type="text/javascript"></script>
-<link href="/css/RainbowLoading.css"type="text/css"rel="stylesheet"/>
+<link href="/css/RainbowLoading.css" type="text/css" rel="stylesheet"/>
 ```
 
 {% fold info @注：由于在html中已经引入了相关的js和css文件，因此这一步可省略 %}

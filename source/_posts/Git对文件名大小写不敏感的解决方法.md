@@ -6,7 +6,6 @@ tags:
 categories:
   - Misc
 excerpt: 害我抓狂十分钟的问题竟然是……
-index_img: /img/cover/git.webp
 ---
 
 # 问题的发现
