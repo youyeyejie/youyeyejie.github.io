@@ -299,6 +299,14 @@ ul.list-v.rightmenu a {
 
 
 /* 信息提示框 */
+:root {
+  --tooltip-bg-color: #181c27a4;
+  --tooltip-text-color: #eeeeee;
+}
+[data-user-color-scheme="dark"] {
+  --tooltip-bg-color: #eeeeeea4;
+  --tooltip-text-color: #181c27;
+}
 .tooltip-rightmenu {
     position: fixed;
     top: 13%;
@@ -372,28 +380,8 @@ window.onclick = function(e){ //点击窗口，右键菜单隐藏
 在上一步中，我们已经实现了右键菜单的显示与隐藏功能，但其中的部分选项仍旧是一个空壳。接下来，我们将为这些选项添加功能。同样是在 `RightMenu.js` 文件中，我们将添加以下代码：
 
 ```javascript
-// 更新提示框样式
-function updateTooltipStyle() {
-    const userColorScheme = document.documentElement.getAttribute('data-user-color-scheme');
-    if (userColorScheme === 'dark') {
-        document.documentElement.style.setProperty('--tooltip-bg-color', '#eeeeeea4');
-        document.documentElement.style.setProperty('--tooltip-text-color', '#181c27');
-    } else {
-        document.documentElement.style.setProperty('--tooltip-bg-color', '#181c27a4');
-        document.documentElement.style.setProperty('--tooltip-text-color', '#eeeeee');
-    }
-}
-if (window.MutationObserver) {
-    new MutationObserver(updateTooltipStyle).observe(document.documentElement, {
-        attributes: true,
-        attributeFilter: ['data-user-color-scheme', 'data-default-color-scheme']
-    });
-}
-
 // 监听鼠标右键按下事件
 document.addEventListener('contextmenu', function(event) {
-    rect = document.getElementById("rightmenu-content").getBoundingClientRect();
-    
     // 检查是否有选中的文本
     const copySelectedTextItem = document.getElementById('copy-selected-text');
     const searchSelectedTextItem = document.getElementById('search-selected-text-BING');
@@ -447,6 +435,9 @@ document.addEventListener('contextmenu', function(event) {
     } else {
         topLineItem.hidden = false;
     }
+
+    // 更新尺寸相关参数
+    rect = document.getElementById("rightmenu-content").getBoundingClientRect();
 });
 
 // 复制选中-复制选中文本功能

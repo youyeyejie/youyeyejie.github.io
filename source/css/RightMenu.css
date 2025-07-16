@@ -101,6 +101,14 @@ ul.list-v.rightmenu a {
 
 
 /* 信息提示框 */
+:root {
+  --tooltip-bg-color: #181c27a4;
+  --tooltip-text-color: #eeeeee;
+}
+[data-user-color-scheme="dark"] {
+  --tooltip-bg-color: #eeeeeea4;
+  --tooltip-text-color: #181c27;
+}
 .tooltip-rightmenu {
     position: fixed;
     top: 13%;
