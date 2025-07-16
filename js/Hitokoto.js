@@ -1,6 +1,9 @@
+var url = 'https://v1.hitokoto.cn/?c=i';
+url = 'https://fan-hitokoto.mangofanfan.cn/?c=i';
+
 async function fetchSlogan() {
     try {
-        const res = await fetch('https://v1.hitokoto.cn/?c=i');
+        const res = await fetch(url);
         const data = await res.json();
         const hitokotoElem = document.getElementById('hitokoto');
         if (hitokotoElem) {
