@@ -7,7 +7,7 @@ tags:
   - Fluid
 categories:
   - Hexo Blog Building
-excerpt: Fluid 主题美化记录4.0—— 无侵入实现Fluid文章页随机背景
+excerpt: Fluid 主题美化记录4.0——无侵入实现Fluid文章页随机背景
 index_img: /posts/Fluid随机背景/image.webp
 ---
 
