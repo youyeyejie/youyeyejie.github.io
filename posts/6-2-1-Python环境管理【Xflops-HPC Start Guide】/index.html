@@ -1,0 +1,1322 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head><!-- hexo injector head_begin start --><meta name="msvalidate.01" content="DF9F232801BA9D0CABB002E4774A3228" />
+<meta name="google-site-verification" content="vOm5Zs9tuUlEh-wVBlpvs_spnOou-q2CoTiFQ1ZV1h4" />
+<!-- hexo injector head_begin end -->
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar/avatar2.webp">
+  <link rel="icon" href="/img/avatar/avatar2.webp">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="youyeyejie">
+  <meta name="keywords" content="yyyj,YYYJ,youyeyejie,有野野芥">
+  
+    <meta name="description" content="Xflops超算队HPC入门指南——编程语言学习：Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="6-2-1 Python环境管理【Xflops-HPC Start Guide】">
+<meta property="og:url" content="https://youyeyejie.github.io/posts/6-2-1-Python%E7%8E%AF%E5%A2%83%E7%AE%A1%E7%90%86%E3%80%90Xflops-HPC%20Start%20Guide%E3%80%91/index.html">
+<meta property="og:site_name" content="有野野芥的博客">
+<meta property="og:description" content="Xflops超算队HPC入门指南——编程语言学习：Python">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://youyeyejie.github.io/img/cover/xflops.webp">
+<meta property="article:published_time" content="2025-07-06T10:01:53.000Z">
+<meta property="article:modified_time" content="2025-07-14T09:47:54.023Z">
+<meta property="article:author" content="youyeyejie">
+<meta property="article:tag" content="Xflops">
+<meta property="article:tag" content="HPC">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://youyeyejie.github.io/img/cover/xflops.webp">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>6-2-1 Python环境管理【Xflops-HPC Start Guide】 - 有野野芥的博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+<link rel="stylesheet" href="//lib.baomitu.com/font-awesome/6.1.2/css/all.min.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+
+
+  
+<link rel="stylesheet" href="/css/CodeBlock.css">
+<link rel="stylesheet" href="/css/CodeInLine.css">
+<link rel="stylesheet" href="/css/FrostedGlassBg.css">
+<link rel="stylesheet" href="/css/Gallery.css">
+<link rel="stylesheet" href="/css/IndexImgHover.css">
+<link rel="stylesheet" href="/css/LinkCard.css">
+<link rel="stylesheet" href="/css/ScrollAnimation.css">
+<link rel="stylesheet" href="/css/ScrollBar.css">
+<link rel="stylesheet" href="/css/StrongInDark.css">
+<link rel="stylesheet" href="/css/TitleGradient.css">
+<link rel="stylesheet" href="/css/TitleNeon.css">
+<link rel="stylesheet" href="/css/UnifyImgWidth.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"youyeyejie.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":false,"default":"TEXT"},"copy_btn":false,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading/loading3.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-shiki-plugin@latest/lib/codeblock.css">
+<style>:root{--hl-color:#abb2bf;--hl-bg:#282c34;--hltools-bg:#21252b;--hltools-color:#bbbbbc;--hlnumber-bg:#282c34;--hlnumber-color:#495162;--hlscrollbar-bg:#373c47;--hlexpand-bg:linear-gradient(180deg,rgba(40,44,52,0.1),rgba(40,44,52,0.9))}</style>
+    <style>
+    .code-expand-btn:not(.expand-done) ~ div.codeblock,
+    .code-expand-btn:not(.expand-done) ~ * div.codeblock {
+      overflow: hidden;
+      height: 360px;
+    }
+    </style>
+  <!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+
+<body>
+  <div id="loader-container"> 
+    <div id="loader" class="loader"></div>
+    <div class="loader-inner">
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/RainbowLoading.js" type="text/javascript"></script>
+<link href="/css/RainbowLoading.css" type="text/css" rel="stylesheet"/><div id="tooltip-rightmenu" class="tooltip-rightmenu">如需原始右键菜单请按下 <strong>Ctrl+右键</strong></div>
+<div id="tooltip-rightmenu-return" class="tooltip-rightmenu"></div>
+
+<div id="rightmenu-wrapper">
+  <ul class="list-v rightmenu" id="rightmenu-content">
+	    <li class="navigation menuNavigation-Content">
+            <a class="nav icon-only fix-cursor-default" onclick="history.back()"><i class="fa-solid fa-chevron-left"></i></a>
+            <a class="nav icon-only fix-cursor-default" onclick="history.forward()"><i class="fa-solid fa-chevron-right"></i></a>
+            <a class="nav icon-only fix-cursor-default" onclick="window.location.reload()"><i class="fa-solid fa-rotate-right"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="TOP" href="#" role="button"><i class="fa-solid fa-chevron-up"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="bottom" href="javascript:void(0);" role="button" onclick="window.scrollTo(0, document.body.scrollHeight);"><i class="fa-solid fa-chevron-down"></i></a>
+	    </li>
+
+        <hr class="menuLoad-Content" style="display: block;" id="top-line" hidden>
+
+        <li class="menuLoad-Content" style="display: block;" id="copy-selected-text" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copySelectedText();">
+                <span>
+                    <i class="fa-solid fa-copy"></i>
+                    &nbsp;复制选中
+                </span>
+            </a>
+        </li>
+
+        <li class="menuLoad-Content" style="display: block;" id="search-selected-text-BING" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_blank" onclick="searchSelectedTextBing();">
+                <span>
+                    <i class="fa-solid fa-magnifying-glass-arrow-right"></i>
+                    &nbsp;必应搜索
+                </span>
+            </a>
+        </li>
+
+        <li class="menuLoad-Content" style="display: block;" id="go-to-link" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_blank" onclick="goToLink();">
+                <span>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    &nbsp;转到链接
+                </span>
+            </a>
+        </li>
+
+        <li class="menuLoad-Content" style="display: block;" id="download-image" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="downloadImage();">
+                <span>
+                    <i class="fa-solid fa-image"></i>
+                    &nbsp;下载图片
+                </span>
+            </a>
+        </li>
+
+        <li class="menuLoad-Content" style="display: block;" id="copy-image-link" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copyImageLink();">
+                <span>
+                    <i class="fa-solid fa-link"></i>
+                    复制图片链接
+                </span>
+            </a>
+        </li>
+
+		<hr class="menuLoad-Content" style="display: block;">
+
+        <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" onclick="RandomGo()">
+		        <span>
+			        <i class="fa-solid fa-paper-plane"></i>
+                    &nbsp;随便看看
+		        </span>
+		    </a>
+	    </li>
+	    <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+		        <span>
+			        <i class="fa-solid fa-magnifying-glass"></i>
+                    &nbsp;站内搜索
+		        </span>
+		    </a>
+	    </li>
+        <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" href="/categories/">
+		        <span>
+			        <i class="iconfont icon-category-fill"></i>
+                    &nbsp;博客分类
+		        </span>
+		    </a>
+	    </li>
+        <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" href="/tags/">
+		        <span>
+			        <i class="fa-solid fa-tags"></i>
+                    &nbsp;文章标签
+		        </span>
+		    </a>
+	    </li>
+        
+	    <hr class="menuLoad-Content" style="display: block;">
+
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copyLink();">
+                <span>
+                    <i class="fa-solid fa-copy"></i>
+                    &nbsp;复制链接
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="document.getElementById('color-toggle-btn').click();">
+            <span>
+                <i class="fa-solid fa-circle-half-stroke"></i>
+                &nbsp;切换昼夜
+            </span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+<script src="/js/RightMenu.js" type="text/javascript"></script>
+<link href="/css/RightMenu.css" type="text/css" rel="stylesheet"/>
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <!-- <strong>YYYJ&#39;s Blog</strong> -->
+       <strong class="navbar-title">YYYJ&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/DayDream-Gallery/" target="_self">
+                <i class="fas fa-images"></i>
+                <span>图集</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.travellings.cn/go-by-clouds.html" target="_self">
+                <i class="fas fa-train-subway"></i>
+                <span>开往</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/banner/banner.webp') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="6-2-1 Python环境管理【Xflops-HPC Start Guide】"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        youyeyejie
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-07-06 18:01" pubdate>
+          2025年7月6日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          3.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          30 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar category-bar" style="margin-right: -1rem">
+    
+
+
+
+
+
+<div class="category-list">
+  
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Xflops-HPC Start Guide"
+        id="heading-7b440b805b86006b97141321de846359" role="tab" data-toggle="collapse" href="#collapse-7b440b805b86006b97141321de846359"
+        aria-expanded="true"
+      >
+        Xflops-HPC Start Guide
+        <span class="list-group-count">(6)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-7b440b805b86006b97141321de846359"
+           role="tabpanel" aria-labelledby="heading-7b440b805b86006b97141321de846359">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/posts/1-1-%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E8%8E%B7%E5%8F%96%E4%BF%A1%E6%81%AF%E3%80%90Xflops-HPC%20Start%20Guide%E3%80%91/" title="1-1 如何高效获取信息【Xflops-HPC Start Guide】"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">1-1 如何高效获取信息【Xflops-HPC Start Guide】</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/1-2-%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%84%8F%E8%AF%86%E3%80%90Xflops-HPC%20Start%20Guide%E3%80%91/" title="1-2 信息安全意识【Xflops-HPC Start Guide】"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">1-2 信息安全意识【Xflops-HPC Start Guide】</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/5-4-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%A6%82%E8%BF%B0%E3%80%90Xflops-HPC%20Start%20Guide%E3%80%91/" title="5-4 网络安全概述【Xflops-HPC Start Guide】"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">5-4 网络安全概述【Xflops-HPC Start Guide】</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/6-2-1-Python%E7%8E%AF%E5%A2%83%E7%AE%A1%E7%90%86%E3%80%90Xflops-HPC%20Start%20Guide%E3%80%91/" title="6-2-1 Python环境管理【Xflops-HPC Start Guide】"
+           class="list-group-item list-group-item-action
+           active">
+          <span class="category-post">6-2-1 Python环境管理【Xflops-HPC Start Guide】</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/6-2-2-Python%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80%E3%80%90Xflops-HPC%20Start%20Guide%E3%80%91/" title="6-2-2 Python语法基础【Xflops-HPC Start Guide】"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">6-2-2 Python语法基础【Xflops-HPC Start Guide】</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/6-2-3-PyTorch%E5%9F%BA%E7%A1%80%E3%80%90Xflops-HPC%20Start%20Guide%E3%80%91/" title="6-2-3 PyTorch基础【Xflops-HPC Start Guide】"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">6-2-3 PyTorch基础【Xflops-HPC Start Guide】</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+</div>
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">6-2-1 Python环境管理【Xflops-HPC Start Guide】</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <div class="note note-info">
+            <p>新学期即将来临，Xflops超算队招新以及HelloHPC超算校内赛正在火热筹备中。作为Xflops超算队的一员，我与其他成员将共同负责<a target="_blank" rel="noopener" href="https://xflops.sjtu.edu.cn/hpc-start-guide">HPC入门指南</a>的修订与编写。Xflops超算队的HPC入门指南系列文章旨在帮助新成员快速入门和了解HPC知识，为校内赛的参赛者提供必要的知识储备和技能指导。</p>
+          </div>
+<p><a href="https://xflops.sjtu.edu.cn/hpc-start-guide" name="/img/cover/xflops.webp" target="_blank" class="LinkCard">HPC入门指南</a></p>
+<h1 id="python简介">Python简介</h1>
+<p>Python是一种广泛使用的高级编程语言，因其简洁易读的语法和强大的库支持而受到开发者的喜爱，近年来随着AI和数据科学的兴起，Python的使用越来越普及。Python支持多种编程范式，包括面向对象、函数式和命令式编程，并且拥有丰富的标准库和第三方库，使得开发者可以快速构建各种应用程序。因其适用于包括数据分析、机器学习、Web开发、自动化脚本等在内的多种应用场景，我们需要掌握基础的Python知识。</p>
+<p>在本节内容中，我们将会向您介绍Python环境的搭建与管理，以便您能够在自己的计算机上进行Python编程和开发。而在后续的内容中，我们还将介绍Python的基本语法以及Pytorch库的使用。</p>
+<h1 id="python环境搭建">Python环境搭建</h1>
+<div class="note note-success">
+            <p>我们提供的标准开发环境中已经包含了Python环境和Conda，因此您可以运行下面的命令激活conda环境进行Python编程和开发。
+</p><figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #56B6C2">source</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">~/scripts/conda.sh</span></span></code></pre></div></div></figure>
+如果您希望在自己的计算机上搭建Python环境，可以参考以下内容。<p></p>
+          </div>
+<p>在开始Python编程之前，您需要在您的计算机上安装Python环境。一般来说，我们可以直接安装Python的官方版本，也可以使用Miniconda等发行版来管理Python环境和依赖库。</p>
+<h2 id="安装python的官方版本">安装Python的官方版本</h2>
+
+    <div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-483ebe8a" role="button" aria-expanded="false" aria-controls="collapse-483ebe8a">
+        <div class="fold-arrow">▶</div>MacOS系统与Linux系统已预装Python
+      </div>
+      <div class="fold-collapse collapse" id="collapse-483ebe8a">
+        <div class="fold-content">
+          <p>事实上MacOS系统与Linux系统默认安装了<code>python</code>，可以在命令行中使用<code>python3</code>命令运行。但是预装的Python是一些系统工具的依赖，通常不建议使用这个Python作为您的开发环境。我们推荐您使用<code>conda</code>来创建Python开发环境。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-daaf6971" role="button" aria-expanded="false" aria-controls="collapse-daaf6971">
+        <div class="fold-arrow">▶</div>Windows上快速安装Python
+      </div>
+      <div class="fold-collapse collapse" id="collapse-daaf6971">
+        <div class="fold-content">
+          <p>新版本的Windows上有<code>winget</code>可以用于快速安装常用工具链。运行<code>winget install Python</code>即可自动完成Python的安装。但是如果有多Python环境管理的需求，我们仍然建议您使用<code>conda</code>来创建Python的开发环境。</p>
+        </div>
+      </div>
+    </div>
+<p>以下是安装Python官方版本的步骤：</p>
+<ol type="1">
+<li><strong>下载Python</strong>：访问<a target="_blank" rel="noopener" href="https://www.python.org/downloads/">Python官网</a>下载适合您操作系统的Python版本。建议下载最新的稳定版本。</li>
+<li><strong>安装Python</strong>：运行下载的安装程序，按照提示完成安装。在安装过程中，请确保勾选“Add
+Python to PATH”选项，这样可以在命令行中直接使用Python命令。</li>
+<li><strong>验证安装</strong>：安装完成后，在命令行中输入以下命令来验证Python是否安装成功并添加到环境变量中：
+<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">python</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--version</span></span></code></pre></div></div></figure> 如果安装成功，您将看到Python的版本信息。</li>
+<li><strong>安装pip</strong>：Python 3.4及以上版本默认包含
+<code>pip</code> ，如果您的版本不包含，可以手动安装。验证
+<code>pip</code> 是否安装成功： <figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">pip</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--version</span></span></code></pre></div></div></figure></li>
+</ol>
+<h3 id="使用miniconda安装python">使用Miniconda安装Python</h3>
+<p>Anaconda是一个流行的Python发行版，包含了Python解释器和大量的科学计算和数据分析库。而Miniconda是Anaconda的轻量级版本，适合需要更小安装包的用户。这里以Miniconda为例介绍安装步骤：</p>
+<ol type="1">
+<li><strong>下载Miniconda</strong>：访问Anaconda官网的<a target="_blank" rel="noopener" href="https://www.anaconda.com/download/success">Miniconda下载界面</a>下载适合您操作系统的Miniconda安装包。</li>
+<li><strong>安装Miniconda</strong>：运行下载的安装程序，按照提示完成安装。在安装过程中，您可以选择将Miniconda添加到系统的环境变量中，这样可以在命令行中直接使用
+<code>conda</code> 命令。</li>
+<li><strong>验证安装</strong>：安装完成后，在命令行中输入以下命令来验证Miniconda是否安装成功：
+<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">conda</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--version</span></span></code></pre></div></div></figure> 如果安装成功，您将看到conda的版本信息。</li>
+</ol>
+<h2 id="选择合适的ide">选择合适的IDE</h2>
+<p>Python只是一种编程语言，您还需要一个合适的集成开发环境（IDE）来编写和运行Python代码。我们推荐使用以下两种IDE：</p>
+<ul>
+<li>VSCode + Python插件</li>
+<li>Pycharm</li>
+</ul>
+<p>如果在搭建Python环境的过程中遇到问题，可以参考以下教程：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/vscode/vscode-install.html">VSCode安装教程</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/pycharm/pycharm-install.html">Pycharm安装教程</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/python3/python3-install.html">Python安装教程</a></li>
+</ul>
+
+    <div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-268c7555" role="button" aria-expanded="false" aria-controls="collapse-268c7555">
+        <div class="fold-arrow">▶</div>练习
+      </div>
+      <div class="fold-collapse collapse" id="collapse-268c7555">
+        <div class="fold-content">
+          <ol type="1">
+<li>在您的计算机上安装Python环境，并验证安装是否成功。</li>
+<li>使用IDE通过SSH连接到标准开发环境，并尝试编写和运行一个简单的Python程序，例如打印“Hello,
+World!”，并在终端中运行该程序。</li>
+</ol>
+        </div>
+      </div>
+    </div>
+<h1 id="python环境管理">Python环境管理</h1>
+<p>Python环境管理是指在不同的项目中使用不同的Python版本和依赖库，以避免版本冲突和依赖问题。常用的Python环境管理工具有
+<code>venv</code>、<code>virtualenv</code> 和 <code>conda</code>。</p>
+<h2 id="使用-venv-进行环境管理">使用 venv 进行环境管理</h2>
+<p>venv 是 Python
+自带的虚拟环境管理工具，可以创建独立的Python环境，通常配合 pip
+使用来管理项目的依赖库。以下是使用 venv 进行环境管理的常用指令：</p>
+<ul>
+<li><strong>创建虚拟环境</strong>：在命令行中输入以下命令来创建一个新的虚拟环境：
+<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">python</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-m</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">venv</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">myenv</span></span></code></pre></div></div></figure> 这将创建一个名为 <code>myenv</code> 的虚拟环境。</li>
+<li><strong>激活虚拟环境</strong>：
+<ul>
+<li>Windows用户： <figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">myenv/Scripts/activate</span></span></code></pre></div></div></figure></li>
+<li>macOS和Linux用户： <figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #56B6C2">source</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">myenv/bin/activate</span></span></code></pre></div></div></figure></li>
+</ul></li>
+<li><strong>安装依赖库</strong>：在虚拟环境中，您可以使用 pip
+安装所需的依赖库，例如： <figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">pip</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">numpy</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">pandas</span></span></code></pre></div></div></figure></li>
+<li><strong>退出虚拟环境</strong>：完成开发后，您可以通过以下命令退出虚拟环境：
+<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">deactivate</span></span></code></pre></div></div></figure></li>
+<li><strong>删除虚拟环境</strong>：如果您不再需要某个虚拟环境，可以直接删除该目录。</li>
+</ul>
+<h2 id="使用-virtualenv-进行环境管理">使用 virtualenv 进行环境管理</h2>
+<p>virtualenv 是一个第三方库，可以创建独立的Python环境，使用前需要用 pip
+安装它。virtualenv 的使用与 venv
+类似，这里不多赘述，感兴趣的读者可以参考<a target="_blank" rel="noopener" href="https://virtualenv.pypa.io/en/latest/">virtualenv官方文档</a>。</p>
+<h2 id="使用-conda-进行环境管理">使用 conda 进行环境管理</h2>
+<p>conda 是 Anaconda 和 Miniconda
+自带的包管理和环境管理工具，适用于数据科学和机器学习领域。以下是使用
+conda 进行环境管理的常用指令：</p>
+<ul>
+<li><strong>创建虚拟环境</strong>：在命令行中输入以下命令来创建一个新的虚拟环境：
+<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">conda</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">create</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--name</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">myenv</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">python=</span><span style="color: #D19A66">3.8</span></span></code></pre></div></div></figure> 这将创建一个名为 <code>myenv</code>
+的虚拟环境，并安装Python 3.8版本。</li>
+<li><strong>激活虚拟环境</strong>：在命令行中输入以下命令来激活虚拟环境：
+<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">conda</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">activate</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">myenv</span></span></code></pre></div></div></figure></li>
+<li><strong>安装依赖库</strong>：在虚拟环境中，您可以使用 conda
+安装所需的依赖库，例如： <figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">conda</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">numpy</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">pandas</span></span></code></pre></div></div></figure></li>
+<li><strong>退出虚拟环境</strong>：完成开发后，您可以通过以下命令退出虚拟环境：
+<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">conda</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">deactivate</span></span></code></pre></div></div></figure></li>
+<li><strong>列出所有虚拟环境</strong>：在命令行中输入以下命令来列出所有已创建的虚拟环境：
+<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">conda</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">env</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">list</span></span></code></pre></div></div></figure></li>
+<li><strong>删除虚拟环境</strong>：如果您不再需要某个虚拟环境，可以使用以下命令删除它：
+<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">conda</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">remove</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--name</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">myenv</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--all</span></span></code></pre></div></div></figure></li>
+<li><strong>导出环境</strong>：在命令行中输入以下命令来生成当前环境中已安装的所有包及其版本信息的文件，以便于在其他环境中复现相同的依赖：
+<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">conda</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">env</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">export</span><span style="color: #ABB2BF"> &gt; </span><span style="color: #98C379">environment.yml</span></span></code></pre></div></div></figure></li>
+<li><strong>根据依赖文件创建环境</strong>：在命令行中输入以下命令来根据
+<code>environment.yml</code> 文件创建一个新的conda环境：
+<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">conda</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">env</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">create</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-f</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">environment.yml</span></span></code></pre></div></div></figure></li>
+</ul>
+
+    <div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-82fcff42" role="button" aria-expanded="false" aria-controls="collapse-82fcff42">
+        <div class="fold-arrow">▶</div>离线conda环境迁移
+      </div>
+      <div class="fold-collapse collapse" id="collapse-82fcff42">
+        <div class="fold-content">
+          <p>使用上述导出环境并根据依赖文件创建环境的的方式需要新conda环境安装的机器上能够连接互联网下载依赖文件。如果您需要将现有的conda环境迁移到无互联网连接的机器上，可以使用以下命令导出conda环境到单个文件中：
+</p><figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">conda</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">pack</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-n</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">your_env_name</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-o</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">env_packages.tar.gz</span></span></code></pre></div></div></figure>
+将此文件上传到需要安装此环境的机器上。并运行以下命令来安装此环境：
+<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">tar</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-xzf</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">env_packages.tar.gz</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-C</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">new_env_path</span></span></code></pre></div></div></figure>
+我们推荐<code>new_env_path</code>设置为该机器原有的conda环境的虚拟环境管理路径。例如对于标准开发环境来说应该是<code>/home/xflops/apps/miniconda3/envs/&lt;your_env_name&gt;</code>，这样之后你可以方便的使用该机器的<code>conda</code>管理此环境。你也可以设置为一个自选的<code>new_env_path</code>。这样你将需要运行下述命令来激活此环境：
+<figure class="shiki"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #abb2bf">source new_env_path/bin/activate  # Linux/macOS</span></span>
+<span class="line"><span style="color: #abb2bf">.\new_env_path\Scripts\activate   # Windows</span></span></code></pre></div></div></figure>
+<strong>但需要注意</strong>：该迁移方式直接将依赖项的代码与二进制进行迁移，因此需保证迁移前后的系统一致处理器架构一致，例如将linux上的环境按上述方法迁移到windows将无法使用。<p></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-0e4fc786" role="button" aria-expanded="false" aria-controls="collapse-0e4fc786">
+        <div class="fold-arrow">▶</div>练习
+      </div>
+      <div class="fold-collapse collapse" id="collapse-0e4fc786">
+        <div class="fold-content">
+          <p>使用 <code>venv</code> 或 <code>conda</code>
+工具，在实践中亲自体会一遍创建、激活、安装依赖、退出和删除虚拟环境的过程。</p>
+        </div>
+      </div>
+    </div>
+<h1 id="python包管理">Python包管理</h1>
+<p>Python包管理是指管理Python项目中的依赖库和包。常用的Python包管理工具有
+<code>pip</code> 和
+<code>conda</code>。实际上，Python的环境管理与包管理是紧密相关的，这里将简要介绍这两种工具的使用。</p>
+<h2 id="使用-pip-管理包">使用 pip 管理包</h2>
+<p>pip 是 Python
+自带的包管理工具，可以安装、升级和卸载Python包。以下是一些常用的 pip
+命令：</p>
+<ul>
+<li><strong>安装包</strong>：在命令行中输入以下命令来安装一个Python包：
+<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">pip</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">package_name</span></span></code></pre></div></div></figure>
+<ul>
+<li><strong>安装特定版本的包</strong>：如果您需要安装特定版本的包，可以在包名后指定版本号或最低版本号，例如：
+<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">pip</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">package_name==</span><span style="color: #D19A66">1.0</span><span style="color: #98C379">.0</span></span>
+<span class="line"><span style="color: #61AFEF">pip</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">package_nam</span><span style="color: #ABB2BF">e&gt;</span><span style="color: #98C379">=</span><span style="color: #D19A66">1.0</span><span style="color: #98C379">.0</span></span></code></pre></div></div></figure></li>
+</ul></li>
+<li><strong>升级包</strong>：在命令行中输入以下命令来升级一个已安装的Python包：
+<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">pip</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--upgrade</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">package_name</span></span></code></pre></div></div></figure>
+<ul>
+<li>由于 pip 本身也是一个Python包，因此您可以使用同样的命令来升级 pip
+自身，这在某些情况下是必要的。</li>
+</ul></li>
+<li><strong>卸载包</strong>：在命令行中输入以下命令来卸载一个已安装的Python包：
+<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">pip</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">uninstall</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">package_name</span></span></code></pre></div></div></figure></li>
+<li><strong>列出已安装的包</strong>：在命令行中输入以下命令来列出当前环境中已安装的所有Python包：
+<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">pip</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">list</span></span></code></pre></div></div></figure></li>
+<li><strong>查看包信息</strong>：在命令行中输入以下命令来查看某个已安装包的详细信息：
+<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">pip</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">show</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">package_name</span></span></code></pre></div></div></figure></li>
+<li><strong>搜索包</strong>：在命令行中输入以下命令来搜索Python包：
+<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">pip</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">search</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">package_name</span></span></code></pre></div></div></figure></li>
+<li><strong>生成依赖文件</strong>：在命令行中输入以下命令来生成当前环境中已安装的所有包及其版本信息的文件，以便于在其他环境中复现相同的依赖：
+<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">pip</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">freeze</span><span style="color: #ABB2BF"> &gt; </span><span style="color: #98C379">requirements.txt</span></span></code></pre></div></div></figure></li>
+<li><strong>安装依赖文件中的包</strong>：在命令行中输入以下命令来安装
+<code>requirements.txt</code> 文件中列出的所有包： <figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">pip</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-r</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">requirements.txt</span></span></code></pre></div></div></figure></li>
+<li><strong>配置镜像源</strong>：如果在使用 pip
+时遇到网络问题，可以尝试更换镜像源。常用的镜像源包括清华大学、阿里云等，具体操作可以参考<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/pypi/">清华pip镜像源配置</a>。
+在命令行输入以下命令来配置清华大学的镜像源： <figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">pip</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">config</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">set</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">global.index-url</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">https://pypi.tuna.tsinghua.edu.cn/simple</span></span></code></pre></div></div></figure>
+或者临时使用清华镜像源安装包： <figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">pip</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-i</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">https://pypi.tuna.tsinghua.edu.cn/simple</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">package_name</span></span></code></pre></div></div></figure></li>
+</ul>
+<p>需要注意的是，上述操作均针对的是当前所处于的Python环境。如果您在虚拟环境中操作，所有的包管理操作都将只影响该虚拟环境中的Python包；相反，如果您在全局环境中操作，则会影响全局的Python包。</p>
+<h2 id="使用-conda-管理包">使用 conda 管理包</h2>
+<p>conda 是 Anaconda 和 Miniconda
+自带的包管理和环境管理工具，可以安装、升级和卸载Python包以及其他语言的包。以下是一些常用的
+conda 命令：</p>
+<ul>
+<li><strong>安装包</strong>：在命令行中输入以下命令来安装一个或多个Python包：
+<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">conda</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">package_name1</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">package_name2</span></span></code></pre></div></div></figure>
+<ul>
+<li><strong>安装特定版本的包</strong>：如果您需要安装特定版本的包，可以在包名后指定版本号，例如：
+<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">conda</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">package_name=</span><span style="color: #D19A66">1.0</span><span style="color: #98C379">.0</span></span></code></pre></div></div></figure></li>
+</ul></li>
+<li><strong>升级包</strong>：在命令行中输入以下命令来升级一个已安装的Python包：
+<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">conda</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">update</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">package_name</span></span></code></pre></div></div></figure>
+<ul>
+<li><strong>升级所有包</strong>：如果您想要升级当前环境中的所有包，可以使用以下命令：
+<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">conda</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">update</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--all</span></span></code></pre></div></div></figure></li>
+</ul></li>
+<li><strong>卸载包</strong>：在命令行中输入以下命令来卸载一个已安装的Python包：
+<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">conda</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">remove</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">package_name</span></span></code></pre></div></div></figure></li>
+<li><strong>搜索包</strong>：在命令行中输入以下命令来搜索Python包：
+<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">conda</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">search</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">package_name</span></span></code></pre></div></div></figure></li>
+<li><strong>列出已安装的包</strong>：在命令行中输入以下命令来列出当前环境中已安装的所有包：
+<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">conda</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">list</span></span></code></pre></div></div></figure></li>
+<li><strong>配置镜像源</strong>：如果在使用 conda
+时遇到网络问题，可以尝试更换镜像源。常用的镜像源包括清华大学、阿里云等，具体操作可以参考<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/">清华conda镜像源配置</a>。
+在命令行输入以下命令来配置清华大学的镜像源： <figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">conda</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">config</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--add</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">channels</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span></span>
+<span class="line"><span style="color: #61AFEF">conda</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">config</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--set</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">show_channel_urls</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">yes</span></span></code></pre></div></div></figure>
+配置后可以通过下面的指令验证配置是否成功： <figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">conda</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">config</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--show</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">channels</span></span></code></pre></div></div></figure></li>
+</ul>
+<p>如果在使用 conda 时遇到问题，可以参考<a target="_blank" rel="noopener" href="https://docs.conda.io/projects/conda/en/latest/">Conda官方文档</a>。</p>
+
+    <div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-ceda47f3" role="button" aria-expanded="false" aria-controls="collapse-ceda47f3">
+        <div class="fold-arrow">▶</div>练习
+      </div>
+      <div class="fold-collapse collapse" id="collapse-ceda47f3">
+        <div class="fold-content">
+          <ol type="1">
+<li>使用 <code>pip</code> 或 <code>conda</code>
+工具，在实践中亲自体会一遍安装、升级、卸载包的过程。</li>
+<li>配置镜像源，对比使用镜像源和不使用镜像源安装同一个包的安装速度差异。</li>
+<li>在你的计算机上，一共存在几个版本的Python？如果存在多个，请思考它们之间的关系。</li>
+<li>对比你的计算机上的Python全局环境和虚拟环境中同一个包（如
+<code>numpy</code>）的版本，他们是否存在差异？如果存在差异，请思考原因。</li>
+<li>小明创建并激活了一个名为 <code>myenv</code>
+的虚拟环境，并在其中安装了 <code>numpy</code> 和
+<code>pandas</code>。然而，小明代码中的 <code>import numpy</code>
+却在他使用的IDE
+VSCode中报错，提示找不到该模块，请思考可能的原因以及解决方法。并思考：如果小明在这个虚拟环境中运行该代码，是否会报错（假设不存在其他错误）？</li>
+</ol>
+        </div>
+      </div>
+    </div>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Xflops-HPC-Start-Guide/" class="category-chain-item">Xflops-HPC Start Guide</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Xflops/" class="print-no-link">#Xflops</a>
+      
+        <a href="/tags/HPC/" class="print-no-link">#HPC</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>6-2-1 Python环境管理【Xflops-HPC Start Guide】</div>
+      <div>https://youyeyejie.github.io/posts/6-2-1-Python环境管理【Xflops-HPC Start Guide】/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>youyeyejie</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年7月6日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2025年7月14日</div>
+        </div>
+      
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/6-2-2-Python%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80%E3%80%90Xflops-HPC%20Start%20Guide%E3%80%91/" title="6-2-2 Python语法基础【Xflops-HPC Start Guide】">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">6-2-2 Python语法基础【Xflops-HPC Start Guide】</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/5-4-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%A6%82%E8%BF%B0%E3%80%90Xflops-HPC%20Start%20Guide%E3%80%91/" title="5-4 网络安全概述【Xflops-HPC Start Guide】">
+                        <span class="hidden-mobile">5-4 网络安全概述【Xflops-HPC Start Guide】</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments">
+      
+    <div id="giscus" class="giscus"></div>
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#giscus', function() {
+        var options = {"repo":"youyeyejie/youyeyejie.github.io","repo-id":"R_kgDOO-Uo1g","category":"General","category-id":"DIC_kwDOO-Uo1s4Crz5J","theme-light":"light","theme-dark":"dark","mapping":"pathname","reactions-enabled":1,"emit-metadata":0,"input-position":"top","lang":"zh-CN"};
+        var attributes = {};
+        for (let option in options) {
+          if (!option.startsWith('theme-')) {
+            var key = option.startsWith('data-') ? option : 'data-' + option;
+            attributes[key] = options[option];
+          }
+        }
+        var light = 'light';
+        var dark = 'dark';
+        window.GiscusThemeLight = light;
+        window.GiscusThemeDark = dark;
+        attributes['data-theme'] = document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ? dark : light;
+        for (let attribute in attributes) {
+          var value = attributes[attribute];
+          if (value === undefined || value === null || value === '') {
+            delete attributes[attribute];
+          }
+        }
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://giscus.app/client.js');
+        s.setAttribute('crossorigin', 'anonymous');
+        for (let attribute in attributes) {
+          s.setAttribute(attribute, attributes[attribute]);
+        }
+        var ss = document.getElementsByTagName('script');
+        var e = ss.length > 0 ? ss[ss.length - 1] : document.head || document.documentElement;
+        e.parentNode.insertBefore(s, e.nextSibling);
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+  
+  
+</div>
+<div class="footer-inner">
+    <div class="powered-by">
+        <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+        <i class="iconfont icon-love"></i>
+        <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+    </div>
+    <div class="hitokoto">
+        <i class="fas fa-quote-left"></i>
+        <a target="_blank" rel="noopener" href="https://developer.hitokoto.cn/" id="hitokoto_text"><span id="hitokoto">且以群词 注解我这座荒山</span></a>
+        <script src="/js/Hitokoto.js" defer></script>
+    </div>
+    <div class="data">
+        <span class="total-word-container">
+            <i class="fas fa-chart-bar"></i>
+            <span id="g-total-word-id"></span>
+            字汇长河
+        </span>
+        &nbsp;
+        <span id="total-posts-container">
+            <i class="fas fa-file-alt"></i>
+            <span id="g-total-posts-id"></span>
+            <script src="/js/TotalPosts.js"></script>
+            文舟靠岸
+        </span>
+        &nbsp;
+        <span id="busuanzi_container_site_pv">
+            <i class="fas fa-eye"></i>
+            <span id="busuanzi_value_site_pv">1314</span>
+            目光所及
+        </span>
+        &nbsp;
+        <span id="busuanzi_container_site_uv">
+            <i class="fas fa-user-friends"></i>
+            <span id="busuanzi_value_site_uv">520</span>
+            访客驻足
+        </span>
+    </div>
+    <div class="duration">
+        <i class="fas fa-calendar"></i>
+        <span id="timeDate">人生缓缓</span>
+        <span id="times">自有答案</span>
+        <script src="/js/Duration.js"></script>
+    </div>
+</div>
+
+<link href="/css/Footer.css" type="text/css" rel="stylesheet"/>
+<!-- <script defer src="https://events.vercount.one/js"></script> -->
+<!-- <script src="https://npm.elemecdn.com/penndu@1.0.0/bsz.js" defer></script> -->
+<!-- <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script> -->
+<!-- <script async src="https://busuanzi.icodeq.com/busuanzi.pure.mini.js"></script> -->
+<!-- <script async src="https://busuanzi.sukap.cn/busuanzi.pure.mini.js"></script> -->
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    
+      <script  src="/js/img-lazyload.js" ></script>
+    
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://events.vercount.one/js?i=/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="/js/DynamicLine.js"></script>
+<script src="/js/LinkCard.js"></script>
+<script src="/js/RandomBanner.js"></script>
+<script src="/js/ScrollAnimation.js"></script>
+<script src="/js/TabDisplay.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  <script type="text/javascript">
+  document.getElementById("g-total-word-id").innerHTML = "303k";
+</script>
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start -->
+<script src="https://cdn.jsdelivr.net/npm/hexo-shiki-plugin@latest/lib/codeblock.js"></script>
+
+  <script>
+  const CODE_CONFIG = {
+    beautify: true,
+    highlightCopy: true,
+    highlightLang: true,
+    highlightHeightLimit: 360,
+    isHighlightShrink: false,
+    copy: {
+      success: 'Copy Success',
+      error: 'Copy Error',
+      noSupport: 'Browser Not Support',
+    }
+  };
+  console.log(
+    `%c hexo-shiki-plugin %c v1.0.27 %c https://github.com/nova1751/hexo-shiki-plugin`,
+    "color: #fff; background: #5f5f5f",
+    "color: #fff; background: #80c8f8",
+    ""
+  );
+  </script>
+  <!-- hexo injector body_end end --></body>
+</html>

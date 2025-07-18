@@ -1,0 +1,1501 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head><!-- hexo injector head_begin start --><meta name="msvalidate.01" content="DF9F232801BA9D0CABB002E4774A3228" />
+<meta name="google-site-verification" content="vOm5Zs9tuUlEh-wVBlpvs_spnOou-q2CoTiFQ1ZV1h4" />
+<!-- hexo injector head_begin end -->
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar/avatar2.webp">
+  <link rel="icon" href="/img/avatar/avatar2.webp">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="youyeyejie">
+  <meta name="keywords" content="yyyj,YYYJ,youyeyejie,有野野芥">
+  
+    <meta name="description" content="Fluid 主题美化记录2.0——无侵入式页脚美化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fluid页脚美化">
+<meta property="og:url" content="https://youyeyejie.github.io/posts/Fluid%E9%A1%B5%E8%84%9A%E7%BE%8E%E5%8C%96/index.html">
+<meta property="og:site_name" content="有野野芥的博客">
+<meta property="og:description" content="Fluid 主题美化记录2.0——无侵入式页脚美化">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://youyeyejie.github.io/posts/Fluid%E9%A1%B5%E8%84%9A%E7%BE%8E%E5%8C%96/image.webp">
+<meta property="article:published_time" content="2025-06-28T17:47:43.000Z">
+<meta property="article:modified_time" content="2025-07-15T11:28:57.214Z">
+<meta property="article:author" content="youyeyejie">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Fluid">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://youyeyejie.github.io/posts/Fluid%E9%A1%B5%E8%84%9A%E7%BE%8E%E5%8C%96/image.webp">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>Fluid页脚美化 - 有野野芥的博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+<link rel="stylesheet" href="//lib.baomitu.com/font-awesome/6.1.2/css/all.min.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+
+
+  
+<link rel="stylesheet" href="/css/CodeBlock.css">
+<link rel="stylesheet" href="/css/CodeInLine.css">
+<link rel="stylesheet" href="/css/FrostedGlassBg.css">
+<link rel="stylesheet" href="/css/Gallery.css">
+<link rel="stylesheet" href="/css/IndexImgHover.css">
+<link rel="stylesheet" href="/css/LinkCard.css">
+<link rel="stylesheet" href="/css/ScrollAnimation.css">
+<link rel="stylesheet" href="/css/ScrollBar.css">
+<link rel="stylesheet" href="/css/StrongInDark.css">
+<link rel="stylesheet" href="/css/TitleGradient.css">
+<link rel="stylesheet" href="/css/TitleNeon.css">
+<link rel="stylesheet" href="/css/UnifyImgWidth.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"youyeyejie.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":false,"default":"TEXT"},"copy_btn":false,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading/loading3.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-shiki-plugin@latest/lib/codeblock.css">
+<style>:root{--hl-color:#abb2bf;--hl-bg:#282c34;--hltools-bg:#21252b;--hltools-color:#bbbbbc;--hlnumber-bg:#282c34;--hlnumber-color:#495162;--hlscrollbar-bg:#373c47;--hlexpand-bg:linear-gradient(180deg,rgba(40,44,52,0.1),rgba(40,44,52,0.9))}</style>
+    <style>
+    .code-expand-btn:not(.expand-done) ~ div.codeblock,
+    .code-expand-btn:not(.expand-done) ~ * div.codeblock {
+      overflow: hidden;
+      height: 360px;
+    }
+    </style>
+  <!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+
+<body>
+  <div id="loader-container"> 
+    <div id="loader" class="loader"></div>
+    <div class="loader-inner">
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/RainbowLoading.js" type="text/javascript"></script>
+<link href="/css/RainbowLoading.css" type="text/css" rel="stylesheet"/><div id="tooltip-rightmenu" class="tooltip-rightmenu">如需原始右键菜单请按下 <strong>Ctrl+右键</strong></div>
+<div id="tooltip-rightmenu-return" class="tooltip-rightmenu"></div>
+
+<div id="rightmenu-wrapper">
+  <ul class="list-v rightmenu" id="rightmenu-content">
+	    <li class="navigation menuNavigation-Content">
+            <a class="nav icon-only fix-cursor-default" onclick="history.back()"><i class="fa-solid fa-chevron-left"></i></a>
+            <a class="nav icon-only fix-cursor-default" onclick="history.forward()"><i class="fa-solid fa-chevron-right"></i></a>
+            <a class="nav icon-only fix-cursor-default" onclick="window.location.reload()"><i class="fa-solid fa-rotate-right"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="TOP" href="#" role="button"><i class="fa-solid fa-chevron-up"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="bottom" href="javascript:void(0);" role="button" onclick="window.scrollTo(0, document.body.scrollHeight);"><i class="fa-solid fa-chevron-down"></i></a>
+	    </li>
+
+        <hr class="menuLoad-Content" style="display: block;" id="top-line" hidden>
+
+        <li class="menuLoad-Content" style="display: block;" id="copy-selected-text" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copySelectedText();">
+                <span>
+                    <i class="fa-solid fa-copy"></i>
+                    &nbsp;复制选中
+                </span>
+            </a>
+        </li>
+
+        <li class="menuLoad-Content" style="display: block;" id="search-selected-text-BING" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_blank" onclick="searchSelectedTextBing();">
+                <span>
+                    <i class="fa-solid fa-magnifying-glass-arrow-right"></i>
+                    &nbsp;必应搜索
+                </span>
+            </a>
+        </li>
+
+        <li class="menuLoad-Content" style="display: block;" id="go-to-link" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_blank" onclick="goToLink();">
+                <span>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    &nbsp;转到链接
+                </span>
+            </a>
+        </li>
+
+        <li class="menuLoad-Content" style="display: block;" id="download-image" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="downloadImage();">
+                <span>
+                    <i class="fa-solid fa-image"></i>
+                    &nbsp;下载图片
+                </span>
+            </a>
+        </li>
+
+        <li class="menuLoad-Content" style="display: block;" id="copy-image-link" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copyImageLink();">
+                <span>
+                    <i class="fa-solid fa-link"></i>
+                    复制图片链接
+                </span>
+            </a>
+        </li>
+
+		<hr class="menuLoad-Content" style="display: block;">
+
+        <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" onclick="RandomGo()">
+		        <span>
+			        <i class="fa-solid fa-paper-plane"></i>
+                    &nbsp;随便看看
+		        </span>
+		    </a>
+	    </li>
+	    <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+		        <span>
+			        <i class="fa-solid fa-magnifying-glass"></i>
+                    &nbsp;站内搜索
+		        </span>
+		    </a>
+	    </li>
+        <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" href="/categories/">
+		        <span>
+			        <i class="iconfont icon-category-fill"></i>
+                    &nbsp;博客分类
+		        </span>
+		    </a>
+	    </li>
+        <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" href="/tags/">
+		        <span>
+			        <i class="fa-solid fa-tags"></i>
+                    &nbsp;文章标签
+		        </span>
+		    </a>
+	    </li>
+        
+	    <hr class="menuLoad-Content" style="display: block;">
+
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copyLink();">
+                <span>
+                    <i class="fa-solid fa-copy"></i>
+                    &nbsp;复制链接
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="document.getElementById('color-toggle-btn').click();">
+            <span>
+                <i class="fa-solid fa-circle-half-stroke"></i>
+                &nbsp;切换昼夜
+            </span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+<script src="/js/RightMenu.js" type="text/javascript"></script>
+<link href="/css/RightMenu.css" type="text/css" rel="stylesheet"/>
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <!-- <strong>YYYJ&#39;s Blog</strong> -->
+       <strong class="navbar-title">YYYJ&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/DayDream-Gallery/" target="_self">
+                <i class="fas fa-images"></i>
+                <span>图集</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.travellings.cn/go-by-clouds.html" target="_self">
+                <i class="fas fa-train-subway"></i>
+                <span>开往</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/banner/banner.webp') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Fluid页脚美化"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        youyeyejie
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-06-29 01:47" pubdate>
+          2025年6月29日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          3.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          29 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar category-bar" style="margin-right: -1rem">
+    
+
+
+
+
+
+<div class="category-list">
+  
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Hexo Blog Building"
+        id="heading-9b84d3ac4a7bc6fefd79d5872f3510b0" role="tab" data-toggle="collapse" href="#collapse-9b84d3ac4a7bc6fefd79d5872f3510b0"
+        aria-expanded="true"
+      >
+        Hexo Blog Building
+        <span class="list-group-count">(6)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-9b84d3ac4a7bc6fefd79d5872f3510b0"
+           role="tabpanel" aria-labelledby="heading-9b84d3ac4a7bc6fefd79d5872f3510b0">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/posts/Fluid%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/" title="Fluid主题美化"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Fluid主题美化</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/Fluid%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/" title="Fluid自定义右键菜单"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Fluid自定义右键菜单</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/Fluid%E9%9A%8F%E6%9C%BA%E8%83%8C%E6%99%AF/" title="Fluid随机背景"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Fluid随机背景</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/Fluid%E9%A1%B5%E8%84%9A%E7%BE%8E%E5%8C%96/" title="Fluid页脚美化"
+           class="list-group-item list-group-item-action
+           active">
+          <span class="category-post">Fluid页脚美化</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E4%B8%94%E4%BB%A5%E7%BE%A4%E8%AF%8D-%E6%B3%A8%E8%A7%A3%E6%88%91%E8%BF%99%E5%BA%A7%E8%8D%92%E5%B1%B1/" title="且以群词 注解我这座荒山"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">且以群词 注解我这座荒山</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E8%AE%A9%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E6%94%B6%E5%BD%95%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2/" title="让搜索引擎收录你的博客"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">让搜索引擎收录你的博客</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+</div>
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Fluid页脚美化</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="前言">前言</h1>
+<p>本期美化同样贯彻了上期美化的原则：<strong>无侵入式美化</strong>，即不修改主题的源代码，只通过修改配置文件、自定义样式以及Hexo注入器来实现美化。上一期的美化包括以下内容，可以点击下方的链接卡片查看。</p>
+<div class="note note-secondary">
+            <ul>
+<li>黑暗模式下修改加粗字体和斜体样式</li>
+<li>博客标题霓虹灯效样式</li>
+<li>标题颜色渐变样式</li>
+<li>修改滚动条样式</li>
+<li>使用 Mac 风格代码块样式</li>
+<li>修改行内代码样式</li>
+<li>文章界面背景毛玻璃样式</li>
+<li>链接卡片样式</li>
+<li>统一文章图片宽度</li>
+<li>首页文章滑入动效</li>
+<li>首页文章图片悬浮鼠标悬停动效</li>
+<li>彩虹加载动效</li>
+<li>背景动态线条动效</li>
+<li>标签页根据焦点切换显示</li>
+</ul>
+          </div>
+<p><a href="/posts/Fluid主题美化1-0/" name="/img/avatar/avatar.webp" class="LinkCard">Fluid主题美化1.0</a></p>
+<h1 id="关于页添加-github-热力图">关于页添加 Github 热力图</h1>
+<p>这个功能的实现比较简单，可以直接调用Github Chart
+API来实现。项目地址见下方。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/2016rshah/githubchart-api" name="https://avatars.githubusercontent.com/u/6821244?v=4" class="LinkCard">Github
+Chart API</a></p>
+<p>只需要在 <code>source/about/index.md</code>
+文件中添加一行代码即可在关于页添加Github热力图：</p>
+<figure class="shiki html"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">img</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">src</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"https://ghchart.rshah.org/0d6aae/用户名"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">alt</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"图表名"</span><span style="color: #ABB2BF"> /&gt;</span></span></code></pre></div></div></figure>
+<p>其中 <code>用户名</code> 替换为你的GitHub用户名，<code>图表名</code>
+替换为你想要的图表名称（可以是任意字符串），<code>0d6aae</code>
+替换为你想要的颜色代码（可以在<a target="_blank" rel="noopener" href="https://www.w3schools.com/colors/colors_picker.asp">这里</a>选择颜色），如果使用默认颜色则可以省略。</p>
+<h1 id="文章页添加-giscus-评论区">文章页添加 Giscus 评论区</h1>
+<p>Fluid主题多种评论区的支持，我选择了其中基于GitHub
+Discussion的评论系统的Giscus插件，</p>
+<p><a target="_blank" rel="noopener" href="https://giscus.app/" name="https://avatars.githubusercontent.com/in/106117" class="LinkCard">Giscus</a></p>
+<p>具体配置步骤如下：</p>
+<ol type="1">
+<li>首先需要确保博客的仓库是公开的，且安装了<a target="_blank" rel="noopener" href="https://github.com/apps/giscus">Giscus的App</a>。</li>
+<li>然后你需要在仓库中<a target="_blank" rel="noopener" href="https://docs.github.com/zh/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/enabling-or-disabling-github-discussions-for-a-repository">启用GitHub
+Discussions功能</a>。</li>
+<li>接着你需要在<a target="_blank" rel="noopener" href="https://giscus.app/">Giscus的配置页面</a>中获取相关参数。
+<ul>
+<li><strong>注意</strong>：<code>repo</code>
+字段需要填写你的GitHub仓库地址，格式为
+<code>用户名/仓库名</code>，而不包含域名部分。</li>
+</ul></li>
+<li>此外你还需要在 <code>_config.fluid.yml</code>
+文件中开启文章页的评论区服务，并选择Giscus；然后再在下方的
+<code>giscus</code> 配置中填写上一步获取到的相关参数。</li>
+</ol>
+<figure class="shiki yaml"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #E06C75">post</span><span style="color: #ABB2BF">:</span></span>
+<span class="line"><span style="color: #ABB2BF">  </span><span style="color: #E06C75">comments</span><span style="color: #ABB2BF">:</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E06C75">enable</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">true</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E06C75">type</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">giscus</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic"># Giscus</span></span>
+<span class="line"><span style="color: #E06C75">giscus</span><span style="color: #ABB2BF">:</span></span>
+<span class="line"><span style="color: #ABB2BF">  </span><span style="color: #E06C75">repo</span><span style="color: #ABB2BF">: [</span><span style="color: #98C379">用户名/仓库名</span><span style="color: #ABB2BF">]</span></span>
+<span class="line"><span style="color: #ABB2BF">  </span><span style="color: #E06C75">repo-id</span><span style="color: #ABB2BF">: [</span><span style="color: #98C379">仓库ID</span><span style="color: #ABB2BF">]</span></span>
+<span class="line"><span style="color: #ABB2BF">  </span><span style="color: #E06C75">category</span><span style="color: #ABB2BF">: [</span><span style="color: #98C379">分类名</span><span style="color: #ABB2BF">]</span></span>
+<span class="line"><span style="color: #ABB2BF">  </span><span style="color: #E06C75">category-id</span><span style="color: #ABB2BF">: [</span><span style="color: #98C379">分类ID</span><span style="color: #ABB2BF">]</span></span>
+<span class="line"><span style="color: #ABB2BF">  </span><span style="color: #E06C75">theme-light</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">light</span></span>
+<span class="line"><span style="color: #ABB2BF">  </span><span style="color: #E06C75">theme-dark</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">dark</span></span>
+<span class="line"><span style="color: #ABB2BF">  </span><span style="color: #E06C75">mapping</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">pathname</span></span>
+<span class="line"><span style="color: #ABB2BF">  </span><span style="color: #E06C75">reactions-enabled</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">1</span></span>
+<span class="line"><span style="color: #ABB2BF">  </span><span style="color: #E06C75">emit-metadata</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">0</span></span>
+<span class="line"><span style="color: #ABB2BF">  </span><span style="color: #E06C75">input-position</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">top</span></span>
+<span class="line"><span style="color: #ABB2BF">  </span><span style="color: #E06C75">lang</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">zh-CN</span></span></code></pre></div></div></figure>
+<h1 id="页脚处添加网站运行时间">页脚处添加网站运行时间</h1>
+<p>这个功能比较常见，能在许多博客都搜索到相关的教程，这里我参考官方博客Hexo
+Theme Fluid的实现方式，并进行了一定修改。</p>
+<p><a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/posts/fluid-footer-custom/" name="https://hexo.fluid-dev.com/img/avatar.png" class="LinkCard">Fluid
+页脚增加网站运行时长</a></p>
+<p>首先在 <code>source/js/</code> 目录下新建一个
+<code>Duration.js</code>
+文件（如果不存在该目录则需要先创建），代码如下：</p>
+<figure class="shiki javascript"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #56B6C2">!</span><span style="color: #ABB2BF">(</span><span style="color: #C678DD">function</span><span style="color: #ABB2BF">() {</span></span>
+<span class="line"><span style="color: #ABB2BF">  </span><span style="color: #7F848E; font-style: italic">/** 计时起始时间，自行修改 **/</span></span>
+<span class="line"><span style="color: #ABB2BF">  </span><span style="color: #C678DD">var</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">start</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">new</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">Date</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"2025/06/19 23:36:01"</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">  </span><span style="color: #C678DD">function</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">update</span><span style="color: #ABB2BF">() {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">var</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">now</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">new</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">Date</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E5C07B">now</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">setTime</span><span style="color: #ABB2BF">(</span><span style="color: #E5C07B">now</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getTime</span><span style="color: #ABB2BF">()</span><span style="color: #56B6C2">+</span><span style="color: #D19A66">250</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E06C75">days</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> (</span><span style="color: #E06C75">now</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">start</span><span style="color: #ABB2BF">) </span><span style="color: #56B6C2">/</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">1000</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">/</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">60</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">/</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">60</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">/</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">24</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E06C75">dnum</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">Math</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">floor</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">days</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E06C75">hours</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> (</span><span style="color: #E06C75">now</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">start</span><span style="color: #ABB2BF">) </span><span style="color: #56B6C2">/</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">1000</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">/</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">60</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">/</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">60</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF"> (</span><span style="color: #D19A66">24</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">*</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">dnum</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E06C75">hnum</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">Math</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">floor</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">hours</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF">(</span><span style="color: #61AFEF">String</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">hnum</span><span style="color: #ABB2BF">).</span><span style="color: #E06C75">length</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">===</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">1</span><span style="color: #ABB2BF"> ){</span></span>
+<span class="line"><span style="color: #ABB2BF">      </span><span style="color: #E06C75">hnum</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"0"</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">hnum</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E06C75">minutes</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> (</span><span style="color: #E06C75">now</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">start</span><span style="color: #ABB2BF">) </span><span style="color: #56B6C2">/</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">1000</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">/</span><span style="color: #D19A66">60</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF"> (</span><span style="color: #D19A66">24</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">*</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">60</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">*</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">dnum</span><span style="color: #ABB2BF">) </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF"> (</span><span style="color: #D19A66">60</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">*</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">hnum</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E06C75">mnum</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">Math</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">floor</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">minutes</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF">(</span><span style="color: #61AFEF">String</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">mnum</span><span style="color: #ABB2BF">).</span><span style="color: #E06C75">length</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">===</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">1</span><span style="color: #ABB2BF"> ){</span></span>
+<span class="line"><span style="color: #ABB2BF">      </span><span style="color: #E06C75">mnum</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"0"</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">mnum</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E06C75">seconds</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> (</span><span style="color: #E06C75">now</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">start</span><span style="color: #ABB2BF">) </span><span style="color: #56B6C2">/</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">1000</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF"> (</span><span style="color: #D19A66">24</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">*</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">60</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">*</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">60</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">*</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">dnum</span><span style="color: #ABB2BF">) </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF"> (</span><span style="color: #D19A66">60</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">*</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">60</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">*</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">hnum</span><span style="color: #ABB2BF">) </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF"> (</span><span style="color: #D19A66">60</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">*</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">mnum</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E06C75">snum</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">Math</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">round</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">seconds</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF">(</span><span style="color: #61AFEF">String</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">snum</span><span style="color: #ABB2BF">).</span><span style="color: #E06C75">length</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">===</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">1</span><span style="color: #ABB2BF"> ){</span></span>
+<span class="line"><span style="color: #ABB2BF">      </span><span style="color: #E06C75">snum</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"0"</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">snum</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getElementById</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"timeDate"</span><span style="color: #ABB2BF">).</span><span style="color: #E06C75">innerHTML</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"须弥藏芥 已逾&amp;nbsp"</span><span style="color: #56B6C2">+</span><span style="color: #E06C75">dnum</span><span style="color: #56B6C2">+</span><span style="color: #98C379">"&amp;nbsp日"</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getElementById</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"times"</span><span style="color: #ABB2BF">).</span><span style="color: #E06C75">innerHTML</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">hnum</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"&amp;nbsp时&amp;nbsp"</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">mnum</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"&amp;nbsp分&amp;nbsp"</span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">snum</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"&amp;nbsp秒"</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">  </span><span style="color: #61AFEF">update</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">  </span><span style="color: #61AFEF">setInterval</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">update</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">1000</span><span style="color: #ABB2BF">); </span></span>
+<span class="line"><span style="color: #ABB2BF">})();</span></span></code></pre></div></div></figure>
+<p>脚本中 <code>start</code>
+变量的值需要修改为你博客的创建时间，如果是部署在GitHub
+Pages上的博客，可以在仓库的提交记录中找到创建时间。</p>
+<p>在这之后，你还需要修改 <code>_config.fluid.yml</code> 文件，在
+<code>footer</code> 的 <code>content</code> 中添加以下内容：</p>
+<figure class="shiki yaml"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #E06C75">footer</span><span style="color: #ABB2BF">:</span></span>
+<span class="line"><span style="color: #ABB2BF">  </span><span style="color: #E06C75">content</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">'</span></span>
+<span class="line"><span style="color: #98C379">    &lt;div style="font-size: 0.85rem"&gt;</span></span>
+<span class="line"><span style="color: #98C379">      &lt;span id="timeDate"&gt;Getting date...&lt;/span&gt;</span></span>
+<span class="line"><span style="color: #98C379">      &lt;span id="times"&gt;Getting time...&lt;/span&gt;</span></span>
+<span class="line"><span style="color: #98C379">      &lt;script src="/js/Duration.js"&gt;&lt;/script&gt;</span></span>
+<span class="line"><span style="color: #98C379">    &lt;/div&gt;</span></span>
+<span class="line"><span style="color: #98C379">  '</span></span></code></pre></div></div></figure>
+<p>当然，由于我还在页脚处做了其他的美化，因此 <code>content</code>
+的内容与此处展示的并不相同，你可以根据自己的需要进行调整，也可以跳转至<a href="#总结">总结</a>部分查看我的完整配置。</p>
+<h1 id="页脚处添加全站字数统计">页脚处添加全站字数统计</h1>
+<p>在Fluid主题中，内置了hexo-wordcount插件，可以通过配置
+<code>_config.fluid.yml</code>
+在文章的副标题下方显示该文章的字数统计。因此，要实现全站字数统计，我们只需要在页脚处添加一个显示全站字数的元素，这同样可以通过修改
+<code>_config.fluid.yml</code> 文件中 <code>footer</code> 的
+<code>content</code>
+字段以及Hexo注入器来实现。这部分实现参考了呈呈的小站。</p>
+<p><a target="_blank" rel="noopener" href="https://blog.fengcl.com/2022/08/21/fluid-theme/#%E5%85%A8%E7%AB%99%E5%AD%97%E6%95%B0%E7%BB%9F%E8%AE%A1" name="https://blog.fengcl.com/uploads/ef1d0cfcf9284c00f4afb7a7d38dc6c0.png" class="LinkCard">切换到fluid主题的记录</a></p>
+<p>修改 <code>_config.fluid.yml</code> 文件如下：</p>
+<figure class="shiki yaml"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #E06C75">footer</span><span style="color: #ABB2BF">:</span></span>
+<span class="line"><span style="color: #ABB2BF">  </span><span style="color: #E06C75">content</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">'</span></span>
+<span class="line"><span style="color: #98C379">    # 原有内容，下面是新加的</span></span>
+<span class="line"><span style="color: #98C379">    &lt;div style="font-size: 0.85rem"&gt;</span></span>
+<span class="line"><span style="color: #98C379">      &lt;span id="g-total-word-id"&gt;Getting word count...&lt;/span&gt;</span></span>
+<span class="line"><span style="color: #98C379">    &lt;/div&gt;</span></span>
+<span class="line"><span style="color: #98C379">  '</span></span></code></pre></div></div></figure>
+<p>然后需要在 <code>source/_inject/</code> 目录下新建一个
+<code>WordCount.ejs</code>
+文件（如果不存在该目录则需要先创建）来调用hexo-wordcount插件的
+<code>wordtotal</code>
+函数获取全站字数统计，一定要注意路径正确，否则在生成页面时很大概率不会报错：</p>
+<figure class="shiki html"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">type</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"text/javascript"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">  </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getElementById</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"g-total-word-id"</span><span style="color: #ABB2BF">).</span><span style="color: #E06C75">innerHTML</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"全站总字数 &lt;%= wordtotal(site) %&gt;"</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF">&gt;</span></span></code></pre></div></div></figure>
+<p>接下来在 <code>scripts</code> 目录下新建一个 <code>injector.js</code>
+文件（如果不存在该目录则需要先创建，也可以复用之前的注入器代码），代码如下：</p>
+<figure class="shiki javascript"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #7F848E; font-style: italic">// 全站字数统计</span></span>
+<span class="line"><span style="color: #E5C07B">hexo</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">extend</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">filter</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">register</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'theme_inject'</span><span style="color: #ABB2BF">, </span><span style="color: #C678DD">function</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">injects</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">  </span><span style="color: #E5C07B">injects</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">bodyEnd</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">file</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'WordCount'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'source/_inject/WordCount.ejs'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">});</span></span></code></pre></div></div></figure>
+<p>这样就可以在页脚处显示全站字数统计。</p>
+<h1 id="页脚处添加全站文章统计">页脚处添加全站文章统计</h1>
+<p>Fluid主题内置了对全站文章统计的支持，但只在归档页显示。由于我并不了解ejs语法，也不愿意修改主题的源代码，因此决定自行实现。</p>
+<p>在 <code>source/js/</code> 目录下新建一个 <code>TotalPosts.js</code>
+文件（如果不存在该目录则需要先创建），代码如下：</p>
+
+    <div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-dfb167e8" role="button" aria-expanded="false" aria-controls="collapse-dfb167e8">
+        <div class="fold-arrow">▶</div>为了兼容Fluid自定义右键菜单中的其他功能，此方式已弃用，改为下面的实现方式。
+      </div>
+      <div class="fold-collapse collapse" id="collapse-dfb167e8">
+        <div class="fold-content">
+          <figure class="shiki javascript"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">fetch</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'/local-search.xml'</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">then</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">response</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">response</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">text</span><span style="color: #ABB2BF">())</span></span>
+<span class="line"><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">then</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">str</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=&gt;</span><span style="color: #ABB2BF"> (</span><span style="color: #C678DD">new</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">window</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">DOMParser</span><span style="color: #ABB2BF">()).</span><span style="color: #61AFEF">parseFromString</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">str</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">"text/xml"</span><span style="color: #ABB2BF">))</span></span>
+<span class="line"><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">then</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">data</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=&gt;</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">posts</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">data</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">querySelectorAll</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'entry'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getElementById</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'g-total-posts-id'</span><span style="color: #ABB2BF">).</span><span style="color: #E06C75">textContent</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">posts</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">length</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">})</span></span></code></pre></div></div></figure>
+        </div>
+      </div>
+    </div>
+<figure class="shiki javascript"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">var</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">posts</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">JSON</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">parse</span><span style="color: #ABB2BF">(</span><span style="color: #E5C07B">sessionStorage</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getItem</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'posts'</span><span style="color: #ABB2BF">)) </span><span style="color: #56B6C2">||</span><span style="color: #ABB2BF"> [];</span></span>
+<span class="line"><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (</span><span style="color: #E5C07B">posts</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">length</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">===</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #61AFEF">fetch</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'/sitemap.xml'</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">    .</span><span style="color: #61AFEF">then</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">response</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">response</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">text</span><span style="color: #ABB2BF">())</span></span>
+<span class="line"><span style="color: #ABB2BF">    .</span><span style="color: #61AFEF">then</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">str</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=&gt;</span><span style="color: #ABB2BF"> (</span><span style="color: #C678DD">new</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">window</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">DOMParser</span><span style="color: #ABB2BF">()).</span><span style="color: #61AFEF">parseFromString</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">str</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">"text/xml"</span><span style="color: #ABB2BF">))</span></span>
+<span class="line"><span style="color: #ABB2BF">    .</span><span style="color: #61AFEF">then</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">data</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=&gt;</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">entries</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">data</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">querySelectorAll</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'url &gt; loc'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">posts</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">Array</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">from</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">entries</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">            .</span><span style="color: #61AFEF">map</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">entry</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">entry</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">textContent</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">            .</span><span style="color: #61AFEF">filter</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">link</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">link</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">includes</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'/posts/'</span><span style="color: #ABB2BF">))</span></span>
+<span class="line"><span style="color: #ABB2BF">            .</span><span style="color: #61AFEF">map</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">link</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">link</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">substring</span><span style="color: #ABB2BF">(</span><span style="color: #E5C07B">link</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">indexOf</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'/posts/'</span><span style="color: #ABB2BF">)));</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">sessionStorage</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">setItem</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'posts'</span><span style="color: #ABB2BF">, </span><span style="color: #E5C07B">JSON</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">stringify</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">posts</span><span style="color: #ABB2BF">)); </span><span style="color: #7F848E; font-style: italic">// 保存到 sessionStorage</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">console</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">log</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'Posts updated:'</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75">posts</span><span style="color: #ABB2BF">); </span><span style="color: #7F848E; font-style: italic">// 调试输出更新后的链接列表</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getElementById</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'g-total-posts-id'</span><span style="color: #ABB2BF">).</span><span style="color: #E06C75">textContent</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">posts</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">length</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    })</span></span>
+<span class="line"><span style="color: #ABB2BF">    .</span><span style="color: #61AFEF">catch</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">error</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">console</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">error</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'Error fetching sitemap:'</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75">error</span><span style="color: #ABB2BF">));</span></span>
+<span class="line"><span style="color: #ABB2BF">} </span><span style="color: #C678DD">else</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getElementById</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'g-total-posts-id'</span><span style="color: #ABB2BF">).</span><span style="color: #E06C75">textContent</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">posts</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">length</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure>
+<p>然后在 <code>_config.fluid.yml</code> 文件中修改 <code>footer</code>
+的 <code>content</code> 字段，添加全站文章统计的调用代码：</p>
+<figure class="shiki yaml"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #E06C75">footer</span><span style="color: #ABB2BF">:</span></span>
+<span class="line"><span style="color: #ABB2BF">  </span><span style="color: #E06C75">content</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">'</span></span>
+<span class="line"><span style="color: #98C379">    &lt;div class="total-posts" style="font-size: 0.85rem; margin: 0.15rem 0.15rem;"&gt;</span></span>
+<span class="line"><span style="color: #98C379">      &lt;i class="fas fa-file-alt"&gt;&lt;/i&gt;</span></span>
+<span class="line"><span style="color: #98C379">      &lt;span id="g-total-posts-id"&gt;Getting total posts...&lt;/span&gt;</span></span>
+<span class="line"><span style="color: #98C379">      &lt;script src="/js/TotalPosts.js"&gt;&lt;/script&gt;</span></span>
+<span class="line"><span style="color: #98C379">    &lt;/div&gt;</span></span>
+<span class="line"><span style="color: #98C379">  '</span></span></code></pre></div></div></figure>
+<p>这样就可以在页脚处显示全站文章统计了。</p>
+<h1 id="页脚处添加一言">页脚处添加一言</h1>
+<p>一言是一个提供一句话服务的网站，Fluid主题内置了对一言的支持，但只能在首页作为副标题显示。而我希望保留首页的副标题，因此决定将一言添加到页脚处。具体的调用可以参考一言开发者中心的文档。</p>
+<p><a target="_blank" rel="noopener" href="https://developer.hitokoto.cn/sentence/" name="https://developer.hitokoto.cn/logo.png" class="LinkCard">一言开发者中心</a></p>
+<p>首先在 <code>source/js/</code> 目录下新建一个
+<code>Hitokoto.js</code>
+文件（如果不存在该目录则需要先创建），代码如下：</p>
+<figure class="shiki javascript"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">async</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">function</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">fetchSlogan</span><span style="color: #ABB2BF">() {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">try</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">res</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">await</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">fetch</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'https://v1.hitokoto.cn/?c=i'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">data</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">await</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">res</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">json</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">hitokotoElem</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getElementById</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'hitokoto'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (</span><span style="color: #E06C75">hitokotoElem</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #E5C07B">hitokotoElem</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">innerText</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">`</span><span style="color: #C678DD">${</span><span style="color: #E5C07B">data</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">hitokoto</span><span style="color: #C678DD">}</span><span style="color: #98C379">  —— </span><span style="color: #C678DD">${</span><span style="color: #E5C07B">data</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">from_who</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">||</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">''</span><span style="color: #C678DD">}</span><span style="color: #98C379">《</span><span style="color: #C678DD">${</span><span style="color: #E5C07B">data</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">from</span><span style="color: #C678DD">}</span><span style="color: #98C379">》`</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">    } </span><span style="color: #C678DD">catch</span><span style="color: #ABB2BF"> (</span><span style="color: #E06C75">err</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">console</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">error</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">err</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #61AFEF">fetchSlogan</span><span style="color: #ABB2BF">();</span></span></code></pre></div></div></figure>
+<p>其中请求的参数 <code>c=i</code>
+表示获取诗词，你可以根据自己的喜好，参考<a target="_blank" rel="noopener" href="https://developer.hitokoto.cn/sentence/#%E5%8F%A5%E5%AD%90%E7%B1%BB%E5%9E%8B-%E5%8F%82%E6%95%B0">一言开发者中心</a>修改为其他类型的内容。</p>
+<p>然后在 <code>_config.fluid.yml</code> 文件中修改 <code>footer</code>
+的 <code>content</code> 字段，添加一言的调用代码：</p>
+<figure class="shiki yaml"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #E06C75">footer</span><span style="color: #ABB2BF">:</span></span>
+<span class="line"><span style="color: #ABB2BF">  </span><span style="color: #E06C75">content</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">'</span></span>
+<span class="line"><span style="color: #98C379">    &lt;div class="hitokoto" style="font-size: 0.85rem; margin: 0.15rem 0.15rem;"&gt;</span></span>
+<span class="line"><span style="color: #98C379">      &lt;i class="fas fa-quote-left"&gt;&lt;/i&gt;</span></span>
+<span class="line"><span style="color: #98C379">      &lt;a href="https://developer.hitokoto.cn/" id="hitokoto_text"&gt;&lt;span id="hitokoto"&gt;Getting poem...&lt;/span&gt;&lt;/a&gt;</span></span>
+<span class="line"><span style="color: #98C379">      &lt;script src="/js/Hitokoto.js" defer&gt;&lt;/script&gt;</span></span>
+<span class="line"><span style="color: #98C379">    &lt;/div&gt;</span></span>
+<span class="line"><span style="color: #98C379">  '</span></span></code></pre></div></div></figure>
+<p>正如一言官网所说：“动漫也好、小说也好、网络也好，不论在哪里，我们总会看到有那么一两个句子能穿透你的心。我们把这些句子汇聚起来，形成一言网络，以传递更多的感动。如果可以，我们希望我们没有停止服务的那一天。”</p>
+<p>或许眼前触动你的句子，在某刻也曾击穿他人的心灵。</p>
+<h1 id="页脚信息添加图标">页脚信息添加图标</h1>
+<p>忘记在哪个博客看到博主为页脚的信息添加了图标，因此这次也对这里进行了美化。由于上一期美化中已经引入了
+Font Awesome 图标库，因此只需要在相应的位置添加图标的 HTML
+代码即可。</p>
+<p>为了添加图标，我们还需要知道图标和其对应的类名。可以在<a target="_blank" rel="noopener" href="https://fontawesome.com/icons">Font
+Awesome官网</a>上根据版本搜索你想要的图标，并获取其类名。</p>
+<p>例如我选用了以下图标：</p>
+<table>
+
+<thead>
+<tr>
+<th style="text-align: center;">图标预览</th>
+<th style="text-align: center;">类名</th>
+<th style="text-align: center;">用途说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><i class="fas fa-quote-left"></i></td>
+<td style="text-align: center;"><code>fas fa-quote-left</code></td>
+<td style="text-align: center;">一言</td>
+</tr>
+<tr>
+<td style="text-align: center;"><i class="fas fa-chart-bar"></i></td>
+<td style="text-align: center;"><code>fas fa-chart-bar</code></td>
+<td style="text-align: center;">全站字数统计</td>
+</tr>
+<tr>
+<td style="text-align: center;"><i class="fas fa-file-alt"></i></td>
+<td style="text-align: center;"><code>fas fa-file-alt</code></td>
+<td style="text-align: center;">全站文章统计</td>
+</tr>
+<tr>
+<td style="text-align: center;"><i class="fas fa-eye"></i></td>
+<td style="text-align: center;"><code>fas fa-eye</code></td>
+<td style="text-align: center;">总访问量</td>
+</tr>
+<tr>
+<td style="text-align: center;"><i class="fas fa-user-friends"></i></td>
+<td style="text-align: center;"><code>fas fa-user-friends</code></td>
+<td style="text-align: center;">总访客数</td>
+</tr>
+<tr>
+<td style="text-align: center;"><i class="fas fa-calendar"></i></td>
+<td style="text-align: center;"><code>fas fa-calendar</code></td>
+<td style="text-align: center;">网站运行时间</td>
+</tr>
+</tbody>
+</table>
+<h1 id="总结">总结</h1>
+
+    <div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-bb8702dc" role="button" aria-expanded="false" aria-controls="collapse-bb8702dc">
+        <div class="fold-arrow">▶</div>如果对当前的样式已经满意，那么主题配置中的代码如折叠中所示。
+      </div>
+      <div class="fold-collapse collapse" id="collapse-bb8702dc">
+        <div class="fold-content">
+          <p>至此，本次的美化就全部完成了！</p>
+<p>最终，<code>_config.fluid.yml</code> 文件的 <code>footer</code> 的
+<code>content</code> 和 <code>statistics</code> 部分如下所示：</p>
+<figure class="shiki yaml"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #E06C75">footer</span><span style="color: #ABB2BF">:</span></span>
+<span class="line"><span style="color: #ABB2BF">  </span><span style="color: #E06C75">content</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">'</span></span>
+<span class="line"><span style="color: #98C379">    &lt;div class="powered-by"&gt;</span></span>
+<span class="line"><span style="color: #98C379">      &lt;a href="https://hexo.io" target="_blank" rel="nofollow noopener"&gt;&lt;span&gt;Hexo&lt;/span&gt;&lt;/a&gt;</span></span>
+<span class="line"><span style="color: #98C379">      &lt;i class="iconfont icon-love"&gt;&lt;/i&gt;</span></span>
+<span class="line"><span style="color: #98C379">      &lt;a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"&gt;&lt;span&gt;Fluid&lt;/span&gt;&lt;/a&gt;</span></span>
+<span class="line"><span style="color: #98C379">    &lt;/div&gt;</span></span>
+<span class="line"><span style="color: #98C379">    &lt;div class="info" style="font-size: 0.85rem; margin: 0.15rem 0.15rem;"&gt;</span></span>
+<span class="line"><span style="color: #98C379">      &lt;span id="duration" style="display: inline;"&gt;</span></span>
+<span class="line"><span style="color: #98C379">        &lt;i class="fas fa-calendar"&gt;&lt;/i&gt;</span></span>
+<span class="line"><span style="color: #98C379">        &lt;span id="timeDate"&gt;Getting date...&lt;/span&gt;</span></span>
+<span class="line"><span style="color: #98C379">        &lt;span id="times"&gt;Getting time...&lt;/span&gt;</span></span>
+<span class="line"><span style="color: #98C379">        &lt;script src="/js/Duration.js"&gt;&lt;/script&gt;</span></span>
+<span class="line"><span style="color: #98C379">      &lt;/span&gt;</span></span>
+<span class="line"><span style="color: #98C379">      &lt;span id="wordcount" style="display: inline;"&gt;</span></span>
+<span class="line"><span style="color: #98C379">        &lt;i class="fas fa-file-alt"&gt;&lt;/i&gt;</span></span>
+<span class="line"><span style="color: #98C379">        &lt;span id="g-post-count-id"&gt;Getting word count...&lt;/span&gt;</span></span>
+<span class="line"><span style="color: #98C379">      &lt;/span&gt;</span></span>
+<span class="line"><span style="color: #98C379">    &lt;/div&gt;</span></span>
+<span class="line"><span style="color: #98C379">    &lt;div class="hitokoto" style="font-size: 0.85rem; margin: 0.15rem 0.15rem;"&gt;</span></span>
+<span class="line"><span style="color: #98C379">      &lt;i class="fas fa-quote-left"&gt;&lt;/i&gt;</span></span>
+<span class="line"><span style="color: #98C379">      &lt;a href="https://developer.hitokoto.cn/" id="hitokoto_text"&gt;&lt;span id="hitokoto"&gt;Getting poem...&lt;/span&gt;&lt;/a&gt;</span></span>
+<span class="line"><span style="color: #98C379">      &lt;script src="/js/Hitokoto.js" defer&gt;&lt;/script&gt;</span></span>
+<span class="line"><span style="color: #98C379">    &lt;/div&gt;</span></span>
+<span class="line"><span style="color: #98C379">    '</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">  </span><span style="color: #E06C75">statistics</span><span style="color: #ABB2BF">:</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E06C75">enable</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">true</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E06C75">source</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">"busuanzi"</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E06C75">pv_format</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">'&lt;i class="fas fa-shoe-prints"&gt;&lt;/i&gt;  总访问量 {} 次'</span><span style="color: #ABB2BF">  </span><span style="color: #7F848E; font-style: italic"># 显示的文本，{}是数字的占位符（必须包含)，下同</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E06C75">uv_format</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">'&lt;i class="fas fa-user-friends"&gt;&lt;/i&gt;  总访客数 {} 人'</span></span></code></pre></div></div></figure>
+<p>其中，<code>content</code> 部分的第一个 <code>&lt;div&gt;</code>
+是本博客的框架与主题信息，第二个 <code>&lt;div&gt;</code>
+是网站运行时间和全站字数统计，第三个 <code>&lt;div&gt;</code>
+是一言，后两者手动指定了样式。<code>statistics</code>
+部分是网站的访问量和访客数统计。</p>
+        </div>
+      </div>
+    </div>
+<p>但是很可惜，我希望把全站字数统计、文章统计和总访问量、总访客数统计在一行内显示，因此不得不继续折腾。</p>
+<p>首先把 <code>_config.fluid.yml</code> 文件的 <code>footer</code> 的
+<code>content</code> 置空，<code>statistics</code> 部分的
+<code>enable</code> 设置为 <code>false</code>，即</p>
+<figure class="shiki yaml"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #E06C75">footer</span><span style="color: #ABB2BF">:</span></span>
+<span class="line"><span style="color: #ABB2BF">  </span><span style="color: #E06C75">content</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">''</span></span>
+<span class="line"><span style="color: #ABB2BF">  </span><span style="color: #E06C75">statistics</span><span style="color: #ABB2BF">:</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E06C75">enable</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">false</span></span></code></pre></div></div></figure>
+<p>接着在 <code>source/html/</code> 目录下新建一个
+<code>Footer.html</code>
+文件（如果不存在该目录则需要先创建），并添加以下内容：</p>
+<figure class="shiki html"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"footer-inner"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"powered-by"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">href</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"https://hexo.io"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">target</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"_blank"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">rel</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"nofollow noopener"</span><span style="color: #ABB2BF">&gt;&lt;</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF">&gt;Hexo&lt;/</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"iconfont icon-love"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">href</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"https://github.com/fluid-dev/hexo-theme-fluid"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">target</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"_blank"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">rel</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"nofollow noopener"</span><span style="color: #ABB2BF">&gt;&lt;</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF">&gt;Fluid&lt;/</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;/</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"hitokoto"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"fas fa-quote-left"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">href</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"https://developer.hitokoto.cn/"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">id</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"hitokoto_text"</span><span style="color: #ABB2BF">&gt;&lt;</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">id</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"hitokoto"</span><span style="color: #ABB2BF">&gt;Getting poem...&lt;/</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">src</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"/js/Hitokoto.js"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">defer</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;/</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"data"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"total-word-container"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"fas fa-chart-bar"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">id</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"g-total-word-id"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            字汇长河</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;/</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">&amp;nbsp;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">id</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"total-posts-container"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"fas fa-file-alt"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">id</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"g-total-posts-id"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">src</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"/js/TotalPosts.js"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            文舟靠岸</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;/</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">&amp;nbsp;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">id</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"busuanzi_container_site_pv"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"fas fa-eye"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">id</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"busuanzi_value_site_pv"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            目光所及</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;/</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">&amp;nbsp;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">id</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"busuanzi_container_site_uv"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"fas fa-user-friends"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">id</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"busuanzi_value_site_uv"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            访客驻足</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;/</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">src</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">defer</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;/</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"duration"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"fas fa-calendar"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">id</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"timeDate"</span><span style="color: #ABB2BF">&gt;Getting date...&lt;/</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">id</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"times"</span><span style="color: #ABB2BF">&gt;Getting time...&lt;/</span><span style="color: #E06C75">span</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">src</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"/js/Duration.js"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;/</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">link</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">href</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"/css/Footer.css"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">type</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"text/css"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">rel</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"stylesheet"</span><span style="color: #ABB2BF">/&gt;</span></span></code></pre></div></div></figure>
+<p>其中，我将页脚分为四行显示：</p>
+<ul>
+<li><code>powered-by</code> 是本博客的框架与主题信息；</li>
+<li><code>hitokoto</code> 是一言；</li>
+<li><code>data</code>
+是全站字数统计、文章统计、总访问量和总访客数统计；</li>
+<li><code>duration</code> 是网站运行时间。</li>
+</ul>
+<p>然后需要用Hexo注入器将这个文件注入到页脚中。在
+<code>scripts/injector.js</code> 文件中添加如下内容：</p>
+<figure class="shiki javascript"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #E5C07B">hexo</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">extend</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">filter</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">register</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'theme_inject'</span><span style="color: #ABB2BF">, </span><span style="color: #C678DD">function</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">injects</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">  </span><span style="color: #7F848E; font-style: italic">// 注入页脚</span></span>
+<span class="line"><span style="color: #ABB2BF">  </span><span style="color: #E5C07B">injects</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">footer</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">file</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'footer'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'source/html/Footer.html'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">  </span><span style="color: #7F848E; font-style: italic">// 全站字数统计</span></span>
+<span class="line"><span style="color: #ABB2BF">  </span><span style="color: #E5C07B">injects</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">bodyEnd</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">file</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'WordCount'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'source/_inject/WordCount.ejs'</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">});</span></span></code></pre></div></div></figure>
+<p>接着修改 <code>source/_inject/WordCount.ejs</code>
+文件，让其只返回字数统计的部分：</p>
+<figure class="shiki html"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">type</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"text/javascript"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">  </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getElementById</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"g-total-word-id"</span><span style="color: #ABB2BF">).</span><span style="color: #E06C75">innerHTML</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"&lt;%= wordtotal(site) %&gt;"</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF">&gt;</span></span></code></pre></div></div></figure>
+<p>最后在 <code>source/css/</code> 目录下新建一个
+<code>Footer.css</code>
+文件（如果不存在该目录则需要先创建），覆盖原先的页脚样式，代码如下：</p>
+<figure class="shiki css"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #D19A66">.footer-inner</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">    padding: </span><span style="color: #D19A66">1</span><span style="color: #E06C75">rem</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">2</span><span style="color: #E06C75">rem</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    font-family: </span><span style="color: #D19A66">serif</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">!important</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    font-size: </span><span style="color: #D19A66">0.85</span><span style="color: #E06C75">rem</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">!important</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    margin: </span><span style="color: #D19A66">0.15</span><span style="color: #E06C75">rem</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0.15</span><span style="color: #E06C75">rem</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">!important</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"><span style="color: #D19A66">.powered-by</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">    font-size: </span><span style="color: #D19A66">1</span><span style="color: #E06C75">rem</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">!important</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"><span style="color: #E06C75">span</span><span style="color: #61AFEF">#busuanzi_container_site_pv</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #E06C75">span</span><span style="color: #61AFEF">#busuanzi_container_site_uv</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #E06C75">span</span><span style="color: #61AFEF">#busuanzi_container_page_pv</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">    display: </span><span style="color: #D19A66">inline</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">!important</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure>
+<p>这样就完成了页脚的美化，最终的效果甚得我心！</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Hexo-Blog-Building/" class="category-chain-item">Hexo Blog Building</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Hexo/" class="print-no-link">#Hexo</a>
+      
+        <a href="/tags/Fluid/" class="print-no-link">#Fluid</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Fluid页脚美化</div>
+      <div>https://youyeyejie.github.io/posts/Fluid页脚美化/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>youyeyejie</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年6月29日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2025年7月15日</div>
+        </div>
+      
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/1-1-%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E8%8E%B7%E5%8F%96%E4%BF%A1%E6%81%AF%E3%80%90Xflops-HPC%20Start%20Guide%E3%80%91/" title="1-1 如何高效获取信息【Xflops-HPC Start Guide】">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">1-1 如何高效获取信息【Xflops-HPC Start Guide】</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/%E8%AE%A9%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E6%94%B6%E5%BD%95%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2/" title="让搜索引擎收录你的博客">
+                        <span class="hidden-mobile">让搜索引擎收录你的博客</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments">
+      
+    <div id="giscus" class="giscus"></div>
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#giscus', function() {
+        var options = {"repo":"youyeyejie/youyeyejie.github.io","repo-id":"R_kgDOO-Uo1g","category":"General","category-id":"DIC_kwDOO-Uo1s4Crz5J","theme-light":"light","theme-dark":"dark","mapping":"pathname","reactions-enabled":1,"emit-metadata":0,"input-position":"top","lang":"zh-CN"};
+        var attributes = {};
+        for (let option in options) {
+          if (!option.startsWith('theme-')) {
+            var key = option.startsWith('data-') ? option : 'data-' + option;
+            attributes[key] = options[option];
+          }
+        }
+        var light = 'light';
+        var dark = 'dark';
+        window.GiscusThemeLight = light;
+        window.GiscusThemeDark = dark;
+        attributes['data-theme'] = document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ? dark : light;
+        for (let attribute in attributes) {
+          var value = attributes[attribute];
+          if (value === undefined || value === null || value === '') {
+            delete attributes[attribute];
+          }
+        }
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://giscus.app/client.js');
+        s.setAttribute('crossorigin', 'anonymous');
+        for (let attribute in attributes) {
+          s.setAttribute(attribute, attributes[attribute]);
+        }
+        var ss = document.getElementsByTagName('script');
+        var e = ss.length > 0 ? ss[ss.length - 1] : document.head || document.documentElement;
+        e.parentNode.insertBefore(s, e.nextSibling);
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+  
+  
+</div>
+<div class="footer-inner">
+    <div class="powered-by">
+        <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+        <i class="iconfont icon-love"></i>
+        <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+    </div>
+    <div class="hitokoto">
+        <i class="fas fa-quote-left"></i>
+        <a target="_blank" rel="noopener" href="https://developer.hitokoto.cn/" id="hitokoto_text"><span id="hitokoto">且以群词 注解我这座荒山</span></a>
+        <script src="/js/Hitokoto.js" defer></script>
+    </div>
+    <div class="data">
+        <span class="total-word-container">
+            <i class="fas fa-chart-bar"></i>
+            <span id="g-total-word-id"></span>
+            字汇长河
+        </span>
+        &nbsp;
+        <span id="total-posts-container">
+            <i class="fas fa-file-alt"></i>
+            <span id="g-total-posts-id"></span>
+            <script src="/js/TotalPosts.js"></script>
+            文舟靠岸
+        </span>
+        &nbsp;
+        <span id="busuanzi_container_site_pv">
+            <i class="fas fa-eye"></i>
+            <span id="busuanzi_value_site_pv">1314</span>
+            目光所及
+        </span>
+        &nbsp;
+        <span id="busuanzi_container_site_uv">
+            <i class="fas fa-user-friends"></i>
+            <span id="busuanzi_value_site_uv">520</span>
+            访客驻足
+        </span>
+    </div>
+    <div class="duration">
+        <i class="fas fa-calendar"></i>
+        <span id="timeDate">人生缓缓</span>
+        <span id="times">自有答案</span>
+        <script src="/js/Duration.js"></script>
+    </div>
+</div>
+
+<link href="/css/Footer.css" type="text/css" rel="stylesheet"/>
+<!-- <script defer src="https://events.vercount.one/js"></script> -->
+<!-- <script src="https://npm.elemecdn.com/penndu@1.0.0/bsz.js" defer></script> -->
+<!-- <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script> -->
+<!-- <script async src="https://busuanzi.icodeq.com/busuanzi.pure.mini.js"></script> -->
+<!-- <script async src="https://busuanzi.sukap.cn/busuanzi.pure.mini.js"></script> -->
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    
+      <script  src="/js/img-lazyload.js" ></script>
+    
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://events.vercount.one/js?i=/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="/js/DynamicLine.js"></script>
+<script src="/js/LinkCard.js"></script>
+<script src="/js/RandomBanner.js"></script>
+<script src="/js/ScrollAnimation.js"></script>
+<script src="/js/TabDisplay.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  <script type="text/javascript">
+  document.getElementById("g-total-word-id").innerHTML = "303k";
+</script>
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start -->
+<script src="https://cdn.jsdelivr.net/npm/hexo-shiki-plugin@latest/lib/codeblock.js"></script>
+
+  <script>
+  const CODE_CONFIG = {
+    beautify: true,
+    highlightCopy: true,
+    highlightLang: true,
+    highlightHeightLimit: 360,
+    isHighlightShrink: false,
+    copy: {
+      success: 'Copy Success',
+      error: 'Copy Error',
+      noSupport: 'Browser Not Support',
+    }
+  };
+  console.log(
+    `%c hexo-shiki-plugin %c v1.0.27 %c https://github.com/nova1751/hexo-shiki-plugin`,
+    "color: #fff; background: #5f5f5f",
+    "color: #fff; background: #80c8f8",
+    ""
+  );
+  </script>
+  <!-- hexo injector body_end end --></body>
+</html>

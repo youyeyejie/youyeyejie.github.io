@@ -1,0 +1,3384 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head><!-- hexo injector head_begin start --><meta name="msvalidate.01" content="DF9F232801BA9D0CABB002E4774A3228" />
+<meta name="google-site-verification" content="vOm5Zs9tuUlEh-wVBlpvs_spnOou-q2CoTiFQ1ZV1h4" />
+<!-- hexo injector head_begin end -->
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar/avatar2.webp">
+  <link rel="icon" href="/img/avatar/avatar2.webp">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="youyeyejie">
+  <meta name="keywords" content="yyyj,YYYJ,youyeyejie,有野野芥">
+  
+    <meta name="description" content="NIS2336 编译原理 笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="编译原理">
+<meta property="og:url" content="https://youyeyejie.github.io/posts/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/index.html">
+<meta property="og:site_name" content="有野野芥的博客">
+<meta property="og:description" content="NIS2336 编译原理 笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis2336.webp">
+<meta property="article:published_time" content="2025-06-09T11:47:21.000Z">
+<meta property="article:modified_time" content="2025-07-14T09:36:36.201Z">
+<meta property="article:author" content="youyeyejie">
+<meta property="article:tag" content="SJTU">
+<meta property="article:tag" content="编译原理">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://youyeyejie.github.io/img/cover/nis2336.webp">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>编译原理 - 有野野芥的博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+<link rel="stylesheet" href="//lib.baomitu.com/font-awesome/6.1.2/css/all.min.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+
+
+  
+<link rel="stylesheet" href="/css/CodeBlock.css">
+<link rel="stylesheet" href="/css/CodeInLine.css">
+<link rel="stylesheet" href="/css/FrostedGlassBg.css">
+<link rel="stylesheet" href="/css/Gallery.css">
+<link rel="stylesheet" href="/css/IndexImgHover.css">
+<link rel="stylesheet" href="/css/LinkCard.css">
+<link rel="stylesheet" href="/css/ScrollAnimation.css">
+<link rel="stylesheet" href="/css/ScrollBar.css">
+<link rel="stylesheet" href="/css/StrongInDark.css">
+<link rel="stylesheet" href="/css/TitleGradient.css">
+<link rel="stylesheet" href="/css/TitleNeon.css">
+<link rel="stylesheet" href="/css/UnifyImgWidth.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"youyeyejie.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":false,"default":"TEXT"},"copy_btn":false,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading/loading3.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-shiki-plugin@latest/lib/codeblock.css">
+<style>:root{--hl-color:#abb2bf;--hl-bg:#282c34;--hltools-bg:#21252b;--hltools-color:#bbbbbc;--hlnumber-bg:#282c34;--hlnumber-color:#495162;--hlscrollbar-bg:#373c47;--hlexpand-bg:linear-gradient(180deg,rgba(40,44,52,0.1),rgba(40,44,52,0.9))}</style>
+    <style>
+    .code-expand-btn:not(.expand-done) ~ div.codeblock,
+    .code-expand-btn:not(.expand-done) ~ * div.codeblock {
+      overflow: hidden;
+      height: 360px;
+    }
+    </style>
+  <!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+
+<body>
+  <div id="loader-container"> 
+    <div id="loader" class="loader"></div>
+    <div class="loader-inner">
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/RainbowLoading.js" type="text/javascript"></script>
+<link href="/css/RainbowLoading.css" type="text/css" rel="stylesheet"/><div id="tooltip-rightmenu" class="tooltip-rightmenu">如需原始右键菜单请按下 <strong>Ctrl+右键</strong></div>
+<div id="tooltip-rightmenu-return" class="tooltip-rightmenu"></div>
+
+<div id="rightmenu-wrapper">
+  <ul class="list-v rightmenu" id="rightmenu-content">
+	    <li class="navigation menuNavigation-Content">
+            <a class="nav icon-only fix-cursor-default" onclick="history.back()"><i class="fa-solid fa-chevron-left"></i></a>
+            <a class="nav icon-only fix-cursor-default" onclick="history.forward()"><i class="fa-solid fa-chevron-right"></i></a>
+            <a class="nav icon-only fix-cursor-default" onclick="window.location.reload()"><i class="fa-solid fa-rotate-right"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="TOP" href="#" role="button"><i class="fa-solid fa-chevron-up"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="bottom" href="javascript:void(0);" role="button" onclick="window.scrollTo(0, document.body.scrollHeight);"><i class="fa-solid fa-chevron-down"></i></a>
+	    </li>
+
+        <hr class="menuLoad-Content" style="display: block;" id="top-line" hidden>
+
+        <li class="menuLoad-Content" style="display: block;" id="copy-selected-text" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copySelectedText();">
+                <span>
+                    <i class="fa-solid fa-copy"></i>
+                    &nbsp;复制选中
+                </span>
+            </a>
+        </li>
+
+        <li class="menuLoad-Content" style="display: block;" id="search-selected-text-BING" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_blank" onclick="searchSelectedTextBing();">
+                <span>
+                    <i class="fa-solid fa-magnifying-glass-arrow-right"></i>
+                    &nbsp;必应搜索
+                </span>
+            </a>
+        </li>
+
+        <li class="menuLoad-Content" style="display: block;" id="go-to-link" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_blank" onclick="goToLink();">
+                <span>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    &nbsp;转到链接
+                </span>
+            </a>
+        </li>
+
+        <li class="menuLoad-Content" style="display: block;" id="download-image" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="downloadImage();">
+                <span>
+                    <i class="fa-solid fa-image"></i>
+                    &nbsp;下载图片
+                </span>
+            </a>
+        </li>
+
+        <li class="menuLoad-Content" style="display: block;" id="copy-image-link" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copyImageLink();">
+                <span>
+                    <i class="fa-solid fa-link"></i>
+                    复制图片链接
+                </span>
+            </a>
+        </li>
+
+		<hr class="menuLoad-Content" style="display: block;">
+
+        <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" onclick="RandomGo()">
+		        <span>
+			        <i class="fa-solid fa-paper-plane"></i>
+                    &nbsp;随便看看
+		        </span>
+		    </a>
+	    </li>
+	    <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+		        <span>
+			        <i class="fa-solid fa-magnifying-glass"></i>
+                    &nbsp;站内搜索
+		        </span>
+		    </a>
+	    </li>
+        <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" href="/categories/">
+		        <span>
+			        <i class="iconfont icon-category-fill"></i>
+                    &nbsp;博客分类
+		        </span>
+		    </a>
+	    </li>
+        <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" href="/tags/">
+		        <span>
+			        <i class="fa-solid fa-tags"></i>
+                    &nbsp;文章标签
+		        </span>
+		    </a>
+	    </li>
+        
+	    <hr class="menuLoad-Content" style="display: block;">
+
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copyLink();">
+                <span>
+                    <i class="fa-solid fa-copy"></i>
+                    &nbsp;复制链接
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="document.getElementById('color-toggle-btn').click();">
+            <span>
+                <i class="fa-solid fa-circle-half-stroke"></i>
+                &nbsp;切换昼夜
+            </span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+<script src="/js/RightMenu.js" type="text/javascript"></script>
+<link href="/css/RightMenu.css" type="text/css" rel="stylesheet"/>
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <!-- <strong>YYYJ&#39;s Blog</strong> -->
+       <strong class="navbar-title">YYYJ&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/DayDream-Gallery/" target="_self">
+                <i class="fas fa-images"></i>
+                <span>图集</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.travellings.cn/go-by-clouds.html" target="_self">
+                <i class="fas fa-train-subway"></i>
+                <span>开往</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/banner/banner.webp') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="编译原理"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        youyeyejie
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-06-09 19:47" pubdate>
+          2025年6月9日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          7.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          63 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar category-bar" style="margin-right: -1rem">
+    
+
+
+
+
+
+<div class="category-list">
+  
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="SJTU Notes"
+        id="heading-23fc8849f7fe9b9a570be52f7807b4ac" role="tab" data-toggle="collapse" href="#collapse-23fc8849f7fe9b9a570be52f7807b4ac"
+        aria-expanded="true"
+      >
+        SJTU Notes
+        <span class="list-group-count">(14)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-23fc8849f7fe9b9a570be52f7807b4ac"
+           role="tabpanel" aria-labelledby="heading-23fc8849f7fe9b9a570be52f7807b4ac">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/posts/%E4%B8%AD%E5%9B%BD%E8%BF%91%E7%8E%B0%E4%BB%A3%E5%8F%B2%E7%BA%B2%E8%A6%81/" title="中国近现代史纲要"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">中国近现代史纲要</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E4%B9%A0%E8%BF%91%E5%B9%B3%E6%96%B0%E6%97%B6%E4%BB%A3%E4%B8%AD%E5%9B%BD%E7%89%B9%E8%89%B2%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89%E6%80%9D%E6%83%B3%E6%A6%82%E8%AE%BA/" title="习近平新时代中国特色社会主义思想概论"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">习近平新时代中国特色社会主义思想概论</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E4%BF%A1%E6%81%AF%E8%AE%BA%E5%9F%BA%E7%A1%80/" title="信息论基础"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">信息论基础</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E5%86%9B%E4%BA%8B%E7%90%86%E8%AE%BA/" title="军事理论"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">军事理论</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E6%80%9D%E6%83%B3%E9%81%93%E5%BE%B7%E4%B8%8E%E6%B3%95%E6%B2%BB/" title="思想道德与法治"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">思想道德与法治</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0/" title="抽象代数"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">抽象代数</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" title="操作系统原理"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">操作系统原理</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E6%95%B0%E5%AD%A6%E5%8F%B2/" title="数学史"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">数学史</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1/" title="概率统计"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">概率统计</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" title="编译原理"
+           class="list-group-item list-group-item-action
+           active">
+          <span class="category-post">编译原理</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA/" title="网络空间安全导论"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">网络空间安全导论</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/" title="计算机组成与系统结构"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">计算机组成与系统结构</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6/" title="量子力学"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">量子力学</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/" title="马克思主义基本原理"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">马克思主义基本原理</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+</div>
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">编译原理</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <blockquote>
+<p>本笔记基于上海交通大学 <em>胡易坤老师</em> 2024-2025
+学年春季学期教学内容进行整理，部分图片来自胡老师的PPT，若有侵权请联系删除。</p>
+</blockquote>
+<h1 id="quick-links">Quick Links</h1>
+
+    <div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-5b4e0fea" role="button" aria-expanded="false" aria-controls="collapse-5b4e0fea">
+        <div class="fold-arrow">▶</div>考点跳转链接
+      </div>
+      <div class="fold-collapse collapse" id="collapse-5b4e0fea">
+        <div class="fold-content">
+          <ul>
+<li><a href="#conversion-regex----nfa">Regex to NFA</a></li>
+<li><a href="#conversion-nfa----dfa">NFA to DFA</a></li>
+<li><a href="#dfa-simplification">DFA Simplification</a></li>
+</ul>
+<hr>
+<ul>
+<li><a href="#top-down-parsing">Top-Down Parsing</a>
+<ul>
+<li><a href="#recursive-descent-parsing">Recursive-Descent
+Parsing</a></li>
+<li><a href="#predictive-parsing">Predictive Parsing</a>
+<ul>
+<li><a href="#ll1-parsing">LL(1) Parsing</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#bottom-up-parsing">Bottom-Up Parsing</a>
+<ul>
+<li><a href="#shift-reduce-parsing-移位归约解析">Shift-Reduce
+Parsing</a></li>
+<li><a href="#operator-precedence-parsing-运算符优先解析">OPP</a></li>
+<li><a href="#lr-parsing">LR Parsing</a>
+<ul>
+<li><a href="#lr0-parsing">LR(0) Parsing</a></li>
+<li><a href="#slr1-parsing">SLR(1) Parsing</a></li>
+<li><a href="#lr1-parsing">LR(1) Parsing</a></li>
+<li><a href="#lalr1-parsing">LALR(1) Parsing</a></li>
+</ul></li>
+</ul></li>
+</ul>
+<hr>
+<ul>
+<li><a href="#first-and-follow">FIRST and FOLLOW</a></li>
+<li><a href="#leading-and-trailing">LEADING and TRAILING</a></li>
+<li><a href="#closure-and-goto">CLOSURE and GOTO</a></li>
+<li><a href="#lr1s-closure-and-goto">LR(1)’s CLOSURE and GOTO</a></li>
+</ul>
+        </div>
+      </div>
+    </div>
+<h1 id="quick-check">Quick Check</h1>
+
+    <div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-fea42ee7" role="button" aria-expanded="false" aria-controls="collapse-fea42ee7">
+        <div class="fold-arrow">▶</div>各类文法与解析方法
+      </div>
+      <div class="fold-collapse collapse" id="collapse-fea42ee7">
+        <div class="fold-content">
+          <ul>
+<li><strong>LL(1) Grammar</strong>
+<ul>
+<li>L: 从左到右扫描输入；L：最左派生；1：提前看一个输入符号</li>
+<li>无左递归和左因子</li>
+<li><span class="math inline"><strong>A</strong> → <strong>α</strong>&nbsp;|&nbsp;<strong>β</strong></span>表示两个不同的产生式，则<span class="math inline"><strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>α</strong><strong>)</strong></span>
+和 <span class="math inline"><strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>β</strong><strong>)</strong></span>
+是互不相交的集合
+<ul>
+<li>二者不会同时派生以<span class="math inline"><strong>a</strong></span>开头的字符串</li>
+<li>至多一个<span class="math inline"><strong>α</strong></span>和<span class="math inline"><strong>β</strong></span>可以派生空字符串</li>
+</ul></li>
+<li>如果<span class="math inline"><strong>ϵ</strong> ∈ <strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>β</strong><strong>)</strong></span>，则<span class="math inline"><strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>α</strong><strong>)</strong></span>和<span class="math inline"><strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>A</strong><strong>)</strong></span>是互不相交的集合</li>
+</ul></li>
+<li><strong>LL(1) Parsing</strong>
+<ul>
+<li>提取左因子</li>
+<li>消除直接左递归</li>
+<li>计算<span class="math inline"><strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong></span>和<span class="math inline"><strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong></span></li>
+<li>构造预测分析表（列为终结符，行为非终结符）</li>
+<li>从Start Symbol开始预测/或使用栈和输入缓冲区进行预测分析
+<ul>
+<li>查表（最左侧非终结符，最左侧未匹配输入符号）作为派生的产生式进行派生</li>
+<li>若使用栈和输入缓冲区，则
+<ul>
+<li>若栈顶符号为终结符且与输入符号匹配，则出栈并将输入指针后移</li>
+<li>若栈顶符号为非终结符，则查表（栈顶符号，输入指针对应符号）得到派生的产生式，将栈顶符号出栈并将产生式右侧符号逆序入栈</li>
+<li>直到栈为空，输入指针指向<span class="math inline">$</span>，则接受输入</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><strong>OG Grammar（算符文法）</strong>
+<ul>
+<li>任意生成式不含两个相邻的非终结符</li>
+<li>不含空生成式</li>
+</ul></li>
+<li><strong>OPP Grammar（算符优先文法）</strong>
+<ul>
+<li>首先满足OG Grammar的要求</li>
+<li>任意两个终结符号对（有序）之间一定满足唯一的优先级关系</li>
+</ul></li>
+<li><strong>OPP Parsing</strong>
+<ul>
+<li>计算<span class="math inline"><strong>L</strong><strong>E</strong><strong>A</strong><strong>D</strong><strong>I</strong><strong>N</strong><strong>G</strong></span>和<span class="math inline"><strong>T</strong><strong>R</strong><strong>A</strong><strong>I</strong><strong>L</strong><strong>I</strong><strong>N</strong><strong>G</strong></span></li>
+<li>构造优先级关系表</li>
+<li>使用栈和输入缓冲区进行运算符优先解析/或使用优先级爬升法
+<ul>
+<li>若栈顶终结符号优先级 &lt;· / =· 输入符号优先级，则移进</li>
+<li>若栈顶终结符号优先级 &gt;· 输入符号优先级，则归约</li>
+</ul></li>
+</ul></li>
+<li><strong>LR(0) Grammar</strong>
+<ul>
+<li>L:
+从左到右扫描输入；R：最右派生，最左归约；0：提前看一个输入符号</li>
+<li>任一项集的状态转移不含归约-归约或移进-归约冲突</li>
+</ul></li>
+<li><strong>LR(0) Parsing</strong>
+<ul>
+<li>扩展文法</li>
+<li>通过<span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong></span>和<span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong></span>构造LR(0)项集族</li>
+<li>构造LR(0)分析表（列为输入符号，行为状态）</li>
+<li>使用栈和输入缓冲区进行LR(0)解析
+<ul>
+<li>查表，（栈顶，输入符号）为s n，则移进并push状态n到栈顶，</li>
+<li>若为r
+m，则用第m条产生式进行归约，pop栈顶的符号数目等于产生式右侧符号数目，查（栈顶符号，产生式左侧符号）为n，则push状态n到栈顶</li>
+<li>若为ACCEPT，则接受输入</li>
+</ul></li>
+</ul></li>
+<li><strong>SLR(1) Grammar</strong>
+<ul>
+<li>任一项集的状态转移不含归约-归约或移进-归约冲突
+<ul>
+<li>LR(0)项目集中存在归约-归约冲突时，两个<span class="math inline"><strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong></span>集的交集为空</li>
+<li>LR(0)项目集中存在移进-归约冲突时，移进的终结符号不在归约的<span class="math inline"><strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong></span>集中</li>
+</ul></li>
+</ul></li>
+<li><strong>SLR(1) Parsing</strong>
+<ul>
+<li>扩展文法、构造集族同LR(0)</li>
+<li>构造SLR(1)分析表时：
+<ul>
+<li>对<span class="math inline"><strong>A</strong> → <strong>β</strong>⋅</span>
+归约时, 只对<span class="math inline"><strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>A</strong><strong>)</strong></span>中的终结符进行归约</li>
+<li>对<span class="math inline"><strong>S</strong><sup><strong>′</strong></sup> → <strong>S</strong><sup><strong>′</strong></sup></span>
+赋值ACCEPT时, 只对<span class="math inline">$</span>接受</li>
+</ul></li>
+<li>使用栈和输入缓冲区进行SLR(1)解析</li>
+</ul></li>
+<li><strong>LR(1) Grammar</strong>
+<ul>
+<li>L:
+从左到右扫描输入；R：最右派生，最左归约；1：提前看一个输入符号</li>
+<li>LR(1)的项由两部分组成：LR(0)的项和一个lookahead符号</li>
+<li>任一项集的状态转移不含归约-归约或移进-归约冲突
+<ul>
+<li>无归约-归约冲突：同一状态下如果有多个归约，则前瞻符号不相交</li>
+<li>无移进-归约冲突：同一状态下如果同时有移进和归约，则移进的终结符号不在归约的前瞻符号中</li>
+</ul></li>
+</ul></li>
+<li><strong>LR(1) Parsing</strong>
+<ul>
+<li>扩展文法</li>
+<li>通过<span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong></span>和<span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong></span>构造LR(1)项集族</li>
+<li>构造LR(1)分析表时：
+<ul>
+<li>对<span class="math inline">[<strong>A</strong> → <strong>β</strong>⋅, <em>a</em>]</span>
+归约时, 只对<span class="math inline"><strong>a</strong></span>进行归约</li>
+<li>对<span class="math inline">[<strong>S</strong><sup><strong>′</strong></sup> → <strong>S</strong>⋅, $]</span>
+赋值ACCEPT时, 只对<span class="math inline">$</span>接受</li>
+</ul></li>
+<li>使用栈和输入缓冲区进行LR(1)解析</li>
+</ul></li>
+<li><strong>LALR(1) Grammar</strong>
+<ul>
+<li>LA: LookAhead；L:
+从左到右扫描输入；R：最右派生，最左归约；1：提前看一个输入符号</li>
+<li>LALR(1)的项集族是LR(1)的项集族的同心集合并</li>
+<li>任一项集的状态转移不含归约-归约或移进-归约冲突</li>
+</ul></li>
+<li><strong>LALR(1) Parsing</strong>
+<ul>
+<li>扩展文法、构造集族同LR(0)作为心</li>
+<li>对每个状态的初始项的心，用占位符#作为前瞻符号，通过闭包计算自发生成的前瞻符号和传递关系</li>
+<li>对于传递关系，保留每个状态的内核项，构造传播表</li>
+<li>根据传播表和自发生成的前瞻符号，通过若干轮传播得到每个心最终对应的前瞻符号，得到归约内核项的[心，前瞻符号(若干个)]对</li>
+<li>构造LALR(1)分析表，与LR(1)相同</li>
+<li>使用栈和输入缓冲区进行LALR(1)解析</li>
+</ul></li>
+</ul>
+        </div>
+      </div>
+    </div>
+<h1 id="ch1-intro">Ch1 Intro</h1>
+<h2 id="编译流程">编译流程</h2>
+<p><img src="image-1.webp" srcset="/img/loading/loading3.gif" lazyload></p>
+<ul>
+<li>解释器 vs.&nbsp;编译器 (Interpreter vs.&nbsp;Compiler)
+<ul>
+<li>解释器方便错误诊断 (Error Diagnosis)</li>
+<li>编译器得到的代码更加高效 <img src="image-2.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul></li>
+</ul>
+<h3 id="编译器">编译器</h3>
+<p><img src="image.webp" srcset="/img/loading/loading3.gif" lazyload></p>
+<ul>
+<li>前端：词法分析(Lexical Analysis)、语法分析(Syntax
+Analysis)、语义分析(Semantic Analysis)、中间代码生成(Intermediate Code
+Generation)</li>
+<li>后端：代码优化(Optimization)、目标代码生成(Code Generation)</li>
+</ul>
+<h2 id="词法分析lexical-analysis">词法分析：Lexical Analysis</h2>
+<ul>
+<li>Lexical Analysis: Scanning （词法分析：扫描）
+<ul>
+<li>Lexical Analyzer: Scanner （词法分析器：扫描器）</li>
+<li>Recognize Words (Lexemes) -&gt; Tokens &amp; Symbol Table
+（识别单词（词素）-&gt; 生成标记和符号表）</li>
+<li>Token: &lt;token-name, attribute-value (opt.)&gt;
+<ul>
+<li>token-name: id, number, keywords, operators, etc.
+（标记名：标识符、数字、关键字、运算符等）</li>
+<li>attribute-value: a pointer to the symbol table
+（属性值：指向符号表的指针）</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="语法分析syntax-analysis">语法分析：Syntax Analysis</h2>
+<ul>
+<li>Syntax Analysis: Parsing （语法分析：解析）
+<ul>
+<li>Syntax Analyzer: Parser （语法分析器：解析器）</li>
+<li>Produce the Grammatical Structure （生成语法结构）
+<ul>
+<li>The Relationships among Tokens （标记之间的关系）</li>
+<li>Tree-like Intermediate Representation （树状中间表示）</li>
+</ul></li>
+<li>Parse Tree （解析树）
+<ul>
+<li>Parser generates the Parse Tree, from which produces the Syntax Tree
+（解析器生成解析树，从中生成语法树）</li>
+</ul></li>
+<li>Syntax Tree: Simplified Parse Tree （语法树：简化的解析树）
+<ul>
+<li>Interior Node: Operation （内部节点：操作）</li>
+<li>Children: Arguments of the Operation （子节点：操作的参数）</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="词法分析-vs.-语法分析">词法分析 vs.&nbsp;语法分析</h2>
+<ul>
+<li>做着相似的事情：处理字符串</li>
+<li>词法分析 (Scanning)：拆分字符串成Lexemes，并抽象成Tokens</li>
+<li>语法分析 (Parsing)：整理Tokens的逻辑关系</li>
+</ul>
+<h2 id="语义分析semantic-analysis">语义分析：Semantic Analysis</h2>
+<ul>
+<li>Semantic Analysis （语义分析）
+<ul>
+<li>computing additional info needed for compilation
+（计算编译所需的附加信息）
+<ul>
+<li>which is not regarded as syntax （这些信息不被视为语法）</li>
+</ul></li>
+<li>checking source code semantic consistency with the language
+definition （检查源代码与语言定义的语义一致性）
+<ul>
+<li>Type Checking （类型检查）</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="中间代码生成intermediate-code-generation">中间代码生成：Intermediate
+Code Generation</h2>
+<ul>
+<li>Intermediate Code Generation （中间代码生成）
+<ul>
+<li>Intermediate Representations (IR), e.g., Syntax Tree, etc.
+（中间表示，例如语法树等）</li>
+<li>Low-level or Machine-like IR （低级或类似机器的中间表示）
+<ul>
+<li>LLVM-IR (LLVM, Clang), Gimple (GCC), etc.
+（LLVM-IR（LLVM，Clang），Gimple（GCC）等）</li>
+<li>Three-address Code, with at Most Three Operands per Instruction
+（三地址码，每条指令最多三个操作数）</li>
+<li>Static Single Assignment (SSA) （静态单赋值）
+<ul>
+<li>Every variable is only assigned (defined) once and defined before
+used. （每个变量只能被赋值（定义）一次，并且在使用前必须定义。）</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="优化optimization">优化：Optimization</h2>
+<ul>
+<li>Optimization （优化）
+<ul>
+<li>Improve the IR for Better Target Code
+（改进中间表示以生成更好的目标代码）</li>
+<li>Better: Faster, Smaller, Greener （更好：更快、更小、更环保）</li>
+</ul></li>
+</ul>
+<h2 id="目标代码生成target-code-generation">目标代码生成：Target Code
+Generation</h2>
+<ul>
+<li>Target Code Generation （目标代码生成）
+<ul>
+<li>Instruction Selection （指令选择）
+<ul>
+<li>RISC vs.&nbsp;CISC
+<ul>
+<li>RISC: Reduced Instruction Set Computer （精简指令集计算机）</li>
+<li>CISC: Complex Instruction Set Computer （复杂指令集计算机）</li>
+</ul></li>
+<li>Intel Manual: &gt; 6000 Pages （英特尔手册：超过6000页）</li>
+</ul></li>
+<li>Register Allocation （寄存器分配）
+<ul>
+<li>Graph Coloring Problem （图着色问题）</li>
+</ul></li>
+<li>Evaluation Order （计算顺序）
+<ul>
+<li>Arrange the Computation Order for Less Register Occupation
+（安排计算顺序以减少寄存器占用）</li>
+<li>NPC (Non-Polynomial Complete) Problem （非多项式完全问题）</li>
+</ul></li>
+</ul></li>
+</ul>
+<h1 id="ch2-syntax-definition">Ch2 Syntax Definition</h1>
+<h2 id="文法的定义definition-of-grammars">文法的定义：Definition of
+Grammars</h2>
+<h3 id="定义">定义</h3>
+<ul>
+<li>Grammar: a Set of Rules to Describe a Language.</li>
+<li>Language: a Sorted Set of Strings over some fixed Alphabet.</li>
+<li>关系：Grammar Abstracts the Language to Cover All Its Strings.
+（文法是对语言的抽象，覆盖了语言的所有字符串）</li>
+<li>∅: Empty Language (Set of Strings)</li>
+<li>𝜺: Empty String (Set of Symbols)</li>
+</ul>
+<h3 id="组成">组成</h3>
+<ul>
+<li>Grammar G[S] = (VN, VT, P, S)
+<ul>
+<li>VT: A set of Terminal Symbols (终结符)
+<ul>
+<li>Atomic: 基本符号，不可再分</li>
+</ul></li>
+<li>VN : A set of Non-terminals (非终结符)
+<ul>
+<li>A Non-terminal: a set of strings of Terminals</li>
+</ul></li>
+<li>P: A set of Productions (生成式、规则)
+<ul>
+<li>A Non-terminal, an Arrow, a sequence of Terminals and/or
+Non-terminals</li>
+</ul></li>
+<li>S: A Start Symbol (开始符)
+<ul>
+<li>A Non-terminal</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="推导derivations">推导：Derivations</h2>
+<h3 id="定义-1">定义</h3>
+<ul>
+<li>A Grammar derives strings by beginning with the <strong>Start
+Symbol</strong> and repeatedly replacing a <strong>Non-terminal</strong>
+with <strong>Terminals</strong> via its <strong>Productions</strong>.
+（文法通过从开始符开始，反复用生成式将非终结符替换为终结符来派生字符串）
+<ul>
+<li>推导（Derivation）：反复根据生成规则用终结符替换非终结符</li>
+<li>归约（Reduction）：推导的反过程</li>
+</ul></li>
+</ul>
+<h3 id="语法分析syntax-analysis-parsing">语法分析（Syntax Analysis,
+Parsing）</h3>
+<ul>
+<li>given a sequence of Terminals, figure out Whether it can be Derived
+from the Grammar and How if possible.
+（给定一个终结符序列，判断它是否可以由文法推导而来，如果可以，推导过程是什么）</li>
+<li>一个语言可能有多个文法描述，而一个文法只会派生一个唯一语言</li>
+</ul>
+<h2 id="文法的二义性ambiguity">文法的二义性：Ambiguity</h2>
+<h3 id="定义-2">定义</h3>
+<ul>
+<li>语法树（Parse Tree）: A Graphical Representation of a Derivation
+without the Order of Applying Productions.
+（语法树是一个图形表示，表示了一个推导过程，但不考虑生成式应用的顺序）</li>
+<li>二义性（Ambiguity）: When Parsing, given a sequence of Terminals, a
+Grammar is Ambiguous if there are more than one Parse Tree for the
+Derivation.（二义性是指一个文法可以产生多棵语法树） ### Fix the
+Grammar</li>
+<li>Example:
+<ul>
+<li>stmt -&gt; if expr then stmt | if expr then stmt else stmt |
+other</li>
+<li>if E1 then if E2 then S1 else S2</li>
+</ul></li>
+<li>Match each else with the <strong>closest unmatched then</strong>
+<ul>
+<li>the statement appearing between a then and an else must be
+“matched”</li>
+<li>the interior statement must not end with an unmatched (open)
+then</li>
+</ul></li>
+<li>Listing All Cases then Tidying Them Up
+<ul>
+<li>if expr then matched_stmt</li>
+<li>if expr then open_stmt</li>
+<li>if expr then matched_stmt else matched_stmt</li>
+<li>if expr then matched_stmt else open_stmt</li>
+<li>so that:
+<ul>
+<li>matched_stmt -&gt; if expr then matched_stmt else matched_stmt |
+other</li>
+<li>open_stmt -&gt; if expr then matched_stmt | if expr then open_stmt |
+if expr then matched_stmt else open_stm</li>
+</ul></li>
+<li>finally:
+<ul>
+<li>stmt -&gt; matched_stmt | open_stmt</li>
+<li>matched_stmt -&gt; if expr then matched_stmt else matched_stmt |
+other</li>
+<li>open_stmt -&gt; if expr then stmt | if expr then matched_stmt else
+open_stmt</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="文法和语言的分类classes-of-languages">文法和语言的分类：Classes
+of Languages</h2>
+<p><img src="image-3.webp" srcset="/img/loading/loading3.gif" lazyload></p>
+<ul>
+<li>范围由 Type 0 到 Type 3 逐渐缩小</li>
+</ul>
+<h1 id="ch3-scanning">Ch3 Scanning</h1>
+<h2 id="词法分析lexical-analysis-1">词法分析：Lexical Analysis</h2>
+<h3 id="token-pattern-and-lexemes">Token, Pattern, and Lexemes</h3>
+<ul>
+<li>The Analysis Partitions Input String into Substrings.
+（分析将输入字符串划分为子字符串。） <img src="image-4.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+<li><strong>Token</strong>: &lt;token-name, attribute-value(opt.)&gt;
+<ul>
+<li>token-name: the role of lexical unit （词法单元的角色）
+<ul>
+<li>often refer to Token by its token-name</li>
+</ul></li>
+<li>attribute-value: any info associated to the Token
+（与Token相关的任何信息）
+<ul>
+<li>Generally, it has only ONE value: a pointer to the Symbol Table
+（通常只有一个值：指向符号表的指针）
+<ul>
+<li>In practice, the value of a constant can be stored as the attribute.
+（在实践中，常量的值可以作为属性存储。）
+<ul>
+<li>constant: strings, numbers （常量：字符串、数字）</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><strong>Pattern</strong>: description of the form lexemes of a token
+may （描述词法单元的形式）
+<ul>
+<li>regular expression: , ?, *, +, …</li>
+</ul></li>
+<li><strong>Lexeme</strong>: a sequence of characters matches a token’s
+pattern （与模式匹配的字符序列）
+<ul>
+<li>Token vs.&nbsp;Lexeme: Class vs.&nbsp;Instance in C++</li>
+</ul></li>
+</ul>
+<p><img src="image-7.webp" srcset="/img/loading/loading3.gif" lazyload></p>
+<h2 id="specification-of-tokens">Specification of Tokens</h2>
+<h3 id="strings-and-languages">Strings and Languages</h3>
+<ul>
+<li>String: a finite sequence of Symbols from an Alphabet
+（字符串：来自字母表的有限符号序列）</li>
+<li>Language: any countable set of Strings
+（语言：任何可数的字符串集合）</li>
+<li>Terms for Parts of a String s （字符串s的部分术语）:
+<ul>
+<li>prefix：前缀
+<ul>
+<li>any string obtained by removing zero or more symbols from the end of
+s</li>
+</ul></li>
+<li>suffix：后缀
+<ul>
+<li>any string obtained by removing zero or more symbols from the
+beginning of s</li>
+</ul></li>
+<li>substring：子串
+<ul>
+<li>any string obtained by removing any prefix or any suffix from s
+（去掉前缀或后缀）</li>
+</ul></li>
+<li>subsequence：子序列
+<ul>
+<li>any string obtained by removing zero or more not necessarily
+consecutive position of s （不一定连续的位置）</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="operations-on-languages">Operations on Languages</h3>
+<ul>
+<li><strong>Union</strong>: （并集）
+<ul>
+<li><span class="math inline"><em>L</em><sub>1</sub> ∪ <em>L</em><sub>2</sub> = {<em>x</em>|<em>x</em> ∈ <em>L</em><sub>1</sub>  <em>o</em><em>r</em>  <em>x</em> ∈ <em>L</em><sub>2</sub>}</span></li>
+</ul></li>
+<li><strong>Concatenation</strong>: （连接）
+<ul>
+<li><span class="math inline"><em>L</em><sub>1</sub><em>L</em><sub>2</sub> = {<em>x</em><em>y</em>|<em>x</em> ∈ <em>L</em><sub>1</sub>  <em>a</em><em>n</em><em>d</em>  <em>y</em> ∈ <em>L</em><sub>2</sub>}</span></li>
+</ul></li>
+<li><strong>Kleene closure</strong>: （星闭包）
+<ul>
+<li><span class="math inline">$L^* = \bigcup_{1=0}^\infty L^i \\= {𝜖} ∪
+L ∪ L^2 ∪ L^3 ∪ ... \\= \{x | x = x_1x_2...x_n, n ≥ 0, xi ∈
+L\}$</span></li>
+<li>𝜖 is the empty string</li>
+</ul></li>
+<li><strong>Positive closure</strong>: （正闭包）
+<ul>
+<li><span class="math inline">$L^+ = \bigcup_{1=1}^\infty L^i \\= LL^*
+\\= \{x | x = x_1x_2...x_n, n ≥ 1, xi ∈ L\}$</span></li>
+</ul></li>
+</ul>
+<h3 id="regular-expressions">Regular Expressions</h3>
+<h4 id="定义-3">定义</h4>
+<ul>
+<li><strong>Regular Expression (Regex)</strong>: a way to describe
+Patterns of Tokens of a programming language.
+（正则表达式：描述编程语言的词法单元模式的一种方式）
+<ul>
+<li>Each Regular Expression r denotes a Language L<span class="math inline">(<em>r</em>)</span>.
+（每个正则表达式r表示一个语言L<span class="math inline">(<em>r</em>)</span>）
+<ul>
+<li>Regular Language, Type-3 Language</li>
+</ul></li>
+<li>The Regular Expressions are built recursively out of smaller ones,
+using the rules. （正则表达式是用规则递归构建的）</li>
+</ul></li>
+</ul>
+<h4 id="语法">语法</h4>
+<ul>
+<li><strong>BASIS</strong> （基础）
+<ul>
+<li>𝜀 is a regular expression, and L(𝜀) = {𝜀}, the empty set.
+（空字符）</li>
+<li>a is a symbol in a set Σ, then a is a regular expression, and L(a) =
+{a}. （集合中的字符）</li>
+</ul></li>
+<li><strong>INDUCTION</strong> （归纳）：Suppose <span class="math inline"><em>r</em></span> and <span class="math inline"><em>s</em></span> are expressions denoting <span class="math inline"><em>L</em>(<em>r</em>)</span> and <span class="math inline"><em>L</em>(<em>s</em>)</span>
+<ul>
+<li><span class="math inline"><em>r</em>|<em>s</em></span> : a regular
+expression denoting <span class="math inline"><em>L</em>(<em>r</em>) ∪ <em>L</em>(<em>s</em>)</span></li>
+<li><span class="math inline"><em>r</em><em>s</em></span> : a regular
+expression denoting <span class="math inline"><em>L</em>(<em>r</em>)<em>L</em>(<em>s</em>)</span></li>
+<li><span class="math inline"><em>r</em><sup>*</sup></span> : a regular
+expression denoting <span class="math inline">(<em>L</em>(<em>r</em>))<sup>*</sup></span></li>
+<li><span class="math inline">(<em>r</em>)</span> : a regular expression
+denoting <span class="math inline"><em>L</em>(<em>r</em>)</span>
+<ul>
+<li>We can add additional brackets around expressions.
+（我们可以在表达式周围添加额外的括号。）</li>
+</ul></li>
+</ul></li>
+<li><strong>定律</strong>： <img src="image-6.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul>
+<h3 id="regular-definitions">Regular Definitions</h3>
+<ul>
+<li><strong>Regular Definition</strong>: a set of productions with
+non-terminals derived by regular expressions.
+（正则定义：一组通过正则表达式派生的非终结符的产生式）</li>
+</ul>
+<h3 id="extensions-of-regex">Extensions of Regex</h3>
+<ul>
+<li><span class="math inline">+</span> : one or more instances
+<ul>
+<li><span class="math inline"><em>r</em><sup>*</sup></span> = <span class="math inline"><em>r</em><sup>+</sup></span> | 𝜖</li>
+<li><span class="math inline"><em>r</em><sup>+</sup></span> = <span class="math inline"><em>r</em><em>r</em><sup>*</sup></span> = <span class="math inline"><em>r</em><sup>*</sup><em>r</em></span></li>
+</ul></li>
+<li><span class="math inline">?</span> : zero or one instance
+<ul>
+<li><span class="math inline"><em>r</em>?</span> = <span class="math inline"><em>r</em></span> | 𝜖</li>
+</ul></li>
+<li><span class="math inline">[  ]</span> : character classes
+<ul>
+<li><span class="math inline">[<em>a</em><em>b</em><em>c</em>]</span> =
+<span class="math inline"><em>a</em></span> | <span class="math inline"><em>b</em></span> | <span class="math inline"><em>c</em></span></li>
+<li><span class="math inline">[<em>a</em> − <em>z</em>]</span> = <span class="math inline"><em>a</em></span> | <span class="math inline"><em>b</em></span> | … | <span class="math inline"><em>z</em></span></li>
+</ul></li>
+</ul>
+<h3 id="regular-language-grammar-and-regex">Regular Language / Grammar,
+and Regex</h3>
+<p><img src="image-5.webp" srcset="/img/loading/loading3.gif" lazyload></p>
+<ul>
+<li><strong>Regular Expression</strong> <span class="math inline"><em>r</em></span> denotes a Language <span class="math inline"><em>L</em>(<em>r</em>)</span>.
+<ul>
+<li>Regular Language is Type-3 Language （正则语言是类型3语言）</li>
+<li>Regular Language is that denoted by Regular Expressions.
+（正则语言是由正则表达式表示的）</li>
+</ul></li>
+<li><strong>Regular Grammar</strong> is the grammar describes a Regular
+Language.
+<ul>
+<li>with the production form of <span class="math inline"><strong>A</strong> → <em>α</em></span> or <span class="math inline"><strong>A</strong> → <em>α</em><strong>B</strong></span></li>
+</ul></li>
+</ul>
+<h2 id="recognition-of-tokens">Recognition of Tokens</h2>
+<h3 id="input-buffer">Input Buffer</h3>
+<p><img src="image-8.webp" srcset="/img/loading/loading3.gif" lazyload></p>
+<h3 id="transition-diagrams">Transition Diagrams</h3>
+<ul>
+<li><strong>Transition Diagram = Nodes + Edges</strong>, a Flowchart
+（状态流程图 = 节点 + 边）
+<ul>
+<li><strong>Nodes</strong>: <strong>states, conditions</strong> that
+could occur when looking for a lexeme that matches one pattern.
+（节点：状态）
+<ul>
+<li><strong>States</strong>: Circles （状态：圆圈）</li>
+<li><strong>Start State</strong>: Arrowhead, Beginning of a Pattern
+（起始状态：箭头，开始）</li>
+<li><strong>End State(s)</strong>: <strong>Double Circles</strong>, End
+of a Pattern （终止状态：双圆圈，结束）</li>
+</ul></li>
+<li><strong>Edge</strong>: <strong>actions</strong>, taken to transit
+from one State to Another. （边：动作）
+<ul>
+<li>labeled by a Symbol or a set of Symbols for matching
+（标记为符号或符号集以进行匹配）</li>
+</ul></li>
+<li><strong>Deterministic</strong>: at most ONE edge out of a given
+state with a given label. （确定性：在给定状态下，最多有一条边）</li>
+</ul></li>
+<li><strong>Example</strong>: <img src="image-51.webp" srcset="/img/loading/loading3.gif" lazyload>
+<ul>
+<li>*<strong>(Retract)</strong>: A Token has been accepted while another
+char has been read which must be unread.
+（回退：一个Token已经被接受，而另一个不应读取字符已经被读取，必须回退）</li>
+</ul></li>
+</ul>
+<h3 id="reserved-words-保留字">Reserved Words （保留字）</h3>
+<ul>
+<li>Keywords look like Identifiers.
+<ul>
+<li>if, then, …</li>
+</ul></li>
+<li>Add reserved words into symbol table initially.
+（在符号表中添加保留字）</li>
+<li>Create <strong>separate transition diagrams</strong> for each
+keyword. （为每个关键字创建单独的转换图）
+<ul>
+<li>thenextone</li>
+<li><img src="image-52.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul></li>
+</ul>
+<h2 id="有穷自动机finite-automata">有穷自动机：Finite Automata</h2>
+<h3 id="finite-automata">Finite Automata</h3>
+<ul>
+<li><strong>What</strong>: an Abstract Machine that can be in exactly
+one of a Finite number of States at any given time.
+（有限自动机：在任何给定时间只能处于有限数量的状态之一的抽象机器）
+<ul>
+<li>Finite Automation = Finite-state Automation (FSA, plural: automata)
+（有限自动机 = 有限状态自动机）
+<ul>
+<li>Finite-state Machine (FSM), or simply State Machine
+（有限状态机，或简单地称为状态机）</li>
+</ul></li>
+<li>changes from one state to another according to Inputs, called
+Transition （根据输入，从一个状态变化到另一个状态，称为转换）</li>
+</ul></li>
+<li><strong>Why</strong>: used as the Recognizer for Scanning,
+identifying Tokens （用于扫描的识别器，识别token）</li>
+<li><strong>How</strong>: answers “YES” or “NO” about each input String
+（如何：对每个输入字符串回答“是”或“否”）
+<ul>
+<li>determines whether the String is valid for the given Grammar
+（确定字符串是否符合给定的语法）</li>
+</ul></li>
+</ul>
+<h3 id="dfa-vs.-nfa">DFA vs.&nbsp;NFA</h3>
+<ul>
+<li>FA: <strong>Deterministic (DFA) or Non-deterministic
+(NFA)</strong></li>
+<li><strong>DFA</strong>: have <strong>exactly/at most one
+action</strong> for each input symbol （每个输入符号有一个动作）
+<ul>
+<li>can be represented with a Transition Diagram</li>
+<li>Recognition with DFA: Faster, may take More Space
+（识别DFA：更快，可能占用更多空间）</li>
+<li>complex to represent Regex, but more Precise, widely used
+（复杂表示正则表达式，但更精确，广泛使用）</li>
+</ul></li>
+<li><strong>NFA</strong>: can have <strong>multiple actions</strong> for
+the same input symbol （同一输入符号可以有多个动作）
+<ul>
+<li>can be represented with a Transition Graph</li>
+<li>Recognition with NFA: Slower, may take Less Space
+（识别NFA：较慢，可能占用更少的空间）</li>
+<li>simply represents Regex, but less Precise
+（简单表示正则表达式，但不够精确）</li>
+</ul></li>
+<li><strong>Example</strong>: <img src="image-9.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+<li>Lexical Analysis <strong>Workflow</strong> with FA:
+<ul>
+<li>Regex -&gt; NFA -&gt; DFA</li>
+<li>Regex -&gt; DFA</li>
+</ul></li>
+</ul>
+<h3 id="nondeterministic-finite-automata-nfa">Nondeterministic Finite
+Automata (NFA)</h3>
+<ul>
+<li><strong>An NFA M = <span class="math inline"><strong>(</strong><strong>S</strong><strong>,</strong> <strong>𝜮</strong><strong>,</strong> <strong>m</strong><strong>o</strong><strong>v</strong><strong>e</strong><strong>,</strong> <strong>𝒔</strong><sub><strong>0</strong></sub><strong>,</strong> <strong>F</strong><strong>)</strong></span></strong>
+consists of:
+<ul>
+<li><span class="math inline"><strong>S</strong></span>: a finite set of
+States （有限状态集）</li>
+<li><span class="math inline"><strong>𝜮</strong></span>: the Input
+Alphabet, excluding 𝜖 （不包含𝜖的输入符号集合）</li>
+<li><span class="math inline"><strong>m</strong><strong>o</strong><strong>v</strong><strong>e</strong></span>,
+a Transition Function （转换函数）
+<ul>
+<li>move(State, Symbol) = set of Next States</li>
+<li>move: <span class="math inline"><em>𝑆</em> × (<em>Σ</em> ∪ {<em>𝜖</em>}) ⟶ <em>ℙ</em>(<em>𝑆</em>)</span></li>
+</ul></li>
+<li><span class="math inline"><strong>s</strong><sub><strong>0</strong></sub> ∈ <strong>S</strong></span>,
+the Start State (or Initial State) （起始状态）</li>
+<li><span class="math inline"><strong>F</strong> ⊆ <strong>S</strong></span>, a
+set of Accepting States (or Final States) （终止状态）</li>
+</ul></li>
+<li>An NFA accepts Input String <span class="math inline"><em>s</em></span> iff
+<ul>
+<li>there exists some path in the Transition Graph from the Start State
+to one Accepting State, （存在一条路径从起始状态到一个接受状态）</li>
+<li>such that symbols along the path spell out <span class="math inline"><em>s</em></span> （路径上的符号拼写出<span class="math inline"><em>s</em></span>）</li>
+</ul></li>
+<li><strong>Transition Tables</strong>：<strong>rows</strong> for
+States, <strong>columns</strong> for Input Symbols and 𝝐
+<ul>
+<li>Example: <img src="image-10.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul></li>
+</ul>
+<h3 id="deterministic-finite-automata-dfa">Deterministic Finite Automata
+(DFA)</h3>
+<ul>
+<li><strong>What</strong>: a Special Case of an NFA, where
+<ul>
+<li>there are <strong>no moves</strong> on symbol 𝜖, and</li>
+<li>for each state s and input symbol a, there is <strong>Exactly
+ONE</strong> edge out of s labeled by a.
+（每个状态s和输入符号a，恰好有一条边出s标记为a）
+<ul>
+<li><strong>COMPLETE</strong>: It defines from each state a transition
+for each input symbol. （完整：它定义了从每个状态到每个输入符号的转换）
+<ul>
+<li>Transition function is a total function.</li>
+</ul></li>
+<li><strong>Local Automation</strong>: DFA not necessarily complete (…
+At Most ONE edge …) （局部自动机：DFA不一定是完全图）
+<ul>
+<li>Transition function is a partial function.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="algorithm-for-simulation">Algorithm for Simulation</h2>
+<h3 id="conversion-nfa-dfa">Conversion: NFA –&gt; DFA</h3>
+<ul>
+<li><strong>Subset Construction</strong> （子集构造）
+<ul>
+<li>removing 𝜖-transitions</li>
+<li>combining multiple NFA’s states into ONE constructed DFA’s state
+（将多个NFA的状态组合成一个构造的DFA的状态，即：等势点合并）</li>
+</ul></li>
+<li><strong>Definitions</strong>:
+<ul>
+<li><strong>𝜖-closure(s)</strong>:
+<ul>
+<li>s: some State</li>
+<li>= Set of NFA <strong>States</strong> reached by state s via
+𝜖-transitions, including s itself.
+（NFA中可以通过若干个空变换到达的状态的集合）</li>
+</ul></li>
+<li><strong>𝜖-closure(T)</strong>:
+<ul>
+<li>T: set of <strong>States</strong></li>
+<li>= <span class="math inline">∪<sub><em>s</em> ∈ <em>T</em></sub></span>
+𝜖-closure(s)</li>
+</ul></li>
+<li><strong>move(T, a)</strong>:
+<ul>
+<li>T: set of States</li>
+<li>a: Input Symbol</li>
+<li>= NFA’s <strong>States</strong> reached by 𝑠 ∈ 𝑇 on a.</li>
+</ul></li>
+</ul></li>
+<li><strong>Algorithm Subset Construction</strong>
+<ul>
+<li>Input: the start State <strong>s0</strong> and the Transition
+Diagram of NFA <strong>N</strong>.</li>
+<li>Output: Transition Graph of DFA <strong>Dtran</strong>
+<figure class="shiki java"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #E06C75">add 𝝐</span><span style="color: #56B6C2">-</span><span style="color: #61AFEF">closure</span><span style="color: #E06C75">(s0) into Dstates </span><span style="color: #7F848E; font-style: italic">//将初始状态s0的𝝐闭包加入Dstates</span></span>
+<span class="line"><span style="color: #C678DD">while</span><span style="color: #E06C75"> (</span><span style="color: #E5C07B">Dstates</span><span style="color: #E06C75"> has unsearched state S) { </span><span style="color: #7F848E; font-style: italic">//当Dstates有未搜索的状态S时</span></span>
+<span class="line"><span style="color: #E06C75">    tag </span><span style="color: #E5C07B">S</span><span style="color: #E06C75"> as searched </span><span style="color: #7F848E; font-style: italic">//将S标记为已搜索</span></span>
+<span class="line"><span style="color: #E06C75">    foreach input symbol a { </span><span style="color: #7F848E; font-style: italic">//对每个输入符号a</span></span>
+<span class="line"><span style="color: #E06C75">        U </span><span style="color: #56B6C2">=</span><span style="color: #E06C75"> 𝝐</span><span style="color: #56B6C2">-</span><span style="color: #61AFEF">closure</span><span style="color: #E06C75">(</span><span style="color: #61AFEF">move</span><span style="color: #E06C75">(S</span><span style="color: #ABB2BF">,</span><span style="color: #E06C75"> a)) </span><span style="color: #7F848E; font-style: italic">//设U为S进行a动作后状态S'的𝝐闭包</span></span>
+<span class="line"><span style="color: #E06C75">        </span><span style="color: #C678DD">if</span><span style="color: #E06C75"> (</span><span style="color: #E5C07B">U</span><span style="color: #E06C75"> is </span><span style="color: #C678DD">new</span><span style="color: #E06C75"> to Dstates) { </span><span style="color: #7F848E; font-style: italic">//如果U是Dstates中的新状态</span></span>
+<span class="line"><span style="color: #E06C75">            add </span><span style="color: #E5C07B">U</span><span style="color: #E06C75"> into </span><span style="color: #E5C07B">Dstates</span><span style="color: #E06C75"> as unsearched </span><span style="color: #7F848E; font-style: italic">//将U加入Dstates并标记为未搜索</span></span>
+<span class="line"><span style="color: #E06C75">        }</span></span>
+<span class="line"><span style="color: #E06C75">        </span><span style="color: #61AFEF">Dtran</span><span style="color: #E06C75">(S</span><span style="color: #ABB2BF">,</span><span style="color: #E06C75"> a) </span><span style="color: #56B6C2">=</span><span style="color: #E06C75"> U </span><span style="color: #7F848E; font-style: italic">//将Dtran(S, a)设为U</span></span>
+<span class="line"><span style="color: #E06C75">    }</span></span>
+<span class="line"><span style="color: #E06C75">}</span></span></code></pre></div></div></figure></li>
+<li><strong>最后得到的Dtran是一个DFA的转换表</strong>，Dstates是DFA的状态集合。</li>
+</ul></li>
+<li><strong>Algorithm 𝜖-closure(T) Computation</strong>:
+<ul>
+<li>上一步中<code>U = 𝝐-closure(move(S, a))</code>的实现逻辑：</li>
+<li>Input: the State Set T</li>
+<li>Output: 𝜖-closure(T) <figure class="shiki java"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #E06C75">push all states in </span><span style="color: #E5C07B">T</span><span style="color: #E06C75"> onto Stack </span><span style="color: #7F848E; font-style: italic">//将T中的所有状态压入栈中</span></span>
+<span class="line"><span style="color: #C678DD">while</span><span style="color: #E06C75"> (</span><span style="color: #E5C07B">Stack</span><span style="color: #E06C75"> is not empty) { </span><span style="color: #7F848E; font-style: italic">//当栈不为空时</span></span>
+<span class="line"><span style="color: #E06C75">    s </span><span style="color: #56B6C2">=</span><span style="color: #E06C75"> </span><span style="color: #E5C07B">Stack</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">pop</span><span style="color: #ABB2BF">()</span><span style="color: #E06C75"> </span><span style="color: #7F848E; font-style: italic">//弹出栈顶元素s</span></span>
+<span class="line"><span style="color: #E06C75">    </span><span style="color: #61AFEF">foreach</span><span style="color: #E06C75"> (state u reached by s via 𝜖) { </span><span style="color: #7F848E; font-style: italic">//对于每个s通过𝜖能达到的状态u</span></span>
+<span class="line"><span style="color: #E06C75">        </span><span style="color: #C678DD">if</span><span style="color: #E06C75"> (u is not in 𝜖</span><span style="color: #56B6C2">-</span><span style="color: #61AFEF">closure</span><span style="color: #E06C75">(T)) { </span><span style="color: #7F848E; font-style: italic">//如果u不在T的𝜖闭包中</span></span>
+<span class="line"><span style="color: #E06C75">            add u into 𝜖</span><span style="color: #56B6C2">-</span><span style="color: #61AFEF">closure</span><span style="color: #E06C75">(T) </span><span style="color: #7F848E; font-style: italic">// 将其加入T的𝜖闭包</span></span>
+<span class="line"><span style="color: #E06C75">            </span><span style="color: #E5C07B">Stack</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">push</span><span style="color: #ABB2BF">(u)</span><span style="color: #E06C75"> </span><span style="color: #7F848E; font-style: italic">//将u压入栈中</span></span>
+<span class="line"><span style="color: #E06C75">        }</span></span>
+<span class="line"><span style="color: #E06C75">    }</span></span>
+<span class="line"><span style="color: #E06C75">}</span></span></code></pre></div></div></figure></li>
+</ul></li>
+<li><strong>Example</strong>: <img src="image-11.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul>
+<h3 id="conversion-regex-nfa">Conversion: Regex –&gt; NFA</h3>
+<ul>
+<li>McNaughton-Yamada-Thompson Algorithm</li>
+<li>Regex’s Definition:
+<ul>
+<li><strong>BASIS</strong>: <img src="image-12.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+<li><strong>INDUCTION</strong>: <img src="image-13.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul></li>
+<li><strong>Example</strong>: <img src="image-14.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul>
+<h2 id="workflow">Workflow</h2>
+<ul>
+<li>The <strong>Workflow</strong> of Lexical Analyzer
+<ul>
+<li>Regex –&gt; NFA Construction</li>
+<li>NFA –&gt; DFA Construction</li>
+<li>Simulating DFA to Recognize Tokens</li>
+</ul></li>
+<li>Convert Regex Directly into DFA: PASS</li>
+<li><strong>DFA Simplification</strong>: Minimizing the Number of
+States</li>
+</ul>
+<h2 id="dfa-simplification">DFA Simplification</h2>
+<ul>
+<li><strong>What and Why</strong>:
+<ul>
+<li><strong>no REDUNDANT states</strong> （无冗余状态）
+<ul>
+<li>REDUNDANCE: the states that NO accepted input string’s path passes
+through （没有路径到达终止状态的状态）</li>
+<li>(in the transition graph)</li>
+</ul></li>
+<li><strong>no EQUIVALENT states</strong> （无等效状态）
+<ul>
+<li>EQUIVALENCE: states with the SAME side effects
+（具有相同副作用的状态）</li>
+<li>(making the states indistinguishable)</li>
+</ul></li>
+<li><strong>Distinguish States via Input String</strong>
+（通过输入字符串区分状态）
+<ul>
+<li>State: s, t</li>
+<li>String: x</li>
+<li>x distinguishes s from t,
+<ul>
+<li>if one state can reach an accepting state via x, while the other
+cannot. （如果一个状态可以通过x到达终止状态，而另一个状态不能）</li>
+</ul></li>
+<li>s is distinguishable from t,
+<ul>
+<li>if there is some string distinguishes them.
+（存在一些字符串可以区分它们）</li>
+</ul></li>
+<li>Unify Indistinguishable States into One.
+（将不可区分的状态合并为一个）</li>
+</ul></li>
+</ul></li>
+<li><strong>How</strong>：
+<ol type="1">
+<li>Start with the initial partition <span class="math inline"><strong>Π</strong></span> with two groups, the
+<strong>accepting</strong> and <strong>non-accepting</strong> states of
+the DFA. （将DFA的接受状态和非接受状态分为两个组）</li>
+<li>Let <span class="math inline"><strong>Π</strong><sub><strong>n</strong><strong>e</strong><strong>w</strong></sub> <strong>:=</strong> <strong>Π</strong></span>.
+Then, for each group <span class="math inline"><strong>G</strong></span>
+of <span class="math inline"><strong>Π</strong></span>: （初始时令<span class="math inline"><strong>Π</strong><sub><strong>n</strong><strong>e</strong><strong>w</strong></sub> <strong>=</strong> <strong>Π</strong></span>，然后对于每个组G）
+<ul>
+<li>For each input symbol <span class="math inline"><strong>a</strong></span>, states <span class="math inline"><strong>s</strong>, <strong>t</strong></span> in
+<span class="math inline"><strong>G</strong></span> are partitioned if
+they transit to different groups of <span class="math inline"><strong>Π</strong></span> via <span class="math inline"><strong>a</strong></span>;
+（对于每个输入符号a，如果状态s和t通过a转移到不同的组，则他们被划分为不同的组）</li>
+<li>Replace <span class="math inline"><strong>G</strong></span> in <span class="math inline"><strong>Π</strong><sub><strong>n</strong><strong>e</strong><strong>w</strong></sub></span>
+by the new subgroups. （用新的子组替换<span class="math inline"><strong>G</strong></span>）</li>
+</ul></li>
+<li>If <span class="math inline"><strong>Π</strong><sub><strong>n</strong><strong>e</strong><strong>w</strong></sub> ≠ <strong>Π</strong></span>,
+<span class="math inline"><strong>Π</strong> <strong>:</strong>  <strong>=</strong> <strong>Π</strong><sub><strong>n</strong><strong>e</strong><strong>w</strong></sub></span>
+and repeat Step 2, Step 4 otherwise. （如果<span class="math inline"><strong>Π</strong><sub><strong>n</strong><strong>e</strong><strong>w</strong></sub> ≠ <strong>Π</strong></span>，则令<span class="math inline"><strong>Π</strong> <strong>:</strong>  <strong>=</strong> <strong>Π</strong><sub><strong>n</strong><strong>e</strong><strong>w</strong></sub></span>并重复步骤2，否则跳到步骤4）</li>
+<li>Aggregate the transitions among groups. （将组之间的转换聚合）</li>
+<li>The resulting DFA is the minimized DFA.
+（得到的DFA是最小化的DFA）</li>
+</ol></li>
+<li><strong>Example</strong>:<img src="image-15.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul>
+<h1 id="ch4-parsing">Ch4 Parsing</h1>
+<h2 id="词法分析lexical-analysis-2">词法分析：Lexical Analysis</h2>
+<h3 id="parser">Parser</h3>
+<ul>
+<li><strong>What</strong>: Given Tokens, Parsing Verifies whether the
+Token Names Can Be Generated by the Grammar for the Source Language.
+（给定tokens，解析会验证token名称是否可以由源语言的语法生成）</li>
+<li><strong>Why</strong>: We expect the Parser
+<ul>
+<li>to <strong>report Syntax Errors</strong> （报告语法错误）</li>
+<li>to recover from Errors to continue following processes.
+（从错误中恢复以继续后续过程）</li>
+</ul></li>
+<li><strong>How</strong>: Derivation or Reduction
+<ul>
+<li><strong>Top-down</strong> and <strong>Bottom-up</strong>
+Parsing</li>
+</ul></li>
+</ul>
+<p><img src="image-16.webp" srcset="/img/loading/loading3.gif" lazyload></p>
+<h3 id="compiler-errors">Compiler Errors</h3>
+<ul>
+<li>Lexical Errors
+<ul>
+<li>The string does not match the pattern of any token.
+（字符串与任何token的模式不匹配）</li>
+</ul></li>
+<li>Syntactic Errors
+<ul>
+<li>The string does not meet the requirements of the grammar.
+（字符串不符合语法要求）</li>
+</ul></li>
+<li>Semantic Errors: Type Mismatching （语义错误：类型不匹配）</li>
+</ul>
+<h3 id="error-recovery-strategies">Error-Recovery Strategies</h3>
+<ul>
+<li><strong>Panic-Mode Recovery</strong>
+<ul>
+<li>Discarding input symbols one at a time until meeting synchronizing
+tokens （丢弃输入符号，直到遇到同步tokens）
+<ul>
+<li>synchronizing tokens, e.g.&nbsp;“;”, “}”, etc., decided by designers</li>
+</ul></li>
+<li>simple, but may cause more errors</li>
+</ul></li>
+<li><strong>Phrase-Level Recovery</strong>
+<ul>
+<li>Local Correction on Input, allowing the parser to continue
+（允许解析器继续）
+<ul>
+<li>e.g., “,” → “;”, delete/insert “;”</li>
+<li>designers’ responsibility</li>
+</ul></li>
+<li>helpless if error occurs before the point of detection</li>
+</ul></li>
+<li><strong>Error Productions</strong>
+<ul>
+<li>augmenting grammar with productions generating erroneous constructs
+（用产生错误构造的产生式扩充语法）</li>
+<li>relying on designers</li>
+</ul></li>
+<li><strong>Global Correction</strong>
+<ul>
+<li>choosing a minimal sequence of changes for a globally least-cost
+correction （选择一系列最小的变化，以实现全局最低成本的修正）</li>
+<li>costly, yardstick? should defined by designers</li>
+</ul></li>
+</ul>
+<h2 id="context-free-grammar-cfg">Context-Free Grammar (CFG)</h2>
+<h3 id="definition">Definition</h3>
+<ul>
+<li>A <strong>Context-Free Grammar</strong> consists of:
+<ul>
+<li>Terminals</li>
+<li>Non-terminals</li>
+<li>Start Symbol</li>
+<li>Productions: <span class="math inline"><strong>A</strong> → <strong>α</strong></span>
+<ul>
+<li>Header / Left Side → Body / Right Side
+<ul>
+<li>Header: A <strong>Non-terminal</strong></li>
+<li>Body: <strong>zero or more Terminals or Non-terminals</strong></li>
+</ul></li>
+<li><span class="math inline"><strong>V</strong><sub><strong>N</strong></sub> → (<strong>V</strong><sub><strong>T</strong></sub>|<strong>V</strong><sub><strong>N</strong></sub>)<sup>*</sup></span></li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="derivation">Derivation</h3>
+<ul>
+<li><p><strong>What</strong>: Beginning with the Start Symbol, replace a
+Non-terminal by the body of one of its Production.
+（从起始符号开始，用其产生式的右侧替换非终结符）</p></li>
+<li><p><strong>Why</strong>:</p>
+<ul>
+<li>corresponding to <strong>Top-down</strong> Construction of a Parse
+Tree （对应于自顶向下构造解析树）</li>
+<li>helpful for Bottom-up Parsing</li>
+</ul></li>
+<li><p><strong>How</strong>:</p>
+<ul>
+<li>$$ : derive in one step</li>
+<li>$ $ : derive in zero or more steps
+<ul>
+<li><span class="math inline">$\alpha \overset{*}{\Rightarrow}
+\alpha$</span></li>
+<li>if <span class="math inline">$\alpha \overset{*}{\Rightarrow}
+\beta$</span> and <span class="math inline">$\beta
+\overset{*}{\Rightarrow} \gamma$</span>, then <span class="math inline">$\alpha \overset{*}{\Rightarrow} \gamma$</span></li>
+</ul></li>
+<li>$ $ : derive in one or more steps</li>
+</ul></li>
+<li><p><span class="math inline">$\mathbf{S} \overset{*}{\Rightarrow}
+\alpha$</span></p>
+<ul>
+<li><span class="math inline"><em>α</em></span> is a <strong>Sentential
+Form</strong> of S. （<span class="math inline"><em>α</em></span>是S的一个句子形式）</li>
+<li><span class="math inline"><em>α</em></span> may contain
+<strong>Terminals</strong>, <strong>Non-terminals</strong>, or may be
+<strong>Empty</strong>.</li>
+<li>Sentence: a Sentential Form without Non-terminals.
+（没有非终结符的句子形式）</li>
+</ul></li>
+<li><p>What is a <strong>Language</strong>?</p>
+<ul>
+<li><span class="math inline"><em>L</em>(<em>G</em>)</span>: set of
+Sentences generated by the Grammar <span class="math inline"><em>G</em></span></li>
+<li>A string of terminals $ L(G) $ if and only if $ $ is a Sentence of $
+G $ (or $ S $).</li>
+</ul></li>
+<li><p><strong>Example</strong>: <img src="image-17.webp" srcset="/img/loading/loading3.gif" lazyload></p></li>
+<li><p><strong>Leftmost Derivation</strong>: the Leftmost Non-terminal
+is always replaced at first （最左边的非终结符总是第一个被替换）</p>
+<ul>
+<li>$ $</li>
+</ul></li>
+<li><p><strong>Rightmost Derivation</strong>: $ $</p></li>
+<li><p><strong>Parse Trees and Derivations</strong></p>
+<ul>
+<li>What: A Graphical Representation of a Derivation （派生的图形表示）
+<ul>
+<li>filtering out the order in which productions applied to replace
+non-terminals （过滤出应用于替换非终结符的产生式的顺序）</li>
+</ul></li>
+<li><strong>Example</strong>： <img src="image-18.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul></li>
+</ul>
+<h2 id="top-down-parsing">Top-Down Parsing</h2>
+<ul>
+<li><strong>What</strong>: Create the Parse Tree from Top to Bottom
+（从上到下创建解析树）
+<ul>
+<li>from root to leaves （从根到叶）</li>
+</ul></li>
+<li><strong>Why</strong>: for Parsing</li>
+<li><strong>How</strong>: Derive an Input String in the
+<strong>Leftmost</strong> Manner （以最左边的方式派生输入字符串）
+<ul>
+<li>consistent with string scanning （与字符串扫描一致）</li>
+<li><strong>Key</strong>: determine the production to be applied for a
+non-terminal （确定要应用于非终结符的产生式）</li>
+<li><strong>Recursive-Descent Parsing</strong>
+<ul>
+<li>require <strong>backtracking</strong> to find right production
+（需要回溯以找到正确的产生式）</li>
+<li>general, but inefficient</li>
+</ul></li>
+<li><strong>Predictive Parsing</strong>
+<ul>
+<li>a special case of Recursive-Descent Parsing</li>
+<li>no backtracking, choosing by <strong>looking ahead</strong> at input
+symbols （无需回溯，通过提前查看输入符号进行选择）</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="recursive-descent-parsing">Recursive-Descent Parsing</h3>
+<figure class="shiki java"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">void</span><span style="color: #E06C75"> </span><span style="color: #61AFEF">A</span><span style="color: #E06C75">() {</span></span>
+<span class="line"><span style="color: #E06C75">    </span><span style="color: #7F848E; font-style: italic">// Choose an A-production, A --&gt; X1 X2 ...Xk;</span></span>
+<span class="line"><span style="color: #E06C75">    </span><span style="color: #C678DD">for</span><span style="color: #E06C75"> (i </span><span style="color: #56B6C2">=</span><span style="color: #E06C75"> </span><span style="color: #D19A66">1</span><span style="color: #E06C75"> to k) {</span></span>
+<span class="line"><span style="color: #E06C75">        </span><span style="color: #C678DD">if</span><span style="color: #E06C75"> (</span><span style="color: #E5C07B">Xi</span><span style="color: #E06C75"> is a non</span><span style="color: #56B6C2">-</span><span style="color: #E06C75">terminal)</span></span>
+<span class="line"><span style="color: #E06C75">            call </span><span style="color: #61AFEF">Xi</span><span style="color: #E06C75">()</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #E06C75">        </span><span style="color: #C678DD">else</span><span style="color: #E06C75"> </span><span style="color: #C678DD">if</span><span style="color: #E06C75"> (</span><span style="color: #E5C07B">Xi</span><span style="color: #E06C75"> equals the current input symbol a)</span></span>
+<span class="line"><span style="color: #E06C75">            advance the input to the next symbol</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #E06C75">        </span><span style="color: #C678DD">else</span><span style="color: #E06C75"> </span><span style="color: #ABB2BF">...</span><span style="color: #E06C75"> </span><span style="color: #7F848E; font-style: italic">// an error has occurred</span></span>
+<span class="line"><span style="color: #E06C75">    }</span></span>
+<span class="line"><span style="color: #E06C75">}</span></span></code></pre></div></div></figure>
+<ul>
+<li>Example: <img src="image-19.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul>
+<h4 id="left-recursion-左递归">Left Recursion （左递归）</h4>
+<ul>
+<li><strong>What</strong>: The Grammar has a non-terminal A such that
+there exists a derivation <span class="math inline">$\mathbf{A}
+\overset{+}{\Rightarrow} \mathbf{A} \alpha$</span>
+（文法有一个非终结符A，使得存在一个派生<span class="math inline">$\mathbf{A} \overset{+}{\Rightarrow} \mathbf{A}
+\alpha$</span>）</li>
+<li><strong>Why</strong>: Recursive-Descent Parsing cannot handle Left
+Recursion. （递归下降解析无法处理左递归）</li>
+<li><strong>How</strong>: Transform the grammar to <strong>eliminate
+Left Recursion</strong>. （转换文法以消除左递归）
+<ul>
+<li>==<strong>Immediate Elimination</strong>: <span class="math inline"><strong>A</strong> → <strong>A</strong><em>α</em>|<em>β</em>   ⇒ <strong>A</strong> → <em>β</em><strong>A</strong><sup><strong>′</strong></sup>, <strong>A</strong><sup><strong>′</strong></sup> → <em>α</em><strong>A</strong><sup><strong>′</strong></sup>|<em>𝝐</em></span>==</li>
+<li>$ _1 | | _m &nbsp;| &nbsp;_1 | | _n &nbsp; (_1 | | _n) , (_1 | | _m) | $</li>
+</ul></li>
+<li><strong>Example</strong>: <img src="image-20.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul>
+<h4 id="left-recursion-elimination-消除左递归">Left Recursion
+Elimination （消除左递归）</h4>
+<ul>
+<li><strong>INPUT</strong>: Grammar G without Cycles or 𝝐-productions
+（无循环或𝝐产生式的文法）
+<ul>
+<li>Cycle: <span class="math inline">$\mathbf{A}
+\overset{+}{\Rightarrow} \mathbf{A}$</span></li>
+<li>𝝐-production: <span class="math inline"><strong>A</strong> → <em>ϵ</em></span></li>
+</ul></li>
+<li><strong>OUTPUT</strong>: Equivalent Grammar <strong>without Left
+Recursions</strong> （没有左递归的等效文法）</li>
+<li><strong>Steps</strong>: <figure class="shiki javascript"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #E06C75">supposing</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">there</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">are</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">the</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">Non</span><span style="color: #56B6C2">-</span><span style="color: #E06C75">terminals</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">with</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">Order</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">A1</span><span style="color: #ABB2BF">, </span><span style="color: #E5C07B">A2</span><span style="color: #ABB2BF">..., </span><span style="color: #E06C75">An</span></span>
+<span class="line"><span style="color: #C678DD">for</span><span style="color: #ABB2BF"> (</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">from</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">1</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">to</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">n</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">for</span><span style="color: #ABB2BF"> (</span><span style="color: #E06C75">j</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">from</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">1</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">to</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">i</span><span style="color: #56B6C2">-</span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">replace</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">each</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">Ai</span><span style="color: #ABB2BF"> → </span><span style="color: #E06C75">Aj𝛾</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">by</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">Ai</span><span style="color: #ABB2BF"> → </span><span style="color: #E06C75">𝛿1𝛾</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">|</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">𝛿2𝛾</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">|</span><span style="color: #ABB2BF"> ... </span><span style="color: #56B6C2">|</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">𝛿𝑘𝛾</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75">where</span><span style="color: #ABB2BF">:</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #E06C75">Aj</span><span style="color: #ABB2BF">  → </span><span style="color: #E06C75">𝛿1</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">|</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">𝛿2</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">|</span><span style="color: #ABB2BF"> ... </span><span style="color: #56B6C2">|</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">𝛿𝑘</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">are</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">all</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">current</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">Aj</span><span style="color: #56B6C2">-</span><span style="color: #E06C75">productions</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E06C75">eliminate</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">the</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">Immediate</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">Left</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">Recursion</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">among</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">the</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">Ai</span><span style="color: #56B6C2">-</span><span style="color: #E06C75">productions</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure></li>
+<li><strong>Example</strong>: <img src="image-21.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul>
+<h3 id="predictive-parsing">Predictive Parsing</h3>
+<ul>
+<li><strong>What</strong>: recursive-descent parsers needing no
+backtracking （不需要回溯的递归下降解析器）
+<ul>
+<li>can be constructed for LL(k) grammar （可以为LL(k)文法构造）
+<ul>
+<li><strong>L</strong>: scanning input <strong>from Left to
+right</strong></li>
+<li><strong>L</strong>: producing a <strong>Leftmost
+derivation</strong></li>
+<li><strong>k</strong>: using <strong>k input symbols</strong> of
+lookahead at each step to make decision</li>
+</ul></li>
+</ul></li>
+<li><strong>Why</strong>: a unique production to apply, or none to use
+(error)</li>
+<li><strong>Example: LL(1)</strong>
+<ul>
+<li>stmt → <strong>i</strong>f (expr) stmt else stmt |
+<strong>w</strong>hile (expr) stmt | <strong>{</strong> stmt_list}</li>
+</ul></li>
+<li><strong>How</strong>: FIRST and FOLLOW
+<ul>
+<li>assist in choosing which production to apply, based on the next
+input symbol （根据下一个输入符号选择应用哪个产生式）</li>
+</ul></li>
+</ul>
+<h4 id="first-and-follow">FIRST and FOLLOW</h4>
+<ul>
+<li><strong>FIRST</strong>: the set of terminals that begin strings
+derived from a non-terminal or a string of grammar symbols.
+（从非终结符或语法符号字符串派生的字符串开始的终结符集合）
+<ul>
+<li><strong>FIRST(𝜶)</strong>: what the first symbol would be for 𝜶</li>
+<li><strong>𝜶</strong>: string of grammar symbols</li>
+<li><strong>return</strong>: set of terminals that begin strings derived
+from 𝜶
+<ul>
+<li>first symbols of strings derived from 𝜶</li>
+</ul></li>
+<li><strong>HOW</strong>：
+<ul>
+<li>if <span class="math inline"><strong>X</strong></span> is a
+terminal, then <span class="math inline"><strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>X</strong><strong>)</strong> = {<strong>X</strong>}</span></li>
+<li>if <span class="math inline"><strong>X</strong></span> is a
+non-terminal, and <span class="math inline"><strong>X</strong> → <strong>Y</strong><sub><strong>1</strong></sub><strong>Y</strong><sub><strong>2</strong></sub>…<strong>Y</strong><sub><strong>k</strong></sub></span>
+<ul>
+<li>add all <strong>non-𝝐</strong> symbols of <span class="math inline"><strong>Y</strong><sub><strong>1</strong></sub></span>
+to <span class="math inline"><strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>X</strong><strong>)</strong></span></li>
+<li>add all <strong>non-𝝐</strong> symbols of <span class="math inline"><strong>Y</strong><sub><strong>2</strong></sub></span>
+to <span class="math inline"><strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>X</strong><strong>)</strong></span>,
+if <span class="math inline"><em>ϵ</em> ∈ <strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>Y</strong><sub><strong>1</strong></sub><strong>)</strong></span></li>
+<li>···</li>
+<li>add all <strong>non-𝝐</strong> symbols of <span class="math inline"><strong>Y</strong><sub><strong>k</strong></sub></span>
+to <span class="math inline"><strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>X</strong><strong>)</strong></span>,
+if <span class="math inline"><em>ϵ</em> ∈ <strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>Y</strong><sub><strong>1</strong></sub><strong>)</strong></span>
+and <span class="math inline"><em>ϵ</em> ∈ <strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>Y</strong><sub><strong>2</strong></sub><strong>)</strong></span>
+and ··· and <span class="math inline"><em>ϵ</em> ∈ <strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>Y</strong><sub><strong>k</strong> <strong>−</strong> <strong>1</strong></sub><strong>)</strong></span></li>
+<li>add <strong>𝝐</strong> to <span class="math inline"><strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>X</strong><strong>)</strong></span>,
+if <span class="math inline"><em>ϵ</em> ∈ <strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>Y</strong><sub><strong>1</strong></sub><strong>)</strong></span>
+and <span class="math inline"><em>ϵ</em> ∈ <strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>Y</strong><sub><strong>2</strong></sub><strong>)</strong></span>
+and ··· and <span class="math inline"><em>ϵ</em> ∈ <strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>Y</strong><sub><strong>k</strong></sub><strong>)</strong></span></li>
+</ul></li>
+</ul></li>
+<li><strong>Example</strong>: <img src="image-22.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul></li>
+<li><strong>FOLLOW</strong>: the set of terminals that can appear
+immediately to the right of a non-terminal in some sentential form.
+（在某些句子形式中，可以出现在非终结符右侧的终结符集合）
+<ul>
+<li><strong>FOLLOW(N)</strong>: what is the next symbol of N</li>
+<li><strong>N</strong>: a non-terminal</li>
+<li><strong>return</strong>: set of terminals can appear immediately
+after N in a sentential form</li>
+<li><strong>HOW</strong>:
+<ul>
+<li>place <strong>$</strong> in <span class="math inline"><strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>S</strong><strong>)</strong></span>
+<ul>
+<li><strong>S</strong>: start symbol</li>
+<li><strong>$</strong>: input right end-marker</li>
+</ul></li>
+<li>for each production <span class="math inline"><strong>M</strong> → <em>α</em><strong>N</strong><em>β</em></span>
+<ul>
+<li>add all symbols in <span class="math inline"><strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>β</strong><strong>)</strong></span>
+to <span class="math inline"><strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>N</strong><strong>)</strong></span>,
+except 𝝐</li>
+<li>if <span class="math inline"><em>ϵ</em> ∈ <strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>β</strong><strong>)</strong></span>,
+add all symbols in <span class="math inline"><strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>M</strong><strong>)</strong></span>
+to <span class="math inline"><strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>N</strong><strong>)</strong></span></li>
+</ul></li>
+<li>for each production <span class="math inline"><strong>M</strong> → <em>α</em><strong>N</strong></span>
+<ul>
+<li>add all symbols in <span class="math inline"><strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>M</strong><strong>)</strong></span>
+to <span class="math inline"><strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>N</strong><strong>)</strong></span></li>
+</ul></li>
+</ul></li>
+<li><strong>Example</strong>: <img src="image-23.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul></li>
+</ul>
+<h4 id="ll1-grammar">LL(1) Grammar</h4>
+<ul>
+<li><strong>What</strong>: Any <span class="math inline"><strong>A</strong> → <strong>α</strong>&nbsp;|&nbsp;<strong>β</strong></span>
+Represents two Distinct Productions （<span class="math inline"><strong>A</strong> → <strong>α</strong>&nbsp;|&nbsp;<strong>β</strong></span>表示两个不同的产生式）
+<ul>
+<li><span class="math inline"><strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>α</strong><strong>)</strong></span>
+and <span class="math inline"><strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>β</strong><strong>)</strong></span>
+are disjoint sets.（二者是互不相交的集合）
+<ul>
+<li>For no terminal <span class="math inline"><strong>a</strong></span>,
+do both <span class="math inline"><strong>α</strong></span> and <span class="math inline"><strong>β</strong></span> derive strings beginning
+with <span class="math inline"><strong>a</strong></span>.
+（二者不会同时派生以<span class="math inline"><strong>a</strong></span>开头的字符串）</li>
+<li>At most one of <span class="math inline"><strong>α</strong></span>
+and <span class="math inline"><strong>β</strong></span> can derive the
+empty string. （至多一个<span class="math inline"><strong>α</strong></span>和<span class="math inline"><strong>β</strong></span>可以派生空字符串）</li>
+</ul></li>
+<li>If <span class="math inline"><strong>ϵ</strong> ∈ <strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>β</strong><strong>)</strong></span>,
+then <span class="math inline"><strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>α</strong><strong>)</strong></span>
+and <span class="math inline"><strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>A</strong><strong>)</strong></span>
+are disjoint sets. （如果<span class="math inline"><strong>ϵ</strong> ∈ <strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>β</strong><strong>)</strong></span>，则<span class="math inline"><strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>α</strong><strong>)</strong></span>和<span class="math inline"><strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>A</strong><strong>)</strong></span>是互不相交的集合）</li>
+</ul></li>
+<li><strong>Why</strong>: Proper Production is Selected by Looking
+<strong>ONLY</strong> at the Next Input Symbol.
+（通过仅查看下一个输入符号来选择适当的产生式）</li>
+<li><strong>How</strong>: By Parsing Table, a Two-Dimensional Array
+<ul>
+<li><span class="math inline"><strong>M</strong><strong>[</strong><strong>A</strong><strong>,</strong> <strong>a</strong><strong>]</strong> = <strong>α</strong></span>,
+when deriving <span class="math inline"><strong>A</strong></span>, apply
+<span class="math inline"><strong>A</strong> → <strong>α</strong></span>
+if coming up with <span class="math inline"><strong>a</strong></span>.
+（当派生<span class="math inline"><strong>A</strong></span>时，如果出现<span class="math inline"><strong>a</strong></span>，则应用<span class="math inline"><strong>A</strong> → <strong>α</strong></span>）</li>
+</ul></li>
+</ul>
+<h4 id="ll1-parsing">LL(1) Parsing</h4>
+<ul>
+<li><strong>Predictive Parsing Table Construction</strong>
+<ul>
+<li><strong>INPUT</strong>: Grammar G.</li>
+<li><strong>OUTPUT</strong>: Parsing Table M.</li>
+<li><strong>STEPS</strong>: For each production <span class="math inline"><strong>A</strong> → <strong>α</strong></span>:
+<ol type="1">
+<li>For each terminal <span class="math inline"><strong>a</strong> ∈ <strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>α</strong><strong>)</strong></span>,
+add <span class="math inline"><strong>A</strong> → <strong>α</strong></span> to
+<span class="math inline"><strong>M</strong><strong>[</strong><strong>A</strong><strong>,</strong> <strong>a</strong><strong>]</strong></span>.</li>
+<li>If <span class="math inline"><strong>ϵ</strong> ∈ <strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>α</strong><strong>)</strong></span>,
+then for each terminal <span class="math inline"><strong>b</strong> ∈ <strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>A</strong><strong>)</strong></span>,
+add <span class="math inline"><strong>A</strong> → <strong>α</strong></span> to
+<span class="math inline"><strong>M</strong><strong>[</strong><strong>A</strong><strong>,</strong> <strong>b</strong><strong>]</strong></span>.</li>
+<li>If <span class="math inline"><strong>ϵ</strong> ∈ <strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>α</strong><strong>)</strong></span>
+and <span class="math inline"><strong>$</strong> ∈ <strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>A</strong><strong>)</strong></span>,
+add <span class="math inline"><strong>A</strong> → <strong>α</strong></span> to
+<span class="math inline"><strong>M</strong><strong>[</strong><strong>A</strong><strong>,</strong> <strong>$</strong><strong>]</strong></span>.</li>
+</ol></li>
+<li><strong>Example</strong>: <img src="image-24.webp" srcset="/img/loading/loading3.gif" lazyload> <img src="image-25.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul></li>
+<li><strong>Implementation</strong>
+<ul>
+<li>Stack-based Method, mimicking a leftmost derivation
+（基于栈的方法，模仿最左派生）</li>
+</ul>
+<img src="image-26.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul>
+<h4 id="left-factoring">Left Factoring</h4>
+<ul>
+<li>When the decision is not clear, defer it until seeing enough
+symbols. （当决策不明确时，推迟到看到足够的符号为止）</li>
+<li><strong>Left-Factored</strong>:
+<ul>
+<li><span class="math inline"><strong>A</strong> → <strong>𝜶</strong><strong>𝜷</strong><sub><strong>1</strong></sub>|<strong>𝜶</strong><strong>𝜷</strong><sub><strong>2</strong></sub>  <em>b</em><em>y</em>  <strong>A</strong> → <strong>𝜶</strong><strong>A</strong><sup><strong>′</strong></sup>, <strong>A</strong><sup><strong>′</strong></sup> → <strong>𝜷</strong><sub><strong>1</strong></sub>|<strong>𝜷</strong><sub><strong>2</strong></sub></span></li>
+</ul></li>
+<li><strong>How</strong>:
+<ul>
+<li>For each non-terminal <span class="math inline"><strong>A</strong></span>, find the longest common
+prefix <span class="math inline"><strong>𝜶</strong></span> of its
+alternatives.</li>
+<li>If <span class="math inline"><strong>𝜶</strong></span> is not empty,
+replace all of the <span class="math inline"><strong>A</strong></span>-productions</li>
+</ul></li>
+<li><strong>Example</strong>:
+<ul>
+<li><span class="math inline"><strong>A</strong> → <strong>𝜶</strong><strong>𝜷</strong><sub><strong>1</strong></sub>|<strong>𝜶</strong><strong>𝜷</strong><sub><strong>2</strong></sub>|...|<strong>𝜶</strong><strong>𝜷</strong><sub><strong>n</strong></sub>|<strong>𝜸</strong>    <em>b</em><em>y</em>    <strong>A</strong> → <strong>𝜶</strong><strong>A</strong><sup><strong>′</strong></sup>|<em>𝜸</em>, <strong>A</strong><sup><strong>′</strong></sup> → <strong>𝜷</strong><sub><strong>1</strong></sub>|<strong>𝜷</strong><sub><strong>2</strong></sub>|...|<strong>𝜷</strong><sub><strong>n</strong></sub></span></li>
+</ul></li>
+</ul>
+<h4 id="non-ll1-grammar">Non-LL(1) Grammar</h4>
+<ul>
+<li>Non-LL(1) Grammars:
+<ul>
+<li>grammars with Left Recursion （左递归的文法）</li>
+<li>grammars not Left Factored （未左因子化的文法）</li>
+<li>grammars with Ambiguity （歧义文法）</li>
+</ul></li>
+<li>Thus, before Predictive Parsing,
+<ul>
+<li><strong>perform Left Factoring</strong> （左因子化）</li>
+<li><strong>eliminate Left Recursion</strong> (prerequisite of the
+elimination?) （消除左递归）</li>
+<li>remove Ambiguity （消除歧义）</li>
+</ul></li>
+</ul>
+<h2 id="bottom-up-parsing">Bottom-Up Parsing</h2>
+<ul>
+<li><strong>What</strong>: the construction of a parse tree beginning at
+the leaves and working up to the root
+（从叶子开始构建解析树，直到根）</li>
+<li><strong>Why</strong>: not all grammars can be made LL(1)</li>
+<li><strong>How</strong>: construct rightmost derivation in the reverse
+order
+<ul>
+<li><strong>Reduction</strong>: “Reversed Derivation”（归约：反向派生）
+<ul>
+<li>from the string to the start symbol （从字符串到起始符号）</li>
+<li>The body of a production is replaced by the non-terminal at its
+header. （用产生式的头部替换产生式的主体）</li>
+</ul></li>
+<li><span class="math inline">$S \overset{rm}{\Rightarrow} \gamma_0
+\overset{rm}{\Rightarrow} \gamma_1 \overset{rm}{\Rightarrow} \dots
+\overset{rm}{\Rightarrow} \gamma_n \overset{rm}{\Rightarrow}
+\omega$</span>
+<ul>
+<li>find the rightmost derivation in the reverse order: “leftmost
+reduction” （找到右侧派生的反向顺序：最左侧归约）</li>
+</ul></li>
+<li>“<strong>L</strong>eft-to-Right, <strong>R</strong>ightmost
+Derivation in Reverse”: <strong>LR Parsing</strong></li>
+</ul></li>
+<li><strong>Example</strong>： <img src="image-27.webp" srcset="/img/loading/loading3.gif" lazyload>
+<ul>
+<li><span class="math inline"><em>E</em> ⇒ <em>T</em> ⇒ <em>T</em> * <em>F</em> ⇒ <em>T</em> * <em>i</em><em>d</em> ⇒ <em>F</em> * <em>i</em><em>d</em> ⇒ <em>i</em><em>d</em> * <em>i</em><em>d</em></span></li>
+</ul></li>
+</ul>
+<h3 id="handles">Handles</h3>
+<ul>
+<li><strong>What</strong>: if <span class="math inline">$\mathbf{S}
+\overset{*}{\Rightarrow} \mathbf{\alpha A \omega}
+\overset{}{\Rightarrow} \mathbf{\alpha \beta \omega}$</span>, then
+production <span class="math inline"><strong>A</strong> <strong>→</strong> <strong>β</strong></span>
+in the position following <span class="math inline"><strong>α</strong></span> is a
+<strong>handle</strong> of <span class="math inline"><strong>α</strong><strong>β</strong><strong>ω</strong></span>.
+<ul>
+<li>a substring that matches the body of a production, representing a
+step of reduction （与产生式的主体匹配的子字符串，表示归约的一步）</li>
+<li>a pair of values: <strong>(production, position)</strong></li>
+</ul></li>
+<li><strong>Why</strong>: handle pruning for bottom-up parsing
+（处理底向上解析的剪枝）
+<ul>
+<li>identify handles and reduce them to the appropriate leftmost
+non-terminals （识别句柄并将其归约到适当的最左非终结符）</li>
+</ul></li>
+<li><strong>How</strong>: by using a stack to keep track of the current
+position in the input string and the corresponding production rules
+（使用栈来跟踪输入字符串中的当前位置和相应的产生式规则）</li>
+<li><strong>Example</strong>： <img src="image-28.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul>
+<h3 id="shift-reduce-parsing-移进归约解析">Shift-Reduce Parsing
+（移进归约解析）</h3>
+<ul>
+<li><strong>How</strong>: Stack + Input Buffer
+<ul>
+<li><strong>Stack</strong>: reduced Grammar Symbols</li>
+<li><strong>Input Buffer</strong>: rest of the String to be parsed</li>
+</ul></li>
+<li><strong>Actions</strong>
+<ul>
+<li><strong>Shift</strong>: move the next symbol onto stack</li>
+<li><strong>Reduce</strong>: replace the handle on the top of stack</li>
+<li><strong>Accept</strong>: announce the success of parsing</li>
+<li><strong>Error</strong>: discover syntax errors, and call for
+recovery</li>
+</ul></li>
+<li><strong>Example</strong>: <img src="image-29.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul>
+<h3 id="operator-precedence-parsing-运算符优先解析">Operator-Precedence
+Parsing （运算符优先解析）</h3>
+<ul>
+<li><strong>What</strong>: a shift-reduce parser handling
+operator-precedence grammar （处理运算符优先文法的移位归约解析器）
+<ul>
+<li>operator-precedence grammar: a subset of LR(1) grammar
+（运算符优先文法：LR(1)文法的一个子集）</li>
+<li>for each Production:
+<ul>
+<li>no 𝝐 in the body （主体中没有空字符）</li>
+<li>no two consecutive non-terminals in the body
+（在主体中没有两个连续的非终结符）</li>
+</ul></li>
+</ul></li>
+<li><strong>Why</strong>: to handle expressions with operator precedence
+and associativity （处理具有运算符优先级和结合性的表达式）</li>
+<li><strong>How</strong>: find handles according precedence
+<ul>
+<li><strong>Precedence</strong> （优先级）
+<ul>
+<li><span class="math inline"><strong>a</strong> &lt; ·<strong>b</strong></span>:
+a’s precedence is lower than b’s</li>
+<li><span class="math inline"><strong>a</strong> = ·<strong>b</strong></span>: …
+is equal to …</li>
+<li><span class="math inline"><strong>a</strong> &gt; ·<strong>b</strong></span>:
+… is higher than …</li>
+</ul></li>
+<li><strong>Precedence Climbing Method</strong> （优先级爬升法）
+<ul>
+<li>scan the input <strong>from Left to Right</strong> until &gt;· is
+encountered</li>
+<li>then, scan <strong>backward</strong> until &lt;· is encountered</li>
+<li>that between &lt;· and &gt;· is the <strong>handle</strong></li>
+</ul></li>
+<li><strong>Implementation with STACK</strong> (栈实现)
+<ul>
+<li>let <span class="math inline"><strong>a</strong></span> be the
+<strong>top Terminal</strong> on the STACK （栈顶终结符）</li>
+<li>let <span class="math inline"><strong>b</strong></span> be the INPUT
+Symbol under processing （正在处理的输入符号）</li>
+<li>if <span class="math inline"><strong>a</strong> &lt; ·<em>o</em><em>r</em> = ·<strong>b</strong></span>,
+<strong>Shift</strong></li>
+<li>else if <span class="math inline"><strong>a</strong> &gt; ·<strong>b</strong></span>,
+<strong>Reduce</strong></li>
+</ul></li>
+</ul></li>
+<li><strong>Example</strong>: <img src="image-30.webp" srcset="/img/loading/loading3.gif" lazyload> <img src="image-31.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul>
+<h3 id="opp-precedence-relation-construction-优先级关系构造">OPP:
+Precedence Relation Construction （优先级关系构造）</h3>
+<h4 id="precedence-relation">Precedence Relation</h4>
+<ul>
+<li>If operator <span class="math inline"><strong>a</strong></span> has
+higher precedence than <span class="math inline"><strong>b</strong></span>
+<ul>
+<li><span class="math inline"><strong>a</strong> &gt; ·<strong>b</strong></span></li>
+<li><span class="math inline"><strong>b</strong> &lt; ·<strong>a</strong></span></li>
+</ul></li>
+<li>If <span class="math inline"><strong>a</strong></span> and <span class="math inline"><strong>b</strong></span> has equal precedence
+<ul>
+<li>if left-associative, then <span class="math inline"><strong>a</strong> &gt; ·<strong>b</strong></span>
+and <span class="math inline"><strong>b</strong> &gt; ·<strong>a</strong></span></li>
+<li>if right-associative, then <span class="math inline"><strong>a</strong> &lt; ·<strong>b</strong></span>
+and <span class="math inline"><strong>b</strong> &lt; ·<strong>a</strong></span></li>
+</ul></li>
+<li>For all operator <span class="math inline"><strong>a</strong></span>
+<ul>
+<li><span class="math inline"><strong>a</strong> &lt; ·<em>i</em><em>d</em>,  <em>i</em><em>d</em> &gt; ·<strong>a</strong></span></li>
+<li><span class="math inline">$ &lt; ·<strong>a</strong>,  <strong>a</strong> &gt; ·$</span></li>
+<li><span class="math inline"><strong>a</strong> &lt; ·(,  ( &lt; ·<strong>a</strong>,  <strong>a</strong> &gt; ·),  ) &gt; ·<strong>a</strong></span></li>
+<li><span class="math inline">( = ·)</span></li>
+</ul></li>
+</ul>
+<h4 id="leading-and-trailing">LEADING and TRAILING</h4>
+<ul>
+<li><strong>LEADING</strong>: the set of symbols that can appear at the
+beginning of a string derived from a non-terminal
+（可以出现在从非终结符派生的字符串开头的符号集合）
+<ul>
+<li><span class="math inline">$\mathbf{LEADING(Q)} = \{\mathbf{Y},
+\mathbf{N} \ | \ \mathbf{Q} \overset{+}{\Rightarrow} \mathbf{Y\delta} \
+or\  \mathbf{Q} \overset{+}{\Rightarrow} \mathbf{N Y \delta}, \mathbf{N}
+\in \mathbf{V_n}, \mathbf{Y} \in \mathbf{V_t}\}$</span></li>
+<li>for <span class="math inline"><strong>Q</strong> → <strong>Y</strong><strong>δ</strong></span>
+or <span class="math inline"><strong>Q</strong> → <strong>N</strong><strong>Y</strong><strong>δ</strong></span>,
+we have:
+<ul>
+<li><span class="math inline"><strong>Y</strong>, <strong>N</strong> ∈ <strong>L</strong><strong>E</strong><strong>A</strong><strong>D</strong><strong>I</strong><strong>N</strong><strong>G</strong><strong>(</strong><strong>Q</strong><strong>)</strong></span></li>
+<li><span class="math inline"><strong>L</strong><strong>E</strong><strong>A</strong><strong>D</strong><strong>I</strong><strong>N</strong><strong>G</strong><strong>(</strong><strong>N</strong><strong>)</strong> ⊆ <strong>L</strong><strong>E</strong><strong>A</strong><strong>D</strong><strong>I</strong><strong>N</strong><strong>G</strong><strong>(</strong><strong>Q</strong><strong>)</strong></span></li>
+</ul></li>
+</ul></li>
+<li><strong>TRAILING</strong>: the set of symbols that can appear at the
+end of a string derived from a non-terminal
+（可以出现在从非终结符派生的字符串末尾的符号集合）
+<ul>
+<li><span class="math inline">$\mathbf{TRAILING(P)} = \{\mathbf{X},
+\mathbf{N} \ | \ \mathbf{P} \overset{+}{\Rightarrow} \mu \mathbf{X} \ or
+\ \mathbf{P} \overset{+}{\Rightarrow} \mu \mathbf{X} \mathbf{N},
+\mathbf{N} \in \mathbf{V_n}, \mathbf{X} \in \mathbf{V_t}\}$</span></li>
+<li>for <span class="math inline"><strong>P</strong> → <em>μ</em><strong>X</strong></span>
+or <span class="math inline"><strong>P</strong> → <em>μ</em><strong>X</strong><strong>N</strong></span>,
+we have:
+<ul>
+<li><span class="math inline"><strong>X</strong>, <strong>N</strong> ∈ <strong>T</strong><strong>R</strong><strong>A</strong><strong>I</strong><strong>L</strong><strong>I</strong><strong>N</strong><strong>G</strong><strong>(</strong><strong>P</strong><strong>)</strong></span></li>
+<li><span class="math inline"><strong>T</strong><strong>R</strong><strong>A</strong><strong>I</strong><strong>L</strong><strong>I</strong><strong>N</strong><strong>G</strong><strong>(</strong><strong>N</strong><strong>)</strong> ⊆ <strong>T</strong><strong>R</strong><strong>A</strong><strong>I</strong><strong>L</strong><strong>I</strong><strong>N</strong><strong>G</strong><strong>(</strong><strong>P</strong><strong>)</strong></span></li>
+</ul></li>
+</ul></li>
+<li><strong>Example</strong>: <img src="image-32.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul>
+<h4 id="constructing-precedence-relations">Constructing Precedence
+Relations</h4>
+<ul>
+<li><span class="math display"><strong>X</strong> = ·<strong>Y</strong></span>
+<ul>
+<li>if there is <span class="math inline"><strong>A</strong> → <strong>α</strong><strong>X</strong><strong>Y</strong><strong>β</strong></span>,
+where <span class="math inline"><strong>X</strong>, <strong>Y</strong> ∈ <strong>V</strong></span>,
+<span class="math inline"><strong>α</strong>, <strong>β</strong> ∈ <strong>V</strong><sup><strong>*</strong></sup></span></li>
+<li>or, there is <span class="math inline"><strong>A</strong> → <strong>α</strong><strong>X</strong><strong>N</strong><strong>Y</strong><strong>β</strong></span>,
+where <span class="math inline"><strong>N</strong> ∈ <strong>V</strong><sub><strong>n</strong></sub> ∪ {<strong>ϵ</strong>}</span>,
+<span class="math inline"><strong>X</strong>, <strong>Y</strong> ∈ <strong>V</strong><sub><strong>t</strong></sub></span>
+<ul>
+<li>adjacent symbols have equal precedence （相邻符号具有相等的优先级）
+<ul>
+<li>at least one of them is a terminal （至少有一个是终结符）</li>
+</ul></li>
+<li>e.g., <span class="math inline"><strong>E</strong> + <strong>T</strong></span>,
+<span class="math inline"><strong>T</strong> * <strong>F</strong></span>,
+<span class="math inline"><strong>E</strong>+ = <strong>T</strong></span></li>
+</ul></li>
+</ul></li>
+<li><span class="math display"><strong>X</strong> &lt; ·<strong>Y</strong></span>
+<ul>
+<li>if there is <span class="math inline"><strong>A</strong> → <strong>α</strong><strong>X</strong><strong>Q</strong><strong>β</strong></span>,
+and <span class="math inline">$\mathbf{Q} \overset{+}{\Rightarrow}
+\mathbf{Y \delta}$</span>, where <span class="math inline"><strong>X</strong>, <strong>Y</strong> ∈ <strong>V</strong></span>,
+<span class="math inline"><strong>Q</strong> ∈ <strong>V</strong><sub><strong>n</strong></sub></span>,
+<span class="math inline"><strong>α</strong>, <strong>β</strong>, <strong>δ</strong> ∈ <strong>V</strong><sup><strong>*</strong></sup></span></li>
+<li>or, there is <span class="math inline"><strong>A</strong> → <strong>α</strong><strong>X</strong><strong>Q</strong><strong>β</strong></span>,
+and <span class="math inline">$\mathbf{Q} \overset{+}{\Rightarrow}
+\mathbf{N Y \delta}$</span>, where <span class="math inline"><strong>N</strong> ∈ <strong>V</strong><sub><strong>n</strong></sub> ∪ {<strong>ϵ</strong>}</span>,
+<span class="math inline"><strong>X</strong>, <strong>Y</strong> ∈ <strong>V</strong><sub><strong>t</strong></sub></span>
+<ul>
+<li><span class="math inline">$\mathbf{LEADING(Q)} = \{\mathbf{Y},
+\mathbf{N} \ | \ \mathbf{Q} \overset{+}{\Rightarrow} \mathbf{Y\delta} \
+or\  \mathbf{Q} \overset{+}{\Rightarrow} \mathbf{N Y \delta}\}$</span>
+<ul>
+<li>for <span class="math inline"><strong>A</strong> → <strong>α</strong><strong>X</strong><strong>Q</strong><strong>β</strong></span>,
+we have <span class="math inline"><strong>X</strong></span> &lt;·
+Symbols in <span class="math inline"><strong>L</strong><strong>E</strong><strong>A</strong><strong>D</strong><strong>I</strong><strong>N</strong><strong>G</strong><strong>(</strong><strong>Q</strong><strong>)</strong></span></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><span class="math display"><strong>X</strong> &gt; ·<strong>Y</strong></span>
+<ul>
+<li>if there is <span class="math inline"><strong>A</strong> → <em>α</em><strong>P</strong><strong>Y</strong><em>β</em></span>,
+and <span class="math inline">$\mathbf{P} \overset{+}{\Rightarrow} \mu
+\mathbf{X}$</span>, where <span class="math inline"><strong>X</strong>, <strong>Y</strong> ∈ <strong>V</strong></span>,
+<span class="math inline"><strong>P</strong> ∈ <strong>V</strong><sub><strong>n</strong></sub></span>,
+<span class="math inline"><em>α</em>, <em>β</em>, <em>μ</em> ∈ <strong>V</strong><sup>*</sup></span></li>
+<li>or, there is <span class="math inline"><strong>A</strong> → <em>α</em><strong>P</strong><strong>Y</strong><em>β</em></span>,
+and <span class="math inline">$\mathbf{P} \overset{+}{\Rightarrow} \mu
+\mathbf{X} \mathbf{N}$</span>, where <span class="math inline"><strong>N</strong> ∈ <strong>V</strong><sub><strong>n</strong></sub> ∪ {<em>ϵ</em>}</span>,
+<span class="math inline"><strong>P</strong> ∈ <strong>V</strong><sub><strong>n</strong></sub></span>,
+<span class="math inline"><strong>X</strong>, <strong>Y</strong> ∈ <strong>V</strong><sub><strong>T</strong></sub></span></li>
+<li><span class="math inline">$\mathbf{TRAILING(P)} = \{\mathbf{X},
+\mathbf{N} \ | \ \mathbf{P} \overset{+}{\Rightarrow} \mu \mathbf{X} \
+\text{or} \ \mathbf{P} \overset{+}{\Rightarrow} \mu \mathbf{X}
+\mathbf{N}\}$</span>
+<ul>
+<li>for <span class="math inline"><strong>A</strong> → <em>α</em><strong>P</strong><strong>Y</strong><em>β</em></span>,
+we have Symbols in <span class="math inline"><strong>T</strong><strong>R</strong><strong>A</strong><strong>I</strong><strong>L</strong><strong>I</strong><strong>N</strong><strong>G</strong><strong>(</strong><strong>P</strong><strong>)</strong> &gt; ·<strong>Y</strong></span></li>
+</ul></li>
+</ul></li>
+</ul>
+<h4 id="precedence-table">Precedence Table</h4>
+<ul>
+<li><strong>Steps</strong>：
+<ul>
+<li>for each production <span class="math inline"><strong>A</strong> → <strong>X</strong><sub><strong>1</strong></sub><strong>X</strong><sub><strong>2</strong></sub><strong>…</strong><strong>X</strong><sub><strong>k</strong></sub></span>:
+<ul>
+<li>for each <span class="math inline"><strong>X</strong></span>
+<ul>
+<li>if <span class="math inline"><strong>X</strong><sub><strong>i</strong></sub> ∈ <strong>V</strong><sub><strong>t</strong></sub></span>
+and <span class="math inline"><strong>X</strong><sub><strong>i</strong> <strong>+</strong> <strong>1</strong></sub> ∈ <strong>V</strong><sub><strong>t</strong></sub></span>,
+then <span class="math inline"><strong>X</strong><sub><strong>i</strong></sub> = ·<strong>X</strong><sub><strong>i</strong> <strong>+</strong> <strong>1</strong></sub></span></li>
+<li>if <span class="math inline"><strong>X</strong><sub><strong>i</strong></sub> ∈ <strong>V</strong><sub><strong>t</strong></sub></span>
+and <span class="math inline"><strong>X</strong><sub><strong>i</strong> <strong>+</strong> <strong>2</strong></sub> ∈ <strong>V</strong><sub><strong>t</strong></sub></span>
+and <span class="math inline"><strong>X</strong><sub><strong>i</strong> <strong>+</strong> <strong>1</strong></sub> ∈ <strong>V</strong><sub><strong>n</strong></sub></span>,
+then <span class="math inline"><strong>X</strong><sub><strong>i</strong></sub> = ·<strong>X</strong><sub><strong>i</strong> <strong>+</strong> <strong>2</strong></sub></span></li>
+<li>if <span class="math inline"><strong>X</strong><sub><strong>i</strong></sub> ∈ <strong>V</strong><sub><strong>t</strong></sub></span>
+and <span class="math inline"><strong>X</strong><sub><strong>i</strong> <strong>+</strong> <strong>1</strong></sub> ∈ <strong>V</strong><sub><strong>n</strong></sub></span>,
+then <span class="math inline"><strong>X</strong><sub><strong>i</strong></sub> &lt; ·<strong>L</strong><strong>E</strong><strong>A</strong><strong>D</strong><strong>I</strong><strong>N</strong><strong>G</strong><strong>(</strong><strong>X</strong><sub><strong>i</strong> <strong>+</strong> <strong>1</strong></sub><strong>)</strong></span></li>
+<li>if <span class="math inline"><strong>X</strong><sub><strong>i</strong></sub> ∈ <strong>V</strong><sub><strong>n</strong></sub></span>
+and <span class="math inline"><strong>X</strong><sub><strong>i</strong> <strong>+</strong> <strong>1</strong></sub> ∈ <strong>V</strong><sub><strong>t</strong></sub></span>,
+then <span class="math inline"><strong>X</strong><sub><strong>i</strong></sub> = ·<strong>X</strong><sub><strong>i</strong> <strong>+</strong> <strong>1</strong></sub></span>
+and <span class="math inline"><strong>T</strong><strong>R</strong><strong>A</strong><strong>I</strong><strong>L</strong><strong>I</strong><strong>N</strong><strong>G</strong><strong>(</strong><strong>X</strong><sub><strong>i</strong></sub><strong>)</strong> &gt; ·<strong>X</strong><sub><strong>i</strong> <strong>+</strong> <strong>1</strong></sub></span></li>
+</ul></li>
+</ul></li>
+<li>for the Start Symbol <span class="math inline"><strong>S</strong></span>:
+<ul>
+<li><span class="math inline">$ &lt; ·<strong>L</strong><strong>E</strong><strong>A</strong><strong>D</strong><strong>I</strong><strong>N</strong><strong>G</strong><strong>(</strong><strong>S</strong><strong>)</strong></span></li>
+<li><span class="math inline"><strong>T</strong><strong>R</strong><strong>A</strong><strong>I</strong><strong>L</strong><strong>I</strong><strong>N</strong><strong>G</strong><strong>(</strong><strong>S</strong><strong>)</strong> &gt; ·$</span></li>
+</ul></li>
+</ul></li>
+<li><strong>Example</strong>: <img src="image-33.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul>
+<h3 id="opp-some-more">OPP: Some More</h3>
+<ul>
+<li>Unary Minus vs.&nbsp;Binary Minus （一元负号与二元负号）</li>
+<li>Leave It to Scanners （留给扫描器）
+<ul>
+<li>return two different tokens for the two
+（返回两个不同的tokens）</li>
+<li>lookahead is required （需要向前看）</li>
+</ul></li>
+<li>OPPs are not used often in practice （运算符优先级在实践中不常用）
+<ul>
+<li>limited scenarios and applications （有限的场景和应用）</li>
+<li>but, simple -&gt; part of a complex parsing system
+（但简单，是复杂解析系统的一部分）</li>
+</ul></li>
+</ul>
+<h2 id="lr-parsing">LR Parsing</h2>
+<ul>
+<li><strong>What</strong>:
+<ul>
+<li>left-to-right scanning</li>
+<li>rightmost derivation in reverse</li>
+</ul></li>
+<li><strong>Why</strong>
+<ul>
+<li>can recognize virtually all programming languages of context-free
+grammars （几乎可以识别所有上下文无关文法的编程语言）</li>
+<li>is the most general non-backtracking shift-reduce parsing method
+known （已知的最通用的非回溯移位归约解析方法）
+<ul>
+<li>yet is still efficient （仍然高效）</li>
+</ul></li>
+<li>can detect a syntax error as soon as possible
+（尽快检测语法错误）</li>
+<li>is a proper superset of the predictive parsing
+（是预测解析的适当超集）</li>
+</ul></li>
+</ul>
+<h3 id="lr0-parsing">LR(0) Parsing</h3>
+<h4 id="items-and-the-lr0-automaton">Items and the LR(0) Automaton</h4>
+<ul>
+<li><strong>Problem</strong>: when to shift and when to reduce?
+<ul>
+<li>how to decide whether that on the top of the stack is a handle?
+（如何判断栈顶的句柄？）</li>
+</ul></li>
+<li><strong>LR(0) Items</strong>: a production with a dot at some
+position in its body （LR(0) 项目：在其主体的某个位置有一个点的产生式）
+<ul>
+<li>prefixes of a valid production, indicating how much we have seen at
+the point （有效产生式的前缀，指示我们在该点上已经看到多少）</li>
+<li>e.g.&nbsp;<span class="math inline"><strong>A</strong> → <strong>X</strong><strong>Y</strong><strong>Z</strong></span>
+yields four items（例如<span class="math inline"><strong>A</strong> → <strong>X</strong><strong>Y</strong><strong>Z</strong></span>产生四个项）：
+<ul>
+<li><span class="math inline"><strong>A</strong> → ⋅<strong>X</strong><strong>Y</strong><strong>Z</strong></span>:
+hope to see <span class="math inline"><strong>X</strong><strong>Y</strong><strong>Z</strong></span>
+next on the input</li>
+<li><span class="math inline"><strong>A</strong> → <strong>X</strong> ⋅ <strong>Y</strong><strong>Z</strong></span>:
+hope to see <span class="math inline"><strong>Y</strong><strong>Z</strong></span> next on
+the input</li>
+<li><span class="math inline"><strong>A</strong> → <strong>X</strong><strong>Y</strong> ⋅ <strong>Z</strong></span>:
+hope to see <span class="math inline"><strong>Z</strong></span> next on
+the input</li>
+<li><span class="math inline"><strong>A</strong> → <strong>X</strong><strong>Y</strong><strong>Z</strong>⋅</span>:
+hope to see nothing next on the input</li>
+</ul></li>
+<li>kind of state + transition → automaton</li>
+</ul></li>
+<li><strong>Kernel and Non-Kernel Items</strong>
+<ul>
+<li><strong>Kernel Items</strong>: the Initial Item + those whose dots
+are not at the left</li>
+<li><strong>Non-Kernel Items</strong>: Otherwise</li>
+</ul></li>
+<li><strong>LR(0) Automaton</strong>: <strong>CLOSURE + GOTO</strong>
+<ul>
+<li><strong>CLOSURE</strong>: set of <strong>Items</strong>
+（项集的闭包）</li>
+<li><strong>GOTO</strong>: the <strong>Transition Function</strong>
+（转换函数）</li>
+</ul></li>
+</ul>
+<h4 id="closure-and-goto">CLOSURE and GOTO</h4>
+<ul>
+<li><span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>I</strong><strong>)</strong></span>:
+<ul>
+<li><span class="math inline"><strong>I</strong></span>: a set of Items
+for a grammar <span class="math inline"><strong>G</strong></span>（文法<span class="math inline"><strong>G</strong></span>的项集）</li>
+<li>construct by two rules:
+<ol type="1">
+<li>every Item in <span class="math inline"><strong>I</strong></span> is
+added in to <span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>I</strong><strong>)</strong></span>
+（<span class="math inline"><strong>I</strong></span>中的每个项目都添加到<span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>I</strong><strong>)</strong></span>中）</li>
+<li>if <span class="math inline"><strong>A</strong> → <strong>α</strong> ⋅ <strong>B</strong><strong>β</strong></span>
+is in <span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>I</strong><strong>)</strong></span>
+and <span class="math inline"><strong>B</strong> → <strong>γ</strong></span> is a
+production of <span class="math inline"><strong>G</strong></span>, then
+add <span class="math inline"><strong>B</strong> → ⋅<strong>γ</strong></span> to
+<span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>I</strong><strong>)</strong></span>
+（如果<span class="math inline"><strong>A</strong> → <strong>α</strong> ⋅ <strong>B</strong><strong>β</strong></span>在<span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>I</strong><strong>)</strong></span>中，并且<span class="math inline"><strong>B</strong> → <strong>γ</strong></span>是<span class="math inline"><strong>G</strong></span>的一个产生式，则将<span class="math inline"><strong>B</strong> → ⋅<strong>γ</strong></span>添加到<span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>I</strong><strong>)</strong></span>中）</li>
+</ol></li>
+<li><strong>Example</strong>: <img src="image-34.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul></li>
+<li><span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong><strong>(</strong><strong>I</strong><strong>,</strong> <strong>X</strong><strong>)</strong></span>:
+<ul>
+<li><span class="math inline"><strong>I</strong></span>: a set of Items
+for a grammar <span class="math inline"><strong>G</strong></span>
+（文法<span class="math inline"><strong>G</strong></span>的项集）</li>
+<li><span class="math inline"><strong>X</strong></span>: a grammar
+symbol （文法符号）</li>
+<li>the closure of the set of items [<span class="math inline"><strong>A</strong> → <strong>α</strong><strong>X</strong> ⋅ <strong>β</strong></span>]
+such that [<span class="math inline"><strong>A</strong> → <strong>α</strong> ⋅ <strong>X</strong><strong>β</strong></span>]
+is in <span class="math inline"><strong>I</strong></span> （<span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong><strong>(</strong><strong>I</strong><strong>,</strong> <strong>X</strong><strong>)</strong></span>是<span class="math inline"><strong>I</strong></span>中所有形如[<span class="math inline"><strong>A</strong> → <strong>α</strong> ⋅ <strong>X</strong><strong>β</strong></span>]的项所对应的项[<span class="math inline"><strong>A</strong> → <strong>α</strong><strong>X</strong> ⋅ <strong>β</strong></span>]的集合的闭包）
+<ul>
+<li>the transition from the state for <span class="math inline"><strong>I</strong></span> under input <span class="math inline"><strong>X</strong></span> （在输入<span class="math inline"><strong>X</strong></span>下，<span class="math inline"><strong>I</strong></span>的状态转换）</li>
+</ul></li>
+<li>construct by
+<ol type="1">
+<li>for each Item <span class="math inline"><strong>A</strong> → <strong>α</strong> ⋅ <strong>X</strong><strong>β</strong></span>
+in <span class="math inline"><strong>I</strong></span></li>
+<li>then every Item in <span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>A</strong> <strong>→</strong> <strong>α</strong><strong>X</strong> <strong>⋅</strong> <strong>β</strong><strong>)</strong></span>
+is added to <span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong><strong>(</strong><strong>I</strong><strong>,</strong> <strong>X</strong><strong>)</strong></span></li>
+</ol></li>
+<li><strong>Example</strong>: <img src="image-35.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul></li>
+</ul>
+<h4 id="automaton-construction">Automaton Construction</h4>
+<ul>
+<li><strong>INPUT</strong>: a grammar <span class="math inline"><strong>G</strong></span></li>
+<li><strong>OUTPUT</strong>: a LR(0) automaton</li>
+<li><strong>Construction</strong>:
+<ol type="1">
+<li>augment <span class="math inline"><strong>G</strong></span> to <span class="math inline"><strong>G</strong><sup><strong>′</strong></sup></span>
+by adding a new start symbol <span class="math inline"><strong>S</strong><sup><strong>′</strong></sup></span>
+and production <span class="math inline"><strong>S</strong><sup><strong>′</strong></sup> → <strong>S</strong></span>
+（通过添加新的起始符号<span class="math inline"><strong>S</strong><sup><strong>′</strong></sup></span>和产生式<span class="math inline"><strong>S</strong><sup><strong>′</strong></sup> → <strong>S</strong></span>扩展文法<span class="math inline"><strong>G</strong></span>至<span class="math inline"><strong>G</strong><sup><strong>′</strong></sup></span>）</li>
+<li><span class="math inline"><strong>C</strong></span>:= {<span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>S</strong><sup><strong>′</strong></sup> <strong>→</strong> <strong>⋅</strong><strong>S</strong><strong>)</strong></span>}
+（先求<span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>S</strong><sup><strong>′</strong></sup> <strong>→</strong> <strong>⋅</strong><strong>S</strong><strong>)</strong></span>，作为闭包的集合<span class="math inline"><strong>C</strong></span>中的第一个闭包）</li>
+<li>repeat:
+<ul>
+<li>for each Item <span class="math inline"><strong>I</strong></span> in
+<span class="math inline"><strong>C</strong></span> and each grammar
+symbol <span class="math inline"><strong>X</strong></span> in <span class="math inline"><strong>G</strong><sup><strong>′</strong></sup></span>
+（对<span class="math inline"><strong>C</strong></span>中每个项目<span class="math inline"><strong>I</strong></span>和<span class="math inline"><strong>G</strong><sup><strong>′</strong></sup></span>中的每个文法符号<span class="math inline"><strong>X</strong></span>）
+<ul>
+<li>if <span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong><strong>(</strong><strong>I</strong><strong>,</strong> <strong>X</strong><strong>)</strong></span>
+is not empty and not in <span class="math inline"><strong>C</strong></span> （如果<span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong><strong>(</strong><strong>I</strong><strong>,</strong> <strong>X</strong><strong>)</strong></span>不为空且不在<span class="math inline"><strong>C</strong></span>中，注意<span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong><strong>(</strong><strong>I</strong><strong>,</strong> <strong>X</strong><strong>)</strong></span>是项集<span class="math inline"><strong>I</strong></span>在输入符号<span class="math inline"><strong>X</strong></span>下的转换的闭包）
+<ul>
+<li>add <span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong><strong>(</strong><strong>I</strong><strong>,</strong> <strong>X</strong><strong>)</strong></span>
+to <span class="math inline"><strong>C</strong></span></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>until no new Items are added to <span class="math inline"><strong>C</strong></span></li>
+</ol></li>
+<li><strong>Example</strong>: <img src="image-36.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul>
+<h4 id="parsing-table-construction">Parsing Table Construction</h4>
+<ul>
+<li><strong>LR(0) Parsing Table <span class="math inline">𝕋</span></strong>:
+<ul>
+<li><strong>Rows</strong>: <strong>states</strong></li>
+<li><strong>Columns</strong>: <strong>grammar symbols</strong>
+<ul>
+<li><strong>terminals</strong> for <span class="math inline"><strong>S</strong><strong>H</strong><strong>I</strong><strong>F</strong><strong>T</strong></span>
+and <span class="math inline"><strong>R</strong><strong>E</strong><strong>D</strong><strong>U</strong><strong>C</strong><strong>E</strong></span>
+actions</li>
+<li><strong>non-terminals</strong> for <span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong></span>
+actions</li>
+</ul></li>
+<li><strong>Construction</strong>: each edge <span class="math inline"><strong>X</strong></span>: <span class="math inline">(<em>s</em><sub><em>m</em></sub>, <em>s</em><sub><em>n</em></sub>)</span>
+（对于每条边<span class="math inline"><strong>X</strong></span>，<span class="math inline">(<em>s</em><sub><em>m</em></sub>, <em>s</em><sub><em>n</em></sub>)</span>为其起始和终止状态，X为文法符号）
+<ul>
+<li>if <span class="math inline"><strong>X</strong></span> is a
+<strong>terminal</strong> <span class="math inline"><strong>a</strong></span>, then <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, <em>a</em>] = <strong>S</strong><strong>H</strong><strong>I</strong><strong>F</strong><strong>T</strong>&nbsp;<em>n</em></span>
+（记作s n）</li>
+<li>if <span class="math inline"><strong>X</strong></span> is a
+<strong>non-terminal</strong> <span class="math inline"><strong>A</strong></span>, then <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, <em>A</em>] = <strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong>&nbsp;<em>n</em></span>
+（记作n）</li>
+<li>if <span class="math inline"><strong>A</strong> → <strong>β</strong>⋅</span> is
+in <span class="math inline"><em>s</em><sub><em>m</em></sub></span>,
+then for each <strong>terminal</strong> <span class="math inline"><strong>a</strong></span>, <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, <em>a</em>] = <strong>R</strong><strong>E</strong><strong>D</strong><strong>U</strong><strong>C</strong><strong>E</strong>&nbsp;<strong>A</strong> → <strong>β</strong></span>
+（记作r n，其中n是产生式的编号，用罗马数字表示）</li>
+<li>if <span class="math inline"><strong>S</strong><sup><strong>′</strong></sup> → <strong>S</strong>⋅</span>
+is in <span class="math inline"><em>s</em><sub><em>m</em></sub></span>,
+then for each <strong>terminal</strong> <span class="math inline"><strong>a</strong></span>, <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, <em>a</em>] = <strong>A</strong><strong>C</strong><strong>C</strong><strong>E</strong><strong>P</strong><strong>T</strong></span>
+（记作a/acc）</li>
+</ul></li>
+<li><img src="image-37.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul></li>
+<li><strong>Example</strong>: <img src="image-38.webp" srcset="/img/loading/loading3.gif" lazyload> &gt;
+注：在上面的例子中，状态1、2、9均存在移进-归约冲突，因此不属于LR(0)文法。</li>
+</ul>
+<h4 id="alogrithm-and-implementation-算法与实现">Alogrithm and
+Implementation （算法与实现）</h4>
+<ul>
+<li><p><strong>INPUT</strong>: an input string <span class="math inline"><strong>ω</strong></span> and an LR-parsing table
+<span class="math inline">𝕋</span> for a grammar <span class="math inline"><strong>G</strong></span></p></li>
+<li><p><strong>OUTPUT</strong>: if <span class="math inline"><strong>ω</strong> ∈ <strong>L</strong><strong>(</strong><strong>G</strong><strong>)</strong></span>,
+the reduction steps of a bottom-up parse for <span class="math inline"><strong>ω</strong></span></p></li>
+<li><p><strong>STEPS</strong>: </p><figure class="shiki java"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #E06C75">let a be the first symbol of 𝜔$ </span><span style="color: #7F848E; font-style: italic">//设a是输入字符串𝜔$的第一个符号</span></span>
+<span class="line"><span style="color: #E06C75">push state </span><span style="color: #D19A66">0</span><span style="color: #E06C75"> onto the stack </span><span style="color: #7F848E; font-style: italic">//将状态0推入栈中</span></span>
+<span class="line"><span style="color: #C678DD">while</span><span style="color: #E06C75"> (</span><span style="color: #D19A66">1</span><span style="color: #E06C75">) {</span></span>
+<span class="line"><span style="color: #E06C75">    let s be the state on top of the stack </span><span style="color: #7F848E; font-style: italic">//设s是栈顶的状态</span></span>
+<span class="line"><span style="color: #E06C75">    </span><span style="color: #C678DD">if</span><span style="color: #E06C75"> (</span><span style="color: #E5C07B">ACTION</span><span style="color: #E06C75">[s</span><span style="color: #ABB2BF">,</span><span style="color: #E06C75"> a] </span><span style="color: #56B6C2">=</span><span style="color: #E06C75"> shift t) { </span><span style="color: #7F848E; font-style: italic">//如果ACTION[s, a] = shift t</span></span>
+<span class="line"><span style="color: #E06C75">        push t onto the stack </span><span style="color: #7F848E; font-style: italic">//将t推入栈中</span></span>
+<span class="line"><span style="color: #E06C75">        let a be the next input symbol </span><span style="color: #7F848E; font-style: italic">//设a是下一个输入符号</span></span>
+<span class="line"><span style="color: #E06C75">    }</span></span>
+<span class="line"><span style="color: #E06C75">    </span><span style="color: #C678DD">else</span><span style="color: #E06C75"> </span><span style="color: #C678DD">if</span><span style="color: #E06C75"> (</span><span style="color: #E5C07B">ACTION</span><span style="color: #E06C75">[s</span><span style="color: #ABB2BF">,</span><span style="color: #E06C75"> a] </span><span style="color: #56B6C2">=</span><span style="color: #E06C75"> reduce A→𝛽) { </span><span style="color: #7F848E; font-style: italic">//如果ACTION[s, a] = reduce A→𝛽</span></span>
+<span class="line"><span style="color: #E06C75">        pop </span><span style="color: #56B6C2">|</span><span style="color: #E06C75">𝛽</span><span style="color: #56B6C2">|</span><span style="color: #E06C75"> symbols off the stack </span><span style="color: #7F848E; font-style: italic">//从栈中弹出|𝛽|（𝛽包含的符号数）个状态</span></span>
+<span class="line"><span style="color: #E06C75">        let t be the top of the stack now </span><span style="color: #7F848E; font-style: italic">//设t是栈顶的状态</span></span>
+<span class="line"><span style="color: #E06C75">        push </span><span style="color: #E5C07B">GOTO</span><span style="color: #E06C75">[t</span><span style="color: #ABB2BF">,</span><span style="color: #E06C75"> A] onto the stack </span><span style="color: #7F848E; font-style: italic">//将GOTO[t, A]推入栈中</span></span>
+<span class="line"><span style="color: #E06C75">    }</span></span>
+<span class="line"><span style="color: #E06C75">    </span><span style="color: #C678DD">else</span><span style="color: #E06C75"> </span><span style="color: #C678DD">if</span><span style="color: #E06C75"> (</span><span style="color: #E5C07B">ACTION</span><span style="color: #E06C75">[s</span><span style="color: #ABB2BF">,</span><span style="color: #E06C75"> a] </span><span style="color: #56B6C2">=</span><span style="color: #E06C75"> accept) </span><span style="color: #C678DD">break</span><span style="color: #E06C75"> </span><span style="color: #7F848E; font-style: italic">//如果ACTION[s, a] = accept，则结束</span></span>
+<span class="line"><span style="color: #E06C75">    </span><span style="color: #C678DD">else</span><span style="color: #E06C75"> call error</span><span style="color: #56B6C2">-</span><span style="color: #E06C75">handling routine</span></span>
+<span class="line"><span style="color: #E06C75">}</span></span></code></pre></div></div></figure><p></p></li>
+<li><p><strong>Example</strong>: <img src="image-39.webp" srcset="/img/loading/loading3.gif" lazyload></p></li>
+</ul>
+<h4 id="lr0-conflicts">LR(0) Conflicts</h4>
+<ul>
+<li><strong>Reduce-Reduce Conflicts</strong>:
+<ul>
+<li>state has two reduce items</li>
+<li>e.g.&nbsp;<span class="math inline"><strong>A</strong> → <strong>α</strong>⋅</span> and
+<span class="math inline"><strong>B</strong> → <strong>β</strong>⋅</span></li>
+</ul></li>
+<li><strong>Shift-Reduce Conflicts</strong>:
+<ul>
+<li>state has a reduce item and a shift item</li>
+<li>e.g.&nbsp;<span class="math inline"><strong>A</strong> → <strong>α</strong> ⋅ <strong>k</strong><strong>γ</strong></span>
+and <span class="math inline"><strong>B</strong> → <strong>β</strong>⋅</span></li>
+</ul></li>
+<li>To avoid conflicts: <strong>SLR(1) Parsing</strong></li>
+</ul>
+<h3 id="slr1-parsing">SLR(1) Parsing</h3>
+<h4 id="parsing-table-construction-1">Parsing Table Construction</h4>
+<ul>
+<li><strong>LR(0) Parsing Table</strong> <span class="math inline">𝕋</span> <span class="math inline">⇒</span>
+<strong>SLR(1) Parsing Table</strong> <span class="math inline">𝕋</span>
+<ul>
+<li><strong>Rows</strong>: <strong>states</strong></li>
+<li><strong>Columns</strong>: <strong>grammar symbols</strong>
+<ul>
+<li><strong>terminals</strong> for <span class="math inline"><strong>S</strong><strong>H</strong><strong>I</strong><strong>F</strong><strong>T</strong></span>
+and <span class="math inline"><strong>R</strong><strong>E</strong><strong>D</strong><strong>U</strong><strong>C</strong><strong>E</strong></span>
+actions</li>
+<li><strong>non-terminals</strong> for <span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong></span>
+actions</li>
+</ul></li>
+<li><strong>Construction</strong>: each edge <span class="math inline"><strong>X</strong></span>: <span class="math inline">(<em>s</em><sub><em>m</em></sub>, <em>s</em><sub><em>n</em></sub>)</span>
+<ul>
+<li>if <span class="math inline"><strong>X</strong></span> is a
+<strong>terminal</strong> <span class="math inline"><strong>a</strong></span>, then <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, <em>a</em>] = <strong>S</strong><strong>H</strong><strong>I</strong><strong>F</strong><strong>T</strong>&nbsp;<em>n</em></span></li>
+<li>if <span class="math inline"><strong>X</strong></span> is a
+<strong>non-terminal</strong> <span class="math inline"><strong>A</strong></span>, then <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, <em>A</em>] = <strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong>&nbsp;<em>n</em></span></li>
+<li>if <span class="math inline"><strong>A</strong> → <strong>β</strong>⋅</span> is
+in <span class="math inline"><em>s</em><sub><em>m</em></sub></span>,
+then for each <strong>terminal</strong> <span class="math inline"><strong>a</strong> ∈ <strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>A</strong><strong>)</strong></span>,
+<span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, <em>a</em>] = <strong>R</strong><strong>E</strong><strong>D</strong><strong>U</strong><strong>C</strong><strong>E</strong>&nbsp;<strong>A</strong> → <strong>β</strong></span>
+（只对<span class="math inline"><strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>A</strong><strong>)</strong></span>中的终结符进行归约）</li>
+<li>if <span class="math inline"><strong>S</strong><sup><strong>′</strong></sup> → <strong>S</strong>⋅</span>
+is in <span class="math inline"><em>s</em><sub><em>m</em></sub></span>,
+then <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, $] = <strong>A</strong><strong>C</strong><strong>C</strong><strong>E</strong><strong>P</strong><strong>T</strong></span>
+（只对$进行归约）</li>
+</ul></li>
+</ul></li>
+<li><strong>Example</strong>: <img src="image-40.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul>
+<h4 id="slr1-conflicts">SLR(1) Conflicts</h4>
+<ul>
+<li><strong>Reduce-Reduce Conflicts</strong>:
+<ul>
+<li>state has two reduce items</li>
+<li>e.g.&nbsp;<span class="math inline"><strong>A</strong> → <strong>α</strong>⋅</span> and
+<span class="math inline"><strong>B</strong> → <strong>β</strong>⋅</span>
+<ul>
+<li>if <span class="math inline"><strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>A</strong><strong>)</strong> ∩ <strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>B</strong><strong>)</strong> = ∅</span>,
+safe for SLR(1) （如果<span class="math inline"><strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>A</strong><strong>)</strong> ∩ <strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>B</strong><strong>)</strong> = ∅</span>，则SLR(1)安全）</li>
+</ul></li>
+</ul></li>
+<li><strong>Shift-Reduce Conflicts</strong>:
+<ul>
+<li>state has a reduce item and a shift item</li>
+<li>e.g.&nbsp;<span class="math inline"><strong>A</strong> → <strong>α</strong> ⋅ <strong>k</strong><strong>γ</strong></span>
+and <span class="math inline"><strong>B</strong> → <strong>β</strong>⋅</span>
+<ul>
+<li>if <span class="math inline"><strong>k</strong> ∉ <strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>B</strong><strong>)</strong></span>,
+safe for SLR(1) （如果<span class="math inline"><strong>k</strong> ∉ <strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>B</strong><strong>)</strong></span>，则SLR(1)安全）</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="lr1-parsing">LR(1) Parsing</h3>
+<ul>
+<li><strong>How</strong>: check the <strong>immediate</strong> following
+symbols of non-terminals for reduction
+（检查非终结符的直接后续符号以进行归约）</li>
+<li><strong>LR(1) Item</strong> = [<strong>LR(0) Item</strong>,
+<strong>Following Symbol</strong>]
+<ul>
+<li>e.g.&nbsp;<span class="math inline">[<strong>A</strong> → <strong>X</strong><strong>Y</strong> ⋅ <strong>Z</strong>, <strong>a</strong>]</span></li>
+<li>where <span class="math inline"><strong>a</strong></span> is the
+following <strong>terminal</strong> symbol of <span class="math inline"><strong>A</strong></span> （<span class="math inline"><strong>a</strong></span>是<span class="math inline"><strong>A</strong></span>的后续终结符）</li>
+<li>when <span class="math inline"><strong>Z</strong></span> is not
+empty, the same as LR(0) Item （当<span class="math inline"><strong>Z</strong></span>不为空时，与LR(0)项相同）</li>
+<li>otherwise, <span class="math inline"><strong>A</strong> → <strong>X</strong><strong>Y</strong> ⋅ <strong>Z</strong></span>
+is applied only when the next input symbol is <span class="math inline"><strong>a</strong></span>
+（否则，只有在下一个输入符号为<span class="math inline"><strong>a</strong></span>时才应用<span class="math inline"><strong>A</strong> → <strong>X</strong><strong>Y</strong> ⋅ <strong>Z</strong></span>）
+<ul>
+<li>instead of SLR(1)’s ALL <span class="math inline"><strong>A</strong></span>’s following symbols, let
+along LR(0)’s ALL terminal symbols （而不是SLR(1)的所有<span class="math inline"><strong>A</strong></span>的后续符号，甚至LR(0)的所有终结符）</li>
+</ul></li>
+</ul></li>
+</ul>
+<h4 id="lr1s-closure-and-goto">LR(1)’s CLOSURE and GOTO</h4>
+<ul>
+<li><strong>LR(1)’s <span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>I</strong><strong>)</strong></span></strong>
+<ul>
+<li>every Item in <span class="math inline"><strong>I</strong></span> is
+added in to <span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>I</strong><strong>)</strong></span></li>
+<li>repeat:
+<ul>
+<li>if <span class="math inline">[<strong>A</strong> → <strong>α</strong> ⋅ <strong>B</strong><strong>β</strong>, <strong>a</strong>]</span>
+is in <span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>I</strong><strong>)</strong></span>
+and <span class="math inline"><strong>B</strong> → <strong>γ</strong></span> is a
+production of <span class="math inline"><strong>G</strong></span>, then
+for each terminal <span class="math inline"><strong>b</strong></span> in
+<span class="math inline"><strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>β</strong><strong>a</strong><strong>)</strong></span>,
+add <span class="math inline">[<strong>B</strong> → ⋅<strong>γ</strong>, <strong>b</strong>]</span>
+into <span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>I</strong><strong>)</strong></span></li>
+<li>until no more new Items can be added into <span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>I</strong><strong>)</strong></span></li>
+</ul></li>
+<li>only reduce <span class="math inline"><strong>B</strong></span> when
+it is followed by that in <span class="math inline"><strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>β</strong><strong>a</strong><strong>)</strong></span>
+（仅在后面跟着<span class="math inline"><strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>β</strong><strong>a</strong><strong>)</strong></span>中的项时才归约<span class="math inline"><strong>B</strong></span>）</li>
+</ul></li>
+<li><strong>LR(1)’s <span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong><strong>(</strong><strong>I</strong><strong>,</strong> <strong>B</strong><strong>)</strong></span></strong>
+<ul>
+<li>if <span class="math inline">[<strong>A</strong> → <strong>α</strong> ⋅ <strong>B</strong><strong>β</strong>, <strong>a</strong>]</span>
+in <span class="math inline"><strong>I</strong></span></li>
+<li>then every Item in <span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>{</strong><strong>[</strong><strong>A</strong> <strong>→</strong> <strong>α</strong><strong>B</strong> <strong>⋅</strong> <strong>β</strong><strong>,</strong> <strong>a</strong><strong>]</strong><strong>}</strong><strong>)</strong></span>
+is in <span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong><strong>(</strong><strong>I</strong><strong>,</strong> <strong>B</strong><strong>)</strong></span>
+<ul>
+<li><span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong><strong>(</strong><strong>I</strong><strong>,</strong> <strong>B</strong><strong>)</strong> ⊇ <strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>{</strong><strong>[</strong><strong>A</strong> <strong>→</strong> <strong>α</strong><strong>B</strong> <strong>⋅</strong> <strong>β</strong><strong>,</strong> <strong>a</strong><strong>]</strong><strong>}</strong><strong>)</strong></span>
+<ul>
+<li></li>
+</ul></li>
+<li><strong>Those of Kernel Items inherited from the previous
+state</strong> （从前一个状态继承的内核项）</li>
+</ul></li>
+</ul></li>
+<li><strong>Example</strong>: <img src="image-41.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul>
+<h4 id="automaton-construction-1">Automaton Construction</h4>
+<ul>
+<li><strong>INPUT</strong>: a grammar <span class="math inline"><strong>G</strong></span></li>
+<li><strong>OUTPUT</strong>: a LR(1) automaton</li>
+<li><strong>Construction</strong>:
+<ol type="1">
+<li>augment <span class="math inline"><strong>G</strong></span> to <span class="math inline"><strong>G</strong><sup><strong>′</strong></sup></span>
+by adding a new start symbol <span class="math inline"><strong>S</strong><sup><strong>′</strong></sup></span>
+and production <span class="math inline"><strong>S</strong><sup><strong>′</strong></sup> → <strong>S</strong></span>
+（扩展文法）</li>
+<li><span class="math inline"><strong>C</strong></span>:= {<span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>[</strong><strong>S</strong><sup><strong>′</strong></sup> <strong>→</strong> <strong>⋅</strong><strong>S</strong><strong>,</strong> <strong>$</strong><strong>]</strong><strong>)</strong></span>}
+（初始化项集C）</li>
+<li>repeat:
+<ul>
+<li>for each Item <span class="math inline"><strong>I</strong></span> in
+<span class="math inline"><strong>C</strong></span> and each grammar
+symbol <span class="math inline"><strong>X</strong></span> in <span class="math inline"><strong>G</strong><sup><strong>′</strong></sup></span>
+<ul>
+<li>if <span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong><strong>(</strong><strong>I</strong><strong>,</strong> <strong>X</strong><strong>)</strong></span>
+is not empty and not in <span class="math inline"><strong>C</strong></span>
+<ul>
+<li>add <span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong><strong>(</strong><strong>I</strong><strong>,</strong> <strong>X</strong><strong>)</strong></span>
+to <span class="math inline"><strong>C</strong></span></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>until no new Items are added to <span class="math inline"><strong>C</strong></span></li>
+</ol></li>
+<li><strong>Example</strong>:
+<ol type="1">
+<li><strong>Example</strong>: <img src="image-42.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+<li><strong>Exercise</strong>: <img src="image-44.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ol></li>
+</ul>
+<h4 id="parsing-table-construction-2">Parsing Table Construction</h4>
+<ul>
+<li><strong>LR(1) Parsing Table <span class="math inline">𝕋</span></strong>:
+<ul>
+<li><strong>Rows</strong>: <strong>states</strong></li>
+<li><strong>Columns</strong>: <strong>grammar symbols</strong>
+<ul>
+<li><strong>terminals</strong> for <span class="math inline"><strong>S</strong><strong>H</strong><strong>I</strong><strong>F</strong><strong>T</strong></span>
+and <span class="math inline"><strong>R</strong><strong>E</strong><strong>D</strong><strong>U</strong><strong>C</strong><strong>E</strong></span>
+actions</li>
+<li><strong>non-terminals</strong> for <span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong></span>
+actions</li>
+</ul></li>
+<li><strong>Construction</strong>: each edge <span class="math inline"><strong>X</strong></span>: <span class="math inline">(<em>s</em><sub><em>m</em></sub>, <em>s</em><sub><em>n</em></sub>)</span>
+<ul>
+<li>if <span class="math inline"><strong>X</strong></span> is a
+<strong>terminal</strong> <span class="math inline"><strong>a</strong></span>, then <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, <em>a</em>] = <strong>S</strong><strong>H</strong><strong>I</strong><strong>F</strong><strong>T</strong>&nbsp;<em>n</em></span></li>
+<li>if <span class="math inline"><strong>X</strong></span> is a
+<strong>non-terminal</strong> <span class="math inline"><strong>A</strong></span>, then <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, <em>A</em>] = <strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong>&nbsp;<em>n</em></span></li>
+<li>if <span class="math inline">[<strong>A</strong> → <strong>β</strong>⋅, <strong>a</strong>]</span>
+(the kernel) is in <span class="math inline"><em>s</em><sub><em>m</em></sub></span>, then <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, <em>a</em>] = <strong>R</strong><strong>E</strong><strong>D</strong><strong>U</strong><strong>C</strong><strong>E</strong>&nbsp;<strong>A</strong> → <strong>β</strong></span></li>
+<li>if <span class="math inline">[<strong>S</strong><sup><strong>′</strong></sup> → <strong>S</strong>⋅, $]</span>
+is in <span class="math inline"><em>s</em><sub><em>m</em></sub></span>,
+then <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, $] = <strong>A</strong><strong>C</strong><strong>C</strong><strong>E</strong><strong>P</strong><strong>T</strong></span></li>
+</ul></li>
+</ul></li>
+<li><strong>Example</strong>: <img src="image-43.webp" srcset="/img/loading/loading3.gif" lazyload> &gt;
+注：上表中<span class="math inline">[11, <em>i</em><em>d</em>]</span>应为<span class="math inline"><em>s</em>12</span>，即<span class="math inline">𝕋[11, <em>i</em><em>d</em>] = <em>s</em>12</span>。</li>
+</ul>
+<h3 id="lalr1-parsing">LALR(1) Parsing</h3>
+<ul>
+<li><strong>What</strong>: <strong>L</strong>ook <strong>A</strong>head
+<strong>LR(1)</strong></li>
+<li><strong>Why</strong>: smaller parsing table than
+<strong>LR(1)</strong> for practice（比LR(1)小的解析表）
+<ul>
+<li>equal to <strong>SLR(1)</strong> in state number
+（与SLR(1)状态数相等）
+<ul>
+<li>e.g.&nbsp;In C, serveral hundred for SLR(1), serverals of thousands for
+LR(1)</li>
+</ul></li>
+<li>more powerful than <strong>SLR(1)</strong> in processing more
+grammars （比SLR(1)更强大，能处理更多文法）</li>
+</ul></li>
+<li><strong>How</strong>: combine <strong>Items</strong> with the same
+<strong>Production Set</strong> in LR(1)
+（将LR(1)中具有相同产生式集的项（同心集）组合在一起）
+<ul>
+<li>e.g.&nbsp;<span class="math inline">[<strong>A</strong> → <strong>α</strong>⋅, <strong>a</strong>]</span>
+and <span class="math inline">[<strong>A</strong> → <strong>α</strong>⋅, <strong>b</strong>]</span>
+are combined into one state</li>
+</ul></li>
+<li>Compared to <strong>LR(1)</strong>: <img src="image-45.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul>
+<h4 id="automaton-construction-2">Automaton Construction</h4>
+<ul>
+<li><strong>INPUT</strong>: a grammar <span class="math inline"><strong>G</strong></span></li>
+<li><strong>OUTPUT</strong>: a LALR(1) automaton</li>
+<li><strong>Construction</strong>:
+<ol type="1">
+<li>Construct <strong>LR(0)</strong> items as <strong>LALR(1)</strong>
+items’ cores for the grammar <span class="math inline"><strong>G</strong><sup><strong>′</strong></sup></span>，then
+remove the non-kernel items （为文法<span class="math inline"><strong>G</strong><sup><strong>′</strong></sup></span>构造LR(0)项作为LALR(1)项的核心，然后删除非核心项）</li>
+<li>For each kernal items <span class="math inline"><strong>K</strong></span> in <span class="math inline"><strong>I</strong><sub><strong>i</strong></sub></span>
+and each grammar symbol <span class="math inline"><strong>X</strong></span> in <span class="math inline"><strong>G</strong><sup><strong>′</strong></sup></span>,
+calculate the lookahead symbols’ <strong>INIT</strong> and
+<strong>PROPAGATION</strong>. （对于每个项集<span class="math inline"><strong>I</strong><sub><strong>i</strong></sub></span>中的核心项<span class="math inline"><strong>K</strong></span>和文法符号<span class="math inline"><strong>X</strong></span>，计算前瞻符号的初始值和传播）
+<ul>
+<li>For each item <span class="math inline">(<strong>A</strong> → <strong>α</strong> ⋅ <strong>β</strong>)</span>
+in <span class="math inline"><strong>K</strong></span>
+<ul>
+<li><span class="math inline"><strong>J</strong> := {<strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>[</strong><strong>A</strong> <strong>→</strong> <strong>α</strong> <strong>⋅</strong> <strong>β</strong><strong>,</strong> <strong>#</strong><strong>]</strong><strong>)</strong>}</span>
+（初始化<span class="math inline"><strong>J</strong></span>）</li>
+<li>if <span class="math inline">[<strong>B</strong> <strong>→</strong> <strong>γ</strong> <strong>⋅</strong> <strong>X</strong><strong>δ</strong><strong>,</strong> <strong>a</strong>]</span>
+in <span class="math inline"><strong>J</strong></span> and <span class="math inline"><strong>a</strong> <strong>≠</strong> <strong>#</strong></span>,
+then <span class="math inline"><strong>B</strong> <strong>→</strong> <strong>γ</strong><strong>X</strong> <strong>⋅</strong> <strong>δ</strong></span>
+in <span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong><strong>(</strong><strong>I</strong><sub><strong>i</strong></sub><strong>,</strong> <strong>X</strong><strong>)</strong></span>
+has a <strong>SELF-generated</strong> lookahead symbol <span class="math inline"><strong>a</strong></span> （<span class="math inline"><strong>J</strong></span>中的项若出现不为#的前瞻符号，则它是自发生成的）</li>
+<li>if <span class="math inline">[<strong>B</strong> <strong>→</strong> <strong>γ</strong> <strong>⋅</strong> <strong>X</strong><strong>δ</strong><strong>,</strong> <strong>#</strong>]</span>
+in <span class="math inline"><strong>J</strong></span>, then lookahead
+symbols are <strong>propagated</strong> from <span class="math inline"><strong>A</strong> <strong>→</strong> <strong>α</strong> <strong>⋅</strong> <strong>β</strong></span>
+to <span class="math inline"><strong>B</strong> <strong>→</strong> <strong>γ</strong><strong>X</strong> <strong>⋅</strong> <strong>δ</strong></span>
+in <span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong><strong>(</strong><strong>I</strong><sub><strong>i</strong></sub><strong>,</strong> <strong>X</strong><strong>)</strong></span>.
+（<span class="math inline"><strong>J</strong></span>中的项若出现#的前瞻符号，则该项会传播前瞻符号）</li>
+</ul></li>
+<li>Specifically, <span class="math inline"><strong>$</strong></span> in
+<span class="math inline"><strong>[</strong><strong>S</strong><sup><strong>′</strong></sup> <strong>→</strong> <strong>S</strong><strong>⋅</strong><strong>,</strong> <strong>$</strong><strong>]</strong></span>
+is SELF-generated.</li>
+</ul></li>
+<li>Construct the <span class="math inline"><strong>F</strong><strong>R</strong><strong>O</strong><strong>M</strong> <strong>−</strong> <strong>T</strong><strong>O</strong></span>
+table base on <span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong></span>
+for the kernel items to show the propagation of lookahead symbols
+（为核心项构建<span class="math inline"><strong>F</strong><strong>R</strong><strong>O</strong><strong>M</strong> <strong>−</strong> <strong>T</strong><strong>O</strong></span>表，以显示前瞻符号的传播）
+<ul>
+<li>in step 2, we calculate <strong>propagated</strong>
+relationships.</li>
+</ul></li>
+<li>Propagate the lookahead symbols according to the <span class="math inline"><strong>F</strong><strong>R</strong><strong>O</strong><strong>M</strong> <strong>−</strong> <strong>T</strong><strong>O</strong></span>
+relationships until the fixed point achieved （根据<span class="math inline"><strong>F</strong><strong>R</strong><strong>O</strong><strong>M</strong> <strong>−</strong> <strong>T</strong><strong>O</strong></span>关系传播前瞻符号，直到达到不变点）
+<ul>
+<li>in step 2, we calculate <strong>self-generated</strong> lookahead
+symbols.</li>
+</ul></li>
+</ol></li>
+<li><strong>Example</strong>: <img src="image-54.webp" srcset="/img/loading/loading3.gif" lazyload> <img src="image-46.webp" srcset="/img/loading/loading3.gif" lazyload> &gt;
+注：上右表中，前瞻符号在传播时，每一行的前瞻符号可以向右填满右侧列，最右一列是最终结果</li>
+</ul>
+<h4 id="parsing-table-construction-3">Parsing Table Construction</h4>
+<ul>
+<li>the same as <strong>LR(1)</strong> method</li>
+<li><strong>LALR(1) Parsing Table <span class="math inline">𝕋</span></strong>:
+<ul>
+<li><strong>Rows</strong>: <strong>states</strong></li>
+<li><strong>Columns</strong>: <strong>grammar symbols</strong>
+<ul>
+<li><strong>terminals</strong> for <span class="math inline"><strong>S</strong><strong>H</strong><strong>I</strong><strong>F</strong><strong>T</strong></span>
+and <span class="math inline"><strong>R</strong><strong>E</strong><strong>D</strong><strong>U</strong><strong>C</strong><strong>E</strong></span>
+actions</li>
+<li><strong>non-terminals</strong> for <span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong></span>
+actions</li>
+</ul></li>
+<li><strong>Construction</strong>: each edge <span class="math inline"><strong>X</strong></span>: <span class="math inline">(<em>s</em><sub><em>m</em></sub>, <em>s</em><sub><em>n</em></sub>)</span>
+<ul>
+<li>if <span class="math inline"><strong>X</strong></span> is a
+<strong>terminal</strong> <span class="math inline"><strong>a</strong></span>, then <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, <em>a</em>] = <strong>S</strong><strong>H</strong><strong>I</strong><strong>F</strong><strong>T</strong>&nbsp;<em>n</em></span></li>
+<li>if <span class="math inline"><strong>X</strong></span> is a
+<strong>non-terminal</strong> <span class="math inline"><strong>A</strong></span>, then <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, <em>A</em>] = <strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong>&nbsp;<em>n</em></span></li>
+<li>if <span class="math inline">[<strong>A</strong> → <strong>β</strong>⋅, <strong>a</strong>]</span>
+(the kernel) is in <span class="math inline"><em>s</em><sub><em>m</em></sub></span>, then <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, <em>a</em>] = <strong>R</strong><strong>E</strong><strong>D</strong><strong>U</strong><strong>C</strong><strong>E</strong>&nbsp;<strong>A</strong> → <strong>β</strong></span></li>
+<li>if <span class="math inline">[<strong>S</strong><sup><strong>′</strong></sup> → <strong>S</strong>⋅, $]</span>
+is in <span class="math inline"><em>s</em><sub><em>m</em></sub></span>,
+then <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, $] = <strong>A</strong><strong>C</strong><strong>C</strong><strong>E</strong><strong>P</strong><strong>T</strong></span></li>
+</ul></li>
+</ul></li>
+<li><strong>Example</strong>: <img src="image-53.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul>
+<h4 id="capabilities-vs.-conflicts">Capabilities vs.&nbsp;Conflicts</h4>
+<ul>
+<li>LALR never introduces new SHIFT-REDUCE conflicts:
+<ul>
+<li><strong>SHIFT does not depend on lookaheads</strong></li>
+</ul></li>
+<li><strong>Example</strong>: <img src="image-47.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul>
+<h3 id="summary">Summary</h3>
+<ul>
+<li><strong>LR(0)</strong>, <strong>SLR(1)</strong>,
+<strong>LR(1)</strong>, <strong>LALR(1)</strong>
+<ul>
+<li>all working in <strong>SHIFT-REDUCE</strong> mode</li>
+<li>only different in Parsing Tables</li>
+</ul></li>
+<li><strong>Parsing Tables - Capabilities</strong>
+<ul>
+<li>LR(0) &lt; SLR(1) &lt; LALR(1) &lt; LR(1)</li>
+<li>LR(0): Items</li>
+<li>SLR(1): Items with FOLLOW</li>
+<li>LALR(1): Items Combined from SLR(1) and LR(1)</li>
+<li>LR(1): Items with Subset of FOLLOW</li>
+</ul>
+<img src="image-48.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul>
+<h2 id="using-ambiguous-grammars">Using Ambiguous Grammars</h2>
+<ul>
+<li>In Theory: grammar for LR parsing tables should be unambiguous
+（在理论上：LR解析表的文法应该是无歧义的）</li>
+<li>For ambiguous grammars:
+<ul>
+<li>there will be conflicts</li>
+<li>add new information/restrictions to resolve ambiguity
+（添加新信息/限制以解决歧义）
+<ul>
+<li>precedence, associativity, etc.</li>
+<li>get LR tables without conflicts</li>
+</ul></li>
+</ul></li>
+<li>Why embracing ambiguous grammars?
+<ul>
+<li>some are much natural, the unambiguous one can be very complex
+（有些是非常自然的，无歧义的可能非常复杂）</li>
+<li>isolate common syntactic constructs for special-case optimizations
+（隔离常见的语法结构以进行特殊情况优化）</li>
+</ul></li>
+<li>Example: <img src="image-49.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul>
+<h2 id="summary-1">Summary</h2>
+<p><img src="image-50.webp" srcset="/img/loading/loading3.gif" lazyload></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/SJTU-Notes/" class="category-chain-item">SJTU Notes</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/SJTU/" class="print-no-link">#SJTU</a>
+      
+        <a href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" class="print-no-link">#编译原理</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>编译原理</div>
+      <div>https://youyeyejie.github.io/posts/编译原理/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>youyeyejie</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年6月9日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2025年7月14日</div>
+        </div>
+      
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/" title="马克思主义基本原理">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">马克思主义基本原理</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6/" title="量子力学">
+                        <span class="hidden-mobile">量子力学</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments">
+      
+    <div id="giscus" class="giscus"></div>
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#giscus', function() {
+        var options = {"repo":"youyeyejie/youyeyejie.github.io","repo-id":"R_kgDOO-Uo1g","category":"General","category-id":"DIC_kwDOO-Uo1s4Crz5J","theme-light":"light","theme-dark":"dark","mapping":"pathname","reactions-enabled":1,"emit-metadata":0,"input-position":"top","lang":"zh-CN"};
+        var attributes = {};
+        for (let option in options) {
+          if (!option.startsWith('theme-')) {
+            var key = option.startsWith('data-') ? option : 'data-' + option;
+            attributes[key] = options[option];
+          }
+        }
+        var light = 'light';
+        var dark = 'dark';
+        window.GiscusThemeLight = light;
+        window.GiscusThemeDark = dark;
+        attributes['data-theme'] = document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ? dark : light;
+        for (let attribute in attributes) {
+          var value = attributes[attribute];
+          if (value === undefined || value === null || value === '') {
+            delete attributes[attribute];
+          }
+        }
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://giscus.app/client.js');
+        s.setAttribute('crossorigin', 'anonymous');
+        for (let attribute in attributes) {
+          s.setAttribute(attribute, attributes[attribute]);
+        }
+        var ss = document.getElementsByTagName('script');
+        var e = ss.length > 0 ? ss[ss.length - 1] : document.head || document.documentElement;
+        e.parentNode.insertBefore(s, e.nextSibling);
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+  
+  
+</div>
+<div class="footer-inner">
+    <div class="powered-by">
+        <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+        <i class="iconfont icon-love"></i>
+        <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+    </div>
+    <div class="hitokoto">
+        <i class="fas fa-quote-left"></i>
+        <a target="_blank" rel="noopener" href="https://developer.hitokoto.cn/" id="hitokoto_text"><span id="hitokoto">且以群词 注解我这座荒山</span></a>
+        <script src="/js/Hitokoto.js" defer></script>
+    </div>
+    <div class="data">
+        <span class="total-word-container">
+            <i class="fas fa-chart-bar"></i>
+            <span id="g-total-word-id"></span>
+            字汇长河
+        </span>
+        &nbsp;
+        <span id="total-posts-container">
+            <i class="fas fa-file-alt"></i>
+            <span id="g-total-posts-id"></span>
+            <script src="/js/TotalPosts.js"></script>
+            文舟靠岸
+        </span>
+        &nbsp;
+        <span id="busuanzi_container_site_pv">
+            <i class="fas fa-eye"></i>
+            <span id="busuanzi_value_site_pv">1314</span>
+            目光所及
+        </span>
+        &nbsp;
+        <span id="busuanzi_container_site_uv">
+            <i class="fas fa-user-friends"></i>
+            <span id="busuanzi_value_site_uv">520</span>
+            访客驻足
+        </span>
+    </div>
+    <div class="duration">
+        <i class="fas fa-calendar"></i>
+        <span id="timeDate">人生缓缓</span>
+        <span id="times">自有答案</span>
+        <script src="/js/Duration.js"></script>
+    </div>
+</div>
+
+<link href="/css/Footer.css" type="text/css" rel="stylesheet"/>
+<!-- <script defer src="https://events.vercount.one/js"></script> -->
+<!-- <script src="https://npm.elemecdn.com/penndu@1.0.0/bsz.js" defer></script> -->
+<!-- <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script> -->
+<!-- <script async src="https://busuanzi.icodeq.com/busuanzi.pure.mini.js"></script> -->
+<!-- <script async src="https://busuanzi.sukap.cn/busuanzi.pure.mini.js"></script> -->
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    
+      <script  src="/js/img-lazyload.js" ></script>
+    
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://events.vercount.one/js?i=/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="/js/DynamicLine.js"></script>
+<script src="/js/LinkCard.js"></script>
+<script src="/js/RandomBanner.js"></script>
+<script src="/js/ScrollAnimation.js"></script>
+<script src="/js/TabDisplay.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  <script type="text/javascript">
+  document.getElementById("g-total-word-id").innerHTML = "303k";
+</script>
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start -->
+<script src="https://cdn.jsdelivr.net/npm/hexo-shiki-plugin@latest/lib/codeblock.js"></script>
+
+  <script>
+  const CODE_CONFIG = {
+    beautify: true,
+    highlightCopy: true,
+    highlightLang: true,
+    highlightHeightLimit: 360,
+    isHighlightShrink: false,
+    copy: {
+      success: 'Copy Success',
+      error: 'Copy Error',
+      noSupport: 'Browser Not Support',
+    }
+  };
+  console.log(
+    `%c hexo-shiki-plugin %c v1.0.27 %c https://github.com/nova1751/hexo-shiki-plugin`,
+    "color: #fff; background: #5f5f5f",
+    "color: #fff; background: #80c8f8",
+    ""
+  );
+  </script>
+  <!-- hexo injector body_end end --></body>
+</html>

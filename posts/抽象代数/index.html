@@ -1,0 +1,3175 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head><!-- hexo injector head_begin start --><meta name="msvalidate.01" content="DF9F232801BA9D0CABB002E4774A3228" />
+<meta name="google-site-verification" content="vOm5Zs9tuUlEh-wVBlpvs_spnOou-q2CoTiFQ1ZV1h4" />
+<!-- hexo injector head_begin end -->
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar/avatar2.webp">
+  <link rel="icon" href="/img/avatar/avatar2.webp">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="youyeyejie">
+  <meta name="keywords" content="yyyj,YYYJ,youyeyejie,有野野芥">
+  
+    <meta name="description" content="NIS2333 信息安全数学基础1-抽象代数 笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="抽象代数">
+<meta property="og:url" content="https://youyeyejie.github.io/posts/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0/index.html">
+<meta property="og:site_name" content="有野野芥的博客">
+<meta property="og:description" content="NIS2333 信息安全数学基础1-抽象代数 笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis2333.webp">
+<meta property="article:published_time" content="2025-06-19T15:36:10.000Z">
+<meta property="article:modified_time" content="2025-07-14T09:37:11.576Z">
+<meta property="article:author" content="youyeyejie">
+<meta property="article:tag" content="SJTU">
+<meta property="article:tag" content="抽象代数">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://youyeyejie.github.io/img/cover/nis2333.webp">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>抽象代数 - 有野野芥的博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+<link rel="stylesheet" href="//lib.baomitu.com/font-awesome/6.1.2/css/all.min.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+
+
+  
+<link rel="stylesheet" href="/css/CodeBlock.css">
+<link rel="stylesheet" href="/css/CodeInLine.css">
+<link rel="stylesheet" href="/css/FrostedGlassBg.css">
+<link rel="stylesheet" href="/css/Gallery.css">
+<link rel="stylesheet" href="/css/IndexImgHover.css">
+<link rel="stylesheet" href="/css/LinkCard.css">
+<link rel="stylesheet" href="/css/ScrollAnimation.css">
+<link rel="stylesheet" href="/css/ScrollBar.css">
+<link rel="stylesheet" href="/css/StrongInDark.css">
+<link rel="stylesheet" href="/css/TitleGradient.css">
+<link rel="stylesheet" href="/css/TitleNeon.css">
+<link rel="stylesheet" href="/css/UnifyImgWidth.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"youyeyejie.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":false,"default":"TEXT"},"copy_btn":false,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading/loading3.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-shiki-plugin@latest/lib/codeblock.css">
+<style>:root{--hl-color:#abb2bf;--hl-bg:#282c34;--hltools-bg:#21252b;--hltools-color:#bbbbbc;--hlnumber-bg:#282c34;--hlnumber-color:#495162;--hlscrollbar-bg:#373c47;--hlexpand-bg:linear-gradient(180deg,rgba(40,44,52,0.1),rgba(40,44,52,0.9))}</style>
+    <style>
+    .code-expand-btn:not(.expand-done) ~ div.codeblock,
+    .code-expand-btn:not(.expand-done) ~ * div.codeblock {
+      overflow: hidden;
+      height: 360px;
+    }
+    </style>
+  <!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+
+<body>
+  <div id="loader-container"> 
+    <div id="loader" class="loader"></div>
+    <div class="loader-inner">
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/RainbowLoading.js" type="text/javascript"></script>
+<link href="/css/RainbowLoading.css" type="text/css" rel="stylesheet"/><div id="tooltip-rightmenu" class="tooltip-rightmenu">如需原始右键菜单请按下 <strong>Ctrl+右键</strong></div>
+<div id="tooltip-rightmenu-return" class="tooltip-rightmenu"></div>
+
+<div id="rightmenu-wrapper">
+  <ul class="list-v rightmenu" id="rightmenu-content">
+	    <li class="navigation menuNavigation-Content">
+            <a class="nav icon-only fix-cursor-default" onclick="history.back()"><i class="fa-solid fa-chevron-left"></i></a>
+            <a class="nav icon-only fix-cursor-default" onclick="history.forward()"><i class="fa-solid fa-chevron-right"></i></a>
+            <a class="nav icon-only fix-cursor-default" onclick="window.location.reload()"><i class="fa-solid fa-rotate-right"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="TOP" href="#" role="button"><i class="fa-solid fa-chevron-up"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="bottom" href="javascript:void(0);" role="button" onclick="window.scrollTo(0, document.body.scrollHeight);"><i class="fa-solid fa-chevron-down"></i></a>
+	    </li>
+
+        <hr class="menuLoad-Content" style="display: block;" id="top-line" hidden>
+
+        <li class="menuLoad-Content" style="display: block;" id="copy-selected-text" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copySelectedText();">
+                <span>
+                    <i class="fa-solid fa-copy"></i>
+                    &nbsp;复制选中
+                </span>
+            </a>
+        </li>
+
+        <li class="menuLoad-Content" style="display: block;" id="search-selected-text-BING" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_blank" onclick="searchSelectedTextBing();">
+                <span>
+                    <i class="fa-solid fa-magnifying-glass-arrow-right"></i>
+                    &nbsp;必应搜索
+                </span>
+            </a>
+        </li>
+
+        <li class="menuLoad-Content" style="display: block;" id="go-to-link" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_blank" onclick="goToLink();">
+                <span>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    &nbsp;转到链接
+                </span>
+            </a>
+        </li>
+
+        <li class="menuLoad-Content" style="display: block;" id="download-image" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="downloadImage();">
+                <span>
+                    <i class="fa-solid fa-image"></i>
+                    &nbsp;下载图片
+                </span>
+            </a>
+        </li>
+
+        <li class="menuLoad-Content" style="display: block;" id="copy-image-link" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copyImageLink();">
+                <span>
+                    <i class="fa-solid fa-link"></i>
+                    复制图片链接
+                </span>
+            </a>
+        </li>
+
+		<hr class="menuLoad-Content" style="display: block;">
+
+        <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" onclick="RandomGo()">
+		        <span>
+			        <i class="fa-solid fa-paper-plane"></i>
+                    &nbsp;随便看看
+		        </span>
+		    </a>
+	    </li>
+	    <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+		        <span>
+			        <i class="fa-solid fa-magnifying-glass"></i>
+                    &nbsp;站内搜索
+		        </span>
+		    </a>
+	    </li>
+        <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" href="/categories/">
+		        <span>
+			        <i class="iconfont icon-category-fill"></i>
+                    &nbsp;博客分类
+		        </span>
+		    </a>
+	    </li>
+        <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" href="/tags/">
+		        <span>
+			        <i class="fa-solid fa-tags"></i>
+                    &nbsp;文章标签
+		        </span>
+		    </a>
+	    </li>
+        
+	    <hr class="menuLoad-Content" style="display: block;">
+
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copyLink();">
+                <span>
+                    <i class="fa-solid fa-copy"></i>
+                    &nbsp;复制链接
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="document.getElementById('color-toggle-btn').click();">
+            <span>
+                <i class="fa-solid fa-circle-half-stroke"></i>
+                &nbsp;切换昼夜
+            </span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+<script src="/js/RightMenu.js" type="text/javascript"></script>
+<link href="/css/RightMenu.css" type="text/css" rel="stylesheet"/>
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <!-- <strong>YYYJ&#39;s Blog</strong> -->
+       <strong class="navbar-title">YYYJ&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/DayDream-Gallery/" target="_self">
+                <i class="fas fa-images"></i>
+                <span>图集</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.travellings.cn/go-by-clouds.html" target="_self">
+                <i class="fas fa-train-subway"></i>
+                <span>开往</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/banner/banner.webp') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="抽象代数"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        youyeyejie
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-06-19 23:36" pubdate>
+          2025年6月19日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          16k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          130 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar category-bar" style="margin-right: -1rem">
+    
+
+
+
+
+
+<div class="category-list">
+  
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="SJTU Notes"
+        id="heading-23fc8849f7fe9b9a570be52f7807b4ac" role="tab" data-toggle="collapse" href="#collapse-23fc8849f7fe9b9a570be52f7807b4ac"
+        aria-expanded="true"
+      >
+        SJTU Notes
+        <span class="list-group-count">(14)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-23fc8849f7fe9b9a570be52f7807b4ac"
+           role="tabpanel" aria-labelledby="heading-23fc8849f7fe9b9a570be52f7807b4ac">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/posts/%E4%B8%AD%E5%9B%BD%E8%BF%91%E7%8E%B0%E4%BB%A3%E5%8F%B2%E7%BA%B2%E8%A6%81/" title="中国近现代史纲要"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">中国近现代史纲要</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E4%B9%A0%E8%BF%91%E5%B9%B3%E6%96%B0%E6%97%B6%E4%BB%A3%E4%B8%AD%E5%9B%BD%E7%89%B9%E8%89%B2%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89%E6%80%9D%E6%83%B3%E6%A6%82%E8%AE%BA/" title="习近平新时代中国特色社会主义思想概论"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">习近平新时代中国特色社会主义思想概论</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E4%BF%A1%E6%81%AF%E8%AE%BA%E5%9F%BA%E7%A1%80/" title="信息论基础"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">信息论基础</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E5%86%9B%E4%BA%8B%E7%90%86%E8%AE%BA/" title="军事理论"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">军事理论</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E6%80%9D%E6%83%B3%E9%81%93%E5%BE%B7%E4%B8%8E%E6%B3%95%E6%B2%BB/" title="思想道德与法治"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">思想道德与法治</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0/" title="抽象代数"
+           class="list-group-item list-group-item-action
+           active">
+          <span class="category-post">抽象代数</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" title="操作系统原理"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">操作系统原理</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E6%95%B0%E5%AD%A6%E5%8F%B2/" title="数学史"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">数学史</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1/" title="概率统计"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">概率统计</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" title="编译原理"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">编译原理</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA/" title="网络空间安全导论"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">网络空间安全导论</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/" title="计算机组成与系统结构"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">计算机组成与系统结构</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6/" title="量子力学"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">量子力学</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/" title="马克思主义基本原理"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">马克思主义基本原理</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+</div>
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">抽象代数</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <blockquote>
+<p>本文章基于<a target="_blank" rel="noopener" href="https://teruteru.space/2024/02/21/%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0%E7%AC%94%E8%AE%B0/">Teruteru的学习笔记</a>进行整理，针对
+2024-2025 学年春季学期教学内容进行修改。</p>
+</blockquote>
+<h1 id="解题范式">解题范式</h1>
+
+    <div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-93269758" role="button" aria-expanded="false" aria-controls="collapse-93269758">
+        <div class="fold-arrow">▶</div>解题范式
+      </div>
+      <div class="fold-collapse collapse" id="collapse-93269758">
+        <div class="fold-content">
+          <h2 id="证明相等">证明相等</h2>
+<p>两个集合 <span class="math inline"><em>A</em>, <em>B</em></span>
+相等：</p>
+<ol type="1">
+<li>证明 <span class="math inline"><em>A</em> ⊆ <em>B</em></span></li>
+<li>证明 <span class="math inline"><em>B</em> ⊆ <em>A</em></span></li>
+</ol>
+<p>两个数 <span class="math inline"><em>a</em>, <em>b</em></span>
+相等：</p>
+<ol type="1">
+<li>证明 <span class="math inline"><em>a</em> ∣ <em>b</em></span></li>
+<li>证明 <span class="math inline"><em>b</em> ∣ <em>a</em></span></li>
+</ol>
+<h2 id="等价关系">等价关系</h2>
+<p>若要证明 <span class="math inline">∼</span> 是一个等价关系：</p>
+<ol type="1">
+<li>证明 <strong>反身性</strong></li>
+<li>证明 <strong>对称性</strong></li>
+<li>证明 <strong>传递性</strong></li>
+</ol>
+<h2 id="代数运算">代数运算</h2>
+<p>若要证明集合 <span class="math inline"><em>A</em></span> 中的运算
+<span class="math inline">⋅</span> 是一个代数运算：</p>
+<ol type="1">
+<li>证明 <strong>封闭性</strong></li>
+<li>证明 <strong>唯一性</strong> （通常显然）</li>
+</ol>
+<h2 id="群">群</h2>
+<p>若要证明集合 <span class="math inline"><em>A</em></span> 关于运算
+<span class="math inline">⋅</span> 构成一个群：</p>
+<ol type="1">
+<li>证明 <span class="math inline">⋅</span> 是
+<strong>代数运算</strong></li>
+<li>证明 <strong>结合律</strong> （左右结合律）</li>
+<li>证明 <strong>单位元</strong> <span class="math inline"><em>e</em></span> 存在（左右单位元）</li>
+<li>证明 <strong>逆元</strong> 存在（左右逆元）</li>
+</ol>
+<h2 id="子群">子群</h2>
+<p>若要证明群 <span class="math inline"><em>G</em></span> 的子集 <span class="math inline"><em>H</em></span> 是 <span class="math inline"><em>G</em></span> 的子群，即 <span class="math inline"><em>H</em> &lt; <em>G</em></span>：</p>
+<ul>
+<li>定义：
+<ol type="1">
+<li><span class="math inline"><em>H</em></span> 在群的运算下封闭</li>
+<li><span class="math inline"><em>H</em></span> 有单位元</li>
+<li><span class="math inline"><em>H</em></span> 中每个元素都有逆元</li>
+</ol></li>
+<li>定理1：
+<ol type="1">
+<li>证明 <span class="math inline"><em>H</em></span> 是 <span class="math inline"><em>G</em></span> 的 <strong>非空</strong> 子集</li>
+<li>对任意 <span class="math inline"><em>a</em>, <em>b</em> ∈ <em>H</em></span>，证明
+<span class="math inline"><em>a</em><em>b</em> ∈ <em>H</em></span></li>
+<li>对任意 <span class="math inline"><em>a</em> ∈ <em>H</em></span>，证明 <span class="math inline"><em>a</em><sup>−1</sup> ∈ <em>H</em></span></li>
+</ol></li>
+<li>定理2：
+<ol type="1">
+<li>证明 <span class="math inline"><em>H</em></span> 是 <span class="math inline"><em>G</em></span> 的 <strong>非空</strong> 子集</li>
+<li>对任意 <span class="math inline"><em>a</em>, <em>b</em> ∈ <em>H</em></span>，证明
+<span class="math inline"><em>a</em><em>b</em><sup>−1</sup> ∈ <em>H</em></span></li>
+</ol></li>
+</ul>
+<h2 id="正规子群">正规子群</h2>
+<p>若要证明群 <span class="math inline"><em>G</em></span> 的子群 <span class="math inline"><em>H</em></span> 是 <span class="math inline"><em>G</em></span> 的正规子群，即 <span class="math inline"><em>H</em> ⊲ <em>G</em></span>，则下面几个条件等价</p>
+<ol type="1">
+<li><span class="math inline"><em>H</em></span> 是 <span class="math inline"><em>G</em></span> 的正规子群</li>
+<li><span class="math inline">∀<em>g</em> ∈ <em>G</em></span>，<span class="math inline"><em>g</em><em>H</em> = <em>H</em><em>g</em></span></li>
+<li><span class="math inline">∀<em>g</em> ∈ <em>G</em></span>，<span class="math inline"><em>g</em><em>H</em><em>g</em><sup>−1</sup> = <em>H</em></span></li>
+<li><span class="math inline">∀<em>g</em> ∈ <em>G</em></span>，<span class="math inline"><em>g</em><em>H</em><em>g</em><sup>−1</sup> ⊆ <em>H</em></span></li>
+<li><span class="math inline">∀<em>g</em> ∈ <em>G</em></span>，<span class="math inline"><em>h</em> ∈ <em>H</em></span>，则 <span class="math inline"><em>g</em><em>h</em><em>g</em><sup>−1</sup> ∈ <em>H</em></span></li>
+</ol>
+<h2 id="群同态">群同态</h2>
+<p>若要证明两个群 <span class="math inline"><em>G</em></span> 与 <span class="math inline"><em>G</em><sup>′</sup></span> 同态：</p>
+<ol type="1">
+<li>建立群 <span class="math inline"><em>G</em></span> 与群 <span class="math inline"><em>G</em><sup>′</sup></span> 的元素间的对应关系
+<span class="math inline"><em>ϕ</em></span>，并证明 <span class="math inline"><em>ϕ</em></span> 是 <span class="math inline"><em>G</em></span> 到 <span class="math inline"><em>G</em><sup>′</sup></span> 的
+<strong>映射</strong>
+<ul>
+<li>即对 <span class="math inline">∀<em>x</em>, <em>y</em> ∈ <em>G</em></span>，证明由
+<span class="math inline"><em>x</em> = <em>y</em></span> 可推出 <span class="math inline"><em>ϕ</em>(<em>x</em>) = <em>ϕ</em>(<em>y</em>)</span></li>
+</ul></li>
+<li>证明 <span class="math inline"><em>ϕ</em></span>
+<strong>保持运算</strong>
+<ul>
+<li>即对 <span class="math inline">∀<em>x</em>, <em>y</em> ∈ <em>G</em></span>，证明
+<span class="math inline"><em>ϕ</em>(<em>x</em><em>y</em>) = <em>ϕ</em>(<em>x</em>)<em>ϕ</em>(<em>y</em>)</span></li>
+</ul></li>
+<li>若还能证明 <span class="math inline"><em>ϕ</em></span> 是 <span class="math inline"><em>G</em></span> 到 <span class="math inline"><em>G</em><sup>′</sup></span> 的
+<strong>满射</strong>，则 <span class="math inline"><em>ϕ</em></span> 是
+<span class="math inline"><em>G</em></span> 到 <span class="math inline"><em>G</em><sup>′</sup></span> 的
+<strong>满同态映射</strong></li>
+<li>若还能证明 <span class="math inline"><em>ϕ</em></span> 是 <span class="math inline"><em>G</em></span> 到 <span class="math inline"><em>G</em><sup>′</sup></span> 的
+<strong>单射</strong>，则 <span class="math inline"><em>ϕ</em></span> 是
+<span class="math inline"><em>G</em></span> 到 <span class="math inline"><em>G</em><sup>′</sup></span> 的
+<strong>单同态映射</strong></li>
+</ol>
+<h2 id="群同构">群同构</h2>
+<p>若要证明两个群 <span class="math inline"><em>G</em></span> 与 <span class="math inline"><em>G</em><sup>′</sup></span> 同构：</p>
+<ol type="1">
+<li>构造群 <span class="math inline"><em>G</em></span> 与群 <span class="math inline"><em>G</em><sup>′</sup></span> 的元素间的对应关系
+<span class="math inline"><em>ϕ</em></span>，并证明 <span class="math inline"><em>ϕ</em></span> 是 <span class="math inline"><em>G</em></span> 到 <span class="math inline"><em>G</em><sup>′</sup></span> 的
+<strong>映射</strong>
+<ul>
+<li>即对 <span class="math inline">∀<em>x</em>, <em>y</em> ∈ <em>G</em></span>，证明由
+<span class="math inline"><em>x</em> = <em>y</em></span> 可推出 <span class="math inline"><em>ϕ</em>(<em>x</em>) = <em>ϕ</em>(<em>y</em>)</span></li>
+</ul></li>
+<li>证明 <span class="math inline"><em>ϕ</em></span> 是 <span class="math inline"><em>G</em></span> 到 <span class="math inline"><em>G</em><sup>′</sup></span> 的
+<strong>单射</strong>
+<ul>
+<li>即对 <span class="math inline">∀<em>x</em>, <em>y</em> ∈ <em>G</em></span>，证明由
+<span class="math inline"><em>ϕ</em>(<em>x</em>) = <em>ϕ</em>(<em>y</em>)</span>
+可推出 <span class="math inline"><em>x</em> = <em>y</em></span></li>
+</ul></li>
+<li>证明 <span class="math inline"><em>ϕ</em></span> 是 <span class="math inline"><em>G</em></span> 到 <span class="math inline"><em>G</em><sup>′</sup></span> 的
+<strong>满射</strong>
+<ul>
+<li>即对 <span class="math inline">∀<em>x</em><sup>′</sup> ∈ <em>G</em><sup>′</sup></span>，证明存在（构造）
+<span class="math inline"><em>x</em> ∈ <em>G</em></span>，使 <span class="math inline"><em>ϕ</em>(<em>x</em>) = <em>x</em><sup>′</sup></span></li>
+</ul></li>
+<li>证明 <span class="math inline"><em>ϕ</em></span>
+<strong>保持运算</strong>
+<ul>
+<li>即对 <span class="math inline">∀<em>x</em>, <em>y</em> ∈ <em>G</em></span>，证明
+<span class="math inline"><em>ϕ</em>(<em>x</em><em>y</em>) = <em>ϕ</em>(<em>x</em>)<em>ϕ</em>(<em>y</em>)</span></li>
+</ul></li>
+</ol>
+<p>若要证明 <span class="math inline"><em>G</em>/<em>K</em> ≅ <em>G</em><sup>′</sup></span>，即
+<span class="math inline"><em>G</em>/<em>K</em></span> 与 <span class="math inline"><em>G</em><sup>′</sup></span> 同构：</p>
+<ol type="1">
+<li>建立群 <span class="math inline"><em>G</em></span> 与群 <span class="math inline"><em>G</em><sup>′</sup></span> 的元素之间的对应关系
+<span class="math inline"><em>ϕ</em></span>，并证明 <span class="math inline"><em>ϕ</em></span> 为 <span class="math inline"><em>G</em></span> 到 <span class="math inline"><em>G</em><sup>′</sup></span> 的
+<strong>映射</strong></li>
+<li>证明 <span class="math inline"><em>ϕ</em></span> 为 <span class="math inline"><em>G</em></span> 到 <span class="math inline"><em>G</em><sup>′</sup></span> 的
+<strong>满射</strong></li>
+<li>证明 <span class="math inline"><em>ϕ</em></span>
+<strong>保持运算</strong> <span class="math display"><em>ϕ</em>(<em>a</em><em>b</em>) = <em>ϕ</em>(<em>a</em>)<em>ϕ</em>(<em>b</em>)</span></li>
+<li>综上 <span class="math inline"><em>ϕ</em></span> 是 <span class="math inline"><em>G</em></span> 到 <span class="math inline"><em>G</em><sup>′</sup></span> 的
+<strong>满同态映射</strong></li>
+<li>计算同态的 <strong>核</strong> <span class="math inline">Ker <em>ϕ</em></span>，使得 <span class="math inline"><em>K</em> = Ker <em>ϕ</em></span></li>
+<li>应用 <strong>群同态基本定理</strong> 得 <span class="math inline"><em>G</em>/Ker <em>ϕ</em> ≅ <em>G</em><sup>′</sup></span></li>
+</ol>
+<h2 id="环">环</h2>
+<p>若要证明 <span class="math inline"><em>R</em></span> 是一个环：</p>
+<ol type="1">
+<li>证明 <strong>加法封闭</strong>
+<ul>
+<li><span class="math inline">∀<em>x</em>, <em>y</em> ∈ <em>R</em></span>：<span class="math inline"><em>x</em> + <em>y</em> ∈ <em>R</em></span></li>
+</ul></li>
+<li>证明加法满足 <strong>加法结合律</strong> 和
+<strong>加法交换律</strong>
+<ul>
+<li><span class="math inline">∀<em>x</em>, <em>y</em>, <em>z</em> ∈ <em>R</em></span>：<span class="math inline"><em>x</em> + <em>y</em> = <em>y</em> + <em>x</em></span>，<span class="math inline"><em>x</em> + (<em>y</em> + <em>z</em>) = (<em>x</em> + <em>y</em>) + <em>z</em></span></li>
+</ul></li>
+<li>找到加法 <strong>零元</strong>
+<ul>
+<li><span class="math inline">∃0 ∈ <em>R</em>, ∀<em>x</em> ∈ <em>R</em></span>：<span class="math inline"><em>x</em> + 0 = <em>x</em></span></li>
+</ul></li>
+<li>找到加法 <strong>负元</strong>
+<ul>
+<li><span class="math inline">∀<em>x</em> ∈ <em>R</em>, ∃−<em>x</em> ∈ <em>R</em></span>：<span class="math inline"><em>x</em> + (−<em>x</em>) = 0</span></li>
+</ul></li>
+<li>证明 <strong>乘法封闭</strong>
+<ul>
+<li><span class="math inline">∀<em>x</em>, <em>y</em> ∈ <em>R</em></span>：<span class="math inline"><em>x</em> ⋅ <em>y</em> ∈ <em>R</em></span></li>
+</ul></li>
+<li>证明乘法满足 <strong>结合律</strong>
+<ul>
+<li><span class="math inline">∀<em>x</em>, <em>y</em>, <em>z</em> ∈ <em>R</em></span>：<span class="math inline">(<em>x</em> ⋅ <em>y</em>) ⋅ <em>z</em> = <em>x</em> ⋅ (<em>y</em> ⋅ <em>z</em>)</span></li>
+</ul></li>
+<li>证明乘法对加法满足 <strong>两个分配律</strong>
+<ul>
+<li><span class="math inline">∀<em>x</em>, <em>y</em>, <em>z</em> ∈ <em>R</em></span><span class="math display">$$ \begin{array}{c} x\cdot (y + z) = x\cdot y +
+x\cdot z\\\ (y+z)\cdot x = y\cdot x + z\cdot x \end{array}$$</span></li>
+</ul></li>
+<li>综上可得 <span class="math inline"><em>R</em></span> 是一个环</li>
+<li>如果 <span class="math inline"><em>R</em></span>
+的乘法满足交换律，则 <span class="math inline"><em>R</em></span> 是一个
+<strong>交换环</strong></li>
+<li>如果 <span class="math inline"><em>R</em></span> 的乘法有单位元，则
+<span class="math inline"><em>R</em></span> 是一个有
+<strong>单位元</strong> 的环</li>
+</ol>
+<p>其中，1 - 4 即证明 <span class="math inline">(<em>R</em>, +)</span>
+是一个 <strong>加法交换群</strong>，5 - 7 即证明 <span class="math inline"><em>R</em></span> 还具有乘法代数运算。</p>
+<h2 id="整环">整环</h2>
+<p>若要证明 <span class="math inline"><em>R</em></span> 是一个整环：</p>
+<ol type="1">
+<li>证明 <span class="math inline"><em>R</em></span> 是一个
+<strong>交换环</strong></li>
+<li>证明 <span class="math inline"><em>R</em></span> 中有
+<strong>单位元</strong> 且单位元不为零元</li>
+<li>证明 <span class="math inline"><em>R</em></span> 中没有
+<strong>零因子</strong>
+<ul>
+<li>即对 <span class="math inline">∀<em>a</em>, <em>b</em> ∈ <em>R</em></span>，如果
+<span class="math inline"><em>a</em> ⋅ <em>b</em> = 0</span>，则 <span class="math inline"><em>a</em> = 0</span> 或 <span class="math inline"><em>b</em> = 0</span></li>
+</ul></li>
+</ol>
+<h2 id="域">域</h2>
+<p>若要证明 <span class="math inline"><em>F</em></span> 是一个域：</p>
+<ol type="1">
+<li>证明 <span class="math inline"><em>F</em></span> 是一个
+<strong>交换环</strong></li>
+<li>证明 <span class="math inline"><em>F</em></span> 中有
+<strong>单位元</strong> 且单位元不为零元</li>
+<li>证明 <span class="math inline"><em>F</em></span> 中每个
+<strong>非零元都可逆</strong>
+<ul>
+<li>即对 <span class="math inline">∀<em>a</em> ∈ <em>F</em></span> 且
+<span class="math inline"><em>a</em> ≠ 0</span>，存在 <span class="math inline"><em>b</em> ∈ <em>F</em></span> 使得 <span class="math inline"><em>a</em> ⋅ <em>b</em> = 1</span></li>
+</ul></li>
+</ol>
+<h2 id="子环">子环</h2>
+<p>若要证明环 <span class="math inline"><em>R</em></span> 的子集 <span class="math inline"><em>S</em></span> 是 <span class="math inline"><em>R</em></span> 的子环：</p>
+<ul>
+<li>定理1：
+<ol type="1">
+<li>证明 <span class="math inline"><em>S</em></span> 是 <span class="math inline"><em>R</em></span> 的 <strong>非空子集</strong>
+（通常显然）</li>
+<li>证明 <span class="math inline">(<em>S</em>, +)</span> 是 <span class="math inline">(<em>R</em>, +)</span> 的
+<strong>加法子群</strong></li>
+<li><span class="math inline"><em>S</em></span> 关于 <span class="math inline"><em>R</em></span> 的 <strong>乘法封闭</strong>
+，即对任意的 <span class="math inline"><em>a</em>, <em>b</em> ∈ <em>S</em></span>，有 <span class="math inline"><em>a</em><em>b</em> ∈ <em>S</em></span></li>
+</ol></li>
+<li>定理2：
+<ol type="1">
+<li>证明 <span class="math inline"><em>S</em></span> 是 <span class="math inline"><em>R</em></span> 的 <strong>非空子集</strong>
+（通常显然）</li>
+<li>证明 <span class="math inline">∀<em>a</em>, <em>b</em> ∈ <em>S</em></span>，有
+<span class="math inline"><em>a</em> − <em>b</em> ∈ <em>S</em></span>（<strong>减法封闭</strong>）</li>
+<li>证明 <span class="math inline">∀<em>a</em>, <em>b</em> ∈ <em>S</em></span>，有
+<span class="math inline"><em>a</em><em>b</em> ∈ <em>S</em></span>（<strong>乘法封闭</strong>）</li>
+</ol></li>
+</ul>
+<h2 id="理想">理想</h2>
+<p>若要证明环 <span class="math inline"><em>R</em></span> 的子集 <span class="math inline"><em>I</em></span> 是 <span class="math inline"><em>R</em></span> 的理想：</p>
+<ol type="1">
+<li>证明 <span class="math inline"><em>I</em></span> 是 <span class="math inline"><em>R</em></span> 的 <strong>非空子集</strong>
+（通常显然）</li>
+<li>证明 <span class="math inline">∀<em>r</em><sub>1</sub>, <em>r</em><sub>2</sub> ∈ <em>I</em></span>，<span class="math inline"><em>r</em><sub>1</sub> − <em>r</em><sub>2</sub> ∈ <em>I</em></span>（<strong>减法封闭</strong>）</li>
+<li>证明 <span class="math inline">∀<em>r</em> ∈ <em>I</em></span>，<span class="math inline"><em>s</em> ∈ <em>R</em></span>，<span class="math inline"><em>r</em><em>s</em>, <em>s</em><em>r</em> ∈ <em>I</em></span>（<strong>乘法吸收</strong>）</li>
+</ol>
+<h2 id="环同态">环同态</h2>
+<p>若要证明 <span class="math inline"><em>ϕ</em> : <em>R</em> → <em>R</em><sup>′</sup></span>
+是一个同态映射：</p>
+<ol type="1">
+<li>证明 <span class="math inline"><em>ϕ</em></span> 为 <span class="math inline"><em>R</em></span> 到 <span class="math inline"><em>R</em><sup>′</sup></span> 的
+<strong>映射</strong>
+<ul>
+<li>即对 <span class="math inline">∀<em>a</em>, <em>b</em> ∈ <em>R</em></span>，证明由
+<span class="math inline"><em>a</em> = <em>b</em></span> 可推出 <span class="math inline"><em>ϕ</em>(<em>a</em>) = <em>ϕ</em>(<em>b</em>)</span></li>
+</ul></li>
+<li>证明 <span class="math inline"><em>ϕ</em></span>
+<strong>保持运算</strong>
+<ul>
+<li>即对 <span class="math inline">∀<em>a</em>, <em>b</em> ∈ <em>R</em></span>，证明
+<ol type="1">
+<li><span class="math inline"><em>ϕ</em>(<em>a</em> + <em>b</em>) = <em>ϕ</em>(<em>a</em>) + <em>ϕ</em>(<em>b</em>)</span>（<strong>加法保持</strong>）</li>
+<li><span class="math inline"><em>ϕ</em>(<em>a</em><em>b</em>) = <em>ϕ</em>(<em>a</em>)<em>ϕ</em>(<em>b</em>)</span>（<strong>乘法保持</strong>）</li>
+</ol></li>
+</ul></li>
+<li>若还能证明 <span class="math inline"><em>ϕ</em></span> 是 <span class="math inline"><em>R</em></span> 到 <span class="math inline"><em>R</em><sup>′</sup></span> 的
+<strong>满射</strong>，则 <span class="math inline"><em>ϕ</em></span> 是
+<span class="math inline"><em>R</em></span> 到 <span class="math inline"><em>R</em><sup>′</sup></span> 的
+<strong>满同态映射</strong></li>
+<li>若还能证明 <span class="math inline"><em>ϕ</em></span> 是 <span class="math inline"><em>R</em></span> 到 <span class="math inline"><em>R</em><sup>′</sup></span> 的
+<strong>单射</strong>，则 <span class="math inline"><em>ϕ</em></span> 是
+<span class="math inline"><em>R</em></span> 到 <span class="math inline"><em>R</em><sup>′</sup></span> 的
+<strong>单同态映射</strong></li>
+</ol>
+<h2 id="环同构">环同构</h2>
+<p>若要证明环 <span class="math inline"><em>R</em></span> 与环 <span class="math inline"><em>R</em><sup>′</sup></span> 同构：</p>
+<ol type="1">
+<li>构造环 <span class="math inline"><em>R</em></span> 与环 <span class="math inline"><em>R</em><sup>′</sup></span> 的元素间的对应关系
+<span class="math inline"><em>ϕ</em></span>，并证明 <span class="math inline"><em>ϕ</em></span> 是 <span class="math inline"><em>R</em></span> 到 <span class="math inline"><em>R</em><sup>′</sup></span> 的
+<strong>映射</strong>
+<ul>
+<li>即对 <span class="math inline">∀<em>a</em>, <em>b</em> ∈ <em>R</em></span>，证明由
+<span class="math inline"><em>a</em> = <em>b</em></span> 可推出 <span class="math inline"><em>ϕ</em>(<em>a</em>) = <em>ϕ</em>(<em>b</em>)</span></li>
+</ul></li>
+<li>证明 <span class="math inline"><em>ϕ</em></span> 是 <span class="math inline"><em>R</em></span> 到 <span class="math inline"><em>R</em><sup>′</sup></span> 的
+<strong>单射</strong></li>
+<li>证明 <span class="math inline"><em>ϕ</em></span> 是 <span class="math inline"><em>R</em></span> 到 <span class="math inline"><em>R</em><sup>′</sup></span> 的
+<strong>满射</strong></li>
+<li>证明 <span class="math inline"><em>ϕ</em></span>
+<strong>保持运算</strong></li>
+</ol>
+<p>若要证明 <span class="math inline"><em>R</em>/<em>I</em> ≅ <em>R</em><sup>′</sup></span>，即
+<span class="math inline"><em>R</em>/<em>I</em></span> 与 <span class="math inline"><em>R</em><sup>′</sup></span> 同构：</p>
+<ol type="1">
+<li>建立环 <span class="math inline"><em>R</em></span> 与环 <span class="math inline"><em>R</em><sup>′</sup></span> 的元素之间的对应关系
+<span class="math inline"><em>ϕ</em></span>，并证明 <span class="math inline"><em>ϕ</em></span> 为 <span class="math inline"><em>R</em></span> 到 <span class="math inline"><em>R</em><sup>′</sup></span> 的
+<strong>映射</strong></li>
+<li>证明 <span class="math inline"><em>ϕ</em></span> 为 <span class="math inline"><em>R</em></span> 到 <span class="math inline"><em>R</em><sup>′</sup></span> 的
+<strong>满射</strong></li>
+<li>证明 <span class="math inline"><em>ϕ</em></span>
+<strong>保持运算</strong> <span class="math display"><em>ϕ</em>(<em>a</em> + <em>b</em>) = <em>ϕ</em>(<em>a</em>) + <em>ϕ</em>(<em>b</em>),  <em>ϕ</em>(<em>a</em><em>b</em>) = <em>ϕ</em>(<em>a</em>)<em>ϕ</em>(<em>b</em>)</span></li>
+<li>综上 <span class="math inline"><em>ϕ</em></span> 是 <span class="math inline"><em>R</em></span> 到 <span class="math inline"><em>R</em><sup>′</sup></span> 的
+<strong>满同态映射</strong></li>
+<li>计算同态的 <strong>核</strong> <span class="math inline">Ker <em>ϕ</em></span>，使得 <span class="math inline"><em>I</em> = Ker <em>ϕ</em></span></li>
+<li>应用 <strong>环同态基本定理</strong> 得 <span class="math inline"><em>R</em>/Ker <em>ϕ</em> ≅ <em>R</em><sup>′</sup></span></li>
+</ol>
+<h2 id="素理想">素理想</h2>
+<p>若要证明交换环 <span class="math inline"><em>R</em></span> 的理想
+<span class="math inline"><em>P</em></span> 是素理想：</p>
+<ol type="1">
+<li>证明 <span class="math inline"><em>P</em></span> 是 <span class="math inline"><em>R</em></span> 的 <strong>真理想</strong></li>
+<li>证明对任意 <span class="math inline"><em>a</em>, <em>b</em> ∈ <em>R</em></span>，如果
+<span class="math inline"><em>a</em><em>b</em> ∈ <em>P</em></span>，则
+<span class="math inline"><em>a</em> ∈ <em>P</em></span> 或 <span class="math inline"><em>b</em> ∈ <em>P</em></span></li>
+</ol>
+<h2 id="极大理想">极大理想</h2>
+<p>若要证明交换环 <span class="math inline"><em>R</em></span> 的理想
+<span class="math inline"><em>I</em></span> 是极大理想：</p>
+<ol type="1">
+<li>证明 <span class="math inline"><em>I</em></span> 是 <span class="math inline"><em>R</em></span> 的 <strong>真理想</strong></li>
+<li>设 <span class="math inline"><em>J</em></span> 是 <span class="math inline"><em>R</em></span> 的任意理想，且 <span class="math inline"><em>I</em> ⊊ <em>J</em> ⊆ <em>R</em></span>（左右夹击）</li>
+<li>任取 <span class="math inline"><em>x</em> ∈ <em>J</em></span> 且
+<span class="math inline"><em>x</em> ∉ <em>I</em></span></li>
+<li>根据 <span class="math inline"><em>x</em> ∉ <em>I</em></span>，获取约束条件，如不整除、互素等</li>
+<li>构造 <span class="math inline">1 = ⋯ ∈ <em>J</em></span></li>
+<li>因此 <span class="math inline"><em>J</em> = <em>R</em></span></li>
+<li>故 <span class="math inline"><em>I</em></span> 是 <span class="math inline"><em>R</em></span> 的极大理想</li>
+</ol>
+<p>若要证明交换环 <span class="math inline"><em>R</em></span> 的理想
+<span class="math inline"><em>I</em></span> 是唯一极大理想：</p>
+<ol type="1">
+<li>证明 <span class="math inline"><em>I</em></span> 是 <span class="math inline"><em>R</em></span> 的 <strong>真理想</strong></li>
+<li>设 <span class="math inline"><em>J</em></span> 是 <span class="math inline"><em>R</em></span> 的任意 <strong>不包含于</strong>
+<span class="math inline"><em>I</em></span> 的理想</li>
+<li>任取 <span class="math inline"><em>x</em> ∈ <em>J</em></span> 且
+<span class="math inline"><em>x</em> ∉ <em>I</em></span></li>
+<li>根据 <span class="math inline"><em>x</em> ∉ <em>I</em></span>，获取约束条件，如不整除、互素等</li>
+<li>构造 <span class="math inline">1 = ⋯ ∈ <em>J</em></span></li>
+<li>因此 <span class="math inline"><em>J</em> = <em>R</em></span></li>
+<li>故 <span class="math inline"><em>R</em></span> 的所有真理想都包含于
+<span class="math inline"><em>I</em></span>，即 <span class="math inline"><em>I</em></span> 是唯一极大理想</li>
+</ol>
+<h2 id="特征">特征</h2>
+<p>若要证明 <span class="math inline"><em>R</em></span> 的特征为 <span class="math inline"><em>n</em></span>，<span class="math inline"><em>n</em> ≠ 0</span>：<br>
+- 方法一： 1. 给出正整数 <span class="math inline"><em>n</em></span>，使得 <span class="math inline">∀<em>a</em> ∈ <em>R</em>, <em>n</em><em>a</em> = 0</span>（存在
+<span class="math inline"><em>n</em></span>） 2. 证明 <span class="math inline">∀<em>k</em>, 1 ≤ <em>k</em> &lt; <em>n</em>, ∃<em>b</em> ∈ <em>R</em>, <em>k</em><em>b</em> ≠ 0</span>（没有比
+<span class="math inline"><em>n</em></span> 更小的）</p>
+<ul>
+<li>方法二：（若 <span class="math inline"><em>R</em></span> 有单位元）
+<ol type="1">
+<li>找出 <span class="math inline"><em>R</em></span> 的单位元 <span class="math inline"><em>e</em></span></li>
+<li>计算 <span class="math inline"><em>e</em></span> 关于加法的阶 <span class="math inline"><em>n</em></span></li>
+<li>特征 <span class="math inline">Char <em>R</em> = <em>n</em></span></li>
+</ol></li>
+</ul>
+<p>若要证明 <span class="math inline"><em>R</em></span> 的特征为 <span class="math inline"><em>n</em> = 0</span>： - 证明 <span class="math inline"><em>R</em></span> 的单位元 <span class="math inline"><em>e</em></span> 关于加法的阶为无穷大</p>
+        </div>
+      </div>
+    </div>
+<h1 id="第一章-群">第一章 群</h1>
+<h2 id="等价关系与集合的分类">等价关系与集合的分类</h2>
+<h3 id="二元关系">二元关系</h3>
+<p>设 <span class="math inline"><em>S</em></span> 是一个
+<strong>非空集合</strong> ，<span class="math inline">ℛ</span> 是关于
+<span class="math inline"><em>S</em></span> 的元素的一个条件。如果对
+<span class="math inline"><em>S</em></span> 中 <strong>任意</strong>
+一个 <strong>有序</strong> 元素对<span class="math inline">(<em>a</em>, <em>b</em>)</span>，我们总能<strong>确定</strong>
+<span class="math inline"><em>a</em></span> 与 <span class="math inline"><em>b</em></span> 是否满足条件 <span class="math inline">ℛ</span>，就称 <span class="math inline">ℛ</span> 是
+<span class="math inline"><em>S</em></span>的一个<strong>关系</strong>
+。如果 <span class="math inline"><em>a</em></span> 与 <span class="math inline"><em>b</em></span> 满足条件 <span class="math inline">ℛ</span>，则称 <span class="math inline"><em>a</em></span> 与 <span class="math inline"><em>b</em></span> 有关系 <span class="math inline">ℛ</span>，记作 <span class="math inline"><em>a</em>ℛ<em>b</em></span>；否则称 <span class="math inline"><em>a</em></span> 与 <span class="math inline"><em>b</em></span> 无关系 <span class="math inline">ℛ</span>。</p>
+<ul>
+<li>关系 <span class="math inline">ℛ</span>
+也称为<strong>二元关系</strong>。</li>
+<li>注意 <span class="math inline">ℛ</span>
+的确定性，“总能”表示忽略验证所需的时间和复杂度</li>
+</ul>
+<h3 id="等价关系">等价关系</h3>
+<p>设 <span class="math inline">ℛ</span> 是非空集合 <span class="math inline"><em>S</em></span> 的一个关系，如果 <span class="math inline">ℛ</span> 满足</p>
+<ul>
+<li>反身性，即对任意的 <span class="math inline"><em>a</em> ∈ <em>S</em></span>，有 <span class="math inline"><em>a</em>ℛ<em>a</em></span></li>
+<li>对称性，即若 <span class="math inline"><em>a</em>ℛ<em>b</em></span>，则 <span class="math inline"><em>b</em>ℛ<em>a</em></span></li>
+<li>传递性，即若 <span class="math inline"><em>a</em>ℛ<em>b</em></span>，且 <span class="math inline"><em>b</em>ℛ<em>c</em></span>，则 <span class="math inline"><em>a</em>ℛ<em>c</em></span></li>
+</ul>
+<p>则称 <span class="math inline">ℛ</span> 是 <span class="math inline"><em>S</em></span> 的一个<strong>等价关系</strong>
+，并且如果 <span class="math inline"><em>a</em>ℛ<em>b</em></span>，则称
+<span class="math inline"><em>a</em></span> 等价于 <span class="math inline"><em>b</em></span>，记作 <span class="math inline"><em>a</em> ∼ <em>b</em></span></p>
+<ul>
+<li>注意可能存在孤立元素，即存在 <span class="math inline"><em>a</em></span>，对于任意 <span class="math inline"><em>b</em></span>，<span class="math inline"><em>a</em> ≁ <em>b</em></span>。</li>
+<li>不能根据传递性和对称性推出自反性。（反例：<span class="math inline"><em>a</em></span> 可以是孤立元素且没有自反性）</li>
+</ul>
+<h3 id="等价类">等价类</h3>
+<p>如果是集合 <span class="math inline"><em>S</em></span>
+的一个等价关系，对 <span class="math inline"><em>a</em> ∈ <em>S</em></span>，令 <span class="math display">[<em>a</em>] = {<em>x</em> ∈ <em>S</em> ∣ <em>x</em> ∼ <em>a</em>}</span></p>
+<p>称子集 <span class="math inline">[<em>a</em>]</span> 为 <span class="math inline"><em>S</em></span> 的一个<strong>等价类</strong>
+。<span class="math inline"><em>S</em></span> 的全体等价类的集合称为集合
+<span class="math inline"><em>S</em></span>
+在等价关系下的<strong>商集</strong> ，记 <span class="math inline"><em>S</em>/∼</span></p>
+<h3 id="同余关系与剩余类">同余关系与剩余类</h3>
+<p>设 <span class="math inline"><em>m</em></span> 是正整数，在整数集
+<span class="math inline"><strong>Z</strong></span> 中，规定</p>
+<p><span class="math display"><em>a</em>ℛ<em>b</em> ⇔ <em>m</em> ∣ <em>a</em> − <em>b</em>,  ∀<em>a</em>, <em>b</em> ∈ <strong>Z</strong></span></p>
+<p>则</p>
+<ul>
+<li>对任意整数 <span class="math inline"><em>a</em></span>，有 <span class="math inline"><em>m</em> ∣ <em>a</em> − <em>a</em></span></li>
+<li>若 <span class="math inline"><em>m</em> ∣ <em>a</em> − <em>b</em></span>，则
+<span class="math inline"><em>m</em> ∣ <em>b</em> − <em>a</em></span></li>
+<li>若 <span class="math inline"><em>m</em> ∣ <em>a</em> − <em>b</em></span>，<span class="math inline"><em>m</em> ∣ <em>b</em> − <em>c</em></span>，则
+<span class="math inline"><em>m</em> ∣ <em>a</em> − <em>c</em></span></li>
+</ul>
+<p>所以 <span class="math inline">ℛ</span> 是 <span class="math inline">ℤ</span> 的一个等价关系。显然 <span class="math inline"><em>a</em></span> 与 <span class="math inline"><em>b</em></span> 等价当且仅当 <span class="math inline"><em>a</em></span> 与 <span class="math inline"><em>b</em></span> 被 <span class="math inline"><em>m</em></span>
+除有相同的余数，因此称这个关系为<strong>同余关系</strong> ，并记作 <span class="math inline"><em>a</em> ≡ <em>b</em>(&nbsp;mod &nbsp;<em>m</em>)</span></p>
+<p>设 <span class="math inline"><em>a</em> ∈ ℤ</span>，则</p>
+<p><span class="math display">$$
+\begin{aligned}
+{[a]} &amp; =\{x \in \mathbb{Z} \mid x \equiv a \quad(\bmod m)\} \\
+&amp; =\{x \in \mathbb{Z} \mid m| x-a\} \\
+&amp; =\{a+m z \mid z \in \mathbb{Z}\}
+\end{aligned}
+$$</span></p>
+<p><span class="math inline">[<em>a</em>]</span> 称为整数集 <span class="math inline">ℤ</span> 的一个（与 <span class="math inline"><em>a</em></span> 同余的）<strong>模 m
+剩余类</strong> ，在数论中，<span class="math inline">[<em>a</em>]</span> 常记作 <span class="math inline"><em>ā</em></span>，而相应的商集称为 <span class="math inline">ℤ</span> 的模 m 剩余类集，记作 <span class="math inline">ℤ<sub><em>m</em></sub></span><br>
+由 <span class="math display"><em>ā</em> = <em>b̄</em> ⇔ <em>m</em> ∣ <em>a</em> − <em>b</em></span></p>
+<p>易得 <span class="math display">$$
+\begin{array}{l}
+\overline{0}=\{\cdots,-2 m,-m,0,m,2 m,\cdots\},\\
+\overline{1}=\{\cdots,-2 m+1,-m+1,1,m+1,2 m+1,\cdots\},\\
+\cdots \cdots \\
+\overline{m-1}=\{\cdots,-2 m-1,-m-1,-1,m-1,2 m-1,\cdots\}
+\end{array}
+$$</span></p>
+<p>是模 <span class="math inline"><em>m</em></span>
+的全体不同的剩余类，所以 <span class="math display">$$
+\mathbb{Z}_{m}=\{\overline{0},\overline{1},\overline{2},\cdots,\overline{m-1}\}
+$$</span></p>
+<h3 id="分类">分类</h3>
+<p>如果非空集合 <span class="math inline"><em>S</em></span>
+是它的某些两两不相交的非空子集的并，则称这些子集为集合 <span class="math inline"><em>S</em></span> 的一种<strong>分类</strong>
+，其中每个子集称为 <span class="math inline"><em>S</em></span>
+一个<strong>类</strong> 。如果 <span class="math inline"><em>S</em></span> 的子集族 <span class="math inline">{<em>S</em><sub><em>i</em></sub> ∣ <em>i</em> ∈ <em>I</em>}</span>
+构成 <span class="math inline"><em>S</em></span> 的一种分类，则记作
+<span class="math inline">𝒫 = {<em>S</em><sub><em>i</em></sub> ∣ <em>i</em> ∈ <em>I</em>}</span>
+由此定义可知，集合 <span class="math inline"><em>S</em></span> 的子集族
+<span class="math inline">{<em>S</em><sub><em>i</em></sub> ∣ <em>i</em> ∈ <em>I</em>}</span>
+构成 <span class="math inline"><em>S</em></span> 的一种分类当且仅当</p>
+<ul>
+<li><span class="math inline"><em>S</em> = ⋃<sub><em>i</em> ∈ <em>I</em></sub><em>S</em><sub><em>i</em></sub></span></li>
+<li><span class="math inline"><em>S</em><sub><em>i</em></sub> ∩ <em>S</em><sub><em>j</em></sub> = ⌀</span>，<span class="math inline"><em>i</em> ≠ <em>j</em></span></li>
+</ul>
+<p>第一个条件说明 <span class="math inline">{<em>S</em><sub><em>i</em></sub>}</span> 这些子集
+<strong>无遗漏地包含</strong> 了 <span class="math inline"><em>S</em></span>
+的全部元素，第二个条件说明两个不同的子集无公共元素，从而 <span class="math inline"><em>S</em></span> 的元素属于且仅属于一个子集</p>
+<ul>
+<li>这表明，<span class="math inline"><em>S</em></span>
+的一个分类必须满足 <strong>不漏不重</strong> 的原则</li>
+</ul>
+<h3 id="分类与等价关系的关系">分类与等价关系的关系</h3>
+<ul>
+<li>集合 <span class="math inline"><em>S</em></span>
+的任何一个等价关系都确定了 <span class="math inline"><em>S</em></span>
+的一种分类，且其中每一个类都是集合 <span class="math inline"><em>S</em></span> 的一个等价类。</li>
+<li>反之，集合 <span class="math inline"><em>S</em></span>
+的任何一种分类也都给出了集合 <span class="math inline"><em>S</em></span>
+的一个等价关系，且相应的等价类就是原分类中的那些类。</li>
+<li>也就是说，一个集合的分类可以通过等价关系来描述；另一方面，等价关系也可以用集合的分类来表示</li>
+</ul>
+<h3 id="等价关系数目">等价关系数目</h3>
+<p>如果用 <span class="math inline"><em>B</em>(<em>n</em>)</span>
+表示一个具有 <span class="math inline"><em>n</em></span>
+个元素的集合上的不同等价关系的个数，则有下列的递推公式：</p>
+<p><span class="math display">$$ B(n+1)=\sum_{k=0}^{n}
+\mathrm{C}_{n}^{k} B(k),\quad n \geqslant 1$$</span></p>
+<p>其中 <span class="math inline">C<sub><em>n</em></sub><sup><em>k</em></sup></span>
+为二项式系数，并规定 <span class="math inline"><em>B</em>(0) = 1, <em>B</em>(1) = 1</span></p>
+<p>怎么理解：这个递推公式的含义是，划分具有 <span class="math inline"><em>n</em> + 1</span> 个元素的集合时，考虑第 <span class="math inline"><em>n</em> + 1</span> 个元素，若其自成一类，则剩余
+<span class="math inline"><em>n</em></span> 个元素的划分方式就是 <span class="math inline"><em>B</em>(<em>n</em>)</span>；若其从剩余 <span class="math inline"><em>n</em></span> 个元素中选出 <span class="math inline">1</span> 个元素与之同类，则有 <span class="math inline">C<sub><em>n</em></sub><sup>1</sup></span>
+种选择方式，剩余 <span class="math inline"><em>n</em> − 1</span>
+个元素的划分方式就是 <span class="math inline"><em>B</em>(<em>n</em> − 1)</span>，共有 <span class="math inline">C<sub><em>n</em></sub><sup>1</sup><em>B</em>(<em>n</em> − 1)</span>
+种划分方式；以此类推，若其从剩余 <span class="math inline"><em>n</em></span> 个元素中选出 <span class="math inline"><em>k</em></span> 个元素与之同类，则有 <span class="math inline">C<sub><em>n</em></sub><sup><em>k</em></sup><em>B</em>(<em>k</em>)</span>
+种划分方式。所有这些情况加起来就是 <span class="math inline"><em>B</em>(<em>n</em> + 1)</span></p>
+<h2 id="群的概念">群的概念</h2>
+<h3 id="代数运算">代数运算</h3>
+<p>设 <span class="math inline"><em>A</em></span> 是一个非空集合，若对
+<span class="math inline"><em>A</em></span> 中任意两个元素 <span class="math inline"><em>a</em>, <em>b</em></span>，通过某个法则“<span class="math inline">⋅</span>”，有 <span class="math inline"><em>A</em></span> 中唯一确定的元素 <span class="math inline"><em>c</em></span> 与之对应，则称法则“<span class="math inline">⋅</span>”为集合 <span class="math inline"><em>A</em></span> 上的一个<strong>代数运算</strong>
+。元素 <span class="math inline"><em>c</em></span> 是 <span class="math inline"><em>a</em>, <em>b</em></span> 通过运算“<span class="math inline">⋅</span>” 作用的结果，将此结果记为 <span class="math inline"><em>a</em> ⋅ <em>b</em> = <em>c</em></span></p>
+<p>换句话说代数运算满足封闭性和唯一性：</p>
+<ul>
+<li><span class="math inline">∀<em>a</em>, <em>b</em> ∈ <em>A</em></span>，<span class="math inline"><em>a</em> ⋅ <em>b</em> ∈ <em>A</em></span></li>
+<li>若 <span class="math inline"><em>a</em><sub>1</sub> ⋅ <em>b</em><sub>1</sub> = <em>c</em><sub>1</sub></span>，<span class="math inline"><em>a</em><sub>2</sub> ⋅ <em>b</em><sub>2</sub> = <em>c</em><sub>2</sub></span>，<span class="math inline"><em>a</em><sub>1</sub> = <em>a</em><sub>2</sub></span>，<span class="math inline"><em>b</em><sub>1</sub> = <em>b</em><sub>2</sub></span>，则必有
+<span class="math inline"><em>c</em><sub>1</sub> = <em>c</em><sub>2</sub></span></li>
+</ul>
+<h3 id="群的定义">群的定义</h3>
+<p>设 <span class="math inline"><em>G</em></span> 是一个非空集合，“<span class="math inline">⋅</span>”是 <span class="math inline"><em>G</em></span> 上的一个代数运算，即</p>
+<ul>
+<li>(G0) 对所有的 <span class="math inline"><em>a</em>, <em>b</em> ∈ <em>G</em></span>，有 <span class="math inline"><em>a</em> ⋅ <em>b</em> ∈ <em>G</em></span>。</li>
+</ul>
+<p>如果 <span class="math inline"><em>G</em></span> 的运算还满足</p>
+<ul>
+<li>(G1) 结合律，即对所有的 <span class="math inline"><em>a</em>, <em>b</em>, <em>c</em> ∈ <em>G</em></span>，有
+<span class="math inline">(<em>a</em> ⋅ <em>b</em>) ⋅ <em>c</em> = <em>a</em> ⋅ (<em>b</em> ⋅ <em>c</em>)</span></li>
+<li>(G2) <span class="math inline"><em>G</em></span> 中有元素 <span class="math inline"><em>e</em></span>，使对每个 <span class="math inline"><em>a</em> ∈ <em>G</em></span>，有 <span class="math inline"><em>e</em> ⋅ <em>a</em> = <em>a</em> ⋅ <em>e</em> = <em>a</em></span></li>
+<li>(G3) 对 <span class="math inline"><em>G</em></span> 中每个元素 <span class="math inline"><em>a</em></span>，存在元素 <span class="math inline"><em>b</em> ∈ <em>G</em></span>，使 <span class="math inline"><em>a</em> ⋅ <em>b</em> = <em>b</em> ⋅ <em>a</em> = <em>e</em></span></li>
+</ul>
+<p>则称 <span class="math inline"><em>G</em></span> 关于运算“<span class="math inline">⋅</span>”构成一个<strong>群</strong> ，记作 <span class="math inline">(<em>G</em>, ⋅)</span>。在不致引起混淆的情况下，也称
+<span class="math inline"><em>G</em></span> 为群。</p>
+<ul>
+<li><p>(G2) 中的元素 <span class="math inline"><em>e</em></span> 称为群
+<span class="math inline"><em>G</em></span> 的<strong>单位元</strong>
+或恒等元；</p></li>
+<li><p>(G3) 中的元素 <span class="math inline"><em>b</em></span> 称为
+<span class="math inline"><em>a</em></span>
+的<strong>逆元</strong></p></li>
+<li><p>群 <span class="math inline"><em>G</em></span> 的单位元 <span class="math inline"><em>e</em></span>
+和每个元素的逆元都是唯一的</p></li>
+<li><p><span class="math inline"><em>G</em></span> 中元素 <span class="math inline"><em>a</em></span> 的唯一的逆元通常记作 <span class="math inline"><em>a</em><sup>−1</sup></span></p></li>
+<li><p>如果群 <span class="math inline"><em>G</em></span>
+的运算还满足交换律，即对任意的 <span class="math inline"><em>a</em></span>，<span class="math inline"><em>b</em> ∈ <em>G</em></span>，有 <span class="math inline"><em>a</em> ⋅ <em>b</em> = <em>b</em> ⋅ <em>a</em></span>，则称
+<span class="math inline"><em>G</em></span> 是一个
+<strong>交换群</strong> 或 <strong>阿贝尔群</strong></p></li>
+<li><p>群 <span class="math inline"><em>G</em></span> 中元素的个数称为群
+<span class="math inline"><em>G</em></span> 的 <strong>阶</strong>
+，记为 <span class="math inline">|<em>G</em>|</span>。如果 <span class="math inline">|<em>G</em>|</span> 是有限数，则称 <span class="math inline"><em>G</em></span> 为 <strong>有限群</strong>
+，否则称 <span class="math inline"><em>G</em></span> 为
+<strong>无限群</strong></p></li>
+<li><p>当群 <span class="math inline"><em>G</em></span>
+的运算用加号“+”表示时，通常将 <span class="math inline"><em>G</em></span> 的单位元记作 <span class="math inline">0</span>，并称 <span class="math inline">0</span> 为
+<span class="math inline"><em>G</em></span> 的 <strong>零元</strong>
+；将 <span class="math inline"><em>a</em> ∈ <em>G</em></span> 的逆元记作
+<span class="math inline">−<em>a</em></span>，并称 <span class="math inline">−<em>a</em></span> 为 <span class="math inline"><em>a</em></span> 的 <strong>负元</strong></p></li>
+<li><p>习惯上，只有当群为交换群时，才用“+”来表示群的运算，并称这个运算为加法，把运算的结果叫做和，同时称这样的群为
+<strong>加群</strong></p></li>
+<li><p>相应地，将不是加群的群称为 <strong>乘群</strong>
+，并把乘群的运算叫做乘法，运算的结果叫做积。在运算过程中，乘群的运算符号通常省略不写</p></li>
+<li><p>今后，如不作特别声明，<strong>总假定群的运算是乘法</strong></p></li>
+</ul>
+<h3 id="群表">群表</h3>
+<p>形如下表的表通常称为群的 <strong>乘法表</strong> ，也称
+<strong>群表</strong> 或
+<strong>凯莱表</strong>。人们常用群表来表示有限群的运算</p>
+<table>
+<thead>
+<tr>
+<th><span class="math inline">∘</span></th>
+<th><span class="math inline"><em>e</em></span></th>
+<th><span class="math inline">⋯</span></th>
+<th><span class="math inline"><em>b</em></span></th>
+<th><span class="math inline">⋯</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="math inline"><em>e</em></span></td>
+<td><span class="math inline"><em>e</em></span></td>
+<td><span class="math inline">⋯</span></td>
+<td><span class="math inline"><em>b</em></span></td>
+<td><span class="math inline">⋯</span></td>
+</tr>
+<tr>
+<td><span class="math inline">⋮</span></td>
+<td><span class="math inline">⋮</span></td>
+<td><span class="math inline">⋱</span></td>
+<td><span class="math inline">⋮</span></td>
+<td><span class="math inline">⋱</span></td>
+</tr>
+<tr>
+<td><span class="math inline"><em>a</em></span></td>
+<td><span class="math inline"><em>a</em></span></td>
+<td><span class="math inline">⋯</span></td>
+<td><span class="math inline"><em>a</em> ∘ <em>b</em></span></td>
+<td><span class="math inline">⋯</span></td>
+</tr>
+</tbody>
+</table>
+<p>在一个群表中，</p>
+<ul>
+<li>表的左上角列出了群的运算符号（有时省略）</li>
+<li>表的最上面一行则依次列出群的所有元素（通常单位元列在最前面）</li>
+<li>表的最左列按同样的次序列出群的所有元素</li>
+<li>表中的其余部分则是最左列的元素和最上面一行的元素的乘积</li>
+<li>注意，在乘积 <span class="math inline"><em>a</em> ∘ <em>b</em></span> 中，左边的因子 <span class="math inline"><em>a</em></span> 是左列上的元素，右边的因子 <span class="math inline"><em>b</em></span> 是最上面一行的元素</li>
+<li>由群表很容易确定一个元素的逆元素</li>
+<li>如果一个群的群表是对称的，则可以肯定，这个群一定是交换群</li>
+</ul>
+<h3 id="群的性质">群的性质</h3>
+<p>设 <span class="math inline"><em>G</em></span> 为群，则有</p>
+<ul>
+<li>群 <span class="math inline"><em>G</em></span> 的单位元是唯一的</li>
+<li>群 <span class="math inline"><em>G</em></span>
+的每个元素的逆元是唯一的</li>
+<li>对任意的 <span class="math inline"><em>a</em> ∈ <em>G</em></span>，有 <span class="math inline">(<em>a</em><sup>−1</sup>)<sup>−1</sup> = <em>a</em></span></li>
+<li>对任意的 <span class="math inline"><em>a</em>, <em>b</em> ∈ <em>G</em></span>，有 <span class="math inline">(<em>a</em><em>b</em>)<sup>−1</sup> = <em>b</em><sup>−1</sup><em>a</em><sup>−1</sup></span></li>
+<li>在群中消去律成立，即设 <span class="math inline"><em>a</em>, <em>b</em>, <em>c</em> ∈ <em>G</em></span>，如果
+<span class="math inline"><em>a</em><em>b</em> = <em>a</em><em>c</em></span>，或
+<span class="math inline"><em>b</em><em>a</em> = <em>c</em><em>a</em></span>，则
+<span class="math inline"><em>b</em> = <em>c</em></span></li>
+</ul>
+<p>设 <span class="math inline"><em>G</em></span> 是群，那么对任意的
+<span class="math inline"><em>a</em>, <em>b</em> ∈ <em>G</em></span>，方程</p>
+<p><span class="math display"><em>a</em><em>x</em> = <em>b</em>  及  <em>y</em><em>a</em> = <em>b</em></span></p>
+<p>在 <span class="math inline"><em>G</em></span> 中都有唯一解</p>
+<h3 id="方幂">方幂</h3>
+<p>群的定义中的结合律表明，群中三个元素 <span class="math inline"><em>a</em>, <em>b</em>, <em>c</em></span>
+的乘积与运算的顺序无关，因此可以简单地写成：<span class="math inline"><em>a</em><em>b</em><em>c</em></span>。进一步可知，在群
+<span class="math inline"><em>G</em></span> 中，任意 <span class="math inline"><em>k</em></span> 个元素 <span class="math inline"><em>a</em><sub>1</sub>, <em>a</em><sub>2</sub>, ⋯, <em>a</em><sub><em>k</em></sub></span>
+的乘积与运算的顺序无关，因此可以写成 <span class="math inline"><em>a</em><sub>1</sub><em>a</em><sub>2</sub>⋯<em>a</em><sub><em>k</em></sub></span>。据此，可以定义群的元素的<strong>方幂</strong>
+：</p>
+<h4 id="乘群">乘群</h4>
+<p>对任意的正整数 <span class="math inline"><em>n</em></span>，定义
+<span class="math display">$$
+a^{n}=\underbrace{a \cdot a \cdots a}_{n \text{个} a}
+$$</span></p>
+<p>再约定 <span class="math display">$$
+\begin{aligned}
+a^{0} &amp; =e,\\
+a^{-n} &amp; =\left(a^{-1}\right)^{n} \quad(n \text{为正整数}),
+\end{aligned}
+$$</span></p>
+<p>则 <span class="math inline"><em>a</em><sup><em>n</em></sup></span>
+对任意整数 <span class="math inline"><em>n</em></span>
+都有意义，并且不难证明，对任意的 <span class="math inline"><em>a</em> ∈ <em>G</em></span>，<span class="math inline"><em>m</em>, <em>n</em> ∈ <strong>Z</strong></span>，有下列的指数法则：</p>
+<ul>
+<li><span class="math inline"><em>a</em><sup><em>n</em></sup> ⋅ <em>a</em><sup><em>m</em></sup> = <em>a</em><sup><em>n</em> + <em>m</em></sup></span></li>
+<li><span class="math inline">(<em>a</em><sup><em>n</em></sup>)<sup><em>m</em></sup> = <em>a</em><sup><em>n</em><em>m</em></sup></span></li>
+<li>如果 <span class="math inline"><em>G</em></span> 是交换群，则 <span class="math inline">(<em>a</em><em>b</em>)<sup><em>n</em></sup> = <em>a</em><sup><em>n</em></sup><em>b</em><sup><em>n</em></sup></span></li>
+</ul>
+<h4 id="加群">加群</h4>
+<p>当 <span class="math inline"><em>G</em></span>
+是加群时，元素的方幂则应改写为倍数</p>
+<p><span class="math display">$$
+\begin{aligned}
+n a=\underbrace{a+a+\cdots+a}_{n \text{个} a}\\
+0 a=0,\\
+(-n) a=n(-a)
+\end{aligned}
+$$</span></p>
+<p>相应地，指数法则变为倍数法则，</p>
+<ul>
+<li><span class="math inline"><em>n</em><em>a</em> + <em>m</em><em>a</em> = (<em>n</em> + <em>m</em>)<em>a</em></span></li>
+<li><span class="math inline"><em>m</em>(<em>n</em><em>a</em>) = (<em>m</em><em>n</em>)<em>a</em></span></li>
+<li><span class="math inline"><em>n</em>(<em>a</em> + <em>b</em>) = <em>n</em><em>a</em> + <em>n</em><em>b</em></span></li>
+</ul>
+<p>因为加群是交换群，所以第三条总是成立的</p>
+<h3 id="群的判定">群的判定</h3>
+<ul>
+<li><p>设 <span class="math inline"><em>G</em></span>
+是一个具有代数运算的非空集合，则 <span class="math inline"><em>G</em></span>
+关于所给的运算构成群的<strong>充分必要条件</strong> 是</p>
+<ul>
+<li><span class="math inline"><em>G</em></span> 的运算满足结合律</li>
+<li><span class="math inline"><em>G</em></span> 中有一个元素 <span class="math inline"><em>e</em></span>（称为 <span class="math inline"><em>G</em></span> 的左单位元），使对任意的 <span class="math inline"><em>a</em> ∈ <em>G</em></span>，有 <span class="math inline"><em>e</em><em>a</em> = <em>a</em></span></li>
+<li>对 <span class="math inline"><em>G</em></span> 的每一个元素 <span class="math inline"><em>a</em></span>，存在 <span class="math inline"><em>a</em><sup>′</sup> ∈ <em>G</em></span>（称为
+<span class="math inline"><em>a</em></span> 的左逆元），使 <span class="math inline"><em>a</em><sup>′</sup><em>a</em> = <em>e</em></span>。这里
+<span class="math inline"><em>e</em></span> 是 <span class="math inline"><em>G</em></span> 的左单位元</li>
+</ul>
+<p>换句话说，一个具有乘法运算的非空集合 <span class="math inline"><em>G</em></span>，只要满足结合律，有左单位元，每个元素有左逆元，就构成一个群。
+同理可证，一个具有乘法运算的非空集合 <span class="math inline"><em>G</em></span>，如果满足结合律，有右单位元，且
+<span class="math inline"><em>G</em></span> 中每个元素有右逆元，则 <span class="math inline"><em>G</em></span> 也构成群</p></li>
+<li><p>设 <span class="math inline"><em>G</em></span>
+是一个具有乘法运算且满足结合律的非空集合，则 <span class="math inline"><em>G</em></span> 构成群的
+<strong>充分必要条件</strong> 是对任意的 <span class="math inline"><em>a</em>, <em>b</em> ∈ <em>G</em></span>，方程
+<span class="math display"><em>a</em><em>x</em> = <em>b</em>  与  <em>y</em><em>a</em> = <em>b</em></span></p>
+<p>在 <span class="math inline"><em>G</em></span> 中都有解</p></li>
+<li><p>设 <span class="math inline"><em>G</em></span>
+是一个具有乘法运算的非空 <strong>有限</strong> 集合，如果 <span class="math inline"><em>G</em></span> 满足结合律，且两个消去律成立，则
+<span class="math inline"><em>G</em></span> 构成群</p>
+<ul>
+<li>要注意的是，如果没有有限的条件，一个具有代数运算的集合，仅仅满足结合律和两个消去律，并不一定构成群</li>
+</ul></li>
+</ul>
+<h3 id="常用例子">常用例子</h3>
+<ul>
+<li>整数集 <span class="math inline"><strong>Z</strong></span>
+关于数的加法构成群，这个群称为整数加群</li>
+<li>全体非零有理数的集合 <span class="math inline"><strong>Q</strong><sup>*</sup></span>
+关于数的乘法构成交换群</li>
+<li>全体非零实数的集合 <span class="math inline"><strong>R</strong><sup>*</sup></span>
+关于数的乘法也构成交换群</li>
+<li>全体非零复数的集合 <span class="math inline"><strong>C</strong><sup>*</sup></span>
+关于数的乘法也构成交换群</li>
+<li>全体 <span class="math inline"><em>n</em></span> 次单位根组成的集合
+<span class="math display">$$
+  \begin{aligned} U_{n}
+  &amp; =\left\{x \in \mathbf{C} \mid x^{n}=1\right\} \\
+  &amp; =\left\{\left.\cos \frac{2 k \pi}{n}+i \sin \frac{2 k \pi}{n}
+\right\rvert\,k=0,1,2,\cdots,n-1\right\}
+  \end{aligned}
+  $$</span> 关于数的乘法构成一个 <span class="math inline"><em>n</em></span> 阶交换群，通常称这个群为 <strong>n
+次单位根群</strong></li>
+<li>设 <span class="math inline"><em>m</em></span> 是大于 <span class="math inline">1</span> 的正整数，记 <span class="math display">$$
+  \mathbf{Z}_{m}=\{\overline{0},\overline{1},\overline{2},\cdots,\overline{m-1}\}
+  $$</span> 则 <span class="math inline"><strong>Z</strong><sub><em>m</em></sub></span>
+关于剩余类的加法构成加群，这个群称为 <span class="math inline"><strong>Z</strong></span> 的模 <span class="math inline"><em>m</em></span> 剩余类加群</li>
+<li>设 <span class="math inline"><em>m</em></span> 是大于 <span class="math inline">1</span> 的正整数，记 <span class="math display"><em>U</em>(<em>m</em>) = {<em>ā</em> ∈ <strong>Z</strong><sub><em>m</em></sub> ∣ (<em>a</em>, <em>m</em>) = 1}</span>
+则 <span class="math inline"><em>U</em>(<em>m</em>)</span>
+关于剩余类的乘法构成群，群 <span class="math inline">(<em>U</em>(<em>m</em>), ⋅)</span> 称为 <span class="math inline"><strong>Z</strong></span> 的模 <span class="math inline"><em>m</em></span>
+单位群，显然这是一个交换群，不一定是循环群。当 <span class="math inline"><em>p</em></span> 为素数时，<span class="math inline"><em>U</em>(<em>p</em>)</span> 常记作 <span class="math inline"><strong>Z</strong><sub><em>p</em></sub><sup>*</sup></span>，易知
+<span class="math display">$$
+  \mathbf{Z}_{p}^{*}=\{\overline{1},\overline{2},\cdots,\overline{p-1}\}
+  $$</span> 这是一个循环群，<span class="math inline"><em>U</em>(<em>m</em>)</span> 的阶等于欧拉函数 <span class="math inline"><em>ϕ</em>(<em>m</em>)</span></li>
+</ul>
+<h2 id="子群">子群</h2>
+<h3 id="子群的定义">子群的定义</h3>
+<p>设 <span class="math inline"><em>G</em></span> 是一个群，<span class="math inline"><em>H</em></span> 是 <span class="math inline"><em>G</em></span> 的一个非空子集。如果 <span class="math inline"><em>H</em></span> 关于 <span class="math inline"><em>G</em></span> 的运算也构成群，则称 <span class="math inline"><em>H</em></span> 为 <span class="math inline"><em>G</em></span> 的一个<strong>子群</strong> ，记作
+<span class="math inline"><em>H</em> &lt; <em>G</em></span></p>
+<ul>
+<li><p>对任意群 <span class="math inline"><em>G</em></span>，<span class="math inline"><em>G</em></span> 本身以及只含单位元 <span class="math inline"><em>e</em></span> 的子集 <span class="math inline"><em>H</em> = {<em>e</em>}</span> 是 <span class="math inline"><em>G</em></span> 的子群，这两个子群称为 <span class="math inline"><em>G</em></span> 的 <strong>平凡子群</strong> 。群
+<span class="math inline"><em>G</em></span> 的其他子群称为 <span class="math inline"><em>G</em></span> 的
+<strong>非平凡子群</strong></p></li>
+<li><p>群 <span class="math inline"><em>G</em></span>
+的不等于它自身的子群称为 <span class="math inline"><em>G</em></span> 的
+<strong>真子群</strong></p></li>
+<li><p>设 <span class="math inline"><em>m</em></span> 是一个整数，令
+<span class="math display"><em>H</em> = {<em>m</em><em>z</em> ∣ <em>z</em> ∈ <strong>Z</strong>}</span></p>
+<p>则 <span class="math inline"><em>H</em></span> 为整数加群 <span class="math inline"><strong>Z</strong></span> 的子群。这个群称为由 <span class="math inline"><em>m</em></span> 所 <strong>生成的子群</strong>
+，常记作 <span class="math inline"><em>m</em><strong>Z</strong></span>
+或 <span class="math inline">⟨<em>m</em>⟩</span></p></li>
+</ul>
+<h3 id="子群的判定">子群的判定</h3>
+<ul>
+<li>由于群 <span class="math inline"><em>G</em></span>
+的运算满足结合律，所以结合律在 <span class="math inline"><em>G</em></span> 的任何关于 <span class="math inline"><em>G</em></span> 的运算封闭的非空子集 <span class="math inline"><em>H</em></span>
+上都成立。于是，由群的定义知，如果群 <span class="math inline"><em>G</em></span> 的非空子集 <span class="math inline"><em>H</em></span> 满足下列条件，则 <span class="math inline"><em>H</em></span> 是群 <span class="math inline"><em>G</em></span> 的子群：
+<ul>
+<li><span class="math inline"><em>H</em></span> 在群的运算下封闭</li>
+<li><span class="math inline"><em>H</em></span> 有单位元</li>
+<li><span class="math inline"><em>H</em></span>
+包含它的每个元素的逆元</li>
+</ul></li>
+<li>设 <span class="math inline"><em>G</em></span> 为群，<span class="math inline"><em>H</em></span> 是群 <span class="math inline"><em>G</em></span> 的 <strong>非空子集</strong> ，则
+<span class="math inline"><em>H</em></span> 成为群 <span class="math inline"><em>G</em></span> 的子群的
+<strong>充分必要条件</strong> 是
+<ul>
+<li>对任意 <span class="math inline"><em>a</em>, <em>b</em> ∈ <em>H</em></span>，有 <span class="math inline"><em>a</em><em>b</em> ∈ <em>H</em></span></li>
+<li>对任意 <span class="math inline"><em>a</em> ∈ <em>H</em></span>，有
+<span class="math inline"><em>a</em><sup>−1</sup> ∈ <em>H</em></span></li>
+</ul></li>
+<li>设 <span class="math inline"><em>G</em></span> 为群，<span class="math inline"><em>H</em></span> 是群 <span class="math inline"><em>G</em></span> 的 <strong>非空子集</strong> ，则
+<span class="math inline"><em>H</em></span> 成为 <span class="math inline"><em>G</em></span> 的子群的
+<strong>充分必要条件</strong> 是
+<ul>
+<li>对任意的 <span class="math inline"><em>a</em>, <em>b</em> ∈ <em>H</em></span>，有 <span class="math inline"><em>a</em><em>b</em><sup>−1</sup> ∈ <em>H</em></span></li>
+</ul></li>
+</ul>
+<h3 id="子群的性质">子群的性质</h3>
+<ul>
+<li><p>设 <span class="math inline"><em>G</em></span> 为群，<span class="math inline"><em>H</em></span> 是 <span class="math inline"><em>G</em></span> 的子群，则</p>
+<ul>
+<li>群 <span class="math inline"><em>G</em></span> 的单位元 <span class="math inline"><em>e</em></span> 是 <span class="math inline"><em>H</em></span> 的单位元；</li>
+<li>对任意的 <span class="math inline"><em>a</em> ∈ <em>H</em></span>，<span class="math inline"><em>a</em></span> 在 <span class="math inline"><em>G</em></span> 中的逆元 <span class="math inline"><em>a</em><sup>−1</sup></span> 就是 <span class="math inline"><em>a</em></span> 在 <span class="math inline"><em>H</em></span> 中的逆元</li>
+</ul></li>
+<li><p>设 <span class="math inline"><em>G</em></span> 为群，记 <span class="math display"><em>C</em>(<em>G</em>) = {<em>g</em> ∈ <em>G</em> ∣ <em>g</em><em>x</em> = <em>x</em><em>g</em>, ∀<em>x</em> ∈ <em>G</em>}</span></p>
+<p>则 <span class="math inline"><em>C</em>(<em>G</em>)</span> 是 <span class="math inline"><em>G</em></span> 的子群。称 <span class="math inline"><em>C</em>(<em>G</em>)</span> 为 <span class="math inline"><em>G</em></span> 的
+<strong>中心</strong>。</p></li>
+<li><p>设 <span class="math inline"><em>a</em></span> 是群 <span class="math inline"><em>G</em></span> 的元素，定义 <span class="math inline"><em>a</em></span> 在 <span class="math inline"><em>G</em></span> 中的 <strong>中心化子</strong> 为
+<span class="math display"><em>C</em>(<em>a</em>) = {<em>g</em> ∈ <em>G</em> ∣ <em>g</em><em>a</em> = <em>a</em><em>g</em>}</span></p>
+<p>则 <span class="math inline"><em>C</em>(<em>a</em>)</span> 是 <span class="math inline"><em>G</em></span> 的子群，且满足 <span class="math display"><em>C</em>(<em>G</em>) = ⋂<sub><em>a</em> ∈ <em>G</em></sub><em>C</em>(<em>a</em>)</span></p></li>
+<li><p>群 <span class="math inline"><em>G</em></span> 的任意两个子群的
+<strong>交</strong> 集 <strong>一定</strong> 是 <span class="math inline"><em>G</em></span> 的子群</p></li>
+<li><p>群 <span class="math inline"><em>G</em></span> 的任意两个子群的
+<strong>并</strong> 集 <strong>不一定</strong> 是 <span class="math inline"><em>G</em></span> 的子群</p></li>
+</ul>
+<h3 id="生成子群">生成子群</h3>
+<h4 id="生成子群的定义">生成子群的定义</h4>
+<p>设 <span class="math inline"><em>S</em></span> 是群 <span class="math inline"><em>G</em></span> 的一个非空子集，令 <span class="math inline"><em>M</em></span> 表示 <span class="math inline"><em>G</em></span> 中所有包含 <span class="math inline"><em>S</em></span> 的子群所组成的集合，即 <span class="math display"><em>M</em> = {<em>H</em> &lt; <em>G</em> ∣ <em>S</em> ⊆ <em>H</em>}</span></p>
+<p>本身显然包含 <span class="math inline"><em>S</em></span>，所以 <span class="math inline"><em>G</em> ∈ <em>M</em></span>，从而 <span class="math inline"><em>M</em></span> 非空。令 <span class="math display"><em>K</em> = ⋂<sub><em>H</em> ∈ <em>M</em></sub><em>H</em></span></p>
+<p>则 <span class="math inline"><em>K</em></span> 是 <span class="math inline"><em>G</em></span> 的子群，称 <span class="math inline"><em>K</em></span> 为群 <span class="math inline"><em>G</em></span> 的由子集 <span class="math inline"><em>S</em></span>
+所生成的子群，简称<strong>生成子群</strong> ，记作 <span class="math inline">⟨<em>S</em>⟩</span>，即 <span class="math display">⟨<em>S</em>⟩ = ⋂<sub><em>S</em> ⊆ <em>H</em> &lt; <em>G</em></sub><em>H</em></span></p>
+<p>子集 <span class="math inline"><em>S</em></span> 称为 <span class="math inline">⟨<em>S</em>⟩</span>的<strong>生成元组</strong></p>
+<p>如果 <span class="math inline"><em>S</em> = {<em>a</em><sub>1</sub>, <em>a</em><sub>2</sub>, ⋯, <em>a</em><sub><em>r</em></sub>}</span>
+为有限集，则记</p>
+<p><span class="math display">⟨<em>S</em>⟩ = ⟨<em>a</em><sub>1</sub>, <em>a</em><sub>2</sub>, ⋯, <em>a</em><sub><em>r</em></sub>⟩</span></p>
+<h4 id="生成子群的性质">生成子群的性质</h4>
+<p>设 <span class="math inline"><em>S</em></span> 是群 <span class="math inline"><em>G</em></span> 的非空子集，则</p>
+<ul>
+<li><span class="math inline">⟨<em>S</em>⟩</span> 是 <span class="math inline"><em>G</em></span> 的包含 <span class="math inline"><em>S</em></span> 的最小子群</li>
+<li><span class="math inline">⟨<em>S</em>⟩ = {<em>a</em><sub>1</sub><sup><em>l</em><sub>1</sub></sup><em>a</em><sub>2</sub><sup><em>l</em><sub>2</sub></sup>⋯<em>a</em><sub><em>k</em></sub><sup><em>l</em><sub><em>k</em></sub></sup> ∣ <em>a</em><sub><em>i</em></sub> ∈ <em>S</em>, <em>l</em><sub><em>i</em></sub> = ±1, <em>k</em> ∈ <strong>N</strong>}</span></li>
+</ul>
+<p><strong>特别注意</strong> ：上式中的 <span class="math inline"><em>a</em><sub>1</sub>, <em>a</em><sub>2</sub>, ⋯, <em>a</em><sub><em>k</em></sub></span>
+可以取重复的值。若我们用不重复的 <span class="math inline"><em>a</em><sub>1</sub>, <em>a</em><sub>2</sub>, ⋯, <em>a</em><sub><em>k</em></sub></span>
+来表示，那么这个乘法式子可能是无限长（因为不一定有交换律），不太好表示了。</p>
+<h4 id="特例">特例</h4>
+<ul>
+<li><p>当 <span class="math inline"><em>S</em></span> 只包含群 <span class="math inline"><em>G</em></span> 的一个元素 <span class="math inline"><em>a</em></span> 时，由于 <span class="math display">$$
+  a^{l_{1}} a^{l_{2}} \cdots a^{l_{k}}=a^{\sum_{i=1}^{k} l_{i}}
+  $$</span> 所以 <span class="math display">⟨<em>a</em>⟩ = {<em>a</em><sup><em>r</em></sup> ∣ <em>r</em> ∈ <strong>Z</strong>}</span></p>
+<p>这种由一个元素 <span class="math inline"><em>a</em></span>
+生成的子群称为由 <span class="math inline"><em>a</em></span> 生成的
+<strong>循环群</strong></p></li>
+<li><p>当 <span class="math inline"><em>S</em></span> 只包含群 <span class="math inline"><em>G</em></span> 的两个元素 <span class="math inline"><em>a</em>, <em>b</em></span>，且 <span class="math inline"><em>a</em><em>b</em> = <em>b</em><em>a</em></span>，则
+<span class="math display">⟨<em>a</em>, <em>b</em>⟩ = {<em>a</em><sup><em>m</em></sup><em>b</em><sup><em>n</em></sup> ∣ <em>m</em>, <em>n</em> ∈ <strong>Z</strong>}</span></p></li>
+</ul>
+<h2 id="群的同构">群的同构</h2>
+<h3 id="同构的定义">同构的定义</h3>
+<p>设 <span class="math inline"><em>G</em></span> 与 <span class="math inline"><em>G</em><sup>′</sup></span> 是两个群，<span class="math inline"><em>ϕ</em></span> 是 <span class="math inline"><em>G</em></span> 到 <span class="math inline"><em>G</em><sup>′</sup></span> 的一一对应，使 <span class="math display"><em>ϕ</em>(<em>a</em> ⋅ <em>b</em>) = <em>ϕ</em>(<em>a</em>) ⋅ <em>ϕ</em>(<em>b</em>),  ∀<em>a</em>, <em>b</em> ∈ <em>G</em>,</span></p>
+<p>则称 <span class="math inline"><em>ϕ</em></span> 为群 <span class="math inline"><em>G</em></span> 到 <span class="math inline"><em>G</em><sup>′</sup></span> 的一个
+<strong>同构映射</strong> ，简称<strong>同构</strong> ，并称群 <span class="math inline"><em>G</em></span> 与 <span class="math inline"><em>G</em><sup>′</sup></span> <strong>同构</strong>
+，记作 <span class="math display"><em>ϕ</em>: <em>G</em> ≅ <em>G</em><sup>′</sup></span></p>
+<ul>
+<li>群 <span class="math inline"><em>G</em></span>
+到它自身的同构映射称为群 <span class="math inline"><em>G</em></span>
+的<strong>自同构</strong> ，恒等同构是自同构</li>
+<li>同构映射一定是可逆变换（双射），且其逆映射也是同构映射</li>
+<li>同构的群之间可以有不止一个同构映射</li>
+<li>在群同构的定义中，虽然使用了同一个符号“ <span class="math inline">⋅</span> ”表示群 <span class="math inline"><em>G</em></span> 与 <span class="math inline"><em>G</em><sup>′</sup></span>
+的运算，但事实上，<span class="math inline"><em>a</em> ⋅ <em>b</em></span> 与 <span class="math inline"><em>ϕ</em>(<em>a</em>) ⋅ <em>ϕ</em>(<em>b</em>)</span>
+分别是在群 <span class="math inline"><em>G</em></span> 与群 <span class="math inline"><em>G</em><sup>′</sup></span>
+中进行的运算，一般来说它们是不相同的</li>
+</ul>
+<h3 id="证明两个群同构的步骤">证明两个群同构的步骤</h3>
+<ol type="1">
+<li>构造群 <span class="math inline"><em>G</em></span> 与群 <span class="math inline"><em>G</em><sup>′</sup></span> 的元素间的对应关系
+<span class="math inline"><em>ϕ</em></span>，并证明 <span class="math inline"><em>ϕ</em></span> 是 <span class="math inline"><em>G</em></span> 到 <span class="math inline"><em>G</em><sup>′</sup></span> 的映射</li>
+<li>证明 <span class="math inline"><em>ϕ</em></span> 是 <span class="math inline"><em>G</em></span> 到 <span class="math inline"><em>G</em><sup>′</sup></span>
+的<strong>单映射</strong> 。即对任意的 <span class="math inline"><em>x</em>, <em>y</em> ∈ <em>G</em></span>，证明由
+<span class="math inline"><em>ϕ</em>(<em>x</em>) = <em>ϕ</em>(<em>y</em>)</span>
+可推出 <span class="math inline"><em>x</em> = <em>y</em></span></li>
+<li>证明 <span class="math inline"><em>ϕ</em></span> 是 <span class="math inline"><em>G</em></span> 到 <span class="math inline"><em>G</em><sup>′</sup></span>
+的<strong>满映射</strong> 。即对任意的 <span class="math inline"><em>x</em><sup>′</sup> ∈ <em>G</em><sup>′</sup></span>，证明存在
+<span class="math inline"><em>x</em> ∈ <em>G</em></span>，使 <span class="math inline"><em>ϕ</em>(<em>x</em>) = <em>x</em><sup>′</sup></span></li>
+<li>证明 <span class="math inline"><em>ϕ</em></span>
+<strong>保持运算</strong> 。即对任意的 <span class="math inline"><em>x</em>, <em>y</em> ∈ <em>G</em></span>，证明
+<span class="math inline"><em>ϕ</em>(<em>x</em><em>y</em>) = <em>ϕ</em>(<em>x</em>)<em>ϕ</em>(<em>y</em>)</span></li>
+</ol>
+<h3 id="同构的性质">同构的性质</h3>
+<ul>
+<li>设 <span class="math inline"><em>ϕ</em></span> 是群 <span class="math inline"><em>G</em></span> 到 <span class="math inline"><em>G</em><sup>′</sup></span> 的同构映射，<span class="math inline"><em>e</em></span> 与 <span class="math inline"><em>e</em><sup>′</sup></span> 分别是 <span class="math inline"><em>G</em></span> 与 <span class="math inline"><em>G</em><sup>′</sup></span> 的单位元，<span class="math inline"><em>a</em></span> 是 <span class="math inline"><em>G</em></span> 的任一元素，则
+<ul>
+<li><span class="math inline"><em>ϕ</em>(<em>e</em>) = <em>e</em><sup>′</sup></span></li>
+<li><span class="math inline"><em>ϕ</em>(<em>a</em><sup>−1</sup>) = (<em>ϕ</em>(<em>a</em>))<sup>−1</sup></span></li>
+<li><span class="math inline"><em>ϕ</em></span> 是可逆映射，且 <span class="math inline"><em>ϕ</em></span> 的逆映射 <span class="math inline"><em>ϕ</em><sup>−1</sup></span> 是群 <span class="math inline"><em>G</em><sup>′</sup></span> 到群 <span class="math inline"><em>G</em></span> 的同构映射</li>
+</ul></li>
+<li>设群 <span class="math inline"><em>G</em></span> 与 <span class="math inline"><em>G</em><sup>′</sup></span> 同构
+<ul>
+<li>如果 <span class="math inline"><em>G</em></span> 是交换群（Abel
+群），则 <span class="math inline"><em>G</em><sup>′</sup></span>
+也是交换群</li>
+<li>如果 <span class="math inline"><em>G</em></span> 是有限群，则 <span class="math inline"><em>G</em><sup>′</sup></span> 也是有限群，且 <span class="math inline">|<em>G</em>| = |<em>G</em><sup>′</sup>|</span></li>
+</ul></li>
+<li>群的同构是一个等价关系，即对群 <span class="math inline"><em>G</em>, <em>G</em><sup>′</sup>, <em>G</em><sup>′′</sup></span>
+<ul>
+<li>反身性：<span class="math inline"><em>G</em> ≅ <em>G</em></span></li>
+<li>对称性：若 <span class="math inline"><em>G</em> ≅ <em>G</em><sup>′</sup></span>，则 <span class="math inline"><em>G</em><sup>′</sup> ≅ <em>G</em></span></li>
+<li>传递性：若 <span class="math inline"><em>G</em> ≅ <em>G</em><sup>′</sup></span>，<span class="math inline"><em>G</em><sup>′</sup> ≅ <em>G</em><sup>′′</sup></span>，则
+<span class="math inline"><em>G</em> ≅ <em>G</em><sup>′′</sup></span></li>
+<li><strong>注意</strong>：同构关系是等价关系，映射不是等价关系！</li>
+</ul></li>
+</ul>
+<h3 id="变换群">变换群</h3>
+<h4 id="变换群的定义">变换群的定义</h4>
+<p>非空集合 <span class="math inline"><em>X</em></span>
+的全体可逆变换关于变换的合成所构成的群 <span class="math inline"><em>S</em><sub><em>x</em></sub></span> 称为集合
+<span class="math inline"><em>X</em></span> 的<strong>对称群</strong>
+，<span class="math inline"><em>S</em><sub><em>x</em></sub></span>
+的任一子群称为 <span class="math inline"><em>X</em></span>
+的一个<strong>变换群</strong>。</p>
+<h4 id="凯莱定理">凯莱定理</h4>
+<p><strong>每一个群都同构于一个变换群。</strong></p>
+<p>证明凯莱定理，需要先构造一个变换群，如对于群 <span class="math inline"><em>G</em></span>，<span class="math inline"><em>a</em> ∈ <em>G</em></span>，定义变换 <span class="math inline"><em>ϕ</em><sub><em>a</em></sub></span> 为 <span class="math display"><em>ϕ</em><sub><em>a</em></sub>(<em>x</em>) = <em>a</em><em>x</em>  (<em>x</em> ∈ <em>G</em>)</span></p>
+<p>则 <span class="math inline"><em>ϕ</em><sub><em>a</em></sub></span>
+是 <span class="math inline"><em>G</em></span> 到 <span class="math inline"><em>G</em></span> 的一个变换。令 <span class="math display"><em>G</em><sub><em>l</em></sub> = {<em>ϕ</em><sub><em>a</em></sub> ∣ <em>a</em> ∈ <em>G</em>}</span></p>
+<p>则可以证明 <span class="math inline"><em>G</em><sub><em>l</em></sub></span> 是对称群
+<span class="math inline"><em>S</em><sub><em>G</em></sub></span>
+的一个子群，即 <span class="math inline"><em>G</em><sub><em>l</em></sub></span> 是群 <span class="math inline"><em>G</em></span> 的一个变换群。又可以证明 <span class="math inline"><em>G</em><sub><em>l</em></sub> ≅ <em>G</em></span>，即群
+<span class="math inline"><em>G</em></span> 同构于它的变换群 <span class="math inline"><em>G</em><sub><em>l</em></sub></span></p>
+<p>变换群 <span class="math inline"><em>G</em><sub><em>l</em></sub></span> 称为 群 <span class="math inline"><em>G</em></span> 的
+<strong>左正则表示</strong>，变换 <span class="math inline"><em>ϕ</em><sub><em>a</em></sub></span> 称为群 <span class="math inline"><em>G</em></span> 由元素 <span class="math inline"><em>a</em></span> 所定义的
+<strong>左平移</strong>。</p>
+<h2 id="循环群">循环群</h2>
+<h3 id="群的阶">群的阶</h3>
+<h4 id="阶的定义">阶的定义</h4>
+<p>设 <span class="math inline"><em>G</em></span> 是一个群，<span class="math inline"><em>e</em></span> 是 <span class="math inline"><em>G</em></span> 的单位元，<span class="math inline"><em>a</em> ∈ <em>G</em></span>。如果存在正整数 <span class="math inline"><em>r</em></span>，使 <span class="math inline"><em>a</em><sup><em>r</em></sup> = <em>e</em></span>，则称
+<span class="math inline"><em>a</em></span> 是 <strong>有限阶</strong>
+的，否则称 <span class="math inline"><em>a</em></span>
+是<strong>无限阶</strong> 的。使 <span class="math inline"><em>a</em><sup><em>r</em></sup> = <em>e</em></span>
+<strong>的最小正整数</strong> <span class="math inline"><em>r</em></span> 称为元素 <span class="math inline"><em>a</em></span> 的<strong>阶</strong> ，记作 <span class="math inline">ord <em>a</em> = <em>r</em></span>。如果 <span class="math inline"><em>a</em></span> 是无限阶的，则记作 <span class="math inline">ord <em>a</em> = ∞</span>。</p>
+<ul>
+<li>在任何一个群中，单位元的阶总是 <span class="math inline">1</span></li>
+<li>在整数加群 <span class="math inline"><strong>Z</strong></span>
+中，除零元 <span class="math inline">0</span>
+外，每个元素都是无限阶的</li>
+</ul>
+<h4 id="阶的性质">阶的性质</h4>
+<ul>
+<li><p>设 <span class="math inline"><em>G</em></span> 为群，<span class="math inline"><em>e</em></span> 为 <span class="math inline"><em>G</em></span> 的单位元</p>
+<ul>
+<li>对任意的 <span class="math inline"><em>a</em> ∈ <em>G</em></span>，有 <span class="math inline">ord <em>a</em> = ord <em>a</em><sup>−1</sup></span></li>
+<li>设 <span class="math inline">ord <em>a</em> = <em>n</em></span>，如果有 <span class="math inline"><em>m</em> ∈ <strong>Z</strong></span>，使 <span class="math inline"><em>a</em><sup><em>m</em></sup> = <em>e</em></span>，则
+<span class="math inline"><em>n</em> ∣ <em>m</em></span></li>
+<li>设 <span class="math inline">ord <em>a</em> = <em>n</em></span>，则对任意的 <span class="math inline"><em>m</em> ∈ <strong>Z</strong></span>，<span class="math inline">$\operatorname{ord}
+a^{m}=\frac{n}{(n,m)}$</span></li>
+<li>设 <span class="math inline">ord <em>a</em> = <em>n</em></span>，<span class="math inline">ord <em>b</em> = <em>m</em></span>，如果 <span class="math inline"><em>a</em><em>b</em> = <em>b</em><em>a</em></span>，且
+<span class="math inline">gcd (<em>n</em>, <em>m</em>) = 1</span>，则
+<span class="math inline">ord (<em>a</em><em>b</em>) = <em>m</em><em>n</em></span></li>
+</ul>
+<p>其中 <span class="math inline">(<em>n</em>, <em>m</em>)</span> 与
+<span class="math inline">gcd (<em>n</em>, <em>m</em>)</span> 表示 <span class="math inline"><em>n</em></span> 与 <span class="math inline"><em>m</em></span> 的最大公约数</p></li>
+<li><p>设 <span class="math inline"><em>G</em></span>
+是一个有限群，<span class="math inline">|<em>G</em>| = <em>n</em></span>，则对任意的 <span class="math inline"><em>a</em> ∈ <em>G</em></span>，<span class="math inline"><em>a</em></span> 是有限阶的，且 <span class="math inline">ord <em>a</em> ∣ |<em>G</em>|</span>，即有限群的任何一个元素的阶都是群阶数的因子。</p></li>
+</ul>
+<h3 id="循环群-1">循环群</h3>
+<h4 id="循环群的定义">循环群的定义</h4>
+<p>设 <span class="math inline"><em>G</em></span> 是群，如果存在 <span class="math inline"><em>a</em> ∈ <em>G</em></span>，使得 <span class="math inline"><em>G</em> = ⟨<em>a</em>⟩</span>（a
+的生成子群），则称 <span class="math inline"><em>G</em></span> 为一个
+<strong>循环群</strong> ，并称 <span class="math inline"><em>a</em></span> 为 <span class="math inline"><em>G</em></span> 的一个 <strong>生成元</strong>
+。当 <span class="math inline"><em>G</em></span> 的元素个数无限时，称
+<span class="math inline"><em>G</em></span> 为
+<strong>无限循环群</strong> ；当 <span class="math inline"><em>G</em></span> 的元素个数为 <span class="math inline"><em>n</em></span> 时，称 <span class="math inline"><em>G</em></span> 为 <strong>n
+阶循环群</strong>。</p>
+<ul>
+<li>整数加群 <span class="math inline"><strong>Z</strong></span>
+是无限循环群</li>
+<li>设 <span class="math inline"><em>m</em></span> 为正整数，则模 <span class="math inline"><em>m</em></span> 剩余类加群 <span class="math inline"><strong>Z</strong><sub><em>m</em></sub></span> 是
+<span class="math inline"><em>m</em></span> 阶循环群</li>
+<li><span class="math inline"><em>n</em></span> 次单位根群 <span class="math inline"><em>U</em><sub><em>n</em></sub></span> 是一个 <span class="math inline"><em>n</em></span> 阶循环群</li>
+</ul>
+<p>由循环群的定义可知：</p>
+<ul>
+<li><span class="math inline">⟨<em>a</em>⟩ = ⟨<em>a</em><sup>−1</sup>⟩</span></li>
+<li>如果 <span class="math inline"><em>G</em></span> 是循环群，则 <span class="math inline"><em>G</em> = ⟨<em>a</em>⟩ ⇔ |<em>G</em>| = ord <em>a</em></span>，即
+<span class="math inline"><em>G</em></span> 的阶等于 <span class="math inline"><em>a</em></span> 的阶</li>
+<li>如果 <span class="math inline"><em>G</em></span> 是无限循环群，则
+<span class="math inline"><em>G</em> = {<em>e</em>, <em>a</em>, <em>a</em><sup>−1</sup>, <em>a</em><sup>2</sup>, <em>a</em><sup>−2</sup>, ⋯}</span>，且对
+<span class="math inline"><em>k</em>, <em>l</em> ∈ <strong>Z</strong></span>，有
+$a^{k} = a^{l} k = l $</li>
+<li>如果 <span class="math inline"><em>G</em></span> 是 <span class="math inline"><em>n</em></span> 阶循环群，则 <span class="math inline"><em>G</em> = {<em>e</em>, <em>a</em>, <em>a</em><sup>2</sup>, ⋯, <em>a</em><sup><em>n</em> − 1</sup>}</span>，且对
+<span class="math inline"><em>k</em>, <em>l</em> ∈ <strong>Z</strong></span>，有
+<span class="math inline"><em>a</em><sup><em>k</em></sup> = <em>a</em><sup><em>l</em></sup> ⇔ <em>k</em> ≡ <em>l</em>(&nbsp;mod &nbsp;<em>n</em>)</span></li>
+</ul>
+<h4 id="循环群的性质">循环群的性质</h4>
+<ul>
+<li><p>设 <span class="math inline"><em>p</em></span> 为素数，则 <span class="math inline"><strong>Z</strong><sub><em>p</em></sub><sup>*</sup></span>
+是 <span class="math inline"><em>p</em> − 1</span> 阶循环群。对于循环群
+<span class="math inline"><strong>Z</strong><sub><em>p</em></sub><sup>*</sup></span>，如果
+<span class="math inline"><em>ā</em></span> 是 <span class="math inline"><strong>Z</strong><sub><em>p</em></sub><sup>*</sup></span>
+的生成元，则称数 <span class="math inline"><em>a</em></span> 是 <span class="math inline"><strong>Z</strong></span> 的一个<strong>模 p
+原根</strong></p></li>
+<li><p>设 <span class="math inline"><em>G</em> = ⟨<em>a</em>⟩</span>
+为循环群，则</p>
+<ul>
+<li>如果 <span class="math inline">|<em>G</em>| = ∞</span>，则 <span class="math inline"><em>a</em></span> 与 <span class="math inline"><em>a</em><sup>−1</sup></span> 是 <span class="math inline"><em>G</em></span> 的两个仅有的生成元</li>
+<li>如果 <span class="math inline">|<em>G</em>| = <em>n</em></span>，则
+<span class="math inline"><em>G</em></span> 恰有 <span class="math inline"><em>ϕ</em>(<em>n</em>)</span> 个生成元，且 <span class="math inline"><em>a</em><sup><em>r</em></sup></span> 是 <span class="math inline"><em>G</em></span> 的生成元的充分必要条件是 <span class="math inline">(<em>n</em>, <em>r</em>) = 1</span>，其中，<span class="math inline"><em>ϕ</em>(<em>n</em>)</span> 是欧拉函数</li>
+</ul></li>
+<li><p>原根判定定理：设 <span class="math inline"><em>m</em> ≥ 3</span>，<span class="math inline">(<em>g</em>, <em>m</em>) = 1</span>，则 <span class="math inline"><em>g</em></span> 是模 <span class="math inline"><em>m</em></span> 的原根的充要条件是，对于 <span class="math inline"><em>φ</em>(<em>m</em>)</span> 的每个素因数 <span class="math inline"><em>p</em></span>，都有 <span class="math inline">$g^{\frac{\varphi(m)}{p}} \not \equiv 1(\bmod
+m)$</span></p></li>
+<li><p>循环群的任一子群也是循环群</p></li>
+<li><p>设 <span class="math inline">ord <em>a</em> = <em>n</em></span>，<span class="math inline"><em>r</em></span> 是任一整数。如果 <span class="math inline">(<em>n</em>, <em>r</em>) = <em>d</em></span>，则<span class="math display">⟨<em>a</em><sup><em>r</em></sup>⟩ = ⟨<em>a</em><sup><em>d</em></sup>⟩</span></p></li>
+<li><p>设 <span class="math inline"><em>G</em> = ⟨<em>a</em>⟩</span>
+为循环群，</p>
+<ul>
+<li>如果 <span class="math inline">|<em>G</em>| = ∞</span>，则 <span class="math inline"><em>G</em></span> 的全部子群为<span class="math display">{⟨<em>a</em><sup><em>d</em></sup>⟩ ∣ <em>d</em> = 0, 1, 2, ⋯}</span></li>
+<li>如果 <span class="math inline">|<em>G</em>| = <em>n</em></span>，则
+<span class="math inline"><em>G</em></span> 的全部子群为<span class="math display">{⟨<em>a</em><sup><em>d</em></sup>⟩ ∣ <em>d</em>为<em>n</em>的正因子}</span></li>
+</ul></li>
+</ul>
+<h4 id="循环群的结构定理">循环群的结构定理</h4>
+<p>设 <span class="math inline"><em>G</em></span> 为循环群</p>
+<ul>
+<li>如果 <span class="math inline"><em>G</em> = ⟨<em>a</em>⟩</span>
+是无限循环群，则 <span class="math inline"><em>G</em> ≅ (<strong>Z</strong>, +)</span></li>
+<li>如果 <span class="math inline"><em>G</em> = ⟨<em>a</em>⟩</span> 是
+<span class="math inline"><em>n</em></span> 阶循环群，则 <span class="math inline"><em>G</em> ≅ (<strong>Z</strong><sub><em>n</em></sub>, +)</span></li>
+</ul>
+<h2 id="置换群与对称群">置换群与对称群</h2>
+<p>前面提到非空集合的全体可逆变换关于映射的合成构成集合 <span class="math inline"><em>X</em></span> 的对称群 <span class="math inline"><em>S</em><sub><em>X</em></sub></span>，并且把 <span class="math inline"><em>S</em><sub><em>X</em></sub></span>
+的任一子群叫做 <span class="math inline"><em>X</em></span>
+的一个变换群。如果 <span class="math inline"><em>X</em></span> 是由
+<span class="math inline"><em>n</em></span>
+个元素组成的有限集合，则通常把的一个可逆变换叫做一个 <span class="math inline"><em>n</em></span> 阶置换，称 <span class="math inline"><em>S</em><sub><em>X</em></sub></span> 为 <strong>n
+次对称群</strong> ，并把 <span class="math inline"><em>S</em><sub><em>X</em></sub></span> 记作 <span class="math inline"><em>S</em><sub><em>n</em></sub></span>（因为集合
+<span class="math inline"><em>X</em></span>
+有哪些元素与群的特性无关），同时称 <span class="math inline"><em>S</em><sub><em>n</em></sub></span>
+的子群为<strong>置换群</strong> 。</p>
+<ul>
+<li>定理：<strong>每一个有限群都同构于一个置换群</strong></li>
+</ul>
+<h3 id="置换">置换</h3>
+<p>由于集合 <span class="math inline"><em>X</em></span>
+的元素本身与我们所讨论的问题无关，所以可不妨记 <span class="math display"><em>X</em> = {1, 2, 3, ⋯, <em>n</em>}</span></p>
+<p>设 <span class="math inline"><em>σ</em></span> 为 <span class="math inline"><em>X</em></span> 的任一置换，如果 <span class="math inline"><em>σ</em></span> 把 <span class="math inline">1</span> 映成 <span class="math inline"><em>k</em><sub>1</sub></span>，<span class="math inline">2</span> 映成 <span class="math inline"><em>k</em><sub>2</sub></span>，……，<span class="math inline"><em>n</em></span> 映成 <span class="math inline"><em>k</em><sub><em>n</em></sub></span>，则可以把这个置换记作
+<span class="math display">$$
+\sigma=\left(\begin{array}{ccccc}
+1 &amp; 2 &amp; 3 &amp; \cdots &amp; n \\
+k_{1} &amp; k_{2} &amp; k_{3} &amp; \cdots &amp; k_{n}
+\end{array}\right)
+$$</span></p>
+<p>如果固定第一行元素的次序，则第二行就是 <span class="math inline">1, 2, ⋯, <em>n</em></span> 的一个排列，且
+<strong>每一个置换都唯一对应了一个这样的排列</strong> 。反之，每一个
+<span class="math inline"><em>n</em></span>
+阶排列也可按上式得到唯一的一个 <span class="math inline"><em>n</em></span> 阶置换 。由于 <span class="math inline"><em>n</em></span> 个数共有 <span class="math inline"><em>n</em>!</span> 个 <span class="math inline"><em>n</em></span> 阶排列，所以 <span class="math inline"><em>n</em></span> 个元素的集合共有 <span class="math inline"><em>n</em>!</span> 个 <span class="math inline"><em>n</em></span> 阶置换。换句话说，<span class="math inline"><em>n</em></span> 次对称群 <span class="math inline"><em>S</em><sub><em>n</em></sub></span> 的阶是 <span class="math inline"><em>n</em>!</span>，即 <span class="math inline">|<em>S</em><sub><em>n</em></sub>| = <em>n</em>!</span>。</p>
+<h4 id="置换的合成">置换的合成</h4>
+<p>置换的乘法习惯上总是按<strong>从右到左</strong>
+的顺序进行的。在本教材中，总是按从右到左的顺序计算置换的乘法。</p>
+<p>两个置换 <span class="math inline"><em>σ</em>, <em>τ</em></span>
+的乘积 <span class="math inline"><em>σ</em> ⋅ <em>τ</em></span>
+是按通常映射合成的法则进行的，即 <span class="math display">(<em>σ</em> ⋅ <em>τ</em>)(<em>i</em>) = <em>σ</em>(<em>τ</em>(<em>i</em>)),  <em>i</em> = 1, 2, ⋯, <em>n</em></span></p>
+<p>它是先用 <span class="math inline"><em>τ</em></span> 作用于 <span class="math inline"><em>i</em></span>，再用 <span class="math inline"><em>σ</em></span> 作用于 <span class="math inline"><em>τ</em>(<em>i</em>)</span></p>
+<ul>
+<li>当 <span class="math inline"><em>n</em> ≥ 3</span> 时，<span class="math inline"><em>S</em><sub><em>n</em></sub></span>
+都不是交换群</li>
+</ul>
+<h4 id="置换的性质">置换的性质</h4>
+<p>设置换 <span class="math display">$$
+\tau=\left(\begin{array}{cccc}
+1 &amp; 2 &amp; \cdots &amp; n \\
+k_{1} &amp; k_{2} &amp; \cdots &amp; k_{n}
+\end{array}\right)
+$$</span></p>
+<p>则对任一 <span class="math inline"><em>n</em></span> 阶置换 <span class="math inline"><em>σ</em></span>， <span class="math display">$$
+\sigma \tau \sigma^{-1}=\left(\begin{array}{cccc}
+\sigma(1) &amp; \sigma(2) &amp; \cdots &amp; \sigma(n) \\
+\sigma\left(k_{1}\right) &amp; \sigma\left(k_{2}\right) &amp; \cdots
+&amp; \sigma\left(k_{n}\right)
+\end{array}\right)
+$$</span></p>
+<h3 id="轮换">轮换</h3>
+<p>设 <span class="math inline"><em>σ</em></span> 是一个 <span class="math inline"><em>n</em></span> 阶置换，如果存在 <span class="math inline">1</span> 到 <span class="math inline"><em>n</em></span> 中的 <span class="math inline"><em>r</em></span> 个不同的数 <span class="math inline"><em>i</em><sub>1</sub>, <em>i</em><sub>2</sub>, ⋯, <em>i</em><sub><em>r</em></sub></span>，使
+<span class="math display"><em>σ</em>(<em>i</em><sub>1</sub>) = <em>i</em><sub>2</sub>, <em>σ</em>(<em>i</em><sub>2</sub>) = <em>i</em><sub>3</sub>, ⋯, <em>σ</em>(<em>i</em><sub><em>r</em> − 1</sub>) = <em>i</em><sub><em>r</em></sub>, <em>σ</em>(<em>i</em><sub><em>r</em></sub>) = <em>i</em><sub>1</sub></span></p>
+<p>并且 <span class="math inline"><em>σ</em></span>
+保持其余的元素不变，则称 <span class="math inline"><em>σ</em></span>
+是一个长度为 <span class="math inline"><em>r</em></span> 的
+<strong>轮换</strong> ，简称 <span class="math inline"><em>r</em></span>
+轮换，记作 <span class="math display"><em>σ</em> = (<em>i</em><sub>1</sub><em>i</em><sub>2</sub>⋯<em>i</em><sub><em>r</em></sub>)</span></p>
+<ul>
+<li>2 轮换称为 <strong>对换</strong></li>
+<li>1 轮换就是 <strong>恒等置换</strong>，并且显然有 <span class="math inline">(1) = (2) = ⋯ = (<em>n</em>)</span></li>
+<li>轮换的表示一般不是唯一的 <span class="math inline">.</span>
+例如，置换 <span class="math display">$$
+  \sigma=\left(\begin{array}{ccccccc}
+  1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 \\\
+  2 &amp; 4 &amp; 3 &amp; 6 &amp; 5 &amp; 1 &amp; 7
+  \end{array}\right)
+  $$</span> 可分别表示为 <span class="math display">$$
+  \begin{aligned}
+  \sigma &amp; =\left(\begin{array}{llll} 1 &amp; 2 &amp; 4 &amp; 6
+\end{array}\right) \\
+  &amp; =\left(\begin{array}{llll} 2 &amp; 4 &amp; 6 &amp; 1
+\end{array}\right) \\
+  &amp; =\left(\begin{array}{llll} 4 &amp; 6 &amp; 1 &amp; 2
+\end{array}\right) \\
+  &amp; =\left(\begin{array}{llll} 6 &amp; 1 &amp; 2 &amp; 4
+\end{array}\right) \\
+  \end{aligned}
+  $$</span></li>
+</ul>
+<h4 id="轮换的性质">轮换的性质</h4>
+<ul>
+<li><p>设 <span class="math inline"><em>σ</em> = (<em>i</em><sub>1</sub><em>i</em><sub>2</sub>⋯<em>i</em><sub><em>r</em></sub>)</span>
+与 <span class="math inline"><em>τ</em> = (<em>j</em><sub>1</sub><em>j</em><sub>2</sub>⋯<em>j</em><sub><em>s</em></sub>)</span>
+是两个轮换，如果 <span class="math display"><em>i</em><sub><em>k</em></sub> ≠ <em>j</em><sub><em>l</em></sub>,  <em>k</em> = 1, 2, ⋯, <em>r</em>; <em>l</em> = 1, 2, ⋯, <em>s</em></span></p>
+<p>则称 <span class="math inline"><em>σ</em></span> 与 <span class="math inline"><em>τ</em></span> 为两个 <strong>不相交</strong>
+的轮换</p>
+<ul>
+<li>任何两个不相交轮换的乘积是可以交换的</li>
+<li>一个置换不一定就是轮换，但是每一个置换可表为一些不相交轮换的乘积</li>
+<li>将一个置换分解为不相交轮换的乘积，如果不考虑因子的次序和乘积中 <span class="math inline">1</span> 轮换的个数，则这个分解式是唯一的</li>
+</ul></li>
+<li><p>对于轮换的乘积，容易证明下面一些有用的等式： <span class="math display">$$
+  \begin{array}{l}
+  (k\ l)(k\ a \cdots b)(l\ c \cdots d)=(k\ a \cdots b\ l\ c \cdots d) \\
+  (k\ l)(k\ a \cdots b\ l\ c \cdots d)=(k\ a \cdots b)(l\ c \cdots d)\\
+  (k\ c \cdots d)(k\ a \cdots b)=(k\ a \cdots b\ c \cdots d)\\
+  (k\ l\ c \cdots d)(k\ l\ a \cdots b)=(k\ c \cdots d)(l\ a \cdots b) \\
+  (l\ k\ c \cdots d)(k\ l\ a \cdots b)=(k)(l\ a \cdots b\ c \cdots d) \\
+  \end{array}
+  $$</span></p>
+<ul>
+<li>其中 <span class="math inline"><em>a</em>, ⋯, <em>b</em>, <em>c</em>, ⋯, <em>d</em>, <em>k</em>, <em>l</em></span>
+为互不相同的正整数</li>
+<li>注意置换是从右到左</li>
+</ul></li>
+<li><p>如果 <span class="math inline"><em>σ</em></span> 是一个 <span class="math inline"><em>r</em></span> 轮换，则 <span class="math inline">ord <em>σ</em> = <em>r</em></span></p></li>
+<li><p>如果 <span class="math inline"><em>σ</em></span>
+是一些不相交轮换的乘积 <span class="math display"><em>σ</em> = <em>σ</em><sub>1</sub><em>σ</em><sub>2</sub>⋯<em>σ</em><sub><em>s</em></sub></span></p>
+<p>其中 <span class="math inline"><em>σ</em><sub><em>i</em></sub></span>
+是 <span class="math inline"><em>r</em><sub><em>i</em></sub></span>
+轮换，则 <span class="math inline">ord <em>σ</em> = [<em>r</em><sub>1</sub>, <em>r</em><sub>2</sub>, ⋯, <em>r</em><sub><em>s</em></sub>]</span></p></li>
+<li><p>每个置换都可表为对换的乘积</p></li>
+<li><p>将一个置换表为对换的乘积，表法一般不唯一</p></li>
+<li><p>将一个置换表为对换的乘积，所用对换个数的奇偶性是唯一的。可表成偶数个对换的乘积的置换叫<strong>偶置换</strong>
+，可表成奇数个对换的乘积的置换叫<strong>奇置换</strong></p>
+<ul>
+<li>任何两个偶（奇）置换之积是偶置换</li>
+<li>一个偶置换与一个奇置换之积是奇置换</li>
+<li>一个偶（奇）置换的逆置换仍是一个偶（奇）置换</li>
+<li>当 <span class="math inline"><em>n</em> &gt; 1</span> 时，在全体
+<span class="math inline"><em>n</em></span> 阶置换中，奇置换与偶置换各有
+<span class="math inline">$\frac{n!}{2}$</span> 个</li>
+<li>在 <span class="math inline"><em>S</em><sub><em>n</em></sub></span>
+中，全体偶置换构成 <span class="math inline"><em>S</em><sub><em>n</em></sub></span> 的子群，称为
+<strong>n 次交代群</strong> ，记作 <span class="math inline"><em>A</em><sub><em>n</em></sub></span></li>
+</ul></li>
+</ul>
+<h2 id="子群的陪集">子群的陪集</h2>
+<h3 id="子集的运算">子集的运算</h3>
+<h4 id="乘积">乘积</h4>
+<p>设 <span class="math inline"><em>A</em></span> 与 <span class="math inline"><em>B</em></span> 是群 <span class="math inline"><em>G</em></span> 的两个非空子集，称集合 <span class="math display"><em>A</em><em>B</em> = {<em>a</em><em>b</em> ∣ <em>a</em> ∈ <em>A</em>, <em>b</em> ∈ <em>B</em>}</span></p>
+<p>为群的子集 <span class="math inline"><em>A</em></span> 与 <span class="math inline"><em>B</em></span> 的 <strong>乘积</strong> 。 如果
+<span class="math inline"><em>g</em></span> 为群 <span class="math inline"><em>G</em></span> 的一个元素，<span class="math inline"><em>A</em> = {<em>g</em>}</span>，则 <span class="math inline"><em>A</em><em>B</em></span> 与 <span class="math inline"><em>B</em><em>A</em></span> 分别简记为 <span class="math display"><em>g</em><em>B</em> = {<em>g</em><em>b</em> ∣ <em>b</em> ∈ <em>B</em>}  和  <em>B</em><em>g</em> = {<em>b</em><em>g</em> ∣ <em>b</em> ∈ <em>B</em>}</span></p>
+<h4 id="和">和</h4>
+<p>当 <span class="math inline"><em>G</em></span>
+为加群时，上述记号应相应地改为 <span class="math display">$$
+\begin{aligned}
+A+B &amp; =\{a+b \mid a \in A,b \in B\},\\
+g+A &amp; =\{g+a \mid a \in A\},\\
+A+g &amp; =\{a+g \mid a \in A\}
+\end{aligned}$$</span></p>
+<p>并称 <span class="math inline"><em>A</em> + <em>B</em></span> 为
+<span class="math inline"><em>A</em></span> 与 <span class="math inline"><em>B</em></span> 的<strong>和</strong></p>
+<h4 id="简单性质">简单性质</h4>
+<ul>
+<li>“和”有交换律 <span class="math display"><em>A</em> + <em>B</em> = <em>B</em> + <em>A</em>,  <em>g</em> + <em>A</em> = <em>A</em> + <em>g</em></span></li>
+<li>当群 <span class="math inline"><em>G</em></span> 不是交换群时，<span class="math inline"><em>A</em><em>B</em></span> 与 <span class="math inline"><em>B</em><em>A</em></span> 一般是不相同的；即使
+<span class="math inline"><em>A</em><em>B</em> = <em>B</em><em>A</em></span>，也并不意味着对任意的
+<span class="math inline"><em>a</em> ∈ <em>A</em></span>，<span class="math inline"><em>b</em> ∈ <em>B</em></span>，一定有 <span class="math inline"><em>a</em><em>b</em> = <em>b</em><em>a</em></span>，<span class="math inline"><em>A</em><em>B</em> = <em>B</em><em>A</em></span>
+的意思是，对任意的 <span class="math inline"><em>a</em> ∈ <em>A</em>, <em>b</em> ∈ <em>B</em></span>，存在
+<span class="math inline"><em>a</em><sup>′</sup> ∈ <em>A</em>, <em>b</em><sup>′</sup> ∈ <em>B</em></span>，使
+<span class="math inline"><em>a</em><em>b</em> = <em>b</em><sup>′</sup><em>a</em><sup>′</sup></span></li>
+<li>由 <span class="math inline"><em>A</em><em>B</em> = <em>A</em><em>C</em></span>，一般不能推出
+<span class="math inline"><em>B</em> = <em>C</em></span></li>
+<li>设 <span class="math inline"><em>A</em>, <em>B</em>, <em>C</em></span> 是群 <span class="math inline"><em>G</em></span> 的非空子集，<span class="math inline"><em>g</em></span> 是群 <span class="math inline"><em>G</em></span> 的一个元素，则
+<ul>
+<li><span class="math inline"><em>A</em>(<em>B</em><em>C</em>) = (<em>A</em><em>B</em>)<em>C</em></span></li>
+<li>如果 <span class="math inline"><em>g</em><em>A</em> = <em>g</em><em>B</em></span>
+或 <span class="math inline"><em>A</em><em>g</em> = <em>B</em><em>g</em></span>，则
+<span class="math inline"><em>A</em> = <em>B</em></span></li>
+<li>如果 <span class="math inline"><em>H</em></span> 是群 <span class="math inline"><em>G</em></span> 的子群，则 <span class="math inline"><em>H</em> ⋅ <em>H</em> = <em>H</em></span></li>
+<li>如果 <span class="math inline"><em>A</em>, <em>B</em></span> 是群
+<span class="math inline"><em>G</em></span> 的两个子群，则 <span class="math inline"><em>A</em><em>B</em></span> 也是群 <span class="math inline"><em>G</em></span> 的子群的充分必要条件是 <span class="math inline"><em>A</em><em>B</em> = <em>B</em><em>A</em></span></li>
+</ul></li>
+</ul>
+<h3 id="陪集">陪集</h3>
+<h4 id="陪集的定义">陪集的定义</h4>
+<p>设 <span class="math inline"><em>G</em></span> 是群，<span class="math inline"><em>H</em></span> 是 <span class="math inline"><em>G</em></span> 的子群。对任意的 <span class="math inline"><em>a</em> ∈ <em>G</em></span>，群 <span class="math inline"><em>G</em></span> 的子集 <span class="math display"><em>a</em><em>H</em> = {<em>a</em><em>h</em> ∣ <em>h</em> ∈ <em>H</em>}  与<em>H</em><em>a</em> = {<em>h</em><em>a</em> ∣ <em>h</em> ∈ <em>H</em>}</span></p>
+<p>分别称为 <span class="math inline"><em>H</em></span> 在 <span class="math inline"><em>G</em></span> 中的 <strong>左陪集</strong> 和
+<strong>右陪集</strong></p>
+<ul>
+<li><span class="math inline"><em>H</em></span> 的一个陪集
+<strong>一般</strong> 不是 <span class="math inline"><em>G</em></span>
+的子群</li>
+<li><span class="math inline"><em>G</em></span> 的两个不同的元素
+<strong>可能</strong> 生成 <span class="math inline"><em>H</em></span>
+的同一个左陪集</li>
+<li><span class="math inline"><em>H</em></span> 的一个左陪集 <span class="math inline"><em>a</em><em>H</em></span> <strong>一般</strong>
+不等于相应的右陪集 <span class="math inline"><em>H</em><em>a</em></span></li>
+</ul>
+<h4 id="陪集的性质">陪集的性质</h4>
+<p>设 <span class="math inline"><em>H</em></span> 是群 <span class="math inline"><em>G</em></span> 的子群，<span class="math inline"><em>a</em>, <em>b</em> ∈ <em>G</em></span>，则</p>
+<ul>
+<li><span class="math inline"><em>a</em> ∈ <em>a</em><em>H</em></span></li>
+<li><span class="math inline"><em>a</em><em>H</em> = <em>H</em></span>
+的充分必要条件是 <span class="math inline"><em>a</em> ∈ <em>H</em></span></li>
+<li><span class="math inline"><em>a</em><em>H</em></span>
+为子群的充分必要条件是 <span class="math inline"><em>a</em> ∈ <em>H</em></span></li>
+<li><span class="math inline"><em>a</em><em>H</em> = <em>b</em><em>H</em></span>
+的充分必要条件是 <span class="math inline"><em>a</em><sup>−1</sup><em>b</em> ∈ <em>H</em></span></li>
+<li><span class="math inline"><em>a</em><em>H</em></span> 与 <span class="math inline"><em>b</em><em>H</em></span>
+或者完全相同，或者无公共元素</li>
+<li><span class="math inline">|<em>a</em><em>H</em>| = |<em>b</em><em>H</em>|</span></li>
+</ul>
+<p>由此定理可以知道，群 <span class="math inline"><em>G</em></span>
+可表示成子群 <span class="math inline"><em>H</em></span>
+的一些互不相交的左陪集之并。因此，群 <span class="math inline"><em>G</em></span> 的子群 <span class="math inline"><em>H</em></span> 的全体左陪集的集合组成群 <span class="math inline"><em>G</em></span> 的一个分类，即 <span class="math display"><em>G</em> = ⋃<sub><em>g</em><sub><em>i</em></sub> ∈ <em>G</em></sub><em>g</em><sub><em>i</em></sub><em>H</em></span></p>
+<p>其中 <span class="math inline"><em>g</em><sub><em>i</em></sub></span>
+取遍 <span class="math inline"><em>H</em></span>
+的不同陪集的代表元素。特别地，如果 <span class="math inline"><em>G</em></span> 为有限群，则 <span class="math display">$$
+|G|=\sum_{i=1}^{t}\left|g_{i} H\right|=\sum_{i=1}^{t}|H|=t|H|
+$$</span></p>
+<p>其中 <span class="math inline"><em>t</em></span> 为 <span class="math inline"><em>H</em></span> 的不同左陪集的个数</p>
+<h4 id="左陪集与右陪集">左陪集与右陪集</h4>
+<p>相应的结论对右陪集也成立，特别地： <span class="math display"><em>H</em><em>a</em> = <em>H</em><em>b</em> ⇔ <em>b</em><em>a</em><sup>−1</sup> ∈ <em>H</em></span></p>
+<p>用 <span class="math inline"><em>G</em>/<em>H</em></span> 与 <span class="math inline"><em>H</em> ∖ <em>G</em></span> 分别表示 <span class="math inline"><em>H</em></span>
+的全体左陪集和全体右陪集组成的集合，即 <span class="math display">$$
+\begin{aligned}
+G / H=\{g H \mid g \in G\} \\
+H \backslash G=\{H g \mid g \in G\}
+\end{aligned}
+$$</span></p>
+<p>则两者间有下述关系 <span class="math display">$$
+\begin{aligned}
+\phi: \quad G / H &amp; \longrightarrow H \backslash G,\\
+a H &amp; \longmapsto H a^{-1}
+\end{aligned}
+$$</span></p>
+<p>是 <span class="math inline"><em>G</em>/<em>H</em></span> 到 <span class="math inline"><em>H</em> ∖ <em>G</em></span>
+的<strong>一一对应</strong></p>
+<h3 id="拉格朗日定理">拉格朗日定理</h3>
+<ul>
+<li><p>设 <span class="math inline"><em>G</em></span> 是群，<span class="math inline"><em>H</em></span> 是 <span class="math inline"><em>G</em></span> 的子群。称子群 <span class="math inline"><em>H</em></span> 在群 <span class="math inline"><em>G</em></span>
+中的左陪集或右陪集的个数（有限或无限）为 <span class="math inline"><em>H</em></span> 在 <span class="math inline"><em>G</em></span> 中的 <strong>指数</strong>，记作
+<span class="math inline">[<em>G</em> : <em>H</em>]</span></p></li>
+<li><p><strong>拉格朗日定理</strong>：设 <span class="math inline"><em>G</em></span> 是一个有限群，<span class="math inline"><em>H</em></span> 是 <span class="math inline"><em>G</em></span> 的子群，则 <span class="math display">|<em>G</em>| = |<em>H</em>|[<em>G</em> : <em>H</em>]</span></p>
+<ul>
+<li>拉格朗日定理说明，有限群 <span class="math inline"><em>G</em></span>
+的子群 <span class="math inline"><em>H</em></span> 的阶数与它在 <span class="math inline"><em>G</em></span> 中的指数，都是群 <span class="math inline"><em>G</em></span> 的阶数的因子<br>
+</li>
+<li>设 <span class="math inline"><em>G</em></span> 是有限群，则 <span class="math inline"><em>G</em></span> 中每一个元素的阶都是 <span class="math inline">|<em>G</em>|</span> 的因子</li>
+<li>设 <span class="math inline"><em>G</em></span> 为有限群，<span class="math inline">|<em>G</em>| = <em>n</em></span>，则对任意的 <span class="math inline"><em>a</em> ∈ <em>G</em></span>，有 <span class="math inline"><em>a</em><sup><em>n</em></sup> = <em>e</em></span>
+<ul>
+<li>应用到模 <span class="math inline"><em>p</em></span> 单位群 <span class="math inline"><strong>Z</strong><sub><em>p</em></sub><sup>*</sup></span>（<span class="math inline"><em>p</em></span> 是素数），可以得到
+<strong>费马小定理</strong>：设 <span class="math inline"><em>p</em></span> 为素数，则对任意一个与 <span class="math inline"><em>p</em></span> 互素的整数 <span class="math inline"><em>a</em></span>，有 <span class="math display"><em>a</em><sup><em>p</em> − 1</sup> ≡ 1  (&nbsp;mod &nbsp;<em>p</em>)</span></li>
+</ul></li>
+<li>应用拉格朗日定理，可以推测在一个有限群中，可能有怎样阶数的子群与元素，只是一种可能性，不能仅仅依据这种可能性，就断定这样的子群或元素一定存在</li>
+</ul></li>
+</ul>
+<h3 id="各阶群的结构">各阶群的结构</h3>
+<ul>
+<li>一阶群是循环群：<span class="math inline"><em>G</em> = {<em>e</em>}</span></li>
+<li>二阶群是循环群：<span class="math inline"><em>G</em> = {<em>e</em>, <em>a</em>} = ⟨<em>a</em>⟩</span></li>
+<li>三阶群是循环群：<span class="math inline"><em>G</em> = {<em>e</em>, <em>a</em>, <em>a</em><sup>2</sup>} = ⟨<em>a</em>⟩</span></li>
+<li>四阶群是循环群或克莱因四元群：
+<ul>
+<li><span class="math inline"><em>G</em> = {<em>e</em>, <em>a</em>, <em>a</em><sup>2</sup>, <em>a</em><sup>3</sup>} = ⟨<em>a</em>⟩</span></li>
+<li><span class="math inline"><em>G</em> = {<em>e</em>, <em>a</em>, <em>b</em>, <em>a</em><em>b</em>}</span>，<span class="math inline"><em>a</em><em>b</em> = <em>b</em><em>a</em></span>，<span class="math inline"><em>a</em><sup>2</sup> = <em>b</em><sup>2</sup> = <em>e</em></span></li>
+</ul></li>
+<li>五阶群是循环群：<span class="math inline"><em>G</em> = {<em>e</em>, <em>a</em>, <em>a</em><sup>2</sup>, <em>a</em><sup>3</sup>, <em>a</em><sup>4</sup>} = ⟨<em>a</em>⟩</span></li>
+<li>六阶群是循环群或三次对称群
+<ul>
+<li><span class="math inline"><em>G</em> = {<em>e</em>, <em>a</em>, <em>a</em><sup>2</sup>, <em>a</em><sup>3</sup>, <em>a</em><sup>4</sup>, <em>a</em><sup>5</sup>} = ⟨<em>a</em>⟩</span></li>
+<li><span class="math inline"><em>G</em> ≅ <em>S</em><sub>3</sub> = {(1), (1&nbsp;2), (1&nbsp;3), (2&nbsp;3), (1&nbsp;2&nbsp;3), (1&nbsp;3&nbsp;2)}</span></li>
+</ul></li>
+</ul>
+<h2 id="正规子群与商群">正规子群与商群</h2>
+<h3 id="正规子群">正规子群</h3>
+<h4 id="正规子群的定义">正规子群的定义</h4>
+<p>设 <span class="math inline"><em>H</em></span> 是群 <span class="math inline"><em>G</em></span> 的子群，如果对每个 <span class="math inline"><em>a</em> ∈ <em>G</em></span>，都有 <span class="math inline"><em>a</em><em>H</em> = <em>H</em><em>a</em></span>，则称
+<span class="math inline"><em>H</em></span> 是群 <span class="math inline"><em>G</em></span> 的一个 <strong>正规子群</strong>
+或 <strong>不变子群</strong> ，记作 <span class="math inline"><em>H</em> ⊲ <em>G</em></span></p>
+<ul>
+<li>条件 <span class="math inline"><em>a</em><em>H</em> = <em>H</em><em>a</em></span>
+仅仅表示两个集合 <span class="math inline"><em>a</em><em>H</em></span>
+与 <span class="math inline"><em>H</em><em>a</em></span>
+相等，即对任意的 <span class="math inline"><em>h</em> ∈ <em>H</em></span>，存在 <span class="math inline"><em>h</em><sup>′</sup> ∈ <em>H</em></span>，使 <span class="math inline"><em>a</em><em>h</em> = <em>h</em><sup>′</sup><em>a</em></span>；不可推出
+<span class="math inline"><em>a</em><em>h</em> = <em>h</em><em>a</em></span>
+对 <span class="math inline"><em>H</em></span> 中所有的元素 <span class="math inline"><em>h</em></span> 都成立</li>
+<li>群 <span class="math inline"><em>G</em></span> 的单位元群 <span class="math inline">{<em>e</em>}</span> 和群 <span class="math inline"><em>G</em></span> 本身都是 <span class="math inline"><em>G</em></span> 的正规子群，这两个正规子群称为
+<span class="math inline"><em>G</em></span> 的
+<strong>平凡正规子群</strong></li>
+<li>如果群 <span class="math inline"><em>G</em></span>
+只有平凡的正规子群，且 <span class="math inline"><em>G</em> ≠ <em>e</em></span>，则称 <span class="math inline"><em>G</em></span> 为 <strong>单群</strong></li>
+</ul>
+<h4 id="正规子群的性质">正规子群的性质</h4>
+<ul>
+<li>如果 <span class="math inline"><em>G</em></span> 是
+<strong>交换群</strong> ，则 <span class="math inline"><em>G</em></span>
+的一切子群都是 <span class="math inline"><em>G</em></span>
+的正规子群</li>
+<li>设 <span class="math inline"><em>H</em>, <em>K</em></span> 都是
+<span class="math inline"><em>G</em></span> 的子群，如果 <span class="math inline"><em>H</em></span> 是 <span class="math inline"><em>G</em></span> 的正规子群且 <span class="math inline"><em>H</em> ⊆ <em>K</em></span>，则 <span class="math inline"><em>H</em></span> 也是 <span class="math inline"><em>K</em></span> 的正规子群</li>
+<li>设 <span class="math inline"><em>G</em></span> 为群，<span class="math inline"><em>H</em></span> 是 <span class="math inline"><em>G</em></span> 的子群，如果 <span class="math inline"><em>H</em></span> 在 <span class="math inline"><em>G</em></span> 中的指数 <span class="math inline">[<em>G</em> : <em>H</em>] = 2</span>，则 <span class="math inline"><em>H</em></span> 是 <span class="math inline"><em>G</em></span> 的正规子群</li>
+<li>若 <span class="math inline"><em>H</em></span> 是 <span class="math inline"><em>K</em></span> 的正规子群，<span class="math inline"><em>K</em></span> 是 <span class="math inline"><em>G</em></span> 的正规子群，<span class="math inline"><em>H</em></span> 不一定是 <span class="math inline"><em>G</em></span>
+的正规子群（正规子群没有传递性）</li>
+</ul>
+<h4 id="正规子群的判定">正规子群的判定</h4>
+<ul>
+<li>设 <span class="math inline"><em>G</em></span> 是群，<span class="math inline"><em>H</em></span> 是 <span class="math inline"><em>G</em></span> 的子群，则下列四个条件等价：
+<ul>
+<li><span class="math inline"><em>H</em></span> 是 <span class="math inline"><em>G</em></span> 的正规子群</li>
+<li>对任意的 <span class="math inline"><em>a</em> ∈ <em>G</em></span>，有 <span class="math inline"><em>a</em><em>H</em><em>a</em><sup>−1</sup> = <em>H</em></span></li>
+<li>对任意的 <span class="math inline"><em>a</em> ∈ <em>G</em></span>，有 <span class="math inline"><em>a</em><em>H</em><em>a</em><sup>−1</sup> ⊆ <em>H</em></span></li>
+<li>对任意的 <span class="math inline"><em>a</em> ∈ <em>G</em></span>，<span class="math inline"><em>h</em> ∈ <em>H</em></span>，有 <span class="math inline"><em>a</em><em>h</em><em>a</em><sup>−1</sup> ∈ <em>H</em></span></li>
+</ul></li>
+<li>设 <span class="math inline"><em>G</em></span> 为群，<span class="math inline"><em>H</em><sub>1</sub></span>，<span class="math inline"><em>H</em><sub>2</sub></span> 是 <span class="math inline"><em>G</em></span> 的正规子群，则 <span class="math display"><em>H</em><sub>1</sub> ∩ <em>H</em><sub>2</sub>与<em>H</em><sub>1</sub><em>H</em><sub>2</sub></span>
+都是 <span class="math inline"><em>G</em></span> 的正规子群
+<ul>
+<li>事实上，前面提到，两个子群的交一定是子群，而两个子群的合成要是子群的充分必要条件是可交换。而只要其中一个子群是正规子群，那么就是可交换的</li>
+</ul></li>
+</ul>
+<h3 id="商群">商群</h3>
+<h4 id="陪集的乘法">陪集的乘法</h4>
+<p>正规子群的基本特点是：它的每一个左陪集与相应的右陪集完全一致。因此，对于群
+<span class="math inline"><em>G</em></span> 的正规子群 <span class="math inline"><em>H</em></span>，可不必区分它的左陪集 <span class="math inline"><em>a</em><em>H</em></span> 与右陪集 <span class="math inline"><em>H</em><em>a</em></span>，而直接称 <span class="math inline"><em>a</em><em>H</em></span> 或 <span class="math inline"><em>H</em><em>a</em></span>
+为它的一个<strong>陪集</strong> 。用 <span class="math inline"><em>G</em>/<em>H</em></span>
+表示它的所有陪集组成的集合，即 <span class="math display"><em>G</em>/<em>H</em> = {<em>a</em><em>H</em> ∣ <em>a</em> ∈ <em>G</em>}</span></p>
+<p>下面规定 <span class="math inline"><em>G</em>/<em>H</em></span>
+的运算，以使 <span class="math inline"><em>G</em>/<em>H</em></span>
+关于给定的运算构成群。</p>
+<p>对任意的 <span class="math inline"><em>a</em><em>H</em>, <em>b</em><em>H</em> ∈ <em>G</em>/<em>H</em></span>，规定：
+<span class="math display">(<em>a</em><em>H</em>) ⋅ (<em>b</em><em>H</em>) = (<em>a</em><em>b</em>)<em>H</em></span></p>
+<p>设 <span class="math inline"><em>a</em><sup>′</sup><em>H</em> = <em>a</em><em>H</em></span>，<span class="math inline"><em>b</em><sup>′</sup><em>H</em> = <em>b</em><em>H</em></span>，则
+<span class="math display">$$
+\begin{aligned}
+a^{\prime} H \cdot b^{\prime} H &amp; =\left(a^{\prime}
+b^{\prime}\right) H=a^{\prime}\left(b^{\prime} H\right)=a^{\prime}(b
+H)=a^{\prime}(H b) \\
+&amp; =\left(a^{\prime} H\right) b=(a H) b=a(H b)=(a b) H\\\
+&amp; =a H \cdot b H
+\end{aligned}
+$$</span></p>
+<p>所以 <span class="math inline"><em>H</em></span> 的任意两个陪集 <span class="math inline"><em>a</em><em>H</em></span> 与 <span class="math inline"><em>b</em><em>H</em></span>
+的乘积是唯一确定的，并且与 <span class="math inline"><em>a</em></span>
+与 <span class="math inline"><em>b</em></span>
+的选择无关，所以上述乘法是 <span class="math inline"><em>G</em>/<em>H</em></span> 的一个代数运算。</p>
+<h4 id="商群的定义">商群的定义</h4>
+<p>设 <span class="math inline"><em>G</em></span> 为群，<span class="math inline"><em>H</em></span> 是 <span class="math inline"><em>G</em></span> 的正规子群。<span class="math inline"><em>H</em></span> 的所有陪集 <span class="math inline"><em>G</em>/<em>H</em></span> 关于陪集的乘法 <span class="math inline"><em>a</em><em>H</em> ⋅ <em>b</em><em>H</em> = (<em>a</em><em>b</em>)<em>H</em></span>
+构成的群称为群 <span class="math inline"><em>G</em></span> 关于子群
+<span class="math inline"><em>H</em></span>
+的<strong>商群</strong>，仍记作 <span class="math inline"><em>G</em>/<em>H</em></span>，即 <span class="math display"><em>G</em>/<em>H</em> = {<em>a</em><em>H</em> ∣ <em>a</em> ∈ <em>G</em>}</span></p>
+<ul>
+<li>商群 <span class="math inline"><em>G</em>/<em>H</em></span>
+的单位元是 <span class="math inline"><em>e</em><em>H</em>( = <em>H</em>)</span></li>
+<li><span class="math inline"><em>a</em><em>H</em></span> 在 <span class="math inline"><em>G</em>/<em>H</em></span> 中的逆元是 <span class="math inline"><em>a</em><sup>−1</sup><em>H</em></span></li>
+</ul>
+<h4 id="商群的性质">商群的性质</h4>
+<ul>
+<li>设 <span class="math inline"><em>G</em></span> 为群，<span class="math inline"><em>H</em></span> 是 <span class="math inline"><em>G</em></span> 的任一子群。如果 <span class="math inline"><em>G</em></span> 是交换群，则商群 <span class="math inline"><em>G</em>/<em>H</em></span> 也是交换群。由于 <span class="math inline"><em>H</em></span> 在 <span class="math inline"><em>G</em></span> 中的指数<span class="math inline">[<em>G</em> : <em>H</em>]</span> 就是 <span class="math inline"><em>H</em></span> 在 <span class="math inline"><em>G</em></span> 中的陪集的个数，所以 <span class="math inline">|<em>G</em>/<em>H</em>| = [<em>G</em> : <em>H</em>]</span>。特别地，当
+<span class="math inline"><em>G</em></span> 是有限群时 <span class="math display">$$
+  |G / H|=[G:H]=\frac{|G|}{|H|}
+  $$</span>
+<ul>
+<li>有限群 <span class="math inline"><em>G</em></span> 的商群的阶是群
+<span class="math inline"><em>G</em></span> 的阶数的因子。</li>
+</ul></li>
+<li><span class="math inline"><strong>Z</strong></span> 关于 <span class="math inline">⟨<em>m</em>⟩</span> 的商群 <span class="math inline"><strong>Z</strong>/⟨<em>m</em>⟩</span> 就是 <span class="math inline"><strong>Z</strong></span> 关于模 <span class="math inline"><em>m</em></span> 的剩余类加群 <span class="math inline"><strong>Z</strong><sub><em>m</em></sub></span>，因此有
+<span class="math display"><strong>Z</strong>/⟨<em>m</em>⟩ = <strong>Z</strong><sub><em>m</em></sub></span></li>
+</ul>
+<h2 id="群的同态与同态基本定理">群的同态与同态基本定理</h2>
+<h3 id="群同态">群同态</h3>
+<h4 id="群同态定义">群同态定义</h4>
+<p>设 <span class="math inline"><em>G</em></span> 与 <span class="math inline"><em>G</em><sup>′</sup></span> 是两个群，<span class="math inline"><em>ϕ</em></span> 是 <span class="math inline"><em>G</em></span> 到 <span class="math inline"><em>G</em><sup>′</sup></span> 的映射。如果对任意的
+<span class="math inline"><em>a</em>, <em>b</em> ∈ <em>G</em></span> 有
+<span class="math display"><em>ϕ</em>(<em>a</em><em>b</em>) = <em>ϕ</em>(<em>a</em>)<em>ϕ</em>(<em>b</em>)</span></p>
+<p>则称 <span class="math inline"><em>ϕ</em></span> 是群 <span class="math inline"><em>G</em></span> 到 <span class="math inline"><em>G</em><sup>′</sup></span>
+的一个<strong>同态映射</strong> ，简称<strong>同态</strong></p>
+<ul>
+<li><p>当同态映射 <span class="math inline"><em>ϕ</em></span>
+是满射时，称 <span class="math inline"><em>ϕ</em></span> 为群 <span class="math inline"><em>G</em></span> 到 <span class="math inline"><em>G</em><sup>′</sup></span>
+的<strong>满同态</strong></p></li>
+<li><p>当同态映射 <span class="math inline"><em>ϕ</em></span>
+是单射时，称 <span class="math inline"><em>ϕ</em></span> 为 <span class="math inline"><em>G</em></span> 到 <span class="math inline"><em>G</em><sup>′</sup></span>
+的<strong>单同态</strong></p></li>
+<li><p>群的同构映射一定是既单且满的同态映射；反之，当群 <span class="math inline"><em>G</em></span> 到群 <span class="math inline"><em>G</em><sup>′</sup></span> 的同态映射 <span class="math inline"><em>ϕ</em></span> 既是单同态又是满同态时，<span class="math inline"><em>ϕ</em></span> 是 <span class="math inline"><em>G</em></span> 到 <span class="math inline"><em>G</em><sup>′</sup></span> 的同构映射</p></li>
+<li><p>在上式中，虽然用同一个记号“<span class="math inline">⋅</span>”来表示群 <span class="math inline"><em>G</em></span> 与群 <span class="math inline"><em>G</em><sup>′</sup></span>
+的运算，但这不表示等式两边的运算 <span class="math inline"><em>a</em><em>b</em></span> 与 <span class="math inline"><em>ϕ</em>(<em>a</em>)<em>ϕ</em>(<em>b</em>)</span>
+是一样的，而是分别表示群 <span class="math inline"><em>G</em></span>
+与群 <span class="math inline"><em>G</em><sup>′</sup></span>
+的运算。</p></li>
+<li><p><strong>自然同态</strong>：设 <span class="math inline"><em>G</em></span> 为群，<span class="math inline"><em>H</em></span> 是 <span class="math inline"><em>G</em></span> 的正规子群，对商群 <span class="math inline"><em>G</em>/<em>H</em></span>，令 <span class="math display">$$
+  \begin{aligned}
+  \eta:G &amp; \longrightarrow G / H,\\
+  a &amp; \longrightarrow a H,
+  \end{aligned}
+  $$</span></p>
+<p>则 <span class="math inline"><em>η</em></span> 是满映射，且对任意
+<span class="math inline"><em>a</em></span>，<span class="math inline"><em>b</em> ∈ <em>G</em></span>，有 <span class="math display"><em>η</em>(<em>a</em><em>b</em>) = (<em>a</em><em>b</em>)<em>H</em> = <em>a</em><em>H</em> ⋅ <em>b</em><em>H</em> = <em>η</em>(<em>a</em>)<em>η</em>(<em>b</em>)</span></p>
+<p>所以 <span class="math inline"><em>η</em></span> 是 <span class="math inline"><em>G</em></span> 到它的商群 <span class="math inline"><em>G</em>/<em>H</em></span>
+的同态映射。通常称这样的同态映射为自然同态。</p></li>
+</ul>
+<h4 id="群同态的性质">群同态的性质</h4>
+<p>设 <span class="math inline"><em>ϕ</em></span> 是群 <span class="math inline"><em>G</em></span> 到群 <span class="math inline"><em>G</em><sup>′</sup></span> 的同态映射，<span class="math inline"><em>e</em></span> 与 <span class="math inline"><em>e</em><sup>′</sup></span> 分别是 <span class="math inline"><em>G</em></span> 与 <span class="math inline"><em>G</em><sup>′</sup></span> 的单位元，<span class="math inline"><em>a</em> ∈ <em>G</em></span>，则</p>
+<ul>
+<li><span class="math inline"><em>ϕ</em></span> 将 <span class="math inline"><em>G</em></span> 的单位元映到 <span class="math inline"><em>G</em><sup>′</sup></span> 的单位元，即 <span class="math inline"><em>ϕ</em>(<em>e</em>) = <em>e</em><sup>′</sup></span></li>
+<li><span class="math inline"><em>ϕ</em></span> 将 <span class="math inline"><em>a</em></span> 的逆元映到 <span class="math inline"><em>ϕ</em>(<em>a</em>)</span> 的逆元，即 <span class="math inline"><em>ϕ</em>(<em>a</em><sup>−1</sup>) = (<em>ϕ</em>(<em>a</em>))<sup>−1</sup></span></li>
+<li>设 <span class="math inline"><em>n</em></span> 是任一整数，则 <span class="math inline"><em>ϕ</em>(<em>a</em><sup><em>n</em></sup>) = (<em>ϕ</em>(<em>a</em>))<sup><em>n</em></sup></span></li>
+<li>如果 <span class="math inline">ord <em>a</em></span> 有限，则 <span class="math inline">ord <em>ϕ</em>(<em>a</em>) ∣ ord <em>a</em></span></li>
+</ul>
+<h4 id="象和原象">象和原象</h4>
+<ul>
+<li><p>设 <span class="math inline"><em>ϕ</em></span> 为群 <span class="math inline"><em>G</em></span> 到群 <span class="math inline"><em>G</em><sup>′</sup></span>
+的<strong>映射</strong> ，<span class="math inline"><em>A</em>, <em>B</em></span> 分别为 <span class="math inline"><em>G</em></span> 与 <span class="math inline"><em>G</em><sup>′</sup></span> 的非空子集，记 <span class="math display">$$
+  \begin{aligned}
+  \phi(A) &amp; =\{\phi(x) \mid x \in A\},\\
+  \phi^{-1}(B) &amp; =\{x \in G \mid \phi(x) \in B\}
+  \end{aligned}
+  $$</span></p>
+<p>则 <span class="math inline"><em>ϕ</em>(<em>A</em>)</span> 与 <span class="math inline"><em>ϕ</em><sup>−1</sup>(<em>B</em>)</span> 分别是
+<span class="math inline"><em>G</em><sup>′</sup></span> 与 <span class="math inline"><em>G</em></span> 的非空子集。<span class="math inline"><em>ϕ</em>(<em>A</em>)</span> 与 <span class="math inline"><em>ϕ</em><sup>−1</sup>(<em>B</em>)</span>
+分别称为子集 <span class="math inline"><em>A</em></span> 与 <span class="math inline"><em>B</em></span> 在 <span class="math inline"><em>ϕ</em></span> 下的<strong>象</strong>
+与<strong>原象</strong></p>
+<ul>
+<li>注意，<span class="math inline"><em>ϕ</em><sup>−1</sup>(<em>B</em>)</span>
+仅仅是一个集合的记号，并不表示映射 <span class="math inline"><em>ϕ</em></span> 是可逆的</li>
+</ul></li>
+<li><p>设 <span class="math inline"><em>ϕ</em></span> 是群 <span class="math inline"><em>G</em></span> 到 <span class="math inline"><em>G</em><sup>′</sup></span>
+的<strong>同态映射</strong> ，<span class="math inline"><em>H</em></span> 与 <span class="math inline"><em>K</em></span> 分别是 <span class="math inline"><em>G</em></span> 与 <span class="math inline"><em>G</em><sup>′</sup></span> 的子群，则</p>
+<ul>
+<li><span class="math inline"><em>ϕ</em>(<em>H</em>)</span> 是 <span class="math inline"><em>G</em><sup>′</sup></span> 的子群</li>
+<li><span class="math inline"><em>ϕ</em><sup>−1</sup>(<em>K</em>)</span>
+是 <span class="math inline"><em>G</em></span> 的子群</li>
+<li>如果 <span class="math inline"><em>H</em></span> 是 <span class="math inline"><em>G</em></span> 的正规子群，则 <span class="math inline"><em>ϕ</em>(<em>H</em>)</span> 是 <span class="math inline"><em>ϕ</em>(<em>G</em>)</span> 的正规子群</li>
+<li>如果 <span class="math inline"><em>K</em></span> 是 <span class="math inline"><em>G</em><sup>′</sup></span> 的正规子群，则 <span class="math inline"><em>ϕ</em><sup>−1</sup>(<em>K</em>)</span> 是 <span class="math inline"><em>G</em></span> 的正规子群</li>
+</ul></li>
+</ul>
+<h4 id="核">核</h4>
+<p>设 <span class="math inline"><em>ϕ</em></span> 是群 <span class="math inline"><em>G</em></span> 到 <span class="math inline"><em>G</em><sup>′</sup></span> 的同态映射，<span class="math inline"><em>e</em><sup>′</sup></span> 是 <span class="math inline"><em>G</em><sup>′</sup></span> 的单位元，则称 <span class="math inline"><em>e</em><sup>′</sup></span> 在 <span class="math inline"><em>G</em></span> 中的原象 <span class="math display"><em>ϕ</em><sup>−1</sup>({<em>e</em><sup>′</sup>}) = {<em>a</em> ∈ <em>G</em> ∣ <em>ϕ</em>(<em>a</em>) = <em>e</em><sup>′</sup>}</span></p>
+<p>为同态映射 <span class="math inline"><em>ϕ</em></span>
+的<strong>核</strong> ，记作 <span class="math inline">Ker <em>ϕ</em></span></p>
+<h3 id="群同态基本定理">群同态基本定理</h3>
+<p>设 <span class="math inline"><em>ϕ</em></span> 是群 <span class="math inline"><em>G</em></span> 到群 <span class="math inline"><em>G</em><sup>′</sup></span> 的满同态，<span class="math inline"><em>K</em> = Ker <em>ϕ</em></span>，则 <span class="math display"><em>G</em>/<em>K</em> ≅ <em>G</em><sup>′</sup></span></p>
+<p>应用群同态基本定理证明群的同构，一般有以下五个步骤：</p>
+<ol type="1">
+<li>建立群 <span class="math inline"><em>G</em></span> 与群 <span class="math inline"><em>G</em><sup>′</sup></span> 的元素之间的对应关系
+<span class="math inline"><em>ϕ</em></span>，并证明 <span class="math inline"><em>ϕ</em></span> 为 <span class="math inline"><em>G</em></span> 到 <span class="math inline"><em>G</em><sup>′</sup></span> 的
+<strong>映射</strong></li>
+<li>证明 <span class="math inline"><em>ϕ</em></span> 为 <span class="math inline"><em>G</em></span> 到 <span class="math inline"><em>G</em><sup>′</sup></span> 的
+<strong>满映射</strong></li>
+<li>证明 <span class="math inline"><em>ϕ</em></span> 为 <span class="math inline"><em>G</em></span> 到 <span class="math inline"><em>G</em><sup>′</sup></span> 的
+<strong>同态映射</strong>，即证明保持运算</li>
+<li>计算同态的 <strong>核</strong> <span class="math inline">Ker <em>ϕ</em></span></li>
+<li>应用群同态基本定理得 <span class="math inline"><em>G</em>/Ker <em>ϕ</em> ≅ <em>G</em><sup>′</sup></span></li>
+</ol>
+<h3 id="第二同构定理">第二同构定理</h3>
+<p>设 <span class="math inline"><em>H</em></span> 为 <span class="math inline"><em>G</em></span> 的子群，<span class="math inline"><em>K</em></span> 为 <span class="math inline"><em>G</em></span> 的正规子群，则 <span class="math inline"><em>H</em> ∩ <em>K</em></span> 是 <span class="math inline"><em>H</em></span> 的正规子群且 <span class="math display"><em>H</em>/(<em>H</em> ∩ <em>K</em>) ≅ <em>H</em><em>K</em>/<em>K</em></span></p>
+<h3 id="第三同构定理">第三同构定理</h3>
+<p>设 <span class="math inline"><em>H</em></span> 是群 <span class="math inline"><em>G</em></span> 的正规子群，<span class="math inline"><em>K</em></span> 是 <span class="math inline"><em>G</em></span> 的正规子群，且 <span class="math inline"><em>K</em> ⊆ <em>H</em></span>，则 <span class="math display">(<em>G</em>/<em>K</em>)/(<em>H</em>/<em>K</em>) ≅ <em>G</em>/<em>H</em></span></p>
+<h2 id="群的直积">群的直积</h2>
+<h3 id="外直积">外直积</h3>
+<h4 id="外直积的定义">外直积的定义</h4>
+<p>设 <span class="math inline"><em>G</em><sub>1</sub>, <em>G</em><sub>2</sub></span>
+是两个群，构造集合 <span class="math inline"><em>G</em><sub>1</sub></span> 与 <span class="math inline"><em>G</em><sub>2</sub></span> 的卡氏积 <span class="math display"><em>G</em> = {(<em>a</em><sub>1</sub>, <em>a</em><sub>2</sub>) ∣ <em>a</em><sub>1</sub> ∈ <em>G</em><sub>1</sub>, <em>a</em><sub>2</sub> ∈ <em>G</em><sub>2</sub>}</span></p>
+<p>并在 <span class="math inline"><em>G</em></span> 中定义乘法运算 <span class="math display">(<em>a</em><sub>1</sub>, <em>a</em><sub>2</sub>) ⋅ (<em>b</em><sub>1</sub>, <em>b</em><sub>2</sub>) = (<em>a</em><sub>1</sub><em>b</em><sub>1</sub>, <em>a</em><sub>2</sub><em>b</em><sub>2</sub>),  (<em>a</em><sub>1</sub>, <em>a</em><sub>2</sub>), (<em>b</em><sub>1</sub>, <em>b</em><sub>2</sub>) ∈ <em>G</em></span></p>
+<p>则 <span class="math inline"><em>G</em></span>
+关于上述定义的乘法构成群，称为群 <span class="math inline"><em>G</em><sub>1</sub></span> 与 <span class="math inline"><em>G</em><sub>2</sub></span>
+的<strong>外直积</strong> ，记作 <span class="math inline"><em>G</em> = <em>G</em><sub>1</sub> × <em>G</em><sub>2</sub></span></p>
+<ul>
+<li>如果 <span class="math inline"><em>e</em><sub>1</sub>, <em>e</em><sub>2</sub></span>
+分别是群 <span class="math inline"><em>G</em><sub>1</sub></span> 和
+<span class="math inline"><em>G</em><sub>2</sub></span> 的单位元，则
+<span class="math inline">(<em>e</em><sub>1</sub>, <em>e</em><sub>2</sub>)</span>
+是 <span class="math inline"><em>G</em><sub>1</sub> × <em>G</em><sub>2</sub></span>
+的单位元</li>
+<li>设 <span class="math inline">(<em>a</em><sub>1</sub>, <em>a</em><sub>2</sub>) ∈ <em>G</em></span>，则
+<span class="math inline">(<em>a</em><sub>1</sub>, <em>a</em><sub>2</sub>)<sup>−1</sup> = (<em>a</em><sub>1</sub><sup>−1</sup>, <em>a</em><sub>2</sub><sup>−1</sup>)</span></li>
+<li>当 <span class="math inline"><em>G</em><sub>1</sub></span> 和 <span class="math inline"><em>G</em><sub>2</sub></span> 都是加群时，<span class="math inline"><em>G</em><sub>1</sub></span> 与 <span class="math inline"><em>G</em><sub>2</sub></span> 的外直积也可记作 <span class="math inline"><em>G</em><sub>1</sub> ⊕ <em>G</em><sub>2</sub></span></li>
+</ul>
+<h4 id="外直积的性质">外直积的性质</h4>
+<ul>
+<li><p>设 <span class="math inline"><em>G</em> = <em>G</em><sub>1</sub> × <em>G</em><sub>2</sub></span>
+是群 <span class="math inline"><em>G</em><sub>1</sub></span> 与 <span class="math inline"><em>G</em><sub>2</sub></span> 的外直积，则</p>
+<ul>
+<li><span class="math inline"><em>G</em></span> 是有限群的充分必要条件是
+<span class="math inline"><em>G</em><sub>1</sub></span> 与 <span class="math inline"><em>G</em><sub>2</sub></span> 都是有限群。</li>
+<li>当 <span class="math inline"><em>G</em></span> 是有限群时，有 <span class="math display">|<em>G</em>| = |<em>G</em><sub>1</sub>| ⋅ |<em>G</em><sub>2</sub>|</span></li>
+<li><span class="math inline"><em>G</em></span> 是交换群的充分必要条件是
+<span class="math inline"><em>G</em><sub>1</sub></span> 与 <span class="math inline"><em>G</em><sub>2</sub></span> 都是交换群</li>
+<li><span class="math inline"><em>G</em><sub>1</sub> × <em>G</em><sub>2</sub> ≅ <em>G</em><sub>2</sub> × <em>G</em><sub>1</sub></span></li>
+</ul></li>
+<li><p>设 <span class="math inline"><em>G</em><sub>1</sub></span>，<span class="math inline"><em>G</em><sub>2</sub></span> 是两个群，<span class="math inline"><em>a</em></span> 和 <span class="math inline"><em>b</em></span> 分别是 <span class="math inline"><em>G</em><sub>1</sub></span> 和 <span class="math inline"><em>G</em><sub>2</sub></span> 中的有限阶元素，则对于
+<span class="math inline">(<em>a</em>, <em>b</em>) ∈ <em>G</em><sub>1</sub> × <em>G</em><sub>2</sub></span>，有
+<span class="math display">ord (<em>a</em>, <em>b</em>) = [ord <em>a</em>, ord <em>b</em>]</span></p></li>
+<li><p>设 <span class="math inline"><em>G</em><sub>1</sub></span> 和
+<span class="math inline"><em>G</em><sub>2</sub></span> 分别是 <span class="math inline"><em>m</em></span> 阶及 <span class="math inline"><em>n</em></span> 阶的循环群，则 <span class="math inline"><em>G</em><sub>1</sub> × <em>G</em><sub>2</sub></span>
+是循环群的充要条件是 <span class="math inline">(<em>m</em>, <em>n</em>) = 1</span></p></li>
+</ul>
+<h3 id="内直积">内直积</h3>
+<h4 id="内直积的定义">内直积的定义</h4>
+<p>设 <span class="math inline"><em>H</em></span> 和 <span class="math inline"><em>K</em></span> 是群 <span class="math inline"><em>G</em></span> 的正规子群。如果群 <span class="math inline"><em>G</em></span> 满足条件 <span class="math display"><em>G</em> = <em>H</em><em>K</em>,  <em>H</em> ∩ <em>K</em> = {<em>e</em>}</span></p>
+<p>则称 <span class="math inline"><em>G</em></span> 是 <span class="math inline"><em>H</em></span> 和 <span class="math inline"><em>K</em></span> 的<strong>内直积</strong></p>
+<h4 id="内直积的判定">内直积的判定</h4>
+<p>设 <span class="math inline"><em>H</em></span> 和 <span class="math inline"><em>K</em></span> 是 <span class="math inline"><em>G</em></span> 的子群，则 <span class="math inline"><em>G</em></span> 是 <span class="math inline"><em>H</em></span> 和 <span class="math inline"><em>K</em></span> 的内直积的充分必要条件是 <span class="math inline"><em>G</em></span> 满足如下两个条件：</p>
+<ul>
+<li><span class="math inline"><em>G</em></span> 中每个元素可唯一地表为
+<span class="math inline"><em>h</em><em>k</em></span> 的形式，其中 <span class="math inline"><em>h</em> ∈ <em>H</em></span>，<span class="math inline"><em>k</em> ∈ <em>K</em></span></li>
+<li><span class="math inline"><em>H</em></span> 中每个元素与 <span class="math inline"><em>K</em></span> 中任意元素可交换，即：对任意 <span class="math inline"><em>h</em> ∈ <em>H</em></span>，<span class="math inline"><em>k</em> ∈ <em>K</em></span>，有 <span class="math inline"><em>h</em><em>k</em> = <em>k</em><em>h</em></span></li>
+</ul>
+<h3 id="内外直积的关系">内外直积的关系</h3>
+<p>如果群 <span class="math inline"><em>G</em></span> 是正规子群 <span class="math inline"><em>H</em></span> 和 <span class="math inline"><em>K</em></span> 的内直积，则 <span class="math inline"><em>H</em> × <em>K</em> ≅ <em>G</em></span></p>
+<p>反之，如果群 <span class="math inline"><em>G</em> = <em>G</em><sub>1</sub> × <em>G</em><sub>2</sub></span>，则存在
+<span class="math inline"><em>G</em></span> 的正规子群 <span class="math inline"><em>G</em><sub>1</sub><sup>′</sup></span> 和 <span class="math inline"><em>G</em><sub>2</sub><sup>′</sup></span>，且 <span class="math inline"><em>G</em><sub><em>i</em></sub><sup>′</sup></span>
+与 <span class="math inline"><em>G</em><sub><em>i</em></sub></span> 同构
+<span class="math inline">(<em>i</em> = 1, 2)</span>，使得 <span class="math inline"><em>G</em></span> 是 <span class="math inline"><em>G</em><sub>1</sub><sup>′</sup></span> 与 <span class="math inline"><em>G</em><sub>2</sub><sup>′</sup></span>
+的内直积</p>
+<ul>
+<li>从本定理中可看到，内外直积的概念本质上是一致的，所以有时可不对内外直积加以区分，而统称为群的直积</li>
+</ul>
+<h3 id="多个群的直积">多个群的直积</h3>
+<ul>
+<li><p>设 <span class="math inline"><em>G</em><sub>1</sub>, <em>G</em><sub>2</sub>, ⋯, <em>G</em><sub><em>n</em></sub></span>
+是有限多个群。构造集合 <span class="math display"><em>G</em> = {(<em>a</em><sub>1</sub>, <em>a</em><sub>2</sub>, ⋯, <em>a</em><sub><em>n</em></sub>) ∣ <em>a</em><sub><em>i</em></sub> ∈ <em>G</em><sub><em>i</em></sub>, <em>i</em> = 1, 2, ⋯, <em>n</em>}</span></p>
+<p>并在 <span class="math inline"><em>G</em></span> 中定义运算 <span class="math display">(<em>a</em><sub>1</sub>, <em>a</em><sub>2</sub>, ⋯, <em>a</em><sub><em>n</em></sub>) ⋅ (<em>b</em><sub>1</sub>, <em>b</em><sub>2</sub>, ⋯, <em>b</em><sub><em>n</em></sub>) = (<em>a</em><sub>1</sub><em>b</em><sub>1</sub>, <em>a</em><sub>2</sub><em>b</em><sub>2</sub>, ⋯, <em>a</em><sub><em>n</em></sub><em>b</em><sub><em>n</em></sub>)</span></p>
+<p>则 <span class="math inline"><em>G</em></span>
+关于上述运算构成群，称为群 <span class="math inline"><em>G</em><sub>1</sub>, <em>G</em><sub>2</sub>, ⋯, <em>G</em><sub><em>n</em></sub></span>
+的外直积</p></li>
+<li><p>设 <span class="math inline"><em>H</em><sub>1</sub>, <em>H</em><sub>2</sub>, ⋯, <em>H</em><sub><em>n</em></sub></span>
+是群 <span class="math inline"><em>G</em></span>
+的有限多个正规子群。如果 <span class="math inline"><em>G</em></span>
+满足以下两个条件，就称 <span class="math inline"><em>G</em></span> 是
+<span class="math inline"><em>H</em><sub>1</sub>, <em>H</em><sub>2</sub>, ⋯, <em>H</em><sub><em>n</em></sub></span>
+的内直积：</p>
+<ul>
+<li><span class="math inline"><em>G</em> = <em>H</em><sub>1</sub><em>H</em><sub>2</sub>⋯<em>H</em><sub><em>n</em></sub> = {<em>h</em><sub>1</sub><em>h</em><sub>2</sub>⋯<em>h</em><sub><em>n</em></sub> ∣ <em>h</em><sub><em>i</em></sub> ∈ <em>H</em><sub><em>i</em></sub>}</span></li>
+<li><span class="math inline">(<em>H</em><sub>1</sub><em>H</em><sub>2</sub>⋯<em>H</em><sub><em>i</em></sub>) ∩ <em>H</em><sub><em>i</em> + 1</sub> = {<em>e</em>}, <em>i</em> = 1, 2, ⋯, <em>n</em> − 1</span>（任意两个交起来都是单位群）</li>
+</ul></li>
+<li><p>对于多个群的直积，如果群 <span class="math inline"><em>G</em></span> 是有限多个子群 <span class="math inline"><em>H</em><sub>1</sub>, <em>H</em><sub>2</sub>, ⋯, <em>H</em><sub><em>n</em></sub></span>
+的内直积，则 <span class="math inline"><em>G</em></span> 同构于 <span class="math inline"><em>H</em><sub>1</sub>, <em>H</em><sub>2</sub>, ⋯, <em>H</em><sub><em>n</em></sub></span>
+的外直积</p></li>
+</ul>
+<h1 id="第二章-环">第二章 环</h1>
+<h2 id="环的定义和基本性质">环的定义和基本性质</h2>
+<h3 id="环的定义">环的定义</h3>
+<p>设 <span class="math inline"><em>R</em></span> 是一个非空集合，如果在
+<span class="math inline"><em>R</em></span> 上定义了两数运算“<span class="math inline">+</span>”（称为加法）和“<span class="math inline">⋅</span>”（称为乘法），并且满足</p>
+<ul>
+<li>(R1) <span class="math inline"><em>R</em></span>
+关于加法构成一个<strong>交换群</strong></li>
+<li>(R2) 乘法结合律成立，即对任意的 <span class="math inline"><em>a</em>, <em>b</em>, <em>c</em> ∈ <em>R</em></span>，有
+<span class="math display">(<em>a</em> ⋅ <em>b</em>) ⋅ <em>c</em> = <em>a</em> ⋅ (<em>b</em> ⋅ <em>c</em>)</span></li>
+<li>(R3) 乘法对加法的两个分配律成立，即对任意的 <span class="math inline"><em>a</em>, <em>b</em>, <em>c</em> ∈ <em>R</em></span>，有
+<span class="math display">$$
+  \begin{aligned}
+  a\cdot (b + c) = a\cdot b + a\cdot c\\
+  (b+c)\cdot a = b\cdot a + c\cdot a
+  \end{aligned}
+  $$</span></li>
+</ul>
+<p>则称 <span class="math inline">(<em>R</em>, +, ⋅)</span>
+为一个<strong>环</strong> ，或简称 <span class="math inline"><em>R</em></span> 为环</p>
+<ul>
+<li>由环的定义知 <span class="math inline">(<em>R</em>, +)</span>
+是一个交换群，称为环的加法群。与前两章中关于加群的记号一样，<span class="math inline"><em>R</em></span> 的加法单位元常用 0 表示，称为环
+<span class="math inline"><em>R</em></span> 的 <strong>零元</strong>，环
+<span class="math inline"><em>R</em></span> 的元素 <span class="math inline"><em>a</em></span> 的加法逆元称为 <span class="math inline"><em>a</em></span> 的 <strong>负元</strong> ，记作
+<span class="math inline">−<em>a</em></span>，由群的性质可知，<span class="math inline"><em>R</em></span>
+的零元及每个元素的负元都是唯一的</li>
+<li>如果环 <span class="math inline"><em>R</em></span>
+的乘法还满足交换律，则称为<strong>交换环</strong></li>
+<li>如果环中存在元素 <span class="math inline"><em>e</em></span>，使对任意的 <span class="math inline"><em>a</em> ∈ <em>R</em></span>，有 <span class="math display"><em>a</em><em>e</em> = <em>e</em><em>a</em> = <em>a</em></span>
+则称 <span class="math inline"><em>R</em></span>
+是一个有单位元的环，并称 <span class="math inline"><em>e</em></span> 为
+<span class="math inline"><em>R</em></span> 的<strong>单位元</strong>
+（注意：环的单位元是乘法单位元）</li>
+<li>一个环<strong>不一定有单位元</strong>，如果环有单位元，则单位元是唯一的</li>
+<li>设环 <span class="math inline"><em>R</em></span>
+是有单位元的环，<span class="math inline"><em>a</em> ∈ <em>R</em></span>，如果存在 <span class="math inline"><em>b</em> ∈ <em>R</em></span>，使 <span class="math display"><em>a</em><em>b</em> = <em>b</em><em>a</em> = <em>e</em></span>
+则称 <span class="math inline"><em>a</em></span> 是 <span class="math inline"><em>R</em></span> 的一个 <strong>可逆元</strong>
+或<strong>单位</strong> ，并称 <span class="math inline"><em>b</em></span> 为 <span class="math inline"><em>a</em></span> 的 <strong>逆元</strong> ，记作
+<span class="math inline"><em>a</em><sup>−1</sup></span></li>
+<li>环的一个元素不一定是可逆的，如果 <span class="math inline"><em>a</em></span> 可逆则 <span class="math inline"><em>a</em></span> 的逆元是唯一的</li>
+<li>对于一个有单位元的环 <span class="math inline"><em>R</em></span>，其所有可逆元组成的集合关于环
+<span class="math inline"><em>R</em></span> 的乘法构成群。这个群称为环
+<span class="math inline"><em>R</em></span> 的 <strong>单位群</strong>
+，记作 <span class="math inline"><em>U</em>(<em>R</em>)</span></li>
+<li>设 <span class="math inline"><em>R</em> = {0}</span>，规定 <span class="math inline">0 + 0 = 0 ⋅ 0 = 0</span>，则 <span class="math inline"><em>R</em></span>
+构成环称为<strong>零环</strong>，零环是唯一的一个有单位元且单位元等于零元，并且零元也可逆的环</li>
+<li>今后，如无特别声明，凡提到有单位元的环时我们总假定这个环不是零环，因此环的单位元也就不等于零元</li>
+</ul>
+<h3 id="常见的环">常见的环</h3>
+<ul>
+<li><p>整数集 <span class="math inline">ℤ</span>、有理数集 <span class="math inline">ℚ</span>、实数集 <span class="math inline">ℝ</span>、复数集 <span class="math inline">ℂ</span>
+对于通常数的加法与乘法构成有单位元 <span class="math inline">1</span>
+的交换环，分别称为<strong>整数环、有理数域、实数域、复数域</strong>
+、它们的单位群分别是 <span class="math inline">{1, −1}</span>、<span class="math inline">ℚ<sup>*</sup></span>、<span class="math inline">ℝ<sup>*</sup></span> 和 <span class="math inline">ℂ<sup>*</sup></span></p></li>
+<li><p>数域 <span class="math inline"><em>F</em></span> 上全体 <span class="math inline"><em>n</em>(<em>n</em> &gt; 1)</span> 阶方阵 <span class="math inline"><em>M</em><sub><em>n</em></sub>(<em>F</em>)</span>
+的集合关于矩阵的加法与乘法构成一个有单位元 <span class="math inline"><em>E</em></span>（单位矩阵）的非交换环，称为数域
+<span class="math inline"><em>F</em></span> 上的 <span class="math inline"><em>n</em></span> 阶全矩阵环，这个环的单位群是 <span class="math inline"><em>G</em><em>L</em><sub><em>n</em></sub>(<em>F</em>)</span></p></li>
+<li><p>设 <span class="math inline"><em>m</em></span> 为大于 <span class="math inline">1</span> 的正整数，则 <span class="math inline">ℤ</span> 的模 <span class="math inline"><em>m</em></span> 剩余类集 <span class="math display">$$
+  Z_m=\{\overline{0},\overline{1},\overline{2},\cdots,\overline{m-1}\}
+  $$</span> 关于剩余类的加法和乘法构成有单位元的交换环，称为<strong>模 m
+剩余类环</strong> ，这个环的单位群是 <span class="math inline">$U(m) =
+\{\overline{x} \mid 1 \leq x &lt; m, (x,m)=1\}$</span></p></li>
+<li><p>设 <span class="math inline"><em>R</em><sub>1</sub>, <em>R</em><sub>2</sub>, ⋯, <em>R</em><sub><em>n</em></sub></span>
+为 <span class="math inline"><em>n</em></span> 个环。令 <span class="math display"><em>R</em> = <em>R</em><sub>1</sub> ⊕ <em>R</em><sub>2</sub> ⊕ ⋯ ⊕ <em>R</em><sub><em>n</em></sub> = {(<em>a</em><sub>1</sub>, <em>a</em><sub>2</sub>, ⋯, <em>a</em><sub><em>n</em></sub>) ∣ <em>a</em><sub><em>i</em></sub> ∈ <em>R</em><sub><em>i</em></sub>, <em>i</em> = 1, 2, ⋯；<em>n</em>}</span></p>
+<p>对任意的 <span class="math inline">(<em>a</em><sub>1</sub>, <em>a</em><sub>2</sub>, ⋯, <em>a</em><sub><em>n</em></sub>), (<em>b</em><sub>1</sub>, <em>b</em><sub>2</sub>, ⋯, <em>b</em><sub><em>n</em></sub>) ∈ <em>R</em></span>，规定
+<span class="math display">$$
+  \begin{aligned}
+  \left(a_{1},a_{2},\cdots,a_{n}\right)+\left(b_{1},b_{2},\cdots,b_{n}\right)
+&amp; =\left(a_{1}+b_{1},a_{2}+b_{2},\cdots,a_{n}+b_{n}\right),\\
+  \left(a_{1},a_{2},\cdots,a_{n}\right)
+\cdot\left(b_{1},b_{2},\cdots,b_{n}\right) &amp; =\left(a_{1}
+b_{1},a_{2} b_{2},\cdots,a_{n} b_{n}\right)
+  \end{aligned}
+  $$</span></p>
+<p>则 <span class="math inline"><em>R</em></span>
+关于上面所定义的加法与乘法构成一个环。这个环称为环 <span class="math inline"><em>R</em><sub>1</sub>, <em>R</em><sub>2</sub>, ⋯, <em>R</em><sub><em>n</em></sub></span>
+的<strong>直和</strong></p>
+<ul>
+<li><span class="math inline"><em>R</em></span>
+有单位元的充分必要条件是每个 <span class="math inline"><em>R</em><sub><em>i</em></sub></span>
+都有单位元</li>
+<li><span class="math inline"><em>R</em></span>
+是交换环的充分必要条件是每个 <span class="math inline"><em>R</em><sub><em>i</em></sub></span>
+都是交换环</li>
+</ul></li>
+</ul>
+<h3 id="环的性质">环的性质</h3>
+<ul>
+<li><p>设 <span class="math inline"><em>R</em></span> 是一个环，<span class="math inline"><em>a</em>, <em>b</em> ∈ <em>R</em></span>，则</p>
+<ul>
+<li><span class="math inline"><em>a</em> ⋅ 0 = 0 ⋅ <em>a</em> = 0</span></li>
+<li><span class="math inline">−(−<em>a</em>) = <em>a</em></span></li>
+<li><span class="math inline"><em>a</em> ⋅ (−<em>b</em>) = (−<em>a</em>) ⋅ <em>b</em> = −<em>a</em><em>b</em></span></li>
+<li><span class="math inline">(−<em>a</em>) ⋅ (−<em>b</em>) = <em>a</em><em>b</em></span></li>
+</ul></li>
+<li><p>利用负元的概念，可以定义环 <span class="math inline"><em>R</em></span> 的减法“<span class="math inline">−</span>”，即对任意的 <span class="math inline"><em>a</em>, <em>b</em> ∈ <em>R</em></span>，令 <span class="math display"><em>a</em> − <em>b</em> = <em>a</em> + (−<em>b</em>)</span></p></li>
+<li><p><strong>移项法则</strong>：对任意的 <span class="math inline"><em>a</em>, <em>b</em>, <em>c</em> ∈ <em>R</em></span>，有以下移项法则：
+<span class="math display"><em>a</em> + <em>b</em> = <em>c</em> ⇔ <em>a</em> = <em>c</em> − <em>b</em></span></p>
+<p>乘法对于减法还满足分配律，即对任意的 <span class="math inline"><em>a</em>, <em>b</em>, <em>c</em> ∈ <em>R</em></span>，有
+<span class="math display">$$
+  \begin{aligned}
+  a(b-c)=a b-a c \\
+  (b-c) a=b a-c a
+  \end{aligned}
+  $$</span></p></li>
+<li><p><strong>倍数法则</strong>：对任意的 <span class="math inline"><em>m</em>, <em>n</em> ∈ <strong>Z</strong></span>，<span class="math inline"><em>a</em>, <em>b</em> ∈ <em>R</em></span>，</p>
+<ul>
+<li><span class="math inline"><em>m</em><em>a</em> + <em>n</em><em>a</em> = (<em>m</em> + <em>n</em>)<em>a</em></span></li>
+<li><span class="math inline"><em>m</em>(<em>a</em> + <em>b</em>) = <em>m</em><em>a</em> + <em>m</em><em>b</em></span></li>
+<li><span class="math inline"><em>m</em>(<em>n</em><em>a</em>) = (<em>m</em><em>n</em>)<em>a</em> = <em>n</em>(<em>m</em><em>a</em>)</span></li>
+<li><span class="math inline"><em>m</em>(<em>a</em><em>b</em>) = (<em>m</em><em>a</em>)<em>b</em> = <em>a</em>(<em>m</em><em>b</em>)</span></li>
+</ul></li>
+<li><p><strong>指数法则</strong>：对任意的 <span class="math inline"><em>m</em>, <em>n</em> ∈ <strong>N</strong></span>，<span class="math inline"><em>a</em>, <em>b</em> ∈ <em>R</em></span>，</p>
+<ul>
+<li><span class="math inline">(<em>a</em><sup><em>m</em></sup>)<sup><em>n</em></sup> = <em>a</em><sup><em>m</em><em>n</em></sup></span></li>
+<li><span class="math inline"><em>a</em><sup><em>m</em></sup> ⋅ <em>a</em><sup><em>n</em></sup> = <em>a</em><sup><em>m</em> + <em>n</em></sup></span></li>
+<li>如果 <span class="math inline"><em>R</em></span> 的元素 <span class="math inline"><em>a</em></span> 是不可逆的，则 <span class="math inline"><em>a</em><sup>0</sup></span> 与 <span class="math inline"><em>a</em><sup>−<em>n</em></sup>(<em>n</em> &gt; 0)</span>
+通常是没有意义的</li>
+<li>当 <span class="math inline"><em>a</em><em>b</em> ≠ <em>b</em><em>a</em></span>
+时，等式 <span class="math inline">(<em>a</em> ⋅ <em>b</em>)<sup><em>n</em></sup> = <em>a</em><sup><em>n</em></sup> ⋅ <em>b</em><sup><em>n</em></sup></span>
+一般也不成立</li>
+</ul></li>
+<li><p><strong>广义分配律</strong>： 设 <span class="math inline"><em>a</em> ∈ <em>R</em></span>，则对 <span class="math inline"><em>b</em><sub><em>i</em></sub> ∈ <em>R</em>(<em>i</em> = 1, 2, ⋯, <em>n</em>)</span>，有
+<span class="math display">$$
+  a\left(\sum_{i=1}^{n} b_{i}\right)=\sum_{i=1}^{n} a
+  b_{i},\quad\left(\sum_{i=1}^{n} b_{i}\right) a=\sum_{i=1}^{n} b_{i} a
+  $$</span></p>
+<p>设 <span class="math inline"><em>a</em><sub><em>i</em></sub>, <em>b</em><sub><em>j</em></sub> ∈ <em>R</em>(<em>i</em> = 1, 2, ⋯, <em>n</em></span>；<span class="math inline"><em>j</em> = 1, 2, ⋯, <em>m</em>)</span>，则 <span class="math display">$$
+  \left(\sum_{i=1}^{n} a_{i}\right)\left(\sum_{j=1}^{m}
+b_{j}\right)=\sum_{i=1}^{n} \sum_{j=1}^{m} a_{i} b_{j}
+  $$</span></p></li>
+</ul>
+<h3 id="子环的定义">子环的定义</h3>
+<p>设 <span class="math inline">(<em>R</em>, +, ⋅)</span>
+是一个环，<span class="math inline"><em>S</em></span> 是 <span class="math inline"><em>R</em></span> 的一个非空子集。如果 <span class="math inline"><em>S</em></span> 关于 <span class="math inline"><em>R</em></span> 的运算构成环，则称 <span class="math inline"><em>S</em></span> 为 <span class="math inline"><em>R</em></span> 的一个<strong>子环</strong> ，记作
+<span class="math inline"><em>S</em> &lt; <em>R</em></span></p>
+<ul>
+<li>如果 <span class="math inline"><em>S</em></span> 是 <span class="math inline"><em>R</em></span> 的子环，则 <span class="math inline">(<em>S</em>, +)</span> 是 <span class="math inline">(<em>R</em>, +)</span> 的子加群</li>
+<li><span class="math inline"><em>R</em></span> 的零元 <span class="math inline">0</span> 就是 <span class="math inline"><em>S</em></span> 的零元</li>
+<li><span class="math inline"><em>S</em></span> 中元素 <span class="math inline"><em>a</em></span> 在 <span class="math inline"><em>R</em></span> 中的负元 <span class="math inline">−<em>a</em></span> 就是 <span class="math inline"><em>a</em></span> 在 <span class="math inline"><em>S</em></span> 中的负元</li>
+<li>环 <span class="math inline"><em>R</em></span>
+本身以及由单独一个零元 <span class="math inline">{0}</span>
+所构成的集合关于 <span class="math inline"><em>R</em></span>
+的运算显然都构成 <span class="math inline"><em>R</em></span>
+的子环，这两个子环称为环 <span class="math inline"><em>R</em></span>
+的<strong>平凡子环</strong></li>
+<li>即使一个环有单位元，其子环也可能没有单位元</li>
+<li>即使一个环没有单位元，其子环也可能有单位元</li>
+</ul>
+<h3 id="子环的判定">子环的判定</h3>
+<ul>
+<li>设 <span class="math inline"><em>R</em></span> 是一个环，<span class="math inline"><em>S</em></span> 是 <span class="math inline"><em>R</em></span> 的一个非空子集，则 <span class="math inline"><em>S</em></span> 是 <span class="math inline"><em>R</em></span> 的子环的充分必要条件是
+<ul>
+<li><span class="math inline">(<em>S</em>, +)</span> 是 <span class="math inline">(<em>R</em>, +)</span> 的加法子群</li>
+<li><span class="math inline"><em>S</em></span> 关于 <span class="math inline"><em>R</em></span> 的乘法封闭，即对任意的 <span class="math inline"><em>a</em>, <em>b</em> ∈ <em>S</em></span>，有 <span class="math inline"><em>a</em><em>b</em> ∈ <em>S</em></span></li>
+</ul></li>
+<li>设 <span class="math inline"><em>R</em></span> 是一个环，<span class="math inline"><em>S</em></span> 是 <span class="math inline"><em>R</em></span> 的一个非空子集，则 <span class="math inline"><em>S</em></span> 是 <span class="math inline"><em>R</em></span> 的子环的充分必要条件是
+<ul>
+<li>对任意的 <span class="math inline"><em>a</em>, <em>b</em> ∈ <em>S</em></span>，<span class="math inline"><em>a</em> − <em>b</em> ∈ <em>S</em></span></li>
+<li>对任意的 <span class="math inline"><em>a</em>, <em>b</em> ∈ <em>S</em></span>，<span class="math inline"><em>a</em><em>b</em> ∈ <em>S</em></span></li>
+</ul></li>
+<li>这就是说，环 <span class="math inline"><em>R</em></span> 的子环
+<span class="math inline"><em>S</em></span> 是 <span class="math inline"><em>R</em></span>
+的关于减法与乘法封闭的非空子集</li>
+</ul>
+<h3 id="中心">中心</h3>
+<p>设 <span class="math inline"><em>R</em></span> 为环，则 <span class="math display"><em>C</em>(<em>R</em>) = {<em>r</em> ∈ <em>R</em> ∣ <em>r</em><em>s</em> = <em>s</em><em>r</em>, ∀<em>s</em> ∈ <em>R</em>}</span></p>
+<p>为 <span class="math inline"><em>R</em></span>
+的一个子环，这个子环称为 <span class="math inline"><em>R</em></span> 的
+<strong>中心</strong></p>
+<h2 id="整环和域">整环和域</h2>
+<h3 id="零因子">零因子</h3>
+<p>设 <span class="math inline"><em>R</em></span> 为环，<span class="math inline"><em>a</em></span>，<span class="math inline"><em>b</em></span> 为 <span class="math inline"><em>R</em></span> 的两个
+<strong>非零元素</strong>，如果 <span class="math display"><em>a</em> ⋅ <em>b</em> = 0</span></p>
+<p>则称 <span class="math inline"><em>a</em></span> 为 <span class="math inline"><em>R</em></span> 的一个<strong>左零因子</strong>
+，<span class="math inline"><em>b</em></span> 为 <span class="math inline"><em>R</em></span>
+的一个<strong>右零因子</strong></p>
+<ul>
+<li>左零因子与右零因子统称为<strong>零因子</strong></li>
+<li>在一个有零因子的环中，右零因子不一定是左零因子，左零因子也不一定是右零因子</li>
+<li>如果一个环有左零因子，也就一定有右零因子，反之亦然</li>
+<li>如果一个环没有左零因子，当然也就没有右零因子，从而也就没有零因子</li>
+<li>一个没有零因子的环称为<strong>无零因子环</strong></li>
+<li>在一个无零因子的环中，两个消去律成立，即对任意的 <span class="math inline"><em>a</em>, <em>b</em>, <em>c</em> ∈ <em>R</em></span>，<span class="math inline"><em>c</em> ≠ 0</span>，如果 <span class="math inline"><em>a</em><em>c</em> = <em>b</em><em>c</em></span>
+或 <span class="math inline"><em>c</em><em>a</em> = <em>c</em><em>b</em></span>，则
+<span class="math inline"><em>a</em> = <em>b</em></span></li>
+<li>如果环 <span class="math inline"><em>R</em></span>
+中两个消去律有一个成立，则 <span class="math inline"><em>R</em></span>
+必是无零因子环，从而另一个消去律也成立</li>
+</ul>
+<h3 id="整环">整环</h3>
+<p>一个 <strong>无零因子</strong> 的，有 <strong>单位元</strong> <span class="math inline"><em>e</em> ≠ 0</span> 的 <strong>交换环</strong>
+<span class="math inline"><em>R</em></span> 称为
+<strong>整环</strong></p>
+<ul>
+<li><p>整数环 <span class="math inline"><strong>Z</strong></span>，高斯整环 <span class="math inline"><strong>Z</strong>[i]</span>，模 <span class="math inline"><em>m</em></span> 剩余类环 <span class="math inline"><strong>Z</strong><sub><em>m</em></sub></span>，数域
+<span class="math inline"><strong>F</strong></span> 上的一元多项式环
+<span class="math inline"><strong>F</strong>[<em>x</em>]</span>
+都是整环。</p></li>
+<li><p>全体形如 <span class="math display"><strong>Z</strong>[i] = {<em>a</em> + <em>b</em>i ∣ <em>a</em>, <em>b</em> ∈ <strong>Z</strong>}</span></p>
+<p>的复数关于通常数的运算构成一个整环，环 <span class="math inline"><strong>Z</strong>[i]</span> 称为
+<strong>高斯整环</strong>，单位群为 <span class="math inline"><strong>Z</strong>[i]<sup>×</sup> = {1, −1, i, −i}</span></p></li>
+<li><p>类似地可以证明，对任一无平方因子的整数 <span class="math inline"><em>d</em>(<em>d</em> ≠ 1)</span>，数集 <span class="math display">$$
+  \mathbf{Z}[\sqrt{d}]=\{a+b \sqrt{d} \mid a,b \in \mathbf{Z}\}
+  $$</span></p>
+<p>也是整环</p></li>
+</ul>
+<h3 id="域">域</h3>
+<p>设 <span class="math inline"><em>F</em></span> 是一个有
+<strong>单位元</strong> <span class="math inline">1<sub><em>F</em></sub> ≠ 0</span> 的
+<strong>交换环</strong>。如果 <span class="math inline"><em>F</em></span> 中
+<strong>每个非零元都可逆</strong>，则称 <span class="math inline"><em>F</em></span> 是一个<strong>域</strong></p>
+<ul>
+<li>由于可逆元一定不是零因子，所以 <strong>每个域都是整环</strong></li>
+<li>整环却不一定是域，如整数环 <span class="math inline"><strong>Z</strong></span>，高斯整环 <span class="math inline"><strong>Z</strong>[i]</span> 都不是域</li>
+<li><span class="math inline">Q</span>，<span class="math inline">R</span>，<span class="math inline">C</span>
+都是域，分别称为有理数域、实数域和复数域</li>
+<li>设 <span class="math inline"><em>p</em></span> 是一个素数，则模
+<span class="math inline"><em>p</em></span> 剩余类环 <span class="math inline"><strong>Z</strong><sub><em>p</em></sub></span>
+是一个含 有 <span class="math inline"><em>p</em></span>
+个元素的域，称为<strong>素数域</strong></li>
+</ul>
+<h2 id="理想和商环">理想和商环</h2>
+<h3 id="理想的定义">理想的定义</h3>
+<p>设 <span class="math inline"><em>R</em></span> 为环，<span class="math inline"><em>I</em></span> 为 <span class="math inline"><em>R</em></span> 的非空子集，如果 <span class="math inline"><em>I</em></span> 满足</p>
+<ul>
+<li>对任意的 <span class="math inline"><em>r</em><sub>1</sub></span>，<span class="math inline"><em>r</em><sub>2</sub> ∈ <em>I</em></span>，<span class="math inline"><em>r</em><sub>1</sub> − <em>r</em><sub>2</sub> ∈ <em>I</em></span></li>
+<li>对任意的 <span class="math inline"><em>r</em> ∈ <em>I</em></span>，<span class="math inline"><em>s</em> ∈ <em>R</em></span>，<span class="math inline"><em>r</em><em>s</em>, <em>s</em><em>r</em> ∈ <em>I</em></span></li>
+</ul>
+<p>则称 <span class="math inline"><em>I</em></span> 为环 <span class="math inline"><em>R</em></span> 的一个<strong>理想</strong> ，记作
+<span class="math inline"><em>I</em> ⊲ <em>R</em></span>。又如果 <span class="math inline"><em>I</em> ⊊ <em>R</em></span>，则称 <span class="math inline"><em>I</em></span> 为 <span class="math inline"><em>R</em></span> 的 <strong>真理想</strong></p>
+<ul>
+<li>如果 <span class="math inline"><em>I</em></span> 为 <span class="math inline"><em>R</em></span> 的理想，则 <span class="math inline"><em>I</em></span> 必为 <span class="math inline"><em>R</em></span> 的子环</li>
+<li><span class="math inline">{0}</span> 与 <span class="math inline"><em>R</em></span> 本身显然都是 <span class="math inline"><em>R</em></span> 的理想，这两个理想称为 <span class="math inline"><em>R</em></span> 的 <strong>平凡理想</strong></li>
+<li><span class="math inline">ℤ</span> 的所有理想是 <span class="math inline">{<em>d</em>Z ∣ <em>d</em> ∈ ℤ, <em>d</em> ≥ 0}</span></li>
+<li><span class="math inline">ℤ<sub><em>m</em></sub></span> 的所有理想是
+<span class="math inline">{<em>d</em>Z<sub><em>m</em></sub> ∣ <em>d</em> = 0
+或 <em>d</em> ∣ <em>m</em>}</span></li>
+</ul>
+<h3 id="理想的运算">理想的运算</h3>
+<p>设 <span class="math inline"><em>R</em></span> 为环，<span class="math inline"><em>I</em></span>，<span class="math inline"><em>J</em></span> 都是 <span class="math inline"><em>R</em></span> 的理想，集合 <span class="math display"><em>I</em> + <em>J</em> = {<em>a</em> + <em>b</em> ∣ <em>a</em> ∈ <em>I</em>, <em>b</em> ∈ <em>J</em>}  与  <em>I</em> ∩ <em>J</em></span></p>
+<p>分别称为理想 <span class="math inline"><em>I</em></span> 与 <span class="math inline"><em>J</em></span> 的<strong>和</strong>
+与<strong>交</strong></p>
+<ul>
+<li>设 <span class="math inline"><em>R</em></span> 为环，<span class="math inline"><em>I</em></span>，<span class="math inline"><em>J</em></span> 都是 <span class="math inline"><em>R</em></span> 的理想，则 <span class="math inline"><em>I</em></span> 与 <span class="math inline"><em>J</em></span> 的和与交都是 <span class="math inline"><em>R</em></span> 的理想</li>
+<li>环 <span class="math inline"><em>R</em></span> 的任意
+<strong>有限</strong> 多个理想的和还是 <span class="math inline"><em>R</em></span> 的理想</li>
+<li>环 <span class="math inline"><em>R</em></span>
+的任意（<strong>有限或无限</strong> ）多个理想的交还是 <span class="math inline"><em>R</em></span> 的理想</li>
+</ul>
+<h3 id="主理想">主理想</h3>
+<p>设 <span class="math inline"><em>a</em> ∈ <em>R</em></span>，考察
+<span class="math inline"><em>R</em></span> 中含有元素 <span class="math inline"><em>a</em></span> 的全部理想的集合 <span class="math display"><em>Σ</em> = {<em>I</em> ⊲ <em>R</em> ∣ <em>a</em> ∈ <em>I</em>}</span></p>
+<p>因为 <span class="math inline"><em>a</em> ∈ <em>R</em></span>，且
+<span class="math inline"><em>R</em> ⊲ <em>R</em></span>，所以 <span class="math inline"><em>R</em> ∈ <em>Σ</em></span>，从而 <span class="math inline"><em>Σ</em></span> 非空。令 <span class="math display">⟨<em>a</em>⟩ = ⋂<sub><em>I</em> ∈ <em>Σ</em></sub><em>I</em></span></p>
+<p>则 <span class="math inline">⟨<em>a</em>⟩</span> 为 <span class="math inline"><em>R</em></span> 的一个理想，这个理想称为 <span class="math inline"><em>R</em></span> 的由 <span class="math inline"><em>a</em></span> 生成的 <strong>主理想</strong></p>
+<ul>
+<li>因为 <span class="math inline"><em>a</em> ∈ <em>I</em>(<em>I</em> ∈ <em>Σ</em>)</span>，所以
+<span class="math inline"><em>a</em> ∈ ⟨<em>a</em>⟩</span>，从而 <span class="math inline">⟨<em>a</em>⟩ ∈ <em>Σ</em></span></li>
+<li>我们看到：一方面，<span class="math inline">⟨<em>a</em>⟩</span>
+是包含 <span class="math inline"><em>a</em></span>
+的理想；另一方面，<span class="math inline">⟨<em>a</em>⟩</span>
+是所有包含 <span class="math inline"><em>a</em></span> 的理想的交，所以
+<span class="math inline">⟨<em>a</em>⟩</span> 是 <span class="math inline"><em>R</em></span> 的包含 <span class="math inline"><em>a</em></span> 的最小理想</li>
+</ul>
+<h4 id="主理想的构成">主理想的构成</h4>
+<p>设 <span class="math inline"><em>R</em></span> 为环，<span class="math inline"><em>a</em> ∈ <em>R</em></span>，则</p>
+<ul>
+<li>一般地 <span class="math display">$$\langle
+a\rangle=\left\{\sum_{i=1}^{n} x_{i} a y_{i}+x a+a y+m a \mid
+x_{i},y_{i},x,y \in R,\,n \in \mathbf{N},\,m \in
+\mathbf{Z}\right\}$$</span></li>
+<li>如果 <span class="math inline"><em>R</em></span> 是有单位元的环，则
+<span class="math display">$$ \langle a\rangle=\left\{\sum_{i=1}^{n}
+x_{i} a y_{i} \mid x_{i},y_{i} \in R,\,n \in
+\mathbf{N}\right\}$$</span></li>
+<li>如果 <span class="math inline"><em>R</em></span> 是交换环，则 <span class="math display">⟨<em>a</em>⟩ = {<em>x</em><em>a</em> + <em>m</em><em>a</em> ∣ <em>x</em> ∈ <em>R</em>, <em>m</em> ∈ <strong>Z</strong>}；</span></li>
+<li>如果 <span class="math inline"><em>R</em></span>
+是有单位元的交换环，则 <span class="math display">⟨<em>a</em>⟩ = <em>a</em><em>R</em> = {<em>a</em><em>r</em> ∣ <em>r</em> ∈ <em>R</em>}</span></li>
+</ul>
+<p>则有</p>
+<ul>
+<li>整数环 <span class="math inline"><strong>Z</strong></span>
+的每个理想都是主理想</li>
+<li>模 <span class="math inline"><em>m</em></span> 剩余类环 <span class="math inline"><strong>Z</strong><sub><em>m</em></sub></span>
+的每个理想都是主理想</li>
+</ul>
+<h3 id="多元理想">多元理想</h3>
+<p>设 <span class="math inline"><em>R</em></span> 为环，<span class="math inline"><em>a</em><sub>1</sub>, <em>a</em><sub>2</sub>, ⋯, <em>a</em><sub><em>s</em></sub> ∈ <em>R</em></span>，则
+<span class="math inline">⟨<em>a</em><sub>1</sub>⟩, ⟨<em>a</em><sub>2</sub>⟩, ⋯, ⟨<em>a</em><sub><em>s</em></sub>⟩</span>
+都是 <span class="math inline"><em>R</em></span> 的理想。令</p>
+<p><span class="math display">⟨<em>a</em><sub>1</sub>, <em>a</em><sub>2</sub>, ⋯, <em>a</em><sub><em>s</em></sub>⟩ = ⟨<em>a</em><sub>1</sub>⟩ + ⟨<em>a</em><sub>2</sub>⟩ + ⋯ + ⟨<em>a</em><sub><em>s</em></sub>⟩</span></p>
+<p>则 <span class="math inline">⟨<em>a</em><sub>1</sub>, <em>a</em><sub>2</sub>, ⋯, <em>a</em><sub><em>s</em></sub>⟩</span>
+为 <span class="math inline"><em>R</em></span> 的理想，称为 <span class="math inline"><em>R</em></span> 的由 <span class="math inline"><em>a</em><sub>1</sub>, <em>a</em><sub>2</sub>, ⋯, <em>a</em><sub><em>s</em></sub></span>
+生成的理想。易知，<span class="math inline">⟨<em>a</em><sub>1</sub>, <em>a</em><sub>2</sub>, ⋯, <em>a</em><sub><em>s</em></sub>⟩</span>
+是 <span class="math inline"><em>R</em></span> 的含 <span class="math inline"><em>a</em><sub>1</sub>, <em>a</em><sub>2</sub>, ⋯, <em>a</em><sub><em>s</em></sub></span>
+的最小理想</p>
+<h3 id="商环">商环</h3>
+<p>设 <span class="math inline"><em>R</em></span> 是一个环，<span class="math inline"><em>I</em></span> 是环 <span class="math inline"><em>R</em></span> 的一个理想，则 <span class="math inline">(<em>I</em>, +)</span> 是 <span class="math inline">(<em>R</em>, +)</span> 的子加群，从而 <span class="math inline">(<em>I</em>, +)</span> 是 <span class="math inline">(<em>R</em>, +)</span> 的正规子群，于是有商群：
+<span class="math display">$$
+R / I=\{\overline{x}=x+I \mid x \in R\}
+$$</span></p>
+<p>其加法运算定义为 <span class="math display">$$
+\overline{x}+\overline{y}=\overline{x+y},\quad x,y \in R
+$$</span></p>
+<p>定义 <span class="math inline"><em>R</em>/<em>I</em></span> 的乘法：
+<span class="math display">$$
+\overline{x} \cdot \overline{y}=\overline{x y},\quad x,y \in R
+$$</span></p>
+<p>称环 <span class="math inline"><em>R</em>/<em>I</em></span> 为环
+<span class="math inline"><em>R</em></span> 关于它的理想 <span class="math inline"><em>I</em></span> 的<strong>商环</strong></p>
+<p>设 <span class="math inline"><em>R</em></span> 为环，<span class="math inline"><em>I</em></span> 是 <span class="math inline"><em>R</em></span> 的理想，则</p>
+<ul>
+<li><span class="math inline">$\overline{0}=I$</span> 为 <span class="math inline"><em>R</em>/<em>I</em></span> 的零元</li>
+<li>如果 <span class="math inline"><em>R</em></span> 有单位元 <span class="math inline"><em>e</em></span>，且 <span class="math inline"><em>e</em> ∉ <em>I</em></span>，则 <span class="math inline"><em>ē</em> = <em>e</em> + <em>I</em></span> 为 <span class="math inline"><em>R</em>/<em>I</em></span> 的单位元</li>
+<li>如果 <span class="math inline"><em>R</em></span> 是交换环，则 <span class="math inline"><em>R</em>/<em>I</em></span> 也是交换环</li>
+</ul>
+<h2 id="环的同态">环的同态</h2>
+<h3 id="环同态的定义">环同态的定义</h3>
+<p>设 <span class="math inline"><em>R</em></span> 和 <span class="math inline"><em>R</em><sup>′</sup></span> 为两个环，<span class="math inline"><em>ϕ</em></span> 是集合 <span class="math inline"><em>R</em></span> 到 <span class="math inline"><em>R</em><sup>′</sup></span> 的映射。如果对任意的
+<span class="math inline"><em>a</em>, <em>b</em> ∈ <em>R</em></span>，有</p>
+<ul>
+<li><span class="math inline"><em>ϕ</em>(<em>a</em> + <em>b</em>) = <em>ϕ</em>(<em>a</em>) + <em>ϕ</em>(<em>b</em>)</span></li>
+<li><span class="math inline"><em>ϕ</em>(<em>a</em><em>b</em>) = <em>ϕ</em>(<em>a</em>)<em>ϕ</em>(<em>b</em>)</span></li>
+</ul>
+<p>则称 <span class="math inline"><em>ϕ</em></span> 为环 <span class="math inline"><em>R</em></span> 到环 <span class="math inline"><em>R</em><sup>′</sup></span>
+的一个<strong>同态映射</strong> ，简称<strong>同态</strong></p>
+<ul>
+<li>环同态就是环之间保持运算的映射</li>
+<li>如果 <span class="math inline"><em>ϕ</em></span> 是单映射，则称
+<span class="math inline"><em>ϕ</em></span> 为单同态</li>
+<li>如果 <span class="math inline"><em>ϕ</em></span> 是满映射，则称
+<span class="math inline"><em>ϕ</em></span> 为满同态</li>
+<li>如果 <span class="math inline"><em>ϕ</em></span>
+既是单同态，又是满同态，则称 <span class="math inline"><em>ϕ</em></span>
+为<strong>同构</strong> ，此时，称环 <span class="math inline"><em>R</em></span> 与 <span class="math inline"><em>R</em><sup>′</sup></span> <strong>同构</strong>
+，记作 <span class="math inline"><em>ϕ</em> : <em>R</em> ≅ <em>R</em><sup>′</sup></span></li>
+<li>与群的相应概念类似，环的同构是环之间的一个等价关系，并且从环的观点来看，同构的环有完全相同的代数性质</li>
+</ul>
+<h4 id="零同态">零同态</h4>
+<p>设 <span class="math inline"><em>R</em></span> 与 <span class="math inline"><em>R</em><sup>′</sup></span> 是两个环，对任意的
+<span class="math inline"><em>a</em> ∈ <em>R</em></span>，令 <span class="math display">$$
+\begin{aligned}
+\phi: R &amp;\longrightarrow R^{\prime},\\\ a &amp;\longmapsto 0
+\end{aligned}
+$$</span></p>
+<p>则对任意的 <span class="math inline"><em>a</em>, <em>b</em> ∈ <em>R</em></span>， <span class="math display">$$
+\begin{aligned}
+\phi(a+b) &amp; =0=\phi(a)+\phi(b),\\
+\phi(a b) &amp; =0=\phi(a) \phi(b)
+\end{aligned}
+$$</span></p>
+<p>所以 <span class="math inline"><em>ϕ</em></span> 是 <span class="math inline"><em>R</em></span> 到 <span class="math inline"><em>R</em><sup>′</sup></span>
+的一个同态，这个同态称为 <strong>零同态</strong></p>
+<h4 id="自然同态">自然同态</h4>
+<p>设 <span class="math inline"><em>R</em></span> 是环，<span class="math inline"><em>I</em></span> 是 <span class="math inline"><em>R</em></span> 的理想。对任意的 <span class="math inline"><em>a</em> ∈ <em>R</em></span>，令</p>
+<p><span class="math display">$$
+\begin{aligned}
+\eta:R &amp; \longrightarrow R / I,\\
+a &amp; \longmapsto \bar{a}
+\end{aligned}
+$$</span></p>
+<p>则 <span class="math inline"><em>η</em></span> 为 <span class="math inline"><em>R</em></span> 到它的商环 <span class="math inline"><em>R</em>/<em>I</em></span> 的满映射。又对任意的
+<span class="math inline"><em>a</em></span>，<span class="math inline"><em>b</em> ∈ <em>R</em></span>，</p>
+<p><span class="math display">$$
+\begin{aligned}
+\eta(a+b) &amp;=\overline{a+b}=\bar{a}+\bar{b}=\eta(a)+\eta(b),\\
+\eta(a b) &amp; =\overline{a b}=\bar{a} \bar{b}=\eta(a) \eta(b)
+\end{aligned}
+$$</span></p>
+<p>所以 <span class="math inline"><em>η</em></span> 为 <span class="math inline"><em>R</em></span> 到它的商环 <span class="math inline"><em>R</em>/<em>I</em></span>
+的一个<strong>满同态</strong>
+，这个同态称为<strong>自然同态</strong></p>
+<h3 id="环同态的性质">环同态的性质</h3>
+<ul>
+<li><p>设 <span class="math inline"><em>ϕ</em></span> 是环 <span class="math inline"><em>R</em></span> 到 <span class="math inline"><em>R</em><sup>′</sup></span> 的同态，则对任意的
+<span class="math inline"><em>a</em> ∈ <em>R</em></span></p>
+<ul>
+<li><span class="math inline"><em>ϕ</em>(0<sub><em>R</em></sub>) = 0<sub><em>R</em><sup>′</sup></sub></span></li>
+<li><span class="math inline"><em>ϕ</em>(<em>n</em><em>a</em>) = <em>n</em><em>ϕ</em>(<em>a</em>),  ∀<em>n</em> ∈ <strong>Z</strong></span></li>
+<li><span class="math inline"><em>ϕ</em>(<em>a</em><sup><em>n</em></sup>) = (<em>ϕ</em>(<em>a</em>))<sup><em>n</em></sup>,  ∀<em>n</em> ∈ <strong>N</strong></span></li>
+</ul></li>
+<li><p>设 <span class="math inline"><em>R</em></span> 与 <span class="math inline"><em>R</em><sup>′</sup></span>
+都是有单位元的环，<span class="math inline"><em>e</em></span> 与 <span class="math inline"><em>e</em><sup>′</sup></span>
+分别是它们的单位元，<span class="math inline"><em>ϕ</em></span> 是 <span class="math inline"><em>R</em></span> 到 <span class="math inline"><em>R</em><sup>′</sup></span> 的环同态</p>
+<ul>
+<li>如果 <span class="math inline"><em>ϕ</em></span> 是满同态，则 <span class="math inline"><em>ϕ</em>(<em>e</em>) = <em>e</em><sup>′</sup></span></li>
+<li>如果 <span class="math inline"><em>R</em><sup>′</sup></span>
+为无零因子环，且 <span class="math inline"><em>ϕ</em>(<em>e</em>) ≠ 0</span>，则 <span class="math inline"><em>ϕ</em>(<em>e</em>) = <em>e</em><sup>′</sup></span></li>
+<li>如果 <span class="math inline"><em>ϕ</em>(<em>e</em>) = <em>e</em><sup>′</sup></span>，则对
+<span class="math inline"><em>R</em></span> 的任一单位 <span class="math inline"><em>u</em></span>，<span class="math inline"><em>ϕ</em>(<em>u</em>)</span> 是 <span class="math inline"><em>R</em><sup>′</sup></span> 的单位，且 <span class="math inline">(<em>ϕ</em>(<em>u</em>))<sup>−1</sup> = <em>ϕ</em>(<em>u</em><sup>−1</sup>)</span></li>
+</ul></li>
+</ul>
+<h3 id="核-1">核</h3>
+<p>设 <span class="math inline"><em>ϕ</em></span> 为环 <span class="math inline"><em>R</em></span> 到环 <span class="math inline"><em>R</em><sup>′</sup></span> 的同态映射，称集合
+<span class="math display"><em>K</em> = {<em>a</em> ∈ <em>R</em> ∣ <em>ϕ</em>(<em>a</em>) = 0}</span></p>
+<p>为环同态 <span class="math inline"><em>ϕ</em></span>
+的<strong>核</strong> ，记作 <span class="math inline">Ker <em>ϕ</em></span>，且 <span class="math inline">Ker <em>ϕ</em></span> 为 <span class="math inline"><em>R</em></span> 的理想。</p>
+<h3 id="环同态基本定理">环同态基本定理</h3>
+<p>设 <span class="math inline"><em>ϕ</em></span> 是环 <span class="math inline"><em>R</em></span> 到 <span class="math inline"><em>R</em><sup>′</sup></span> 的满同态，则有环同构
+<span class="math display"><em>ϕ̃</em> : <em>R</em>/Ker <em>ϕ</em> ≅ <em>R</em><sup>′</sup></span></p>
+<h3 id="环的第二同构定理">环的第二同构定理</h3>
+<p>设 <span class="math inline"><em>S</em></span> 为 <span class="math inline"><em>R</em></span> 的子环，<span class="math inline"><em>I</em></span> 为 <span class="math inline"><em>R</em></span> 的理想，则 <span class="math inline"><em>S</em> ∩ <em>I</em></span> 是 <span class="math inline"><em>S</em></span> 的理想且 <span class="math display"><em>S</em>/(<em>S</em> ∩ <em>I</em>) ≅ (<em>S</em> + <em>I</em>)/<em>I</em></span></p>
+<h3 id="环的第三同构定理">环的第三同构定理</h3>
+<p>设 <span class="math inline"><em>R</em></span> 是环，<span class="math inline"><em>I</em></span> 和 <span class="math inline"><em>J</em></span> 都是 <span class="math inline"><em>R</em></span> 的理想，且 <span class="math inline"><em>I</em> ⊆ <em>J</em></span>。则有环同构 <span class="math display">(<em>R</em>/<em>I</em>)/(<em>J</em>/<em>I</em>) ≅ <em>R</em>/<em>J</em></span></p>
+<h2 id="素理想和极大理想">素理想和极大理想</h2>
+<h3 id="素理想">素理想</h3>
+<p>设 <span class="math inline"><em>R</em></span> 是一个交换环，<span class="math inline"><em>P</em></span> 是 <span class="math inline"><em>R</em></span> 的真理想。如果对任意的 <span class="math inline"><em>a</em>, <em>b</em> ∈ <em>R</em></span>，由 <span class="math inline"><em>a</em><em>b</em> ∈ <em>P</em></span>，可推出
+<span class="math inline"><em>a</em> ∈ <em>P</em></span> 或 <span class="math inline"><em>b</em> ∈ <em>P</em></span>，则称 <span class="math inline"><em>P</em></span> 为 <span class="math inline"><em>R</em></span> 的一个<strong>素理想</strong></p>
+<ul>
+<li><span class="math inline"><strong>Z</strong></span> 的全部素理想为
+<span class="math display">⟨<em>p</em>⟩  以及  {0}</span></li>
+<li>设 <span class="math inline"><em>R</em></span> 是有单位元 <span class="math inline"><em>e</em> ≠ 0</span> 的交换环，<span class="math inline"><em>I</em></span> 是 <span class="math inline"><em>R</em></span> 的理想，则 <span class="math inline"><em>I</em></span> 是 <span class="math inline"><em>R</em></span> 的素理想的充分必要条件是 <span class="math inline"><em>R</em>/<em>I</em></span> 是整环</li>
+</ul>
+<h3 id="极大理想">极大理想</h3>
+<p>设 <span class="math inline"><em>R</em></span> 是一个交换环，<span class="math inline"><em>M</em></span> 是 <span class="math inline"><em>R</em></span> 的真理想。如果对 <span class="math inline"><em>R</em></span> 的任一包含 <span class="math inline"><em>M</em></span> 的理想 <span class="math inline"><em>N</em></span>，必有 <span class="math inline"><em>N</em> = <em>M</em></span> 或 <span class="math inline"><em>N</em> = <em>R</em></span>，则称 <span class="math inline"><em>M</em></span> 为 <span class="math inline"><em>R</em></span>
+的一个<strong>极大理想</strong></p>
+<ul>
+<li><p>设 <span class="math inline"><em>R</em></span> 是有单位元 <span class="math inline"><em>e</em></span> 的交换环，<span class="math inline"><em>I</em></span> 为 <span class="math inline"><em>R</em></span> 的理想，则 <span class="math inline"><em>I</em></span> 是 <span class="math inline"><em>R</em></span> 的极大理想的充分必要条件是 <span class="math inline"><em>R</em>/<em>I</em></span> 是域</p></li>
+<li><p>设 <span class="math inline"><em>R</em></span>
+是一个有单位元的交换环，则 <span class="math inline"><em>R</em></span>
+的每个极大理想都是素理想</p>
+<ul>
+<li>若没有单位元，则不一定成立</li>
+<li>素理想不一定是极大理想</li>
+</ul></li>
+</ul>
+<h3 id="中国剩余定理">中国剩余定理</h3>
+<p>如果 <span class="math inline"><em>I</em></span> 和 <span class="math inline"><em>J</em></span> 是包含单位元 <span class="math inline">1</span> 的交换环 <span class="math inline"><em>R</em></span> 的两个理想，满足 <span class="math inline"><em>I</em> + <em>J</em> = <em>R</em></span>，则有</p>
+<ol type="1">
+<li><span class="math inline"><em>I</em> ∩ <em>J</em> = <em>I</em><em>J</em></span></li>
+<li><span class="math inline"><em>R</em>/<em>I</em><em>J</em> ≅ <em>R</em>/<em>I</em> × <em>R</em>/<em>J</em></span></li>
+</ol>
+<h2 id="环的特征与素域">环的特征与素域</h2>
+<h3 id="特征">特征</h3>
+<h4 id="特征的定义">特征的定义</h4>
+<p>设 <span class="math inline"><em>R</em></span>
+为环，如果存在最小的正整数 <span class="math inline"><em>n</em></span>，使得对所有的 <span class="math inline"><em>a</em> ∈ <em>R</em></span>，有 <span class="math inline"><em>n</em><em>a</em> = 0</span>，则称 <span class="math inline"><em>n</em></span> 为环 <span class="math inline"><em>R</em></span> 的 <strong>特征</strong>
+。如果这样的正整数不存在，则称环 <span class="math inline"><em>R</em></span> 的特征为 <span class="math inline">0</span>。环 <span class="math inline"><em>R</em></span> 的特征记作 <span class="math inline">Char <em>R</em></span>。</p>
+<ul>
+<li><span class="math inline"><strong>Z</strong>, <strong>Q</strong>, <strong>R</strong>, <strong>C</strong></span>
+的特征都等于 <span class="math inline">0</span></li>
+<li>一般地，如果 <span class="math inline"><em>R</em></span>
+是一个数环，则 <span class="math inline">Char <em>R</em> = 0</span></li>
+<li>设 <span class="math inline"><strong>Z</strong><sub><em>m</em></sub></span> 是模
+<span class="math inline"><em>m</em></span> 剩余类环，则对每个 <span class="math inline"><em>n̄</em> ∈ <strong>Z</strong><sub><em>m</em></sub></span>，有
+<span class="math display">$$
+  m \bar{n}=\overline{m n}=\overline{0}
+  $$</span> 而对于任何正整数 <span class="math inline"><em>k</em> &lt; <em>m</em></span>，有 <span class="math display">$$
+  k \overline{1}=\bar{k} \neq \overline{0}
+  $$</span> 所以 <span class="math inline">Char <strong>Z</strong><sub><em>m</em></sub> = <em>m</em></span></li>
+<li>对于 <span class="math inline"><strong>Z</strong><sub><em>m</em></sub></span>
+上的一元多项式环 <span class="math inline"><strong>Z</strong><sub><em>m</em></sub>[<em>x</em>]</span>，也有
+<span class="math inline">Char <strong>Z</strong><sub><em>m</em></sub>[<em>x</em>] = <em>m</em></span></li>
+<li>一个有限环的特征是一个正整数</li>
+</ul>
+<h4 id="特征的性质">特征的性质</h4>
+<ul>
+<li><p>设 <span class="math inline"><em>R</em></span> 是有单位元 <span class="math inline"><em>e</em></span> 的环，如果 <span class="math inline"><em>e</em></span> 关于加法的阶为无穷大，那么 <span class="math inline"><em>R</em></span> 的特征等于 <span class="math inline">0</span>。如果 <span class="math inline"><em>e</em></span> 关于加法的阶等于 <span class="math inline"><em>n</em></span>，那么 <span class="math inline">Char <em>R</em> = <em>n</em></span>。</p></li>
+<li><p>整环的特征是 <span class="math inline">0</span>
+或者是一个素数，域同理。</p></li>
+<li><p>设 <span class="math inline"><em>R</em></span> 是有单位元 <span class="math inline"><em>e</em></span> 的环，则映射 <span class="math display">$$
+  \begin{aligned}
+  \phi:\mathbf{Z} &amp; \longrightarrow R,\\
+  n &amp; \longmapsto n e
+  \end{aligned}
+  $$</span></p>
+<p>是环 <span class="math inline"><strong>Z</strong></span> 到 <span class="math inline"><em>R</em></span> 的同态</p></li>
+<li><p>设 <span class="math inline"><em>R</em></span> 是有单位元的环</p>
+<ul>
+<li>如果 <span class="math inline"><em>R</em></span> 的特征为 <span class="math inline"><em>n</em> &gt; 0</span>，则 <span class="math inline"><em>R</em></span> 包含一个与 <span class="math inline"><strong>Z</strong><sub><em>n</em></sub></span>
+同构的子环 <span class="math inline"><em>R</em><sup>′</sup> = {<em>m</em><em>e</em> ∣ <em>m</em> ∈ <strong>Z</strong>}</span></li>
+<li>如果 <span class="math inline"><em>R</em></span> 的特征为 <span class="math inline">0</span>，则 <span class="math inline"><em>R</em></span> 包含一个与 <span class="math inline"><strong>Z</strong></span> 同构的子环 <span class="math inline"><em>R</em><sup>′</sup> = {<em>m</em><em>e</em> ∣ <em>m</em> ∈ <strong>Z</strong>}</span></li>
+</ul></li>
+<li><p>设 <span class="math inline"><em>F</em></span> 是域</p>
+<ul>
+<li>如果 <span class="math inline"><em>F</em></span> 的特征是 <span class="math inline">0</span>，则 <span class="math inline"><em>F</em></span> 包含一个与有理数域 <span class="math inline"><strong>Q</strong></span> 同构的子域</li>
+<li>如果 <span class="math inline"><em>F</em></span> 的特征是素数 <span class="math inline"><em>p</em></span>，则 <span class="math inline"><em>F</em></span> 包含一个与模 <span class="math inline"><em>p</em></span> 剩余类环 <span class="math inline"><strong>Z</strong><sub><em>p</em></sub></span>
+同构的子域</li>
+</ul></li>
+</ul>
+<h3 id="素域">素域</h3>
+<ul>
+<li><p>一个域 <span class="math inline"><em>F</em></span>
+如果不含任何真子域，则称 <span class="math inline"><em>F</em></span>
+是一个<strong>素域</strong></p></li>
+<li><p>设 <span class="math inline"><em>F</em></span> 是个域</p>
+<ul>
+<li>如果 <span class="math inline">Char <em>F</em> = 0</span>，那么
+<span class="math inline"><em>F</em></span> 包含一个与 <span class="math inline"><strong>Q</strong></span> 同构的素域</li>
+<li>如果 <span class="math inline">Char <em>F</em> = <em>p</em> &gt; 0</span>，那么
+<span class="math inline"><em>F</em></span> 包含一个与 <span class="math inline"><strong>Z</strong><sub><em>p</em></sub></span>
+同构的素域</li>
+</ul></li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/SJTU-Notes/" class="category-chain-item">SJTU Notes</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/SJTU/" class="print-no-link">#SJTU</a>
+      
+        <a href="/tags/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0/" class="print-no-link">#抽象代数</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>抽象代数</div>
+      <div>https://youyeyejie.github.io/posts/抽象代数/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>youyeyejie</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年6月19日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2025年7月14日</div>
+        </div>
+      
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/%E4%B8%94%E4%BB%A5%E7%BE%A4%E8%AF%8D-%E6%B3%A8%E8%A7%A3%E6%88%91%E8%BF%99%E5%BA%A7%E8%8D%92%E5%B1%B1/" title="且以群词 注解我这座荒山">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">且以群词 注解我这座荒山</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/" title="马克思主义基本原理">
+                        <span class="hidden-mobile">马克思主义基本原理</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments">
+      
+    <div id="giscus" class="giscus"></div>
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#giscus', function() {
+        var options = {"repo":"youyeyejie/youyeyejie.github.io","repo-id":"R_kgDOO-Uo1g","category":"General","category-id":"DIC_kwDOO-Uo1s4Crz5J","theme-light":"light","theme-dark":"dark","mapping":"pathname","reactions-enabled":1,"emit-metadata":0,"input-position":"top","lang":"zh-CN"};
+        var attributes = {};
+        for (let option in options) {
+          if (!option.startsWith('theme-')) {
+            var key = option.startsWith('data-') ? option : 'data-' + option;
+            attributes[key] = options[option];
+          }
+        }
+        var light = 'light';
+        var dark = 'dark';
+        window.GiscusThemeLight = light;
+        window.GiscusThemeDark = dark;
+        attributes['data-theme'] = document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ? dark : light;
+        for (let attribute in attributes) {
+          var value = attributes[attribute];
+          if (value === undefined || value === null || value === '') {
+            delete attributes[attribute];
+          }
+        }
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://giscus.app/client.js');
+        s.setAttribute('crossorigin', 'anonymous');
+        for (let attribute in attributes) {
+          s.setAttribute(attribute, attributes[attribute]);
+        }
+        var ss = document.getElementsByTagName('script');
+        var e = ss.length > 0 ? ss[ss.length - 1] : document.head || document.documentElement;
+        e.parentNode.insertBefore(s, e.nextSibling);
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+  
+  
+</div>
+<div class="footer-inner">
+    <div class="powered-by">
+        <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+        <i class="iconfont icon-love"></i>
+        <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+    </div>
+    <div class="hitokoto">
+        <i class="fas fa-quote-left"></i>
+        <a target="_blank" rel="noopener" href="https://developer.hitokoto.cn/" id="hitokoto_text"><span id="hitokoto">且以群词 注解我这座荒山</span></a>
+        <script src="/js/Hitokoto.js" defer></script>
+    </div>
+    <div class="data">
+        <span class="total-word-container">
+            <i class="fas fa-chart-bar"></i>
+            <span id="g-total-word-id"></span>
+            字汇长河
+        </span>
+        &nbsp;
+        <span id="total-posts-container">
+            <i class="fas fa-file-alt"></i>
+            <span id="g-total-posts-id"></span>
+            <script src="/js/TotalPosts.js"></script>
+            文舟靠岸
+        </span>
+        &nbsp;
+        <span id="busuanzi_container_site_pv">
+            <i class="fas fa-eye"></i>
+            <span id="busuanzi_value_site_pv">1314</span>
+            目光所及
+        </span>
+        &nbsp;
+        <span id="busuanzi_container_site_uv">
+            <i class="fas fa-user-friends"></i>
+            <span id="busuanzi_value_site_uv">520</span>
+            访客驻足
+        </span>
+    </div>
+    <div class="duration">
+        <i class="fas fa-calendar"></i>
+        <span id="timeDate">人生缓缓</span>
+        <span id="times">自有答案</span>
+        <script src="/js/Duration.js"></script>
+    </div>
+</div>
+
+<link href="/css/Footer.css" type="text/css" rel="stylesheet"/>
+<!-- <script defer src="https://events.vercount.one/js"></script> -->
+<!-- <script src="https://npm.elemecdn.com/penndu@1.0.0/bsz.js" defer></script> -->
+<!-- <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script> -->
+<!-- <script async src="https://busuanzi.icodeq.com/busuanzi.pure.mini.js"></script> -->
+<!-- <script async src="https://busuanzi.sukap.cn/busuanzi.pure.mini.js"></script> -->
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    
+      <script  src="/js/img-lazyload.js" ></script>
+    
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://events.vercount.one/js?i=/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="/js/DynamicLine.js"></script>
+<script src="/js/LinkCard.js"></script>
+<script src="/js/RandomBanner.js"></script>
+<script src="/js/ScrollAnimation.js"></script>
+<script src="/js/TabDisplay.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  <script type="text/javascript">
+  document.getElementById("g-total-word-id").innerHTML = "303k";
+</script>
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start -->
+<script src="https://cdn.jsdelivr.net/npm/hexo-shiki-plugin@latest/lib/codeblock.js"></script>
+
+  <script>
+  const CODE_CONFIG = {
+    beautify: true,
+    highlightCopy: true,
+    highlightLang: true,
+    highlightHeightLimit: 360,
+    isHighlightShrink: false,
+    copy: {
+      success: 'Copy Success',
+      error: 'Copy Error',
+      noSupport: 'Browser Not Support',
+    }
+  };
+  console.log(
+    `%c hexo-shiki-plugin %c v1.0.27 %c https://github.com/nova1751/hexo-shiki-plugin`,
+    "color: #fff; background: #5f5f5f",
+    "color: #fff; background: #80c8f8",
+    ""
+  );
+  </script>
+  <!-- hexo injector body_end end --></body>
+</html>

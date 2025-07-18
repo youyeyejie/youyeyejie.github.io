@@ -1,0 +1,3736 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head><!-- hexo injector head_begin start --><meta name="msvalidate.01" content="DF9F232801BA9D0CABB002E4774A3228" />
+<meta name="google-site-verification" content="vOm5Zs9tuUlEh-wVBlpvs_spnOou-q2CoTiFQ1ZV1h4" />
+<!-- hexo injector head_begin end -->
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar/avatar2.webp">
+  <link rel="icon" href="/img/avatar/avatar2.webp">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="youyeyejie">
+  <meta name="keywords" content="yyyj,YYYJ,youyeyejie,有野野芥">
+  
+    <meta name="description" content="NIS2334 操作系统原理 笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="操作系统原理">
+<meta property="og:url" content="https://youyeyejie.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/index.html">
+<meta property="og:site_name" content="有野野芥的博客">
+<meta property="og:description" content="NIS2334 操作系统原理 笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis2334.webp">
+<meta property="article:published_time" content="2025-06-23T16:47:51.000Z">
+<meta property="article:modified_time" content="2025-07-14T09:42:38.746Z">
+<meta property="article:author" content="youyeyejie">
+<meta property="article:tag" content="SJTU">
+<meta property="article:tag" content="操作系统原理">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://youyeyejie.github.io/img/cover/nis2334.webp">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>操作系统原理 - 有野野芥的博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+<link rel="stylesheet" href="//lib.baomitu.com/font-awesome/6.1.2/css/all.min.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+
+
+  
+<link rel="stylesheet" href="/css/CodeBlock.css">
+<link rel="stylesheet" href="/css/CodeInLine.css">
+<link rel="stylesheet" href="/css/FrostedGlassBg.css">
+<link rel="stylesheet" href="/css/Gallery.css">
+<link rel="stylesheet" href="/css/IndexImgHover.css">
+<link rel="stylesheet" href="/css/LinkCard.css">
+<link rel="stylesheet" href="/css/ScrollAnimation.css">
+<link rel="stylesheet" href="/css/ScrollBar.css">
+<link rel="stylesheet" href="/css/StrongInDark.css">
+<link rel="stylesheet" href="/css/TitleGradient.css">
+<link rel="stylesheet" href="/css/TitleNeon.css">
+<link rel="stylesheet" href="/css/UnifyImgWidth.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"youyeyejie.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":false,"default":"TEXT"},"copy_btn":false,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading/loading3.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-shiki-plugin@latest/lib/codeblock.css">
+<style>:root{--hl-color:#abb2bf;--hl-bg:#282c34;--hltools-bg:#21252b;--hltools-color:#bbbbbc;--hlnumber-bg:#282c34;--hlnumber-color:#495162;--hlscrollbar-bg:#373c47;--hlexpand-bg:linear-gradient(180deg,rgba(40,44,52,0.1),rgba(40,44,52,0.9))}</style>
+    <style>
+    .code-expand-btn:not(.expand-done) ~ div.codeblock,
+    .code-expand-btn:not(.expand-done) ~ * div.codeblock {
+      overflow: hidden;
+      height: 360px;
+    }
+    </style>
+  <!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+
+<body>
+  <div id="loader-container"> 
+    <div id="loader" class="loader"></div>
+    <div class="loader-inner">
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/RainbowLoading.js" type="text/javascript"></script>
+<link href="/css/RainbowLoading.css" type="text/css" rel="stylesheet"/><div id="tooltip-rightmenu" class="tooltip-rightmenu">如需原始右键菜单请按下 <strong>Ctrl+右键</strong></div>
+<div id="tooltip-rightmenu-return" class="tooltip-rightmenu"></div>
+
+<div id="rightmenu-wrapper">
+  <ul class="list-v rightmenu" id="rightmenu-content">
+	    <li class="navigation menuNavigation-Content">
+            <a class="nav icon-only fix-cursor-default" onclick="history.back()"><i class="fa-solid fa-chevron-left"></i></a>
+            <a class="nav icon-only fix-cursor-default" onclick="history.forward()"><i class="fa-solid fa-chevron-right"></i></a>
+            <a class="nav icon-only fix-cursor-default" onclick="window.location.reload()"><i class="fa-solid fa-rotate-right"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="TOP" href="#" role="button"><i class="fa-solid fa-chevron-up"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="bottom" href="javascript:void(0);" role="button" onclick="window.scrollTo(0, document.body.scrollHeight);"><i class="fa-solid fa-chevron-down"></i></a>
+	    </li>
+
+        <hr class="menuLoad-Content" style="display: block;" id="top-line" hidden>
+
+        <li class="menuLoad-Content" style="display: block;" id="copy-selected-text" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copySelectedText();">
+                <span>
+                    <i class="fa-solid fa-copy"></i>
+                    &nbsp;复制选中
+                </span>
+            </a>
+        </li>
+
+        <li class="menuLoad-Content" style="display: block;" id="search-selected-text-BING" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_blank" onclick="searchSelectedTextBing();">
+                <span>
+                    <i class="fa-solid fa-magnifying-glass-arrow-right"></i>
+                    &nbsp;必应搜索
+                </span>
+            </a>
+        </li>
+
+        <li class="menuLoad-Content" style="display: block;" id="go-to-link" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_blank" onclick="goToLink();">
+                <span>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    &nbsp;转到链接
+                </span>
+            </a>
+        </li>
+
+        <li class="menuLoad-Content" style="display: block;" id="download-image" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="downloadImage();">
+                <span>
+                    <i class="fa-solid fa-image"></i>
+                    &nbsp;下载图片
+                </span>
+            </a>
+        </li>
+
+        <li class="menuLoad-Content" style="display: block;" id="copy-image-link" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copyImageLink();">
+                <span>
+                    <i class="fa-solid fa-link"></i>
+                    复制图片链接
+                </span>
+            </a>
+        </li>
+
+		<hr class="menuLoad-Content" style="display: block;">
+
+        <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" onclick="RandomGo()">
+		        <span>
+			        <i class="fa-solid fa-paper-plane"></i>
+                    &nbsp;随便看看
+		        </span>
+		    </a>
+	    </li>
+	    <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+		        <span>
+			        <i class="fa-solid fa-magnifying-glass"></i>
+                    &nbsp;站内搜索
+		        </span>
+		    </a>
+	    </li>
+        <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" href="/categories/">
+		        <span>
+			        <i class="iconfont icon-category-fill"></i>
+                    &nbsp;博客分类
+		        </span>
+		    </a>
+	    </li>
+        <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" href="/tags/">
+		        <span>
+			        <i class="fa-solid fa-tags"></i>
+                    &nbsp;文章标签
+		        </span>
+		    </a>
+	    </li>
+        
+	    <hr class="menuLoad-Content" style="display: block;">
+
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copyLink();">
+                <span>
+                    <i class="fa-solid fa-copy"></i>
+                    &nbsp;复制链接
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="document.getElementById('color-toggle-btn').click();">
+            <span>
+                <i class="fa-solid fa-circle-half-stroke"></i>
+                &nbsp;切换昼夜
+            </span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+<script src="/js/RightMenu.js" type="text/javascript"></script>
+<link href="/css/RightMenu.css" type="text/css" rel="stylesheet"/>
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <!-- <strong>YYYJ&#39;s Blog</strong> -->
+       <strong class="navbar-title">YYYJ&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/DayDream-Gallery/" target="_self">
+                <i class="fas fa-images"></i>
+                <span>图集</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.travellings.cn/go-by-clouds.html" target="_self">
+                <i class="fas fa-train-subway"></i>
+                <span>开往</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/banner/banner.webp') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="操作系统原理"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        youyeyejie
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-06-24 00:47" pubdate>
+          2025年6月24日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          17k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          143 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar category-bar" style="margin-right: -1rem">
+    
+
+
+
+
+
+<div class="category-list">
+  
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="SJTU Notes"
+        id="heading-23fc8849f7fe9b9a570be52f7807b4ac" role="tab" data-toggle="collapse" href="#collapse-23fc8849f7fe9b9a570be52f7807b4ac"
+        aria-expanded="true"
+      >
+        SJTU Notes
+        <span class="list-group-count">(14)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-23fc8849f7fe9b9a570be52f7807b4ac"
+           role="tabpanel" aria-labelledby="heading-23fc8849f7fe9b9a570be52f7807b4ac">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/posts/%E4%B8%AD%E5%9B%BD%E8%BF%91%E7%8E%B0%E4%BB%A3%E5%8F%B2%E7%BA%B2%E8%A6%81/" title="中国近现代史纲要"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">中国近现代史纲要</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E4%B9%A0%E8%BF%91%E5%B9%B3%E6%96%B0%E6%97%B6%E4%BB%A3%E4%B8%AD%E5%9B%BD%E7%89%B9%E8%89%B2%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89%E6%80%9D%E6%83%B3%E6%A6%82%E8%AE%BA/" title="习近平新时代中国特色社会主义思想概论"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">习近平新时代中国特色社会主义思想概论</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E4%BF%A1%E6%81%AF%E8%AE%BA%E5%9F%BA%E7%A1%80/" title="信息论基础"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">信息论基础</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E5%86%9B%E4%BA%8B%E7%90%86%E8%AE%BA/" title="军事理论"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">军事理论</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E6%80%9D%E6%83%B3%E9%81%93%E5%BE%B7%E4%B8%8E%E6%B3%95%E6%B2%BB/" title="思想道德与法治"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">思想道德与法治</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0/" title="抽象代数"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">抽象代数</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" title="操作系统原理"
+           class="list-group-item list-group-item-action
+           active">
+          <span class="category-post">操作系统原理</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E6%95%B0%E5%AD%A6%E5%8F%B2/" title="数学史"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">数学史</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1/" title="概率统计"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">概率统计</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" title="编译原理"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">编译原理</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA/" title="网络空间安全导论"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">网络空间安全导论</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/" title="计算机组成与系统结构"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">计算机组成与系统结构</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6/" title="量子力学"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">量子力学</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/" title="马克思主义基本原理"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">马克思主义基本原理</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+</div>
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">操作系统原理</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <blockquote>
+<p>本笔记基于上海交通大学 <em>刘功申老师</em> 2024-2025
+学年春季学期教学内容进行整理。</p>
+</blockquote>
+<h1 id="操作系统概述">操作系统概述</h1>
+<ul>
+<li>操作系统的概念
+<ul>
+<li>操作系统是控制和管理计算机系统内各种硬件和软件资源、有效地组织多道程序运行的系统软件（或程序集合），是用户与计算机之间的接口。</li>
+</ul></li>
+<li>操作系统的要点
+<ul>
+<li>是软件，且是系统软件</li>
+<li>基本职能是控制和管理系统资源</li>
+<li>提供服务，方便用户使用</li>
+</ul></li>
+<li>输入输出
+<ul>
+<li>缓冲技术
+<ul>
+<li>处于CPU和外设之间，解决速度不匹配问题</li>
+<li>例如，SPOOLING（Simultaneous Peripheral Operation
+On-Line，即外部设备联机并行操作）技术将磁盘模拟成IO设备，也称为假脱机。
+<ul>
+<li>缓和了CPU与低速I/O设备速度不匹配的矛盾</li>
+<li>设备并没有分配给任何进程.在输入井或输出井中，分配给进程的是一存储区和建立一张I/O请求表</li>
+<li>实现了虚拟设备功能.多个进程同时使用一独享设备，而对每一进程而言，都认为自己独占这一设备，不过，该设备是逻辑上的设备</li>
+</ul></li>
+</ul></li>
+<li>中断技术
+<ul>
+<li>解决CPU和外设的协调 (不再需要轮询外设状态)</li>
+</ul></li>
+<li>DMA技术
+<ul>
+<li>进一步解放CPU</li>
+</ul></li>
+</ul></li>
+<li>操作系统的类型
+<ul>
+<li>分时系统</li>
+<li>实时系统</li>
+<li>微机操作系统</li>
+<li>网络操作系统</li>
+<li>分布式操作系统</li>
+</ul></li>
+<li>操作系统的特征
+<ul>
+<li>并发</li>
+<li>共享</li>
+<li>虚拟</li>
+<li>不确定性</li>
+</ul></li>
+<li>现代操作系统的新特征
+<ul>
+<li>微内核体系结构</li>
+<li>多线程</li>
+<li>对称多处理</li>
+<li>分布式</li>
+<li>面向对象设计</li>
+</ul></li>
+<li>操作系统的功能
+<ul>
+<li>处理机管理（进程调度）</li>
+<li>存储管理</li>
+<li>设备管理</li>
+<li>文件管理</li>
+<li>用户接口</li>
+</ul></li>
+</ul>
+<h1 id="内存管理">内存管理</h1>
+<h2 id="内存管理的概念">内存管理的概念</h2>
+<ul>
+<li>作用：提高主存的利用率，将尽可能多的作业同时加载到主存中</li>
+<li>层次：
+<ul>
+<li>寄存器</li>
+<li>主存</li>
+<li>辅助存储器</li>
+</ul></li>
+<li>需求：
+<ul>
+<li>重定位：进程装入内存中的地址变化 （不固定）</li>
+<li>保护：防止进程越界访问</li>
+<li>共享：对共享区域的受控访问</li>
+<li>逻辑组织：逻辑地址的组织更符合程序的构造</li>
+<li>物理组织：管理主存、辅存等分级存储方式</li>
+</ul></li>
+</ul>
+<h2 id="存储管理技术">存储管理技术</h2>
+<ul>
+<li>单一连续区（不分区）</li>
+<li>固定分区
+<ul>
+<li>大小一致</li>
+<li>大小不一致</li>
+</ul></li>
+<li>动态可变分区
+<ul>
+<li>不会产生内部碎片</li>
+</ul></li>
+<li>单纯分页/分段</li>
+<li>虚拟存储系统
+<ul>
+<li>分页</li>
+<li>分段</li>
+<li>段页式</li>
+</ul></li>
+</ul>
+<h3 id="地址重定位">地址重定位</h3>
+<ul>
+<li>固定定位</li>
+<li>静态重定位</li>
+<li>动态重定位
+<ul>
+<li>将逻辑地址变换成物理地址由硬件自动完成</li>
+<li>优点：
+<ul>
+<li>运行期间可以换进换出内存：换出阻塞的进程</li>
+<li>可以在内存中移动进程：搜集内存中的外部碎片</li>
+<li>空间不必连续</li>
+<li>便于信息共享</li>
+<li>是内存虚拟管理的基础</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="动态可变分区分配算法">动态可变分区分配算法</h3>
+<ul>
+<li>首次适配（First）：空闲分区链表按地址排序，分配快，回收效率高，小碎片多</li>
+<li>临近适配（Next）：从上次分配的地址开始查找，减少搜索时间</li>
+<li>最佳适配（Best）：空闲分区链表按块从小到大排序，选择最小的足够大的空闲分区，小碎片多</li>
+<li>最差适配（Worst）：空闲分区链表按块从大到小排序，选择最大的空闲分区，多中等碎片</li>
+<li>算法对比
+<ul>
+<li>复杂度：最佳（2+2）&gt;
+最差（1+2）&gt;首次（1+1）&gt;循环（1+1）</li>
+<li>小碎片产生的可能性：最佳 &gt;首次 &gt; 循环 &gt; 最差</li>
+<li>后继大作业分配成功的可能性：最佳 &gt;首次 &gt; 循环 &gt; 最差</li>
+</ul></li>
+</ul>
+<h3 id="内存扩充技术">内存扩充技术</h3>
+<ul>
+<li>主辅存交换
+<ul>
+<li>覆盖技术：
+<ul>
+<li>用于一个作业的内部</li>
+<li>同一程序按程序的逻辑结构分段，不会同时运行的程序段分在一组内，该组称为覆盖段</li>
+<li>极端情况下覆盖段在主存中只保留一个段，其他段在辅存中</li>
+<li>应用程序不透明，需要程序员干预</li>
+</ul></li>
+<li>交换技术（虚拟存储技术）：
+<ul>
+<li>用于不同的作业，任一时刻主存中只保留一个完整的用户作业</li>
+<li>对应用程序而言是透明的，无需程序员干预</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="虚拟存储技术">虚拟存储技术</h3>
+<ul>
+<li>简单分页——页表（page table）
+<ul>
+<li>逻辑地址到物理地址的转换：
+<ul>
+<li>逻辑地址 = 页号 + 页内偏移</li>
+<li>物理地址 = 帧号 + 页内偏移</li>
+</ul></li>
+</ul></li>
+<li>系统抖动：频繁换入换出页面</li>
+<li>虚拟存储器的大小限制：
+<ul>
+<li>存放程序指令和数据的外存区域称为交换区。</li>
+<li>虚拟存储器大小 = 交换区大小 + 内存大小</li>
+</ul></li>
+<li>虚拟地址空间大小：
+<ul>
+<li>计算机地址结构的限制（例如，指令地址字长度等）</li>
+</ul></li>
+<li>地址映射
+<ul>
+<li>将进程中程序的虚拟（逻辑）地址转化为物理地址</li>
+<li>维护地址映射表</li>
+</ul></li>
+<li>物理内存的管理
+<ul>
+<li>物理内存的回收、分配</li>
+</ul></li>
+<li>缺页异常的处理
+<ul>
+<li>分配内存</li>
+<li>将需要的内容从磁盘swap区加载到内存</li>
+</ul></li>
+<li>页大小
+<ul>
+<li>页越大，内零头越大；</li>
+<li>页越小，需要的页越多，页表就越大</li>
+</ul></li>
+</ul>
+<h3 id="逻辑地址到物理地址的转换">逻辑地址到物理地址的转换</h3>
+<ul>
+<li>页表（page table）
+<ul>
+<li>逻辑地址 = 页号 + 页内偏移</li>
+<li>物理地址 = 帧号 + 页内偏移</li>
+</ul>
+<figure>
+<img src="image-18.webp" srcset="/img/loading/loading3.gif" lazyload alt="页表">
+<figcaption aria-hidden="true">页表</figcaption>
+</figure></li>
+<li>快表（TLB：Translation Lookaside Buffer）
+<ul>
+<li>页表在Cache或寄存器中的副本</li>
+<li>用于加速地址转换</li>
+</ul>
+<figure>
+<img src="image-17.webp" srcset="/img/loading/loading3.gif" lazyload alt="快表">
+<figcaption aria-hidden="true">快表</figcaption>
+</figure></li>
+<li>多级页表
+<ul>
+<li>把整个页表进行分页，分成一张张小页表，每个小页表的大小与页框相同。</li>
+<li>对小页表顺序编号，允许小页表分散存放在不连续的页框中。</li>
+<li>为了进行索引查找，应该为这些小页表建一张页目录表（一级页表），其表项指出小页表（二级页表）所在页框号及相关信息。</li>
+<li>逻辑地址结构有三部分组成：页目录号、页号和位移。</li>
+</ul>
+<img src="image-19.webp" srcset="/img/loading/loading3.gif" lazyload alt="多级页表"> <img src="image-20.webp" srcset="/img/loading/loading3.gif" lazyload alt="二级页表"></li>
+<li>反向页表（Inverted Page Table）
+<ul>
+<li>虚拟地址的页号使用散列函数映射到哈希表中。</li>
+<li>把 <span class="math inline"><em>n</em></span> 位页号映射到 <span class="math inline"><em>m</em></span> 位帧号（<span class="math inline"><em>n</em> &gt; <em>m</em></span>）</li>
+<li>大小与物理内存成正比</li>
+</ul>
+<figure>
+<img src="image-21.webp" srcset="/img/loading/loading3.gif" lazyload alt="反向页表">
+<figcaption aria-hidden="true">反向页表</figcaption>
+</figure></li>
+</ul>
+<h2 id="空闲内存页的管理">空闲内存页的管理</h2>
+<ul>
+<li>位图方式：
+<ul>
+<li>每个Bit表示一块的使用状态。0表示空闲，1表示已分配。</li>
+<li>表示能力：32MB主存，页大小为4K，1KB的空间就足够表示。</li>
+<li>效率高：只要修改对应bit就可以</li>
+</ul></li>
+<li>空闲链表方式：
+<ul>
+<li>用链结构表示空闲页。</li>
+</ul></li>
+</ul>
+<h2 id="物理页框回收">物理页框回收</h2>
+<ul>
+<li>全局淘汰策略：从所有作业所占用的帧中选择。</li>
+<li>局部淘汰策略：从本作业所占用的帧中选择</li>
+</ul>
+<h3 id="淘汰算法">淘汰算法</h3>
+<ol type="1">
+<li>最优淘汰算法（OPT-Optimal）
+<ul>
+<li>淘汰将来最长时间不使用的页面。</li>
+<li>需要预知未来的页面访问情况，实际不可行。</li>
+<li>作为理论上的评价标准，用以鉴别其他淘汰算法的优劣</li>
+</ul></li>
+<li>先进先出淘汰算法（FIFO）
+<ul>
+<li>淘汰最先进入内存的页面。</li>
+<li>实现简单。</li>
+<li>可能导致系统抖动（频繁换入换出页面）。</li>
+</ul></li>
+<li>最近最少未使用算法（LFU-Least Frequently Used）
+<ul>
+<li>淘汰在一定时间内未被访问的页面。</li>
+<li>为每页面设置访问计数器，通过比较所有页的计数器值来确定淘汰的页面。</li>
+<li>需要定期对计数器清零，以淘汰过期页</li>
+<li>过于复杂</li>
+</ul></li>
+<li>最久不使用淘汰算法（NUR-Not Used Recently），即Clock算法
+<ul>
+<li>结合了FIFO和LFU的思想。</li>
+<li>1个访问位
+<ul>
+<li>每个页面有一个访问位，表示最近是否被访问过。</li>
+<li>使用一个指针指向当前检查的页面，按顺序检查页面。</li>
+<li>如果访问位为1，则清零并继续检查下一个页面；如果为0，则淘汰该页面。</li>
+</ul></li>
+<li>1个访问位 + 1个修改位
+<ul>
+<li>每个页面有一个访问位和一个修改位。</li>
+<li>访问位表示最近是否被访问过，修改位表示页面是否被修改过。</li>
+<li>使用一个指针指向当前检查的页面，按顺序检查页面。</li>
+<li>如果访问位为1，则清零并继续检查下一个页面；如果为0，则淘汰该页面。</li>
+</ul></li>
+<li>适用于大多数实际情况，性能较好。</li>
+</ul></li>
+</ol>
+<h2 id="段页式虚拟存储管理">段页式虚拟存储管理</h2>
+<ul>
+<li><strong>虚拟分段的优点</strong>：
+<ul>
+<li>简化不断增长的数据结构处理方式</li>
+<li>允许分块编译</li>
+<li>有助于进程间的共享</li>
+<li>有助于实现保护机制</li>
+</ul></li>
+<li>段页式地址翻译
+<ul>
+<li>段号 <span class="math inline"><em>s</em></span> + 页号 <span class="math inline"><em>p</em></span> + 页内偏移 <span class="math inline"><em>d</em></span></li>
+<li>为了进行地址变换，系统为每一个作业建立一张段表，再为每一段建立一张页表。同样，也有一个段表控制寄存器，存放当前作业段表的长度和始址。</li>
+</ul>
+<figure>
+<img src="image-22.webp" srcset="/img/loading/loading3.gif" lazyload alt="段页式存储管理">
+<figcaption aria-hidden="true">段页式存储管理</figcaption>
+</figure></li>
+<li>读取策略
+<ul>
+<li>请求式分页</li>
+<li>预约式分页</li>
+</ul></li>
+<li>放置策略
+<ul>
+<li>最佳适配</li>
+<li>首次适配</li>
+<li>近邻适配</li>
+<li>最差适配</li>
+</ul></li>
+<li>替换策略
+<ul>
+<li>算法
+<ul>
+<li>Opt</li>
+<li>FIFO</li>
+<li>LRU</li>
+<li>Clock（NRU）</li>
+</ul></li>
+<li>页缓冲</li>
+</ul></li>
+<li>清除策略（回写）
+<ul>
+<li>请求式清除</li>
+<li>预约式清除</li>
+</ul></li>
+</ul>
+<h2 id="物理主存储器的分配和管理">物理主存储器的分配和管理</h2>
+<ul>
+<li>伙伴系统（Buddy system）
+<ul>
+<li>将内存分成大小为 <span class="math inline">2<sup><em>n</em></sup></span> 的块。</li>
+<li>分配时，寻找最小的满足要求的块。</li>
+<li>回收时，将相邻的块合并成更大的块。</li>
+<li>优点：减少碎片，提高内存利用率。</li>
+</ul>
+<figure class="shiki c"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">Void </span><span style="color: #61AFEF">get_hole</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75"> </span><span style="color: #C678DD">int</span><span style="color: #E06C75"> </span><span style="color: #E06C75; font-style: italic">i</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">{</span></span>
+<span class="line"><span style="color: #61AFEF">If</span><span style="color: #ABB2BF"> ( i </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> ( u</span><span style="color: #C678DD">+</span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">) ) failure;</span></span>
+<span class="line"><span style="color: #61AFEF">If</span><span style="color: #ABB2BF"> ( </span><span style="color: #C678DD">&lt;</span><span style="color: #ABB2BF">i_list empty</span><span style="color: #C678DD">&gt;</span><span style="color: #ABB2BF"> )</span></span>
+<span class="line"><span style="color: #ABB2BF">{</span></span>
+<span class="line"><span style="color: #61AFEF">get_hole</span><span style="color: #ABB2BF">( i</span><span style="color: #C678DD">+</span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #C678DD">&lt;</span><span style="color: #ABB2BF">split hole into buddies</span><span style="color: #C678DD">&gt;</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #C678DD">&lt;</span><span style="color: #ABB2BF">put buddies on i_list</span><span style="color: #C678DD">&gt;</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"><span style="color: #C678DD">&lt;</span><span style="color: #ABB2BF">take first hole on i_list</span><span style="color: #C678DD">&gt;</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure> <img src="image-23.webp" srcset="/img/loading/loading3.gif" lazyload alt="伙伴系统"></li>
+<li>Slab系统
+<ul>
+<li>将内存分成多个大小相同的块（slab）。</li>
+<li>每个 slab 包含多个对象，每个对象大小相同。</li>
+<li>对象分配和回收时，直接在 slab
+中进行，不需要频繁的内存分配和释放。</li>
+<li>优点：减少碎片，提高内存利用率。</li>
+</ul>
+<figure>
+<img src="image-24.webp" srcset="/img/loading/loading3.gif" lazyload alt="Slab系统">
+<figcaption aria-hidden="true">Slab系统</figcaption>
+</figure></li>
+<li>SLUB：在 SLAB
+的基础上简化设计，提高性能。更适合多处理器系统使用。是目前Linux版本的默认配置。</li>
+<li>SLOB：为嵌入式系统提供极简的内存分配方案。</li>
+</ul>
+<h1 id="进程管理">进程管理</h1>
+<h2 id="进程概念">进程概念</h2>
+<ul>
+<li>进程的概念
+<ul>
+<li>程序在操作系统上的一次运行过程。</li>
+<li>系统进行资源分配和调度的一个可并发执行的独立单位。</li>
+<li>在进程看来，自己独占计算机系统，并可以调用OS提供的服务。</li>
+</ul></li>
+<li>进程的特性
+<ul>
+<li>动态性：进程具有生命周期，经历创建、运行、消亡等过程。</li>
+<li>并发性：多个进程可以并发地执行。</li>
+<li>独立性：进程既是系统中资源分配和保护的基本单位，也是系统调度的独立单位。</li>
+</ul></li>
+<li>进程的组成
+<ul>
+<li>代码段：或叫共享正文段，在多个程序间可以实现共享。含代码和不变的数据。</li>
+<li>数据上下文：
+<ul>
+<li>用户层：
+<ul>
+<li>数据区：外部变量和静态变量</li>
+<li>工作区：即栈，包含局部变量，函数调用的现场。</li>
+</ul></li>
+<li>操作系统层：执行现场和核心栈</li>
+<li>寄存器层：控制寄存器和数据寄存器。</li>
+</ul></li>
+</ul></li>
+<li>进程控制块(PCB)
+<ul>
+<li>进程的基本信息和状态信息的集合。</li>
+<li><strong>每个进程有且仅有一个进程控制块。</strong></li>
+<li>分为两部分：
+<ul>
+<li>常驻内存部分：进程无论处于什么状态，系统都可能要查询的PCB成员。</li>
+<li>可交换部分：进程不在执行时系统不需要访问的PCB成员。内存紧张时可以将他们换出到磁盘上。</li>
+</ul></li>
+</ul></li>
+<li>进程是程序的一次动态执行活动，而程序是进程运行的静态描述文本</li>
+</ul>
+<h2 id="进程状态与转移">进程状态与转移</h2>
+<h3 id="进程状态">进程状态</h3>
+<ul>
+<li>两状态：
+<ul>
+<li>Not Running</li>
+<li>Running</li>
+</ul></li>
+<li>三状态：
+<ul>
+<li>Running</li>
+<li>Ready</li>
+<li>Block</li>
+</ul>
+<figure>
+<img src="image-25.webp" srcset="/img/loading/loading3.gif" lazyload alt="三状态">
+<figcaption aria-hidden="true">三状态</figcaption>
+</figure></li>
+<li>五状态：
+<ul>
+<li>Created：限制进程数量</li>
+<li>Ready</li>
+<li>Running</li>
+<li>Sleep</li>
+<li>Terminated：便于其他应用程序分析统计操作系统的性能</li>
+</ul></li>
+<li>六/七状态：
+<ul>
+<li>挂起 Suspend: 需要评估加载资源</li>
+</ul>
+<figure>
+<img src="image-26.webp" srcset="/img/loading/loading3.gif" lazyload alt="挂起状态">
+<figcaption aria-hidden="true">挂起状态</figcaption>
+</figure></li>
+</ul>
+<h3 id="进程状态转换">进程状态转换</h3>
+<ul>
+<li>运行态 → 阻塞态
+<ul>
+<li>等待资源/事件等；如等待外设传输，或人工干预。</li>
+</ul></li>
+<li>阻塞态 → 就绪态
+<ul>
+<li>资源得到满足；如外设传输结束；人工干预完成。</li>
+</ul></li>
+<li>运行态 → 就绪态
+<ul>
+<li>运行时间片到；出现有更高优先权进程。</li>
+</ul></li>
+<li>就绪态 → 运行态
+<ul>
+<li>选择一个就绪进程运行。</li>
+</ul></li>
+</ul>
+<h2 id="pcb的组织方式">PCB的组织方式</h2>
+<figure>
+<img src="image-27.webp" srcset="/img/loading/loading3.gif" lazyload alt="PCB的组织方式">
+<figcaption aria-hidden="true">PCB的组织方式</figcaption>
+</figure>
+<ul>
+<li>链表方式</li>
+</ul>
+<h2 id="进程控制">进程控制</h2>
+<h3 id="进程创建与进程终止">进程创建与进程终止</h3>
+<ul>
+<li>进程创建
+<ul>
+<li>系统调用：<code>fork</code>
+<ul>
+<li>创建一个新进程，返回值为0表示子进程，返回值为子进程ID表示父进程。</li>
+</ul></li>
+<li>复制父进程的PCB和地址空间
+<ul>
+<li>子进程与父进程共享代码段，但有独立的数据段和栈段。</li>
+</ul></li>
+<li>分配新的PCB和地址空间
+<ul>
+<li>子进程拥有独立的PCB和地址空间。</li>
+</ul></li>
+<li>调用 <code>exec()</code> 函数
+<ul>
+<li>用于加载新程序到子进程的地址空间中，替换子进程的代码段和数据段。</li>
+<li>子进程执行新的程序，父进程继续执行原来的程序。</li>
+</ul></li>
+</ul></li>
+<li>进程终止
+<ul>
+<li>系统调用：<code>exit()</code>
+<ul>
+<li>释放PCB和地址空间</li>
+<li>释放子进程的资源</li>
+<li>通知父进程子进程已终止</li>
+</ul></li>
+<li>父进程等待子进程终止
+<ul>
+<li>系统调用：<code>wait()</code></li>
+<li>父进程阻塞，直到子进程终止</li>
+<li>父进程获取子进程的退出状态</li>
+</ul></li>
+<li>僵尸进程
+<ul>
+<li>子进程终止后，父进程未调用
+<code>wait()</code>，子进程的PCB仍然存在，称为僵尸进程。</li>
+<li>僵尸进程会占用系统资源，但不会占用CPU时间。</li>
+<li>父进程用 <code>while</code> 循环调用 <code>wait()</code>
+来避免僵尸进程的产生。</li>
+</ul></li>
+</ul></li>
+</ul>
+<figure class="shiki c"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">include </span><span style="color: #C678DD">&lt;</span><span style="color: #ABB2BF">stdio.h</span><span style="color: #C678DD">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">include </span><span style="color: #C678DD">&lt;</span><span style="color: #ABB2BF">stdlib.h</span><span style="color: #C678DD">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">include </span><span style="color: #C678DD">&lt;</span><span style="color: #ABB2BF">sys</span><span style="color: #C678DD">/</span><span style="color: #ABB2BF">types.h</span><span style="color: #C678DD">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">include </span><span style="color: #C678DD">&lt;</span><span style="color: #ABB2BF">unistd.h</span><span style="color: #C678DD">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">include </span><span style="color: #C678DD">&lt;</span><span style="color: #ABB2BF">sys</span><span style="color: #C678DD">/</span><span style="color: #ABB2BF">wait.h</span><span style="color: #C678DD">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C678DD">int</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">main</span><span style="color: #ABB2BF">() {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">pid_t</span><span style="color: #ABB2BF"> pid;</span></span>
+<span class="line"><span style="color: #ABB2BF">    pid </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">fork</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (pid </span><span style="color: #C678DD">&lt;</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">perror</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"fork error"</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">exit</span><span style="color: #ABB2BF">(EXIT_FAILURE);</span></span>
+<span class="line"><span style="color: #ABB2BF">    } </span><span style="color: #C678DD">else</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (pid </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #7F848E; font-style: italic">// 子进程中使用execlp执行date命令，显示当前日期和时间</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (</span><span style="color: #61AFEF">execlp</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"date"</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">"date"</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">NULL</span><span style="color: #ABB2BF">) </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">-</span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #61AFEF">perror</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"execlp error in child"</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #61AFEF">exit</span><span style="color: #ABB2BF">(EXIT_FAILURE);</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">    } </span><span style="color: #C678DD">else</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #7F848E; font-style: italic">// 父进程等待子进程结束</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">int</span><span style="color: #ABB2BF"> status;</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">pid_t</span><span style="color: #ABB2BF"> wpid </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">wait</span><span style="color: #ABB2BF">(</span><span style="color: #C678DD">&amp;</span><span style="color: #ABB2BF">status);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (</span><span style="color: #61AFEF">WIFEXITED</span><span style="color: #ABB2BF">(status)) {</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #61AFEF">printf</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"Child process </span><span style="color: #D19A66">%d</span><span style="color: #98C379"> exited with status </span><span style="color: #D19A66">%d</span><span style="color: #56B6C2">\n</span><span style="color: #98C379">"</span><span style="color: #ABB2BF">, wpid, </span><span style="color: #61AFEF">WEXITSTATUS</span><span style="color: #ABB2BF">(status));</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">printf</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"Parent process </span><span style="color: #D19A66">%d</span><span style="color: #98C379"> continues.</span><span style="color: #56B6C2">\n</span><span style="color: #98C379">"</span><span style="color: #ABB2BF">, </span><span style="color: #61AFEF">getpid</span><span style="color: #ABB2BF">());</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">return</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure>
+<h3 id="进程模式">进程模式</h3>
+<ul>
+<li>进程模式
+<ul>
+<li>用户模式：用户程序运行的模式，限制访问系统资源。</li>
+<li>内核模式：操作系统内核运行的模式，允许访问所有系统资源。</li>
+</ul></li>
+<li>进程切换与模式切换
+<ul>
+<li>进程切换的目的：换一个新进程占用CPU</li>
+<li>进程切换时机：
+<ul>
+<li>外部中断（时间片、IO等）：不可预知</li>
+<li>异常（div 0）：不可预知</li>
+<li>陷阱（Int x）：可预知</li>
+<li>系统调用</li>
+</ul></li>
+<li>模式切换的目的
+<ul>
+<li>在用户态和核心态之间的切换</li>
+</ul></li>
+<li>模式切换的时机：
+<ul>
+<li>同上</li>
+</ul></li>
+</ul></li>
+<li>中断与陷阱的区别</li>
+<li>发生模式切换并不一定发生进程切换，发生进程切换时，必然伴随着模式切换，因为，进程切换是核心功能，无法在用户模式下完成。</li>
+</ul>
+<h2 id="线程">线程</h2>
+<ul>
+<li>线程的概念
+<ul>
+<li>线程是进程中的一个执行单元，是操作系统调度和执行的基本单位。</li>
+<li><strong>进程是资源分配的基本单位，而线程是CPU调度的基本单位。</strong></li>
+</ul></li>
+<li>线程的基本特征
+<ul>
+<li>独立的线程执行状态（运行、就绪、阻塞等）。</li>
+<li>独立的线程上下文环境。</li>
+<li>独立执行栈：保存线程的上下文。</li>
+<li>独立的静态存储区，用于存放局部变量</li>
+<li>存在独立的线程控制块来描述线程的各类管理信息。</li>
+<li>存取所属进程内的主存和其它资源，在本进程的范围内与所有线程共享这些资源。
+<ul>
+<li>同一程序地址空间。</li>
+<li>运行代码。</li>
+<li>全局变量。</li>
+<li>设备和文件资源。</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="用户级多线程">用户级多线程</h3>
+<ul>
+<li>一个线程被阻塞后，只代表该线程对应的执行线索暂停，不会必然导致整个进程的阻塞，同进程中的其它线程仍有可能被调度执行。</li>
+<li>同进程内的线程是并发执行的（单CPU环境），能够实现一些资源的共享，如全局变量等。对共享的资源，在访问时需要解决同步或互斥的问题。</li>
+<li>优势
+<ul>
+<li>创建快：创建线程的开销（包括时间开销和资源开销）要远小于创建进程。</li>
+<li>终止快：终止一个线程比终止一个进程花费的时间少。</li>
+<li>切换快：同进程内的线程切换开销要远远小于进程之间的切换开销。</li>
+<li>通信快：进程内部的线程间的数据通信效率要远效率进程间的数据通信效率。</li>
+</ul></li>
+<li>基本思想：
+<ul>
+<li>内核以进程为单位进行调度，不知道线程的存在。</li>
+<li>线程的所有状态变化都发生在用户空间中。</li>
+<li>管理线程的工作由应用程序来完成，操作系统感觉不到进程内部的多执行线索。</li>
+</ul></li>
+<li>管理线程的工作包括：
+<ul>
+<li>线程创建和撤销</li>
+<li>线程间通信</li>
+<li>调度和现场保存与恢复等。</li>
+</ul></li>
+</ul>
+<h3 id="内核级多线程">内核级多线程</h3>
+<ul>
+<li>基本思想：
+<ul>
+<li>所有的线程管理工作全部由操作系统核心完成。</li>
+<li>操作系统核心为进程中的每个线程维护上下文。</li>
+<li>操作系统基于线程实现处理器调度，任何进程都至少包含一个线程。</li>
+</ul></li>
+<li>缺点：
+<ul>
+<li>即使同进程内的线程切换也需要进入核心态执行调度算法。（伴随着模式切换）</li>
+</ul></li>
+<li>优点：
+<ul>
+<li>如果一个线程被阻塞，内核可以调度同进程中的其他线程执行。</li>
+<li>同进程内的线程并行度好，可以分别调度到多个处理器上。</li>
+</ul></li>
+</ul>
+<h3 id="混合方法实现多线程">混合方法实现多线程</h3>
+<figure>
+<img src="image-28.webp" srcset="/img/loading/loading3.gif" lazyload alt="混合多线程">
+<figcaption aria-hidden="true">混合多线程</figcaption>
+</figure>
+<ul>
+<li>使用了4个实体：
+<ul>
+<li>进程、用户级线程、轻量级进程、内核级线程</li>
+</ul></li>
+<li>关系：
+<ul>
+<li>轻量级进程和内核级线程严格1对1。</li>
+<li>轻量级进程对应用程序可见，其数据结构在进程地址空间中。</li>
+<li>内核级线程的数据结构保存在内核地址空间中。</li>
+</ul></li>
+</ul>
+<h2 id="调度算法">调度算法</h2>
+<h3 id="调度的层次">调度的层次</h3>
+<ul>
+<li>高级调度(长程调度)：又称作业调度，它决定处于输入池中的哪个后备作业可以调入系统，成为一个或一组就绪进程。</li>
+<li>中级调度（中程调度）：又称对换调度，它决定处于交换区中的就绪进程中哪一个可以调入内存，以便直接参与对CPU的竞争。在内存资源紧张时，将内存中处于阻塞状态的进程调至交换区。</li>
+<li>低级调度（短程调度）：又称进程调度或处理机调度，它决定驻在内存中的哪一个就绪进程可以占用CPU，使其获得实实在在的执行。</li>
+</ul>
+<figure>
+<img src="image-29.webp" srcset="/img/loading/loading3.gif" lazyload alt="调度层次">
+<figcaption aria-hidden="true">调度层次</figcaption>
+</figure>
+<ul>
+<li>对内核级线程，操作系统使用线程技术，对线程的调度为低级调度。</li>
+<li>对用户级线程，低级调度的对象是进程，线程的调度由应用程序来做。</li>
+<li>对混合式线程，低级调度的对象是内核级线程。</li>
+</ul>
+<h3 id="作业调度算法">作业调度算法</h3>
+<ol type="1">
+<li>先来先服务（FCFS）
+<ul>
+<li>按作业到达的先后顺序进行调度。</li>
+<li>简单易实现，但可能导致长作业阻塞短作业，平均周转时间较长。</li>
+</ul></li>
+<li>短作业优先（SJF）
+<ul>
+<li>优先调度执行时间短的作业。|</li>
+<li>可以减少平均周转时间，但可能导致长作业饥饿。</li>
+</ul></li>
+<li>最高响应比作业优先（HRN）
+<ul>
+<li>计算每个作业的响应比，优先调度响应比高的作业。</li>
+<li><span class="math display">$$HRN = \frac{等待时间 +
+服务时间}{服务时间} = \frac{T_w + T_s}{T_s} = 1 +
+\frac{T_w}{T_s}$$</span></li>
+<li>既照顾了先来者，又优待了短作业。</li>
+</ul></li>
+</ol>
+<h3 id="进程调度算法">进程调度算法</h3>
+<ul>
+<li>调度时机
+<ul>
+<li>时钟中断：当前进程时间片结束</li>
+<li>I/O 中断</li>
+<li>Memory 异常，如缺页异常</li>
+<li>Trap（陷阱）：软中断等</li>
+<li>系统调用
+<ul>
+<li>如进程退出exit（）</li>
+<li>打开文件</li>
+</ul></li>
+</ul></li>
+</ul>
+<ol type="1">
+<li>先来先服务(FCFS-First Come First Server)
+<ul>
+<li>非抢占式调度算法</li>
+</ul></li>
+<li>时间片轮转法(RR-Round-Robin)
+<ul>
+<li>抢占式调度算法</li>
+<li>适用于交互式分时系统</li>
+<li>各就绪进程轮流运行一小段时间，这一小段时间称为时间片。</li>
+<li>在时间片内，如进程运行任务完成或因I/O等原因进入阻塞状态，该进程就提前让出CPU。</li>
+<li>当一个进程耗费完一个时间片而尚未执行完毕，调度程序就强迫它放弃处理机，使其重新排到就绪队列末尾。</li>
+</ul></li>
+<li>最短进程优先(SPN-Shortest Process Next)
+<ul>
+<li>非抢占式调度算法</li>
+<li>优先调度执行时间短的进程。</li>
+<li>可以减少平均周转时间，但可能导致长进程饥饿。</li>
+<li>难点：如何预测进程的运行时间
+<ul>
+<li><span class="math display">$$ \begin{aligned}
+  S_{n+1}&amp;=\alpha \cdot T_{n} + (1-\alpha) \cdot S_{n}\\
+  &amp;= \alpha \cdot T_{n} + (1-\alpha)\alpha T_{n-1} + \cdots +
+(1-\alpha)^{i}\alpha T_{n-i} + \cdots + (1-\alpha)^{n-1}\alpha S_{1}
+  \end{aligned} $$</span></li>
+</ul></li>
+</ul></li>
+<li>最短剩余时间优先(SRT-Shortest Remaining Time)
+<ul>
+<li>抢占式调度算法</li>
+<li>优先调度剩余执行时间短的进程。</li>
+<li>可以减少平均周转时间，但可能导致长进程饥饿。</li>
+<li>难点：如何预测进程的剩余执行时间</li>
+</ul></li>
+<li>最高响应比优先(HRRN-Highest Response Ratio Next)
+<ul>
+<li>非抢占式调度算法</li>
+<li>计算每个进程的响应比，优先调度响应比高的进程。</li>
+<li><span class="math display">$$HRR = \frac{等待时间 +
+服务时间}{服务时间} = \frac{T_w + T_s}{T_s} = 1 +
+\frac{T_w}{T_s}$$</span></li>
+<li>既照顾了先来者，又优待了短进程。</li>
+</ul></li>
+<li>优先级调度算法
+<ul>
+<li>抢占式或非抢占式调度算法</li>
+<li>静态优先级调度
+<ul>
+<li>每个进程在创建时就被赋予一个固定的优先级。</li>
+<li>优先级高的进程先执行。</li>
+<li>可能导致低优先级进程饥饿。</li>
+</ul></li>
+<li>动态优先级调度
+<ul>
+<li>优先级根据进程的运行情况动态调整。</li>
+</ul></li>
+</ul></li>
+<li>多级反馈队列调度算法(Feedback)
+<ul>
+<li>将就绪队列分为多个优先级队列，每个队列有不同的时间片。</li>
+<li>向短时间作业、I/O繁忙和交互式进程倾斜</li>
+</ul></li>
+</ol>
+<table>
+
+<thead>
+<tr>
+<th></th>
+<th>选择函数</th>
+<th>决策模式</th>
+<th>吞吐量</th>
+<th>响应时间</th>
+<th>开销</th>
+<th>对进程的影响</th>
+<th>饿死</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FCFS</td>
+<td>Max(w)</td>
+<td>非抢占</td>
+<td>不强调</td>
+<td>可能很高，特别是当进程执行时间差别很大时</td>
+<td>最小</td>
+<td>对短进程不利；对IO进程不利</td>
+<td>无</td>
+</tr>
+<tr>
+<td>RR</td>
+<td>C</td>
+<td>抢占（时间片）</td>
+<td>时间片太小，吞吐量很低</td>
+<td>为短进程提供好的响应时间</td>
+<td>最小</td>
+<td>公平</td>
+<td>无</td>
+</tr>
+<tr>
+<td>SPN</td>
+<td>Min(s)</td>
+<td>非抢占</td>
+<td>高</td>
+<td>为短进程提供好的响应时间</td>
+<td>可能较高</td>
+<td>对长进程不利</td>
+<td>可能</td>
+</tr>
+<tr>
+<td>SRT</td>
+<td>Min(s-e)</td>
+<td>抢占（条件满足时）</td>
+<td>高</td>
+<td>提供好的响应时间</td>
+<td>可能较高</td>
+<td>对长进程不利</td>
+<td>可能</td>
+</tr>
+<tr>
+<td>HRRN</td>
+<td>Max（R）</td>
+<td>非抢占</td>
+<td>高</td>
+<td>提供好的响应时间</td>
+<td>可能较高</td>
+<td>很好的平衡</td>
+<td>无</td>
+</tr>
+<tr>
+<td>Feedback</td>
+<td></td>
+<td>抢占（时间片）</td>
+<td>不强调</td>
+<td>不强调</td>
+<td>可能较高</td>
+<td>可能对IO进程有利</td>
+<td>可能</td>
+</tr>
+</tbody>
+</table>
+<h2 id="实时调度">实时调度</h2>
+<ul>
+<li>实时系统定义：系统的正确性不仅取决于计算的逻辑结果，而且还依赖于产生结果的时间</li>
+<li>实时任务的特征：
+<ul>
+<li>实时
+<ul>
+<li>硬实时任务（100%实时）</li>
+<li>软实时任务(概率实时)</li>
+</ul></li>
+<li>周期
+<ul>
+<li>非周期任务</li>
+<li>周期任务</li>
+</ul></li>
+</ul></li>
+<li>调度算法
+<ul>
+<li>静态表驱动(static table-driven scheduling)
+<ul>
+<li>用于周期性任务</li>
+</ul></li>
+<li>静态优先级驱动抢占调度(static priority-driven preemptive scheduling)
+<ul>
+<li>速率单调算法</li>
+</ul></li>
+<li>基于动态规划的调度(dynamic planning-based scheduling)</li>
+<li>动态尽力调度(dynamic best effort scheduling)
+<ul>
+<li>时限调度算法</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="时限调度">时限调度</h3>
+<ol type="1">
+<li>最早截止时间优先调度
+<ul>
+<li>优先调度截止时间最早的任务。</li>
+<li>适用于硬实时系统。</li>
+</ul></li>
+<li>最小松弛时间优先调度
+<ul>
+<li>优先调度松弛时间最小的任务。</li>
+<li>松弛时间 = 截止时间 - 当前时间 - 任务执行时间</li>
+<li>适用于软实时系统。</li>
+</ul></li>
+</ol>
+<h3 id="速率单调调度">速率单调调度</h3>
+<ul>
+<li>优先级最高的任务是周期最短的任务，总是调度优先级最高的就绪进程。</li>
+<li>在运行过程中，若有优先级更高的就绪进程，则<strong>剥夺</strong>当前运行进程，调度更高优先级进程运行。</li>
+<li>CPU使用率：<span class="math inline">$U=\frac{C}{T}$</span></li>
+<li>时间要求
+<ul>
+<li>必要时间：<span class="math display">$$\sum\frac{C_i}{T_i} \leq
+1$$</span></li>
+<li>精确计算：<span class="math display">$$\sum\frac{C_i}{T_i} \leq
+n(2^{1/n}-1)$$</span></li>
+</ul></li>
+</ul>
+<h3 id="优先级逆转priority-inversion问题">优先级逆转（Priority
+inversion）问题</h3>
+<ul>
+<li>当较高优先级的任务需要去等待一个较低优先级的任务时，会产生优先级逆转问题</li>
+<li>解决方法：
+<ul>
+<li>优先级继承：
+<ul>
+<li>优先级低的任务继承与它共享同一资源的优先级较高的任务的优先级</li>
+</ul></li>
+<li>优先级置顶：
+<ul>
+<li>优先级与资源关联，每个资源都对应一个优先级。</li>
+<li>调度器动态地将资源的优先级分配给使用该资源的任务。</li>
+<li>任务结束时，优先级恢复原来的值。</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="多处理器调度">多处理器调度</h3>
+<ol type="1">
+<li>负载共享调度算法
+<ul>
+<li>进程并不分配给一个特定处理器，系统维护一个全局性就绪线程队列，当一个处理器空闲时，就选择一个就绪线程占有处理器运行。</li>
+<li>三种负载共享算法
+<ul>
+<li>先来先服务</li>
+<li>最少线程数优先</li>
+<li>最少线程数优先（可抢占）</li>
+</ul></li>
+</ul></li>
+<li>群（组）调度算法
+<ul>
+<li>把一组进程在同一时间一次性调度到一组处理器上运行。</li>
+<li>面向应用进程平均分配
+<ul>
+<li>CPU资源浪费较大</li>
+</ul></li>
+<li>面向所有线程平均分配（加权）</li>
+</ul></li>
+<li>处理器专派调度算法
+<ul>
+<li>给一个应用专门指派一组处理器，一旦一个应用被调度，它的每个线程被分配一个处理器并一直占有处理器运行直到整个应用运行结束。</li>
+</ul></li>
+<li>动态调度算法
+<ul>
+<li>由操作系统和应用进程共同完成调度。分工如下：
+<ul>
+<li>操作系统中的调度负责在应用进程之间划分处理器。即调度进程</li>
+<li>应用进程中的调度负责在分配给它的处理器上执行可运行线程的子集，哪一些线程应该执行，哪一些线程应该挂起完全是应用进程确定。即调度线程</li>
+</ul></li>
+</ul></li>
+</ol>
+<h1 id="进程通信">进程通信</h1>
+<ul>
+<li>互斥
+<ul>
+<li>要求各进程互斥地使用资源，当资源空闲时，任何进程都有资格使用该资源。</li>
+</ul></li>
+<li>同步
+<ul>
+<li>具有同步关系的进程之间必须按某种依赖关系相互合作，在指定的依赖关系未满足前，即使资源空闲也不允许被使用。</li>
+</ul></li>
+<li>临界资源
+<ul>
+<li>一个时刻只能被一个进程访问或使用的资源。临界资源可能是硬件设备，也可能是软件资源。</li>
+</ul></li>
+<li>临界区：是一段代码。进程通过这段代码访问临界资源。当一个进程进入这段代码时，不允许其他进程进入。又称临界段或互斥段。
+<ul>
+<li>进入临界区：进程开始执行临界区的代码。</li>
+<li>离开临界区：进程由执行临界区代码到不再执行临界区内的代码。</li>
+<li>临界区基本特征：原子性、可嵌套、可中断</li>
+</ul></li>
+</ul>
+<h2 id="互斥">互斥</h2>
+<ul>
+<li>互斥对系统的要求
+<ul>
+<li>互斥进入：在所有共享相同资源或对象的临界段中，每次只能允许一个进程进入</li>
+<li>空闲让进：当无进程在临界区中，必须让某希望进入进程立即进入临界区。</li>
+<li>有限停留：一个进程只能在临界段内停留有限的时间。</li>
+<li>公平进入：不能让某进程无限等待进入临界区，不会出现饥饿状况。</li>
+<li>不受干涉：一个在非临界区停止的进程必须不干涉其他进程。</li>
+<li>硬件无关：对进程速度和处理器的数目没有任何要求和限制。</li>
+</ul></li>
+<li>实现方法
+<ul>
+<li>基于CPU特殊指令或硬件支持
+<ul>
+<li>中断禁用</li>
+<li>特殊指令 <figure class="shiki text"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #abb2bf">test&amp;set</span></span>
+<span class="line"><span style="color: #abb2bf">test&amp;clear</span></span>
+<span class="line"><span style="color: #abb2bf">exchange</span></span>
+<span class="line"><span style="color: #abb2bf">fetch&amp;add</span></span></code></pre></div></div></figure></li>
+</ul></li>
+<li>软件方法
+<ul>
+<li>Peterson算法</li>
+<li>严格交替法</li>
+</ul></li>
+<li>程序设计语言支持的方法：
+<ul>
+<li>管程（JAVA等语言）</li>
+</ul></li>
+<li>操作系统支持的方法
+<ul>
+<li>信号量、消息</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="peterson算法">Peterson算法</h3>
+<ul>
+<li>假定两个互斥进程，编号为0，1</li>
+<li>全局变量：设置进程状态数组<code>Wanted_In[2]</code>，
+<ul>
+<li><code>Wanted_In[0/1] =0</code>,表示0/1号进程不在临界区，也不处于希望进入临界区的状态。</li>
+<li><code>Wanted_In[0/1] =1</code>,表示0/1号进程处在临界区，或者处于等待进入（或即将）临界区的状态。</li>
+</ul></li>
+<li>全局变量：
+<ul>
+<li><code>Observer</code>：标示最后一个试图（或成功）进入临界区的进程编号。</li>
+</ul></li>
+</ul>
+<figure class="shiki c"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">int</span><span style="color: #ABB2BF"> observer；</span><span style="color: #7F848E; font-style: italic">                  /*当前观察进程*/</span><span style="color: #ABB2BF">         </span></span>
+<span class="line"><span style="color: #C678DD">int</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">wanted_in</span><span style="color: #ABB2BF">[</span><span style="color: #D19A66">2</span><span style="color: #ABB2BF">];</span><span style="color: #7F848E; font-style: italic">               /*记录进程是否希望进入临界区*/</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">/*进入临界区函数*/</span></span>
+<span class="line"><span style="color: #61AFEF">enter_section</span><span style="color: #ABB2BF">(</span><span style="color: #C678DD">int</span><span style="color: #E06C75"> </span><span style="color: #E06C75; font-style: italic">process</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">{</span></span>
+<span class="line"><span style="color: #ABB2BF">   </span><span style="color: #C678DD">int</span><span style="color: #ABB2BF"> other </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">1</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">-</span><span style="color: #ABB2BF"> process;</span><span style="color: #7F848E; font-style: italic">     /* other：其它进程号*/</span></span>
+<span class="line"><span style="color: #ABB2BF">   </span><span style="color: #E06C75">wanted_in</span><span style="color: #ABB2BF">[process] </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">TRUE</span><span style="color: #ABB2BF">;</span><span style="color: #7F848E; font-style: italic">   /*本进程要进入临界区*/</span></span>
+<span class="line"><span style="color: #ABB2BF">   observer </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> process;</span><span style="color: #7F848E; font-style: italic">          /*本进程要观察进入临界区情况*/</span></span>
+<span class="line"><span style="color: #ABB2BF">   </span><span style="color: #C678DD">while</span><span style="color: #ABB2BF"> (observer </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> process </span><span style="color: #56B6C2">&amp;&amp;</span><span style="color: #ABB2BF">  </span><span style="color: #E06C75">wanted_in</span><span style="color: #ABB2BF">[other]) {}</span><span style="color: #7F848E; font-style: italic"> /*测试进入*/</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">/*离开临界区函数*/</span></span>
+<span class="line"><span style="color: #61AFEF">leave_section</span><span style="color: #ABB2BF">(</span><span style="color: #C678DD">int</span><span style="color: #E06C75"> </span><span style="color: #E06C75; font-style: italic">process</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">{</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E06C75">wanted_in</span><span style="color: #ABB2BF">[process] </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">FALSE</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure>
+<h2 id="信号量">信号量</h2>
+<ul>
+<li>基本思想
+<ul>
+<li>进程要申请互斥资源，要等待信号的到来。
+<ul>
+<li>如果缓存区中有信号，消耗一个信号后，占有资源</li>
+<li>如果缓冲区中没有信号，把自己阻塞在这个信号上。
+<ul>
+<li>如果在阻塞过程中，收到信号，消耗掉该信号后，进程被唤醒执行。</li>
+<li>如果多个进程阻塞在一个信号上，有信号到来，会根据调度原则，决定哪个进程真正收到该信号。</li>
+</ul></li>
+</ul></li>
+<li>进程在释放资源时，发出释放资源的信号。</li>
+</ul></li>
+<li>信号量的定义
+<ul>
+<li>资源申请操作（<code>semWait</code>操作，<code>P</code>）（进入临界区前调用该操作）：
+<ul>
+<li>信号灯的值减1；</li>
+<li>如果其值为负值，把进程阻塞在该信号上。</li>
+</ul></li>
+<li>资源释放操作（<code>semSignal</code>操作，<code>V</code>）（离开临界区前调用该操作）：
+<ul>
+<li>信号灯的值增1；</li>
+<li>如果其值为负值或0，表明有进程阻塞在该信号上。从阻塞的进程中，按调度原则挑选一个唤醒。</li>
+</ul></li>
+</ul></li>
+<li><code>semWait</code>和<code>semSignal</code>操作是不可中断的，一般把这种不能中断的操作称作原语。即<code>semWait</code>原语、<code>semSignal</code>原语，又称<code>P</code>，<code>V</code>操作。</li>
+</ul>
+<figure class="shiki text"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #abb2bf">/*信号量的定义*/</span></span>
+<span class="line"><span style="color: #abb2bf">typedef struct semaphore {</span></span>
+<span class="line"><span style="color: #abb2bf">    int   value;	        /*可用资源数*/</span></span>
+<span class="line"><span style="color: #abb2bf">    Queue  queue;           /*被阻塞进程队列*/</span></span>
+<span class="line"><span style="color: #abb2bf">} Semaphore;</span></span>
+<span class="line"><span style="color: #abb2bf">Semaphore s;</span></span>
+<span class="line"><span style="color: #abb2bf">Void P(semaphore s)</span></span>
+<span class="line"><span style="color: #abb2bf">{</span></span>
+<span class="line"><span style="color: #abb2bf">    s.value --;</span></span>
+<span class="line"><span style="color: #abb2bf">    If (s.value &lt; 0 ){</span></span>
+<span class="line"><span style="color: #abb2bf">        将进程放入阻塞队列s.queue</span></span>
+<span class="line"><span style="color: #abb2bf">        阻塞该进程,重新进程调度</span></span>
+<span class="line"><span style="color: #abb2bf">    }</span></span>
+<span class="line"><span style="color: #abb2bf">}</span></span>
+<span class="line"><span style="color: #abb2bf">Void V(semaphore s)</span></span>
+<span class="line"><span style="color: #abb2bf">{</span></span>
+<span class="line"><span style="color: #abb2bf">    s.value ++; </span></span>
+<span class="line"><span style="color: #abb2bf">    If (s.value &lt;= 0 ){</span></span>
+<span class="line"><span style="color: #abb2bf">        从阻塞队列s.queue取出一进程,唤醒该进程</span></span>
+<span class="line"><span style="color: #abb2bf">    }</span></span>
+<span class="line"><span style="color: #abb2bf">}</span></span></code></pre></div></div></figure>
+<h3 id="信号量实现互斥">信号量实现互斥</h3>
+<ul>
+<li>实现进程互斥，信号灯的取值含义：
+<ul>
+<li>正值：表示还能有几个进程分配到资源（即进入临界区）。</li>
+<li>0：表示没有待分配资源，但也没有进程在等待资源。</li>
+<li>负值：（绝对值）等待分配资源的进程数，即阻塞的进程数。</li>
+</ul></li>
+</ul>
+<figure>
+<img src="image-30.webp" srcset="/img/loading/loading3.gif" lazyload alt="信号量实现互斥">
+<figcaption aria-hidden="true">信号量实现互斥</figcaption>
+</figure>
+<h3 id="信号量实现同步">信号量实现同步</h3>
+<ul>
+<li>用信号灯表示所等待的操作是否已经完成。
+<ul>
+<li>用P操作表示等待其他进程协作任务完成的通知，</li>
+<li>用V操作（向其他进程）发送协作任务完成的通知。</li>
+<li>信号灯初始值一般为0。</li>
+<li>一般一个进程执行P操作，另一个进程执行V操作。</li>
+</ul></li>
+<li>半同步和全同步
+<ul>
+<li>半同步：进程a要同步等待进程b，而进程b则不必同步等待进程a。</li>
+<li>全同步：进程a要同步等待进程b，而进程b也要同步等待进程a。</li>
+</ul></li>
+</ul>
+<h4 id="生产者和消费者问题">生产者和消费者问题</h4>
+<ul>
+<li>问题描述：
+<ul>
+<li>一群生产者，每个生产者每次生产一件产品。</li>
+<li>一群消费者，每个消费者每次消费一件产品。</li>
+<li>一个产品仓库（最大可暂存n个产品）。</li>
+<li>如果仓库满，生产者暂停生产。</li>
+<li>如果仓库空，消费者暂停消费。</li>
+</ul></li>
+<li>信号量设置：
+<ul>
+<li><code>Buffers</code>：表示仓库（缓冲区）的空闲容量。
+<ul>
+<li>生产者生产一个产品后，放入缓冲区前，对此执行wait操作</li>
+<li>消费者消费一个产品后，对此执行signal操作</li>
+<li>初始值为n</li>
+</ul></li>
+<li><code>Products</code>：表示仓库中的产品数量。
+<ul>
+<li>生产者生产一个产品后，放入缓冲区对此执行signal操作</li>
+<li>消费者消费一个产品前，对此执行wait操作</li>
+<li>初始值为0</li>
+</ul></li>
+<li><code>Mutex</code>：实现对缓存区操作的互斥
+<ul>
+<li><span class="math inline">1</span>：表示没有进程进行缓冲区操作</li>
+<li><span class="math inline">0</span>：表示有一个进程正在对缓存区进行操作。</li>
+<li><span class="math inline">−<em>m</em></span>：表示有一个进程正在对缓存区进行操作，还有m个进程在等待进入缓存区操作。
+初始值为1</li>
+</ul></li>
+</ul></li>
+</ul>
+<figure class="shiki c"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">Semaphore Buffers</span><span style="color: #C678DD">=</span><span style="color: #ABB2BF">N;</span></span>
+<span class="line"><span style="color: #ABB2BF">Semaphore Products</span><span style="color: #C678DD">=</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">Semaphore mutex＝</span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">；</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">/*生产者*/</span></span>
+<span class="line"><span style="color: #ABB2BF">Void </span><span style="color: #61AFEF">Producer</span><span style="color: #ABB2BF">()</span></span>
+<span class="line"><span style="color: #ABB2BF">{</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">while</span><span style="color: #ABB2BF"> (</span><span style="color: #D19A66">TRUE</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">        /*生产产品*/</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">P</span><span style="color: #ABB2BF">(Buffers);</span><span style="color: #7F848E; font-style: italic">  /*等待缓冲区有空闲容量*/</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">P</span><span style="color: #ABB2BF">(mutex);</span><span style="color: #7F848E; font-style: italic">    /*进入临界区，互斥访问缓冲区*/</span></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">        /*向缓冲区放入产品*/</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">V</span><span style="color: #ABB2BF">(mutex);</span><span style="color: #7F848E; font-style: italic">    /*离开临界区*/</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">V</span><span style="color: #ABB2BF">(Products);</span><span style="color: #7F848E; font-style: italic"> /*通知消费者有新产品可用*/</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">/*消费者*/</span><span style="color: #ABB2BF">  </span></span>
+<span class="line"><span style="color: #ABB2BF">Void </span><span style="color: #61AFEF">Consumer</span><span style="color: #ABB2BF">()</span></span>
+<span class="line"><span style="color: #ABB2BF">{</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">while</span><span style="color: #ABB2BF"> (</span><span style="color: #D19A66">TRUE</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">P</span><span style="color: #ABB2BF">(Products);</span><span style="color: #7F848E; font-style: italic"> /*等待缓冲区有产品*/</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">P</span><span style="color: #ABB2BF">(mutex);</span><span style="color: #7F848E; font-style: italic">    /*进入临界区，互斥访问缓冲区*/</span></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">        /*从缓冲区取出产品*/</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">V</span><span style="color: #ABB2BF">(mutex);</span><span style="color: #7F848E; font-style: italic">    /*离开临界区*/</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">V</span><span style="color: #ABB2BF">(Buffers);</span><span style="color: #7F848E; font-style: italic">  /*通知生产者有空闲容量*/</span></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">        /*消费产品*/</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure>
+<h4 id="读者写者问题">读者/写者问题</h4>
+<ul>
+<li>问题描述：
+<ul>
+<li>若干个并发进程对数据对象进行读写的情况。</li>
+<li>多个读操作可以并发执行（与生产/消费问题不同）。</li>
+<li>一个写者不能与任何的读者或者其它写者同时访问数据对象</li>
+</ul></li>
+<li>全局变量和信号量设置：
+<ul>
+<li><code>Count</code>：表示正在执行读操作的进程数目，初始值为0</li>
+<li><code>Mutex</code>：表示是否有读者在对全局变量count进行修改，初始值为1</li>
+<li><code>Wrt</code>：表示是否有进程在执行读或写的操作，1表示没有，0和负值表示有，初始值为1</li>
+</ul></li>
+</ul>
+<figure class="shiki c"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">Semaphore Count</span><span style="color: #C678DD">=</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">Semaphore Mutex</span><span style="color: #C678DD">=</span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">Semaphore Wrt</span><span style="color: #C678DD">=</span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">/*读者*/</span></span>
+<span class="line"><span style="color: #ABB2BF">Void </span><span style="color: #61AFEF">Reader</span><span style="color: #ABB2BF">()</span></span>
+<span class="line"><span style="color: #ABB2BF">{</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">while</span><span style="color: #ABB2BF"> (</span><span style="color: #D19A66">TRUE</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">P</span><span style="color: #ABB2BF">(Mutex);</span><span style="color: #7F848E; font-style: italic">       /*进入临界区，互斥访问Count*/</span></span>
+<span class="line"><span style="color: #ABB2BF">        Count</span><span style="color: #C678DD">++</span><span style="color: #ABB2BF">;</span><span style="color: #7F848E; font-style: italic">        /*增加读者计数*/</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (Count </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #61AFEF">P</span><span style="color: #ABB2BF">(Wrt);</span><span style="color: #7F848E; font-style: italic">     /*如果是第一个读者，阻止写者*/</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">V</span><span style="color: #ABB2BF">(Mutex);</span><span style="color: #7F848E; font-style: italic">       /*离开临界区*/</span></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">        /*执行读操作*/</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">P</span><span style="color: #ABB2BF">(Mutex);</span><span style="color: #7F848E; font-style: italic">       /*进入临界区，互斥访问Count*/</span></span>
+<span class="line"><span style="color: #ABB2BF">        Count</span><span style="color: #C678DD">--</span><span style="color: #ABB2BF">;</span><span style="color: #7F848E; font-style: italic">        /*减少读者计数*/</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (Count </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #61AFEF">V</span><span style="color: #ABB2BF">(Wrt);</span><span style="color: #7F848E; font-style: italic">     /*如果是最后一个读者，允许写者*/</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">V</span><span style="color: #ABB2BF">(Mutex);</span><span style="color: #7F848E; font-style: italic">       /*离开临界区*/</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">/*写者*/</span></span>
+<span class="line"><span style="color: #ABB2BF">Void </span><span style="color: #61AFEF">Writer</span><span style="color: #ABB2BF">()</span></span>
+<span class="line"><span style="color: #ABB2BF">{</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">while</span><span style="color: #ABB2BF"> (</span><span style="color: #D19A66">TRUE</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">P</span><span style="color: #ABB2BF">(Wrt);</span><span style="color: #7F848E; font-style: italic">         /*进入临界区，阻止读者和写者*/</span></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">        /*执行写操作*/</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">V</span><span style="color: #ABB2BF">(Wrt);</span><span style="color: #7F848E; font-style: italic">         /*离开临界区，允许读者和写者*/</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure>
+<ul>
+<li>优化：公平的思路：使用写者优先实现方法，即如果写者已在等待进入，后续的读者不应该进入。</li>
+</ul>
+<h2 id="管程monitor">管程（Monitor）</h2>
+<ul>
+<li>将临界资源和访问临界资源的代码（临界区）组织到同一个数据结构（对象）中</li>
+<li>管程的实现方式：
+<ul>
+<li>高级程序设计语言，如JAVA，Pascal</li>
+<li>程序库</li>
+</ul></li>
+</ul>
+<h2 id="进程间数据交换">进程间数据交换</h2>
+<ul>
+<li><p>消息通信</p>
+<figure>
+<img src="image-31.webp" srcset="/img/loading/loading3.gif" lazyload alt="消息通信">
+<figcaption aria-hidden="true">消息通信</figcaption>
+</figure></li>
+<li><p>共享存储区</p>
+<figure>
+<img src="image-32.webp" srcset="/img/loading/loading3.gif" lazyload alt="共享存储区">
+<figcaption aria-hidden="true">共享存储区</figcaption>
+</figure></li>
+<li><p>管道通信</p>
+<ul>
+<li><p>匿名管道</p>
+<ul>
+<li>通过<code>pipe</code>函数创建</li>
+<li>通过<code>read</code>和<code>write</code>函数进行读写操作</li>
+</ul>
+<p>输入和输出端代码分别如下 </p><figure class="shiki c"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">#include</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&lt;stdio.h&gt;</span></span>
+<span class="line"><span style="color: #C678DD">#include</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&lt;unistd.h&gt;</span></span>
+<span class="line"><span style="color: #C678DD">#include</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&lt;sys/types.h&gt;</span></span>
+<span class="line"><span style="color: #C678DD">#include</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&lt;sys/stat.h&gt;</span></span>
+<span class="line"><span style="color: #C678DD">#include</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&lt;fcntl.h&gt;</span></span>
+<span class="line"><span style="color: #C678DD">#include</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&lt;string.h&gt;</span></span>
+<span class="line"><span style="color: #C678DD">#define</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">BUFFER_SIZE</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">10</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C678DD">int</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">main</span><span style="color: #ABB2BF">()</span></span>
+<span class="line"><span style="color: #ABB2BF">{</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">int</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">fds</span><span style="color: #ABB2BF">[</span><span style="color: #D19A66">2</span><span style="color: #ABB2BF">];</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">char</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">buf</span><span style="color: #ABB2BF">[BUFFER_SIZE];</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #7F848E; font-style: italic">// for (int i=0; i&lt;BUFFER_SIZE; i++) buf[i]='0';</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #7F848E; font-style: italic">//临时数组，用于存放通信的消息</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF">(</span><span style="color: #61AFEF">pipe</span><span style="color: #ABB2BF">(fds) </span><span style="color: #C678DD">&lt;</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">    {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">perror</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"pipe"</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">return</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">char</span><span style="color: #ABB2BF"> inFilename</span><span style="color: #C678DD">[]</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"testfile/local.txt"</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">char</span><span style="color: #ABB2BF"> outFilename</span><span style="color: #C678DD">[]</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"testfile/target.txt"</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">int</span><span style="color: #ABB2BF"> in </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">open</span><span style="color: #ABB2BF">(inFilename, O_RDWR, </span><span style="color: #E06C75">0</span><span style="color: #D19A66">666</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">int</span><span style="color: #ABB2BF"> out </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">open</span><span style="color: #ABB2BF">(outFilename, O_CREAT </span><span style="color: #C678DD">|</span><span style="color: #ABB2BF"> O_TRUNC </span><span style="color: #C678DD">|</span><span style="color: #ABB2BF"> O_RDWR, </span><span style="color: #E06C75">0</span><span style="color: #D19A66">666</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #7F848E; font-style: italic">//fflush(stdout);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">ssize_t</span><span style="color: #ABB2BF"> length;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">pid_t</span><span style="color: #ABB2BF"> pid </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">fork</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF">(pid </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">    {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #7F848E; font-style: italic">//子进程只写，关闭读出端</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">printf</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"child process </span><span style="color: #D19A66">%d</span><span style="color: #56B6C2">\n</span><span style="color: #98C379">"</span><span style="color: #ABB2BF">, </span><span style="color: #61AFEF">getpid</span><span style="color: #ABB2BF">());</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">close</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">fds</span><span style="color: #ABB2BF">[</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">]);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">while</span><span style="color: #ABB2BF">((length </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">read</span><span style="color: #ABB2BF">(in, buf, BUFFER_SIZE </span><span style="color: #C678DD">-</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">)) </span><span style="color: #C678DD">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">        {</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #61AFEF">printf</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"child process </span><span style="color: #D19A66">%d</span><span style="color: #98C379"> read </span><span style="color: #56B6C2">\"</span><span style="color: #D19A66">%s</span><span style="color: #56B6C2">\"</span><span style="color: #98C379"> from file</span><span style="color: #56B6C2">\n</span><span style="color: #98C379">"</span><span style="color: #ABB2BF">, </span><span style="color: #61AFEF">getpid</span><span style="color: #ABB2BF">(), buf);</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #61AFEF">write</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">fds</span><span style="color: #ABB2BF">[</span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">],buf,</span><span style="color: #61AFEF">strlen</span><span style="color: #ABB2BF">(buf)</span><span style="color: #C678DD">+</span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #61AFEF">printf</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"child process </span><span style="color: #D19A66">%d</span><span style="color: #98C379"> write </span><span style="color: #56B6C2">\"</span><span style="color: #D19A66">%s</span><span style="color: #56B6C2">\"</span><span style="color: #98C379"> to pipe</span><span style="color: #56B6C2">\n</span><span style="color: #98C379">"</span><span style="color: #ABB2BF">, </span><span style="color: #61AFEF">getpid</span><span style="color: #ABB2BF">(), buf);</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #7F848E; font-style: italic">//将buf的内容写入管道</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #61AFEF">memset</span><span style="color: #ABB2BF">(buf, </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">, </span><span style="color: #C678DD">sizeof</span><span style="color: #ABB2BF">(buf));</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">close</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">fds</span><span style="color: #ABB2BF">[</span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">]);</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">else</span></span>
+<span class="line"><span style="color: #ABB2BF">    {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #7F848E; font-style: italic">//父进程只读，关闭写入端</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">printf</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"parent process </span><span style="color: #D19A66">%d</span><span style="color: #56B6C2">\n</span><span style="color: #98C379">"</span><span style="color: #ABB2BF">, </span><span style="color: #61AFEF">getpid</span><span style="color: #ABB2BF">());</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">close</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">fds</span><span style="color: #ABB2BF">[</span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">]);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #7F848E; font-style: italic">//从管道里读数据，放入buf</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">while</span><span style="color: #ABB2BF">((length </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">read</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">fds</span><span style="color: #ABB2BF">[</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">],buf,BUFFER_SIZE)) </span><span style="color: #C678DD">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">        {</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #61AFEF">printf</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"parent process </span><span style="color: #D19A66">%d</span><span style="color: #98C379"> read </span><span style="color: #56B6C2">\"</span><span style="color: #D19A66">%s</span><span style="color: #56B6C2">\"</span><span style="color: #98C379"> from pipe</span><span style="color: #56B6C2">\n</span><span style="color: #98C379">"</span><span style="color: #ABB2BF">, </span><span style="color: #61AFEF">getpid</span><span style="color: #ABB2BF">(), buf);</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #61AFEF">write</span><span style="color: #ABB2BF">(out, buf, </span><span style="color: #61AFEF">strlen</span><span style="color: #ABB2BF">(buf));</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #61AFEF">printf</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"parent process </span><span style="color: #D19A66">%d</span><span style="color: #98C379"> write </span><span style="color: #56B6C2">\"</span><span style="color: #D19A66">%s</span><span style="color: #56B6C2">\"</span><span style="color: #98C379"> to file</span><span style="color: #56B6C2">\n</span><span style="color: #98C379">"</span><span style="color: #ABB2BF">, </span><span style="color: #61AFEF">getpid</span><span style="color: #ABB2BF">(), buf);</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #61AFEF">memset</span><span style="color: #ABB2BF">(buf, </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">, </span><span style="color: #C678DD">sizeof</span><span style="color: #ABB2BF">(buf));</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">close</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">fds</span><span style="color: #ABB2BF">[</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">]);</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">return</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure><p></p></li>
+<li><p>命名管道（FIFO）</p>
+<ul>
+<li>通过<code>mkfifo</code>命令创建命名管道</li>
+<li>通过<code>open</code>函数打开命名管道进行读写操作</li>
+</ul>
+<p></p><figure class="shiki c"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">#include</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&lt;stdio.h&gt;</span></span>
+<span class="line"><span style="color: #C678DD">#include</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&lt;unistd.h&gt;</span></span>
+<span class="line"><span style="color: #C678DD">#include</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&lt;fcntl.h&gt;</span></span>
+<span class="line"><span style="color: #C678DD">#include</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&lt;stdlib.h&gt;</span></span>
+<span class="line"><span style="color: #C678DD">#include</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&lt;string.h&gt;</span></span>
+<span class="line"><span style="color: #C678DD">#include</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&lt;errno.h&gt;</span></span>
+<span class="line"><span style="color: #C678DD">#include</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&lt;sys/types.h&gt;</span></span>
+<span class="line"><span style="color: #C678DD">#include</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&lt;sys/stat.h&gt;</span></span>
+<span class="line"><span style="color: #C678DD">#define</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">BUFFER_SIZE</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">128</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C678DD">int</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">main</span><span style="color: #ABB2BF">()</span></span>
+<span class="line"><span style="color: #ABB2BF">{</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">char</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">*</span><span style="color: #ABB2BF">file </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"testfile/fifo.txt"</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">int</span><span style="color: #ABB2BF"> fd </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">open</span><span style="color: #ABB2BF">(file, O_WRONLY);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF">(fd</span><span style="color: #C678DD">&lt;</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">    {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">perror</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"open failed"</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #61AFEF">printf</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"open fifo.txt success! </span><span style="color: #56B6C2">\n</span><span style="color: #98C379">"</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">char</span><span style="color: #ABB2BF"> inFilename</span><span style="color: #C678DD">[]</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"testfile/local.txt"</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">int</span><span style="color: #ABB2BF"> in </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">open</span><span style="color: #ABB2BF">(inFilename, O_RDWR, </span><span style="color: #E06C75">0</span><span style="color: #D19A66">666</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #61AFEF">umask</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">ssize_t</span><span style="color: #ABB2BF"> ret </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">mkfifo</span><span style="color: #ABB2BF">(file, </span><span style="color: #E06C75">0</span><span style="color: #D19A66">777</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF">(ret </span><span style="color: #C678DD">&lt;</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">    {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF">(errno </span><span style="color: #C678DD">!=</span><span style="color: #ABB2BF"> EEXIST)</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #61AFEF">perror</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"mkfifo failed."</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #61AFEF">printf</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"mkfifo success.</span><span style="color: #56B6C2">\n</span><span style="color: #98C379">"</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">char</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">buf</span><span style="color: #ABB2BF">[BUFFER_SIZE];</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">while</span><span style="color: #ABB2BF">((ret </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">read</span><span style="color: #ABB2BF">(in, buf, BUFFER_SIZE </span><span style="color: #C678DD">-</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">)) </span><span style="color: #C678DD">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">    {</span></span>
+<span class="line"><span style="color: #ABB2BF">        ret </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">write</span><span style="color: #ABB2BF">(fd, buf, </span><span style="color: #61AFEF">strlen</span><span style="color: #ABB2BF">(buf));</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF">(ret</span><span style="color: #C678DD">&lt;</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">        {</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #61AFEF">perror</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"write failed.</span><span style="color: #56B6C2">\n</span><span style="color: #98C379">"</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">printf</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"read from input and write to buffer: </span><span style="color: #D19A66">%s</span><span style="color: #56B6C2">\n</span><span style="color: #98C379">"</span><span style="color: #ABB2BF">, buf);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">memset</span><span style="color: #ABB2BF">(buf, </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">, </span><span style="color: #C678DD">sizeof</span><span style="color: #ABB2BF">(buf));</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #61AFEF">printf</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"read closed.</span><span style="color: #56B6C2">\n</span><span style="color: #98C379">"</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #61AFEF">close</span><span style="color: #ABB2BF">(in);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #61AFEF">close</span><span style="color: #ABB2BF">(fd);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">return</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure> <figure class="shiki c"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">#include</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&lt;stdio.h&gt;</span></span>
+<span class="line"><span style="color: #C678DD">#include</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&lt;unistd.h&gt;</span></span>
+<span class="line"><span style="color: #C678DD">#include</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&lt;fcntl.h&gt;</span></span>
+<span class="line"><span style="color: #C678DD">#include</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&lt;stdlib.h&gt;</span></span>
+<span class="line"><span style="color: #C678DD">#include</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&lt;string.h&gt;</span></span>
+<span class="line"><span style="color: #C678DD">#include</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&lt;errno.h&gt;</span></span>
+<span class="line"><span style="color: #C678DD">#include</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&lt;sys/types.h&gt;</span></span>
+<span class="line"><span style="color: #C678DD">#include</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&lt;sys/stat.h&gt;</span></span>
+<span class="line"><span style="color: #C678DD">#define</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">BUFFER_SIZE</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">128</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C678DD">int</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">main</span><span style="color: #ABB2BF">()</span></span>
+<span class="line"><span style="color: #ABB2BF">{</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">char</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">*</span><span style="color: #ABB2BF">file </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"testfile/fifo.txt"</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">int</span><span style="color: #ABB2BF"> fd </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">open</span><span style="color: #ABB2BF">(file, O_RDONLY);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF">(fd</span><span style="color: #C678DD">&lt;</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">    {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">perror</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"open failed"</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #61AFEF">printf</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"open fifo.txt success! </span><span style="color: #56B6C2">\n</span><span style="color: #98C379">"</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #61AFEF">umask</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">ssize_t</span><span style="color: #ABB2BF"> ret </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">mkfifo</span><span style="color: #ABB2BF">(file, </span><span style="color: #E06C75">0</span><span style="color: #D19A66">777</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF">(ret </span><span style="color: #C678DD">&lt;</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">    {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF">(errno </span><span style="color: #C678DD">!=</span><span style="color: #ABB2BF"> EEXIST)</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #61AFEF">perror</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"mkfifo failed."</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #61AFEF">printf</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"mkfifo success.</span><span style="color: #56B6C2">\n</span><span style="color: #98C379">"</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">char</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">buf</span><span style="color: #ABB2BF">[BUFFER_SIZE];</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">char</span><span style="color: #ABB2BF"> outFilename</span><span style="color: #C678DD">[]</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"testfile/target.txt"</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">int</span><span style="color: #ABB2BF"> out </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">open</span><span style="color: #ABB2BF">(outFilename, O_CREAT </span><span style="color: #C678DD">|</span><span style="color: #ABB2BF"> O_TRUNC </span><span style="color: #C678DD">|</span><span style="color: #ABB2BF"> O_RDWR, </span><span style="color: #E06C75">0</span><span style="color: #D19A66">666</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">while</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">    {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">sleep</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">memset</span><span style="color: #ABB2BF">(buf, </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">, </span><span style="color: #C678DD">sizeof</span><span style="color: #ABB2BF">(buf));</span></span>
+<span class="line"><span style="color: #ABB2BF">        ret </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">read</span><span style="color: #ABB2BF">(fd, buf, BUFFER_SIZE</span><span style="color: #C678DD">-</span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF">(ret</span><span style="color: #C678DD">&lt;</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">        {</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #61AFEF">perror</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"read failed.</span><span style="color: #56B6C2">\n</span><span style="color: #98C379">"</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">else</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF">(ret</span><span style="color: #C678DD">==</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">        {</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #61AFEF">printf</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"write closed.</span><span style="color: #56B6C2">\n</span><span style="color: #98C379">"</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #C678DD">return</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">-</span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">else</span></span>
+<span class="line"><span style="color: #ABB2BF">        {</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #61AFEF">write</span><span style="color: #ABB2BF">(out, buf, </span><span style="color: #61AFEF">strlen</span><span style="color: #ABB2BF">(buf));</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #61AFEF">printf</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"read from buffer and write to output: </span><span style="color: #D19A66">%s</span><span style="color: #56B6C2">\n</span><span style="color: #98C379">"</span><span style="color: #ABB2BF">, buf);</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #61AFEF">close</span><span style="color: #ABB2BF">(out);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #61AFEF">close</span><span style="color: #ABB2BF">(fd);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">return</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure><p></p></li>
+</ul></li>
+<li><p>Socket通信</p></li>
+</ul>
+<h2 id="进程死锁">进程死锁</h2>
+<ul>
+<li>资源分配图（Resource allocation graph）
+<ul>
+<li>每个资源和进程用节点表示</li>
+<li>从进程到资源的边表示请求但还没授权；</li>
+<li>从资源到进程的边表示已经授权；</li>
+<li>圆点表示资源的实例。</li>
+</ul>
+<figure>
+<img src="image-33.webp" srcset="/img/loading/loading3.gif" lazyload alt="资源分配图">
+<figcaption aria-hidden="true">资源分配图</figcaption>
+</figure></li>
+</ul>
+<h3 id="死锁的产生条件">死锁的产生条件</h3>
+<ul>
+<li>必要条件：
+<ul>
+<li>互斥使用：（资源）每次只能允许一个进程占有和使用，其它申请该资源的进程被阻塞。</li>
+<li>保持并等待
+：当进程等待分配给它新的资源时，保持占有已分配的资源。</li>
+<li>不可剥夺 ：不能强迫回收进程占有的未使用完的资源。</li>
+</ul></li>
+<li>充分条件：
+<ul>
+<li>循环等待：存在一个闭合的进程─资源链</li>
+</ul></li>
+</ul>
+<h3 id="应对死锁的方法">应对死锁的方法</h3>
+<h4 id="死锁预防破环死锁产生的条件">死锁预防：破环死锁产生的条件</h4>
+<ol type="1">
+<li>互斥占用：无法利用</li>
+<li>保持等待：
+<ul>
+<li>静态分配策略：系统一次申请它所要用到的资源，如果能满足就分配，如果不能满足，一个也不分配。</li>
+</ul></li>
+<li>不可剥夺：
+<ul>
+<li>主动释放</li>
+<li>强制回收</li>
+</ul></li>
+<li>循环等待：
+<ul>
+<li>资源排序：采用有序资源使用法可以防止循环等待条件。如果一个进程已经分配了类型R的资源，那么以后它只能申请在资源顺序表中排在R后面的资源类型。</li>
+</ul></li>
+</ol>
+<h4 id="死锁避免允许3个必要条件通过一定的策略使系统达不到死锁点状态">死锁避免：允许3个必要条件，通过一定的策略使系统达不到死锁点(状态)。</h4>
+<ul>
+<li>银行家算法
+<ul>
+<li><span class="math inline"><em>R</em><em>e</em><em>s</em><em>o</em><em>u</em><em>r</em><em>c</em><em>e</em> = <em>R</em> = (<em>R</em><sub>1</sub>, <em>R</em><sub>2</sub>, ..., <em>R</em><sub><em>m</em></sub>)</span>
+，系统中每种资源的总量；</li>
+<li><span class="math inline"><em>A</em><em>v</em><em>a</em><em>i</em><em>l</em><em>a</em><em>b</em><em>l</em><em>e</em> = <em>V</em> = (<em>V</em><sub>1</sub>, <em>V</em><sub>2</sub>, ..., <em>V</em><sub><em>m</em></sub>)</span>
+，尚未分配的每种资源的数量；</li>
+<li><span class="math inline">$Claim = C =
+\left[\begin{array}{ccc}C_{11} &amp; C_{12} &amp; \ldots &amp;
+C_{1m}\\C_{21} &amp; C_{22} &amp; \ldots &amp; C_{2m}\\\vdots &amp;
+\vdots &amp; \ddots &amp; \vdots\\C_{n1} &amp; C_{n2} &amp; \ldots &amp;
+C_{nm}\end{array}\right]$</span>，<span class="math inline"><em>C</em><sub><em>i</em><em>j</em></sub></span>
+表示进程i对资源j的需求数量；</li>
+<li><span class="math inline">$Allocation = A
+=\left[\begin{array}{ccc}A_{11} &amp; A_{12} &amp; \ldots &amp;
+A_{1m}\\A_{21} &amp; A_{22} &amp; \ldots &amp; A_{2m}\\\vdots &amp;
+\vdots &amp; \ddots &amp; \vdots\\A_{n1} &amp; A_{n2} &amp; \ldots &amp;
+A_{nm}\end{array}\right]$</span>，<span class="math inline"><em>A</em><sub><em>i</em><em>j</em></sub></span>
+表示进程i已经分配了j类资源的数量。</li>
+<li>必须成立的条件
+<ul>
+<li><span class="math inline">$R_{j}=V_{j}+\sum_{i=1}^{N}A_{ij}$</span>，每类资源的未分配和已分配之和固定</li>
+<li><span class="math inline"><em>C</em><sub><em>i</em><em>j</em></sub> ≤ <em>R</em><sub><em>i</em></sub></span>,
+对所有的 <span class="math inline"><em>i</em></span>, <span class="math inline"><em>j</em></span>请求受限</li>
+<li><span class="math inline"><em>A</em><sub><em>i</em><em>j</em></sub> ≤ <em>C</em><sub><em>i</em><em>j</em></sub></span>,
+对所有的 <span class="math inline"><em>i</em></span>, <span class="math inline"><em>j</em></span> 获得小于等于请求</li>
+</ul></li>
+<li>仅当 <span class="math display">$$R_{j} \geq C_{(n+1) j} +
+\sum_{l=1}^{n} C_{i l j} \text {, 对所有的 } j$$</span> 成立时,
+才启动进程 <span class="math inline"><em>P</em><sub><em>n</em> + 1</sub></span>。</li>
+</ul></li>
+<li>缺点: 该策略假设了最坏情况,
+即所有进程同时满足最大资源需求时才启动。</li>
+<li>两个步骤：
+<ul>
+<li>申请者申请资源时，需要同时把未来的资源最大需求量告诉系统。</li>
+<li>如果对资源的分配可能会导致死锁，就暂不允许进一步为进程分配资源。</li>
+</ul></li>
+</ul>
+<h4 id="死锁检测">死锁检测</h4>
+<ul>
+<li>基本思路：
+<ul>
+<li>使用死锁检测，只要可能，就将所申请的资源分配给进程。</li>
+<li>操作系统定期地执行检查算法，以判断是否存在条件4的循环等待链。</li>
+<li>待检测出死锁时，再想办法解决死锁。</li>
+</ul></li>
+<li>检测的时机：
+<ul>
+<li>可以在进程申请资源时进行检测</li>
+<li>可以在死锁解除过程中进行检测</li>
+</ul></li>
+<li>Coffman算法
+<ul>
+<li>基本数据结构：
+<ul>
+<li>进程等待资源矩阵Q：指明每个进程对每种资源的需求</li>
+<li>资源占用矩阵Allocation：表明每个进程已经占用的每种资源的数量。</li>
+<li>剩余资源向量Available：表明所剩余的每种资源的数量</li>
+<li>临时空闲资源向量W：初始值等于Available</li>
+</ul></li>
+<li>步骤：
+<ul>
+<li>标记Allocation矩阵中行全为零的进程</li>
+<li>初始化W，W=available</li>
+<li>查找下标i，使进程i当前未标记且Q的第i行小于等于W。</li>
+<li>如果找不到这样的行，终止算法</li>
+<li>如果找到这样的行，标记进程i，并把Allocation中相应的行加到W，返回步骤3。</li>
+</ul></li>
+<li>算法结束时，如果有未标记的进程，则<strong>每个未标记的进程都是可能死锁的进程</strong>。</li>
+</ul></li>
+</ul>
+<figure>
+<img src="image-34.webp" srcset="/img/loading/loading3.gif" lazyload alt="应对死锁">
+<figcaption aria-hidden="true">应对死锁</figcaption>
+</figure>
+<h4 id="死锁解除">死锁解除</h4>
+<ul>
+<li>强迫撤销所有的死锁进程。</li>
+<li>将每一个死锁进程退回到一些以前定义的“检查点”，再启动进程。
+<ul>
+<li>需要系统支持进程的回退和重启动机制。</li>
+</ul></li>
+<li>逐个撤销死锁进程，直至死锁不存在。
+<ul>
+<li>终止死锁进程的次序应当基于最小代价的标准。</li>
+<li>每终止一个进程后就调用死锁检测算法，以判定死锁是否还存在。</li>
+</ul></li>
+<li>相继地剥夺进程所占的资源，直至死锁不再存在。同样，剥夺资源的次序应基于成本方面的考虑。
+<ul>
+<li>被剥夺资源的进程必需回退到获得该资源之前的某个执行点上。</li>
+</ul></li>
+<li>成本核算因素
+<ul>
+<li>目前为止消耗的处理器时间最少</li>
+<li>目前为止产生的输出最少</li>
+<li>预计剩余时间最长</li>
+<li>目前为止分配的资源总量最少</li>
+<li>优先级最低</li>
+</ul></li>
+</ul>
+<h3 id="哲学家就餐问题">哲学家就餐问题</h3>
+<ul>
+<li>问题描述
+<ul>
+<li>n位哲学家围坐圆桌</li>
+<li>n把筷子</li>
+<li>m个盘子</li>
+<li>每个哲学家需要同时使用2把筷子和1个盘子才能用餐</li>
+</ul></li>
+<li>解决方法
+<ul>
+<li>如果无法拿到右筷子，则释放左筷子，随机等待一段时间后再进餐。
+<ul>
+<li>在大多数情况下可行，不能保证万无一失</li>
+</ul></li>
+<li>设计一个信号量，使得某一个时刻只能有4个哲学家进餐</li>
+</ul></li>
+</ul>
+<figure class="shiki c"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #7F848E; font-style: italic">/* program diningphilosophers */</span></span>
+<span class="line"><span style="color: #ABB2BF">semaphore </span><span style="color: #E06C75">fork</span><span style="color: #ABB2BF">[n];</span></span>
+<span class="line"><span style="color: #C678DD">for</span><span style="color: #ABB2BF"> (i</span><span style="color: #C678DD">=</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">; i</span><span style="color: #C678DD">&lt;</span><span style="color: #ABB2BF">n; i</span><span style="color: #C678DD">++</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E06C75">fork</span><span style="color: #ABB2BF">[i] </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"><span style="color: #ABB2BF">semaphore plate </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">min</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">n</span><span style="color: #C678DD">-</span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">,</span><span style="color: #E06C75"> m</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #C678DD">int</span><span style="color: #ABB2BF"> i;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C678DD">void</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">philosopher</span><span style="color: #ABB2BF">(</span><span style="color: #C678DD">int</span><span style="color: #E06C75"> </span><span style="color: #E06C75; font-style: italic">i</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">while</span><span style="color: #ABB2BF"> (</span><span style="color: #D19A66">true</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">think</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">wait</span><span style="color: #ABB2BF">(plate);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">wait</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">fork</span><span style="color: #ABB2BF">[i]);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">wait</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">fork</span><span style="color: #ABB2BF">[(i</span><span style="color: #C678DD">+</span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">)</span><span style="color: #C678DD">%</span><span style="color: #ABB2BF">n]);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">eat</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">signal</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">fork</span><span style="color: #ABB2BF">[(i</span><span style="color: #C678DD">+</span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">)</span><span style="color: #C678DD">%</span><span style="color: #ABB2BF">n]);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">signal</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">fork</span><span style="color: #ABB2BF">[i]);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">signal</span><span style="color: #ABB2BF">(plate);</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure>
+<h1 id="设备管理">设备管理</h1>
+<h2 id="设备概述">设备概述</h2>
+<figure>
+<img src="image-35.webp" srcset="/img/loading/loading3.gif" lazyload alt="计算机常见IO设备">
+<figcaption aria-hidden="true">计算机常见IO设备</figcaption>
+</figure>
+<ul>
+<li>设备分类
+<ul>
+<li>按照数据传输方式分类
+<ul>
+<li>字符设备：数据以字符为单位传输，如键盘、鼠标、打印机等。</li>
+<li>块设备：数据以块为单位传输，如硬盘、光盘等。</li>
+<li>流设备：数据以连续流的方式传输，如网络接口、串口等。</li>
+</ul></li>
+<li>按照访问方式分类
+<ul>
+<li>顺序访问设备：只能按顺序访问数据，如磁带。</li>
+<li>随机访问设备：可以随机访问数据，如硬盘。</li>
+</ul></li>
+<li>按照功能分类
+<ul>
+<li>输入设备：如键盘、鼠标、扫描仪等。</li>
+<li>输出设备：如显示器、打印机等。</li>
+<li>输入输出设备：如硬盘、网络接口等。</li>
+</ul></li>
+<li>按存在形式上（OS角度）：
+<ul>
+<li>物理设备</li>
+<li>逻辑设备</li>
+</ul></li>
+<li>按资源属性（OS管理角度）：
+<ul>
+<li>共享设备</li>
+<li>独占设备</li>
+<li>虚拟设备</li>
+</ul></li>
+</ul></li>
+<li>设备管理层次关系
+<ul>
+<li>底层通信（中断处理）：
+<ul>
+<li>实现软件和硬件设备的通信。</li>
+</ul></li>
+<li>设备驱动：
+<ul>
+<li>功能：接受来自上层的抽象操作请求，并负责操作的具体实施。</li>
+<li>主要组成：与设备打交道的软件、共享支持、缓冲区支持等。</li>
+</ul></li>
+<li>对用户层的I/O接口：
+<ul>
+<li>每个I/O调用接口对应具体的设备抽象操作。</li>
+</ul></li>
+<li>使用设备的用户级程序：
+<ul>
+<li>通过调用所提供的接口来实现对设备的使用或控制。</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="中断响应">中断响应</h2>
+<ul>
+<li>设备向中断控制器发送中断信号</li>
+<li>中断控制器比较各个中断的优先级。如果有未被屏蔽的中断，中断控制器向CPU发送中断信号。</li>
+<li>CPU现场保存后，通过询问中断控制器，确定中断源（中断号）。</li>
+<li>通过中断号，找到对应的中断处理程序。</li>
+<li>中断处理结束后，
+<ul>
+<li>原运行在核心态：恢复现场，转向被中断的任务继续执行。</li>
+<li>原运行在用户态：检查调度标志、信号设置标志（runrun）。如果被设置，进行相应处理。否则恢复现场，继续执行。</li>
+</ul></li>
+</ul>
+<h2 id="设备的四类资源">设备的四类资源</h2>
+<ul>
+<li>I/O地址
+<ul>
+<li>需要把单个设备的I/O编址映射到系统全局编址。</li>
+</ul></li>
+<li>I/O中断请求
+<ul>
+<li>中断控制器支持的中断数量有限，每个进行了编号。设备接入系统后，需要分配中断号。</li>
+</ul></li>
+<li>I/O通道
+<ul>
+<li>I/O通道是一种<strong>硬件</strong>设施，带有专用处理器的，可以独立地完成系统处理器交付的I/O操作任务</li>
+<li>通道具有自己专门的指令集，即通道指令。通道执行来自处理器的通道程序，完成后只需向系统处理器发出中断，请求结束。</li>
+</ul></li>
+<li>DMA数据传输通道
+<ul>
+<li>内存和I/O设备之间的自动化数据通路，在主存和I/O设备之间成块传送数据过程中，不需要CPU干预，CPU资源的利用率再次得到提高
+。</li>
+<li>DMA不仅设有中断机构，而且，还增加了DMA传输控制机构（类似于CPU）。</li>
+</ul></li>
+<li>I/O缓冲区
+<ul>
+<li>缓存区需求：
+<ul>
+<li>提高CPU和外设的并行度</li>
+<li>缓解外设速度慢的瓶颈</li>
+</ul></li>
+<li>缓冲区分类：
+<ul>
+<li>硬件缓冲：有些设备中会包含专门的硬件寄存器等用于缓冲。</li>
+<li>软件缓冲：直接在主存中。
+<ul>
+<li>单缓冲：一个缓冲，外设和CPU互斥进行操作。</li>
+<li>双缓冲：设置两个缓冲区，交替使用。</li>
+<li>循环缓冲：类似于循环队列，依次使用。</li>
+<li>缓冲池：系统维护一组大小相同的缓冲区，进程和设备按需要申请，使用完后重新归入缓冲池中。</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="设备分配">设备分配</h2>
+<ul>
+<li><p>设备分配表</p>
+<ul>
+<li>设备控制表（device control table，DCT）
+<ul>
+<li>一张DCT对应一个设备</li>
+<li>有指向COCT的指针</li>
+</ul>
+<figure>
+<img src="image-36.webp" srcset="/img/loading/loading3.gif" lazyload alt="DCT">
+<figcaption aria-hidden="true">DCT</figcaption>
+</figure></li>
+<li>控制器控制表（controller control table，COCT）
+<ul>
+<li>一张COCT对应一个控制器</li>
+<li>有指向CHCT的指针</li>
+</ul></li>
+<li>通道控制表（channel control table，CHCT）
+<ul>
+<li>一张CHCT对应一个通道</li>
+<li>有指向COCT的指针</li>
+</ul></li>
+<li>系统设备表（system device table，SDT）
+<ul>
+<li>一张SDT对应一个系统</li>
+<li>有指向DCT的指针</li>
+</ul></li>
+</ul>
+<p><img src="image-37.webp" srcset="/img/loading/loading3.gif" lazyload></p></li>
+<li><p>设备分配方式</p>
+<ul>
+<li>静态分配
+<ul>
+<li>用于对独占设备的分配，在用户作业开始执行前由系统一次性分配该作业所要求的全部设备。</li>
+<li>静态分配方式不会出现死锁，但设备的利用率低。因此，静态分配方式不符合分配的总原则。</li>
+</ul></li>
+<li>动态分配
+<ul>
+<li>在进程执行过程中根据执行需要进行。</li>
+<li>动态分配方式有利于提高设备的利用率，但如果分配算法使用不当，则有可能造成进程死锁。</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="上层统一接口">上层统一接口</h2>
+<ul>
+<li>统一标识，统一操作</li>
+<li>操作：抽象为文件名-文件操作</li>
+<li>主设备号：可以找到相应的设备驱动程序</li>
+<li>次设备号：指定具体的物理设备</li>
+</ul>
+<h2 id="设备驱动程序">设备驱动程序</h2>
+<ul>
+<li>设备驱动程序是操作系统内核的一部分，负责与硬件设备进行通信。</li>
+<li>设备驱动程序的主要功能包括：
+<ul>
+<li>初始化设备：在设备启动时进行初始化设置。</li>
+<li>处理I/O请求：接收来自上层的I/O请求，并将其转换为设备可以理解的格式。</li>
+<li>处理中断：响应设备发出的中断信号，处理设备状态变化。</li>
+<li>错误处理：处理设备操作中的错误情况。</li>
+</ul></li>
+</ul>
+<h1 id="外部存储">外部存储</h1>
+<h2 id="hdd">HDD</h2>
+<h3 id="磁盘结构">磁盘结构</h3>
+<figure>
+<img src="image-38.webp" srcset="/img/loading/loading3.gif" lazyload alt="磁盘结构">
+<figcaption aria-hidden="true">磁盘结构</figcaption>
+</figure>
+<ul>
+<li>磁盘时延 = 寻道时间 + 旋转时间 + 传输时间 + 控制器负载
+<ul>
+<li>寻道时间：依赖移动臂移动速度，磁道的位置 （Ts）</li>
+<li>旋转时间：依赖磁盘转速，扇区距离磁头的距离 （平均：1/2r）</li>
+<li>传输时间：依赖磁盘的带宽，需求的数据总量（T=b/rN）
+<ul>
+<li>b表示要传送的字节数，N表示一个磁道中的字节数，r表示旋转速度</li>
+</ul></li>
+<li>总的存取时间为：<span class="math inline">$T = Ts + \frac{1}{2r} +
+\frac{b}{rN}$</span></li>
+</ul></li>
+<li>应对延迟的方法
+<ul>
+<li>缓存
+<ul>
+<li>文件访问级缓存</li>
+</ul></li>
+<li>RAM磁盘
+<ul>
+<li>保留部分RAM作为高速文件系统</li>
+</ul></li>
+<li>RAID
+<ul>
+<li>并行访问（容错）</li>
+</ul></li>
+<li>智能调度算法
+<ul>
+<li>读写头调度</li>
+<li>元信息布置</li>
+</ul></li>
+</ul></li>
+<li>磁盘高速缓存
+<ul>
+<li><strong>主存</strong>中的一块空间</li>
+<li>提高进程访问磁盘的速度</li>
+<li>粒度与扇区大小相等</li>
+<li>替换策略
+<ul>
+<li>最近最少使用算法（LRU）</li>
+<li>最不常用算法（LFU）</li>
+<li>基于频率的替换算法</li>
+</ul></li>
+</ul></li>
+</ul>
+<h4 id="磁盘调度">磁盘调度</h4>
+<ol type="1">
+<li>先来先服务（FCFS）
+<ul>
+<li>按照请求到达的顺序处理磁盘I/O请求。</li>
+<li>优点：
+<ul>
+<li>简单易实现</li>
+<li>公平</li>
+</ul></li>
+<li>缺点：
+<ul>
+<li>可能导致长时间的寻道时间，尤其是在请求分布不均匀时</li>
+<li>磁头移动幅度大</li>
+</ul></li>
+<li>适合较轻负载的系统</li>
+</ul>
+<figure>
+<img src="image-39.webp" srcset="/img/loading/loading3.gif" lazyload alt="FCFS">
+<figcaption aria-hidden="true">FCFS</figcaption>
+</figure></li>
+<li>最短寻道时间优先（SSTF）
+<ul>
+<li>选择距离当前磁头位置最近的请求进行处理。</li>
+<li>优点：
+<ul>
+<li>寻道时间较短，服务效率较高，服务平均等待时间较短。</li>
+<li>提供比FIFO更高的效率</li>
+</ul></li>
+<li>缺点：
+<ul>
+<li>公平性差，可能导致饥饿现象，即某些请求长时间得不到处理</li>
+<li>对于远离当前磁头位置的请求，等待时间较长</li>
+<li>适合中度负载的系统</li>
+</ul></li>
+</ul>
+<figure>
+<img src="image-40.webp" srcset="/img/loading/loading3.gif" lazyload alt="SSTF">
+<figcaption aria-hidden="true">SSTF</figcaption>
+</figure></li>
+<li>电梯算法（SCAN）
+<ul>
+<li>磁头从一端移动到另一端，处理所有请求，然后反向移动。</li>
+<li>算法特点:
+<ul>
+<li>每个请求的等待时间不均匀，且平均等待时间长。</li>
+<li>如到达另一端反向时，将扫描的是刚刚扫描过的磁道，这里的请求显然少，而另一端的请求多，且等待服务的时间长。</li>
+</ul></li>
+<li>算法优化：
+<ul>
+<li>磁头并不是每次扫描都移动到最远的磁道上，一旦在当前方向上前面没有请求，就开始反向移动。</li>
+</ul></li>
+<li>比较适合磁盘负载较重的系统。</li>
+</ul>
+<figure>
+<img src="image-41.webp" srcset="/img/loading/loading3.gif" lazyload alt="SCAN">
+<figcaption aria-hidden="true">SCAN</figcaption>
+</figure></li>
+<li>循环扫描算法（C-SCAN）
+<ul>
+<li>磁头从一端移动到另一端，处理所有请求，然后返回到起始位置，继续处理请求。</li>
+</ul>
+<figure>
+<img src="image-42.webp" srcset="/img/loading/loading3.gif" lazyload alt="C-SCAN">
+<figcaption aria-hidden="true">C-SCAN</figcaption>
+</figure></li>
+<li>PRI（基于进程优先级的调度）</li>
+<li>LIFO（后进先出）
+<ul>
+<li>局部性最好，资源利用率最高。</li>
+</ul></li>
+<li>N-step-SCAN
+<ul>
+<li>避免磁头臂粘性</li>
+<li>把请求分为长度为N的多个队列；一次处理一个队列；新到的请求加到其他队列中。</li>
+<li>特性：N较大时，等价于SCAN；N=1时，等价于FIFO</li>
+</ul></li>
+<li>F-SCAN
+<ul>
+<li>N=2时的N-step-SCAN</li>
+</ul></li>
+</ol>
+<ul>
+<li>OpenEuler的磁盘调度器
+<ul>
+<li>电梯调度器(Elevator)</li>
+<li>时限IO调度器（deadline IO scheduler）</li>
+<li>预期IO调度器（anticipatory IO scheduler）</li>
+</ul></li>
+</ul>
+<h4 id="raid">RAID</h4>
+<ul>
+<li>将文件数据分条（striped）到多个磁盘上</li>
+<li>通过并行提高性能</li>
+<li>通过冗余提高可靠性</li>
+</ul>
+<p>和 <em>计算机组成与系统结构</em> 课程笔记结合食用更佳哦。</p>
+<p><a href="/posts/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/#%E7%A3%81%E7%9B%98%E5%86%97%E4%BD%99%E9%98%B5%E5%88%97raid" name="/img/avatar/avatar.webp" class="LinkCard">计算机组成与系统结构</a></p>
+<h2 id="ssd">SSD</h2>
+<ul>
+<li>SSD（Solid State
+Drive）是一种基于闪存技术的存储设备，具有更快的读写速度和更低的延迟。</li>
+<li>SSD没有机械移动部件，因此更耐冲击，可靠性更高。</li>
+<li>SSD的缺点包括价格较高和写入次数有限。</li>
+<li>工作特性：
+<ul>
+<li>闪存块不能覆盖写：必须先擦除整个块才能写入新数据。</li>
+<li>闪存块寿命有限</li>
+<li>闪存快存在读干扰</li>
+<li>闪存块可能出现坏块</li>
+<li>垃圾回收
+<ul>
+<li>SSD会定期执行垃圾回收操作，将无效数据块合并，释放空间。</li>
+</ul></li>
+<li>写放大
+<ul>
+<li>写入以块（block）为单位进行，可能导致实际写入的数据量大于请求写入的数据量。</li>
+<li>擦除以页（page）为单位进行，写入以块（block）为单位进行。</li>
+</ul></li>
+</ul></li>
+<li>优势
+<ul>
+<li>性能好</li>
+<li>功耗低</li>
+<li>防震</li>
+<li>低噪声</li>
+<li>体积小</li>
+</ul></li>
+<li>缺点
+<ul>
+<li>价格高</li>
+</ul></li>
+</ul>
+<h1 id="文件系统">文件系统</h1>
+<h2 id="文件系统目标和要求">文件系统目标和要求</h2>
+<ul>
+<li>目标：方便用户管理自己的数据资源</li>
+<li>基本要求
+<ul>
+<li>文件按名存储</li>
+<li>文件有序组织，文件名分层次管理</li>
+<li>如支持树形目录结构</li>
+<li>操作简单，存取效率高。</li>
+</ul></li>
+<li>其它要求：
+<ul>
+<li>支持多用户系统，多用户能够共享同一个磁介质。</li>
+<li>有一定的安全性保证，最好能进行数据恢复。</li>
+<li>存储空间的利用率高</li>
+</ul></li>
+</ul>
+<h2 id="文件系统概念">文件系统概念</h2>
+<ul>
+<li>文件：
+<ul>
+<li>由文件名字标识的一组相关信息的集合。文件名是字母或数字组成的字母数字串</li>
+</ul></li>
+<li>文件系统：
+<ul>
+<li>软件观点：操作系统中，为用户和应用程序管理文件的系统软件集合。</li>
+<li>存储格式观点：文件系统是文件在存储介质上保存和管理相关的约定。在操作系统中，这种约定的实现也被称为文件系统。一种相关约定就对应一种文件系统，所以目前存在多种文件系统：FAT，FAT32，NTFS，EXT2等。</li>
+</ul></li>
+<li>操作系统和文件系统
+<ul>
+<li>早期：一个操作系统一般都支持一种文件系统。在设计操作系统时，常常会专门为此设计一种文件系统。</li>
+<li>目前：为实现文件和文件系统共享，一个操作系统除支持为它设计的文件系统外，还可能支持其他文件系统。如Linux支持Ext2，FAT等。</li>
+</ul></li>
+<li>文件类型
+<ul>
+<li>普通文件：即前面所讨论的存储在外存设备上的数据文件。</li>
+<li>目录文件：文件在管理普通数据文件时，需要保存其相应的文件和属性，这些属性以目录文件的形式存储在磁盘中。</li>
+<li>块设备文件：在unix/Linux等操作系统中，对应于磁盘、光盘或磁带等块设备的文件。</li>
+<li>字符设备文件：在unix/Linux等操作系统中，对应于终端、打印机等字符设备的文件。</li>
+</ul></li>
+<li>文件属性
+<ul>
+<li>文件的类型属性：如普通文件、目录文件、系统文件、隐式文件、设备文件等。</li>
+<li>文件的保护属性：如可读、可写、可执行、可创建、可删除等。</li>
+<li>创建者属性</li>
+<li>创建和访问时间属性</li>
+<li>文件大小</li>
+</ul></li>
+<li>文件的逻辑组织方式
+<ul>
+<li>堆文件</li>
+<li>顺序文件</li>
+<li>索引顺序文件</li>
+<li>索引文件</li>
+<li>散列文件</li>
+</ul></li>
+</ul>
+<h2 id="文件存储资源分配和磁盘空闲空间管理策略">文件存储资源分配和磁盘空闲空间管理策略</h2>
+<h3 id="分配策略">分配策略</h3>
+<ul>
+<li>静态分配（预分配）
+<ul>
+<li>在文件创建时就分配好所需的连续的存储空间。</li>
+<li>优点：访问速度快，文件存储连续。</li>
+<li>缺点：无法预知文件的未来大小，可能会出现分区浪费和预留分区的大小不够，难以动态调整。</li>
+</ul></li>
+<li>动态分配
+<ul>
+<li>在使用时，按文件大小分配磁盘空间。</li>
+<li>一般占有不连续的磁盘块。</li>
+</ul></li>
+</ul>
+<h3 id="分区大小">分区大小</h3>
+<ul>
+<li>可变长、连续大分区
+<ul>
+<li>文件访问性能高。无内部碎片</li>
+<li>难于重复使用存储空间。有外部碎片</li>
+<li>分配方法：
+<ul>
+<li>首次适应</li>
+<li>最佳适应</li>
+<li>循环首次适应</li>
+</ul></li>
+</ul></li>
+<li>块（固定大小）
+<ul>
+<li>灵活性强、不一定相邻</li>
+<li>管理较复杂</li>
+</ul></li>
+</ul>
+<h3 id="文件存储方式">文件存储方式</h3>
+<ol type="1">
+<li>连续分配
+<ul>
+<li>一个文件占用磁盘上的一系列连续数据块</li>
+<li>初始块号以及占用的块数量放在目录项中（例如，FCB）</li>
+<li>优点
+<ul>
+<li>速度快 – 可以实现最小寻道时间和磁头移动</li>
+<li>方便地访问文件中的任何块</li>
+</ul></li>
+<li>缺点
+<ul>
+<li>类似于动态存储分配策略
+<ul>
+<li>外部碎片 – 可以压缩</li>
+</ul></li>
+<li>文件增长困难
+<ul>
+<li>可以找一个大的连续块，并搬迁文件的位置</li>
+</ul></li>
+</ul></li>
+</ul>
+<figure>
+<img src="image-44.webp" srcset="/img/loading/loading3.gif" lazyload alt="连续分配">
+<figcaption aria-hidden="true">连续分配</figcaption>
+</figure></li>
+<li>链接分配
+<ul>
+<li>每一个数据块包含一个指向下一个数据块的指针</li>
+<li>查找时间复杂度为 <span class="math inline"><em>O</em>(<em>n</em>)</span> , <span class="math inline"><em>n</em></span> 是文件的大小</li>
+<li>指针的损坏能造成整个文件的丢失</li>
+</ul>
+<figure>
+<img src="image-43.webp" srcset="/img/loading/loading3.gif" lazyload alt="链接表">
+<figcaption aria-hidden="true">链接表</figcaption>
+</figure></li>
+<li>索引分配
+<ul>
+<li>一个索引块包含一些指向数据块的指针</li>
+<li>优点
+<ul>
+<li>支持随机读写</li>
+<li>可靠性提高</li>
+</ul></li>
+<li>缺点：
+<ul>
+<li>二次访问，性能不高</li>
+<li>需要额外空间来保存索引节点</li>
+</ul></li>
+<li>索引节点大小如何确定？
+<ul>
+<li>大索引节点：小文件时浪费空间</li>
+<li>小索引节点：无法支持大文件</li>
+</ul></li>
+</ul>
+<figure>
+<img src="image-45.webp" srcset="/img/loading/loading3.gif" lazyload alt="索引分配">
+<figcaption aria-hidden="true">索引分配</figcaption>
+</figure></li>
+</ol>
+<h3 id="空闲空间管理">空闲空间管理</h3>
+<ol type="1">
+<li>位图法
+<ul>
+<li>使用位图来表示磁盘块的使用情况</li>
+<li>每个磁盘块对应一个位，0表示空闲，1表示已分配</li>
+<li>优点：简单、易于实现</li>
+<li>缺点：需要额外的存储空间来保存位图</li>
+</ul></li>
+<li>链接表法
+<ul>
+<li>使用链表来管理空闲块</li>
+<li>每个空闲块包含指向下一个空闲块的指针</li>
+<li>优点：节省空间，动态分配</li>
+<li>缺点：查找时间较长，指针损坏可能导致内存泄漏</li>
+</ul></li>
+<li>索引法
+<ul>
+<li>使用索引块来管理空闲块</li>
+<li>索引块包含指向空闲块的指针</li>
+<li>优点：支持随机访问，查找时间较短</li>
+<li>缺点：需要额外的存储空间来保存索引块</li>
+</ul></li>
+</ol>
+<figure>
+<img src="image-46.webp" srcset="/img/loading/loading3.gif" lazyload alt="空闲空间管理">
+<figcaption aria-hidden="true">空闲空间管理</figcaption>
+</figure>
+<h3 id="fat文件系统">FAT文件系统</h3>
+<ul>
+<li>采用链接分配方式</li>
+<li>每个文件的目录项中包含一个指向FAT表的指针
+<ul>
+<li>FAT表内容：
+<ul>
+<li>位图法记录空闲块</li>
+<li>链表法记录文件数据地址</li>
+</ul></li>
+</ul></li>
+<li>FAT12
+<ul>
+<li>FAT entry size: 12bits：可支持4K个表项</li>
+<li>如果cluster大小为32K，则可支持最大磁盘容量：128M</li>
+</ul></li>
+<li>FAT16
+<ul>
+<li>FAT entry size: 16bits：可支持表项数：64K</li>
+<li>如果cluster大小为 32K，则可支持最大磁盘容量2G</li>
+</ul></li>
+<li>FAT32
+<ul>
+<li>结构和FAT12/16完全不同</li>
+<li>FAT 表项大小32bits，28bit用于保存cluster号</li>
+<li>可支持最大磁盘容量: (2**28)*32K=8T</li>
+</ul></li>
+</ul>
+<h2 id="目录结构">目录结构</h2>
+<ul>
+<li>目录文件的内容
+<ul>
+<li>目录下所有文件（含子目录）的属性信息：文件名，文件属性，文件内容存储的位置。</li>
+<li>每个文件对应的信息成为一个目录项。也就是说目录文件的内容是目录项的集合。</li>
+</ul></li>
+<li>目录项的内容
+<ul>
+<li>基本信息
+<ul>
+<li>文件名：在一个特定的目录中具有唯一性。</li>
+<li>文件类型：例如文本文件，二进制文件，目标模块等。</li>
+<li>文件组织：系统所支持的不同组织形式。</li>
+</ul></li>
+<li>存储信息
+<ul>
+<li>地址信息：文件存放在磁盘的物理地址（例如：柱面号、磁道号或在磁盘上的块号）。两种方式：
+<ul>
+<li>起始地址</li>
+<li>扇区地址数组</li>
+</ul></li>
+<li>文件的大小，以字节、字或块计。</li>
+<li>分配大小：文件的最大尺寸</li>
+</ul></li>
+<li>存取控制信息
+<ul>
+<li>文件主：拥有文件的控制权。文件主能授予和取消其他用户对文件的存取权和改变这些权限。</li>
+<li>访问控制：权限用户的口令和用户名等</li>
+<li>允许的操作：控制读、写、执行和在网上的传输等。</li>
+</ul></li>
+<li>使用信息
+<ul>
+<li>创建日期：文件首次存放在目录中的时间。</li>
+<li>读时间：最后一次读文件的时间。</li>
+<li>修改时间：最后一次更新、插入或删除的时间。</li>
+<li>备份时间：文件最后一次备份到其他介质的时间。</li>
+</ul></li>
+</ul></li>
+<li>间接式访问：如果对目录文件的属性进行修改，那么与该目录中文件的内容没有关系，实际上是：<strong>修改上级目录文件的内容</strong>。</li>
+<li>目录结构
+<ul>
+<li>线性结构</li>
+<li>Hash 表</li>
+<li>树</li>
+</ul></li>
+</ul>
+<h2 id="流文件操作与系统调用间的关系">流文件操作与系统调用间的关系</h2>
+<figure>
+<img src="image-47.webp" srcset="/img/loading/loading3.gif" lazyload alt="流文件操作与系统调用间的关系">
+<figcaption aria-hidden="true">流文件操作与系统调用间的关系</figcaption>
+</figure>
+<h2 id="unix文件系统">UNIX文件系统</h2>
+<h3 id="unix文件索引结构">UNIX文件索引结构</h3>
+<p>UNIX索引节点如下</p>
+<figure class="shiki c"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">struct</span><span style="color: #ABB2BF"> dinode { </span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">ushort</span><span style="color: #ABB2BF">       di_mode；</span><span style="color: #7F848E; font-style: italic">      // 文件控制模式</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">short</span><span style="color: #ABB2BF">        di_nlink；</span><span style="color: #7F848E; font-style: italic">     // 文件的链接数</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">ushort</span><span style="color: #ABB2BF">       di_uid；</span><span style="color: #7F848E; font-style: italic">       // 文件主用户标识数</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">ushort</span><span style="color: #ABB2BF">       di_gid；</span><span style="color: #7F848E; font-style: italic">       // 文件主同组用户组标识数</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">off_t</span><span style="color: #ABB2BF">        di_size；</span><span style="color: #7F848E; font-style: italic">      // 文件长度，以字节为单位</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">char</span><span style="color: #ABB2BF">         </span><span style="color: #E06C75">di_addr</span><span style="color: #ABB2BF">[</span><span style="color: #D19A66">40</span><span style="color: #ABB2BF">]；</span><span style="color: #7F848E; font-style: italic">  // 地址索引表，存放文件的盘块号</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">time_t</span><span style="color: #ABB2BF">       di_atime；</span><span style="color: #7F848E; font-style: italic">     // 文件最近一次访问时间</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">time_t</span><span style="color: #ABB2BF">       di_mtime；</span><span style="color: #7F848E; font-style: italic">     // 文件最近一次修改时间</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">time_t</span><span style="color: #ABB2BF">       di_ctime；</span><span style="color: #7F848E; font-style: italic">     // 文件创建时间</span></span>
+<span class="line"><span style="color: #ABB2BF">} dinode;</span></span></code></pre></div></div></figure>
+<p>其中的
+<code>di_addr</code>字段是一个数组，存放文件的盘块号。每三个字节表示一个磁盘号；相当于能够表示13个磁盘号的数组</p>
+<ul>
+<li>前10个表项是直接寻址。
+<ul>
+<li>直接存放文件前10磁盘块地址。</li>
+<li>假定一个磁盘块1K，那么可以表示10K以内的文件</li>
+<li>如果文件大小可用10以内磁盘块保存，后面间接寻址不使用。</li>
+</ul></li>
+<li>第11个表项是一级间接寻址。
+<ul>
+<li>表示的磁盘块不是直接存放文件的内容，而是存放直接寻址表项。即表明
+<span class="math inline">1024/3</span>
+个磁盘块号，用于存放文件内容。</li>
+<li>该级地址最多可表示文件大小 <span class="math inline">1024/3 × 1024</span>。</li>
+</ul></li>
+<li>第12个表项是二级间接寻址。
+<ul>
+<li>表示的磁盘块不是直接存放文件，而是存放一级间接寻址表项。即表明 <span class="math inline">1024/3</span>
+个磁盘块号，用于存放一级寻址表项。</li>
+<li>该级地址最多可表示文件大小 <span class="math inline">1024/3 × 1024/3 × 1024</span>。</li>
+</ul></li>
+<li>第13个表项是三级间接寻址。
+<ul>
+<li>表示的磁盘块不是直接存放文件，而是存放二级间接寻址表项。即表明 <span class="math inline">1024/3</span>
+个磁盘块号，用于存放二级寻址表项。</li>
+<li>该级地址最多可表示文件大小 <span class="math inline">1024/3 × 1024/3 × 1024/3 × 1024</span>。</li>
+</ul></li>
+</ul>
+<figure>
+<img src="image-48.webp" srcset="/img/loading/loading3.gif" lazyload alt="UNIX文件索引结构">
+<figcaption aria-hidden="true">UNIX文件索引结构</figcaption>
+</figure>
+<h3 id="unix目录系统结构">UNIX目录系统结构</h3>
+<p>目录项如下</p>
+<figure class="shiki c"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">struct</span><span style="color: #ABB2BF"> direct {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">ino_t</span><span style="color: #ABB2BF"> d_ino;</span><span style="color: #7F848E; font-style: italic">                // 文件的inode号</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">char</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">d_name</span><span style="color: #ABB2BF">[NAME_MAX </span><span style="color: #C678DD">+</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">];</span><span style="color: #7F848E; font-style: italic">  // 文件名</span></span>
+<span class="line"><span style="color: #ABB2BF">};</span></span></code></pre></div></div></figure>
+<figure>
+<img src="image-49.webp" srcset="/img/loading/loading3.gif" lazyload alt="UNIX目录系统结构">
+<figcaption aria-hidden="true">UNIX目录系统结构</figcaption>
+</figure>
+<h3 id="unix文件系统在磁盘的存储布局">UNIX文件系统在磁盘的存储布局</h3>
+<ul>
+<li>分布概述：
+<ul>
+<li>一个物理磁盘能够被划分成多个逻辑分区，相当于一个逻辑盘。对每一个逻辑盘，盘块的物理地址是连续的。</li>
+<li>可以把一个逻辑盘的存储地址空间看成一个一维的线性空间。</li>
+<li>一个文件系统对应一个逻辑盘。一个物理磁盘上可以同时存在多个文件系统。</li>
+</ul></li>
+</ul>
+<p><img src="image-50.webp" srcset="/img/loading/loading3.gif" lazyload></p>
+<ul>
+<li><p>引导块：</p>
+<ul>
+<li>在块号为0的引导块中包含操作系统的自举程序</li>
+<li>该块不属于文件系统一部分。</li>
+<li>有些逻辑分区上没有这一块的内容</li>
+</ul></li>
+<li><p>超级块</p>
+<ul>
+<li>用于存放文件系统的核心数据</li>
+<li>各部分的盘块分布</li>
+<li>空闲节点数，空闲节点表</li>
+<li>空闲盘块数，空闲盘块索引</li>
+<li>文件系统的类型、版本号，文件系统的状态</li>
+<li>超级块在文件系统启动时，为了快速更新，被复制到内存一份。</li>
+<li>磁盘上超级块需要定时更新</li>
+<li>为了保证超级块的安全性，超级块在磁盘上有备份，用于文件系统恢复。</li>
+</ul>
+<p></p><figure class="shiki c"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">struct</span><span style="color: #ABB2BF"> filsys {</span></span>
+<span class="line"><span style="color: #C678DD">ushort</span><span style="color: #ABB2BF">       s_isize；</span><span style="color: #7F848E; font-style: italic">	        /* 磁盘索引节点区所占用的盘块总数 */</span></span>
+<span class="line"><span style="color: #C678DD">daddr_t</span><span style="color: #ABB2BF">    s_fsize；</span><span style="color: #7F848E; font-style: italic">	        /* 整个文件系统的盘块总数 */</span></span>
+<span class="line"><span style="color: #ABB2BF">Short        s_nfree；</span><span style="color: #7F848E; font-style: italic">	        /* 直接管理的空闲块数目 */</span></span>
+<span class="line"><span style="color: #C678DD">daddr_t</span><span style="color: #ABB2BF">    </span><span style="color: #E06C75">s_free</span><span style="color: #ABB2BF">[NICFREE]；</span><span style="color: #7F848E; font-style: italic">	/* 空闲块索引表 */</span></span>
+<span class="line"><span style="color: #ABB2BF">Short        s_ninode；</span><span style="color: #7F848E; font-style: italic">	        /*直接管理的空闲索引节点数 */</span></span>
+<span class="line"><span style="color: #C678DD">ino_t</span><span style="color: #ABB2BF">        </span><span style="color: #E06C75">s_inode</span><span style="color: #ABB2BF">[NICINOD]；</span><span style="color: #7F848E; font-style: italic"> /* 空闲I节点索引表 */</span></span>
+<span class="line"><span style="color: #ABB2BF">Char         s_flock；</span><span style="color: #7F848E; font-style: italic">	        /* 处理空闲块表时的加锁标志位 */</span></span>
+<span class="line"><span style="color: #ABB2BF">Char         s_ilock；</span><span style="color: #7F848E; font-style: italic">          /* 处理空闲I节点表时的加锁标志位 */</span></span>
+<span class="line"><span style="color: #ABB2BF">Char         s_fmod；</span><span style="color: #7F848E; font-style: italic">	        /* 文件系统超级块被修改标志 */</span></span>
+<span class="line"><span style="color: #C678DD">daddr_t</span><span style="color: #ABB2BF">    s_tfree；</span><span style="color: #7F848E; font-style: italic">	        /* 空闲数据块总数 */</span></span>
+<span class="line"><span style="color: #C678DD">ino_t</span><span style="color: #ABB2BF">         s_tinode；</span><span style="color: #7F848E; font-style: italic">	    /* 空闲索引节点总数 */</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure><p></p></li>
+<li><p>进程对换区：</p>
+<ul>
+<li>连续磁盘区域。用于是换入/换出，作为内存的扩充。</li>
+<li>该块不属于文件系统的一部分。</li>
+<li>有些系统，如Linux，可以以单独的一个逻辑盘作为交换区</li>
+</ul></li>
+</ul>
+<h3 id="unix文件系统对空闲磁盘块的管理">UNIX文件系统对空闲磁盘块的管理</h3>
+<ul>
+<li>所有空闲磁盘块以多叉（50）树的方式组织。</li>
+<li>树的每个叶子节点对应一个空闲磁盘块</li>
+<li>树的每个中间节点存储在一个空闲磁盘块中，其内容表示下层的多（50）个磁盘块号。</li>
+</ul>
+<figure>
+<img src="image-51.webp" srcset="/img/loading/loading3.gif" lazyload alt="UNIX空闲磁盘块管理">
+<figcaption aria-hidden="true">UNIX空闲磁盘块管理</figcaption>
+</figure>
+<h3 id="unix文件控制块fcb">UNIX文件控制块（FCB）</h3>
+<ul>
+<li>内存中的目录结构树
+<ul>
+<li>必要性：
+<ul>
+<li>访问一个文件时，系统要从根目录或当前目录出发，循序读取和搜索各级目录文件磁盘I节点，索引结构等，找到文件物理块号后再存取文件数据。</li>
+<li>涉及多次磁盘操作，速度慢。</li>
+</ul></li>
+<li>技术思路：
+<ul>
+<li>在内存中，保存磁盘上的目录结构树的副本</li>
+<li>内存中并不是完整的副本，而是一部分：
+<ul>
+<li>内存容量的限制</li>
+<li>根据局部性原理，保存一部分就能起到很好的效果</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>文件控制块
+<ul>
+<li>文件被打开一次，就分配一个相应的文件控制块。</li>
+<li>用于保存文件打开后产生一些动态信息。</li>
+<li>存在的必要（为何动态信息不存放在内存索引节点中）
+<ul>
+<li>内存索引节点主要存放文件相关的静态信息</li>
+<li>便于实现一个文件同时被多个进程打开。</li>
+</ul></li>
+</ul>
+<figure class="shiki c"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">struct</span><span style="color: #ABB2BF"> file { </span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">char</span><span style="color: #ABB2BF"> f_flag；</span><span style="color: #7F848E; font-style: italic">               /* 操作方式，如写、读、追加写等 */</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #56B6C2">cnt_t</span><span style="color: #ABB2BF"> f_count；</span><span style="color: #7F848E; font-style: italic">             /* 共享该file结构的进程数 */</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">union</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">struct</span><span style="color: #ABB2BF"> inode </span><span style="color: #C678DD">*</span><span style="color: #ABB2BF">f_uinode；</span><span style="color: #7F848E; font-style: italic">/* 指向内存I节点 */</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">struct</span><span style="color: #ABB2BF"> file  </span><span style="color: #C678DD">*</span><span style="color: #ABB2BF">f_unext；</span><span style="color: #7F848E; font-style: italic"> /* 空闲file的链接指针 */</span></span>
+<span class="line"><span style="color: #ABB2BF">    } f_up；</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">union</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">off_t</span><span style="color: #ABB2BF"> f_off；</span><span style="color: #7F848E; font-style: italic">           /* 读写位置指针 */</span></span>
+<span class="line"><span style="color: #ABB2BF">    } f_un；</span></span>
+<span class="line"><span style="color: #ABB2BF">}；</span></span></code></pre></div></div></figure></li>
+</ul>
+<h2 id="打开文件表">打开文件表</h2>
+<ul>
+<li>进程的打开文件表
+<ul>
+<li>每个进程都有一个打开文件表，保存该进程打开的所有文件的文件控制块。</li>
+<li>通过该表，进程可以访问其打开的文件。</li>
+<li>子进程继承父进程打开的文件。</li>
+</ul></li>
+<li>系统的打开文件表
+<ul>
+<li>系统中所有进程共享一个打开文件表，保存所有打开文件的文件控制块。</li>
+<li>通过该表，系统可以管理所有进程打开的文件。</li>
+</ul></li>
+</ul>
+<h2 id="文件搜索">文件搜索</h2>
+<ul>
+<li>相对路径搜索</li>
+<li>绝对路径搜索</li>
+</ul>
+<h2 id="虚拟文件系统">虚拟文件系统</h2>
+<ul>
+<li>背景和目标
+<ul>
+<li>Linux需要支持多种文件系统。</li>
+<li>屏蔽下层的具体文件系统，向上提供统一的文件服务。</li>
+</ul></li>
+<li>主要思路
+<ul>
+<li>在具体文件系统和操作系统的文件服务接口间实现虚拟层</li>
+<li>对下层的具体文件系统进行统一封装和细节屏蔽</li>
+<li>对上层提供统一的文件服务接口</li>
+</ul></li>
+<li>核心实现：
+<ul>
+<li>对一些文件系统的具体实现，如果实现与具体文件系统无关，把这些实现统一到VFS层。如：一些结构的缓冲，索引节点</li>
+<li>当一个进程调用文件系统例程时，内核调用VFS函数
+(这个函数是和具体结构无关的)，并将这个调用传递给物理文件系统中的相应函数,该函数和具体的物理结构有关。</li>
+</ul></li>
+</ul>
+<figure>
+<img src="image-52.webp" srcset="/img/loading/loading3.gif" lazyload alt="VFS">
+<figcaption aria-hidden="true">VFS</figcaption>
+</figure>
+<h2 id="可靠性问题">可靠性问题</h2>
+<ul>
+<li>系统启动时的一致性检查</li>
+<li>日志文件系统</li>
+</ul>
+<h1 id="操作系统安全">操作系统安全</h1>
+<p>与 <em>网络空间安全导论</em> 课程笔记结合食用更佳哦。</p>
+<p><a href="/posts/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA/#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E5%9F%BA%E7%A1%80" name="/img/avatar/avatar.webp" class="LinkCard">网络空间安全导论</a></p>
+<h2 id="基本概念">基本概念</h2>
+<ul>
+<li>CIA
+<ul>
+<li>保密性</li>
+<li>完整性</li>
+<li>可用性</li>
+</ul></li>
+<li>TCSEC：D，C1，C2，B1，B，B3，A1，A2 保护级别</li>
+<li>GB17859－1999：《计算机信息系统安全保护等级划分准则》：用户自主，系统审计，安全标记，结构化，访问验证</li>
+</ul>
+<h2 id="安全威胁">安全威胁</h2>
+<ul>
+<li>威胁类型：
+<ul>
+<li>信息泄露
+<ul>
+<li>信息暴露</li>
+<li>拦截</li>
+<li>推断</li>
+</ul></li>
+<li>欺诈
+<ul>
+<li>假冒用户</li>
+<li>伪造</li>
+<li>否认</li>
+</ul></li>
+<li>中断
+<ul>
+<li>瘫痪</li>
+<li>阻碍</li>
+</ul></li>
+<li>侵占
+<ul>
+<li>侵用</li>
+<li>占用</li>
+</ul></li>
+</ul></li>
+<li>威胁主体
+<ul>
+<li>入侵者
+<ul>
+<li>伪装者：未经授权使用</li>
+<li>越权者：未经授权的合法用户、经授权访问但滥用权限的合法用户</li>
+<li>秘密使用者：逃避审计和访问控制</li>
+</ul></li>
+<li>恶意软件</li>
+</ul></li>
+</ul>
+<h2 id="入侵者">入侵者</h2>
+<ul>
+<li>入侵防护
+<ul>
+<li>物理层面</li>
+<li>网络层面</li>
+<li>操作系统层面</li>
+<li>应用层面</li>
+</ul></li>
+</ul>
+<h2 id="恶意软件">恶意软件</h2>
+<ul>
+<li>工作原理
+<ul>
+<li>后门</li>
+<li>逻辑炸弹</li>
+<li>木马</li>
+<li>移动代码</li>
+<li>病毒</li>
+<li>蠕虫</li>
+<li>僵尸程序</li>
+</ul></li>
+<li>处理
+<ul>
+<li>检测</li>
+<li>识别</li>
+<li>删除</li>
+</ul></li>
+</ul>
+<h2 id="安全保障">安全保障</h2>
+<ul>
+<li>安全保障技术
+<ul>
+<li>数据加密</li>
+<li>身份认证</li>
+<li>访问控制</li>
+</ul></li>
+<li>需求
+<ul>
+<li>权限管理</li>
+<li>访问控制</li>
+<li>安全隔离</li>
+<li>安全审计</li>
+</ul></li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/SJTU-Notes/" class="category-chain-item">SJTU Notes</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/SJTU/" class="print-no-link">#SJTU</a>
+      
+        <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" class="print-no-link">#操作系统原理</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>操作系统原理</div>
+      <div>https://youyeyejie.github.io/posts/操作系统原理/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>youyeyejie</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年6月24日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2025年7月14日</div>
+        </div>
+      
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/%E8%AE%A9%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E6%94%B6%E5%BD%95%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2/" title="让搜索引擎收录你的博客">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">让搜索引擎收录你的博客</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/%E6%95%B0%E5%AD%A6%E5%8F%B2/" title="数学史">
+                        <span class="hidden-mobile">数学史</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments">
+      
+    <div id="giscus" class="giscus"></div>
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#giscus', function() {
+        var options = {"repo":"youyeyejie/youyeyejie.github.io","repo-id":"R_kgDOO-Uo1g","category":"General","category-id":"DIC_kwDOO-Uo1s4Crz5J","theme-light":"light","theme-dark":"dark","mapping":"pathname","reactions-enabled":1,"emit-metadata":0,"input-position":"top","lang":"zh-CN"};
+        var attributes = {};
+        for (let option in options) {
+          if (!option.startsWith('theme-')) {
+            var key = option.startsWith('data-') ? option : 'data-' + option;
+            attributes[key] = options[option];
+          }
+        }
+        var light = 'light';
+        var dark = 'dark';
+        window.GiscusThemeLight = light;
+        window.GiscusThemeDark = dark;
+        attributes['data-theme'] = document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ? dark : light;
+        for (let attribute in attributes) {
+          var value = attributes[attribute];
+          if (value === undefined || value === null || value === '') {
+            delete attributes[attribute];
+          }
+        }
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://giscus.app/client.js');
+        s.setAttribute('crossorigin', 'anonymous');
+        for (let attribute in attributes) {
+          s.setAttribute(attribute, attributes[attribute]);
+        }
+        var ss = document.getElementsByTagName('script');
+        var e = ss.length > 0 ? ss[ss.length - 1] : document.head || document.documentElement;
+        e.parentNode.insertBefore(s, e.nextSibling);
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+  
+  
+</div>
+<div class="footer-inner">
+    <div class="powered-by">
+        <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+        <i class="iconfont icon-love"></i>
+        <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+    </div>
+    <div class="hitokoto">
+        <i class="fas fa-quote-left"></i>
+        <a target="_blank" rel="noopener" href="https://developer.hitokoto.cn/" id="hitokoto_text"><span id="hitokoto">且以群词 注解我这座荒山</span></a>
+        <script src="/js/Hitokoto.js" defer></script>
+    </div>
+    <div class="data">
+        <span class="total-word-container">
+            <i class="fas fa-chart-bar"></i>
+            <span id="g-total-word-id"></span>
+            字汇长河
+        </span>
+        &nbsp;
+        <span id="total-posts-container">
+            <i class="fas fa-file-alt"></i>
+            <span id="g-total-posts-id"></span>
+            <script src="/js/TotalPosts.js"></script>
+            文舟靠岸
+        </span>
+        &nbsp;
+        <span id="busuanzi_container_site_pv">
+            <i class="fas fa-eye"></i>
+            <span id="busuanzi_value_site_pv">1314</span>
+            目光所及
+        </span>
+        &nbsp;
+        <span id="busuanzi_container_site_uv">
+            <i class="fas fa-user-friends"></i>
+            <span id="busuanzi_value_site_uv">520</span>
+            访客驻足
+        </span>
+    </div>
+    <div class="duration">
+        <i class="fas fa-calendar"></i>
+        <span id="timeDate">人生缓缓</span>
+        <span id="times">自有答案</span>
+        <script src="/js/Duration.js"></script>
+    </div>
+</div>
+
+<link href="/css/Footer.css" type="text/css" rel="stylesheet"/>
+<!-- <script defer src="https://events.vercount.one/js"></script> -->
+<!-- <script src="https://npm.elemecdn.com/penndu@1.0.0/bsz.js" defer></script> -->
+<!-- <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script> -->
+<!-- <script async src="https://busuanzi.icodeq.com/busuanzi.pure.mini.js"></script> -->
+<!-- <script async src="https://busuanzi.sukap.cn/busuanzi.pure.mini.js"></script> -->
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    
+      <script  src="/js/img-lazyload.js" ></script>
+    
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://events.vercount.one/js?i=/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="/js/DynamicLine.js"></script>
+<script src="/js/LinkCard.js"></script>
+<script src="/js/RandomBanner.js"></script>
+<script src="/js/ScrollAnimation.js"></script>
+<script src="/js/TabDisplay.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  <script type="text/javascript">
+  document.getElementById("g-total-word-id").innerHTML = "303k";
+</script>
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start -->
+<script src="https://cdn.jsdelivr.net/npm/hexo-shiki-plugin@latest/lib/codeblock.js"></script>
+
+  <script>
+  const CODE_CONFIG = {
+    beautify: true,
+    highlightCopy: true,
+    highlightLang: true,
+    highlightHeightLimit: 360,
+    isHighlightShrink: false,
+    copy: {
+      success: 'Copy Success',
+      error: 'Copy Error',
+      noSupport: 'Browser Not Support',
+    }
+  };
+  console.log(
+    `%c hexo-shiki-plugin %c v1.0.27 %c https://github.com/nova1751/hexo-shiki-plugin`,
+    "color: #fff; background: #5f5f5f",
+    "color: #fff; background: #80c8f8",
+    ""
+  );
+  </script>
+  <!-- hexo injector body_end end --></body>
+</html>
