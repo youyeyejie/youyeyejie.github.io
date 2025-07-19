@@ -493,6 +493,39 @@
   <div class="row mx-auto index-card">
     
     
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/posts/1/" target="_self">
+          
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/posts/1/" target="_self">
+        <div>
+          
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-07-20 00:29" pubdate>
+              2025-07-20
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/posts/Fluid%E9%9A%8F%E6%9C%BA%E8%83%8C%E6%99%AF/" target="_self">
           <img src="/posts/Fluid%E9%9A%8F%E6%9C%BA%E8%83%8C%E6%99%AF/image.webp" alt="Fluid随机背景">
@@ -894,80 +927,11 @@
     </article>
   </div>
 
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/%E6%95%B0%E5%AD%A6%E5%8F%B2/" target="_self">
-          <img src="/img/cover/ma911.webp" alt="数学史">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/posts/%E6%95%B0%E5%AD%A6%E5%8F%B2/" target="_self">
-          数学史
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt " href="/posts/%E6%95%B0%E5%AD%A6%E5%8F%B2/" target="_self">
-        <div>
-          MA911 数学史 笔记
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2025-06-23 14:27" pubdate>
-              2025-06-23
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/SJTU-Notes/" class="category-chain-item">SJTU Notes</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/SJTU/">#SJTU</a>
-            
-              <a href="/tags/%E6%95%B0%E5%AD%A6%E5%8F%B2/">#数学史</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
 
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="page-number" href="/page/3/#board">3</a><a class="page-number" href="/page/4/#board">4</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="page-number" href="/page/3/#board">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/#board">5</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
 
@@ -1016,6 +980,32 @@
   <footer>
     <div class="footer-inner">
   
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        <i class="fas fa-shoe-prints"></i>  总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        <i class="fas fa-user-friends"></i>  总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
   
   
 </div>
@@ -1066,15 +1056,58 @@
 
 <link href="/css/Footer.css" type="text/css" rel="stylesheet"/>
 <script>
-    const busuanzi_site_pv = document.getElementById("busuanzi_value_site_pv");
-    const busuanzi_site_uv = document.getElementById("busuanzi_value_site_uv");
-    const busuanzi_page_pv = document.getElementById("busuanzi_value_page_pv");
-    const busuanzi_page_uv = document.getElementById("busuanzi_value_page_uv");
+    const statistics = document.querySelector(".statistics");
+    if (statistics) {
+        statistics.hidden = true;
+        console.log("Statistics section hidden");
+    }
 
-    busuanzi_site_pv.id = "vercount_value_site_pv";
-    busuanzi_site_uv.id = "vercount_value_site_uv";
-    busuanzi_page_pv.id = "vercount_value_page_pv";
-    busuanzi_page_uv.id = "vercount_value_page_uv";
+    const busuanzi_site_pv_elements = document.querySelectorAll("#busuanzi_value_site_pv");
+    if (busuanzi_site_pv_elements.length > 1) {
+        busuanzi_site_pv_elements[1].id = "vercount_value_site_pv";
+    }
+    else if (busuanzi_site_pv_elements.length === 1) {
+        busuanzi_site_pv_elements[0].id = "vercount_value_site_pv";
+    }
+    const busuanzi_site_uv_elements = document.querySelectorAll("#busuanzi_value_site_uv");
+    if (busuanzi_site_uv_elements.length > 1) {
+        busuanzi_site_uv_elements[1].id = "vercount_value_site_uv";
+    }
+    else if (busuanzi_site_uv_elements.length === 1) {
+        busuanzi_site_uv_elements[0].id = "vercount_value_site_uv";
+    }
+    const busuanzi_page_pv_elements = document.querySelectorAll("#busuanzi_value_page_pv");
+    if (busuanzi_page_pv_elements.length > 0) {
+        busuanzi_page_pv_elements[0].id = "vercount_value_page_pv";
+    }
+    
+    // 1. 监听DOM变化，拦截原脚本
+    const observer = new MutationObserver(mutations => {
+    mutations.forEach(mutation => {
+        mutation.addedNodes.forEach(node => {
+        // 找到原脚本标签并移除
+        if (node.tagName === 'SCRIPT' && 
+            node.src.includes('busuanzi.ibruce.info')) {
+            node.remove();
+            observer.disconnect(); // 停止监听
+        }
+        });
+    });
+    });
+
+    // 开始监听document的变化
+    observer.observe(document, {
+    childList: true,
+    subtree: true
+    });
+
+    // 2. 延迟手动加载脚本
+    setTimeout(() => {
+        const script = document.createElement("script");
+        script.src = "https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js";
+        script.defer = true;
+        document.body.appendChild(script);
+    }, 500);
 </script>
 <script defer src="https://events.vercount.one/js"></script>
 <!-- <script src="https://npm.elemecdn.com/penndu@1.0.0/bsz.js" defer></script> -->
@@ -1129,6 +1162,8 @@
 
 
   <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
 
 
