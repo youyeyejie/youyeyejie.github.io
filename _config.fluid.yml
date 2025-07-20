@@ -243,6 +243,7 @@ custom_js:
   # - /js/RightMenu.js # 右键菜单
   - /js/ScrollAnimation.js # 首页文章滑入动画
   - /js/TabDisplay.js # 标签页根据焦点切换显示
+  - /js/Vercount.js # Vercount 访问统计
 
 # 指定自定义 .css 文件路径，用法和 custom_js 相同
 # The usage is the same as custom_js
@@ -1135,7 +1136,7 @@ static_prefix:
 
   katex: https://lib.baomitu.com/KaTeX/0.16.2/
 
-  # busuanzi: https://busuanzi.ibruce.info/busuanzi/2.3/
+  busuanzi: /js/ #https://busuanzi.ibruce.info/busuanzi/2.3/
 
   clipboard: https://lib.baomitu.com/clipboard.js/2.0.11/
 

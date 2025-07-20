@@ -44,6 +44,11 @@
 </div>
 
 <link href="/css/Footer.css" type="text/css" rel="stylesheet"/>
+<script>
+    document.querySelectorAll("[id^='busuanzi_value_']").forEach(element => {
+        element.id = element.id.replace("busuanzi_value_", "vercount_value_");
+    });
+</script>
 <script defer src="https://events.vercount.one/js"></script>
 <!-- <script src="https://npm.elemecdn.com/penndu@1.0.0/bsz.js" defer></script> -->
 <!-- <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script> -->

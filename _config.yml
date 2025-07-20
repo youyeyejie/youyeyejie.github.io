@@ -67,18 +67,6 @@ prism_plugin:
   theme: 'tomorrow'
   line_number: true    # default false
   custom_css: ''
-shiki:
-  theme: one-dark-pro # highlight-theme：one-dark-pro / github-light / github-dark / material-theme-palenight
-  line_number: true # whether to show the line_number
-  beautify: true # whether to add highlight tool true or false
-  highlight_copy: true # copy button
-  highlight_lang: true # show the code language
-  highlight_height_limit: 360 # code-block max height,unit: px
-  is_highlight_shrink: false # true: shrink the code blocks / false: expand the code blocks | none: expand code blocks and hide the button
-  copy: # copy message
-    success: 'Copy Success'
-    error: 'Copy Error'
-    no_support: 'Browser Not Support'
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -129,3 +117,17 @@ deploy:
   type: git
   repo: git@github.com:youyeyejie/youyeyejie.github.io.git
   branch: main
+
+# Plugins
+shiki:
+  theme: one-dark-pro # highlight-theme：one-dark-pro / github-light / github-dark / material-theme-palenight
+  line_number: true # whether to show the line_number
+  beautify: true # whether to add highlight tool true or false
+  highlight_copy: true # copy button
+  highlight_lang: true # show the code language
+  highlight_height_limit: 360 # code-block max height,unit: px
+  is_highlight_shrink: false # true: shrink the code blocks / false: expand the code blocks | none: expand code blocks and hide the button
+  copy: # copy message
+    success: 'Copy Success'
+    error: 'Copy Error'
+    no_support: 'Browser Not Support'
