@@ -874,32 +874,6 @@
     <div class="footer-inner">
   
   
-    <div class="statistics">
-  
-  
-
-  
-    
-      <span id="busuanzi_container_site_pv" style="display: none">
-        <i class="fas fa-shoe-prints"></i>  总访问量 
-        <span id="busuanzi_value_site_pv"></span>
-         次
-      </span>
-    
-    
-      <span id="busuanzi_container_site_uv" style="display: none">
-        <i class="fas fa-user-friends"></i>  总访客数 
-        <span id="busuanzi_value_site_uv"></span>
-         人
-      </span>
-    
-    
-
-  
-
-</div>
-
-  
   
 </div>
 <div class="footer-inner">
@@ -949,58 +923,9 @@
 
 <link href="/css/Footer.css" type="text/css" rel="stylesheet"/>
 <script>
-    const statistics = document.querySelector(".statistics");
-    if (statistics) {
-        statistics.hidden = true;
-        console.log("Statistics section hidden");
-    }
-
-    const busuanzi_site_pv_elements = document.querySelectorAll("#busuanzi_value_site_pv");
-    if (busuanzi_site_pv_elements.length > 1) {
-        busuanzi_site_pv_elements[1].id = "vercount_value_site_pv";
-    }
-    else if (busuanzi_site_pv_elements.length === 1) {
-        busuanzi_site_pv_elements[0].id = "vercount_value_site_pv";
-    }
-    const busuanzi_site_uv_elements = document.querySelectorAll("#busuanzi_value_site_uv");
-    if (busuanzi_site_uv_elements.length > 1) {
-        busuanzi_site_uv_elements[1].id = "vercount_value_site_uv";
-    }
-    else if (busuanzi_site_uv_elements.length === 1) {
-        busuanzi_site_uv_elements[0].id = "vercount_value_site_uv";
-    }
-    const busuanzi_page_pv_elements = document.querySelectorAll("#busuanzi_value_page_pv");
-    if (busuanzi_page_pv_elements.length > 0) {
-        busuanzi_page_pv_elements[0].id = "vercount_value_page_pv";
-    }
-    
-    // 1. 监听DOM变化，拦截原脚本
-    const observer = new MutationObserver(mutations => {
-    mutations.forEach(mutation => {
-        mutation.addedNodes.forEach(node => {
-        // 找到原脚本标签并移除
-        if (node.tagName === 'SCRIPT' && 
-            node.src.includes('busuanzi.ibruce.info')) {
-            node.remove();
-            observer.disconnect(); // 停止监听
-        }
-        });
+    document.querySelectorAll("[id^='busuanzi_value_']").forEach(element => {
+        element.id = element.id.replace("busuanzi_value_", "vercount_value_");
     });
-    });
-
-    // 开始监听document的变化
-    observer.observe(document, {
-    childList: true,
-    subtree: true
-    });
-
-    // 2. 延迟手动加载脚本
-    setTimeout(() => {
-        const script = document.createElement("script");
-        script.src = "https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js";
-        script.defer = true;
-        document.body.appendChild(script);
-    }, 500);
 </script>
 <script defer src="https://events.vercount.one/js"></script>
 <!-- <script src="https://npm.elemecdn.com/penndu@1.0.0/bsz.js" defer></script> -->
@@ -1146,7 +1071,7 @@
 
   <script  src="/js/local-search.js" ></script>
 
-  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+  <script defer src="/js/busuanzi.pure.mini.js" ></script>
 
 
 
@@ -1157,6 +1082,7 @@
 <script src="/js/RandomBanner.js"></script>
 <script src="/js/ScrollAnimation.js"></script>
 <script src="/js/TabDisplay.js"></script>
+<script src="/js/Vercount.js"></script>
 
 
 
@@ -1166,7 +1092,7 @@
 
 
   <script type="text/javascript">
-  document.getElementById("g-total-word-id").innerHTML = "303k";
+  document.getElementById("g-total-word-id").innerHTML = "304k";
 </script>
 
   <noscript>
