@@ -37,9 +37,9 @@ const intervalId = setInterval(() => {
         if (show_vercount_site_pv.innerText !== vercountData.site_pv ||
             show_vercount_site_uv.innerText !== vercountData.site_uv ||
             show_vercount_page_pv.innerText !== vercountData.page_pv) {
-            show_vercount_site_pv.innerText = vercountData.site_pv + 1;
+            show_vercount_site_pv.innerText = vercountData.site_pv;
             show_vercount_site_uv.innerText = vercountData.site_uv;
-            show_vercount_page_pv.innerText = vercountData.page_pv + 1;
+            show_vercount_page_pv.innerText = vercountData.page_pv;
             show_vercount_time.innerText = new Date().toLocaleString();
             vercount_update = true;
         }
