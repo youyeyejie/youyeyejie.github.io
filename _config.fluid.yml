@@ -243,6 +243,7 @@ custom_js:
   # - /js/RightMenu.js # 右键菜单
   - /js/ScrollAnimation.js # 首页文章滑入动画
   - /js/TabDisplay.js # 标签页根据焦点切换显示
+  - /js/Umami.js # Umami 统计
 
 # 指定自定义 .css 文件路径，用法和 custom_js 相同
 # The usage is the same as custom_js
