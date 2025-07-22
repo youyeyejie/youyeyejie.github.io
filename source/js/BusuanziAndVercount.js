@@ -13,6 +13,7 @@ let vercount = localStorage.getItem('visitorCountData'); // {"site_uv":10975,"si
 
 let count = 0;
 let vercount_update = false;
+let vercount_update_again = false;
 let busuanzi_update = false;
 const intervalId = setInterval(() => {
     busuanzi = localStorage.getItem('busuanziData'); //{"site_uv":51948110,"page_pv":49,"version":2.4,"site_pv":75459725}
@@ -41,7 +42,11 @@ const intervalId = setInterval(() => {
             show_vercount_site_uv.innerText = vercountData.site_uv;
             show_vercount_page_pv.innerText = vercountData.page_pv;
             show_vercount_time.innerText = new Date().toLocaleString();
-            vercount_update = true;
+            if (vercount_update_again) {
+                vercount_update = true;
+            } else {
+                vercount_update_again = true;
+            }
         }
     }
 
