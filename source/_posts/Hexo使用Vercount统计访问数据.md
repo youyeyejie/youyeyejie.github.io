@@ -7,7 +7,7 @@ categories:
   - Hexo Blog Building
 excerpt: 使用Vercount代替Busuanzi统计Hexo博客访问数据，提供更稳定准确的访问统计信息。
 category_bar: true
-index_img: /posts/Hexo使用Vercount统计访问数据/image.webp
+index_img: /_posts/Hexo使用Vercount统计访问数据/image.webp
 date: 2025-07-20 12:19:01
 ---
 
@@ -36,7 +36,7 @@ Vercount 初始化自动同步所有不蒜子的数据，兼容不蒜子的 span
 + <script defer src="https://events.vercount.one/js"></script>
 ```
 
-<a href="/posts/fluid页脚美化" name="/img/avatar/avatar.webp" class="LinkCard">fluid页脚美化</a>
+<a href="/_posts/fluid页脚美化" name="/img/avatar/avatar.webp" class="LinkCard">fluid页脚美化</a>
 
 由于 Vercount 兼容 `vercount_value_` 和 `busuanzi_value_` 的 span 标签，因此无需修改 HTML 模板中的相关标签。
 

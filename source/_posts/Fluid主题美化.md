@@ -7,7 +7,7 @@ tags:
 categories:
   - Hexo Blog Building
 excerpt: Fluid 主题美化记录1.0——无侵入式全站美化
-index_img: /posts/Fluid主题美化/image.webp
+index_img: /_posts/Fluid主题美化/image.webp
 date: 2025-06-21 13:05:20
 ---
 

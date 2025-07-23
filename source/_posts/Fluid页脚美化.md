@@ -7,7 +7,7 @@ tags:
 categories:
   - Hexo Blog Building
 excerpt: Fluid 主题美化记录2.0——无侵入式页脚美化
-index_img: /posts/Fluid页脚美化/image.webp
+index_img: /_posts/Fluid页脚美化/image.webp
 date: 2025-06-29 01:47:43
 ---
 
@@ -32,7 +32,7 @@ date: 2025-06-29 01:47:43
 - 标签页根据焦点切换显示
 {% endnote %}
 
-<a href="/posts/Fluid主题美化1-0/" name="/img/avatar/avatar.webp" class="LinkCard">Fluid主题美化1.0</a>
+<a href="/_posts/Fluid主题美化1-0/" name="/img/avatar/avatar.webp" class="LinkCard">Fluid主题美化1.0</a>
 
 # 关于页添加 Github 热力图
 
@@ -207,8 +207,8 @@ if (posts.length === 0) {
         const entries = data.querySelectorAll('url > loc');
         posts = Array.from(entries)
             .map(entry => entry.textContent)
-            .filter(link => link.includes('/posts/'))
-            .map(link => link.substring(link.indexOf('/posts/')));
+            .filter(link => link.includes('/_posts/'))
+            .map(link => link.substring(link.indexOf('/_posts/')));
         sessionStorage.setItem('posts', JSON.stringify(posts)); // 保存到 sessionStorage
         console.log('Posts updated:', posts); // 调试输出更新后的链接列表
         document.getElementById('g-total-posts-id').textContent = posts.length;

@@ -8,15 +8,15 @@ tags:
 categories:
   - Hexo Blog Building
 excerpt: Fluid 主题美化记录3.0——无侵入式自定义右键菜单
-index_img: /posts/Fluid自定义右键菜单/image.webp
+index_img: /_posts/Fluid自定义右键菜单/image.webp
 ---
 
 # 前言
 
 本期美化同样贯彻了前两期美化的原则：**无侵入式美化**，即不修改主题的源代码，只通过修改配置文件、自定义样式以及Hexo注入器来实现美化。前两期的美化可以点击下方的链接卡片查看。
 
-<a href="/posts/Fluid主题美化/" name="/img/avatar/avatar.webp" class="LinkCard">Fluid主题美化</a>
-<a href="/posts/Fluid页脚美化/" name="/img/avatar/avatar.webp" class="LinkCard">Fluid页脚美化</a>
+<a href="/_posts/Fluid主题美化/" name="/img/avatar/avatar.webp" class="LinkCard">Fluid主题美化</a>
+<a href="/_posts/Fluid页脚美化/" name="/img/avatar/avatar.webp" class="LinkCard">Fluid页脚美化</a>
 
 在本期中，我们将实现一个自定义的右键菜单，我参考了苍岚和loyeh两位博主的实现方式，在他们的基础上进行了改进和扩展，最终实现了一个更加美观和实用的右键菜单。如果不关心实现，可以直接跳转至 [总结](#总结) 获取完整代码和使用方法。
 
@@ -539,7 +539,7 @@ function copyLink() {
 
 这段代码实现了右键菜单的各项功能，包括复制选中文本、必应搜索、跳转到链接、下载图片、复制图片链接、随机跳转到文章以及复制当前页面链接。
 
-其中，随即跳转到文章的功能需要在页面加载时将所有文章链接存储在 `sessionStorage` 中，这一点我在[Fluid页脚美化](/posts/Fluid页脚美化/)中就已经实现了。你可以参考上一期的实现，也可以将 `RightMenu.js` 中的 `RandomGo()` 函数替换为以下代码：
+其中，随即跳转到文章的功能需要在页面加载时将所有文章链接存储在 `sessionStorage` 中，这一点我在[Fluid页脚美化](/_posts/Fluid页脚美化/)中就已经实现了。你可以参考上一期的实现，也可以将 `RightMenu.js` 中的 `RandomGo()` 函数替换为以下代码：
 
 ```javascript
 function RandomGo() {
@@ -552,8 +552,8 @@ function RandomGo() {
             const entries = data.querySelectorAll('url > loc');
             posts = Array.from(entries)
                 .map(entry => entry.textContent)
-                .filter(link => link.includes('/posts/'))
-                .map(link => link.substring(link.indexOf('/posts/')));
+                .filter(link => link.includes('/_posts/'))
+                .map(link => link.substring(link.indexOf('/_posts/')));
             sessionStorage.setItem('posts', JSON.stringify(posts)); // 保存到 sessionStorage
             console.log('Posts updated:', posts); // 调试输出更新后的链接列表
         })
