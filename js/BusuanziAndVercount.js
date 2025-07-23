@@ -15,13 +15,13 @@ let count = 0;
 let vercount_update = false;
 let vercount_update_again = false;
 let busuanzi_update = false;
+let busuanzi_update_again = false;
 const intervalId = setInterval(() => {
     busuanzi = localStorage.getItem('busuanziData'); //{"site_uv":51948110,"page_pv":49,"version":2.4,"site_pv":75459725}
     vercount = localStorage.getItem('visitorCountData'); // {"site_uv":10975,"site_pv":64107680,"page_pv":24}
 
     if (busuanzi) {
         const busuanziData = JSON.parse(busuanzi);
-        console.log("Busuanzi Data:", busuanziData);
         if (show_busuanzi_site_pv.innerText !== busuanziData.site_pv ||
             show_busuanzi_site_uv.innerText !== busuanziData.site_uv ||
             show_busuanzi_page_pv.innerText !== busuanziData.page_pv) {
@@ -29,12 +29,16 @@ const intervalId = setInterval(() => {
             show_busuanzi_site_uv.innerText = busuanziData.site_uv;
             show_busuanzi_page_pv.innerText = busuanziData.page_pv;
             show_busuanzi_time.innerText = new Date().toLocaleString();
-            busuanzi_update = true;
+            if (busuanzi_update_again) {
+                busuanzi_update = true;
+                console.log("Busuanzi Data:", busuanziData);
+            } else {
+                busuanzi_update_again = true;
+            }
         }
     }
     if (vercount) {
         const vercountData = JSON.parse(vercount);
-        console.log("Vercount Data:", vercountData);
         if (show_vercount_site_pv.innerText !== vercountData.site_pv ||
             show_vercount_site_uv.innerText !== vercountData.site_uv ||
             show_vercount_page_pv.innerText !== vercountData.page_pv) {
@@ -44,6 +48,7 @@ const intervalId = setInterval(() => {
             show_vercount_time.innerText = new Date().toLocaleString();
             if (vercount_update_again) {
                 vercount_update = true;
+                console.log("Vercount Data:", vercountData);
             } else {
                 vercount_update_again = true;
             }
