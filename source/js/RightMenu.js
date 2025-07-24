@@ -10,13 +10,21 @@ window.oncontextmenu = function(e){
 	e.preventDefault(); //阻止浏览器自带的右键菜单显示
 	var menu = document.getElementById("rightmenu-wrapper");
 	menu.style.display = "block"; //将自定义的“右键菜单”显示出来
-    if (e.clientX + rect.width > window.innerWidth) {
-        menu.style.left = e.clientX - rect.width + "px"; // 如果超出屏幕宽度，则调整位置
+    if (e.clientX + rect.width > window.innerWidth) { // 如果超出屏幕右边
+        if (e.clientX - rect.width < 0) {
+            menu.style.left = "0px"; // 如果超出屏幕左边，则调整位置到左侧贴边
+        } else {
+            menu.style.left = e.clientX - rect.width + "px"; // 否则调整到鼠标位置的左侧
+        }
     } else {
         menu.style.left = e.clientX + "px"; // 设置位置，跟随鼠标
     }
-    if (e.clientY + rect.height > window.innerHeight) {
-        menu.style.top = e.clientY - rect.height + "px"; // 如果超出屏幕高度，则调整位置
+    if (e.clientY + rect.height > window.innerHeight) { // 如果超出屏幕底部
+        if (e.clientY - rect.height < 0) {
+            menu.style.top = "0px"; // 如果超出屏幕顶部，则调整位置到顶部
+        } else {
+            menu.style.top = e.clientY - rect.height + "px"; // 否则调整到鼠标位置的上方
+        }
     } else {
         menu.style.top = e.clientY + "px"; // 设置位置，跟随鼠标
     }
@@ -119,15 +127,6 @@ function searchSelectedTextBing() {
     if (selectedText) {
         const bingSearchUrl = `https://www.bing.com/search?q=${encodeURIComponent(selectedText)}`;
         window.open(bingSearchUrl, '_blank');
-    }
-}
-
-// 转到链接-跳转到选中链接功能
-function goToLink() {
-    const goToLinkItem = document.getElementById('go-to-link');
-    const href = goToLinkItem.querySelector('a').getAttribute('href');
-    if (href) {
-        window.open(href, '_blank');
     }
 }
 
