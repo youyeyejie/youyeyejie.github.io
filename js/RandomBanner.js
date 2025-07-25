@@ -22,4 +22,8 @@ if (banner) {
             banner.style.background = `url(${random_banner}) center center / cover no-repeat`;
         }
     }
+    const metaOgUrl = document.querySelector('meta[property="og:url"]');
+    if (metaOgUrl && metaOgUrl.content.includes("DayDream-Gallery")) {
+        banner.style.background ='url("/img/banner/banner9.webp") center center / cover no-repeat';
+    }
 }
