@@ -18,7 +18,7 @@ index_img: /_posts/Fluid自定义右键菜单/image.webp
 <a href="/_posts/Fluid主题美化/" name="/img/avatar/avatar.webp" class="LinkCard">Fluid主题美化</a>
 <a href="/_posts/Fluid页脚美化/" name="/img/avatar/avatar.webp" class="LinkCard">Fluid页脚美化</a>
 
-在本期中，我们将实现一个自定义的右键菜单，我参考了苍岚和loyeh两位博主的实现方式，在他们的基础上进行了改进和扩展，最终实现了一个更加美观和实用的右键菜单。如果不关心实现，可以直接跳转至 [总结](#总结) 获取完整代码和使用方法。
+在本期中，我们将实现一个自定义的右键菜单，我参考了苍岚和loyeh两位博主的实现方式，在他们的基础上进行了改进和扩展，最终实现了一个更加美观和实用的右键菜单。如果不关心实现，可以直接跳转至 [总结](#总结) 获取实现代码和使用方法。
 
 <a href="https://www.zywvvd.com/notes/hexo/theme/fluid/fluid-custom-rightmenu/fluid-custom-rightmenu/" name="https://www.zywvvd.com/image/avatar.png" class="LinkCard">Fluid-39-自定义右键菜单</a>
 <a href="https://lo-y-eh.github.io/posts/92dc.html" name="https://lo-y-eh.github.io/medias/avatar.jpg" class="LinkCard">右键菜单</a>
