@@ -140,11 +140,11 @@
 <div id="rightmenu-wrapper">
   <ul class="list-v rightmenu" id="rightmenu-content">
 	    <li class="navigation menuNavigation-Content">
-            <a class="nav icon-only fix-cursor-default" onclick="history.back()"><i class="fa-solid fa-chevron-left"></i></a>
-            <a class="nav icon-only fix-cursor-default" onclick="history.forward()"><i class="fa-solid fa-chevron-right"></i></a>
-            <a class="nav icon-only fix-cursor-default" onclick="window.location.reload()"><i class="fa-solid fa-rotate-right"></i></a>
-            <a class="nav icon-only fix-cursor-default" aria-label="TOP" href="#" role="button"><i class="fa-solid fa-chevron-up"></i></a>
-            <a class="nav icon-only fix-cursor-default" aria-label="bottom" href="javascript:void(0);" role="button" onclick="window.scrollTo(0, document.body.scrollHeight);"><i class="fa-solid fa-chevron-down"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="back" onclick="history.back()"><i class="fa-solid fa-chevron-left"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="forward" onclick="history.forward()"><i class="fa-solid fa-chevron-right"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="reload" onclick="window.location.reload()"><i class="fa-solid fa-rotate-right"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="top" onclick="scrollToTopSmooth();"><i class="fa-solid fa-chevron-up"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="bottom" onclick="scrollToBottomSmooth();"><i class="fa-solid fa-chevron-down"></i></a>
 	    </li>
 
         <hr class="menuLoad-Content" style="display: block;" id="top-line" hidden>
@@ -624,7 +624,7 @@
 
 
   <script type="text/javascript">
-  document.getElementById("g-total-word-id").innerHTML = "324k";
+  document.getElementById("g-total-word-id").innerHTML = "350k";
 </script>
 
   <noscript>

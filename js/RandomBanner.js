@@ -18,7 +18,7 @@ if (banner) {
     console.log(" metaOgType.content: ", metaOgType ? metaOgType.content : "not found");
     if (metaOgType && metaOgType.content === "article") {
         const background = banner.style.background;
-        if (background.includes("banner/banner")) {
+        if (background.includes("/img/banner/random.webp")) {
             banner.style.background = `url(${random_banner}) center center / cover no-repeat`;
         }
     }

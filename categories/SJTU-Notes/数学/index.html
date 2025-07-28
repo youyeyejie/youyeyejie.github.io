@@ -140,11 +140,11 @@
 <div id="rightmenu-wrapper">
   <ul class="list-v rightmenu" id="rightmenu-content">
 	    <li class="navigation menuNavigation-Content">
-            <a class="nav icon-only fix-cursor-default" onclick="history.back()"><i class="fa-solid fa-chevron-left"></i></a>
-            <a class="nav icon-only fix-cursor-default" onclick="history.forward()"><i class="fa-solid fa-chevron-right"></i></a>
-            <a class="nav icon-only fix-cursor-default" onclick="window.location.reload()"><i class="fa-solid fa-rotate-right"></i></a>
-            <a class="nav icon-only fix-cursor-default" aria-label="TOP" href="#" role="button"><i class="fa-solid fa-chevron-up"></i></a>
-            <a class="nav icon-only fix-cursor-default" aria-label="bottom" href="javascript:void(0);" role="button" onclick="window.scrollTo(0, document.body.scrollHeight);"><i class="fa-solid fa-chevron-down"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="back" onclick="history.back()"><i class="fa-solid fa-chevron-left"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="forward" onclick="history.forward()"><i class="fa-solid fa-chevron-right"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="reload" onclick="window.location.reload()"><i class="fa-solid fa-rotate-right"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="top" onclick="scrollToTopSmooth();"><i class="fa-solid fa-chevron-up"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="bottom" onclick="scrollToBottomSmooth();"><i class="fa-solid fa-chevron-down"></i></a>
 	    </li>
 
         <hr class="menuLoad-Content" style="display: block;" id="top-line" hidden>
@@ -420,7 +420,7 @@
                 
 
 <div class="list-group">
-  <p class="h4">共计 3 篇文章</p>
+  <p class="h4">共计 4 篇文章</p>
   <hr>
   
   
@@ -437,6 +437,12 @@
     <a href="/_posts/%E4%BF%A1%E6%81%AF%E8%AE%BA%E5%9F%BA%E7%A1%80/" class="list-group-item list-group-item-action">
       <time>04-23</time>
       <div class="list-group-item-title">信息论基础</div>
+    </a>
+  
+    
+    <a href="/_posts/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" class="list-group-item list-group-item-action">
+      <time>01-21</time>
+      <div class="list-group-item-title">离散数学</div>
     </a>
   
     
@@ -623,7 +629,7 @@
 
 
   <script type="text/javascript">
-  document.getElementById("g-total-word-id").innerHTML = "324k";
+  document.getElementById("g-total-word-id").innerHTML = "350k";
 </script>
 
   <noscript>

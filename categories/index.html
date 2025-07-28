@@ -140,11 +140,11 @@
 <div id="rightmenu-wrapper">
   <ul class="list-v rightmenu" id="rightmenu-content">
 	    <li class="navigation menuNavigation-Content">
-            <a class="nav icon-only fix-cursor-default" onclick="history.back()"><i class="fa-solid fa-chevron-left"></i></a>
-            <a class="nav icon-only fix-cursor-default" onclick="history.forward()"><i class="fa-solid fa-chevron-right"></i></a>
-            <a class="nav icon-only fix-cursor-default" onclick="window.location.reload()"><i class="fa-solid fa-rotate-right"></i></a>
-            <a class="nav icon-only fix-cursor-default" aria-label="TOP" href="#" role="button"><i class="fa-solid fa-chevron-up"></i></a>
-            <a class="nav icon-only fix-cursor-default" aria-label="bottom" href="javascript:void(0);" role="button" onclick="window.scrollTo(0, document.body.scrollHeight);"><i class="fa-solid fa-chevron-down"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="back" onclick="history.back()"><i class="fa-solid fa-chevron-left"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="forward" onclick="history.forward()"><i class="fa-solid fa-chevron-right"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="reload" onclick="window.location.reload()"><i class="fa-solid fa-rotate-right"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="top" onclick="scrollToTopSmooth();"><i class="fa-solid fa-chevron-up"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="bottom" onclick="scrollToBottomSmooth();"><i class="fa-solid fa-chevron-down"></i></a>
 	    </li>
 
         <hr class="menuLoad-Content" style="display: block;" id="top-line" hidden>
@@ -442,7 +442,7 @@
       
         <a href="/categories/SJTU-Notes/" class="category-count col-2 col-md-1 col-xm-1">
           <i class="iconfont icon-articles"></i>
-          <span>15</span>
+          <span>16</span>
         </a>
       
       <div class="category-collapse collapse " id="collapse-23fc8849f7fe9b9a570be52f7807b4ac"
@@ -474,7 +474,7 @@
       
         <a href="/categories/SJTU-Notes/%E8%AE%A1%E7%A7%91/" class="category-count col-2 col-md-1 col-xm-1">
           <i class="iconfont icon-articles"></i>
-          <span>5</span>
+          <span>6</span>
         </a>
       
       <div class="category-collapse collapse " id="collapse-d693442450db119d90f9261fa53eb2f7"
@@ -523,10 +523,88 @@
     
       
       
+        <a href="/_posts/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" title="离散数学"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">离散数学</span>
+        </a>
+      
+    
+      
+      
         <a href="/_posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="数据结构"
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">数据结构</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="数学"
+        id="heading-6e65831863dbf272b7a65cd8df1a440d" role="tab" data-toggle="collapse" href="#collapse-6e65831863dbf272b7a65cd8df1a440d"
+        aria-expanded="false"
+      >
+        数学
+        <span class="list-group-count"></span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+        <a href="/categories/SJTU-Notes/%E6%95%B0%E5%AD%A6/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>4</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-6e65831863dbf272b7a65cd8df1a440d"
+           role="tabpanel" aria-labelledby="heading-6e65831863dbf272b7a65cd8df1a440d">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/_posts/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0/" title="抽象代数"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">抽象代数</span>
+        </a>
+      
+    
+      
+      
+        <a href="/_posts/%E4%BF%A1%E6%81%AF%E8%AE%BA%E5%9F%BA%E7%A1%80/" title="信息论基础"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">信息论基础</span>
+        </a>
+      
+    
+      
+      
+        <a href="/_posts/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" title="离散数学"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">离散数学</span>
+        </a>
+      
+    
+      
+      
+        <a href="/_posts/%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1/" title="概率统计"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">概率统计</span>
         </a>
       
     
@@ -596,66 +674,6 @@
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">中国近现代史纲要</span>
-        </a>
-      
-    
-  </div>
-
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div class="category-sub row nomargin-x">
-      <a class="category-subitem collapsed
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="数学"
-        id="heading-6e65831863dbf272b7a65cd8df1a440d" role="tab" data-toggle="collapse" href="#collapse-6e65831863dbf272b7a65cd8df1a440d"
-        aria-expanded="false"
-      >
-        数学
-        <span class="list-group-count"></span>
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      
-        <a href="/categories/SJTU-Notes/%E6%95%B0%E5%AD%A6/" class="category-count col-2 col-md-1 col-xm-1">
-          <i class="iconfont icon-articles"></i>
-          <span>3</span>
-        </a>
-      
-      <div class="category-collapse collapse " id="collapse-6e65831863dbf272b7a65cd8df1a440d"
-           role="tabpanel" aria-labelledby="heading-6e65831863dbf272b7a65cd8df1a440d">
-        
-        
-          
-  <div class="category-post-list">
-    
-    
-      
-      
-        <a href="/_posts/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0/" title="抽象代数"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">抽象代数</span>
-        </a>
-      
-    
-      
-      
-        <a href="/_posts/%E4%BF%A1%E6%81%AF%E8%AE%BA%E5%9F%BA%E7%A1%80/" title="信息论基础"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">信息论基础</span>
-        </a>
-      
-    
-      
-      
-        <a href="/_posts/%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1/" title="概率统计"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">概率统计</span>
         </a>
       
     
@@ -1312,7 +1330,7 @@
 
 
   <script type="text/javascript">
-  document.getElementById("g-total-word-id").innerHTML = "324k";
+  document.getElementById("g-total-word-id").innerHTML = "350k";
 </script>
 
   <noscript>
