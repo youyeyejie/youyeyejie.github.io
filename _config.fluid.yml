@@ -580,7 +580,7 @@ index:
 # Post Page
 #---------------------------
 post:
-  banner_img: /img/banner/banner.webp
+  banner_img: /img/banner/random.webp
   banner_img_height: 100
   banner_mask_alpha: 0.3
 

@@ -107,6 +107,22 @@ document.addEventListener('contextmenu', function(event) {
     rect = document.getElementById("rightmenu-content").getBoundingClientRect();
 });
 
+// 平滑滚动到顶部
+function scrollToTopSmooth() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// 平滑滚动到底部
+function scrollToBottomSmooth() {
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth'
+    });
+}
+
 // 复制选中-复制选中文本功能
 function copySelectedText() {
     const selectedText = window.getSelection().toString();

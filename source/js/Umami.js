@@ -31,13 +31,13 @@ function umamiTrackEvent() {
     
     const iconLinks = document.querySelectorAll('.nav.icon-only.fix-cursor-default');
     iconLinks.forEach(link => {
-        if (link.onclick?.toString().includes('history.back')) {
+        if (link.ariaLabel === "back") {
             link.dataset.umamiEvent = "Backward";
-        } else if (link.onclick?.toString().includes('history.forward')) {
+        } else if (link.ariaLabel === "forward") {
             link.dataset.umamiEvent = "Forward";
-        } else if (link.onclick?.toString().includes('window.location.reload')) {
+        } else if (link.ariaLabel === "reload") {
             link.dataset.umamiEvent = "Reload";
-        } else if (link.ariaLabel === "TOP") {
+        } else if (link.ariaLabel === "top") {
             link.dataset.umamiEvent = "Go to Top";
         } else if (link.ariaLabel === "bottom") {
             link.dataset.umamiEvent = "Go to Bottom";

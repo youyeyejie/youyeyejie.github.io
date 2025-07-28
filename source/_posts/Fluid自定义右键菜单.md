@@ -59,11 +59,11 @@ index_img: /_posts/Fluid自定义右键菜单/image.webp
 <div id="rightmenu-wrapper">
   <ul class="list-v rightmenu" id="rightmenu-content">
 	    <li class="navigation menuNavigation-Content">
-            <a class="nav icon-only fix-cursor-default" onclick="history.back()"><i class="fa-solid fa-chevron-left"></i></a>
-            <a class="nav icon-only fix-cursor-default" onclick="history.forward()"><i class="fa-solid fa-chevron-right"></i></a>
-            <a class="nav icon-only fix-cursor-default" onclick="window.location.reload()"><i class="fa-solid fa-rotate-right"></i></a>
-            <a class="nav icon-only fix-cursor-default" aria-label="TOP" href="#" role="button"><i class="fa-solid fa-chevron-up"></i></a>
-            <a class="nav icon-only fix-cursor-default" aria-label="bottom" href="javascript:void(0);" role="button" onclick="window.scrollTo(0, document.body.scrollHeight);"><i class="fa-solid fa-chevron-down"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="back" onclick="history.back()"><i class="fa-solid fa-chevron-left"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="forward" onclick="history.forward()"><i class="fa-solid fa-chevron-right"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="reload" onclick="window.location.reload()"><i class="fa-solid fa-rotate-right"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="top" onclick="scrollToTopSmooth();"><i class="fa-solid fa-chevron-up"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="bottom" onclick="scrollToBottomSmooth();"><i class="fa-solid fa-chevron-down"></i></a>
 	    </li>
 
         <hr class="menuLoad-Content" style="display: block;" id="top-line" hidden>
@@ -447,6 +447,22 @@ document.addEventListener('contextmenu', function(event) {
     // 更新尺寸相关参数
     rect = document.getElementById("rightmenu-content").getBoundingClientRect();
 });
+
+// 平滑滚动到顶部
+function scrollToTopSmooth() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// 平滑滚动到底部
+function scrollToBottomSmooth() {
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth'
+    });
+}
 
 // 复制选中-复制选中文本功能
 function copySelectedText() {

@@ -37,7 +37,7 @@ if (banner) {
     console.log(" metaOgType.content: ", metaOgType ? metaOgType.content : "not found");
     if (metaOgType && metaOgType.content === "article") { //判断是否为文章页
         const background = banner.style.background;
-        if (background.includes("banner/banner")) { // 特殊判断规则
+        if (background.includes("/img/banner/random.webp")) { // 特殊判断规则
             banner.style.background = `url(${random_banner}) center center / cover no-repeat`;
         }
     }
@@ -54,7 +54,7 @@ if (banner) {
     <meta property="og:type" content="website">
     ```
     你也可以通过浏览器的开发者工具来查看当前页面的 `meta` 标签。更进一步，你也可以通过其他方式制定相应规则，判断某个页面是否要进行随机背景的更换，如仅限首页或特定标签页等等。
-- 然后，我们通过检查 `banner` 元素的背景样式来判断是否需要更换背景图片。在我的 `_config.fluid.yml` 设置中，文章页的默认 banner 路径是 `img/banner/banner.webp`，而在 front-matter 指定的背景图路径是文章对应文件夹，因此如果当前背景包含 `banner/banner` 这一字符串，则说明其使用了默认路径，可以将其替换为随机选择的背景图片。
+- 然后，我们通过检查 `banner` 元素的背景样式来判断是否需要更换背景图片。在我的 `_config.fluid.yml` 设置中，文章页的默认 banner 路径是 `/img/banner/random.webp`，而在 front-matter 指定的背景图路径是文章对应文件夹，因此如果当前背景包含 `/img/banner/random.webp` 这一字符串，则说明其使用了默认路径，可以将其替换为随机选择的背景图片。
 
 在实现了上述代码后，我们需要确保它在页面加载时被执行。为此，我们需要在博客的 `_config.fluid.yml` 文件中添加以下配置：
 
