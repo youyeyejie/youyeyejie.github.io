@@ -116,8 +116,10 @@ giscus:
     if(String(snum).length === 1 ){
       snum = "0" + snum;
     }
-    document.getElementById("timeDate").innerHTML = "须弥藏芥 已逾&nbsp"+dnum+"&nbsp日";
-    document.getElementById("times").innerHTML = hnum + "&nbsp时&nbsp" + mnum + "&nbsp分&nbsp"+ snum + "&nbsp秒";
+    document.getElementById("time-day").innerText = dnum;
+    document.getElementById("time-hour").innerText = hnum;
+    document.getElementById("time-minute").innerText = mnum;
+    document.getElementById("time-second").innerText = snum;
   }
 
   update();
@@ -133,9 +135,16 @@ giscus:
 footer:
   content: '
     <div style="font-size: 0.85rem">
-      <span id="timeDate">Getting date...</span>
-      <span id="times">Getting time...</span>
-      <script src="/js/Duration.js"></script>
+        &nbsp;本站建站已有
+        <span id="time-day"></span>
+        日
+        <span id="time-hour"></span>
+        时
+        <span id="time-minute"></span>
+        分
+        <span id="time-second"></span>
+        秒
+        <script src="/js/Duration.js"></script>
     </div>
   '
 ```
@@ -311,12 +320,19 @@ footer:
       <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
     </div>
     <div class="info" style="font-size: 0.85rem; margin: 0.15rem 0.15rem;">
-      <span id="duration" style="display: inline;">
+    <div class="duration">
         <i class="fas fa-calendar"></i>
-        <span id="timeDate">Getting date...</span>
-        <span id="times">Getting time...</span>
+        &nbsp;本站建站已有
+        <span id="time-day"></span>
+        日
+        <span id="time-hour"></span>
+        时
+        <span id="time-minute"></span>
+        分
+        <span id="time-second"></span>
+        秒
         <script src="/js/Duration.js"></script>
-      </span>
+    </div>
       <span id="wordcount" style="display: inline;">
         <i class="fas fa-file-alt"></i>
         <span id="g-post-count-id">Getting word count...</span>
@@ -393,8 +409,15 @@ footer:
     </div>
     <div class="duration">
         <i class="fas fa-calendar"></i>
-        <span id="timeDate">Getting date...</span>
-        <span id="times">Getting time...</span>
+        &nbsp;须弥藏芥&nbsp;已逾
+        <span id="time-day">人生缓缓&nbsp;自有答案</span>
+        日又
+        <span id="time-hour"></span>
+        时
+        <span id="time-minute"></span>
+        分
+        <span id="time-second"></span>
+        秒
         <script src="/js/Duration.js"></script>
     </div>
 </div>

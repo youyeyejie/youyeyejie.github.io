@@ -132,3 +132,8 @@ shiki:
     success: 'Copy Success'
     error: 'Copy Error'
     no_support: 'Browser Not Support'
+
+# hexo-renderer-pandoc
+pandoc:
+  args:
+    --mathjax

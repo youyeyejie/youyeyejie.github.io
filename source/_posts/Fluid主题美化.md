@@ -340,15 +340,6 @@ custom_css:
   -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
 }
-
-#toc {
-  padding: 10px;
-  top: 4rem;
-  background-color: var(--board-bg-color);
-  border-radius: 10px;
-  -webkit-backdrop-filter: blur(15px);
-  backdrop-filter: blur(15px);
-}
 ```
 
 然后修改 `_config.fluid.yml` 文件的中的主面板背景色

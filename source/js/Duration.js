@@ -22,8 +22,10 @@
     if(String(snum).length === 1 ){
       snum = "0" + snum;
     }
-    document.getElementById("timeDate").innerHTML = "须弥藏芥 已逾&nbsp"+dnum+"&nbsp日";
-    document.getElementById("times").innerHTML = hnum + "&nbsp时&nbsp" + mnum + "&nbsp分&nbsp"+ snum + "&nbsp秒";
+    document.getElementById("time-day").innerText = dnum;
+    document.getElementById("time-hour").innerText = hnum;
+    document.getElementById("time-minute").innerText = mnum;
+    document.getElementById("time-second").innerText = snum;
   }
 
   update();

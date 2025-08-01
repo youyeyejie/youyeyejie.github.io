@@ -242,6 +242,7 @@ custom_js:
   - /js/RandomBanner.js # 文章页随机 Banner
   # - /js/RightMenu.js # 右键菜单
   - /js/ScrollAnimation.js # 首页文章滑入动画
+  - /js/Sidebar.js # 侧边栏
   - /js/TabDisplay.js # 标签页根据焦点切换显示
   - /js/Umami.js # Umami 统计
 
@@ -259,6 +260,7 @@ custom_css:
   # - /css/RightMenu.css # 右键菜单样式 
   - /css/ScrollAnimation.css # 首页文章滑入动画
   - /css/ScrollBar.css # 滚动条颜色
+  - /css/Sidebar.css # 侧边栏样式
   - /css/StrongInDark.css # 强化暗色模式加粗字体
   - /css/TitleGradient.css # 文章标题颜色渐变效果
   - /css/TitleNeon.css # 博客标题霓虹灯效
