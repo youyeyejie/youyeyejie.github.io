@@ -7,18 +7,12 @@ function lastUpdate() {
         const mostRecentDate = new Date(Math.max(...lastmodDates));
         const now = new Date();
         const diffTime = Math.abs(now - mostRecentDate);
-        let timeAgo;
-        if (diffTime < 1000 * 60 * 60 * 24) {
-            const diffHours = Math.floor(diffTime / (1000 * 60 * 60));
-            timeAgo = `${diffHours}小时前`;
-        } else if (diffTime < 1000 * 60 * 60 * 24 * 365) {
-            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-            timeAgo = `${diffDays}天前`;
+        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+        if (diffDays === 0) {
+            document.getElementById('sidebar-site-update').innerText = `今天`;
         } else {
-            const diffYears = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 365));
-            timeAgo = `${diffYears}年前`;
+            document.getElementById('sidebar-site-update').innerText = `${diffDays}天前`;
         }
-        document.getElementById('sidebar-site-update').innerText = timeAgo;
     })
 }
 
