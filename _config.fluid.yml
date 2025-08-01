@@ -242,7 +242,7 @@ custom_js:
   - /js/RandomBanner.js # 文章页随机 Banner
   # - /js/RightMenu.js # 右键菜单
   - /js/ScrollAnimation.js # 首页文章滑入动画
-  - /js/111Sidebar.js # 侧边栏
+  - /js/Sidebar.js # 侧边栏
   - /js/TabDisplay.js # 标签页根据焦点切换显示
   - /js/Umami.js # Umami 统计
 
