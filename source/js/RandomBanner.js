@@ -9,6 +9,8 @@ const imgs = [
     // "/img/banner/banner7.webp",
     "/img/banner/banner8.webp",
     "/img/banner/banner9.webp",
+    "/img/banner/banner10.webp",
+    "/img/banner/banner11.webp",
 ]
 
 const random_banner = imgs[Math.floor(Math.random() * imgs.length)];
