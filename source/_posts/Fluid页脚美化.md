@@ -116,10 +116,17 @@ giscus:
     if(String(snum).length === 1 ){
       snum = "0" + snum;
     }
-    document.getElementById("time-day").innerText = dnum;
-    document.getElementById("time-hour").innerText = hnum;
-    document.getElementById("time-minute").innerText = mnum;
-    document.getElementById("time-second").innerText = snum;
+    document.getElementById("duration-container").innerHTML = `
+        &nbsp;须弥藏芥&nbsp;已逾
+        <span id="time-day">${dnum}</span>
+        日又
+        <span id="time-hour">${hnum}</span>
+        时
+        <span id="time-minute">${mnum}</span>
+        分
+        <span id="time-second">${snum}</span>
+        秒
+    `;
   }
 
   update();
@@ -134,16 +141,9 @@ giscus:
 ```yaml
 footer:
   content: '
-    <div style="font-size: 0.85rem">
-        &nbsp;本站建站已有
-        <span id="time-day"></span>
-        日
-        <span id="time-hour"></span>
-        时
-        <span id="time-minute"></span>
-        分
-        <span id="time-second"></span>
-        秒
+    <div class="duration">
+        <i class="fas fa-calendar"></i>
+        <span id="duration-container">人生缓缓&nbsp;自有答案</span>
         <script src="/js/Duration.js"></script>
     </div>
   '
@@ -320,19 +320,11 @@ footer:
       <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
     </div>
     <div class="info" style="font-size: 0.85rem; margin: 0.15rem 0.15rem;">
-    <div class="duration">
+      <div class="duration">
         <i class="fas fa-calendar"></i>
-        &nbsp;本站建站已有
-        <span id="time-day"></span>
-        日
-        <span id="time-hour"></span>
-        时
-        <span id="time-minute"></span>
-        分
-        <span id="time-second"></span>
-        秒
+        <span id="duration-container">人生缓缓&nbsp;自有答案</span>
         <script src="/js/Duration.js"></script>
-    </div>
+      </div>
       <span id="wordcount" style="display: inline;">
         <i class="fas fa-file-alt"></i>
         <span id="g-post-count-id">Getting word count...</span>
@@ -409,15 +401,7 @@ footer:
     </div>
     <div class="duration">
         <i class="fas fa-calendar"></i>
-        &nbsp;须弥藏芥&nbsp;已逾
-        <span id="time-day">人生缓缓&nbsp;自有答案</span>
-        日又
-        <span id="time-hour"></span>
-        时
-        <span id="time-minute"></span>
-        分
-        <span id="time-second"></span>
-        秒
+        <span id="duration-container">人生缓缓&nbsp;自有答案</span>
         <script src="/js/Duration.js"></script>
     </div>
 </div>
