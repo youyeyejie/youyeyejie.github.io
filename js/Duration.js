@@ -22,10 +22,17 @@
     if(String(snum).length === 1 ){
       snum = "0" + snum;
     }
-    document.getElementById("time-day").innerText = dnum;
-    document.getElementById("time-hour").innerText = hnum;
-    document.getElementById("time-minute").innerText = mnum;
-    document.getElementById("time-second").innerText = snum;
+    document.getElementById("duration-container").innerHTML = `
+        &nbsp;须弥藏芥&nbsp;已逾
+        <span id="time-day">${dnum}</span>
+        日又
+        <span id="time-hour">${hnum}</span>
+        时
+        <span id="time-minute">${mnum}</span>
+        分
+        <span id="time-second">${snum}</span>
+        秒
+    `;
   }
 
   update();
