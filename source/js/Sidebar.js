@@ -28,44 +28,45 @@ function updateSidebar() {
 function createSidebar() {
     const main = document.querySelector('main');
 
-    const sitecol = document.createElement('div');
-    sitecol.className = "side-col d-none d-lg-block col-lg-2";
-    sitecol.style.paddingTop = "60px";
-    sitecol.style.float = "right";
-    sitecol.style.position = "sticky";
-    sitecol.style.top = "2rem";
+    const sideCol = document.createElement('div');
+    sideCol.className = "side-col d-none d-lg-block col-lg-2";
+    sideCol.style.paddingTop = "60px";
+    sideCol.style.float = "right";
+    sideCol.style.position = "sticky";
+    sideCol.style.top = "2rem";
 
-    const sitebar= `
-        <aside class="sidebar" id="site-stats" >
-            <div class="sidebar-container">
-                <span><i class="fas fa-file-alt"></i> &nbsp;文章总数：</span>
+    const sideBar= `
+        <aside class="sidebar" id="site-stats">
+            <div class="sidebar-element">
+                <span><i class="fas fa-file-alt"></i> &nbsp;文章总数</span>
                 <span id="sidebar-post-count"></span>
             </div>
-            <div class="sidebar-container">
-                <span><i class="fas fa-chart-bar" style="font-size: 0.8rem;"></i> &nbsp;全站字数：</span>
+            <div class="sidebar-element">
+                <span><i class="fas fa-chart-bar" style="font-size: 0.8rem;"></i> &nbsp;全站字数</span>
                 <span id="sidebar-word-count"></span>
             </div>
-            <div class="sidebar-container">
-                <span><i class="fas fa-eye" style="font-size: 0.8rem;"></i> &nbsp;总访问量：</span>
+            <div class="sidebar-element">
+                <span><i class="fas fa-eye" style="font-size: 0.8rem;"></i> &nbsp;总访问量</span>
                 <span id="sidebar-site-pv"></span>
             </div>
-            <div class="sidebar-container">
-                <span><i class="fas fa-user"></i> &nbsp;总访客数：</span>
+            <div class="sidebar-element">
+                <span><i class="fas fa-user"></i> &nbsp;总访客数</span>
                 <span id="sidebar-site-uv"></span>
             </div>
-            <div class="sidebar-container">
-                <span><i class="fas fa-calendar-alt"></i> &nbsp;建站时长：</span>
+            <div class="sidebar-element">
+                <span><i class="fas fa-calendar-alt"></i> &nbsp;建站时长</span>
                 <span id="sidebar-site-age"></span>
             </div>
-            <div class="sidebar-container">
-                <span><i class="fa-solid fa-pen-nib"></i> &nbsp;上次更新：</span>
+            <div class="sidebar-element">
+                <span><i class="fa-solid fa-pen-nib"></i> &nbsp;上次更新</span>
                 <span id="sidebar-site-update"></span>
             </div>
         </aside>
     `;
-    sitecol.innerHTML = sitebar;
-    main.insertBefore(sitecol, main.firstChild);
+    sideCol.innerHTML = sideBar;
+    main.insertBefore(sideCol, main.firstChild);
     updateSidebar();
+    judgeSidebarHidden();
 
     const sidebar_pv = document.getElementById('sidebar-site-pv').innerHTML;
     if (sidebar_pv === '1314') {
@@ -80,6 +81,21 @@ function createSidebar() {
     }
 }
 
+function judgeSidebarHidden() {
+    const boardRect = document.getElementById('board').getBoundingClientRect();
+    const sideColRect = document.querySelector('.side-col.d-none.d-lg-block.col-lg-2').getBoundingClientRect();
+    const sideBar = document.getElementById('site-stats');
+    // console.log(boardRect.right, sideColRect.left);
+    if (boardRect.right > sideColRect.left) {
+        sideBar.style.display = 'none';
+    } else {
+        sideBar.style.display = 'block';
+    }
+}
+
 if (document.querySelector('meta[property="og:url"][content="https://youyeyejie.github.io/index.html"]')) {
     document.addEventListener('DOMContentLoaded', createSidebar);
+    window.addEventListener('resize', () => {
+        judgeSidebarHidden();
+    });
 }

@@ -55,44 +55,45 @@ function updateSidebar() {
 function createSidebar() {
     const main = document.querySelector('main');
 
-    const sitecol = document.createElement('div');
-    sitecol.className = "side-col d-none d-lg-block col-lg-2";
-    sitecol.style.paddingTop = "60px";
-    sitecol.style.float = "right";
-    sitecol.style.position = "sticky";
-    sitecol.style.top = "2rem";
+    const sideCol = document.createElement('div');
+    sideCol.className = "side-col d-none d-lg-block col-lg-2";
+    sideCol.style.paddingTop = "60px";
+    sideCol.style.float = "right";
+    sideCol.style.position = "sticky";
+    sideCol.style.top = "2rem";
 
-    const sitebar= `
-        <aside class="sidebar" id="site-stats" >
-            <div class="sidebar-container">
-                <span><i class="fas fa-file-alt"></i> &nbsp;文章总数：</span>
+    const sideBar= `
+        <aside class="sidebar" id="site-stats">
+            <div class="sidebar-element">
+                <span><i class="fas fa-file-alt"></i> &nbsp;文章总数</span>
                 <span id="sidebar-post-count"></span>
             </div>
-            <div class="sidebar-container">
-                <span><i class="fas fa-chart-bar" style="font-size: 0.8rem;"></i> &nbsp;全站字数：</span>
+            <div class="sidebar-element">
+                <span><i class="fas fa-chart-bar" style="font-size: 0.8rem;"></i> &nbsp;全站字数</span>
                 <span id="sidebar-word-count"></span>
             </div>
-            <div class="sidebar-container">
-                <span><i class="fas fa-eye" style="font-size: 0.8rem;"></i> &nbsp;总访问量：</span>
+            <div class="sidebar-element">
+                <span><i class="fas fa-eye" style="font-size: 0.8rem;"></i> &nbsp;总访问量</span>
                 <span id="sidebar-site-pv"></span>
             </div>
-            <div class="sidebar-container">
-                <span><i class="fas fa-user"></i> &nbsp;总访客数：</span>
+            <div class="sidebar-element">
+                <span><i class="fas fa-user"></i> &nbsp;总访客数</span>
                 <span id="sidebar-site-uv"></span>
             </div>
-            <div class="sidebar-container">
-                <span><i class="fas fa-calendar-alt"></i> &nbsp;建站时长：</span>
+            <div class="sidebar-element">
+                <span><i class="fas fa-calendar-alt"></i> &nbsp;建站时长</span>
                 <span id="sidebar-site-age"></span>
             </div>
-            <div class="sidebar-container">
-                <span><i class="fa-solid fa-pen-nib"></i> &nbsp;上次更新：</span>
+            <div class="sidebar-element">
+                <span><i class="fa-solid fa-pen-nib"></i> &nbsp;上次更新</span>
                 <span id="sidebar-site-update"></span>
             </div>
         </aside>
     `;
-    sitecol.innerHTML = sitebar;
-    main.insertBefore(sitecol, main.firstChild);
+    sideCol.innerHTML = sideBar;
+    main.insertBefore(sideCol, main.firstChild);
     updateSidebar();
+    judgeSidebarHidden();
 
     const sidebar_pv = document.getElementById('sidebar-site-pv').innerHTML;
     if (sidebar_pv === '1314') {
@@ -107,16 +108,32 @@ function createSidebar() {
     }
 }
 
+function judgeSidebarHidden() {
+    const boardRect = document.getElementById('board').getBoundingClientRect();
+    const sideColRect = document.querySelector('.side-col.d-none.d-lg-block.col-lg-2').getBoundingClientRect();
+    const sideBar = document.getElementById('site-stats');
+    // console.log(boardRect.right, sideColRect.left);
+    if (boardRect.right > sideColRect.left) {
+        sideBar.style.display = 'none';
+    } else {
+        sideBar.style.display = 'block';
+    }
+}
+
 if (document.querySelector('meta[property="og:url"][content="https://youyeyejie.github.io/index.html"]')) {
     document.addEventListener('DOMContentLoaded', createSidebar);
+    window.addEventListener('resize', () => {
+        judgeSidebarHidden();
+    });
 }
 ```
 
 其中：
 
-- `lastUpdate` 函数用于获取博客上一次更新的时间，这依靠的是 sitemap 中记录的博客上次修改时间，因此需要我们每次更新博客时都会更新网站地图，可以使用 `hexo-generator-sitemap` 插件来实现
-- `updateSidebar` 函数用于更新侧边栏中的网站统计数据，为此我还修改了在[Fluid页脚美化](/_posts/Fluid页脚美化/)中网站运行时间的相关代码
-- `createSidebar` 函数用于定位以及创建侧边栏，由于统计数据中的访问量一项的更新可能存在延迟，因此我在函数中还设置了检查逻辑。
+- `lastUpdate` 函数用于获取博客上一次更新的时间，这依靠的是 sitemap 中记录的博客上次修改时间，因此需要我们每次更新博客时都会更新网站地图，可以使用 `hexo-generator-sitemap` 插件来实现。
+- `updateSidebar` 函数用于更新侧边栏中的网站统计数据，为此我还修改了在[Fluid页脚美化](/_posts/Fluid页脚美化/)中网站运行时间的相关代码。
+- `createSidebar` 函数用于定位以及创建侧边栏，由于统计数据中的访问量一项的更新可能存在延迟，因此我在函数中还设置了检查逻辑，循环检查直到访问量不等于默认的 1314 时，更新侧边栏数据。
+- `judgeSidebarHidden` 函数用于判断侧边栏是否需要隐藏，当侧边栏与内容区重叠时，隐藏侧边栏；当侧边栏与内容区不重叠时，显示侧边栏。
 - 最后通过检查页面的元数据，判断该页面是否是首页，从而决定是否插入侧边栏
 
 ## CSS 样式
@@ -127,23 +144,24 @@ if (document.querySelector('meta[property="og:url"][content="https://youyeyejie.
 
 ```css
 :root {
-  --sitestat-bg-color: #ffffffa4;
+    --sitestat-bg-color: #ffffffa4;
 }
 [data-user-color-scheme="dark"] {
-  --sitestat-bg-color: #242a38a4;
+    --sitestat-bg-color: #242a38a4;
 }
 
 #site-stats {
-  margin-top: 4rem;
-  padding: 15px 20px;
-  top: 4rem;
-  background-color: var(--sitestat-bg-color);
-  border-radius: 10px;
-  -webkit-backdrop-filter: blur(15px);
-  backdrop-filter: blur(15px);
+    margin-top: 4rem;
+    padding: 15px 20px;
+    top: 4rem;
+    background-color: var(--sitestat-bg-color);
+    border-radius: 10px;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    display: block;
 }
 
-.sidebar-container {
+.sidebar-element {
     display: flex;
     justify-content: space-between;
     margin: 12px 0 12px 0;
