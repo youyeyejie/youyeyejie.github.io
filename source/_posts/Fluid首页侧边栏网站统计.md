@@ -69,11 +69,11 @@ function createSidebar() {
                 <span id="sidebar-post-count"></span>
             </div>
             <div class="sidebar-element">
-                <span><i class="fas fa-chart-bar" style="font-size: 0.8rem;"></i> &nbsp;全站字数</span>
+                <span><i class="fas fa-chart-bar" style="font-size: 0.72rem;"></i> &nbsp;全站字数</span>
                 <span id="sidebar-word-count"></span>
             </div>
             <div class="sidebar-element">
-                <span><i class="fas fa-eye" style="font-size: 0.8rem;"></i> &nbsp;总访问量</span>
+                <span><i class="fas fa-eye" style="font-size: 0.72rem;"></i> &nbsp;总访问量</span>
                 <span id="sidebar-site-pv"></span>
             </div>
             <div class="sidebar-element">
@@ -113,7 +113,7 @@ function judgeSidebarHidden() {
     const sideColRect = document.querySelector('.side-col.d-none.d-lg-block.col-lg-2').getBoundingClientRect();
     const sideBar = document.getElementById('site-stats');
     // console.log(boardRect.right, sideColRect.left);
-    if (boardRect.right > sideColRect.left) {
+    if (boardRect.right - 10 > sideColRect.left) {
         sideBar.style.display = 'none';
     } else {
         sideBar.style.display = 'block';
@@ -151,7 +151,7 @@ if (document.querySelector('meta[property="og:url"][content="https://youyeyejie.
 }
 
 #site-stats {
-    margin-top: 4rem;
+    margin: 4rem auto 0 auto;
     padding: 15px 20px;
     top: 4rem;
     background-color: var(--sitestat-bg-color);
@@ -159,12 +159,14 @@ if (document.querySelector('meta[property="og:url"][content="https://youyeyejie.
     -webkit-backdrop-filter: blur(15px);
     backdrop-filter: blur(15px);
     display: block;
+    width: 240px;
 }
 
 .sidebar-element {
     display: flex;
     justify-content: space-between;
-    margin: 12px 0 12px 0;
+    margin: 15px 0 15px 0;
+    font-size: 0.95rem;
 }
 ```
 
