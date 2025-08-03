@@ -42,11 +42,11 @@ function createSidebar() {
                 <span id="sidebar-post-count"></span>
             </div>
             <div class="sidebar-element">
-                <span><i class="fas fa-chart-bar" style="font-size: 0.8rem;"></i> &nbsp;全站字数</span>
+                <span><i class="fas fa-chart-bar" style="font-size: 0.72rem;"></i> &nbsp;全站字数</span>
                 <span id="sidebar-word-count"></span>
             </div>
             <div class="sidebar-element">
-                <span><i class="fas fa-eye" style="font-size: 0.8rem;"></i> &nbsp;总访问量</span>
+                <span><i class="fas fa-eye" style="font-size: 0.72rem;"></i> &nbsp;总访问量</span>
                 <span id="sidebar-site-pv"></span>
             </div>
             <div class="sidebar-element">
@@ -86,7 +86,7 @@ function judgeSidebarHidden() {
     const sideColRect = document.querySelector('.side-col.d-none.d-lg-block.col-lg-2').getBoundingClientRect();
     const sideBar = document.getElementById('site-stats');
     // console.log(boardRect.right, sideColRect.left);
-    if (boardRect.right > sideColRect.left) {
+    if (boardRect.right - 10 > sideColRect.left) {
         sideBar.style.display = 'none';
     } else {
         sideBar.style.display = 'block';
