@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/_posts/Hexo%E4%BD%BF%E7%94%A8Vercount%E7%BB%9F%E8%AE%A1%E8%AE%BF%E9%97%AE%E6%95%B0%E6%8D%AE/image.webp">
 <meta property="article:published_time" content="2025-07-20T04:19:01.000Z">
-<meta property="article:modified_time" content="2025-07-23T05:00:18.350Z">
+<meta property="article:modified_time" content="2025-08-11T05:03:06.666Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Fluid">
@@ -426,7 +426,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          962 字
+          972 字
         
       </span>
     
@@ -674,7 +674,7 @@ Upload”，在站点根目录下创建一个验证文件。为了避免每次�
 <thead>
 <tr>
 <th scope="col" style="width: 16%;">
-&nbsp;<i class="fa-solid fa-cloud"></i> Service &nbsp;
+&nbsp;<i class="fa-solid fa-cloud"></i> Service
 </th>
 <th scope="col" style="width: 16%;">
 &nbsp;<i class="fa-solid fa-eye"></i> Site PV &nbsp;
@@ -728,10 +728,20 @@ Upload”，在站点根目录下创建一个验证文件。为了避免每次�
 </tbody>
 </table>
 <script defer="" src="/js/BusuanziAndVercount.js"></script>
-<p>前文提到，Vercount 每次调用都会自动同步 Busuanzi 的数据，但只会返回
+
+    <div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-6ed0dd10" role="button" aria-expanded="false" aria-controls="collapse-6ed0dd10">
+        <div class="fold-arrow">▶</div>数据问题已修复，见评论区
+      </div>
+      <div class="fold-collapse collapse" id="collapse-6ed0dd10">
+        <div class="fold-content">
+          <p>前文提到，Vercount 每次调用都会自动同步 Busuanzi 的数据，但只会返回
 Vercount 自身的数据，因此要想获取到 Busuanzi 的数据，还需要自行调用
 Busuanzi 的 API。因此，每次访问一个页面，Busuanzi
 的数据会自增二，从而造成一定误差。</p>
+        </div>
+      </div>
+    </div>
 <h1 id="总结">总结</h1>
 <p>Vercount 提供了一个简单易用的访问统计服务，兼容 Busuanzi
 的数据格式，支持自定义访客数据，并且使用 POST
@@ -803,7 +813,7 @@ Busuanzi 的 API。因此，每次访问一个页面，Busuanzi
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年7月23日</div>
+          <div>2025年8月11日</div>
         </div>
       
       
@@ -995,7 +1005,6 @@ Busuanzi 的 API。因此，每次访问一个页面，Busuanzi
         <span id="total-posts-container">
             <i class="fas fa-file-alt"></i>
             <span id="g-total-posts-id"></span>
-            <script src="/js/TotalPosts.js"></script>
             文舟靠岸
         </span>
         &nbsp;
@@ -1191,6 +1200,7 @@ Busuanzi 的 API。因此，每次访问一个页面，Busuanzi
 
   <script type="text/javascript">
   document.getElementById("g-total-word-id").innerHTML = "352k";
+  document.getElementById('g-total-posts-id').textContent ="43";
 </script>
 
   <noscript>
