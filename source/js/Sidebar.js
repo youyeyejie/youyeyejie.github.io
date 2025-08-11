@@ -93,7 +93,8 @@ function judgeSidebarHidden() {
     }
 }
 
-if (document.querySelector('meta[property="og:url"][content="https://youyeyejie.github.io/index.html"]')) {
+if (document.querySelector('meta[property="og:url"][content="https://youyeyejie.github.io/index.html"]') ||
+    document.querySelector('meta[property="og:url"][content^="https://youyeyejie.github.io/page/"]')) {
     document.addEventListener('DOMContentLoaded', createSidebar);
     window.addEventListener('resize', () => {
         judgeSidebarHidden();

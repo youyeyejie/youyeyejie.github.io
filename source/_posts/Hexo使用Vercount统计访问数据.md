@@ -74,7 +74,7 @@ fs.writeFileSync(filePath2, '');
 <table style="text-align: center; width: 100%;">
     <thead>
         <tr>
-            <th scope="col" style="width: 16%;">&nbsp;<i class="fa-solid fa-cloud"></i> Service &nbsp;</th>
+            <th scope="col" style="width: 16%;">&nbsp;<i class="fa-solid fa-cloud"></i> Service </th>
             <th scope="col" style="width: 16%;">&nbsp;<i class="fa-solid fa-eye"></i> Site PV &nbsp;</th>
             <th scope="col" style="width: 16%;">&nbsp;<i class="fas fa-user-friends"></i> Site UV &nbsp;</th>
             <th scope="col" style="width: 16%;">&nbsp;<i class="fa-solid fa-file-lines"></i> Page PV &nbsp;</th>
@@ -101,8 +101,9 @@ fs.writeFileSync(filePath2, '');
 
 <script defer src="/js/BusuanziAndVercount.js"></script>
 
-
+{% fold info @数据问题已修复，见评论区 %}
 前文提到，Vercount 每次调用都会自动同步 Busuanzi 的数据，但只会返回 Vercount 自身的数据，因此要想获取到 Busuanzi 的数据，还需要自行调用 Busuanzi 的 API。因此，每次访问一个页面，Busuanzi 的数据会自增二，从而造成一定误差。
+{% endfold %}
 
 # 总结
 

@@ -169,7 +169,7 @@ footer:
   '
 ```
 
-然后需要在 `source/_inject/` 目录下新建一个 `WordCount.ejs` 文件（如果不存在该目录则需要先创建）来调用hexo-wordcount插件的 `wordtotal` 函数获取全站字数统计，一定要注意路径正确，否则在生成页面时很大概率不会报错：
+然后需要在 `source/_inject/` 目录下新建一个 `WordCount.ejs` 文件（如果不存在该目录则需要先创建）来调用hexo-wordcount插件的 `wordtotal` 函数获取全站字数统计，一定要注意路径正确，否则在生成页面时很大概率会报错：
 
 ```html
 <script type="text/javascript">
@@ -190,21 +190,10 @@ hexo.extend.filter.register('theme_inject', function(injects) {
 
 # 页脚处添加全站文章统计
 
+{% fold info @此方式已弃用，改为下面的实现方式。 %}
 Fluid主题内置了对全站文章统计的支持，但只在归档页显示。由于我并不了解ejs语法，也不愿意修改主题的源代码，因此决定自行实现。
 
 在 `source/js/` 目录下新建一个 `TotalPosts.js` 文件（如果不存在该目录则需要先创建），代码如下：
-
-{% fold info @为了兼容Fluid自定义右键菜单中的其他功能，此方式已弃用，改为下面的实现方式。 %}
-```javascript
-fetch('/local-search.xml')
-.then(response => response.text())
-.then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
-.then(data => {
-    const posts = data.querySelectorAll('entry');
-    document.getElementById('g-total-posts-id').textContent = posts.length;
-})
-```
-{% endfold %}
 
 ```javascript
 var posts = JSON.parse(sessionStorage.getItem('posts')) || [];
@@ -237,6 +226,36 @@ footer:
       <i class="fas fa-file-alt"></i>
       <span id="g-total-posts-id">Getting total posts...</span>
       <script src="/js/TotalPosts.js"></script>
+    </div>
+  '
+```
+{% endfold %}
+
+在 `source/_inject/` 目录下新建一个 `PostCount.ejs` 文件（如果不存在该目录则需要先创建）来获取全站文章统计：
+
+```html
+<script type="text/javascript">
+  document.getElementById('g-total-posts-id').textContent ="<%= site.posts.length %>";
+</script>
+```
+
+接下来在 `scripts` 目录下新建一个 `injector.js` 文件（如果不存在该目录则需要先创建，也可以复用之前的注入器代码），代码如下：
+
+```javascript
+// 全站文章统计
+hexo.extend.filter.register('theme_inject', function(injects) {
+  injects.bodyEnd.file('PostCount', 'source/_inject/PostCount.ejs');
+});
+```
+
+然后在 `_config.fluid.yml` 文件中修改 `footer` 的 `content` 字段，添加全站文章统计的调用代码：
+
+```yaml
+footer:
+  content: '
+    <div class="total-posts" style="font-size: 0.85rem; margin: 0.15rem 0.15rem;">
+      <i class="fas fa-file-alt"></i>
+      <span id="g-total-posts-id">Getting total posts...</span>
     </div>
   '
 ```
@@ -326,8 +345,12 @@ footer:
         <script src="/js/Duration.js"></script>
       </div>
       <span id="wordcount" style="display: inline;">
+        <i class="fas fa-chart-bar"></i>
+        <span id="g-total-word-id">Getting word count...</span>
+      </span>
+      <span id="postcount" style="display: inline;">
         <i class="fas fa-file-alt"></i>
-        <span id="g-post-count-id">Getting word count...</span>
+        <span id="g-total-posts-id">Getting post count...</span>
       </span>
     </div>
     <div class="hitokoto" style="font-size: 0.85rem; margin: 0.15rem 0.15rem;">
@@ -344,7 +367,7 @@ footer:
     uv_format: '<i class="fas fa-user-friends"></i>  总访客数 {} 人'
 ```
 
-其中，`content` 部分的第一个 `<div>` 是本博客的框架与主题信息，第二个 `<div>` 是网站运行时间和全站字数统计，第三个 `<div>` 是一言，后两者手动指定了样式。`statistics` 部分是网站的访问量和访客数统计。
+其中，`content` 部分的第一个 `<div>` 是本博客的框架与主题信息，第二个 `<div>` 是网站运行时间、全站字数和文章统计，第三个 `<div>` 是一言，后两者手动指定了样式。`statistics` 部分是网站的访问量和访客数统计。
 {% endfold %}
 
 但是很可惜，我希望把全站字数统计、文章统计和总访问量、总访客数统计在一行内显示，因此不得不继续折腾。
@@ -366,10 +389,12 @@ footer:
         <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
         <i class="iconfont icon-love"></i>
         <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+        <i class="iconfont icon-love"></i>
+        <a href="https://eu.umami.is/share/1fs3cnD9TAP8JzML/youyeyejie.github.io" target="_blank" rel="nofollow noopener"><span>Umami</span></a>
     </div>
     <div class="hitokoto">
         <i class="fas fa-quote-left"></i>
-        <a href="https://developer.hitokoto.cn/" id="hitokoto_text"><span id="hitokoto">Getting poem...</span></a>
+        <a href="https://developer.hitokoto.cn/" id="hitokoto_text"><span id="hitokoto">且以群词 注解我这座荒山</span></a>
         <script src="/js/Hitokoto.js" defer></script>
     </div>
     <div class="data">
@@ -382,19 +407,18 @@ footer:
         <span id="total-posts-container">
             <i class="fas fa-file-alt"></i>
             <span id="g-total-posts-id"></span>
-            <script src="/js/TotalPosts.js"></script>
             文舟靠岸
         </span>
         &nbsp;
         <span id="busuanzi_container_site_pv">
             <i class="fas fa-eye"></i>
-            <span id="busuanzi_value_site_pv"></span>
+            <span id="busuanzi_value_site_pv">1314</span>
             目光所及
         </span>
         &nbsp;
         <span id="busuanzi_container_site_uv">
             <i class="fas fa-user-friends"></i>
-            <span id="busuanzi_value_site_uv"></span>
+            <span id="busuanzi_value_site_uv">520</span>
             访客驻足
         </span>
         <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script>
@@ -422,16 +446,17 @@ footer:
 hexo.extend.filter.register('theme_inject', function(injects) {
   // 注入页脚
   injects.footer.file('footer', 'source/html/Footer.html');
-  // 全站字数统计
-  injects.bodyEnd.file('WordCount', 'source/_inject/WordCount.ejs');
+  // 全站字数及文章统计
+  injects.bodyEnd.file('footerData', 'source/_inject/FooterData.ejs');
 });
 ```
 
-接着修改 `source/_inject/WordCount.ejs` 文件，让其只返回字数统计的部分：
+接着修改 `source/_inject/FooterData.ejs` 文件，让其只返回字数统计的部分：
 
 ```html
 <script type="text/javascript">
   document.getElementById("g-total-word-id").innerHTML = "<%= wordtotal(site) %>";
+  document.getElementById('g-total-posts-id').textContent ="<%= site.posts.length %>";
 </script>
 ```
 
