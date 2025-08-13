@@ -22,6 +22,7 @@ function umamiTrackEvent() {
             link.dataset.umamiEvent = "Links";
         } else if (link.href === 'https://www.travellings.cn/go-by-clouds.html') {
             link.dataset.umamiEvent = "Travelling";
+            link.target = "_blank";
         } else if (link.ariaLabel === "Search") {
             link.dataset.umamiEvent = "Search";
         } else if (link.ariaLabel === "Color Toggle") {
