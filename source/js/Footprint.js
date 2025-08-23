@@ -69,7 +69,7 @@ fetch('/json/footprint.json')
                         const count = provinceCounts[params.name] || 0;
                         res = `<div style="font-size: 16px">${params.name}</div>`;
                         if (count > 0) {
-                            res += `<div>去过${count}座城</div>`;
+                            res += `<div>走过${count}座城</div>`;
                         }
                     }
                     return res;
@@ -83,7 +83,7 @@ fetch('/json/footprint.json')
                 inRange: {
                     color: ["#e6e6e6", "#a7d0ed", "#5ab7fb", "#409de1", "#398cc0", "#0e76c0"]
                 },
-                text: ['去过城市', ''],
+                text: ['走过城市', ''],
                 left: 20,
                 calculable: true
             },
