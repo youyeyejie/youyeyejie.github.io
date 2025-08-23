@@ -141,6 +141,14 @@ fetch('/json/footprint.json')
         };
 
         myChart.setOption(option);
+        // 在myChart.setOption(option);之后添加点击事件监听
+        myChart.on('click', function(params) {
+            // 检查是否是足迹点（effectScatter类型）且包含url属性
+            if (params.seriesType === 'effectScatter' && params.data && params.data.url) {
+                // 在新窗口打开链接
+                window.open(params.data.url, '_blank');
+            }
+        });
     })
     .catch(error => {
         console.error('Error loading footprint data:', error);
