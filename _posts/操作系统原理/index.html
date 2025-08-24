@@ -1079,7 +1079,8 @@ On-Line，即外部设备联机并行操作）技术将磁盘模拟成IO设备�
 <li>反向页表（Inverted Page Table）
 <ul>
 <li>虚拟地址的页号使用散列函数映射到哈希表中。</li>
-<li>把 <span class="math inline"><em>n</em></span> 位页号映射到 <span class="math inline"><em>m</em></span> 位帧号（<span class="math inline"><em>n</em> &gt; <em>m</em></span>）</li>
+<li>把 <span class="math inline">\(n\)</span> 位页号映射到 <span class="math inline">\(m\)</span> 位帧号（<span class="math inline">\(n
+&gt; m\)</span>）</li>
 <li>大小与物理内存成正比</li>
 </ul>
 <figure>
@@ -1156,7 +1157,7 @@ On-Line，即外部设备联机并行操作）技术将磁盘模拟成IO设备�
 </ul></li>
 <li>段页式地址翻译
 <ul>
-<li>段号 <span class="math inline"><em>s</em></span> + 页号 <span class="math inline"><em>p</em></span> + 页内偏移 <span class="math inline"><em>d</em></span></li>
+<li>段号 <span class="math inline">\(s\)</span> + 页号 <span class="math inline">\(p\)</span> + 页内偏移 <span class="math inline">\(d\)</span></li>
 <li>为了进行地址变换，系统为每一个作业建立一张段表，再为每一段建立一张页表。同样，也有一个段表控制寄存器，存放当前作业段表的长度和始址。</li>
 </ul>
 <figure>
@@ -1196,7 +1197,8 @@ On-Line，即外部设备联机并行操作）技术将磁盘模拟成IO设备�
 <ul>
 <li>伙伴系统（Buddy system）
 <ul>
-<li>将内存分成大小为 <span class="math inline">2<sup><em>n</em></sup></span> 的块。</li>
+<li>将内存分成大小为 <span class="math inline">\(2^n\)</span>
+的块。</li>
 <li>分配时，寻找最小的满足要求的块。</li>
 <li>回收时，将相邻的块合并成更大的块。</li>
 <li>优点：减少碎片，提高内存利用率。</li>
@@ -1549,9 +1551,9 @@ On-Line，即外部设备联机并行操作）技术将磁盘模拟成IO设备�
 <li>最高响应比作业优先（HRN）
 <ul>
 <li>计算每个作业的响应比，优先调度响应比高的作业。</li>
-<li><span class="math display">$$HRN = \frac{等待时间 +
+<li><span class="math display">\[HRN = \frac{等待时间 +
 服务时间}{服务时间} = \frac{T_w + T_s}{T_s} = 1 +
-\frac{T_w}{T_s}$$</span></li>
+\frac{T_w}{T_s}\]</span></li>
 <li>既照顾了先来者，又优待了短作业。</li>
 </ul></li>
 </ol>
@@ -1590,11 +1592,11 @@ On-Line，即外部设备联机并行操作）技术将磁盘模拟成IO设备�
 <li>可以减少平均周转时间，但可能导致长进程饥饿。</li>
 <li>难点：如何预测进程的运行时间
 <ul>
-<li><span class="math display">$$ \begin{aligned}
+<li><span class="math display">\[ \begin{aligned}
   S_{n+1}&amp;=\alpha \cdot T_{n} + (1-\alpha) \cdot S_{n}\\
   &amp;= \alpha \cdot T_{n} + (1-\alpha)\alpha T_{n-1} + \cdots +
 (1-\alpha)^{i}\alpha T_{n-i} + \cdots + (1-\alpha)^{n-1}\alpha S_{1}
-  \end{aligned} $$</span></li>
+  \end{aligned} \]</span></li>
 </ul></li>
 </ul></li>
 <li>最短剩余时间优先(SRT-Shortest Remaining Time)
@@ -1608,9 +1610,9 @@ On-Line，即外部设备联机并行操作）技术将磁盘模拟成IO设备�
 <ul>
 <li>非抢占式调度算法</li>
 <li>计算每个进程的响应比，优先调度响应比高的进程。</li>
-<li><span class="math display">$$HRR = \frac{等待时间 +
+<li><span class="math display">\[HRR = \frac{等待时间 +
 服务时间}{服务时间} = \frac{T_w + T_s}{T_s} = 1 +
-\frac{T_w}{T_s}$$</span></li>
+\frac{T_w}{T_s}\]</span></li>
 <li>既照顾了先来者，又优待了短进程。</li>
 </ul></li>
 <li>优先级调度算法
@@ -1761,13 +1763,13 @@ On-Line，即外部设备联机并行操作）技术将磁盘模拟成IO设备�
 <ul>
 <li>优先级最高的任务是周期最短的任务，总是调度优先级最高的就绪进程。</li>
 <li>在运行过程中，若有优先级更高的就绪进程，则<strong>剥夺</strong>当前运行进程，调度更高优先级进程运行。</li>
-<li>CPU使用率：<span class="math inline">$U=\frac{C}{T}$</span></li>
+<li>CPU使用率：<span class="math inline">\(U=\frac{C}{T}\)</span></li>
 <li>时间要求
 <ul>
-<li>必要时间：<span class="math display">$$\sum\frac{C_i}{T_i} \leq
-1$$</span></li>
-<li>精确计算：<span class="math display">$$\sum\frac{C_i}{T_i} \leq
-n(2^{1/n}-1)$$</span></li>
+<li>必要时间：<span class="math display">\[\sum\frac{C_i}{T_i} \leq
+1\]</span></li>
+<li>精确计算：<span class="math display">\[\sum\frac{C_i}{T_i} \leq
+n(2^{1/n}-1)\]</span></li>
 </ul></li>
 </ul>
 <h3 id="优先级逆转priority-inversion问题">优先级逆转（Priority
@@ -2014,9 +2016,9 @@ inversion）问题</h3>
 </ul></li>
 <li><code>Mutex</code>：实现对缓存区操作的互斥
 <ul>
-<li><span class="math inline">1</span>：表示没有进程进行缓冲区操作</li>
-<li><span class="math inline">0</span>：表示有一个进程正在对缓存区进行操作。</li>
-<li><span class="math inline">−<em>m</em></span>：表示有一个进程正在对缓存区进行操作，还有m个进程在等待进入缓存区操作。
+<li><span class="math inline">\(1\)</span>：表示没有进程进行缓冲区操作</li>
+<li><span class="math inline">\(0\)</span>：表示有一个进程正在对缓存区进行操作。</li>
+<li><span class="math inline">\(-m\)</span>：表示有一个进程正在对缓存区进行操作，还有m个进程在等待进入缓存区操作。
 初始值为1</li>
 </ul></li>
 </ul></li>
@@ -2342,33 +2344,32 @@ inversion）问题</h3>
 <ul>
 <li>银行家算法
 <ul>
-<li><span class="math inline"><em>R</em><em>e</em><em>s</em><em>o</em><em>u</em><em>r</em><em>c</em><em>e</em> = <em>R</em> = (<em>R</em><sub>1</sub>, <em>R</em><sub>2</sub>, ..., <em>R</em><sub><em>m</em></sub>)</span>
-，系统中每种资源的总量；</li>
-<li><span class="math inline"><em>A</em><em>v</em><em>a</em><em>i</em><em>l</em><em>a</em><em>b</em><em>l</em><em>e</em> = <em>V</em> = (<em>V</em><sub>1</sub>, <em>V</em><sub>2</sub>, ..., <em>V</em><sub><em>m</em></sub>)</span>
-，尚未分配的每种资源的数量；</li>
-<li><span class="math inline">$Claim = C =
+<li><span class="math inline">\(Resource = R = (R_1, R_2, ...,
+R_m)\)</span> ，系统中每种资源的总量；</li>
+<li><span class="math inline">\(Available = V = (V_1, V_2, ...,
+V_m)\)</span> ，尚未分配的每种资源的数量；</li>
+<li><span class="math inline">\(Claim = C =
 \left[\begin{array}{ccc}C_{11} &amp; C_{12} &amp; \ldots &amp;
 C_{1m}\\C_{21} &amp; C_{22} &amp; \ldots &amp; C_{2m}\\\vdots &amp;
 \vdots &amp; \ddots &amp; \vdots\\C_{n1} &amp; C_{n2} &amp; \ldots &amp;
-C_{nm}\end{array}\right]$</span>，<span class="math inline"><em>C</em><sub><em>i</em><em>j</em></sub></span>
-表示进程i对资源j的需求数量；</li>
-<li><span class="math inline">$Allocation = A
+C_{nm}\end{array}\right]\)</span>，<span class="math inline">\(C_{ij}\)</span> 表示进程i对资源j的需求数量；</li>
+<li><span class="math inline">\(Allocation = A
 =\left[\begin{array}{ccc}A_{11} &amp; A_{12} &amp; \ldots &amp;
 A_{1m}\\A_{21} &amp; A_{22} &amp; \ldots &amp; A_{2m}\\\vdots &amp;
 \vdots &amp; \ddots &amp; \vdots\\A_{n1} &amp; A_{n2} &amp; \ldots &amp;
-A_{nm}\end{array}\right]$</span>，<span class="math inline"><em>A</em><sub><em>i</em><em>j</em></sub></span>
+A_{nm}\end{array}\right]\)</span>，<span class="math inline">\(A_{ij}\)</span>
 表示进程i已经分配了j类资源的数量。</li>
 <li>必须成立的条件
 <ul>
-<li><span class="math inline">$R_{j}=V_{j}+\sum_{i=1}^{N}A_{ij}$</span>，每类资源的未分配和已分配之和固定</li>
-<li><span class="math inline"><em>C</em><sub><em>i</em><em>j</em></sub> ≤ <em>R</em><sub><em>i</em></sub></span>,
-对所有的 <span class="math inline"><em>i</em></span>, <span class="math inline"><em>j</em></span>请求受限</li>
-<li><span class="math inline"><em>A</em><sub><em>i</em><em>j</em></sub> ≤ <em>C</em><sub><em>i</em><em>j</em></sub></span>,
-对所有的 <span class="math inline"><em>i</em></span>, <span class="math inline"><em>j</em></span> 获得小于等于请求</li>
+<li><span class="math inline">\(R_{j}=V_{j}+\sum_{i=1}^{N}A_{ij}\)</span>，每类资源的未分配和已分配之和固定</li>
+<li><span class="math inline">\(C_{ij}\leq R_{i}\)</span>, 对所有的
+<span class="math inline">\(i\)</span>, <span class="math inline">\(j\)</span>请求受限</li>
+<li><span class="math inline">\(A_{ij}\leq C_{ij}\)</span>, 对所有的
+<span class="math inline">\(i\)</span>, <span class="math inline">\(j\)</span> 获得小于等于请求</li>
 </ul></li>
-<li>仅当 <span class="math display">$$R_{j} \geq C_{(n+1) j} +
-\sum_{l=1}^{n} C_{i l j} \text {, 对所有的 } j$$</span> 成立时,
-才启动进程 <span class="math inline"><em>P</em><sub><em>n</em> + 1</sub></span>。</li>
+<li>仅当 <span class="math display">\[R_{j} \geq C_{(n+1) j} +
+\sum_{l=1}^{n} C_{i l j} \text {, 对所有的 } j\]</span> 成立时,
+才启动进程 <span class="math inline">\(P_{n+1}\)</span>。</li>
 </ul></li>
 <li>缺点: 该策略假设了最坏情况,
 即所有进程同时满足最大资源需求时才启动。</li>
@@ -2668,8 +2669,8 @@ A_{nm}\end{array}\right]$</span>，<span class="math inline"><em>A</em><sub><em>
 <ul>
 <li>b表示要传送的字节数，N表示一个磁道中的字节数，r表示旋转速度</li>
 </ul></li>
-<li>总的存取时间为：<span class="math inline">$T = Ts + \frac{1}{2r} +
-\frac{b}{rN}$</span></li>
+<li>总的存取时间为：<span class="math inline">\(T = Ts + \frac{1}{2r} +
+\frac{b}{rN}\)</span></li>
 </ul></li>
 <li>应对延迟的方法
 <ul>
@@ -2959,7 +2960,7 @@ Drive）是一种基于闪存技术的存储设备，具有更快的读写速度
 <li>链接分配
 <ul>
 <li>每一个数据块包含一个指向下一个数据块的指针</li>
-<li>查找时间复杂度为 <span class="math inline"><em>O</em>(<em>n</em>)</span> , <span class="math inline"><em>n</em></span> 是文件的大小</li>
+<li>查找时间复杂度为 <span class="math inline">\(O(n)\)</span> , <span class="math inline">\(n\)</span> 是文件的大小</li>
 <li>指针的损坏能造成整个文件的丢失</li>
 </ul>
 <figure>
@@ -3124,21 +3125,24 @@ Drive）是一种基于闪存技术的存储设备，具有更快的读写速度
 <li>第11个表项是一级间接寻址。
 <ul>
 <li>表示的磁盘块不是直接存放文件的内容，而是存放直接寻址表项。即表明
-<span class="math inline">1024/3</span>
+<span class="math inline">\(1024/3\)</span>
 个磁盘块号，用于存放文件内容。</li>
-<li>该级地址最多可表示文件大小 <span class="math inline">1024/3 × 1024</span>。</li>
+<li>该级地址最多可表示文件大小 <span class="math inline">\(1024/3 \times
+1024\)</span>。</li>
 </ul></li>
 <li>第12个表项是二级间接寻址。
 <ul>
-<li>表示的磁盘块不是直接存放文件，而是存放一级间接寻址表项。即表明 <span class="math inline">1024/3</span>
+<li>表示的磁盘块不是直接存放文件，而是存放一级间接寻址表项。即表明 <span class="math inline">\(1024/3\)</span>
 个磁盘块号，用于存放一级寻址表项。</li>
-<li>该级地址最多可表示文件大小 <span class="math inline">1024/3 × 1024/3 × 1024</span>。</li>
+<li>该级地址最多可表示文件大小 <span class="math inline">\(1024/3 \times
+1024/3 \times 1024\)</span>。</li>
 </ul></li>
 <li>第13个表项是三级间接寻址。
 <ul>
-<li>表示的磁盘块不是直接存放文件，而是存放二级间接寻址表项。即表明 <span class="math inline">1024/3</span>
+<li>表示的磁盘块不是直接存放文件，而是存放二级间接寻址表项。即表明 <span class="math inline">\(1024/3\)</span>
 个磁盘块号，用于存放二级寻址表项。</li>
-<li>该级地址最多可表示文件大小 <span class="math inline">1024/3 × 1024/3 × 1024/3 × 1024</span>。</li>
+<li>该级地址最多可表示文件大小 <span class="math inline">\(1024/3 \times
+1024/3 \times 1024/3 \times 1024\)</span>。</li>
 </ul></li>
 </ul>
 <figure>
@@ -3902,7 +3906,7 @@ Drive）是一种基于闪存技术的存储设备，具有更快的读写速度
 
 
   <script type="text/javascript">
-  document.getElementById("g-total-word-id").innerHTML = "354k";
+  document.getElementById("g-total-word-id").innerHTML = "366k";
   document.getElementById('g-total-posts-id').textContent ="45";
 </script>
 

@@ -438,7 +438,7 @@
         
         
           <!-- compatible with older versions-->
-          106 分钟
+          107 分钟
         
       </span>
     
@@ -928,37 +928,37 @@
 <li>CPI（程序每条机器指令所需的平均时间周期数）：
 <ul>
 <li>通常不同类指令的CPI不同</li>
-<li><span class="math inline"><em>I</em><sub><em>c</em></sub></span>：规定时间内执行的机器指令总条数</li>
-<li><span class="math inline"><em>C</em><em>P</em><em>I</em><sub><em>i</em></sub></span>，<span class="math inline"><em>I</em><sub><em>i</em></sub></span>：给定程序中i类指令的CPI和执行条数</li>
-<li><span class="math inline"><em>f</em></span>：时钟频率，<span class="math display">$$τ=\frac{1}{f}$$</span></li>
-<li>有： <span class="math display">$$
+<li><span class="math inline">\(I_c\)</span>：规定时间内执行的机器指令总条数</li>
+<li><span class="math inline">\(CPI_i\)</span>，<span class="math inline">\(I_i\)</span>：给定程序中i类指令的CPI和执行条数</li>
+<li><span class="math inline">\(f\)</span>：时钟频率，<span class="math display">\[τ=\frac{1}{f}\]</span></li>
+<li>有： <span class="math display">\[
   \begin{aligned}
   CPI&amp;=\frac{\sum_{i=1}^{n}(CPI_i×I_i)}{I_c}\\
   T&amp;=I_c×CPI×τ
   \end{aligned}
-  $$</span></li>
+  \]</span></li>
 </ul></li>
 <li>MIPS速率（每秒执行的百万条指令的数量）：
 <ul>
-<li><span class="math display">$$MIPS=\frac{I_c}{T\times
-10^6}=\frac{f}{CPI\times 10^6}$$</span></li>
+<li><span class="math display">\[MIPS=\frac{I_c}{T\times
+10^6}=\frac{f}{CPI\times 10^6}\]</span></li>
 <li>注：关于CPI与MIPS计算，课本p43有例题</li>
 </ul></li>
 <li>MFLOPS速率（每秒执行的百万次浮点运算的数量）：
 <ul>
 <li>是由于CISC相比RISC，一条指令耗时更长但功能更多，用MIPS可能不合适</li>
-<li><span class="math display">$$MFLOPS=\frac{\text{程序中执行的浮点操作数量}}{\text{执行时间}\times
-10^6}$$</span></li>
+<li><span class="math display">\[MFLOPS=\frac{\text{程序中执行的浮点操作数量}}{\text{执行时间}\times
+10^6}\]</span></li>
 </ul></li>
 <li>SPEC速度度量：
 <ul>
-<li>以基准程序i在参照系统上的运行时间作为基准程序i的参考运行时间<span class="math inline"><em>T</em><em>r</em><em>e</em><em>f</em><sub><em>i</em></sub></span></li>
-<li>以基准程序i在被测系统上的运行时间作为基准程序i的参考运行时间<span class="math inline"><em>T</em><em>s</em><em>u</em><em>t</em><sub><em>i</em></sub></span></li>
-<li><span class="math display">$$r_i=\frac{Tref_i}{Tsut_i}$$</span>
+<li>以基准程序i在参照系统上的运行时间作为基准程序i的参考运行时间<span class="math inline">\(Tref_i\)</span></li>
+<li>以基准程序i在被测系统上的运行时间作为基准程序i的参考运行时间<span class="math inline">\(Tsut_i\)</span></li>
+<li><span class="math display">\[r_i=\frac{Tref_i}{Tsut_i}\]</span>
 <ul>
 <li>是参考时间/被测时间，速度更快的机器比值更高</li>
 </ul></li>
-<li><span class="math display">$$r_G=(\prod_{i=1}^{n}r_i)^{\frac{1}{n}}$$</span>
+<li><span class="math display">\[r_G=(\prod_{i=1}^{n}r_i)^{\frac{1}{n}}\]</span>
 <ul>
 <li>作几何平均，作为被测机器的SPEC速度度量</li>
 </ul></li>
@@ -966,25 +966,25 @@
 <li>SPEC频率度量：
 <ul>
 <li>测量执行多个任务的吞吐量，多个基准程序的拷贝同时执行</li>
-<li><span class="math display">$$r_i=\frac{N×Tref_i}{Tsut_i}$$</span></li>
-<li><span class="math inline"><em>T</em><em>r</em><em>e</em><em>f</em><sub><em>i</em></sub></span>为基准程序i在参照系统上运行的时间，N是同时执行的程序数量</li>
-<li><span class="math inline"><em>T</em><em>s</em><em>u</em><em>t</em><sub><em>i</em></sub></span>为N个基准程序在被测系统上从开始执行到全部完成所需时间</li>
+<li><span class="math display">\[r_i=\frac{N×Tref_i}{Tsut_i}\]</span></li>
+<li><span class="math inline">\(Tref_i\)</span>为基准程序i在参照系统上运行的时间，N是同时执行的程序数量</li>
+<li><span class="math inline">\(Tsut_i\)</span>为N个基准程序在被测系统上从开始执行到全部完成所需时间</li>
 </ul></li>
 </ol>
 <h2 id="amdahl定律衡量多个处理器的加速比">Amdahl定律：衡量多个处理器的加速比</h2>
-<p><span class="math display">$$
+<p><span class="math display">\[
 \text{加速比}=\frac{\text{增强前的性能（执行时间）}}{\text{增强后的性能（执行时间）}}=
 \frac{\text{程序在单处理器上的执行时间}}{\text{程序在N个并行处理器上的执行时间}}
-$$</span></p>
-<p>令：<span class="math inline"><em>f</em></span>为程序中可以无限并行执行的部分，<span class="math inline">1 − <em>f</em></span>为程序中固定只能串行执行的部分，<span class="math inline"><em>T</em></span>为程序在单处理器上的执行时间，<span class="math inline"><em>N</em></span>为并行系统的处理器数，则：</p>
-<p><span class="math display">$$Speedup=\frac{T}{T(1-f)+\frac{Tf}{N}}=\frac{1}{(1-f)+\frac{f}{N}}$$</span></p>
+\]</span></p>
+<p>令：<span class="math inline">\(f\)</span>为程序中可以无限并行执行的部分，<span class="math inline">\(1-f\)</span>为程序中固定只能串行执行的部分，<span class="math inline">\(T\)</span>为程序在单处理器上的执行时间，<span class="math inline">\(N\)</span>为并行系统的处理器数，则：</p>
+<p><span class="math display">\[Speedup=\frac{T}{T(1-f)+\frac{Tf}{N}}=\frac{1}{(1-f)+\frac{f}{N}}\]</span></p>
 <p>结论：</p>
 <ul>
-<li><span class="math inline"><em>f</em></span>非常小时并行处理意义不大；</li>
-<li><span class="math display">$$\lim_{N→∞}Speedup=\frac{1}{1-f}$$</span></li>
+<li><span class="math inline">\(f\)</span>非常小时并行处理意义不大；</li>
+<li><span class="math display">\[\lim_{N→∞}Speedup=\frac{1}{1-f}\]</span></li>
 </ul>
 <h2 id="总线数据传输率">总线数据传输率</h2>
-<p><span class="math display">$$\text{总线数据传输率}=\frac{\text{一段时间内传输的数据量}}{\text{这段时间}}$$</span></p>
+<p><span class="math display">\[\text{总线数据传输率}=\frac{\text{一段时间内传输的数据量}}{\text{这段时间}}\]</span></p>
 <h1 id="ch3-计算机功能和互连的顶层视图">Ch3
 计算机功能和互连的顶层视图</h1>
 <h2 id="计算机的寄存器">计算机的寄存器</h2>
@@ -1126,8 +1126,8 @@ $$</span></p>
 <li>字：存储器组织的天然单位，存储器单次传输所能传输数据的宽度</li>
 <li>可寻址单元：能唯一确定地址的最小单位。一般是字或字节。
 <ul>
-<li>地址位数 <span class="math inline"><em>A</em></span>
-与可寻址单元个数 <span class="math inline"><em>N</em></span>：<span class="math inline">2<sup><em>A</em></sup> = <em>N</em></span></li>
+<li>地址位数 <span class="math inline">\(A\)</span> 与可寻址单元个数
+<span class="math inline">\(N\)</span>：<span class="math inline">\(2^A=N\)</span></li>
 </ul></li>
 <li>传输单位：
 <ul>
@@ -1162,17 +1162,15 @@ $$</span></p>
 <li>对非随机访问存储器：定位时间</li>
 </ul></li>
 <li>存储器周期时间：随机访问存储器，访问时间+第二次访问开始前所需额外时间</li>
-<li>传输速率：通常以 <span class="math inline"><em>b</em><em>i</em><em>t</em>/<em>s</em>(<em>b</em><em>p</em><em>s</em>)</span>为单位
+<li>传输速率：通常以 <span class="math inline">\(bit/s(bps)\)</span>为单位
 <ul>
-<li>对随机： <span class="math display">$$\text{传输速率}=\frac{1}{\text{周期时间}}$$</span></li>
+<li>对随机： <span class="math display">\[\text{传输速率}=\frac{1}{\text{周期时间}}\]</span></li>
 <li>对非随机：
 <ul>
-<li><span class="math display">$$T_n=T_A+\frac{n}{R}$$</span></li>
-<li><span class="math inline"><em>T</em><sub><em>n</em></sub>=</span>
-读/写n位的平均时间；</li>
-<li><span class="math inline"><em>T</em><sub><em>A</em></sub>=</span>
-平均访问时间；</li>
-<li><span class="math inline"><em>n</em>=</span> 位数；<span class="math inline"><em>R</em>=</span> 传输速率，以 <span class="math inline"><em>b</em><em>p</em><em>s</em></span> 为单位。</li>
+<li><span class="math display">\[T_n=T_A+\frac{n}{R}\]</span></li>
+<li><span class="math inline">\(T_n=\)</span> 读/写n位的平均时间；</li>
+<li><span class="math inline">\(T_A=\)</span> 平均访问时间；</li>
+<li><span class="math inline">\(n=\)</span> 位数；<span class="math inline">\(R=\)</span> 传输速率，以 <span class="math inline">\(bps\)</span> 为单位。</li>
 </ul></li>
 </ul></li>
 </ol>
@@ -1204,9 +1202,10 @@ $$</span></p>
 </ul>
 <h2 id="cache原理和操作">Cache原理和操作：</h2>
 <ul>
-<li>主存由多个块构成，每个块包含 <span class="math inline"><em>K</em></span> 个字。</li>
-<li>Cache由多个块构成，每个块称为一行，每行包括 <span class="math inline"><em>K</em></span>
-个字以及若干位标签、控制位（行的大小为 <span class="math inline"><em>K</em></span> 个字，不算标签和控制位）。</li>
+<li>主存由多个块构成，每个块包含 <span class="math inline">\(K\)</span>
+个字。</li>
+<li>Cache由多个块构成，每个块称为一行，每行包括 <span class="math inline">\(K\)</span> 个字以及若干位标签、控制位（行的大小为
+<span class="math inline">\(K\)</span> 个字，不算标签和控制位）。</li>
 <li>主存和Cache之间以块为单位传输，Cache和CPU之间以字为单位传输。</li>
 <li>Cache读操作：
 <ul>
@@ -1227,8 +1226,8 @@ $$</span></p>
 <figcaption aria-hidden="true">Cache映射</figcaption>
 </figure>
 <h3 id="直接映射">直接映射</h3>
-<p><span class="math display"><em>i</em> = <em>j</em> mod &nbsp;<em>m</em></span></p>
-<p><span class="math inline"><em>i</em>=</span> 高速缓存行号；<span class="math inline"><em>j</em>=</span> 主存块号；<span class="math inline"><em>m</em>=</span> 高速缓存行总数。</p>
+<p><span class="math display">\[i=j \mod m\]</span></p>
+<p><span class="math inline">\(i=\)</span> 高速缓存行号；<span class="math inline">\(j=\)</span> 主存块号；<span class="math inline">\(m=\)</span> 高速缓存行总数。</p>
 <figure>
 <img src="image-31.webp" srcset="/img/loading/loading3.gif" lazyload alt="直接映射">
 <figcaption aria-hidden="true">直接映射</figcaption>
@@ -1236,28 +1235,25 @@ $$</span></p>
 <ul>
 <li>从主存来看：
 <ul>
-<li>主存地址长度 = <span class="math inline">(<em>s</em> + <em>w</em>)</span> 位，其中最低 <span class="math inline"><em>w</em></span> 位指定主存的一个块内的 <span class="math inline">2<sup><em>w</em></sup></span>
-个字中的一个字/字节，剩下 <span class="math inline"><em>s</em></span>
-位指定主存内的 <span class="math inline">2<sup><em>s</em></sup></span>
+<li>主存地址长度 = <span class="math inline">\((s+w)\)</span>
+位，其中最低 <span class="math inline">\(w\)</span>
+位指定主存的一个块内的 <span class="math inline">\(2^w\)</span>
+个字中的一个字/字节，剩下 <span class="math inline">\(s\)</span>
+位指定主存内的 <span class="math inline">\(2^s\)</span>
 个块中的一块</li>
-<li>可寻址单元个数 = <span class="math inline">2<sup>(<em>s</em> + <em>w</em>)</sup></span>
+<li>可寻址单元个数 = <span class="math inline">\(2^{(s+w)}\)</span>
 个字/字节</li>
-<li>块大小=行大小 = <span class="math inline">2<sup><em>w</em></sup></span> 个字/字节</li>
+<li>块大小=行大小 = <span class="math inline">\(2^w\)</span>
+个字/字节</li>
 </ul></li>
 <li>从Cache来看：
 <ul>
-<li>主存地址最高 <span class="math inline"><em>s</em></span> 位 = 低
-<span class="math inline"><em>r</em></span> 位 + 高 <span class="math inline">(<em>s</em> − <em>r</em>)</span> 位，其中低 <span class="math inline"><em>r</em></span> 位指定 Cache 的 <span class="math inline">2<sup><em>r</em></sup></span> 行中的一行，高 <span class="math inline">(<em>s</em> − <em>r</em>)</span>
-位被当作标签存储。</li>
-<li>Cache行数：<span class="math inline">2<sup><em>r</em></sup></span>
-行</li>
-<li>Cache大小：<span class="math inline">2<sup>(<em>r</em> + <em>w</em>)</sup></span>
+<li>主存地址最高 <span class="math inline">\(s\)</span> 位 = 低 <span class="math inline">\(r\)</span> 位 + 高 <span class="math inline">\((s-r)\)</span> 位，其中低 <span class="math inline">\(r\)</span> 位指定 Cache 的 <span class="math inline">\(2^r\)</span> 行中的一行，高 <span class="math inline">\((s-r)\)</span> 位被当作标签存储。</li>
+<li>Cache行数：<span class="math inline">\(2^r\)</span> 行</li>
+<li>Cache大小：<span class="math inline">\(2^{(r+w)}\)</span>
 个字/字节</li>
-<li>标签大小：<span class="math inline">(<em>s</em> − <em>r</em>)</span>
-位</li>
-<li>即：<span class="math inline">(<em>s</em> − <em>r</em>)</span>
-位标签 + <span class="math inline"><em>r</em></span> 位Cache内行号 =
-<span class="math inline"><em>s</em></span> 位主存块号</li>
+<li>标签大小：<span class="math inline">\((s-r)\)</span> 位</li>
+<li>即：<span class="math inline">\((s-r)\)</span> 位标签 + <span class="math inline">\(r\)</span> 位Cache内行号 = <span class="math inline">\(s\)</span> 位主存块号</li>
 </ul></li>
 <li>优点：简单便宜</li>
 <li>缺点：任何给定块都只有固定的Cache存储位置。若程序需要访问的两个块正好映射到同一行，这两个块就会不断交换，降低命中率，称为抖动。</li>
@@ -1277,40 +1273,39 @@ $$</span></p>
 <img src="image-32.webp" srcset="/img/loading/loading3.gif" lazyload alt="组关联映射">
 <figcaption aria-hidden="true">组关联映射</figcaption>
 </figure>
-<p><span class="math display">$$
+<p><span class="math display">\[
 \begin{aligned}
 m=v \times k\\
 i=j \mod v
 \end{aligned}
-$$</span></p>
-<p><span class="math inline"><em>i</em></span> = Cache的组号；<span class="math inline"><em>j</em></span> = 主存块号；<span class="math inline"><em>m</em></span> = Cache中的行数；<span class="math inline"><em>v</em></span> = 组数；<span class="math inline"><em>k</em></span> = 每组中的行数。</p>
+\]</span></p>
+<p><span class="math inline">\(i\)</span> = Cache的组号；<span class="math inline">\(j\)</span> = 主存块号；<span class="math inline">\(m\)</span> = Cache中的行数；<span class="math inline">\(v\)</span> = 组数；<span class="math inline">\(k\)</span> = 每组中的行数。</p>
 <ul>
 <li>从主存来看：
 <ul>
-<li>主存地址长度 = <span class="math inline">(<em>s</em> + <em>w</em>)</span> 位，其中最低 <span class="math inline"><em>w</em></span> 位指定主存的一个块内的 <span class="math inline">2<sup><em>w</em></sup></span>
-个字中的一个字/字节，剩下 <span class="math inline"><em>s</em></span>
-位指定主存内的 <span class="math inline">2<sup><em>s</em></sup></span>
+<li>主存地址长度 = <span class="math inline">\((s+w)\)</span>
+位，其中最低 <span class="math inline">\(w\)</span>
+位指定主存的一个块内的 <span class="math inline">\(2^w\)</span>
+个字中的一个字/字节，剩下 <span class="math inline">\(s\)</span>
+位指定主存内的 <span class="math inline">\(2^s\)</span>
 个块中的一块</li>
-<li>可寻址单元个数 = <span class="math inline">2<sup>(<em>s</em> + <em>w</em>)</sup></span>
+<li>可寻址单元个数 = <span class="math inline">\(2^{(s+w)}\)</span>
 个字/字节</li>
-<li>块大小 = 行大小 = <span class="math inline">2<sup><em>w</em></sup></span> 个字/字节</li>
+<li>块大小 = 行大小 = <span class="math inline">\(2^w\)</span>
+个字/字节</li>
 </ul></li>
 <li>从Cache来看：
 <ul>
-<li>主存地址最高 <span class="math inline"><em>s</em></span> 位 = 低
-<span class="math inline"><em>d</em></span> 位 + 高 <span class="math inline">(<em>s</em> − <em>d</em>)</span> 位，其中低 <span class="math inline"><em>d</em></span> 位指定 Cache 的 <span class="math inline">2<sup><em>d</em></sup></span> 组中的一组，高 <span class="math inline">(<em>s</em> − <em>d</em>)</span>
-位被当作标签存储。</li>
-<li>Cache组数：<span class="math inline"><em>v</em> = 2<sup><em>d</em></sup></span> 行</li>
-<li>Cache行数：<span class="math inline"><em>m</em> = <em>k</em><em>v</em> = <em>k</em> × 2<sup><em>d</em></sup></span></li>
-<li>Cache大小：<span class="math inline"><em>k</em> × 2<sup>(<em>d</em> + <em>w</em>)</sup></span>
+<li>主存地址最高 <span class="math inline">\(s\)</span> 位 = 低 <span class="math inline">\(d\)</span> 位 + 高 <span class="math inline">\((s-d)\)</span> 位，其中低 <span class="math inline">\(d\)</span> 位指定 Cache 的 <span class="math inline">\(2^d\)</span> 组中的一组，高 <span class="math inline">\((s-d)\)</span> 位被当作标签存储。</li>
+<li>Cache组数：<span class="math inline">\(v=2^d\)</span> 行</li>
+<li>Cache行数：<span class="math inline">\(m=kv=k\times
+2^d\)</span></li>
+<li>Cache大小：<span class="math inline">\(k\times 2^{(d+w)}\)</span>
 个字/字节</li>
-<li>标签大小：<span class="math inline">(<em>s</em> − <em>d</em>)</span>
-位</li>
-<li>即：<span class="math inline">(<em>s</em> − <em>d</em>)</span>
-位标签 + <span class="math inline"><em>d</em></span> 位Cache内组号 =
-<span class="math inline"><em>s</em></span> 位主存块号</li>
+<li>标签大小：<span class="math inline">\((s-d)\)</span> 位</li>
+<li>即：<span class="math inline">\((s-d)\)</span> 位标签 + <span class="math inline">\(d\)</span> 位Cache内组号 = <span class="math inline">\(s\)</span> 位主存块号</li>
 </ul></li>
-<li>优点：灵活，标签较小，且只需并行比较组内的 <span class="math inline"><em>k</em></span> 个标签</li>
+<li>优点：灵活，标签较小，且只需并行比较组内的 <span class="math inline">\(k\)</span> 个标签</li>
 </ul>
 <h2 id="替换算法">替换算法</h2>
 <p>当Cache已满而又有新块需要调入，就必须替换Cache中的块。</p>
@@ -1429,13 +1424,10 @@ $$</span></p>
 <li>位扩展：增加存储模块单次传输所能传输的位
 <ul>
 <li>N块芯片读取相同的地址，每块芯片同时输出其在相同行列位置上存储的数据（假设输出
-<span class="math inline"><em>m</em></span>
-bit），则存储模块的一个地址可以存储 <span class="math inline">(<em>N</em> × <em>m</em>)<em>b</em><em>i</em><em>t</em></span>
-数据。</li>
-<li>例：位扩展前，一个芯片只能输出 <span class="math inline">1</span>
-bit；位扩展后，<span class="math inline">8</span>
-个芯片同时根据MAR信号输出 <span class="math inline">8</span>
-bit数据。</li>
+<span class="math inline">\(m\)</span>
+bit），则存储模块的一个地址可以存储 <span class="math inline">\((N\times
+m)bit\)</span> 数据。</li>
+<li>例：位扩展前，一个芯片只能输出 <span class="math inline">\(1\)</span> bit；位扩展后，<span class="math inline">\(8\)</span> 个芯片同时根据MAR信号输出 <span class="math inline">\(8\)</span> bit数据。</li>
 <li><figure>
 <img src="image-3.webp" srcset="/img/loading/loading3.gif" lazyload alt="位扩展">
 <figcaption aria-hidden="true">位扩展</figcaption>
@@ -1443,9 +1435,8 @@ bit数据。</li>
 </ul></li>
 <li>字位扩展：增加存储模块的大小（即增加存储模块能够存储的字的数量）
 <ul>
-<li>假设一组芯片有 <span class="math inline"><em>N</em></span>
-个，存储模块由 <span class="math inline"><em>M</em></span>
-组芯片构成，此时地址要增加 <span class="math inline">log<sub>2</sub><em>M</em></span> bit，用于选择 <span class="math inline"><em>M</em></span> 组芯片中的一组。</li>
+<li>假设一组芯片有 <span class="math inline">\(N\)</span> 个，存储模块由
+<span class="math inline">\(M\)</span> 组芯片构成，此时地址要增加 <span class="math inline">\(\log_2 M\)</span> bit，用于选择 <span class="math inline">\(M\)</span> 组芯片中的一组。</li>
 <li><figure>
 <img src="image-4.webp" srcset="/img/loading/loading3.gif" lazyload alt="字扩展">
 <figcaption aria-hidden="true">字扩展</figcaption>
@@ -1453,31 +1444,27 @@ bit数据。</li>
 </ul></li>
 <li>字节级精度的访问
 <ul>
-<li>存储模块一次传输能够传输 <span class="math inline"><em>N</em></span>
-bit数据（一般 <span class="math inline"><em>N</em></span>
-为8的倍数）,则可以实现字节级精度访问。需要在原地址信号的基础上添加 <span class="math inline">$\log_2 \frac{N}{8}$</span> 位地址。</li>
-<li>以 <span class="math inline"><em>N</em> = 16</span>
-为例，此时地址新添加 <span class="math inline">1</span> 位作为最低位。
+<li>存储模块一次传输能够传输 <span class="math inline">\(N\)</span>
+bit数据（一般 <span class="math inline">\(N\)</span>
+为8的倍数）,则可以实现字节级精度访问。需要在原地址信号的基础上添加 <span class="math inline">\(\log_2 \frac{N}{8}\)</span> 位地址。</li>
+<li>以 <span class="math inline">\(N=16\)</span> 为例，此时地址新添加
+<span class="math inline">\(1\)</span> 位作为最低位。
 <ul>
-<li>若要读取 <span class="math inline">16</span>
-bit数据，且地址为偶数，则新添加的最低位置 <span class="math inline">0</span>，可一次读取完成。</li>
-<li>若地址为奇数则新添加的最低位置 <span class="math inline">1</span>，需要两次读取：CPU先读取奇数地址上的 <span class="math inline">16</span> bit，只保留A9-A16芯片上的 <span class="math inline">8</span> bit作为低 <span class="math inline">8</span> bit；CPU再将地址 <span class="math inline">+1</span> 读取 <span class="math inline">16</span>
-bit，只保留A1-A9芯片上的 <span class="math inline">8</span> bit作为高
-<span class="math inline">8</span> bit。</li>
+<li>若要读取 <span class="math inline">\(16\)</span>
+bit数据，且地址为偶数，则新添加的最低位置 <span class="math inline">\(0\)</span>，可一次读取完成。</li>
+<li>若地址为奇数则新添加的最低位置 <span class="math inline">\(1\)</span>，需要两次读取：CPU先读取奇数地址上的
+<span class="math inline">\(16\)</span> bit，只保留A9-A16芯片上的 <span class="math inline">\(8\)</span> bit作为低 <span class="math inline">\(8\)</span> bit；CPU再将地址 <span class="math inline">\(+1\)</span> 读取 <span class="math inline">\(16\)</span> bit，只保留A1-A9芯片上的 <span class="math inline">\(8\)</span> bit作为高 <span class="math inline">\(8\)</span> bit。</li>
 </ul></li>
 </ul></li>
 <li>数据对齐
 <ul>
-<li>例如，<span class="math inline">2</span>
-Byte的short型变量的地址通常为偶数，<span class="math inline">4</span>
-Byte的int型变量的地址通常为 <span class="math inline">4</span>
-的倍数。</li>
+<li>例如，<span class="math inline">\(2\)</span>
+Byte的short型变量的地址通常为偶数，<span class="math inline">\(4\)</span> Byte的int型变量的地址通常为 <span class="math inline">\(4\)</span> 的倍数。</li>
 <li>否则，读取时CPU要进行两次读取。</li>
 </ul></li>
 </ol>
 <h2 id="纠错码">纠错码</h2>
-<p>数据 <span class="math inline"><em>M</em></span> bit，校验码/纠错码
-<span class="math inline"><em>K</em></span> bit，实际存储 <span class="math inline">(<em>M</em> + <em>K</em>)</span> bit。</p>
+<p>数据 <span class="math inline">\(M\)</span> bit，校验码/纠错码 <span class="math inline">\(K\)</span> bit，实际存储 <span class="math inline">\((M+K)\)</span> bit。</p>
 <figure>
 <img src="image-5.webp" srcset="/img/loading/loading3.gif" lazyload alt="纠错码">
 <figcaption aria-hidden="true">纠错码</figcaption>
@@ -1488,22 +1475,19 @@ Byte的int型变量的地址通常为 <span class="math inline">4</span>
 <figcaption aria-hidden="true">汉明码与文氏图!</figcaption>
 </figure>
 <ul>
-<li>初始数据为 <span class="math inline">1110</span>，放在 <span class="math inline"><em>A</em></span>、<span class="math inline"><em>B</em></span>、<span class="math inline"><em>C</em></span> 三个圈相交位置；</li>
-<li>在 <span class="math inline"><em>A</em></span>、<span class="math inline"><em>B</em></span>、<span class="math inline"><em>C</em></span>
-三个圈中生成纠错码，满足每个圈中四个数字异或结果为 <span class="math inline">0</span>；</li>
+<li>初始数据为 <span class="math inline">\(1110\)</span>，放在 <span class="math inline">\(A\)</span>、<span class="math inline">\(B\)</span>、<span class="math inline">\(C\)</span>
+三个圈相交位置；</li>
+<li>在 <span class="math inline">\(A\)</span>、<span class="math inline">\(B\)</span>、<span class="math inline">\(C\)</span>
+三个圈中生成纠错码，满足每个圈中四个数字异或结果为 <span class="math inline">\(0\)</span>；</li>
 <li>若传输过程中出现错误，可进行定位；</li>
-<li>发现 <span class="math inline"><em>A</em></span>、<span class="math inline"><em>C</em></span> 两个圈中异或结果不为 <span class="math inline">0</span>，<span class="math inline"><em>B</em></span> 异或结果为 <span class="math inline">0</span>，则错误出现在与 <span class="math inline"><em>A</em></span>、<span class="math inline"><em>C</em></span> 相交但不与 <span class="math inline"><em>B</em></span> 相交的位置。</li>
+<li>发现 <span class="math inline">\(A\)</span>、<span class="math inline">\(C\)</span> 两个圈中异或结果不为 <span class="math inline">\(0\)</span>，<span class="math inline">\(B\)</span>
+异或结果为 <span class="math inline">\(0\)</span>，则错误出现在与 <span class="math inline">\(A\)</span>、<span class="math inline">\(C\)</span>
+相交但不与 <span class="math inline">\(B\)</span> 相交的位置。</li>
 </ul>
 <h3 id="纠错码设计">纠错码设计：</h3>
-<p>数据 <span class="math inline"><em>M</em></span> bit，校验码/纠错码
-<span class="math inline"><em>K</em></span> bit，实际存储 <span class="math inline">(<em>M</em> + <em>K</em>)</span>
-bit，则应满足：<span class="math inline">2<sup><em>K</em></sup> − 1 ≥ <em>M</em> + <em>K</em></span></p>
+<p>数据 <span class="math inline">\(M\)</span> bit，校验码/纠错码 <span class="math inline">\(K\)</span> bit，实际存储 <span class="math inline">\((M+K)\)</span> bit，则应满足：<span class="math inline">\(2^K-1≥M+K\)</span></p>
 <ul>
-<li>纠错码全 <span class="math inline">0</span> 表示 <span class="math inline">(<em>M</em> + <em>K</em>)</span> bit
-数据都正常，因此 <span class="math inline"><em>K</em></span> bit
-纠错码能表示 <span class="math inline">2<sup><em>K</em></sup> − 1</span>
-个数，要求 <span class="math inline"><em>K</em></span> bit
-纠错码必须能表示 <span class="math inline">(<em>M</em> + <em>K</em>)</span> bit
+<li>纠错码全 <span class="math inline">\(0\)</span> 表示 <span class="math inline">\((M+K)\)</span> bit 数据都正常，因此 <span class="math inline">\(K\)</span> bit 纠错码能表示 <span class="math inline">\(2^K-1\)</span> 个数，要求 <span class="math inline">\(K\)</span> bit 纠错码必须能表示 <span class="math inline">\((M+K)\)</span> bit
 数据的位置，因此有上述关系式。</li>
 </ul>
 <figure>
@@ -1512,17 +1496,17 @@ bit，则应满足：<span class="math inline">2<sup><em>K</em></sup> − 1�
 </figure>
 <p>具体纠错过程为：</p>
 <ul>
-<li>根据右图公式计算纠错码 <span class="math inline"><em>C</em>8<sup>′</sup>&nbsp;<em>C</em>4′&nbsp;<em>C</em>2′&nbsp;<em>C</em>1′</span>，与存储的原纠错码
-<span class="math inline"><em>C</em>8&nbsp;<em>C</em>4&nbsp;<em>C</em>2&nbsp;<em>C</em>1</span>
-一一异或，得到结果 <span class="math inline"><em>C</em>8′′<em>C</em>4′′<em>C</em>2′′<em>C</em>1′′</span></li>
+<li>根据右图公式计算纠错码 <span class="math inline">\(C8^\prime\
+C4\prime\ C2\prime\ C1\prime\)</span>，与存储的原纠错码 <span class="math inline">\(C8\ C4\ C2\ C1\)</span> 一一异或，得到结果 <span class="math inline">\(C8\prime\prime C4\prime\prime C2\prime\prime
+C1\prime\prime\)</span></li>
 <li>若只有一项异或结果为1，即只有一个纠错码与原纠错码不同，则错误出现在该纠错码上，翻转该纠错码即可。例如，若只有
-<span class="math inline"><em>C</em>8′′ = 1</span>，即 <span class="math inline"><em>C</em>8′′&nbsp;<em>C</em>4′′&nbsp;<em>C</em>2′′&nbsp;<em>C</em>1′′ = 1000</span>，表示位置8出错，即
-<span class="math inline"><em>C</em>8</span> 自身出错。</li>
+<span class="math inline">\(C8\prime\prime=1\)</span>，即 <span class="math inline">\(C8\prime\prime\ C4\prime\prime\ C2\prime\prime\
+C1\prime\prime=1000\)</span>，表示位置8出错，即 <span class="math inline">\(C8\)</span> 自身出错。</li>
 <li>若有两项异或结果为1，即有两个纠错码与原纠错码不同，则错误出现在纠错码所表示的位置对应的数据上。例如，若
-<span class="math inline"><em>C</em>1′′ = <em>C</em>4′′ = 1</span>，即
-<span class="math inline"><em>C</em>8′′&nbsp;<em>C</em>4′′&nbsp;<em>C</em>2′′&nbsp;<em>C</em>1′′ = 0101</span>，则错误出现在位置
-<span class="math inline">0101</span> 对应数据，即 <span class="math inline"><em>D</em>2</span>
-上；从右图的公式里也可以看到，只有 <span class="math inline"><em>D</em>2</span> 能同时影响 <span class="math inline"><em>C</em>1<em>C</em>4</span>。</li>
+<span class="math inline">\(C1\prime\prime=C4\prime\prime=1\)</span>，即
+<span class="math inline">\(C8\prime\prime\ C4\prime\prime\
+C2\prime\prime\ C1\prime\prime=0101\)</span>，则错误出现在位置 <span class="math inline">\(0101\)</span> 对应数据，即 <span class="math inline">\(D2\)</span> 上；从右图的公式里也可以看到，只有
+<span class="math inline">\(D2\)</span> 能同时影响 <span class="math inline">\(C1 C4\)</span>。</li>
 </ul>
 <h1 id="ch6-外部存储器">Ch6 外部存储器</h1>
 <h2 id="磁盘数据组织">磁盘数据组织</h2>
@@ -1571,27 +1555,28 @@ bit，则应满足：<span class="math inline">2<sup><em>K</em></sup> − 1�
 </ul>
 <h2 id="磁盘性能参数">磁盘性能参数：</h2>
 <h3 id="传送时间">传送时间：</h3>
-<p><span class="math display">$$T=\frac{b}{rN}$$</span></p>
+<p><span class="math display">\[T=\frac{b}{rN}\]</span></p>
 <p>其中：</p>
 <ul>
-<li><span class="math inline"><em>b</em></span> = 传送的字节数；</li>
-<li><span class="math inline"><em>r</em></span> =
+<li><span class="math inline">\(b\)</span> = 传送的字节数；</li>
+<li><span class="math inline">\(r\)</span> =
 磁盘旋转速率（转/秒）；</li>
-<li><span class="math inline"><em>N</em></span> = 每磁道字节数。</li>
+<li><span class="math inline">\(N\)</span> = 每磁道字节数。</li>
 </ul>
 <h3 id="平均存取时间">平均存取时间：</h3>
-<p><span class="math display">$$T_a=T_s+\frac{1}{2r}+\frac{b}{rN}$$</span></p>
+<p><span class="math display">\[T_a=T_s+\frac{1}{2r}+\frac{b}{rN}\]</span></p>
 <p>其中：</p>
 <ul>
-<li><span class="math inline"><em>T</em><sub><em>s</em></sub></span> =
+<li><span class="math inline">\(T_s\)</span> =
 平均寻道时间，指磁盘移动支架使磁头对准磁道所需时间；</li>
-<li><span class="math inline">$\frac{1}{2r}$</span> =
+<li><span class="math inline">\(\frac{1}{2r}\)</span> =
 平均旋转延迟，是磁道旋转半圈的时间。
 <ul>
 <li>旋转延迟，指等待相关扇区旋转到磁头可读写位置的时间。</li>
 </ul></li>
-<li><span class="math inline">$\frac{b}{rN}$</span> =
-传送时间，指从磁道上读取或写入 <span class="math inline"><em>b</em></span> 字节所需的时间。</li>
+<li><span class="math inline">\(\frac{b}{rN}\)</span> =
+传送时间，指从磁道上读取或写入 <span class="math inline">\(b\)</span>
+字节所需的时间。</li>
 </ul>
 <h2 id="磁盘调度算法">磁盘调度算法</h2>
 <ul>
@@ -1815,13 +1800,13 @@ bit，则应满足：<span class="math inline">2<sup><em>K</em></sup> − 1�
 <h1 id="ch9-计算机算术">Ch9 计算机算术</h1>
 <h2 id="整数2的补码法">整数：2的补码法</h2>
 <ul>
-<li><span class="math inline"><em>N</em></span>
+<li><span class="math inline">\(N\)</span>
 bit整数，最高位为符号位，0表示正数，1表示负数。</li>
-<li>正数：最高位为0，剩下 <span class="math inline"><em>N</em> − 1</span> 位为二进制。</li>
-<li>负数：先写出对应正数，然后对 <span class="math inline"><em>N</em></span> 位全部按位取反，再将其视作无符号数
-<span class="math inline">+1</span>。</li>
-<li>表示范围：<span class="math inline"><em>N</em></span>
-bit能表示：<span class="math inline">[−2<sup><em>N</em> − 1</sup>, 2<sup><em>N</em> − 1</sup> − 1]</span>范围内的整数。</li>
+<li>正数：最高位为0，剩下 <span class="math inline">\(N-1\)</span>
+位为二进制。</li>
+<li>负数：先写出对应正数，然后对 <span class="math inline">\(N\)</span>
+位全部按位取反，再将其视作无符号数 <span class="math inline">\(+1\)</span>。</li>
+<li>表示范围：<span class="math inline">\(N\)</span> bit能表示：<span class="math inline">\([-2^{N-1},2^{N-1}-1]\)</span>范围内的整数。</li>
 <li>符号填充：符号位移到新最高位，空余的，对正数填全0，对负数填全1。</li>
 </ul>
 <h2 id="整数的加减法">整数的加减法</h2>
@@ -1835,15 +1820,11 @@ bit能表示：<span class="math inline">[−2<sup><em>N</em> − 1</sup>,�
 <figcaption aria-hidden="true">无符号乘法</figcaption>
 </figure>
 <ul>
-<li><span class="math inline"><em>M</em> × <em>Q</em> = <em>A</em><em>Q</em></span>，<span class="math inline"><em>M</em></span> 为被乘数，<span class="math inline"><em>Q</em></span> 为乘数，<span class="math inline"><em>A</em><em>Q</em></span> 为结果，由寄存器 <span class="math inline"><em>A</em></span> 和寄存器 <span class="math inline"><em>Q</em></span> 拼接而成。</li>
-<li>每个循环，若 <span class="math inline"><em>Q</em></span>
-最低位为1，则将 <span class="math inline"><em>M</em></span> 加在 <span class="math inline"><em>A</em></span> 上；若为0，则不相加。</li>
-<li>然后将 <span class="math inline"><em>A</em><em>Q</em></span>
-整体右移一位，<span class="math inline"><em>Q</em></span>
-最低位舍弃，<span class="math inline"><em>A</em></span>
-最高位为相加的溢出位。</li>
-<li><span class="math inline"><em>Q</em></span>
-有几位，就执行几个循环。</li>
+<li><span class="math inline">\(M\times Q=AQ\)</span>，<span class="math inline">\(M\)</span> 为被乘数，<span class="math inline">\(Q\)</span> 为乘数，<span class="math inline">\(AQ\)</span> 为结果，由寄存器 <span class="math inline">\(A\)</span> 和寄存器 <span class="math inline">\(Q\)</span> 拼接而成。</li>
+<li>每个循环，若 <span class="math inline">\(Q\)</span> 最低位为1，则将
+<span class="math inline">\(M\)</span> 加在 <span class="math inline">\(A\)</span> 上；若为0，则不相加。</li>
+<li>然后将 <span class="math inline">\(AQ\)</span> 整体右移一位，<span class="math inline">\(Q\)</span> 最低位舍弃，<span class="math inline">\(A\)</span> 最高位为相加的溢出位。</li>
+<li><span class="math inline">\(Q\)</span> 有几位，就执行几个循环。</li>
 </ul>
 <h2 id="有符号乘法booth算法">有符号乘法：Booth算法</h2>
 <figure>
@@ -1851,17 +1832,13 @@ bit能表示：<span class="math inline">[−2<sup><em>N</em> − 1</sup>,�
 <figcaption aria-hidden="true">Booth</figcaption>
 </figure>
 <ul>
-<li><span class="math inline"><em>Q</em><sub>0</sub><em>Q</em><sub>−1</sub> = 10</span>，则
-<span class="math inline"><em>A</em> = <em>A</em> − <em>M</em></span>（记忆：最高位为1，负数，减），然后shift</li>
-<li><span class="math inline"><em>Q</em><sub>0</sub><em>Q</em><sub>−1</sub> = 01</span>，则
-<span class="math inline"><em>A</em> = <em>A</em> + <em>M</em></span>（记忆：最高位为0，正数，加），溢出位舍去，然后shift</li>
-<li><span class="math inline"><em>Q</em><sub>0</sub><em>Q</em><sub>−1</sub> = 00</span>
-或 <span class="math inline">11</span>，则直接shift</li>
-<li>Shift将<span class="math inline"><em>Q</em><sub>−1</sub></span>
-舍去，<span class="math inline"><em>Q</em><sub>0</sub></span> 位移到
-<span class="math inline"><em>Q</em><sub>−1</sub></span>，新最高位和原最高位相同。</li>
-<li><span class="math inline"><em>Q</em></span>
-有几位，循环几个周期。最终结果为 <span class="math inline"><em>A</em><em>Q</em></span> 相拼接，不算 <span class="math inline"><em>Q</em><sub>−1</sub></span>！</li>
+<li><span class="math inline">\(Q_0Q_{-1}=10\)</span>，则 <span class="math inline">\(A=A-M\)</span>（记忆：最高位为1，负数，减），然后shift</li>
+<li><span class="math inline">\(Q_0Q_{-1}=01\)</span>，则 <span class="math inline">\(A=A+M\)</span>（记忆：最高位为0，正数，加），溢出位舍去，然后shift</li>
+<li><span class="math inline">\(Q_0Q_{-1}=00\)</span> 或 <span class="math inline">\(11\)</span>，则直接shift</li>
+<li>Shift将<span class="math inline">\(Q_{-1}\)</span> 舍去，<span class="math inline">\(Q_0\)</span> 位移到 <span class="math inline">\(Q_{-1}\)</span>，新最高位和原最高位相同。</li>
+<li><span class="math inline">\(Q\)</span>
+有几位，循环几个周期。最终结果为 <span class="math inline">\(AQ\)</span>
+相拼接，不算 <span class="math inline">\(Q_{-1}\)</span>！</li>
 </ul>
 <figure>
 <img src="image-12.webp" srcset="/img/loading/loading3.gif" lazyload alt="例子">
@@ -1870,23 +1847,21 @@ bit能表示：<span class="math inline">[−2<sup><em>N</em> − 1</sup>,�
 <h2 id="浮点数表示">浮点数表示</h2>
 <p>以32bit为例：</p>
 <ul>
-<li>1bit符号位 <span class="math inline"><em>m</em></span> + 8bit指数
-<span class="math inline"><em>E</em></span>（移码表示）+ 23bit有效数
-<span class="math inline"><em>B</em></span>
+<li>1bit符号位 <span class="math inline">\(m\)</span> + 8bit指数 <span class="math inline">\(E\)</span>（移码表示）+ 23bit有效数 <span class="math inline">\(B\)</span>
 <ul>
-<li>移码表示：<span class="math inline"><em>N</em></span>
-bit二进制，按照无符号数理解，得到在<span class="math inline">0&nbsp;2<sup><em>N</em></sup> − 1</span>之间的整数，再减去一个固定的偏阶（为<span class="math inline">2<sup><em>N</em> − 1</sup> − 1</span>），得到真正的指数，范围为<span class="math inline">−2<sup><em>N</em> − 1</sup> + 1&nbsp;2<sup><em>N</em> − 1</sup></span>
+<li>移码表示：<span class="math inline">\(N\)</span>
+bit二进制，按照无符号数理解，得到在<span class="math inline">\(0~2^N-1\)</span>之间的整数，再减去一个固定的偏阶（为<span class="math inline">\(2^{N-1}-1\)</span>），得到真正的指数，范围为<span class="math inline">\(-2^{N-1}+1~2^{N-1}\)</span>
 <ul>
 <li>8bit 范围为-127~+128</li>
 </ul></li>
 </ul></li>
 <li>规格化数：有效数的最高位一定为1，且不实际存储到内存中。因此，23bit有效数
-<span class="math inline"><em>B</em></span>
+<span class="math inline">\(B\)</span>
 实际表示24bit，表示一个二进制小数：1.B</li>
-<li>综上，浮点数被表示为：<span class="math inline">(−1)<sup><em>m</em></sup> × 1.<em>B</em> × 2<sup><em>E</em> − 2<sup><em>N</em> − 1</sup> + 1</sup></span></li>
+<li>综上，浮点数被表示为：<span class="math inline">\((-1)^m×1.B×2^{E-2^{N-1}+1}\)</span></li>
 <li>范围：
 <ul>
-<li>以32bit为例：正数在<span class="math inline">2<sup>−127</sup>&nbsp;(2 − 2<sup>−23</sup>) × 2<sup>128</sup></span>，负数在<span class="math inline">−(2 − 2<sup>−23</sup>) × 2<sup>128</sup>&nbsp; − 2<sup>−127</sup></span></li>
+<li>以32bit为例：正数在<span class="math inline">\(2^{-127}~(2-2^{-23})×2^{128}\)</span>，负数在<span class="math inline">\(-(2-2^{-23})×2^{128}~-2^{-127}\)</span></li>
 <li>因此有正上溢、正下溢、负上溢、负下溢</li>
 </ul></li>
 </ul>
@@ -1898,10 +1873,10 @@ bit二进制，按照无符号数理解，得到在<span class="math inline">0&n
 </figure>
 <h3 id="ieee754的一些特殊表示">IEEE754的一些特殊表示:</h3>
 <ul>
-<li>当<span class="math inline"><em>E</em> = 0</span>且<span class="math inline"><em>M</em> = 0</span>时,表示0。</li>
-<li>当<span class="math inline"><em>E</em> = 0</span>且<span class="math inline"><em>M</em> ≠ 0</span>时,表示非规格化数(下溢数)。</li>
-<li>当<span class="math inline"><em>E</em> = 255</span>且<span class="math inline"><em>M</em> = 0</span>时,表示∞。</li>
-<li>当<span class="math inline"><em>E</em> = 255</span>且<span class="math inline"><em>M</em> ≠ 0</span>时, 表示NAN。</li>
+<li>当<span class="math inline">\(E=0\)</span>且<span class="math inline">\(M=0\)</span>时,表示0。</li>
+<li>当<span class="math inline">\(E=0\)</span>且<span class="math inline">\(M≠0\)</span>时,表示非规格化数(下溢数)。</li>
+<li>当<span class="math inline">\(E=255\)</span>且<span class="math inline">\(M=0\)</span>时,表示∞。</li>
+<li>当<span class="math inline">\(E=255\)</span>且<span class="math inline">\(M≠0\)</span>时, 表示NAN。</li>
 </ul>
 <h2 id="浮点数加减法">浮点数加减法：</h2>
 <ol type="1">
@@ -1927,22 +1902,25 @@ bit二进制，按照无符号数理解，得到在<span class="math inline">0&n
 <ol type="1">
 <li>预处理
 <ul>
-<li>零检查：若有一个操作数为 <span class="math inline">0</span>，则另一个操作数直接作为结果。</li>
-<li>符号位计算：<span class="math inline"><em>m</em> = <em>m</em><sub>1</sub> ⊕ <em>m</em><sub>2</sub></span>，即两个操作数的符号位进行异或运算。</li>
+<li>零检查：若有一个操作数为 <span class="math inline">\(0\)</span>，则另一个操作数直接作为结果。</li>
+<li>符号位计算：<span class="math inline">\(m = m_1 \oplus
+m_2\)</span>，即两个操作数的符号位进行异或运算。</li>
 <li>规格化</li>
 </ul></li>
 <li>指数相加
 <ul>
-<li><span class="math inline"><em>E</em> = <em>E</em><sub>1</sub> + <em>E</em><sub>2</sub> − 127</span>，即两个操作数的指数相加后减去偏阶。</li>
+<li><span class="math inline">\(E = E_1 + E_2 -
+127\)</span>，即两个操作数的指数相加后减去偏阶。</li>
 </ul></li>
 <li>有效数相乘
 <ul>
-<li><span class="math inline"><em>B</em> = <em>B</em><sub>1</sub> × <em>B</em><sub>2</sub></span>，即两个操作数的有效数相乘。</li>
+<li><span class="math inline">\(B = B_1 \times
+B_2\)</span>，即两个操作数的有效数相乘。</li>
 </ul></li>
 <li>规格化
 <ul>
-<li>若乘法结果的有效数最高位不为 <span class="math inline">1</span>，则左移有效位数并减小指数。若此操作产生了指数下溢，报错。</li>
-<li>若乘法结果的有效数最高位为 <span class="math inline">1</span>，则直接将结果存储为 <span class="math inline">1.<em>B</em></span> 的形式。</li>
+<li>若乘法结果的有效数最高位不为 <span class="math inline">\(1\)</span>，则左移有效位数并减小指数。若此操作产生了指数下溢，报错。</li>
+<li>若乘法结果的有效数最高位为 <span class="math inline">\(1\)</span>，则直接将结果存储为 <span class="math inline">\(1.B\)</span> 的形式。</li>
 </ul></li>
 </ol>
 <figure>
@@ -1954,7 +1932,8 @@ bit二进制，按照无符号数理解，得到在<span class="math inline">0&n
 <li>零检查</li>
 <li>指数相减
 <ul>
-<li><span class="math inline"><em>E</em> = <em>E</em><sub>1</sub> − <em>E</em><sub>2</sub> + 127</span>，即被除数的指数减去除数的指数后加上偏阶。</li>
+<li><span class="math inline">\(E = E_1 - E_2 +
+127\)</span>，即被除数的指数减去除数的指数后加上偏阶。</li>
 </ul></li>
 <li>判断溢出</li>
 <li>有效数相除</li>
@@ -1970,8 +1949,8 @@ bit二进制，按照无符号数理解，得到在<span class="math inline">0&n
 </ul>
 <h2 id="操作数个数">操作数个数</h2>
 <ul>
-<li>三地址：操作数1，操作数2，结果，<span class="math inline"><em>c</em> = <em>a</em> + <em>b</em></span></li>
-<li>双地址：其中一个地址既是操作数也存储结果，<span class="math inline"><em>a</em> = <em>a</em> + <em>b</em></span></li>
+<li>三地址：操作数1，操作数2，结果，<span class="math inline">\(c=a+b\)</span></li>
+<li>双地址：其中一个地址既是操作数也存储结果，<span class="math inline">\(a=a+b\)</span></li>
 <li>单地址：寄存器操作</li>
 <li>零地址：pop，push等</li>
 <li>更多的地址：更复杂强大的指令，更复杂的CPU，更少的程序指令数</li>
@@ -2021,20 +2000,21 @@ bit二进制，按照无符号数理解，得到在<span class="math inline">0&n
 指令集：寻址方式和指令模式</h1>
 <h3 id="符号说明">符号说明：</h3>
 <ul>
-<li><span class="math inline"><em>A</em></span>：指令中出现的地址/数据的内容</li>
-<li><span class="math inline"><em>R</em></span>：指令中出现的寄存器存储的地址/数据的内容</li>
-<li><span class="math inline"><em>E</em><em>A</em></span>：被访问位置的实际有效地址</li>
-<li><span class="math inline">(<em>X</em>)</span>：位置<span class="math inline"><em>X</em></span>的内容</li>
+<li><span class="math inline">\(A\)</span>：指令中出现的地址/数据的内容</li>
+<li><span class="math inline">\(R\)</span>：指令中出现的寄存器存储的地址/数据的内容</li>
+<li><span class="math inline">\(EA\)</span>：被访问位置的实际有效地址</li>
+<li><span class="math inline">\((X)\)</span>：位置<span class="math inline">\(X\)</span>的内容</li>
 </ul>
 <h2 id="立即寻址">立即寻址</h2>
 <ul>
-<li>操作数 = <span class="math inline"><em>A</em></span></li>
+<li>操作数 = <span class="math inline">\(A\)</span></li>
 <li>优点：不要求存储访问，速度快</li>
 <li>缺点：操作数范围受限</li>
 </ul>
 <h2 id="直接寻址">直接寻址</h2>
 <ul>
-<li><span class="math inline"><em>E</em><em>A</em> = <em>A</em></span>，即实际访问位置的地址写在指令中。</li>
+<li><span class="math inline">\(EA =
+A\)</span>，即实际访问位置的地址写在指令中。</li>
 <li>优点：只需要一次内存引用。</li>
 <li>缺点：地址范围受限。</li>
 <li><figure>
@@ -2044,7 +2024,8 @@ bit二进制，按照无符号数理解，得到在<span class="math inline">0&n
 </ul>
 <h2 id="间接寻址">间接寻址</h2>
 <ul>
-<li><span class="math inline"><em>E</em><em>A</em> = (<em>A</em>)</span>，即指令中存储的地址指向一个内存位置，该位置存储着实际访问位置真正的地址。</li>
+<li><span class="math inline">\(EA =
+(A)\)</span>，即指令中存储的地址指向一个内存位置，该位置存储着实际访问位置真正的地址。</li>
 <li>优点：地址范围更大。</li>
 <li>缺点：需要两次内存引用（第一次获取真正地址，第二次获取实际数据）。</li>
 <li><figure>
@@ -2054,13 +2035,15 @@ bit二进制，按照无符号数理解，得到在<span class="math inline">0&n
 </ul>
 <h2 id="寄存器寻址类似直接寻址">寄存器寻址（类似直接寻址）</h2>
 <ul>
-<li><span class="math inline"><em>E</em><em>A</em> = <em>R</em></span>，即指令中存储的地址指向一个寄存器，实际访问内容存储在该寄存器中。</li>
+<li><span class="math inline">\(EA =
+R\)</span>，即指令中存储的地址指向一个寄存器，实际访问内容存储在该寄存器中。</li>
 <li>优点：无需内存引用；指令中寄存器地址通常较短。</li>
 <li>缺点：寄存器地址空间有限。</li>
 </ul>
 <h2 id="寄存器间接寻址类似间接寻址">寄存器间接寻址（类似间接寻址）</h2>
 <ul>
-<li><span class="math inline"><em>E</em><em>A</em> = (<em>R</em>)</span>，即指令中存储的地址指向一个寄存器，该寄存器存储着实际访问位置的真正地址。</li>
+<li><span class="math inline">\(EA =
+(R)\)</span>，即指令中存储的地址指向一个寄存器，该寄存器存储着实际访问位置的真正地址。</li>
 <li>优点：地址范围更大；相比间接寻址只需一次内存访问；指令内地址更短。</li>
 <li><figure>
 <img src="image-21.webp" srcset="/img/loading/loading3.gif" lazyload alt="寄存器间接寻址">
@@ -2069,21 +2052,21 @@ bit二进制，按照无符号数理解，得到在<span class="math inline">0&n
 </ul>
 <h2 id="偏移寻址寄存器间接寻址和直接寻址的结合">偏移寻址（寄存器间接寻址和直接寻址的结合）</h2>
 <ul>
-<li><span class="math inline"><em>E</em><em>A</em> = (<em>R</em>) + <em>A</em></span>，实际地址由寄存器内容与指令内地址相加得到。
+<li><span class="math inline">\(EA = (R) +
+A\)</span>，实际地址由寄存器内容与指令内地址相加得到。
 <ul>
 <li>相对寻址：
 <ul>
-<li><span class="math inline"><em>R</em> = <em>P</em><em>C</em></span>，<span class="math inline"><em>A</em></span> 为补码，有效地址 = 指令地址 +
+<li><span class="math inline">\(R = PC\)</span>，<span class="math inline">\(A\)</span> 为补码，有效地址 = 指令地址 +
 偏移量（可正可负）。</li>
 </ul></li>
 <li>基址寄存器寻址：
 <ul>
-<li><span class="math inline">(<em>R</em>)</span> 为基址，<span class="math inline"><em>A</em></span>
-为偏移量（相对寻址是其特例）。</li>
+<li><span class="math inline">\((R)\)</span> 为基址，<span class="math inline">\(A\)</span> 为偏移量（相对寻址是其特例）。</li>
 </ul></li>
 <li>变址寻址：
 <ul>
-<li><span class="math inline"><em>A</em></span> 为基址，<span class="math inline">(<em>R</em>)</span> 为偏移量，常用于迭代场景。</li>
+<li><span class="math inline">\(A\)</span> 为基址，<span class="math inline">\((R)\)</span> 为偏移量，常用于迭代场景。</li>
 </ul></li>
 </ul></li>
 <li><figure>
@@ -2183,13 +2166,11 @@ bit二进制，按照无符号数理解，得到在<span class="math inline">0&n
 <li>流水线阶段并非越多越好：阶段越多开销越大，单指令执行时间越长，且相关性更复杂。</li>
 <li>流水线性能
 <ul>
-<li>流水线周期时间：通过流水线把一组指令推进一个阶段所需时间 <span class="math display"><em>τ</em> = <em>τ</em><sub><em>m</em></sub> + <em>d</em></span>
-其中<span class="math inline"><em>τ</em><sub><em>m</em></sub></span>
-为最大阶段延迟，<span class="math inline"><em>d</em></span>
-为锁存器延迟（通常可忽略）。</li>
-<li>n条指令总时间：<span class="math display"><em>T</em><sub><em>k</em>, <em>n</em></sub> = [<em>k</em> + (<em>n</em> − 1)]<em>τ</em></span>（k阶段流水线，无分支）。</li>
-<li>加速比：<span class="math display">$$S_k = \frac{nk\tau}{[k +
-(n-1)]\tau} = \frac{nk}{k + n - 1}$$</span> 当<span class="math inline"><em>n</em> → ∞</span>时，<span class="math inline">lim <em>S</em><sub><em>k</em></sub> = <em>k</em></span>。</li>
+<li>流水线周期时间：通过流水线把一组指令推进一个阶段所需时间 <span class="math display">\[\tau = \tau_m + d\]</span> 其中<span class="math inline">\(\tau_m\)</span> 为最大阶段延迟，<span class="math inline">\(d\)</span> 为锁存器延迟（通常可忽略）。</li>
+<li>n条指令总时间：<span class="math display">\[T_{k,n} = [k +
+(n-1)]\tau\]</span>（k阶段流水线，无分支）。</li>
+<li>加速比：<span class="math display">\[S_k = \frac{nk\tau}{[k +
+(n-1)]\tau} = \frac{nk}{k + n - 1}\]</span> 当<span class="math inline">\(n\rightarrow\infty\)</span>时，<span class="math inline">\(\lim S_k = k\)</span>。</li>
 </ul></li>
 <li>流水线冲突：流水线由于条件不允许继续执行而停顿
 <ul>
@@ -3021,7 +3002,7 @@ bit二进制，按照无符号数理解，得到在<span class="math inline">0&n
 
 
   <script type="text/javascript">
-  document.getElementById("g-total-word-id").innerHTML = "354k";
+  document.getElementById("g-total-word-id").innerHTML = "366k";
   document.getElementById('g-total-posts-id').textContent ="45";
 </script>
 

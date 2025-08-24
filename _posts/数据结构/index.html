@@ -438,7 +438,7 @@
         
         
           <!-- compatible with older versions-->
-          164 分钟
+          165 分钟
         
       </span>
     
@@ -917,18 +917,17 @@
 <h1 id="线性表">线性表</h1>
 <h2 id="线性表的定义">线性表的定义</h2>
 <ul>
-<li>线性结构是 <span class="math inline"><em>n</em>(<em>n</em> ≥ 0)</span> 个数据元素 <span class="math inline">(<em>a</em><sub>1</sub>, <em>a</em><sub>2</sub>, …, <em>a</em><sub><em>n</em></sub>)</span>
+<li>线性结构是 <span class="math inline">\(n(n \geq 0)\)</span>
+个数据元素 <span class="math inline">\((a_1, a_2, \ldots, a_n)\)</span>
 的有限序列，满足以下性质：
 <ul>
-<li>起始结点：<span class="math inline"><em>a</em><sub>1</sub></span></li>
-<li>结束结点：<span class="math inline"><em>a</em><sub><em>n</em></sub></span></li>
-<li>线性关系：对于任意的 <span class="math inline"><em>i</em>(1 ≤ <em>i</em> &lt; <em>n</em>)</span>，都有
-<span class="math inline"><em>a</em><sub><em>i</em></sub></span> 和
-<span class="math inline"><em>a</em><sub><em>i</em> + 1</sub></span>
-之间的线性关系:
+<li>起始结点：<span class="math inline">\(a_1\)</span></li>
+<li>结束结点：<span class="math inline">\(a_n\)</span></li>
+<li>线性关系：对于任意的 <span class="math inline">\(i(1 \leq i &lt;
+n)\)</span>，都有 <span class="math inline">\(a_i\)</span> 和 <span class="math inline">\(a_{i+1}\)</span> 之间的线性关系:
 <ul>
-<li>直接前驱：<span class="math inline"><em>a</em><sub><em>i</em> − 1</sub></span></li>
-<li>直接后继：<span class="math inline"><em>a</em><sub><em>i</em> + 1</sub></span></li>
+<li>直接前驱：<span class="math inline">\(a_{i-1}\)</span></li>
+<li>直接后继：<span class="math inline">\(a_{i+1}\)</span></li>
 </ul></li>
 </ul></li>
 <li>线性表的抽象类</li>
@@ -962,8 +961,8 @@
 <ul>
 <li>时间复杂度
 <ul>
-<li>create、clear、update、visit：<span class="math inline"><em>O</em>(1)</span></li>
-<li>insert、delete、search、traverse：<span class="math inline"><em>O</em>(<em>N</em>)</span></li>
+<li>create、clear、update、visit：<span class="math inline">\(O(1)\)</span></li>
+<li>insert、delete、search、traverse：<span class="math inline">\(O(N)\)</span></li>
 </ul></li>
 </ul>
 <figure class="shiki cpp"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">#include</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"2-1-list.h"</span></span>
@@ -1060,8 +1059,8 @@
 <ul>
 <li>时间复杂度
 <ul>
-<li>visit: <span class="math inline"><em>O</em>(<em>N</em>)</span></li>
-<li>insert: <span class="math inline"><em>O</em>(1)</span></li>
+<li>visit: <span class="math inline">\(O(N)\)</span></li>
+<li>insert: <span class="math inline">\(O(1)\)</span></li>
 </ul></li>
 </ul>
 <figure class="shiki cpp"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">#include</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"2-1-list.h"</span></span>
@@ -1366,7 +1365,7 @@
 <figcaption aria-hidden="true">栈的顺序实现结构</figcaption>
 </figure>
 <ul>
-<li>时间复杂度: <span class="math inline"><em>O</em>(1)</span></li>
+<li>时间复杂度: <span class="math inline">\(O(1)\)</span></li>
 </ul>
 <figure class="shiki cpp"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">#include</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"3-1-stack.h"</span></span>
 <span class="line"></span>
@@ -1503,11 +1502,11 @@
 <li>括号配对</li>
 <li>表达式的计算（后缀表达式）
 <ul>
-<li>对于一个表达式 <span class="math inline"><em>a</em> + <em>b</em></span>
+<li>对于一个表达式 <span class="math inline">\(a + b\)</span>
 <ul>
-<li><strong>前缀式</strong>：<span class="math inline">+<em>a</em><em>b</em></span></li>
-<li><strong>中缀式</strong>：<span class="math inline"><em>a</em> + <em>b</em></span></li>
-<li><strong>后缀式</strong>：<span class="math inline"><em>a</em><em>b</em>+</span></li>
+<li><strong>前缀式</strong>：<span class="math inline">\(+ab\)</span></li>
+<li><strong>中缀式</strong>：<span class="math inline">\(a+b\)</span></li>
+<li><strong>后缀式</strong>：<span class="math inline">\(ab+\)</span></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1745,7 +1744,7 @@
 <li>任意结点的子结点数不超2</li>
 <li><strong>满二叉树/完美树</strong>：任意一层的结点个数都达到最大值
 <ul>
-<li>高度为 <span class="math inline"><em>k</em></span> 并具有 <span class="math inline">2<em>k</em> − 1</span> 个结点的二叉树</li>
+<li>高度为 <span class="math inline">\(k\)</span> 并具有 <span class="math inline">\(2k-1\)</span> 个结点的二叉树</li>
 </ul></li>
 <li><strong>完全二叉树</strong>：满二叉树最底层从右向左依次移除若干结点
 <ul>
@@ -1759,26 +1758,25 @@
 </figure>
 <h3 id="二叉树的常用性质">二叉树的常用性质</h3>
 <ol type="1">
-<li>非空二叉树的第 <span class="math inline"><em>i</em></span>
-层上最多有 <span class="math inline">2<em>i</em> − 1</span>
-个结点（<span class="math inline"><em>i</em> ≥ 1</span>）</li>
-<li>高度为 <span class="math inline"><em>k</em></span>
-的二叉树，最多具有 <span class="math inline">2<sup><em>k</em></sup> − 1</span>
-个结点（对满二叉树进行 <span class="math inline">2</span>
-的等比数列求和）</li>
-<li>如果叶子结点数为 <span class="math inline"><em>n</em><sub>0</sub></span>，度数为 <span class="math inline">2</span> 的结点数为 <span class="math inline"><em>n</em><sub>2</sub></span>，则有：<span class="math inline"><em>n</em><sub>0</sub> = <em>n</em><sub>2</sub> + 1</span></li>
-<li>具有 <span class="math inline"><em>n</em></span>
-个结点的完全二叉树的高度 <span class="math inline"><em>k</em> = ⌊log<sub>2</sub><em>n</em>⌋ + 1</span></li>
-<li>对一棵有 <span class="math inline"><em>n</em></span>
+<li>非空二叉树的第 <span class="math inline">\(i\)</span> 层上最多有
+<span class="math inline">\(2i-1\)</span> 个结点（<span class="math inline">\(i≥1\)</span>）</li>
+<li>高度为 <span class="math inline">\(k\)</span> 的二叉树，最多具有
+<span class="math inline">\(2^k-1\)</span> 个结点（对满二叉树进行 <span class="math inline">\(2\)</span> 的等比数列求和）</li>
+<li>如果叶子结点数为 <span class="math inline">\(n_0\)</span>，度数为
+<span class="math inline">\(2\)</span> 的结点数为 <span class="math inline">\(n_2\)</span>，则有：<span class="math inline">\(n_0=n_2+1\)</span></li>
+<li>具有 <span class="math inline">\(n\)</span> 个结点的完全二叉树的高度
+<span class="math inline">\(k = \lfloor \log_2 n \rfloor +
+1\)</span></li>
+<li>对一棵有 <span class="math inline">\(n\)</span>
 个结点的完全二叉树按层自上而下编号，每一层自左至右依次编号，若树的根结点编号为
-<span class="math inline">1</span>，则对一个编号为 <span class="math inline"><em>i</em></span> 的结点
+<span class="math inline">\(1\)</span>，则对一个编号为 <span class="math inline">\(i\)</span> 的结点
 <ol type="1">
-<li>若 <span class="math inline"><em>i</em> = 1</span>，则该结点是根结点，否则父结点编号为
-<span class="math inline">⌊<em>i</em>/2⌋</span></li>
-<li>若 <span class="math inline">2<em>i</em> &gt; <em>n</em></span>，则该结点是叶结点，否则左儿子编号为
-<span class="math inline">2<em>i</em></span></li>
-<li>若 <span class="math inline">2<em>i</em> + 1 &gt; <em>n</em></span>，则该结点是叶结点，否则右儿子编号为
-<span class="math inline">2<em>i</em> + 1</span></li>
+<li>若 <span class="math inline">\(i=1\)</span>，则该结点是根结点，否则父结点编号为
+<span class="math inline">\(\lfloor i/2 \rfloor\)</span></li>
+<li>若 <span class="math inline">\(2i &gt;
+n\)</span>，则该结点是叶结点，否则左儿子编号为 <span class="math inline">\(2i\)</span></li>
+<li>若 <span class="math inline">\(2i+1 &gt;
+n\)</span>，则该结点是叶结点，否则右儿子编号为 <span class="math inline">\(2i+1\)</span></li>
 </ol></li>
 </ol>
 <h3 id="二叉树的基本运算">二叉树的基本运算</h3>
@@ -1852,11 +1850,11 @@
 <ul>
 <li>使用数组存储
 <ul>
-<li>根结点下标为 <span class="math inline">1</span></li>
-<li>若某个结点下标为 <span class="math inline"><em>i</em></span>
+<li>根结点下标为 <span class="math inline">\(1\)</span></li>
+<li>若某个结点下标为 <span class="math inline">\(i\)</span>
 <ul>
-<li>左子树下标为 <span class="math inline">2<em>i</em></span></li>
-<li>右子树下标为 <span class="math inline">2<em>i</em> + 1</span></li>
+<li>左子树下标为 <span class="math inline">\(2i\)</span></li>
+<li>右子树下标为 <span class="math inline">\(2i+1\)</span></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -2189,10 +2187,9 @@
 <li>目的：根据数据的出现频率进行不同长度的编码，从而节省空间。</li>
 <li>哈夫曼树：哈夫曼树是一棵最小代价的二叉树，在这棵树上，所有的字符都包含在叶结点上。要使得整棵树的代价最小，显然权值大的叶子应当尽量靠近树根，权值小的叶子可以适当离树根远一些。</li>
 <li>构建方法：从当前集合中选取并去除权值最小、次最小的两个结点，以这两个结点作为内部结点
-<span class="math inline"><em>b</em><sub><em>i</em></sub></span>
-的左右儿子，<span class="math inline"><em>b</em><sub><em>i</em></sub></span>
+<span class="math inline">\(b_i\)</span> 的左右儿子，<span class="math inline">\(b_i\)</span>
 的权值为其左右儿子权值之和并加入其中。这样，在集合A中，结点个数便减少了一个。这样，在经过了
-<span class="math inline"><em>n</em> − 1</span>
+<span class="math inline">\(n-1\)</span>
 次循环之后，集合A中只剩下了一个结点，这个结点就是根结点。</li>
 </ul>
 <p><img src="image-20.webp" srcset="/img/loading/loading3.gif" lazyload alt="哈夫曼树的构建过程"> <img src="image-21.webp" srcset="/img/loading/loading3.gif" lazyload alt="哈夫曼树的内存表示"></p>
@@ -2360,12 +2357,10 @@
 </ul></li>
 <li><strong>把森林转换为二叉树的步骤</strong>：
 <ol type="1">
-<li>把森林 <span class="math inline"><em>F</em> = <em>T</em><sub>1</sub>, <em>T</em><sub>2</sub>, …, <em>T</em><sub><em>k</em></sub></span>
-中的树 <span class="math inline"><em>T</em><sub><em>i</em></sub></span>
-用孩子兄弟链法表示为一棵二叉树 <span class="math inline"><em>B</em><sub><em>i</em></sub></span></li>
-<li>把二叉树 <span class="math inline"><em>B</em><sub><em>i</em></sub></span> 作为二叉树
-<span class="math inline"><em>B</em><sub><em>i</em> − 1</sub></span>
-的根结点的右子树</li>
+<li>把森林 <span class="math inline">\(F={T_1, T_2, \ldots,
+T_k}\)</span> 中的树 <span class="math inline">\(T_i\)</span>
+用孩子兄弟链法表示为一棵二叉树 <span class="math inline">\(B_i\)</span></li>
+<li>把二叉树 <span class="math inline">\(B_i\)</span> 作为二叉树 <span class="math inline">\(B_{i-1}\)</span> 的根结点的右子树</li>
 </ol></li>
 </ul>
 <figure>
@@ -2376,7 +2371,7 @@
 <p>优先级队列是一种特殊的队列，其中每个元素都有一个优先级。优先级最高的元素是队头元素，优先级最低的元素是队尾元素。</p>
 <h2 id="基于线性表的优先级的队列">基于线性表的优先级的队列</h2>
 <ul>
-<li>时间复杂度 <span class="math inline"><em>O</em>(<em>N</em>)</span></li>
+<li>时间复杂度 <span class="math inline">\(O(N)\)</span></li>
 </ul>
 <h2 id="基于树的优先级队列">基于树的优先级队列</h2>
 <figure>
@@ -2385,7 +2380,7 @@
 </figure>
 <ul>
 <li>又称<strong>二叉堆</strong></li>
-<li>时间复杂度：<span class="math inline"><em>O</em>(log <em>N</em>)</span></li>
+<li>时间复杂度：<span class="math inline">\(O(\log N)\)</span></li>
 <li>分为：
 <ul>
 <li>最大堆：根结点是最大元素</li>
@@ -2601,18 +2596,19 @@ down）</li>
 <li>查找表中的元素无序</li>
 <li>顺序查找
 <ul>
-<li>时间复杂度：<span class="math inline"><em>O</em>(<em>N</em>)</span></li>
+<li>时间复杂度：<span class="math inline">\(O(N)\)</span></li>
 </ul></li>
 </ul>
 <h3 id="有序表的查找">有序表的查找</h3>
 <ul>
-<li><strong>顺序查找</strong>：<span class="math inline"><em>O</em>(<em>N</em>)</span></li>
-<li><strong>二分查找</strong>：<span class="math inline"><em>O</em>(log <em>N</em>)</span></li>
+<li><strong>顺序查找</strong>：<span class="math inline">\(O(N)\)</span></li>
+<li><strong>二分查找</strong>：<span class="math inline">\(O(\log
+N)\)</span></li>
 <li><strong>插值查找</strong>：
 <ul>
-<li>根据下面的公式估算位置 <span class="math display">$$ next = low +
+<li>根据下面的公式估算位置 <span class="math display">\[ next = low +
 [\frac{(x - A[low])}{A[high] - A[low]} \times (high - low - 1)]
-$$</span></li>
+\]</span></li>
 </ul></li>
 <li><strong>分块查找/顺序索引查找</strong>
 <ul>
@@ -2730,7 +2726,7 @@ $$</span></li>
 </ol></li>
 </ol></li>
 </ul></li>
-<li>时间复杂度：<span class="math inline"><em>O</em>(log <em>N</em>)</span></li>
+<li>时间复杂度：<span class="math inline">\(O(\log N)\)</span></li>
 </ul>
 <figure class="shiki cpp"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">#include</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"9-1-dynamicSearchTable.h"</span></span>
 <span class="line"><span style="color: #C678DD">using</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">namespace</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">std</span><span style="color: #ABB2BF">;</span></span>
@@ -2880,15 +2876,15 @@ $$</span></li>
 <h2 id="avl-树">AVL 树</h2>
 <h3 id="avl-树二叉平衡树的定义">AVL 树（二叉平衡树）的定义</h3>
 <ul>
-<li>二叉平衡树是满足某个平衡条件的二叉查找树，其保证树的高度是 <span class="math inline"><em>O</em>(log <em>N</em>)</span>，从而操作都是
-<span class="math inline"><em>O</em>(log <em>N</em>)</span></li>
+<li>二叉平衡树是满足某个平衡条件的二叉查找树，其保证树的高度是 <span class="math inline">\(O(\log N)\)</span>，从而操作都是 <span class="math inline">\(O(\log N)\)</span></li>
 <li>最理想是每个节点的左右子树都有同样的高度，不过条件可以放宽一些，因此有了二叉平衡查找树</li>
 <li><strong>平衡因子（平衡度）</strong>：结点的平衡度是结点的左子树的高度减去右子树的高度
 <ul>
-<li>要求每个结点的平衡因子都为 <span class="math inline">+1, −1, 0</span>，即每个结点的左右子树的高度最多差
-<span class="math inline">1</span></li>
-<li>一棵由 <span class="math inline"><em>N</em></span> 个结点组成的 AVL
-树的高度 <span class="math inline"><em>H</em> ≤ 1.44log (<em>N</em> + 1) − 0.328</span></li>
+<li>要求每个结点的平衡因子都为 <span class="math inline">\(+1, -1,
+0\)</span>，即每个结点的左右子树的高度最多差 <span class="math inline">\(1\)</span></li>
+<li>一棵由 <span class="math inline">\(N\)</span> 个结点组成的 AVL
+树的高度 <span class="math inline">\(H \leq 1.44\log (N+1) -
+0.328\)</span></li>
 </ul></li>
 </ul>
 <h3 id="avl-树的实现">AVL 树的实现</h3>
@@ -3201,8 +3197,7 @@ $$</span></li>
 <h3 id="散列函数">散列函数</h3>
 <ul>
 <li><strong>直接定址法</strong>：去关键字值或其线性函数值作为散列地址</li>
-<li><strong>除留余数法</strong>：如果 <span class="math inline"><em>M</em></span> 是散列表的大小，关键字为 <span class="math inline"><em>x</em></span>，则散列地址为 <span class="math inline"><em>H</em>(<em>x</em>) = <em>x</em> mod &nbsp;<em>M</em></span>，常选
-<span class="math inline"><em>M</em></span> 为素数，使其分布更均匀</li>
+<li><strong>除留余数法</strong>：如果 <span class="math inline">\(M\)</span> 是散列表的大小，关键字为 <span class="math inline">\(x\)</span>，则散列地址为 <span class="math inline">\(H(x) = x \mod M\)</span>，常选 <span class="math inline">\(M\)</span> 为素数，使其分布更均匀</li>
 <li><strong>数字分析法</strong>：对关键字集合中的所有关键字，分析每一位上数字分布，取关键字的某一部分（数字分布均匀的位）进行映射</li>
 <li><strong>平方取中法</strong>：如果关键字中各位的分布都比较均匀，但关键字的值域比数组规模大，则可以将关键字平方后，取其结果的中间各位作为散列函数值</li>
 <li><strong>折叠法</strong>：关键字相当长，以至于和散列表的单元总数相比大得多时，可选取一个长度后，将关键字按此长度分组相加</li>
@@ -3212,7 +3207,7 @@ $$</span></li>
 <ul>
 <li><strong>线性探测法</strong>：
 <ul>
-<li>插入：当散列发生冲突时，探测下一个单元，直到发现一个空单元，即 <span class="math inline"><em>H</em>, <em>H</em> + 1, <em>H</em> + 2, <em>H</em> + 3, ⋯</span></li>
+<li>插入：当散列发生冲突时，探测下一个单元，直到发现一个空单元，即 <span class="math inline">\(H, H+1, H+2, H+3, \cdots\)</span></li>
 <li>查找：算出来位置之后，找不到的话就向后查找，直到找到或者遇到空单元</li>
 <li>删除：采用迟删除，标记该单元活动/被删除</li>
 <li>缺点：可能产生<strong>初始聚集</strong></li>
@@ -3298,15 +3293,16 @@ $$</span></li>
 <ul>
 <li><strong>二次探测法</strong>：
 <ul>
-<li>当散列发生冲突时，检查远离初始探测点的某一单元，即 <span class="math inline"><em>H</em>, <em>H</em> + 1<sup>2</sup>, <em>H</em> + 2<sup>2</sup>, <em>H</em> + 3<sup>2</sup>, ⋯</span></li>
+<li>当散列发生冲突时，检查远离初始探测点的某一单元，即 <span class="math inline">\(H, H+1^2, H+2^2, H+3^2, \cdots\)</span></li>
 <li>定理：使用二次探测法且表的大小是一个素数，则如果表至少有一半空单元，新的元素总能被插入，且插入过程中没有一个单元被探测两次</li>
-<li>动态扩展：当负载因子超过 <span class="math inline">0.5</span>
+<li>动态扩展：当负载因子超过 <span class="math inline">\(0.5\)</span>
 时，需要把数组扩大一倍，并且进行<strong>重新散列</strong>（新的数组隐含新的散列函数）</li>
 </ul></li>
 <li><strong>再散列法</strong>：
 <ul>
-<li>两个散列函数 <span class="math inline"><em>H</em><sub>1</sub>, <em>H</em><sub>2</sub></span>，分别用于计算探测序列的起始地址和下一个探测的步长，即
-<span class="math inline"><em>H</em><sub>1</sub>(<em>x</em>), <em>H</em><sub>1</sub>(<em>x</em>) + <em>H</em><sub>2</sub>(<em>x</em>), <em>H</em><sub>1</sub>(<em>x</em>) + 2<em>H</em><sub>2</sub>(<em>x</em>), <em>H</em><sub>1</sub>(<em>x</em>) + 3<em>H</em><sub>2</sub>(<em>x</em>), ⋯</span></li>
+<li>两个散列函数 <span class="math inline">\(H_1,
+H_2\)</span>，分别用于计算探测序列的起始地址和下一个探测的步长，即 <span class="math inline">\(H_1(x), H_1(x)+H_2(x), H_1(x)+2H_2(x),
+H_1(x)+3H_2(x), \cdots\)</span></li>
 </ul></li>
 </ul>
 <h3 id="开散列表拉链表">开散列表/拉链表</h3>
@@ -3314,9 +3310,7 @@ $$</span></li>
 <img src="image-33.webp" srcset="/img/loading/loading3.gif" lazyload alt="开散列表">
 <figcaption aria-hidden="true">开散列表</figcaption>
 </figure>
-<p>将具有相同散列地址的碰撞结点存储在一个单链表中，散列表中的 <span class="math inline"><em>k</em></span> 号单元保存的是指向散列地址同为
-<span class="math inline"><em>k</em></span>
-的链表的第一个结点的地址。</p>
+<p>将具有相同散列地址的碰撞结点存储在一个单链表中，散列表中的 <span class="math inline">\(k\)</span> 号单元保存的是指向散列地址同为 <span class="math inline">\(k\)</span> 的链表的第一个结点的地址。</p>
 <figure class="shiki cpp"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">#include</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"9-1-dynamicSearchTable.h"</span></span>
 <span class="line"><span style="color: #C678DD">#include</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&lt;bits/stdc++.h&gt;</span></span>
 <span class="line"><span style="color: #C678DD">using</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">namespace</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">std</span><span style="color: #ABB2BF">;</span></span>
@@ -3438,7 +3432,7 @@ $$</span></li>
 </ul></li>
 </ul>
 <h2 id="插入排序">插入排序</h2>
-<p>首先将由第一个数据元素组成的序列看成是有序的，然后将剩余的 <span class="math inline"><em>n</em> − 1</span>
+<p>首先将由第一个数据元素组成的序列看成是有序的，然后将剩余的 <span class="math inline">\(n-1\)</span>
 个元素依次<strong>插入</strong>到前面的已排好序的子序列中去，使得每次插入后的子序列也是有序的。</p>
 <figure>
 <img src="image-34.webp" srcset="/img/loading/loading3.gif" lazyload alt="插入排序">
@@ -3448,10 +3442,10 @@ $$</span></li>
 <ul>
 <li>时间复杂度：
 <ul>
-<li>最好情况：<span class="math inline"><em>O</em>(<em>N</em>)</span></li>
-<li>最坏情况、平均情况：<span class="math inline"><em>O</em>(<em>N</em><sup>2</sup>)</span></li>
+<li>最好情况：<span class="math inline">\(O(N)\)</span></li>
+<li>最坏情况、平均情况：<span class="math inline">\(O(N^2)\)</span></li>
 </ul></li>
-<li>空间复杂度：<span class="math inline"><em>O</em>(1)</span></li>
+<li>空间复杂度：<span class="math inline">\(O(1)\)</span></li>
 <li>稳定</li>
 </ul>
 <figure class="shiki cpp"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #7F848E; font-style: italic">//直接插入排序</span></span>
@@ -3473,11 +3467,11 @@ $$</span></li>
 <li>二分插入排序是直接插入排序的改进版，利用二分查找来确定插入位置</li>
 <li>时间复杂度（平均）：
 <ul>
-<li>比较次数：<span class="math inline"><em>O</em>(<em>N</em>log <em>N</em>)</span></li>
-<li>移动次数：<span class="math inline"><em>O</em>(<em>N</em><sup>2</sup>)</span></li>
-<li>总体时间复杂度：<span class="math inline"><em>O</em>(<em>N</em><sup>2</sup>)</span></li>
+<li>比较次数：<span class="math inline">\(O(N \log N)\)</span></li>
+<li>移动次数：<span class="math inline">\(O(N^2)\)</span></li>
+<li>总体时间复杂度：<span class="math inline">\(O(N^2)\)</span></li>
 </ul></li>
-<li>空间复杂度：<span class="math inline"><em>O</em>(1)</span></li>
+<li>空间复杂度：<span class="math inline">\(O(1)\)</span></li>
 <li>稳定</li>
 </ul>
 <figure class="shiki cpp"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #7F848E; font-style: italic">//二分插入排序</span></span>
@@ -3509,7 +3503,7 @@ $$</span></li>
 <h3 id="希尔排序">希尔排序</h3>
 <ul>
 <li>希尔排序是直接插入排序的改进版，先将待排序序列分成若干个子序列分别进行直接插入排序，然后再对全体记录进行一次直接插入排序</li>
-<li>时间复杂度：取决于步长序列的选取，一般情况下为<span class="math inline"><em>O</em>(<em>N</em><sup>1.3</sup>)</span>到<span class="math inline"><em>O</em>(<em>N</em><sup>2</sup>)</span>之间</li>
+<li>时间复杂度：取决于步长序列的选取，一般情况下为<span class="math inline">\(O(N^{1.3})\)</span>到<span class="math inline">\(O(N^{2})\)</span>之间</li>
 <li>不稳定</li>
 </ul>
 <figure>
@@ -3532,12 +3526,12 @@ $$</span></li>
 <span class="line"><span style="color: #ABB2BF">    }</span></span>
 <span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure>
 <h2 id="选择排序">选择排序</h2>
-<p>从 <span class="math inline"><em>n</em></span>
+<p>从 <span class="math inline">\(n\)</span>
 个元素开始，每次从剩下的元素序列中<strong>选择</strong>关键字最小/最大的元素，依此类推，直至序列中最后只剩下一个元素为止。这样，把每次得到的元素排成一个序列，就得到了按非递减序排列的排序序列。</p>
 <h3 id="直接选择排序">直接选择排序</h3>
 <ul>
-<li>时间复杂度：<span class="math inline"><em>O</em>(<em>N</em><sup>2</sup>)</span></li>
-<li>空间复杂度：<span class="math inline"><em>O</em>(1)</span></li>
+<li>时间复杂度：<span class="math inline">\(O(N^2)\)</span></li>
+<li>空间复杂度：<span class="math inline">\(O(1)\)</span></li>
 <li>不稳定</li>
 </ul>
 <figure>
@@ -3566,8 +3560,8 @@ $$</span></li>
 <span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure>
 <h3 id="堆排序">堆排序</h3>
 <ul>
-<li>时间复杂度：<span class="math inline"><em>O</em>(<em>N</em>log <em>N</em>)</span></li>
-<li>空间复杂度：<span class="math inline"><em>O</em>(1)</span></li>
+<li>时间复杂度：<span class="math inline">\(O(N \log N)\)</span></li>
+<li>空间复杂度：<span class="math inline">\(O(1)\)</span></li>
 <li>不稳定</li>
 </ul>
 <figure>
@@ -3616,10 +3610,10 @@ $$</span></li>
 <ul>
 <li>时间复杂度：
 <ul>
-<li>最好情况：<span class="math inline"><em>O</em>(<em>N</em>)</span></li>
-<li>最坏、平均情况：<span class="math inline"><em>O</em>(<em>N</em><sup>2</sup>)</span></li>
+<li>最好情况：<span class="math inline">\(O(N)\)</span></li>
+<li>最坏、平均情况：<span class="math inline">\(O(N^2)\)</span></li>
 </ul></li>
-<li>空间复杂度：<span class="math inline"><em>O</em>(1)</span></li>
+<li>空间复杂度：<span class="math inline">\(O(1)\)</span></li>
 <li>稳定</li>
 </ul>
 <figure>
@@ -3649,9 +3643,9 @@ $$</span></li>
 <li>快速排序是交换排序的一种，采用分治法的思想，将待排序序列分成两个子序列，使得左子序列的所有元素都小于或等于右子序列的所有元素，然后对这两个子序列递归进行快速排序</li>
 <li>时间复杂度：
 <ul>
-<li>最好情况：<span class="math inline"><em>O</em>(<em>N</em>log <em>N</em>)</span></li>
-<li>最坏情况：<span class="math inline"><em>O</em>(<em>N</em><sup>2</sup>)</span></li>
-<li>平均情况：<span class="math inline"><em>O</em>(<em>N</em>log <em>N</em>)</span></li>
+<li>最好情况：<span class="math inline">\(O(N \log N)\)</span></li>
+<li>最坏情况：<span class="math inline">\(O(N^2)\)</span></li>
+<li>平均情况：<span class="math inline">\(O(N \log N)\)</span></li>
 </ul></li>
 <li>不稳定</li>
 </ul>
@@ -3731,8 +3725,8 @@ $$</span></li>
 <h2 id="归并排序">归并排序</h2>
 <p>归并排序的思想来源于合并两个已排序的有序表时，只需要从两个表的表头开始比较，将较小的元素放入结果表中，直到一个表为空，然后将另一个表中剩余的元素全部放入结果表中。</p>
 <ul>
-<li>时间复杂度：<span class="math inline"><em>O</em>(<em>N</em>log <em>N</em>)</span></li>
-<li>空间复杂度：<span class="math inline"><em>O</em>(<em>N</em>)</span></li>
+<li>时间复杂度：<span class="math inline">\(O(N \log N)\)</span></li>
+<li>空间复杂度：<span class="math inline">\(O(N)\)</span></li>
 <li>稳定</li>
 </ul>
 <figure>
@@ -3794,10 +3788,10 @@ $$</span></li>
 <span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure>
 <h2 id="基数排序">基数排序</h2>
 <p>又称为口袋排序法，通过分配的方法对整数进行排序。基数排序的基本思想是将整数按位切割成不同的数字，然后按每个位数分别比较。
-- 时间复杂度：<span class="math inline"><em>O</em>(<em>l</em><em>e</em><em>n</em> ⋅ (<em>N</em> + <em>k</em>))</span>，其中
-<span class="math inline"><em>l</em><em>e</em><em>n</em></span>
-是关键字的位数，<span class="math inline"><em>k</em></span>
-是基数（即每一位的取值范围/进制数） - 空间复杂度：<span class="math inline"><em>O</em>(1)</span></p>
+- 时间复杂度：<span class="math inline">\(O(len \cdot (N +
+k))\)</span>，其中 <span class="math inline">\(len\)</span>
+是关键字的位数，<span class="math inline">\(k\)</span>
+是基数（即每一位的取值范围/进制数） - 空间复杂度：<span class="math inline">\(O(1)\)</span></p>
 <figure>
 <img src="image-41.webp" srcset="/img/loading/loading3.gif" lazyload alt="基数排序">
 <figcaption aria-hidden="true">基数排序</figcaption>
@@ -3899,28 +3893,30 @@ $$</span></li>
 </ul>
 <h2 id="b-树">B 树</h2>
 <h3 id="b-树的定义">B 树的定义</h3>
-<p>一棵 <span class="math inline"><em>m</em></span> 阶 B
+<p>一棵 <span class="math inline">\(m\)</span> 阶 B
 树或者为空，或者满足以下条件。</p>
 <ol type="1">
-<li><p>根结点要么是叶子，要么至少有两个儿子，至多有 <span class="math inline"><em>m</em></span> 个儿子。</p></li>
-<li><p>除根结点和叶子结点之外，每个结点的儿子个数 <span class="math inline"><em>s</em></span> 满足<span class="math inline">⌈<em>m</em>/2⌉ ≤ <em>s</em> ≤ <em>m</em></span>。</p></li>
-<li><p>有 <span class="math inline"><em>s</em></span>
-个儿子的非叶结点具有<span class="math inline"><em>n</em> = <em>s</em> − 1</span>个关键字，故<span class="math inline"><em>s</em> = <em>n</em> + 1</span>。这些结点的数据信息为<br>
-<span class="math display">(<em>n</em>, <em>A</em><sub>0</sub>, (<em>K</em><sub>1</sub>, <em>R</em><sub>1</sub>), <em>A</em><sub>1</sub>, (<em>K</em><sub>2</sub>, <em>R</em><sub>2</sub>), <em>A</em><sub>2</sub>, ⋯, (<em>K</em><sub><em>n</em></sub>, <em>R</em><sub><em>n</em></sub>), <em>A</em><sub><em>n</em></sub>)</span></p>
+<li><p>根结点要么是叶子，要么至少有两个儿子，至多有 <span class="math inline">\(m\)</span> 个儿子。</p></li>
+<li><p>除根结点和叶子结点之外，每个结点的儿子个数 <span class="math inline">\(s\)</span> 满足<span class="math inline">\(\lceil
+m/2 \rceil \leq s \leq m\)</span>。</p></li>
+<li><p>有 <span class="math inline">\(s\)</span>
+个儿子的非叶结点具有<span class="math inline">\(n = s -
+1\)</span>个关键字，故<span class="math inline">\(s = n +
+1\)</span>。这些结点的数据信息为<br>
+<span class="math display">\[(n,A_0,(K_1,R_1),A_1,(K_2,R_2),A_2,\cdots,(K_n,R_n),A_n)\]</span></p>
 <p>其中：</p>
 <ul>
-<li><span class="math inline"><em>n</em></span>: 关键字的个数</li>
-<li><span class="math inline"><em>K</em><sub>1</sub>, <em>K</em><sub>2</sub>, ⋯, <em>K</em><sub><em>n</em></sub></span>:
-结点的关键字，且<span class="math inline"><em>K</em><sub>1</sub> &lt; <em>K</em><sub>2</sub>⋯ &lt; <em>K</em><sub><em>n</em></sub></span></li>
-<li><span class="math inline"><em>A</em><sub>0</sub></span>: B
-树中小于<span class="math inline"><em>K</em><sub>1</sub></span>的结点的地址<br>
+<li><span class="math inline">\(n\)</span>: 关键字的个数</li>
+<li><span class="math inline">\(K_1,K_2,\cdots,K_n\)</span>:
+结点的关键字，且<span class="math inline">\(K_1 \lt K_2 \cdots \lt
+K_n\)</span></li>
+<li><span class="math inline">\(A_0\)</span>: B 树中小于<span class="math inline">\(K_1\)</span>的结点的地址<br>
 </li>
-<li><span class="math inline"><em>R</em><sub><em>j</em></sub></span>:
-关键字值等于<span class="math inline"><em>K</em><sub><em>j</em></sub>(1 ≤ <em>j</em> ≤ <em>n</em>)</span>的数据记录在硬盘中的地址</li>
-<li><span class="math inline"><em>A</em><sub><em>j</em></sub></span>: B
-树中大于<span class="math inline"><em>K</em><sub><em>j</em></sub></span>且小于<span class="math inline"><em>K</em><sub><em>j</em> + 1</sub>(1 ≤ <em>j</em> ≤ <em>n</em> − 1)</span>的结点的地址</li>
-<li><span class="math inline"><em>A</em><sub><em>n</em></sub></span>: B
-树中大于<span class="math inline"><em>K</em><sub><em>n</em></sub></span>的结点的地址</li>
+<li><span class="math inline">\(R_j\)</span>: 关键字值等于<span class="math inline">\(K_j(1 \leq j \leq
+n)\)</span>的数据记录在硬盘中的地址</li>
+<li><span class="math inline">\(A_j\)</span>: B 树中大于<span class="math inline">\(K_j\)</span>且小于<span class="math inline">\(K_{j
++ 1}(1 \leq j \leq n - 1)\)</span>的结点的地址</li>
+<li><span class="math inline">\(A_n\)</span>: B 树中大于<span class="math inline">\(K_n\)</span>的结点的地址</li>
 </ul></li>
 <li><p>所有的叶子结点都出现在同一层上，即它们的深度相同，并且不带信息(可以认为是外部结点或查找失败的结点，这些结点并不存在，指向这些结点的指针为空)。</p></li>
 </ol>
@@ -3938,13 +3934,13 @@ $$</span></li>
 <li>重复以上步骤，直到找到关键字或到达叶子结点。</li>
 </ol>
 <h3 id="b-树的插入">B 树的插入</h3>
-<p>首先在 <span class="math inline"><em>m</em></span> 阶 B
+<p>首先在 <span class="math inline">\(m\)</span> 阶 B
 树上进行查找操作，确定新插入的关键字 key
 在最底层的非叶结点的插入位置，将 key
 和其他信息按序插入最底层上的某个结点。</p>
 <ul>
-<li>若被插入结点的关键字个数小于 <span class="math inline"><em>m</em> − 1</span> ，则插入操作结束</li>
-<li>若该结点原有的关键字个数已经等于 <span class="math inline"><em>m</em> − 1</span> ，必须分裂成两个结点</li>
+<li>若被插入结点的关键字个数小于 <span class="math inline">\(m-1\)</span> ，则插入操作结束</li>
+<li>若该结点原有的关键字个数已经等于 <span class="math inline">\(m-1\)</span> ，必须分裂成两个结点</li>
 </ul>
 <figure>
 <img src="image-43.webp" srcset="/img/loading/loading3.gif" lazyload alt="插入39">
@@ -3952,20 +3948,23 @@ $$</span></li>
 </figure>
 <h3 id="b-树的删除">B 树的删除</h3>
 <p>类似二叉查找树的删除操作，从根结点开始查找与给定关键字值 key
-相等的关键字 <span class="math inline"><em>K</em><sub><em>i</em></sub></span>。关键字 <span class="math inline"><em>K</em><sub><em>i</em></sub></span>
+相等的关键字 <span class="math inline">\(K_i\)</span>。关键字 <span class="math inline">\(K_i\)</span>
 可能出现在第一层到最底层之间的任何一个结点上，计有以下几种情况:</p>
 <ol type="1">
-<li>如果关键字 <span class="math inline"><em>K</em><sub><em>i</em></sub></span>
+<li>如果关键字 <span class="math inline">\(K_i\)</span>
 在最底层，可直接删除，转 (3) 。</li>
 <li>否则，先找到“替身”。用它的右子树中的最左面的结点的关键字值，即处于最底层上的最小关键字值取代。然后，删除最底层上的该关键字。</li>
 <li>从最底层开始进行删除相应关键字的操作，计有以下几种情况：
 <ul>
-<li>若删除关键字之后，结点的关键字的个数仍处于 <span class="math inline">[⌈<em>m</em>/2⌉ − 1, <em>m</em> − 1]</span>
+<li>若删除关键字之后，结点的关键字的个数仍处于 <span class="math inline">\([\lceil m/2 \rceil - 1, m - 1]\)</span>
 之间，仍满足 B 树的结点的定义，删除结束。</li>
-<li>若结点的关键字的个数原为 <span class="math inline">[⌈<em>m</em>/2⌉ − 1]</span>，若再删除一个关键字，将不符合
-B 树定义。如果该结点的左或右兄弟结点的关键字的个数大于 <span class="math inline">[⌈<em>m</em>/2⌉ − 1]</span>，则借一个关键字过来。必须注意的是，并不是直接将左或右兄弟结点的关键字取过来，因为这样将无法保证结点的关键字有序。如果是借左兄弟结点的最大关键字，则必须将该关键字上移到父结点的相应位置，而将父结点中大于该关键字且最接近该关键字的那个关键字（连同左兄弟结点的最右方的指针
-<span class="math inline"><em>A</em><sub><em>n</em></sub></span>）下移到被删关键字所在结点的最左面，删除操作结束。若借右兄弟结点的最小关键字，操作类似。</li>
-<li>若该结点的左或右兄弟结点的关键字的个数都为 <span class="math inline">[⌈<em>m</em>/2⌉ − 1]</span>，那么将无结点可借。这时只能执行合并结点的操作。将该结点同左兄弟（无左兄弟时，与右兄弟）合并。由于两个结点合并后，父结点中相应的关键字将不再保留，因为它原来的左右儿子已经不存在，因此，把父结点中该关键字也并入合并后的结点。这样，父结点的关键字个数便减少了一个。如果父结点的关键字个数不满足定义，则必须继续调整。在最坏情况下，调整可能会一直波及到根结点，导致
+<li>若结点的关键字的个数原为 <span class="math inline">\([\lceil m/2
+\rceil - 1]\)</span>，若再删除一个关键字，将不符合 B
+树定义。如果该结点的左或右兄弟结点的关键字的个数大于 <span class="math inline">\([\lceil m/2 \rceil -
+1]\)</span>，则借一个关键字过来。必须注意的是，并不是直接将左或右兄弟结点的关键字取过来，因为这样将无法保证结点的关键字有序。如果是借左兄弟结点的最大关键字，则必须将该关键字上移到父结点的相应位置，而将父结点中大于该关键字且最接近该关键字的那个关键字（连同左兄弟结点的最右方的指针
+<span class="math inline">\(A_n\)</span>）下移到被删关键字所在结点的最左面，删除操作结束。若借右兄弟结点的最小关键字，操作类似。</li>
+<li>若该结点的左或右兄弟结点的关键字的个数都为 <span class="math inline">\([\lceil m/2 \rceil -
+1]\)</span>，那么将无结点可借。这时只能执行合并结点的操作。将该结点同左兄弟（无左兄弟时，与右兄弟）合并。由于两个结点合并后，父结点中相应的关键字将不再保留，因为它原来的左右儿子已经不存在，因此，把父结点中该关键字也并入合并后的结点。这样，父结点的关键字个数便减少了一个。如果父结点的关键字个数不满足定义，则必须继续调整。在最坏情况下，调整可能会一直波及到根结点，导致
 B 树的高度减少 1，即减少一层。</li>
 </ul></li>
 </ol>
@@ -3974,10 +3973,9 @@ B 树的高度减少 1，即减少一层。</li>
 <figcaption aria-hidden="true">删除31</figcaption>
 </figure>
 <h3 id="b-树占用空间的情况">B 树占用空间的情况</h3>
-<p>将一个磁盘块作为一个B树的结点。假设一个块的容量 <span class="math inline"><em>m</em><em>a</em><em>x</em></span>
-字节，如果每个键要占用 <span class="math inline"><em>k</em><em>e</em><em>y</em></span> 个字节。在一棵
-<span class="math inline"><em>M</em></span> 阶 B 树中，可以有 <span class="math inline"><em>M</em> − 1</span> 个键，总的数据量是：</p>
-<p><span class="math display">(<em>M</em> − 1) * <em>k</em><em>e</em><em>y</em> + <em>M</em><em>个</em><em>分</em><em>支</em><em>的</em><em>地</em><em>址</em> + <em>M</em> − 1<em>个</em><em>关</em><em>键</em><em>字</em><em>对</em><em>应</em><em>记</em><em>录</em><em>的</em><em>存</em><em>储</em><em>地</em><em>址</em></span></p>
+<p>将一个磁盘块作为一个B树的结点。假设一个块的容量 <span class="math inline">\(max\)</span> 字节，如果每个键要占用 <span class="math inline">\(key\)</span> 个字节。在一棵 <span class="math inline">\(M\)</span> 阶 B 树中，可以有 <span class="math inline">\(M-1\)</span> 个键，总的数据量是：</p>
+<p><span class="math display">\[(M-1) * key + M 个分支的地址 +
+M-1个关键字对应记录的存储地址\]</span></p>
 <h2 id="b-树-1">B+ 树</h2>
 <h3 id="b-树的定义-1">B+ 树的定义</h3>
 <ul>
@@ -3986,19 +3984,20 @@ B 树的高度减少 1，即减少一层。</li>
 <ul>
 <li>B+ 树的所有关键字都在叶子结点中，并且叶子结点之间通过指针相连</li>
 </ul></li>
-<li>一棵 <span class="math inline"><em>M</em></span> 阶的 B+
-树被定义为具有以下性质的 <span class="math inline"><em>M</em></span>
-叉树：
+<li>一棵 <span class="math inline">\(M\)</span> 阶的 B+
+树被定义为具有以下性质的 <span class="math inline">\(M\)</span> 叉树：
 <ol type="1">
-<li>根或者是叶子，或者有 <span class="math inline">2</span> 到 <span class="math inline"><em>M</em></span> 个孩子。</li>
-<li>除根之外所有结点都有不少于 <span class="math inline">⌈<em>M</em>/2⌉</span> 且不多于 <span class="math inline"><em>M</em></span> 个孩子。</li>
-<li>有 <span class="math inline"><em>K</em></span> 个孩子的结点保存了
-<span class="math inline"><em>K</em> − 1</span> 个键来引导查找，键 <span class="math inline">1</span> 代表了子树 <span class="math inline"><em>i</em> + 1</span> 中键的最小值。</li>
+<li>根或者是叶子，或者有 <span class="math inline">\(2\)</span> 到 <span class="math inline">\(M\)</span> 个孩子。</li>
+<li>除根之外所有结点都有不少于 <span class="math inline">\(\lceil M/2
+\rceil\)</span> 且不多于 <span class="math inline">\(M\)</span>
+个孩子。</li>
+<li>有 <span class="math inline">\(K\)</span> 个孩子的结点保存了 <span class="math inline">\(K-1\)</span> 个键来引导查找，键 <span class="math inline">\(1\)</span> 代表了子树 <span class="math inline">\(i+1\)</span> 中键的最小值。</li>
 <li>叶结点中的孩子指针指向存储记录的数据块的地址。换句话说，对于索引 B+
 树，它们是叶结点。但对于数据块来说，它们又是数据块的父结点。数据块才是真正的叶结点。而在
 B 树中，叶结点的孩子指针都是空指针。</li>
-<li>每个数据块至少有 <span class="math inline">⌈<em>L</em>/2⌉</span>
-个记录，至多有 <span class="math inline"><em>L</em></span> 个记录。</li>
+<li>每个数据块至少有 <span class="math inline">\(\lceil L/2
+\rceil\)</span> 个记录，至多有 <span class="math inline">\(L\)</span>
+个记录。</li>
 <li>所有的叶结点按序连成一个单链表。</li>
 </ol></li>
 <li>B+ 树存储两个指针
@@ -4053,11 +4052,12 @@ B 树中，叶结点的孩子指针都是空指针。</li>
 <li><strong>置换选择</strong>
 <ul>
 <li>在外排序中，已排序片段越多，归并的次数也越多。如果能够让每个初始的已排序片段包含更多的记录，就能减少已排序片段数，就能减少排序时间。</li>
-<li>置换选择可以在只能容纳 <span class="math inline"><em>p</em></span>
-个记录的内存中生成平均长度为 <span class="math inline">2<em>p</em></span> 的初始的已排序片段。</li>
+<li>置换选择可以在只能容纳 <span class="math inline">\(p\)</span>
+个记录的内存中生成平均长度为 <span class="math inline">\(2p\)</span>
+的初始的已排序片段。</li>
 <li>基于每个小片段采用选择排序。每次选出的最小记录直接被写到输出文件上，它所用的内存空间就可以给别的元素使用，此时可以从输入文件读入一个新记录。如果它比刚才写出去的元素大，则把它加入到优先级队列；否则，它不可能进入当前的已排序片段，该元素就被放于优先级队列的空余位置，用于下个片段的排序。</li>
 </ul></li>
-<li>文件上的数据为 <span class="math inline">1、4、10、2、0、5、7、6、9、12</span>
+<li>文件上的数据为 <span class="math inline">\(1、4、10、2、0、5、7、6、9、12\)</span>
 ，内存中能够容纳 3 个记录，这 3 个记录存放在数组 a
 中。构造初始的已排序片段的过程如下图。由于采用了置换选择法，使得对 11
 个记录只生成了两个初始的已排序片段，这样只需要一次归并就能排好序。</li>
@@ -4071,14 +4071,15 @@ B 树中，叶结点的孩子指针都是空指针。</li>
 <li>归并阶段：将预处理得到的已排序片段逐步归并成一个有序文件。</li>
 <li><strong>多阶段归并</strong>
 <ul>
-<li><span class="math inline"><em>k</em></span>
-<strong>路归并</strong>：如果生成的已排序片段数为 <span class="math inline"><em>m</em></span> ，则 <span class="math inline"><em>k</em></span> 路归并需要归并 <span class="math inline">⌈log<sub><em>k</em></sub><em>m</em>⌉</span> 次。
+<li><span class="math inline">\(k\)</span>
+<strong>路归并</strong>：如果生成的已排序片段数为 <span class="math inline">\(m\)</span> ，则 <span class="math inline">\(k\)</span> 路归并需要归并 <span class="math inline">\(\lceil \log_k m \rceil\)</span> 次。
 <ul>
-<li><span class="math inline"><em>k</em></span>
-越大，归并次数越少。</li>
-<li><span class="math inline"><em>k</em></span> 路归并需要 <span class="math inline">2<em>k</em></span> 个缓冲区</li>
+<li><span class="math inline">\(k\)</span> 越大，归并次数越少。</li>
+<li><span class="math inline">\(k\)</span> 路归并需要 <span class="math inline">\(2k\)</span> 个缓冲区</li>
 </ul></li>
-<li>使用多阶段归并，可以在只有 <span class="math inline"><em>k</em> + 1</span> 个缓冲区的情况下完成 <span class="math inline"><em>k</em></span> 路归并。</li>
+<li>使用多阶段归并，可以在只有 <span class="math inline">\(k+1\)</span>
+个缓冲区的情况下完成 <span class="math inline">\(k\)</span>
+路归并。</li>
 </ul></li>
 </ul>
 <figure>
@@ -4088,43 +4089,35 @@ B 树中，叶结点的孩子指针都是空指针。</li>
 <h1 id="图">图</h1>
 <h2 id="图的定义">图的定义</h2>
 <ul>
-<li><strong>图</strong>：由顶点集 <span class="math inline"><em>V</em></span> 和边集 <span class="math inline"><em>E</em></span> 组成的有序对 <span class="math inline"><em>G</em> = (<em>V</em>, <em>E</em>)</span>
+<li><strong>图</strong>：由顶点集 <span class="math inline">\(V\)</span>
+和边集 <span class="math inline">\(E\)</span> 组成的有序对 <span class="math inline">\(G = (V, E)\)</span>
 <ul>
-<li><strong>顶点</strong>：图中的基本元素，通常用 <span class="math inline"><em>V</em> = {<em>v</em><sub>1</sub>, <em>v</em><sub>2</sub>, ⋯, <em>v</em><sub><em>n</em></sub>}</span>
-表示</li>
-<li><strong>边</strong>：连接两个顶点的线段，通常用 <span class="math inline"><em>E</em> = {<em>e</em><sub>1</sub>, <em>e</em><sub>2</sub>, ⋯, <em>e</em><sub><em>m</em></sub>}</span>
-表示</li>
+<li><strong>顶点</strong>：图中的基本元素，通常用 <span class="math inline">\(V = \{v_1, v_2, \cdots, v_n\}\)</span> 表示</li>
+<li><strong>边</strong>：连接两个顶点的线段，通常用 <span class="math inline">\(E = \{e_1, e_2, \cdots, e_m\}\)</span> 表示</li>
 </ul></li>
 </ul>
 <p><img src="image-50.webp" srcset="/img/loading/loading3.gif" lazyload> <img src="image-51.webp" srcset="/img/loading/loading3.gif" lazyload alt="图的示例"></p>
 <ul>
 <li><strong>有向图</strong>：边有方向的图，边从一个顶点指向另一个顶点，用有序对表示边，如
-<span class="math inline"><em>e</em> =  &lt; <em>v</em><sub><em>i</em></sub>, <em>v</em><sub><em>j</em></sub>&gt;</span>，表示从顶点
-<span class="math inline"><em>v</em><sub><em>i</em></sub></span> 到顶点
-<span class="math inline"><em>v</em><sub><em>j</em></sub></span>
-的边</li>
+<span class="math inline">\(e = &lt;v_i, v_j&gt;\)</span>，表示从顶点
+<span class="math inline">\(v_i\)</span> 到顶点 <span class="math inline">\(v_j\)</span> 的边</li>
 <li><strong>无向图</strong>：边没有方向的图，边连接两个顶点，用无序对表示边，如
-<span class="math inline"><em>e</em> = (<em>v</em><sub><em>i</em></sub>, <em>v</em><sub><em>j</em></sub>)</span>，表示顶点
-<span class="math inline"><em>v</em><sub><em>i</em></sub></span> 和顶点
-<span class="math inline"><em>v</em><sub><em>j</em></sub></span>
-之间的边</li>
-<li><strong>加权图</strong>：边带有权值的图，通常用 <span class="math inline"><em>w</em>(<em>e</em>)</span> 表示边 <span class="math inline"><em>e</em></span> 的权值
+<span class="math inline">\(e = (v_i, v_j)\)</span>，表示顶点 <span class="math inline">\(v_i\)</span> 和顶点 <span class="math inline">\(v_j\)</span> 之间的边</li>
+<li><strong>加权图</strong>：边带有权值的图，通常用 <span class="math inline">\(w(e)\)</span> 表示边 <span class="math inline">\(e\)</span> 的权值
 <ul>
-<li>加权有向图：<span class="math inline"><em>e</em> =  &lt; <em>v</em><sub><em>i</em></sub>, <em>v</em><sub><em>j</em></sub>, <em>w</em>&gt;</span>，表示从顶点
-<span class="math inline"><em>v</em><sub><em>i</em></sub></span> 到顶点
-<span class="math inline"><em>v</em><sub><em>j</em></sub></span>
-的边，权值为 <span class="math inline"><em>w</em></span></li>
-<li>加权无向图：<span class="math inline"><em>e</em> = (<em>v</em><sub><em>i</em></sub>, <em>v</em><sub><em>j</em></sub>, <em>w</em>)</span>，表示顶点
-<span class="math inline"><em>v</em><sub><em>i</em></sub></span> 和顶点
-<span class="math inline"><em>v</em><sub><em>j</em></sub></span>
-之间的边，权值为 <span class="math inline"><em>w</em></span></li>
+<li>加权有向图：<span class="math inline">\(e = &lt;v_i, v_j,
+w&gt;\)</span>，表示从顶点 <span class="math inline">\(v_i\)</span>
+到顶点 <span class="math inline">\(v_j\)</span> 的边，权值为 <span class="math inline">\(w\)</span></li>
+<li>加权无向图：<span class="math inline">\(e = (v_i, v_j,
+w)\)</span>，表示顶点 <span class="math inline">\(v_i\)</span> 和顶点
+<span class="math inline">\(v_j\)</span> 之间的边，权值为 <span class="math inline">\(w\)</span></li>
 </ul></li>
 </ul>
 <h3 id="图的基本术语">图的基本术语</h3>
 <ol type="1">
-<li><strong>邻接</strong>：如果边 <span class="math inline"><em>e</em> = (<em>v</em><sub><em>i</em></sub>, <em>v</em><sub><em>j</em></sub>)</span>
-存在，则称顶点 <span class="math inline"><em>v</em><sub><em>i</em></sub></span> 和顶点 <span class="math inline"><em>v</em><sub><em>j</em></sub></span>
-是邻接的。</li>
+<li><strong>邻接</strong>：如果边 <span class="math inline">\(e = (v_i,
+v_j)\)</span> 存在，则称顶点 <span class="math inline">\(v_i\)</span>
+和顶点 <span class="math inline">\(v_j\)</span> 是邻接的。</li>
 <li><strong>度</strong>
 <ul>
 <li>无向图：与该结点关联的边数</li>
@@ -4134,11 +4127,11 @@ B 树中，叶结点的孩子指针都是空指针。</li>
 <li><strong>出度</strong>：有向图中离开某一结点的边数，称为该结点的出度</li>
 </ul></li>
 </ul></li>
-<li><strong>子图</strong>：如果图 <span class="math inline"><em>G</em> = (<em>V</em>, <em>E</em>)</span>
-的一个子集 <span class="math inline"><em>V</em><sup>′</sup> ⊆ <em>V</em></span> 和 <span class="math inline"><em>E</em><sup>′</sup> ⊆ <em>E</em></span> 使得
-<span class="math inline"><em>G</em><sup>′</sup> = (<em>V</em><sup>′</sup>, <em>E</em><sup>′</sup>)</span>
-也是一个图，则称 <span class="math inline"><em>G</em><sup>′</sup></span>
-是 <span class="math inline"><em>G</em></span> 的子图</li>
+<li><strong>子图</strong>：如果图 <span class="math inline">\(G = (V,
+E)\)</span> 的一个子集 <span class="math inline">\(V' \subseteq
+V\)</span> 和 <span class="math inline">\(E' \subseteq E\)</span>
+使得 <span class="math inline">\(G' = (V', E')\)</span>
+也是一个图，则称 <span class="math inline">\(G'\)</span> 是 <span class="math inline">\(G\)</span> 的子图</li>
 <li>路径和路径长度
 <ul>
 <li><strong>路径</strong>：从一个顶点到另一个顶点的边的序列
@@ -4165,14 +4158,12 @@ B 树中，叶结点的孩子指针都是空指针。</li>
 </ul></li>
 <li><strong>完全图</strong>
 <ul>
-<li>无向图：每一对顶点都有一条边相连，共有 <span class="math inline">$\frac{n(n-1)}{2}$</span> 条边</li>
-<li>有向图：每一对顶点 <span class="math inline"><em>v</em><sub><em>i</em></sub>, <em>v</em><sub><em>j</em></sub></span>
-都有两条边 <span class="math inline"> &lt; <em>v</em><sub><em>i</em></sub>, <em>v</em><sub><em>j</em></sub>&gt;</span>
-和 <span class="math inline"> &lt; <em>v</em><sub><em>j</em></sub>, <em>v</em><sub><em>i</em></sub>&gt;</span>
-相连，共有 <span class="math inline"><em>n</em>(<em>n</em> − 1)</span>
-条边</li>
+<li>无向图：每一对顶点都有一条边相连，共有 <span class="math inline">\(\frac{n(n-1)}{2}\)</span> 条边</li>
+<li>有向图：每一对顶点 <span class="math inline">\(v_i, v_j\)</span>
+都有两条边 <span class="math inline">\(&lt;v_i, v_j&gt;\)</span> 和
+<span class="math inline">\(&lt;v_j, v_i&gt;\)</span> 相连，共有 <span class="math inline">\(n(n-1)\)</span> 条边</li>
 </ul></li>
-<li><strong>生成树</strong>：无向连通图的极小连通子图，有 <span class="math inline"><em>n</em></span> 个顶点和 <span class="math inline"><em>n</em> − 1</span> 条边</li>
+<li><strong>生成树</strong>：无向连通图的极小连通子图，有 <span class="math inline">\(n\)</span> 个顶点和 <span class="math inline">\(n-1\)</span> 条边</li>
 </ol>
 <h3 id="图的基本运算">图的基本运算</h3>
 <figure class="shiki cpp"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">#ifndef</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">GRAPH_H</span></span>
@@ -4197,13 +4188,13 @@ B 树中，叶结点的孩子指针都是空指针。</li>
 <span class="line"><span style="color: #C678DD">#endif</span></span></code></pre></div></div></figure>
 <h2 id="图的存储">图的存储</h2>
 <h3 id="加权邻接矩阵表示法">（加权）邻接矩阵表示法</h3>
-<p><span class="math display">$$A
+<p><span class="math display">\[A
 [i][j] = \begin{cases}
 1\ \text{or}\ w &amp; \text{if } &lt;i,j&gt;\ \in E \text{ or } (i,j)
 \in E \\
 0\ \text{or}\ \infty &amp; \text{otherwise}
 \end{cases}
-$$</span></p>
+\]</span></p>
 <figure>
 <img src="image-52.webp" srcset="/img/loading/loading3.gif" lazyload alt="邻接矩阵表示法">
 <figcaption aria-hidden="true">邻接矩阵表示法</figcaption>
@@ -4332,8 +4323,8 @@ $$</span></p>
 </ul></li>
 </ul></li>
 </ul></li>
-<li>空间复杂度：<span class="math inline"><em>O</em>(|<em>V</em>|+|<em>E</em>|)</span>，其中
-<span class="math inline">|<em>V</em>|</span> 是顶点数，<span class="math inline">|<em>E</em>|</span> 是边数</li>
+<li>空间复杂度：<span class="math inline">\(O(|V| + |E|)\)</span>，其中
+<span class="math inline">\(|V|\)</span> 是顶点数，<span class="math inline">\(|E|\)</span> 是边数</li>
 </ul>
 <figure>
 <img src="image-53.webp" srcset="/img/loading/loading3.gif" lazyload alt="邻接表表示法">
@@ -4504,8 +4495,8 @@ $$</span></p>
 <ul>
 <li>时间复杂度：
 <ul>
-<li>邻接矩阵表示：<span class="math inline"><em>O</em>(|<em>V</em>|<sup>2</sup>)</span></li>
-<li>邻接表表示：<span class="math inline"><em>O</em>(|<em>V</em>|+|<em>E</em>|)</span></li>
+<li>邻接矩阵表示：<span class="math inline">\(O(|V|^2)\)</span></li>
+<li>邻接表表示：<span class="math inline">\(O(|V| + |E|)\)</span></li>
 </ul></li>
 </ul>
 <figure class="shiki cpp"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #7F848E; font-style: italic">//递归DFS</span></span>
@@ -4591,8 +4582,8 @@ $$</span></p>
 <ul>
 <li>时间复杂度：
 <ul>
-<li>邻接矩阵表示：<span class="math inline"><em>O</em>(|<em>V</em>|<sup>2</sup>)</span></li>
-<li>邻接表表示：<span class="math inline"><em>O</em>(|<em>V</em>|+|<em>E</em>|)</span></li>
+<li>邻接矩阵表示：<span class="math inline">\(O(|V|^2)\)</span></li>
+<li>邻接表表示：<span class="math inline">\(O(|V| + |E|)\)</span></li>
 </ul></li>
 </ul>
 <figure class="shiki cpp"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #7F848E; font-style: italic">//非递归BFS</span></span>
@@ -4747,18 +4738,17 @@ $$</span></p>
 <h3 id="有向图的连通性">有向图的连通性</h3>
 <ul>
 <li>对于有向图，通过两次深度优先搜索可以测试该有向图是否为强连通。如果不是强连通，则可以找出所有强连通分量。</li>
-<li>找出有向图 <span class="math inline"><em>G</em></span> 的强连通分量:
+<li>找出有向图 <span class="math inline">\(G\)</span> 的强连通分量:
 <ul>
 <li>从任意结点开始执行深度优先搜索
 <ul>
-<li>如果 <span class="math inline"><em>G</em></span>
+<li>如果 <span class="math inline">\(G\)</span>
 不是强连通的，则该深度优先搜索会得到一个深度优先生成森林/一棵深度优先生成树。</li>
 <li>对森林中的每棵树按它们的生成次序依次进行后序遍历，并按遍历的顺序给每个结点编号。</li>
 </ul></li>
-<li>将图 <span class="math inline"><em>G</em></span> 的每条边逆向，形成
-<span class="math inline"><em>G</em><sub><em>r</em></sub></span>。从编号最大的结点开始深度优先搜索
-<span class="math inline"><em>G</em><sub><em>r</em></sub></span>，得到的深度优先遍历森林的每棵树就是
-<span class="math inline"><em>G</em></span> 的强连通分量。</li>
+<li>将图 <span class="math inline">\(G\)</span> 的每条边逆向，形成 <span class="math inline">\(G_r\)</span>。从编号最大的结点开始深度优先搜索
+<span class="math inline">\(G_r\)</span>，得到的深度优先遍历森林的每棵树就是
+<span class="math inline">\(G\)</span> 的强连通分量。</li>
 </ul></li>
 </ul>
 <figure>
@@ -4839,8 +4829,7 @@ $$</span></p>
 <li><strong>拓扑排序</strong>：将 AOV
 网中的活动按活动发生的先后次序排成拓扑序列。
 <ul>
-<li>排序：如果有一条从 <span class="math inline"><em>u</em></span> 到
-<span class="math inline"><em>v</em></span> 的路径，那么结点 <span class="math inline"><em>v</em></span> 在拓扑排序中必须出现在结点 <span class="math inline"><em>u</em></span> 之后。</li>
+<li>排序：如果有一条从 <span class="math inline">\(u\)</span> 到 <span class="math inline">\(v\)</span> 的路径，那么结点 <span class="math inline">\(v\)</span> 在拓扑排序中必须出现在结点 <span class="math inline">\(u\)</span> 之后。</li>
 <li>存在拓扑序列的图一定是一个有向无环图。</li>
 <li>步骤：
 <ol type="1">
@@ -4905,24 +4894,22 @@ $$</span></p>
 <li>找出关键路径先要找出拓扑序列，从头到尾遍历拓扑序列可以找出最早发生时间，然后再从尾到头遍历拓扑序列可以找到最迟发生时间，最后再从头到尾遍历拓扑序列，找出最早发生时间和最迟发生时间的顶点，组成了关键路径。</li>
 <li>步骤：
 <ol type="1">
-<li>设结点 <span class="math inline"><em>x</em></span>
-的最早发生时间记为 <span class="math inline">ee(<em>x</em>)</span>，边
-<span class="math inline"> &lt; <em>u</em>, <em>v</em>&gt;</span>
-的长度记为 <span class="math inline"><em>L</em><sub>uv</sub></span>。
+<li>设结点 <span class="math inline">\(x\)</span> 的最早发生时间记为
+<span class="math inline">\(\text{ee}(x)\)</span>，边 <span class="math inline">\(&lt;u,v&gt;\)</span> 的长度记为 <span class="math inline">\(L_{\text{uv}}\)</span>。
 <ul>
-<li>首先设所有结点的最早发生时间是 <span class="math inline">0</span>。</li>
-<li>对每个被遍历的结点 <span class="math inline"><em>u</em></span>
-检查它的后继 <span class="math inline"><em>v</em></span>。如果 <span class="math inline">ee(<em>u</em>) + <em>L</em><sub>uv</sub> &gt; ee(<em>v</em>)</span>，则更新
-<span class="math inline">ee(<em>v</em>)</span> 为 <span class="math inline">ee(<em>u</em>) + <em>L</em><sub>uv</sub></span>。</li>
+<li>首先设所有结点的最早发生时间是 <span class="math inline">\(0\)</span>。</li>
+<li>对每个被遍历的结点 <span class="math inline">\(u\)</span>
+检查它的后继 <span class="math inline">\(v\)</span>。如果 <span class="math inline">\(\text{ee}(u) + L_{\text{uv}} &gt;
+\text{ee}(v)\)</span>，则更新 <span class="math inline">\(\text{ee}(v)\)</span> 为 <span class="math inline">\(\text{ee}(u) + L_{\text{uv}}\)</span>。</li>
 <li>最后得到汇点的最早发生时间，即关键路径的长度。</li>
 </ul></li>
-<li>设结点 <span class="math inline"><em>x</em></span>
-的最迟发生时间记为 <span class="math inline">le(<em>x</em>)</span>。
+<li>设结点 <span class="math inline">\(x\)</span> 的最迟发生时间记为
+<span class="math inline">\(\text{le}(x)\)</span>。
 <ul>
 <li>首先设所有结点的最迟发生时间是关键路径的长度。</li>
-<li>对每个被遍历的结点 <span class="math inline"><em>u</em></span>
-检查它的后继 <span class="math inline"><em>v</em></span>。如果 <span class="math inline">le(<em>v</em>) − <em>L</em><sub>uv</sub> &lt; le(<em>u</em>)</span>，则更新
-<span class="math inline">le(<em>u</em>)</span> 为 <span class="math inline">le(<em>v</em>) − <em>L</em><sub>uv</sub></span>。</li>
+<li>对每个被遍历的结点 <span class="math inline">\(u\)</span>
+检查它的后继 <span class="math inline">\(v\)</span>。如果 <span class="math inline">\(\text{le}(v) - L_{\text{uv}} &lt;
+\text{le}(u)\)</span>，则更新 <span class="math inline">\(\text{le}(u)\)</span> 为 <span class="math inline">\(\text{le}(v) - L_{\text{uv}}\)</span>。</li>
 </ul></li>
 </ol></li>
 </ul></li>
@@ -5492,7 +5479,7 @@ $$</span></p>
 
 
   <script type="text/javascript">
-  document.getElementById("g-total-word-id").innerHTML = "354k";
+  document.getElementById("g-total-word-id").innerHTML = "366k";
   document.getElementById('g-total-posts-id').textContent ="45";
 </script>
 

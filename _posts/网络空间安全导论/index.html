@@ -438,7 +438,7 @@
         
         
           <!-- compatible with older versions-->
-          423 分钟
+          424 分钟
         
       </span>
     
@@ -1783,7 +1783,7 @@ Standard）是一种分组密码，假设明文m是有0和1组成的长度为64�
 <li>有效密钥：64比特密钥k只有56比特有效，其余8位是奇偶校验位，在算法中不起作用。</li>
 <li>DES算法细节：
 <ul>
-<li><strong>初始置换IP和初始逆置换IP<span class="math inline"><sup>−1</sup></span></strong>：DES过程中的初始和最终步骤，用于重新排列明文和密文的比特。</li>
+<li><strong>初始置换IP和初始逆置换IP<span class="math inline">\(^{-1}\)</span></strong>：DES过程中的初始和最终步骤，用于重新排列明文和密文的比特。</li>
 <li><strong>S盒替代</strong>：DES中的关键步骤，使用固定的替换表（S盒）对数据进行非线性变换。</li>
 </ul></li>
 </ul></li>
@@ -2555,7 +2555,7 @@ Flood攻击是一种常见的DoS攻击，通过发送大量的SYN请求来消耗
 <li>响应在安全系统中占有重要的地位，是解决安全潜在威胁最有效的方法。</li>
 </ul></li>
 <li>基本思想：信息安全相关的所有活动，无论是攻击、防护、检测和响应行为，都要消耗时间，因此可以用<strong>时间尺度</strong>来衡量一个体系的能力和安全性。</li>
-<li>理论：系统的检测时间与响应时间越长，或对系统的攻击时间越短，则系统的暴露时间越长，系统就越不安全；如果系统的暴露时间<span class="math inline"><em>E</em><sub><em>t</em></sub> &lt;  = 0</span>(即<span class="math inline"><em>D</em><sub><em>t</em></sub> + <em>R</em><sub><em>t</em></sub> &lt;  = <em>P</em><sub><em>t</em></sub></span>)，那么认为系统是安全的</li>
+<li>理论：系统的检测时间与响应时间越长，或对系统的攻击时间越短，则系统的暴露时间越长，系统就越不安全；如果系统的暴露时间<span class="math inline">\(E_t&lt;=0\)</span>(即<span class="math inline">\(D_t+R_t&lt;=P_t\)</span>)，那么认为系统是安全的</li>
 <li>安全的目标：尽可能地增大保护时间，尽量地减少检测时间和响应时间。</li>
 </ul></li>
 <li><strong>网络安全模型- PDRR</strong>
@@ -3782,15 +3782,14 @@ Association)：是通信对等方对某些要素的一种协定</li>
 </ul></li>
 <li><strong>授权的矩阵表示</strong>
 <ul>
-<li>矩阵<span class="math inline"><em>M</em></span> <img src="image-79.webp" srcset="/img/loading/loading3.gif" lazyload alt="授权的矩阵表示"></li>
+<li>矩阵<span class="math inline">\(M\)</span> <img src="image-79.webp" srcset="/img/loading/loading3.gif" lazyload alt="授权的矩阵表示"></li>
 <li>s：主体</li>
 <li>o：客体</li>
 <li>m：操作权限的集合，例如<code>m = {read, write}</code></li>
 </ul></li>
 <li><strong>微调的授权的矩阵表示</strong>
 <ul>
-<li>矩阵<span class="math inline"><em>M</em><sup><em>R</em></sup></span>
-<img src="image-80.webp" srcset="/img/loading/loading3.gif" lazyload alt="微调授权矩阵表示"></li>
+<li>矩阵<span class="math inline">\(M^{R}\)</span> <img src="image-80.webp" srcset="/img/loading/loading3.gif" lazyload alt="微调授权矩阵表示"></li>
 <li>r：角色</li>
 <li>o：客体</li>
 <li>m：操作权限的集合</li>
@@ -3806,24 +3805,23 @@ p) 执行，否则，禁止 (s, o, p) 执行</li>
 </ul></li>
 <li>访问控制策略2
 <ul>
-<li>构造访问控制矩阵 <span class="math inline"><em>M</em><sup><em>R</em></sup></span>
-，设计角色分配方案 <span class="math inline"><em>f</em><sub><em>R</em></sub></span> ，给矩阵
-<span class="math inline"><em>M</em><sup><em>R</em></sup></span>
-中的元素赋值，按方案 <span class="math inline"><em>f</em><sub><em>R</em></sub></span>
-给每个用户分配角色，对于任意 (u, o, p) 访问请求，u 表示用户，确定角色
-<span class="math inline"><em>r</em> = <em>f</em><sub><em>R</em></sub>(<em>u</em>)</span>
-，在 <span class="math inline"><em>M</em><sup><em>R</em></sup></span>
-中找到 r 和 o 交叉位置上的元素 m，当 p∈m 时，允许 (u, o, p)
-执行，否则，禁止 (u, o, p) 执行</li>
+<li>构造访问控制矩阵 <span class="math inline">\(M^{R}\)</span>
+，设计角色分配方案 <span class="math inline">\(f_{R}\)</span> ，给矩阵
+<span class="math inline">\(M^{R}\)</span> 中的元素赋值，按方案 <span class="math inline">\(f_{R}\)</span> 给每个用户分配角色，对于任意 (u, o,
+p) 访问请求，u 表示用户，确定角色 <span class="math inline">\(r =
+f_{R}(u)\)</span> ，在 <span class="math inline">\(M^{R}\)</span> 中找到
+r 和 o 交叉位置上的元素 m，当 p∈m 时，允许 (u, o, p) 执行，否则，禁止
+(u, o, p) 执行</li>
 </ul></li>
 <li>访问控制策略3
 <ul>
-<li>制定主体等级分配方案 <span class="math inline"><em>f</em><sub><em>S</em></sub></span>
-和客体密级分配方案 <span class="math inline"><em>f</em><sub><em>O</em></sub></span>，设计主体等级与客体密级的对比方法cmp，设定任意操作
+<li>制定主体等级分配方案 <span class="math inline">\(f_{S}\)</span>
+和客体密级分配方案 <span class="math inline">\(f_{O}\)</span>，设计主体等级与客体密级的对比方法cmp，设定任意操作
 x 应该满足的条件
 con(x)，给每个主体分配涉密等级，给每个客体分配保密级别，对于任意 (s, o,
-p) 访问请求，当 <span class="math inline"><em>c</em><em>m</em><em>p</em>(<em>f</em><sub><em>S</em></sub>(<em>s</em>), <em>f</em><sub><em>O</em></sub>(<em>o</em>))</span>
-满足条件 con(p) 时，允许(s, o, p) 执行，否则，禁止 (s, o, p) 执行</li>
+p) 访问请求，当 <span class="math inline">\(cmp(f_{S}(s),
+f_{O}(o))\)</span> 满足条件 con(p) 时，允许(s, o, p) 执行，否则，禁止
+(s, o, p) 执行</li>
 </ul></li>
 </ul></li>
 <li><strong>安全控制-强制访问控制MAC模型</strong>
@@ -4377,11 +4375,13 @@ Security)是研究利用计算机从<strong>海量信息且变化迅速</strong>
 <li><strong>线性分类器</strong>：
 <ul>
 <li>定义：通过寻找一个投影方向（线性变换，线性组合），将高维问题降低到一维问题来解决，并且要求变换后的一维数据具有如下性质：同类样本尽可能聚集在一起，不同类的样本尽可能地远。</li>
-<li>X输入，<span class="math inline"><em>X</em><sub><em>i</em></sub></span>表示的是第i个输入；Y表示输出；W表示权向量；<span class="math inline"><em>ω</em><sub>0</sub></span>是阈值，f是一个判别函数。</li>
-<li>基本思想：寻找合理决策超平面（确定投影方向和阈值<span class="math inline"><em>ω</em><sub>0</sub></span>），通过给定训练数据确定线性判别函数。设这个超平面为w，满足以下两式子，即通过给定的训练数据确定线性判别函数。
+<li>X输入，<span class="math inline">\(X_i\)</span>表示的是第i个输入；Y表示输出；W表示权向量；<span class="math inline">\(\omega_0\)</span>是阈值，f是一个判别函数。</li>
+<li>基本思想：寻找合理决策超平面（确定投影方向和阈值<span class="math inline">\(\omega_0\)</span>），通过给定训练数据确定线性判别函数。设这个超平面为w，满足以下两式子，即通过给定的训练数据确定线性判别函数。
 <ul>
-<li><span class="math inline"><em>w</em><sup><em>T</em></sup> * <em>x</em> &gt; 0, ∀<em>x</em> ∈ <em>ω</em><sub>1</sub></span></li>
-<li><span class="math inline"><em>w</em><sup><em>T</em></sup> * <em>x</em> &lt; 0, ∀<em>x</em> ∈ <em>ω</em><sub>2</sub></span></li>
+<li><span class="math inline">\(w^T * x&gt;0, \forall x \in
+\omega_1\)</span></li>
+<li><span class="math inline">\(w^T * x&lt;0, \forall x \in
+\omega_2\)</span></li>
 </ul></li>
 <li><figure>
 <img src="image-92.webp" srcset="/img/loading/loading3.gif" lazyload alt="线性分类器">
@@ -4424,7 +4424,8 @@ machine）是一个分类算法，通过找到一个分类平面，将数据分�
 <li><strong>分类基本思路</strong>
 <ul>
 <li><strong>找到最合适的分类平面</strong>，最直接的评估标准S是被分隔的两边数据距离平面间隔最大</li>
-<li>换句话，SVM就是获取最大间隔的超平面。<span class="math inline"><em>w</em> * <em>x</em> + <em>b</em> = 0</span>确定的情况下，<span class="math inline">|<em>w</em><em>x</em> + <em>b</em>|</span>表示点距离超平面的距离，而超平面作为二分类器，如果<span class="math inline"><em>w</em><em>x</em> + <em>b</em> &gt; 0</span>，判断类别y为1,
+<li>换句话，SVM就是获取最大间隔的超平面。<span class="math inline">\(w *
+x + b = 0\)</span>确定的情况下，<span class="math inline">\(|wx+b|\)</span>表示点距离超平面的距离，而超平面作为二分类器，如果<span class="math inline">\(wx+b&gt;0\)</span>，判断类别y为1,
 否则判定为-1。</li>
 </ul></li>
 <li><figure>
@@ -4965,7 +4966,7 @@ Token)，如果有效，则为请求提供服务。</li>
 <li>定义：
 <ul>
 <li>一个数据集进行统计查询计算时，<strong>不能通过多次不同的查询方式推断出数据集中是否包含一个特定个体的数据</strong>。</li>
-<li>称一个算法A满足ϵ-差分隐私<span class="math inline">(<em>ϵ</em> − <em>D</em><em>P</em>)</span>，其中<span class="math inline"><em>ϵ</em> &gt; 0</span>，当且仅当对于任意的两个只相差一个元素的数据集D和D’，有以下条件满足：$
+<li>称一个算法A满足ϵ-差分隐私<span class="math inline">\((ϵ-DP)\)</span>，其中<span class="math inline">\(ϵ&gt;0\)</span>，当且仅当对于任意的两个只相差一个元素的数据集D和D’，有以下条件满足：$
 ∀𝑇 ⊆ Range(𝐴): Pr[𝐴(𝐷)∈𝑇] ≤ 𝑒^𝜀 Pr[𝐴(𝐷^′)∈𝑇] $</li>
 </ul></li>
 <li>实现方式：
@@ -5777,7 +5778,7 @@ Classic就受到了51%攻击</li>
 
 
   <script type="text/javascript">
-  document.getElementById("g-total-word-id").innerHTML = "354k";
+  document.getElementById("g-total-word-id").innerHTML = "366k";
   document.getElementById('g-total-posts-id').textContent ="45";
 </script>
 

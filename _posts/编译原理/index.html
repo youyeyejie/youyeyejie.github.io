@@ -426,7 +426,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          7.5k 字
+          9k 字
         
       </span>
     
@@ -438,7 +438,7 @@
         
         
           <!-- compatible with older versions-->
-          63 分钟
+          75 分钟
         
       </span>
     
@@ -915,20 +915,20 @@ Parsing</a></li>
 <ul>
 <li>L: 从左到右扫描输入；L：最左派生；1：提前看一个输入符号</li>
 <li>无左递归和左因子</li>
-<li><span class="math inline"><strong>A</strong> → <strong>α</strong>&nbsp;|&nbsp;<strong>β</strong></span>表示两个不同的产生式，则<span class="math inline"><strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>α</strong><strong>)</strong></span>
-和 <span class="math inline"><strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>β</strong><strong>)</strong></span>
-是互不相交的集合
+<li><span class="math inline">\(\mathbf{A} \rightarrow \mathbf{\alpha} \
+| \ \mathbf{\beta}\)</span>表示两个不同的产生式，则<span class="math inline">\(\mathbf{FIRST(\alpha)}\)</span> 和 <span class="math inline">\(\mathbf{FIRST(\beta)}\)</span> 是互不相交的集合
 <ul>
-<li>二者不会同时派生以<span class="math inline"><strong>a</strong></span>开头的字符串</li>
-<li>至多一个<span class="math inline"><strong>α</strong></span>和<span class="math inline"><strong>β</strong></span>可以派生空字符串</li>
+<li>二者不会同时派生以<span class="math inline">\(\mathbf{a}\)</span>开头的字符串</li>
+<li>至多一个<span class="math inline">\(\mathbf{\alpha}\)</span>和<span class="math inline">\(\mathbf{\beta}\)</span>可以派生空字符串</li>
 </ul></li>
-<li>如果<span class="math inline"><strong>ϵ</strong> ∈ <strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>β</strong><strong>)</strong></span>，则<span class="math inline"><strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>α</strong><strong>)</strong></span>和<span class="math inline"><strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>A</strong><strong>)</strong></span>是互不相交的集合</li>
+<li>如果<span class="math inline">\(\mathbf{\epsilon} \in
+\mathbf{FIRST(\beta)}\)</span>，则<span class="math inline">\(\mathbf{FIRST(\alpha)}\)</span>和<span class="math inline">\(\mathbf{FOLLOW(A)}\)</span>是互不相交的集合</li>
 </ul></li>
 <li><strong>LL(1) Parsing</strong>
 <ul>
 <li>提取左因子</li>
 <li>消除直接左递归</li>
-<li>计算<span class="math inline"><strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong></span>和<span class="math inline"><strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong></span></li>
+<li>计算<span class="math inline">\(\mathbf{FIRST}\)</span>和<span class="math inline">\(\mathbf{FOLLOW}\)</span></li>
 <li>构造预测分析表（列为终结符，行为非终结符）</li>
 <li>从Start Symbol开始预测/或使用栈和输入缓冲区进行预测分析
 <ul>
@@ -937,7 +937,7 @@ Parsing</a></li>
 <ul>
 <li>若栈顶符号为终结符且与输入符号匹配，则出栈并将输入指针后移</li>
 <li>若栈顶符号为非终结符，则查表（栈顶符号，输入指针对应符号）得到派生的产生式，将栈顶符号出栈并将产生式右侧符号逆序入栈</li>
-<li>直到栈为空，输入指针指向<span class="math inline">$</span>，则接受输入</li>
+<li>直到栈为空，输入指针指向<span class="math inline">\(\$\)</span>，则接受输入</li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -953,7 +953,7 @@ Parsing</a></li>
 </ul></li>
 <li><strong>OPP Parsing</strong>
 <ul>
-<li>计算<span class="math inline"><strong>L</strong><strong>E</strong><strong>A</strong><strong>D</strong><strong>I</strong><strong>N</strong><strong>G</strong></span>和<span class="math inline"><strong>T</strong><strong>R</strong><strong>A</strong><strong>I</strong><strong>L</strong><strong>I</strong><strong>N</strong><strong>G</strong></span></li>
+<li>计算<span class="math inline">\(\mathbf{LEADING}\)</span>和<span class="math inline">\(\mathbf{TRAILING}\)</span></li>
 <li>构造优先级关系表</li>
 <li>使用栈和输入缓冲区进行运算符优先解析/或使用优先级爬升法
 <ul>
@@ -970,7 +970,7 @@ Parsing</a></li>
 <li><strong>LR(0) Parsing</strong>
 <ul>
 <li>扩展文法</li>
-<li>通过<span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong></span>和<span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong></span>构造LR(0)项集族</li>
+<li>通过<span class="math inline">\(\mathbf{GOTO}\)</span>和<span class="math inline">\(\mathbf{CLOSURE}\)</span>构造LR(0)项集族</li>
 <li>构造LR(0)分析表（列为输入符号，行为状态）</li>
 <li>使用栈和输入缓冲区进行LR(0)解析
 <ul>
@@ -984,8 +984,8 @@ m，则用第m条产生式进行归约，pop栈顶的符号数目等于产生式
 <ul>
 <li>任一项集的状态转移不含归约-归约或移进-归约冲突
 <ul>
-<li>LR(0)项目集中存在归约-归约冲突时，两个<span class="math inline"><strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong></span>集的交集为空</li>
-<li>LR(0)项目集中存在移进-归约冲突时，移进的终结符号不在归约的<span class="math inline"><strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong></span>集中</li>
+<li>LR(0)项目集中存在归约-归约冲突时，两个<span class="math inline">\(\mathbf{FOLLOW}\)</span>集的交集为空</li>
+<li>LR(0)项目集中存在移进-归约冲突时，移进的终结符号不在归约的<span class="math inline">\(\mathbf{FOLLOW}\)</span>集中</li>
 </ul></li>
 </ul></li>
 <li><strong>SLR(1) Parsing</strong>
@@ -993,10 +993,10 @@ m，则用第m条产生式进行归约，pop栈顶的符号数目等于产生式
 <li>扩展文法、构造集族同LR(0)</li>
 <li>构造SLR(1)分析表时：
 <ul>
-<li>对<span class="math inline"><strong>A</strong> → <strong>β</strong>⋅</span>
-归约时, 只对<span class="math inline"><strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>A</strong><strong>)</strong></span>中的终结符进行归约</li>
-<li>对<span class="math inline"><strong>S</strong><sup><strong>′</strong></sup> → <strong>S</strong><sup><strong>′</strong></sup></span>
-赋值ACCEPT时, 只对<span class="math inline">$</span>接受</li>
+<li>对<span class="math inline">\(\mathbf{A} \rightarrow \mathbf{\beta}
+\cdot\)</span> 归约时, 只对<span class="math inline">\(\mathbf{FOLLOW(A)}\)</span>中的终结符进行归约</li>
+<li>对<span class="math inline">\(\mathbf{S'} \rightarrow
+\mathbf{S'}\)</span> 赋值ACCEPT时, 只对<span class="math inline">\(\$\)</span>接受</li>
 </ul></li>
 <li>使用栈和输入缓冲区进行SLR(1)解析</li>
 </ul></li>
@@ -1014,13 +1014,13 @@ m，则用第m条产生式进行归约，pop栈顶的符号数目等于产生式
 <li><strong>LR(1) Parsing</strong>
 <ul>
 <li>扩展文法</li>
-<li>通过<span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong></span>和<span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong></span>构造LR(1)项集族</li>
+<li>通过<span class="math inline">\(\mathbf{GOTO}\)</span>和<span class="math inline">\(\mathbf{CLOSURE}\)</span>构造LR(1)项集族</li>
 <li>构造LR(1)分析表时：
 <ul>
-<li>对<span class="math inline">[<strong>A</strong> → <strong>β</strong>⋅, <em>a</em>]</span>
-归约时, 只对<span class="math inline"><strong>a</strong></span>进行归约</li>
-<li>对<span class="math inline">[<strong>S</strong><sup><strong>′</strong></sup> → <strong>S</strong>⋅, $]</span>
-赋值ACCEPT时, 只对<span class="math inline">$</span>接受</li>
+<li>对<span class="math inline">\([\mathbf{A} \rightarrow \mathbf{\beta}
+\cdot, a]\)</span> 归约时, 只对<span class="math inline">\(\mathbf{a}\)</span>进行归约</li>
+<li>对<span class="math inline">\([\mathbf{S'} \rightarrow
+\mathbf{S} \cdot, \$]\)</span> 赋值ACCEPT时, 只对<span class="math inline">\(\$\)</span>接受</li>
 </ul></li>
 <li>使用栈和输入缓冲区进行LR(1)解析</li>
 </ul></li>
@@ -1358,23 +1358,25 @@ consecutive position of s （不一定连续的位置）</li>
 <ul>
 <li><strong>Union</strong>: （并集）
 <ul>
-<li><span class="math inline"><em>L</em><sub>1</sub> ∪ <em>L</em><sub>2</sub> = {<em>x</em>|<em>x</em> ∈ <em>L</em><sub>1</sub>  <em>o</em><em>r</em>  <em>x</em> ∈ <em>L</em><sub>2</sub>}</span></li>
+<li><span class="math inline">\(L_1 ∪ L_2 = \{x | x ∈ L_1 \quad or \quad
+x ∈ L_2\}\)</span></li>
 </ul></li>
 <li><strong>Concatenation</strong>: （连接）
 <ul>
-<li><span class="math inline"><em>L</em><sub>1</sub><em>L</em><sub>2</sub> = {<em>x</em><em>y</em>|<em>x</em> ∈ <em>L</em><sub>1</sub>  <em>a</em><em>n</em><em>d</em>  <em>y</em> ∈ <em>L</em><sub>2</sub>}</span></li>
+<li><span class="math inline">\(L_1L_2 = \{xy | x ∈ L_1 \quad and \quad
+y ∈ L_2\}\)</span></li>
 </ul></li>
 <li><strong>Kleene closure</strong>: （星闭包）
 <ul>
-<li><span class="math inline">$L^* = \bigcup_{1=0}^\infty L^i \\= {𝜖} ∪
+<li><span class="math inline">\(L^* = \bigcup_{1=0}^\infty L^i \\= {𝜖} ∪
 L ∪ L^2 ∪ L^3 ∪ ... \\= \{x | x = x_1x_2...x_n, n ≥ 0, xi ∈
-L\}$</span></li>
+L\}\)</span></li>
 <li>𝜖 is the empty string</li>
 </ul></li>
 <li><strong>Positive closure</strong>: （正闭包）
 <ul>
-<li><span class="math inline">$L^+ = \bigcup_{1=1}^\infty L^i \\= LL^*
-\\= \{x | x = x_1x_2...x_n, n ≥ 1, xi ∈ L\}$</span></li>
+<li><span class="math inline">\(L^+ = \bigcup_{1=1}^\infty L^i \\= LL^*
+\\= \{x | x = x_1x_2...x_n, n ≥ 1, xi ∈ L\}\)</span></li>
 </ul></li>
 </ul>
 <h3 id="regular-expressions">Regular Expressions</h3>
@@ -1384,8 +1386,7 @@ L\}$</span></li>
 Patterns of Tokens of a programming language.
 （正则表达式：描述编程语言的词法单元模式的一种方式）
 <ul>
-<li>Each Regular Expression r denotes a Language L<span class="math inline">(<em>r</em>)</span>.
-（每个正则表达式r表示一个语言L<span class="math inline">(<em>r</em>)</span>）
+<li>Each Regular Expression r denotes a Language L<span class="math inline">\((r)\)</span>. （每个正则表达式r表示一个语言L<span class="math inline">\((r)\)</span>）
 <ul>
 <li>Regular Language, Type-3 Language</li>
 </ul></li>
@@ -1402,16 +1403,16 @@ using the rules. （正则表达式是用规则递归构建的）</li>
 <li>a is a symbol in a set Σ, then a is a regular expression, and L(a) =
 {a}. （集合中的字符）</li>
 </ul></li>
-<li><strong>INDUCTION</strong> （归纳）：Suppose <span class="math inline"><em>r</em></span> and <span class="math inline"><em>s</em></span> are expressions denoting <span class="math inline"><em>L</em>(<em>r</em>)</span> and <span class="math inline"><em>L</em>(<em>s</em>)</span>
+<li><strong>INDUCTION</strong> （归纳）：Suppose <span class="math inline">\(r\)</span> and <span class="math inline">\(s\)</span> are expressions denoting <span class="math inline">\(L(r)\)</span> and <span class="math inline">\(L(s)\)</span>
 <ul>
-<li><span class="math inline"><em>r</em>|<em>s</em></span> : a regular
-expression denoting <span class="math inline"><em>L</em>(<em>r</em>) ∪ <em>L</em>(<em>s</em>)</span></li>
-<li><span class="math inline"><em>r</em><em>s</em></span> : a regular
-expression denoting <span class="math inline"><em>L</em>(<em>r</em>)<em>L</em>(<em>s</em>)</span></li>
-<li><span class="math inline"><em>r</em><sup>*</sup></span> : a regular
-expression denoting <span class="math inline">(<em>L</em>(<em>r</em>))<sup>*</sup></span></li>
-<li><span class="math inline">(<em>r</em>)</span> : a regular expression
-denoting <span class="math inline"><em>L</em>(<em>r</em>)</span>
+<li><span class="math inline">\(r | s\)</span> : a regular expression
+denoting <span class="math inline">\(L(r) ∪ L(s)\)</span></li>
+<li><span class="math inline">\(rs\)</span> : a regular expression
+denoting <span class="math inline">\(L(r)L(s)\)</span></li>
+<li><span class="math inline">\(r^*\)</span> : a regular expression
+denoting <span class="math inline">\((L(r))^*\)</span></li>
+<li><span class="math inline">\((r)\)</span> : a regular expression
+denoting <span class="math inline">\(L(r)\)</span>
 <ul>
 <li>We can add additional brackets around expressions.
 （我们可以在表达式周围添加额外的括号。）</li>
@@ -1427,27 +1428,26 @@ non-terminals derived by regular expressions.
 </ul>
 <h3 id="extensions-of-regex">Extensions of Regex</h3>
 <ul>
-<li><span class="math inline">+</span> : one or more instances
+<li><span class="math inline">\(+\)</span> : one or more instances
 <ul>
-<li><span class="math inline"><em>r</em><sup>*</sup></span> = <span class="math inline"><em>r</em><sup>+</sup></span> | 𝜖</li>
-<li><span class="math inline"><em>r</em><sup>+</sup></span> = <span class="math inline"><em>r</em><em>r</em><sup>*</sup></span> = <span class="math inline"><em>r</em><sup>*</sup><em>r</em></span></li>
+<li><span class="math inline">\(r^*\)</span> = <span class="math inline">\(r^+\)</span> | 𝜖</li>
+<li><span class="math inline">\(r^+\)</span> = <span class="math inline">\(rr^*\)</span> = <span class="math inline">\(r^*r\)</span></li>
 </ul></li>
-<li><span class="math inline">?</span> : zero or one instance
+<li><span class="math inline">\(?\)</span> : zero or one instance
 <ul>
-<li><span class="math inline"><em>r</em>?</span> = <span class="math inline"><em>r</em></span> | 𝜖</li>
+<li><span class="math inline">\(r?\)</span> = <span class="math inline">\(r\)</span> | 𝜖</li>
 </ul></li>
-<li><span class="math inline">[  ]</span> : character classes
+<li><span class="math inline">\([\quad]\)</span> : character classes
 <ul>
-<li><span class="math inline">[<em>a</em><em>b</em><em>c</em>]</span> =
-<span class="math inline"><em>a</em></span> | <span class="math inline"><em>b</em></span> | <span class="math inline"><em>c</em></span></li>
-<li><span class="math inline">[<em>a</em> − <em>z</em>]</span> = <span class="math inline"><em>a</em></span> | <span class="math inline"><em>b</em></span> | … | <span class="math inline"><em>z</em></span></li>
+<li><span class="math inline">\([abc]\)</span> = <span class="math inline">\(a\)</span> | <span class="math inline">\(b\)</span> | <span class="math inline">\(c\)</span></li>
+<li><span class="math inline">\([a-z]\)</span> = <span class="math inline">\(a\)</span> | <span class="math inline">\(b\)</span> | … | <span class="math inline">\(z\)</span></li>
 </ul></li>
 </ul>
 <h3 id="regular-language-grammar-and-regex">Regular Language / Grammar,
 and Regex</h3>
 <p><img src="image-5.webp" srcset="/img/loading/loading3.gif" lazyload></p>
 <ul>
-<li><strong>Regular Expression</strong> <span class="math inline"><em>r</em></span> denotes a Language <span class="math inline"><em>L</em>(<em>r</em>)</span>.
+<li><strong>Regular Expression</strong> <span class="math inline">\(r\)</span> denotes a Language <span class="math inline">\(L(r)\)</span>.
 <ul>
 <li>Regular Language is Type-3 Language （正则语言是类型3语言）</li>
 <li>Regular Language is that denoted by Regular Expressions.
@@ -1456,7 +1456,7 @@ and Regex</h3>
 <li><strong>Regular Grammar</strong> is the grammar describes a Regular
 Language.
 <ul>
-<li>with the production form of <span class="math inline"><strong>A</strong> → <em>α</em></span> or <span class="math inline"><strong>A</strong> → <em>α</em><strong>B</strong></span></li>
+<li>with the production form of <span class="math inline">\(\mathbf{A}→\alpha\)</span> or <span class="math inline">\(\mathbf{A}→\alpha\mathbf{B}\)</span></li>
 </ul></li>
 </ul>
 <h2 id="recognition-of-tokens">Recognition of Tokens</h2>
@@ -1565,29 +1565,30 @@ the same input symbol （同一输入符号可以有多个动作）
 <h3 id="nondeterministic-finite-automata-nfa">Nondeterministic Finite
 Automata (NFA)</h3>
 <ul>
-<li><strong>An NFA M = <span class="math inline"><strong>(</strong><strong>S</strong><strong>,</strong> <strong>𝜮</strong><strong>,</strong> <strong>m</strong><strong>o</strong><strong>v</strong><strong>e</strong><strong>,</strong> <strong>𝒔</strong><sub><strong>0</strong></sub><strong>,</strong> <strong>F</strong><strong>)</strong></span></strong>
-consists of:
+<li><strong>An NFA M = <span class="math inline">\(\mathbf{(S, 𝜮, move,
+𝒔_0, F)}\)</span></strong> consists of:
 <ul>
-<li><span class="math inline"><strong>S</strong></span>: a finite set of
+<li><span class="math inline">\(\mathbf{S}\)</span>: a finite set of
 States （有限状态集）</li>
-<li><span class="math inline"><strong>𝜮</strong></span>: the Input
-Alphabet, excluding 𝜖 （不包含𝜖的输入符号集合）</li>
-<li><span class="math inline"><strong>m</strong><strong>o</strong><strong>v</strong><strong>e</strong></span>,
-a Transition Function （转换函数）
+<li><span class="math inline">\(\mathbf{𝜮}\)</span>: the Input Alphabet,
+excluding 𝜖 （不包含𝜖的输入符号集合）</li>
+<li><span class="math inline">\(\mathbf{move}\)</span>, a Transition
+Function （转换函数）
 <ul>
 <li>move(State, Symbol) = set of Next States</li>
-<li>move: <span class="math inline"><em>𝑆</em> × (<em>Σ</em> ∪ {<em>𝜖</em>}) ⟶ <em>ℙ</em>(<em>𝑆</em>)</span></li>
+<li>move: <span class="math inline">\(𝑆×(Σ ∪ \{𝜖\}) ⟶ ℙ(𝑆)\)</span></li>
 </ul></li>
-<li><span class="math inline"><strong>s</strong><sub><strong>0</strong></sub> ∈ <strong>S</strong></span>,
-the Start State (or Initial State) （起始状态）</li>
-<li><span class="math inline"><strong>F</strong> ⊆ <strong>S</strong></span>, a
-set of Accepting States (or Final States) （终止状态）</li>
+<li><span class="math inline">\(\mathbf{s_0} ∈ \mathbf{S}\)</span>, the
+Start State (or Initial State) （起始状态）</li>
+<li><span class="math inline">\(\mathbf{F} ⊆ \mathbf{S}\)</span>, a set
+of Accepting States (or Final States) （终止状态）</li>
 </ul></li>
-<li>An NFA accepts Input String <span class="math inline"><em>s</em></span> iff
+<li>An NFA accepts Input String <span class="math inline">\(s\)</span>
+iff
 <ul>
 <li>there exists some path in the Transition Graph from the Start State
 to one Accepting State, （存在一条路径从起始状态到一个接受状态）</li>
-<li>such that symbols along the path spell out <span class="math inline"><em>s</em></span> （路径上的符号拼写出<span class="math inline"><em>s</em></span>）</li>
+<li>such that symbols along the path spell out <span class="math inline">\(s\)</span> （路径上的符号拼写出<span class="math inline">\(s\)</span>）</li>
 </ul></li>
 <li><strong>Transition Tables</strong>：<strong>rows</strong> for
 States, <strong>columns</strong> for Input Symbols and 𝝐
@@ -1639,8 +1640,7 @@ At Most ONE edge …) （局部自动机：DFA不一定是完全图）
 <li><strong>𝜖-closure(T)</strong>:
 <ul>
 <li>T: set of <strong>States</strong></li>
-<li>= <span class="math inline">∪<sub><em>s</em> ∈ <em>T</em></sub></span>
-𝜖-closure(s)</li>
+<li>= <span class="math inline">\(∪_{s∈T}\)</span> 𝜖-closure(s)</li>
 </ul></li>
 <li><strong>move(T, a)</strong>:
 <ul>
@@ -1743,23 +1743,23 @@ cannot. （如果一个状态可以通过x到达终止状态，而另一个状�
 </ul></li>
 <li><strong>How</strong>：
 <ol type="1">
-<li>Start with the initial partition <span class="math inline"><strong>Π</strong></span> with two groups, the
+<li>Start with the initial partition <span class="math inline">\(\mathbf{Π}\)</span> with two groups, the
 <strong>accepting</strong> and <strong>non-accepting</strong> states of
 the DFA. （将DFA的接受状态和非接受状态分为两个组）</li>
-<li>Let <span class="math inline"><strong>Π</strong><sub><strong>n</strong><strong>e</strong><strong>w</strong></sub> <strong>:=</strong> <strong>Π</strong></span>.
-Then, for each group <span class="math inline"><strong>G</strong></span>
-of <span class="math inline"><strong>Π</strong></span>: （初始时令<span class="math inline"><strong>Π</strong><sub><strong>n</strong><strong>e</strong><strong>w</strong></sub> <strong>=</strong> <strong>Π</strong></span>，然后对于每个组G）
+<li>Let <span class="math inline">\(\mathbf{Π_{new} := Π}\)</span>.
+Then, for each group <span class="math inline">\(\mathbf{G}\)</span> of
+<span class="math inline">\(\mathbf{Π}\)</span>: （初始时令<span class="math inline">\(\mathbf{Π_{new} = Π}\)</span>，然后对于每个组G）
 <ul>
-<li>For each input symbol <span class="math inline"><strong>a</strong></span>, states <span class="math inline"><strong>s</strong>, <strong>t</strong></span> in
-<span class="math inline"><strong>G</strong></span> are partitioned if
-they transit to different groups of <span class="math inline"><strong>Π</strong></span> via <span class="math inline"><strong>a</strong></span>;
+<li>For each input symbol <span class="math inline">\(\mathbf{a}\)</span>, states <span class="math inline">\(\mathbf{s},\mathbf{t}\)</span> in <span class="math inline">\(\mathbf{G}\)</span> are partitioned if they
+transit to different groups of <span class="math inline">\(\mathbf{Π}\)</span> via <span class="math inline">\(\mathbf{a}\)</span>;
 （对于每个输入符号a，如果状态s和t通过a转移到不同的组，则他们被划分为不同的组）</li>
-<li>Replace <span class="math inline"><strong>G</strong></span> in <span class="math inline"><strong>Π</strong><sub><strong>n</strong><strong>e</strong><strong>w</strong></sub></span>
-by the new subgroups. （用新的子组替换<span class="math inline"><strong>G</strong></span>）</li>
+<li>Replace <span class="math inline">\(\mathbf{G}\)</span> in <span class="math inline">\(\mathbf{Π_{new}}\)</span> by the new subgroups.
+（用新的子组替换<span class="math inline">\(\mathbf{G}\)</span>）</li>
 </ul></li>
-<li>If <span class="math inline"><strong>Π</strong><sub><strong>n</strong><strong>e</strong><strong>w</strong></sub> ≠ <strong>Π</strong></span>,
-<span class="math inline"><strong>Π</strong> <strong>:</strong>  <strong>=</strong> <strong>Π</strong><sub><strong>n</strong><strong>e</strong><strong>w</strong></sub></span>
-and repeat Step 2, Step 4 otherwise. （如果<span class="math inline"><strong>Π</strong><sub><strong>n</strong><strong>e</strong><strong>w</strong></sub> ≠ <strong>Π</strong></span>，则令<span class="math inline"><strong>Π</strong> <strong>:</strong>  <strong>=</strong> <strong>Π</strong><sub><strong>n</strong><strong>e</strong><strong>w</strong></sub></span>并重复步骤2，否则跳到步骤4）</li>
+<li>If <span class="math inline">\(\mathbf{Π_{new}} ≠
+\mathbf{Π}\)</span>, <span class="math inline">\(\mathbf{Π: =
+Π_{new}}\)</span> and repeat Step 2, Step 4 otherwise. （如果<span class="math inline">\(\mathbf{Π_{new}} ≠ \mathbf{Π}\)</span>，则令<span class="math inline">\(\mathbf{Π: =
+Π_{new}}\)</span>并重复步骤2，否则跳到步骤4）</li>
 <li>Aggregate the transitions among groups. （将组之间的转换聚合）</li>
 <li>The resulting DFA is the minimized DFA.
 （得到的DFA是最小化的DFA）</li>
@@ -1842,14 +1842,16 @@ correction （选择一系列最小的变化，以实现全局最低成本的修
 <li>Terminals</li>
 <li>Non-terminals</li>
 <li>Start Symbol</li>
-<li>Productions: <span class="math inline"><strong>A</strong> → <strong>α</strong></span>
+<li>Productions: <span class="math inline">\(\mathbf{A} \rightarrow
+\mathbf{\alpha}\)</span>
 <ul>
 <li>Header / Left Side → Body / Right Side
 <ul>
 <li>Header: A <strong>Non-terminal</strong></li>
 <li>Body: <strong>zero or more Terminals or Non-terminals</strong></li>
 </ul></li>
-<li><span class="math inline"><strong>V</strong><sub><strong>N</strong></sub> → (<strong>V</strong><sub><strong>T</strong></sub>|<strong>V</strong><sub><strong>N</strong></sub>)<sup>*</sup></span></li>
+<li><span class="math inline">\(\mathbf{V_N} \rightarrow
+(\mathbf{V_T}|\mathbf{V_N})^*\)</span></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1869,20 +1871,21 @@ Tree （对应于自顶向下构造解析树）</li>
 <li>$$ : derive in one step</li>
 <li>$ $ : derive in zero or more steps
 <ul>
-<li><span class="math inline">$\alpha \overset{*}{\Rightarrow}
-\alpha$</span></li>
-<li>if <span class="math inline">$\alpha \overset{*}{\Rightarrow}
-\beta$</span> and <span class="math inline">$\beta
-\overset{*}{\Rightarrow} \gamma$</span>, then <span class="math inline">$\alpha \overset{*}{\Rightarrow} \gamma$</span></li>
+<li><span class="math inline">\(\alpha \overset{*}{\Rightarrow}
+\alpha\)</span></li>
+<li>if <span class="math inline">\(\alpha \overset{*}{\Rightarrow}
+\beta\)</span> and <span class="math inline">\(\beta
+\overset{*}{\Rightarrow} \gamma\)</span>, then <span class="math inline">\(\alpha \overset{*}{\Rightarrow}
+\gamma\)</span></li>
 </ul></li>
 <li>$ $ : derive in one or more steps</li>
 </ul></li>
-<li><p><span class="math inline">$\mathbf{S} \overset{*}{\Rightarrow}
-\alpha$</span></p>
+<li><p><span class="math inline">\(\mathbf{S} \overset{*}{\Rightarrow}
+\alpha\)</span></p>
 <ul>
-<li><span class="math inline"><em>α</em></span> is a <strong>Sentential
-Form</strong> of S. （<span class="math inline"><em>α</em></span>是S的一个句子形式）</li>
-<li><span class="math inline"><em>α</em></span> may contain
+<li><span class="math inline">\(\alpha\)</span> is a <strong>Sentential
+Form</strong> of S. （<span class="math inline">\(\alpha\)</span>是S的一个句子形式）</li>
+<li><span class="math inline">\(\alpha\)</span> may contain
 <strong>Terminals</strong>, <strong>Non-terminals</strong>, or may be
 <strong>Empty</strong>.</li>
 <li>Sentence: a Sentential Form without Non-terminals.
@@ -1890,8 +1893,8 @@ Form</strong> of S. （<span class="math inline"><em>α</em></span>是S的一个
 </ul></li>
 <li><p>What is a <strong>Language</strong>?</p>
 <ul>
-<li><span class="math inline"><em>L</em>(<em>G</em>)</span>: set of
-Sentences generated by the Grammar <span class="math inline"><em>G</em></span></li>
+<li><span class="math inline">\(L(G)\)</span>: set of Sentences
+generated by the Grammar <span class="math inline">\(G\)</span></li>
 <li>A string of terminals $ L(G) $ if and only if $ $ is a Sentence of $
 G $ (or $ S $).</li>
 </ul></li>
@@ -1957,16 +1960,18 @@ symbols （无需回溯，通过提前查看输入符号进行选择）</li>
 <h4 id="left-recursion-左递归">Left Recursion （左递归）</h4>
 <ul>
 <li><strong>What</strong>: The Grammar has a non-terminal A such that
-there exists a derivation <span class="math inline">$\mathbf{A}
-\overset{+}{\Rightarrow} \mathbf{A} \alpha$</span>
-（文法有一个非终结符A，使得存在一个派生<span class="math inline">$\mathbf{A} \overset{+}{\Rightarrow} \mathbf{A}
-\alpha$</span>）</li>
+there exists a derivation <span class="math inline">\(\mathbf{A}
+\overset{+}{\Rightarrow} \mathbf{A} \alpha\)</span>
+（文法有一个非终结符A，使得存在一个派生<span class="math inline">\(\mathbf{A} \overset{+}{\Rightarrow} \mathbf{A}
+\alpha\)</span>）</li>
 <li><strong>Why</strong>: Recursive-Descent Parsing cannot handle Left
 Recursion. （递归下降解析无法处理左递归）</li>
 <li><strong>How</strong>: Transform the grammar to <strong>eliminate
 Left Recursion</strong>. （转换文法以消除左递归）
 <ul>
-<li>==<strong>Immediate Elimination</strong>: <span class="math inline"><strong>A</strong> → <strong>A</strong><em>α</em>|<em>β</em>   ⇒ <strong>A</strong> → <em>β</em><strong>A</strong><sup><strong>′</strong></sup>, <strong>A</strong><sup><strong>′</strong></sup> → <em>α</em><strong>A</strong><sup><strong>′</strong></sup>|<em>𝝐</em></span>==</li>
+<li>==<strong>Immediate Elimination</strong>: <span class="math inline">\(\mathbf{A} \rightarrow \mathbf{A} \alpha | \beta
+\quad \Rightarrow \mathbf{A} \rightarrow \beta \mathbf{A'} ,
+\mathbf{A'} \rightarrow \alpha \mathbf{A'} | 𝝐\)</span>==</li>
 <li>$ _1 | | _m &nbsp;| &nbsp;_1 | | _n &nbsp; (_1 | | _n) , (_1 | | _m) | $</li>
 </ul></li>
 <li><strong>Example</strong>: <img src="image-20.webp" srcset="/img/loading/loading3.gif" lazyload></li>
@@ -1977,9 +1982,10 @@ Elimination （消除左递归）</h4>
 <li><strong>INPUT</strong>: Grammar G without Cycles or 𝝐-productions
 （无循环或𝝐产生式的文法）
 <ul>
-<li>Cycle: <span class="math inline">$\mathbf{A}
-\overset{+}{\Rightarrow} \mathbf{A}$</span></li>
-<li>𝝐-production: <span class="math inline"><strong>A</strong> → <em>ϵ</em></span></li>
+<li>Cycle: <span class="math inline">\(\mathbf{A}
+\overset{+}{\Rightarrow} \mathbf{A}\)</span></li>
+<li>𝝐-production: <span class="math inline">\(\mathbf{A}
+\rightarrow  \epsilon\)</span></li>
 </ul></li>
 <li><strong>OUTPUT</strong>: Equivalent Grammar <strong>without Left
 Recursions</strong> （没有左递归的等效文法）</li>
@@ -2036,26 +2042,24 @@ from 𝜶
 </ul></li>
 <li><strong>HOW</strong>：
 <ul>
-<li>if <span class="math inline"><strong>X</strong></span> is a
-terminal, then <span class="math inline"><strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>X</strong><strong>)</strong> = {<strong>X</strong>}</span></li>
-<li>if <span class="math inline"><strong>X</strong></span> is a
-non-terminal, and <span class="math inline"><strong>X</strong> → <strong>Y</strong><sub><strong>1</strong></sub><strong>Y</strong><sub><strong>2</strong></sub>…<strong>Y</strong><sub><strong>k</strong></sub></span>
+<li>if <span class="math inline">\(\mathbf{X}\)</span> is a terminal,
+then <span class="math inline">\(\mathbf{FIRST(X)} =
+\{\mathbf{X}\}\)</span></li>
+<li>if <span class="math inline">\(\mathbf{X}\)</span> is a
+non-terminal, and <span class="math inline">\(\mathbf{X} \rightarrow
+\mathbf{Y_1} \mathbf{Y_2} \dots \mathbf{Y_k}\)</span>
 <ul>
-<li>add all <strong>non-𝝐</strong> symbols of <span class="math inline"><strong>Y</strong><sub><strong>1</strong></sub></span>
-to <span class="math inline"><strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>X</strong><strong>)</strong></span></li>
-<li>add all <strong>non-𝝐</strong> symbols of <span class="math inline"><strong>Y</strong><sub><strong>2</strong></sub></span>
-to <span class="math inline"><strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>X</strong><strong>)</strong></span>,
-if <span class="math inline"><em>ϵ</em> ∈ <strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>Y</strong><sub><strong>1</strong></sub><strong>)</strong></span></li>
+<li>add all <strong>non-𝝐</strong> symbols of <span class="math inline">\(\mathbf{Y_1}\)</span> to <span class="math inline">\(\mathbf{FIRST(X)}\)</span></li>
+<li>add all <strong>non-𝝐</strong> symbols of <span class="math inline">\(\mathbf{Y_2}\)</span> to <span class="math inline">\(\mathbf{FIRST(X)}\)</span>, if <span class="math inline">\(\epsilon \in \mathbf{FIRST(Y_1)}\)</span></li>
 <li>···</li>
-<li>add all <strong>non-𝝐</strong> symbols of <span class="math inline"><strong>Y</strong><sub><strong>k</strong></sub></span>
-to <span class="math inline"><strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>X</strong><strong>)</strong></span>,
-if <span class="math inline"><em>ϵ</em> ∈ <strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>Y</strong><sub><strong>1</strong></sub><strong>)</strong></span>
-and <span class="math inline"><em>ϵ</em> ∈ <strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>Y</strong><sub><strong>2</strong></sub><strong>)</strong></span>
-and ··· and <span class="math inline"><em>ϵ</em> ∈ <strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>Y</strong><sub><strong>k</strong> <strong>−</strong> <strong>1</strong></sub><strong>)</strong></span></li>
-<li>add <strong>𝝐</strong> to <span class="math inline"><strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>X</strong><strong>)</strong></span>,
-if <span class="math inline"><em>ϵ</em> ∈ <strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>Y</strong><sub><strong>1</strong></sub><strong>)</strong></span>
-and <span class="math inline"><em>ϵ</em> ∈ <strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>Y</strong><sub><strong>2</strong></sub><strong>)</strong></span>
-and ··· and <span class="math inline"><em>ϵ</em> ∈ <strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>Y</strong><sub><strong>k</strong></sub><strong>)</strong></span></li>
+<li>add all <strong>non-𝝐</strong> symbols of <span class="math inline">\(\mathbf{Y_k}\)</span> to <span class="math inline">\(\mathbf{FIRST(X)}\)</span>, if <span class="math inline">\(\epsilon \in \mathbf{FIRST(Y_1)}\)</span> and
+<span class="math inline">\(\epsilon \in \mathbf{FIRST(Y_2)}\)</span>
+and ··· and <span class="math inline">\(\epsilon \in
+\mathbf{FIRST(Y_{k-1})}\)</span></li>
+<li>add <strong>𝝐</strong> to <span class="math inline">\(\mathbf{FIRST(X)}\)</span>, if <span class="math inline">\(\epsilon \in \mathbf{FIRST(Y_1)}\)</span> and
+<span class="math inline">\(\epsilon \in \mathbf{FIRST(Y_2)}\)</span>
+and ··· and <span class="math inline">\(\epsilon \in
+\mathbf{FIRST(Y_k)}\)</span></li>
 </ul></li>
 </ul></li>
 <li><strong>Example</strong>: <img src="image-22.webp" srcset="/img/loading/loading3.gif" lazyload></li>
@@ -2070,24 +2074,22 @@ immediately to the right of a non-terminal in some sentential form.
 after N in a sentential form</li>
 <li><strong>HOW</strong>:
 <ul>
-<li>place <strong>$</strong> in <span class="math inline"><strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>S</strong><strong>)</strong></span>
+<li>place <strong>$</strong> in <span class="math inline">\(\mathbf{FOLLOW(S)}\)</span>
 <ul>
 <li><strong>S</strong>: start symbol</li>
 <li><strong>$</strong>: input right end-marker</li>
 </ul></li>
-<li>for each production <span class="math inline"><strong>M</strong> → <em>α</em><strong>N</strong><em>β</em></span>
+<li>for each production <span class="math inline">\(\mathbf{M}
+\rightarrow \alpha \mathbf{N} \beta\)</span>
 <ul>
-<li>add all symbols in <span class="math inline"><strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>β</strong><strong>)</strong></span>
-to <span class="math inline"><strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>N</strong><strong>)</strong></span>,
-except 𝝐</li>
-<li>if <span class="math inline"><em>ϵ</em> ∈ <strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>β</strong><strong>)</strong></span>,
-add all symbols in <span class="math inline"><strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>M</strong><strong>)</strong></span>
-to <span class="math inline"><strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>N</strong><strong>)</strong></span></li>
+<li>add all symbols in <span class="math inline">\(\mathbf{FIRST(\beta)}\)</span> to <span class="math inline">\(\mathbf{FOLLOW(N)}\)</span>, except 𝝐</li>
+<li>if <span class="math inline">\(\epsilon \in
+\mathbf{FIRST(\beta)}\)</span>, add all symbols in <span class="math inline">\(\mathbf{FOLLOW(M)}\)</span> to <span class="math inline">\(\mathbf{FOLLOW(N)}\)</span></li>
 </ul></li>
-<li>for each production <span class="math inline"><strong>M</strong> → <em>α</em><strong>N</strong></span>
+<li>for each production <span class="math inline">\(\mathbf{M}
+\rightarrow \alpha \mathbf{N}\)</span>
 <ul>
-<li>add all symbols in <span class="math inline"><strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>M</strong><strong>)</strong></span>
-to <span class="math inline"><strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>N</strong><strong>)</strong></span></li>
+<li>add all symbols in <span class="math inline">\(\mathbf{FOLLOW(M)}\)</span> to <span class="math inline">\(\mathbf{FOLLOW(N)}\)</span></li>
 </ul></li>
 </ul></li>
 <li><strong>Example</strong>: <img src="image-23.webp" srcset="/img/loading/loading3.gif" lazyload></li>
@@ -2095,36 +2097,39 @@ to <span class="math inline"><strong>F</strong><strong>O</strong><strong>L</stro
 </ul>
 <h4 id="ll1-grammar">LL(1) Grammar</h4>
 <ul>
-<li><strong>What</strong>: Any <span class="math inline"><strong>A</strong> → <strong>α</strong>&nbsp;|&nbsp;<strong>β</strong></span>
-Represents two Distinct Productions （<span class="math inline"><strong>A</strong> → <strong>α</strong>&nbsp;|&nbsp;<strong>β</strong></span>表示两个不同的产生式）
+<li><strong>What</strong>: Any <span class="math inline">\(\mathbf{A}
+\rightarrow \mathbf{\alpha} \ | \ \mathbf{\beta}\)</span> Represents two
+Distinct Productions （<span class="math inline">\(\mathbf{A}
+\rightarrow \mathbf{\alpha} \ | \
+\mathbf{\beta}\)</span>表示两个不同的产生式）
 <ul>
-<li><span class="math inline"><strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>α</strong><strong>)</strong></span>
-and <span class="math inline"><strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>β</strong><strong>)</strong></span>
-are disjoint sets.（二者是互不相交的集合）
+<li><span class="math inline">\(\mathbf{FIRST(\alpha)}\)</span> and
+<span class="math inline">\(\mathbf{FIRST(\beta)}\)</span> are disjoint
+sets.（二者是互不相交的集合）
 <ul>
-<li>For no terminal <span class="math inline"><strong>a</strong></span>,
-do both <span class="math inline"><strong>α</strong></span> and <span class="math inline"><strong>β</strong></span> derive strings beginning
-with <span class="math inline"><strong>a</strong></span>.
-（二者不会同时派生以<span class="math inline"><strong>a</strong></span>开头的字符串）</li>
-<li>At most one of <span class="math inline"><strong>α</strong></span>
-and <span class="math inline"><strong>β</strong></span> can derive the
-empty string. （至多一个<span class="math inline"><strong>α</strong></span>和<span class="math inline"><strong>β</strong></span>可以派生空字符串）</li>
+<li>For no terminal <span class="math inline">\(\mathbf{a}\)</span>, do
+both <span class="math inline">\(\mathbf{\alpha}\)</span> and <span class="math inline">\(\mathbf{\beta}\)</span> derive strings beginning
+with <span class="math inline">\(\mathbf{a}\)</span>.
+（二者不会同时派生以<span class="math inline">\(\mathbf{a}\)</span>开头的字符串）</li>
+<li>At most one of <span class="math inline">\(\mathbf{\alpha}\)</span>
+and <span class="math inline">\(\mathbf{\beta}\)</span> can derive the
+empty string. （至多一个<span class="math inline">\(\mathbf{\alpha}\)</span>和<span class="math inline">\(\mathbf{\beta}\)</span>可以派生空字符串）</li>
 </ul></li>
-<li>If <span class="math inline"><strong>ϵ</strong> ∈ <strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>β</strong><strong>)</strong></span>,
-then <span class="math inline"><strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>α</strong><strong>)</strong></span>
-and <span class="math inline"><strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>A</strong><strong>)</strong></span>
-are disjoint sets. （如果<span class="math inline"><strong>ϵ</strong> ∈ <strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>β</strong><strong>)</strong></span>，则<span class="math inline"><strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>α</strong><strong>)</strong></span>和<span class="math inline"><strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>A</strong><strong>)</strong></span>是互不相交的集合）</li>
+<li>If <span class="math inline">\(\mathbf{\epsilon} \in
+\mathbf{FIRST(\beta)}\)</span>, then <span class="math inline">\(\mathbf{FIRST(\alpha)}\)</span> and <span class="math inline">\(\mathbf{FOLLOW(A)}\)</span> are disjoint sets.
+（如果<span class="math inline">\(\mathbf{\epsilon} \in
+\mathbf{FIRST(\beta)}\)</span>，则<span class="math inline">\(\mathbf{FIRST(\alpha)}\)</span>和<span class="math inline">\(\mathbf{FOLLOW(A)}\)</span>是互不相交的集合）</li>
 </ul></li>
 <li><strong>Why</strong>: Proper Production is Selected by Looking
 <strong>ONLY</strong> at the Next Input Symbol.
 （通过仅查看下一个输入符号来选择适当的产生式）</li>
 <li><strong>How</strong>: By Parsing Table, a Two-Dimensional Array
 <ul>
-<li><span class="math inline"><strong>M</strong><strong>[</strong><strong>A</strong><strong>,</strong> <strong>a</strong><strong>]</strong> = <strong>α</strong></span>,
-when deriving <span class="math inline"><strong>A</strong></span>, apply
-<span class="math inline"><strong>A</strong> → <strong>α</strong></span>
-if coming up with <span class="math inline"><strong>a</strong></span>.
-（当派生<span class="math inline"><strong>A</strong></span>时，如果出现<span class="math inline"><strong>a</strong></span>，则应用<span class="math inline"><strong>A</strong> → <strong>α</strong></span>）</li>
+<li><span class="math inline">\(\mathbf{M[A, a]} =
+\mathbf{\alpha}\)</span>, when deriving <span class="math inline">\(\mathbf{A}\)</span>, apply <span class="math inline">\(\mathbf{A} \rightarrow \mathbf{\alpha}\)</span> if
+coming up with <span class="math inline">\(\mathbf{a}\)</span>.
+（当派生<span class="math inline">\(\mathbf{A}\)</span>时，如果出现<span class="math inline">\(\mathbf{a}\)</span>，则应用<span class="math inline">\(\mathbf{A} \rightarrow
+\mathbf{\alpha}\)</span>）</li>
 </ul></li>
 </ul>
 <h4 id="ll1-parsing">LL(1) Parsing</h4>
@@ -2133,19 +2138,21 @@ if coming up with <span class="math inline"><strong>a</strong></span>.
 <ul>
 <li><strong>INPUT</strong>: Grammar G.</li>
 <li><strong>OUTPUT</strong>: Parsing Table M.</li>
-<li><strong>STEPS</strong>: For each production <span class="math inline"><strong>A</strong> → <strong>α</strong></span>:
+<li><strong>STEPS</strong>: For each production <span class="math inline">\(\mathbf{A} \rightarrow \mathbf{\alpha}\)</span>:
 <ol type="1">
-<li>For each terminal <span class="math inline"><strong>a</strong> ∈ <strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>α</strong><strong>)</strong></span>,
-add <span class="math inline"><strong>A</strong> → <strong>α</strong></span> to
-<span class="math inline"><strong>M</strong><strong>[</strong><strong>A</strong><strong>,</strong> <strong>a</strong><strong>]</strong></span>.</li>
-<li>If <span class="math inline"><strong>ϵ</strong> ∈ <strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>α</strong><strong>)</strong></span>,
-then for each terminal <span class="math inline"><strong>b</strong> ∈ <strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>A</strong><strong>)</strong></span>,
-add <span class="math inline"><strong>A</strong> → <strong>α</strong></span> to
-<span class="math inline"><strong>M</strong><strong>[</strong><strong>A</strong><strong>,</strong> <strong>b</strong><strong>]</strong></span>.</li>
-<li>If <span class="math inline"><strong>ϵ</strong> ∈ <strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>α</strong><strong>)</strong></span>
-and <span class="math inline"><strong>$</strong> ∈ <strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>A</strong><strong>)</strong></span>,
-add <span class="math inline"><strong>A</strong> → <strong>α</strong></span> to
-<span class="math inline"><strong>M</strong><strong>[</strong><strong>A</strong><strong>,</strong> <strong>$</strong><strong>]</strong></span>.</li>
+<li>For each terminal <span class="math inline">\(\mathbf{a} \in
+\mathbf{FIRST(\alpha)}\)</span>, add <span class="math inline">\(\mathbf{A} \rightarrow \mathbf{\alpha}\)</span> to
+<span class="math inline">\(\mathbf{M[A, a]}\)</span>.</li>
+<li>If <span class="math inline">\(\mathbf{\epsilon} \in
+\mathbf{FIRST(\alpha)}\)</span>, then for each terminal <span class="math inline">\(\mathbf{b} \in \mathbf{FOLLOW(A)}\)</span>, add
+<span class="math inline">\(\mathbf{A} \rightarrow
+\mathbf{\alpha}\)</span> to <span class="math inline">\(\mathbf{M[A,
+b]}\)</span>.</li>
+<li>If <span class="math inline">\(\mathbf{\epsilon} \in
+\mathbf{FIRST(\alpha)}\)</span> and <span class="math inline">\(\mathbf{\$} \in \mathbf{FOLLOW(A)}\)</span>, add
+<span class="math inline">\(\mathbf{A} \rightarrow
+\mathbf{\alpha}\)</span> to <span class="math inline">\(\mathbf{M[A,
+\$]}\)</span>.</li>
 </ol></li>
 <li><strong>Example</strong>: <img src="image-24.webp" srcset="/img/loading/loading3.gif" lazyload> <img src="image-25.webp" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul></li>
@@ -2162,19 +2169,26 @@ add <span class="math inline"><strong>A</strong> → <strong>α</strong></sp
 symbols. （当决策不明确时，推迟到看到足够的符号为止）</li>
 <li><strong>Left-Factored</strong>:
 <ul>
-<li><span class="math inline"><strong>A</strong> → <strong>𝜶</strong><strong>𝜷</strong><sub><strong>1</strong></sub>|<strong>𝜶</strong><strong>𝜷</strong><sub><strong>2</strong></sub>  <em>b</em><em>y</em>  <strong>A</strong> → <strong>𝜶</strong><strong>A</strong><sup><strong>′</strong></sup>, <strong>A</strong><sup><strong>′</strong></sup> → <strong>𝜷</strong><sub><strong>1</strong></sub>|<strong>𝜷</strong><sub><strong>2</strong></sub></span></li>
+<li><span class="math inline">\(\mathbf{A} \rightarrow \mathbf{𝜶}
+\mathbf{𝜷_1} | \mathbf{𝜶} \mathbf{𝜷_2}\quad by \quad \mathbf{A}
+\rightarrow \mathbf{𝜶} \mathbf{A'}, \mathbf{A'} \rightarrow
+\mathbf{𝜷_1} | \mathbf{𝜷_2}\)</span></li>
 </ul></li>
 <li><strong>How</strong>:
 <ul>
-<li>For each non-terminal <span class="math inline"><strong>A</strong></span>, find the longest common
-prefix <span class="math inline"><strong>𝜶</strong></span> of its
+<li>For each non-terminal <span class="math inline">\(\mathbf{A}\)</span>, find the longest common
+prefix <span class="math inline">\(\mathbf{𝜶}\)</span> of its
 alternatives.</li>
-<li>If <span class="math inline"><strong>𝜶</strong></span> is not empty,
-replace all of the <span class="math inline"><strong>A</strong></span>-productions</li>
+<li>If <span class="math inline">\(\mathbf{𝜶}\)</span> is not empty,
+replace all of the <span class="math inline">\(\mathbf{A}\)</span>-productions</li>
 </ul></li>
 <li><strong>Example</strong>:
 <ul>
-<li><span class="math inline"><strong>A</strong> → <strong>𝜶</strong><strong>𝜷</strong><sub><strong>1</strong></sub>|<strong>𝜶</strong><strong>𝜷</strong><sub><strong>2</strong></sub>|...|<strong>𝜶</strong><strong>𝜷</strong><sub><strong>n</strong></sub>|<strong>𝜸</strong>    <em>b</em><em>y</em>    <strong>A</strong> → <strong>𝜶</strong><strong>A</strong><sup><strong>′</strong></sup>|<em>𝜸</em>, <strong>A</strong><sup><strong>′</strong></sup> → <strong>𝜷</strong><sub><strong>1</strong></sub>|<strong>𝜷</strong><sub><strong>2</strong></sub>|...|<strong>𝜷</strong><sub><strong>n</strong></sub></span></li>
+<li><span class="math inline">\(\mathbf{A} \rightarrow \mathbf{𝜶}
+\mathbf{𝜷_1} | \mathbf{𝜶} \mathbf{𝜷_2} | ... | \mathbf{𝜶} \mathbf{𝜷_n} |
+\mathbf{𝜸}\quad \quad by \quad \quad \mathbf{A} \rightarrow \mathbf{𝜶}
+\mathbf{A'} | 𝜸, \mathbf{A'} \rightarrow \mathbf{𝜷_1} |
+\mathbf{𝜷_2} | ... | \mathbf{𝜷_n}\)</span></li>
 </ul></li>
 </ul>
 <h4 id="non-ll1-grammar">Non-LL(1) Grammar</h4>
@@ -2208,10 +2222,10 @@ order
 <li>The body of a production is replaced by the non-terminal at its
 header. （用产生式的头部替换产生式的主体）</li>
 </ul></li>
-<li><span class="math inline">$S \overset{rm}{\Rightarrow} \gamma_0
+<li><span class="math inline">\(S \overset{rm}{\Rightarrow} \gamma_0
 \overset{rm}{\Rightarrow} \gamma_1 \overset{rm}{\Rightarrow} \dots
 \overset{rm}{\Rightarrow} \gamma_n \overset{rm}{\Rightarrow}
-\omega$</span>
+\omega\)</span>
 <ul>
 <li>find the rightmost derivation in the reverse order: “leftmost
 reduction” （找到右侧派生的反向顺序：最左侧归约）</li>
@@ -2221,17 +2235,19 @@ Derivation in Reverse”: <strong>LR Parsing</strong></li>
 </ul></li>
 <li><strong>Example</strong>： <img src="image-27.webp" srcset="/img/loading/loading3.gif" lazyload>
 <ul>
-<li><span class="math inline"><em>E</em> ⇒ <em>T</em> ⇒ <em>T</em> * <em>F</em> ⇒ <em>T</em> * <em>i</em><em>d</em> ⇒ <em>F</em> * <em>i</em><em>d</em> ⇒ <em>i</em><em>d</em> * <em>i</em><em>d</em></span></li>
+<li><span class="math inline">\(E \Rightarrow T \Rightarrow T * F
+\Rightarrow T * id \Rightarrow F * id \Rightarrow id * id\)</span></li>
 </ul></li>
 </ul>
 <h3 id="handles">Handles</h3>
 <ul>
-<li><strong>What</strong>: if <span class="math inline">$\mathbf{S}
+<li><strong>What</strong>: if <span class="math inline">\(\mathbf{S}
 \overset{*}{\Rightarrow} \mathbf{\alpha A \omega}
-\overset{}{\Rightarrow} \mathbf{\alpha \beta \omega}$</span>, then
-production <span class="math inline"><strong>A</strong> <strong>→</strong> <strong>β</strong></span>
-in the position following <span class="math inline"><strong>α</strong></span> is a
-<strong>handle</strong> of <span class="math inline"><strong>α</strong><strong>β</strong><strong>ω</strong></span>.
+\overset{}{\Rightarrow} \mathbf{\alpha \beta \omega}\)</span>, then
+production <span class="math inline">\(\mathbf{A \rightarrow
+\beta}\)</span> in the position following <span class="math inline">\(\mathbf{\alpha}\)</span> is a
+<strong>handle</strong> of <span class="math inline">\(\mathbf{\alpha
+\beta \omega}\)</span>.
 <ul>
 <li>a substring that matches the body of a production, representing a
 step of reduction （与产生式的主体匹配的子字符串，表示归约的一步）</li>
@@ -2287,12 +2303,12 @@ and associativity （处理具有运算符优先级和结合性的表达式）</
 <ul>
 <li><strong>Precedence</strong> （优先级）
 <ul>
-<li><span class="math inline"><strong>a</strong> &lt; ·<strong>b</strong></span>:
+<li><span class="math inline">\(\mathbf{a} &lt;· \mathbf{b}\)</span>:
 a’s precedence is lower than b’s</li>
-<li><span class="math inline"><strong>a</strong> = ·<strong>b</strong></span>: …
-is equal to …</li>
-<li><span class="math inline"><strong>a</strong> &gt; ·<strong>b</strong></span>:
-… is higher than …</li>
+<li><span class="math inline">\(\mathbf{a} =· \mathbf{b}\)</span>: … is
+equal to …</li>
+<li><span class="math inline">\(\mathbf{a} &gt;· \mathbf{b}\)</span>: …
+is higher than …</li>
 </ul></li>
 <li><strong>Precedence Climbing Method</strong> （优先级爬升法）
 <ul>
@@ -2303,14 +2319,14 @@ encountered</li>
 </ul></li>
 <li><strong>Implementation with STACK</strong> (栈实现)
 <ul>
-<li>let <span class="math inline"><strong>a</strong></span> be the
+<li>let <span class="math inline">\(\mathbf{a}\)</span> be the
 <strong>top Terminal</strong> on the STACK （栈顶终结符）</li>
-<li>let <span class="math inline"><strong>b</strong></span> be the INPUT
+<li>let <span class="math inline">\(\mathbf{b}\)</span> be the INPUT
 Symbol under processing （正在处理的输入符号）</li>
-<li>if <span class="math inline"><strong>a</strong> &lt; ·<em>o</em><em>r</em> = ·<strong>b</strong></span>,
-<strong>Shift</strong></li>
-<li>else if <span class="math inline"><strong>a</strong> &gt; ·<strong>b</strong></span>,
-<strong>Reduce</strong></li>
+<li>if <span class="math inline">\(\mathbf{a} &lt;· or =·
+\mathbf{b}\)</span>, <strong>Shift</strong></li>
+<li>else if <span class="math inline">\(\mathbf{a} &gt;·
+\mathbf{b}\)</span>, <strong>Reduce</strong></li>
 </ul></li>
 </ul></li>
 <li><strong>Example</strong>: <img src="image-30.webp" srcset="/img/loading/loading3.gif" lazyload> <img src="image-31.webp" srcset="/img/loading/loading3.gif" lazyload></li>
@@ -2319,25 +2335,33 @@ Symbol under processing （正在处理的输入符号）</li>
 Precedence Relation Construction （优先级关系构造）</h3>
 <h4 id="precedence-relation">Precedence Relation</h4>
 <ul>
-<li>If operator <span class="math inline"><strong>a</strong></span> has
-higher precedence than <span class="math inline"><strong>b</strong></span>
+<li>If operator <span class="math inline">\(\mathbf{a}\)</span> has
+higher precedence than <span class="math inline">\(\mathbf{b}\)</span>
 <ul>
-<li><span class="math inline"><strong>a</strong> &gt; ·<strong>b</strong></span></li>
-<li><span class="math inline"><strong>b</strong> &lt; ·<strong>a</strong></span></li>
+<li><span class="math inline">\(\mathbf{a} &gt;·
+\mathbf{b}\)</span></li>
+<li><span class="math inline">\(\mathbf{b} &lt;·
+\mathbf{a}\)</span></li>
 </ul></li>
-<li>If <span class="math inline"><strong>a</strong></span> and <span class="math inline"><strong>b</strong></span> has equal precedence
+<li>If <span class="math inline">\(\mathbf{a}\)</span> and <span class="math inline">\(\mathbf{b}\)</span> has equal precedence
 <ul>
-<li>if left-associative, then <span class="math inline"><strong>a</strong> &gt; ·<strong>b</strong></span>
-and <span class="math inline"><strong>b</strong> &gt; ·<strong>a</strong></span></li>
-<li>if right-associative, then <span class="math inline"><strong>a</strong> &lt; ·<strong>b</strong></span>
-and <span class="math inline"><strong>b</strong> &lt; ·<strong>a</strong></span></li>
+<li>if left-associative, then <span class="math inline">\(\mathbf{a}
+&gt;· \mathbf{b}\)</span> and <span class="math inline">\(\mathbf{b}
+&gt;· \mathbf{a}\)</span></li>
+<li>if right-associative, then <span class="math inline">\(\mathbf{a}
+&lt;· \mathbf{b}\)</span> and <span class="math inline">\(\mathbf{b}
+&lt;· \mathbf{a}\)</span></li>
 </ul></li>
-<li>For all operator <span class="math inline"><strong>a</strong></span>
+<li>For all operator <span class="math inline">\(\mathbf{a}\)</span>
 <ul>
-<li><span class="math inline"><strong>a</strong> &lt; ·<em>i</em><em>d</em>,  <em>i</em><em>d</em> &gt; ·<strong>a</strong></span></li>
-<li><span class="math inline">$ &lt; ·<strong>a</strong>,  <strong>a</strong> &gt; ·$</span></li>
-<li><span class="math inline"><strong>a</strong> &lt; ·(,  ( &lt; ·<strong>a</strong>,  <strong>a</strong> &gt; ·),  ) &gt; ·<strong>a</strong></span></li>
-<li><span class="math inline">( = ·)</span></li>
+<li><span class="math inline">\(\mathbf{a} &lt;· id, \quad id &gt;·
+\mathbf{a}\)</span></li>
+<li><span class="math inline">\(\$ &lt;· \mathbf{a}, \quad \mathbf{a}
+&gt;· \$\)</span></li>
+<li><span class="math inline">\(\mathbf{a} &lt;· (,\quad  ( &lt;·
+\mathbf{a}, \quad \mathbf{a} &gt;· ), \quad ) &gt;·
+\mathbf{a}\)</span></li>
+<li><span class="math inline">\((=· )\)</span></li>
 </ul></li>
 </ul>
 <h4 id="leading-and-trailing">LEADING and TRAILING</h4>
@@ -2346,32 +2370,35 @@ and <span class="math inline"><strong>b</strong> &lt; ·<strong>a</strong></
 beginning of a string derived from a non-terminal
 （可以出现在从非终结符派生的字符串开头的符号集合）
 <ul>
-<li><span class="math inline">$\mathbf{LEADING(Q)} = \{\mathbf{Y},
+<li><span class="math inline">\(\mathbf{LEADING(Q)} = \{\mathbf{Y},
 \mathbf{N} \ | \ \mathbf{Q} \overset{+}{\Rightarrow} \mathbf{Y\delta} \
 or\  \mathbf{Q} \overset{+}{\Rightarrow} \mathbf{N Y \delta}, \mathbf{N}
-\in \mathbf{V_n}, \mathbf{Y} \in \mathbf{V_t}\}$</span></li>
-<li>for <span class="math inline"><strong>Q</strong> → <strong>Y</strong><strong>δ</strong></span>
-or <span class="math inline"><strong>Q</strong> → <strong>N</strong><strong>Y</strong><strong>δ</strong></span>,
-we have:
+\in \mathbf{V_n}, \mathbf{Y} \in \mathbf{V_t}\}\)</span></li>
+<li>for <span class="math inline">\(\mathbf{Q} \rightarrow \mathbf{Y
+\delta}\)</span> or <span class="math inline">\(\mathbf{Q} \rightarrow
+\mathbf{N Y \delta}\)</span>, we have:
 <ul>
-<li><span class="math inline"><strong>Y</strong>, <strong>N</strong> ∈ <strong>L</strong><strong>E</strong><strong>A</strong><strong>D</strong><strong>I</strong><strong>N</strong><strong>G</strong><strong>(</strong><strong>Q</strong><strong>)</strong></span></li>
-<li><span class="math inline"><strong>L</strong><strong>E</strong><strong>A</strong><strong>D</strong><strong>I</strong><strong>N</strong><strong>G</strong><strong>(</strong><strong>N</strong><strong>)</strong> ⊆ <strong>L</strong><strong>E</strong><strong>A</strong><strong>D</strong><strong>I</strong><strong>N</strong><strong>G</strong><strong>(</strong><strong>Q</strong><strong>)</strong></span></li>
+<li><span class="math inline">\(\mathbf{Y}, \mathbf{N} \in
+\mathbf{LEADING(Q)}\)</span></li>
+<li><span class="math inline">\(\mathbf{LEADING(N)} \subseteq
+\mathbf{LEADING(Q)}\)</span></li>
 </ul></li>
 </ul></li>
 <li><strong>TRAILING</strong>: the set of symbols that can appear at the
 end of a string derived from a non-terminal
 （可以出现在从非终结符派生的字符串末尾的符号集合）
 <ul>
-<li><span class="math inline">$\mathbf{TRAILING(P)} = \{\mathbf{X},
+<li><span class="math inline">\(\mathbf{TRAILING(P)} = \{\mathbf{X},
 \mathbf{N} \ | \ \mathbf{P} \overset{+}{\Rightarrow} \mu \mathbf{X} \ or
 \ \mathbf{P} \overset{+}{\Rightarrow} \mu \mathbf{X} \mathbf{N},
-\mathbf{N} \in \mathbf{V_n}, \mathbf{X} \in \mathbf{V_t}\}$</span></li>
-<li>for <span class="math inline"><strong>P</strong> → <em>μ</em><strong>X</strong></span>
-or <span class="math inline"><strong>P</strong> → <em>μ</em><strong>X</strong><strong>N</strong></span>,
-we have:
+\mathbf{N} \in \mathbf{V_n}, \mathbf{X} \in \mathbf{V_t}\}\)</span></li>
+<li>for <span class="math inline">\(\mathbf{P} \rightarrow \mu
+\mathbf{X}\)</span> or <span class="math inline">\(\mathbf{P}
+\rightarrow \mu \mathbf{X} \mathbf{N}\)</span>, we have:
 <ul>
-<li><span class="math inline"><strong>X</strong>, <strong>N</strong> ∈ <strong>T</strong><strong>R</strong><strong>A</strong><strong>I</strong><strong>L</strong><strong>I</strong><strong>N</strong><strong>G</strong><strong>(</strong><strong>P</strong><strong>)</strong></span></li>
-<li><span class="math inline"><strong>T</strong><strong>R</strong><strong>A</strong><strong>I</strong><strong>L</strong><strong>I</strong><strong>N</strong><strong>G</strong><strong>(</strong><strong>N</strong><strong>)</strong> ⊆ <strong>T</strong><strong>R</strong><strong>A</strong><strong>I</strong><strong>L</strong><strong>I</strong><strong>N</strong><strong>G</strong><strong>(</strong><strong>P</strong><strong>)</strong></span></li>
+<li><span class="math inline">\(\mathbf{X}, \mathbf{N} \in
+\mathbf{TRAILING(P)}\)</span></li>
+<li><span class="math inline">\(\mathbf{TRAILING(N)}\subseteq\mathbf{TRAILING(P)}\)</span></li>
 </ul></li>
 </ul></li>
 <li><strong>Example</strong>: <img src="image-32.webp" srcset="/img/loading/loading3.gif" lazyload></li>
@@ -2379,65 +2406,71 @@ we have:
 <h4 id="constructing-precedence-relations">Constructing Precedence
 Relations</h4>
 <ul>
-<li><span class="math display"><strong>X</strong> = ·<strong>Y</strong></span>
+<li><span class="math display">\[
+\mathbf{X} =· \mathbf{Y}
+\]</span>
 <ul>
-<li>if there is <span class="math inline"><strong>A</strong> → <strong>α</strong><strong>X</strong><strong>Y</strong><strong>β</strong></span>,
-where <span class="math inline"><strong>X</strong>, <strong>Y</strong> ∈ <strong>V</strong></span>,
-<span class="math inline"><strong>α</strong>, <strong>β</strong> ∈ <strong>V</strong><sup><strong>*</strong></sup></span></li>
-<li>or, there is <span class="math inline"><strong>A</strong> → <strong>α</strong><strong>X</strong><strong>N</strong><strong>Y</strong><strong>β</strong></span>,
-where <span class="math inline"><strong>N</strong> ∈ <strong>V</strong><sub><strong>n</strong></sub> ∪ {<strong>ϵ</strong>}</span>,
-<span class="math inline"><strong>X</strong>, <strong>Y</strong> ∈ <strong>V</strong><sub><strong>t</strong></sub></span>
+<li>if there is <span class="math inline">\(\mathbf{A} \rightarrow
+\mathbf{\alpha X Y \beta}\)</span>, where <span class="math inline">\(\mathbf{X}, \mathbf{Y} \in \mathbf{V}\)</span>,
+<span class="math inline">\(\mathbf{\alpha}, \mathbf{\beta} \in
+\mathbf{V^*}\)</span></li>
+<li>or, there is <span class="math inline">\(\mathbf{A} \rightarrow
+\mathbf{\alpha X N Y \beta}\)</span>, where <span class="math inline">\(\mathbf{N} \in \mathbf{V_n} \cup
+\{\mathbf{\epsilon}\}\)</span>, <span class="math inline">\(\mathbf{X},
+\mathbf{Y} \in \mathbf{V_t}\)</span>
 <ul>
 <li>adjacent symbols have equal precedence （相邻符号具有相等的优先级）
 <ul>
 <li>at least one of them is a terminal （至少有一个是终结符）</li>
 </ul></li>
-<li>e.g., <span class="math inline"><strong>E</strong> + <strong>T</strong></span>,
-<span class="math inline"><strong>T</strong> * <strong>F</strong></span>,
-<span class="math inline"><strong>E</strong>+ = <strong>T</strong></span></li>
+<li>e.g., <span class="math inline">\(\mathbf{E} + \mathbf{T}\)</span>,
+<span class="math inline">\(\mathbf{T} * \mathbf{F}\)</span>, <span class="math inline">\(\mathbf{E} += \mathbf{T}\)</span></li>
 </ul></li>
 </ul></li>
-<li><span class="math display"><strong>X</strong> &lt; ·<strong>Y</strong></span>
+<li><span class="math display">\[
+\mathbf{X} &lt;· \mathbf{Y}
+\]</span>
 <ul>
-<li>if there is <span class="math inline"><strong>A</strong> → <strong>α</strong><strong>X</strong><strong>Q</strong><strong>β</strong></span>,
-and <span class="math inline">$\mathbf{Q} \overset{+}{\Rightarrow}
-\mathbf{Y \delta}$</span>, where <span class="math inline"><strong>X</strong>, <strong>Y</strong> ∈ <strong>V</strong></span>,
-<span class="math inline"><strong>Q</strong> ∈ <strong>V</strong><sub><strong>n</strong></sub></span>,
-<span class="math inline"><strong>α</strong>, <strong>β</strong>, <strong>δ</strong> ∈ <strong>V</strong><sup><strong>*</strong></sup></span></li>
-<li>or, there is <span class="math inline"><strong>A</strong> → <strong>α</strong><strong>X</strong><strong>Q</strong><strong>β</strong></span>,
-and <span class="math inline">$\mathbf{Q} \overset{+}{\Rightarrow}
-\mathbf{N Y \delta}$</span>, where <span class="math inline"><strong>N</strong> ∈ <strong>V</strong><sub><strong>n</strong></sub> ∪ {<strong>ϵ</strong>}</span>,
-<span class="math inline"><strong>X</strong>, <strong>Y</strong> ∈ <strong>V</strong><sub><strong>t</strong></sub></span>
+<li>if there is <span class="math inline">\(\mathbf{A} \rightarrow
+\mathbf{\alpha X Q \beta}\)</span>, and <span class="math inline">\(\mathbf{Q} \overset{+}{\Rightarrow} \mathbf{Y
+\delta}\)</span>, where <span class="math inline">\(\mathbf{X},
+\mathbf{Y} \in \mathbf{V}\)</span>, <span class="math inline">\(\mathbf{Q} \in \mathbf{V_n}\)</span>, <span class="math inline">\(\mathbf{\alpha}, \mathbf{\beta}, \mathbf{\delta}
+\in \mathbf{V^*}\)</span></li>
+<li>or, there is <span class="math inline">\(\mathbf{A} \rightarrow
+\mathbf{\alpha X Q \beta}\)</span>, and <span class="math inline">\(\mathbf{Q} \overset{+}{\Rightarrow} \mathbf{N Y
+\delta}\)</span>, where <span class="math inline">\(\mathbf{N} \in
+\mathbf{V_n} \cup \{\mathbf{\epsilon}\}\)</span>, <span class="math inline">\(\mathbf{X}, \mathbf{Y} \in \mathbf{V_t}\)</span>
 <ul>
-<li><span class="math inline">$\mathbf{LEADING(Q)} = \{\mathbf{Y},
+<li><span class="math inline">\(\mathbf{LEADING(Q)} = \{\mathbf{Y},
 \mathbf{N} \ | \ \mathbf{Q} \overset{+}{\Rightarrow} \mathbf{Y\delta} \
-or\  \mathbf{Q} \overset{+}{\Rightarrow} \mathbf{N Y \delta}\}$</span>
+or\  \mathbf{Q} \overset{+}{\Rightarrow} \mathbf{N Y \delta}\}\)</span>
 <ul>
-<li>for <span class="math inline"><strong>A</strong> → <strong>α</strong><strong>X</strong><strong>Q</strong><strong>β</strong></span>,
-we have <span class="math inline"><strong>X</strong></span> &lt;·
-Symbols in <span class="math inline"><strong>L</strong><strong>E</strong><strong>A</strong><strong>D</strong><strong>I</strong><strong>N</strong><strong>G</strong><strong>(</strong><strong>Q</strong><strong>)</strong></span></li>
+<li>for <span class="math inline">\(\mathbf{A} \rightarrow
+\mathbf{\alpha X Q \beta}\)</span>, we have <span class="math inline">\(\mathbf{X}\)</span> &lt;· Symbols in <span class="math inline">\(\mathbf{LEADING(Q)}\)</span></li>
 </ul></li>
 </ul></li>
 </ul></li>
-<li><span class="math display"><strong>X</strong> &gt; ·<strong>Y</strong></span>
+<li><span class="math display">\[
+\mathbf{X} &gt;· \mathbf{Y}
+\]</span>
 <ul>
-<li>if there is <span class="math inline"><strong>A</strong> → <em>α</em><strong>P</strong><strong>Y</strong><em>β</em></span>,
-and <span class="math inline">$\mathbf{P} \overset{+}{\Rightarrow} \mu
-\mathbf{X}$</span>, where <span class="math inline"><strong>X</strong>, <strong>Y</strong> ∈ <strong>V</strong></span>,
-<span class="math inline"><strong>P</strong> ∈ <strong>V</strong><sub><strong>n</strong></sub></span>,
-<span class="math inline"><em>α</em>, <em>β</em>, <em>μ</em> ∈ <strong>V</strong><sup>*</sup></span></li>
-<li>or, there is <span class="math inline"><strong>A</strong> → <em>α</em><strong>P</strong><strong>Y</strong><em>β</em></span>,
-and <span class="math inline">$\mathbf{P} \overset{+}{\Rightarrow} \mu
-\mathbf{X} \mathbf{N}$</span>, where <span class="math inline"><strong>N</strong> ∈ <strong>V</strong><sub><strong>n</strong></sub> ∪ {<em>ϵ</em>}</span>,
-<span class="math inline"><strong>P</strong> ∈ <strong>V</strong><sub><strong>n</strong></sub></span>,
-<span class="math inline"><strong>X</strong>, <strong>Y</strong> ∈ <strong>V</strong><sub><strong>T</strong></sub></span></li>
-<li><span class="math inline">$\mathbf{TRAILING(P)} = \{\mathbf{X},
+<li>if there is <span class="math inline">\(\mathbf{A} \rightarrow
+\alpha \mathbf{P} \mathbf{Y} \beta\)</span>, and <span class="math inline">\(\mathbf{P} \overset{+}{\Rightarrow} \mu
+\mathbf{X}\)</span>, where <span class="math inline">\(\mathbf{X},
+\mathbf{Y} \in \mathbf{V}\)</span>, <span class="math inline">\(\mathbf{P} \in \mathbf{V_n}\)</span>, <span class="math inline">\(\alpha, \beta, \mu \in \mathbf{V}^*\)</span></li>
+<li>or, there is <span class="math inline">\(\mathbf{A} \rightarrow
+\alpha \mathbf{P} \mathbf{Y} \beta\)</span>, and <span class="math inline">\(\mathbf{P} \overset{+}{\Rightarrow} \mu \mathbf{X}
+\mathbf{N}\)</span>, where <span class="math inline">\(\mathbf{N} \in
+\mathbf{V_n} \cup \{\epsilon\}\)</span>, <span class="math inline">\(\mathbf{P} \in \mathbf{V_n}\)</span>, <span class="math inline">\(\mathbf{X}, \mathbf{Y} \in
+\mathbf{V_T}\)</span></li>
+<li><span class="math inline">\(\mathbf{TRAILING(P)} = \{\mathbf{X},
 \mathbf{N} \ | \ \mathbf{P} \overset{+}{\Rightarrow} \mu \mathbf{X} \
 \text{or} \ \mathbf{P} \overset{+}{\Rightarrow} \mu \mathbf{X}
-\mathbf{N}\}$</span>
+\mathbf{N}\}\)</span>
 <ul>
-<li>for <span class="math inline"><strong>A</strong> → <em>α</em><strong>P</strong><strong>Y</strong><em>β</em></span>,
-we have Symbols in <span class="math inline"><strong>T</strong><strong>R</strong><strong>A</strong><strong>I</strong><strong>L</strong><strong>I</strong><strong>N</strong><strong>G</strong><strong>(</strong><strong>P</strong><strong>)</strong> &gt; ·<strong>Y</strong></span></li>
+<li>for <span class="math inline">\(\mathbf{A} \rightarrow \alpha
+\mathbf{P} \mathbf{Y} \beta\)</span>, we have Symbols in <span class="math inline">\(\mathbf{TRAILING(P)} &gt;·
+\mathbf{Y}\)</span></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -2445,30 +2478,37 @@ we have Symbols in <span class="math inline"><strong>T</strong><strong>R</strong
 <ul>
 <li><strong>Steps</strong>：
 <ul>
-<li>for each production <span class="math inline"><strong>A</strong> → <strong>X</strong><sub><strong>1</strong></sub><strong>X</strong><sub><strong>2</strong></sub><strong>…</strong><strong>X</strong><sub><strong>k</strong></sub></span>:
+<li>for each production <span class="math inline">\(\mathbf{A}
+\rightarrow \mathbf{X_1 X_2 \dots X_k}\)</span>:
 <ul>
-<li>for each <span class="math inline"><strong>X</strong></span>
+<li>for each <span class="math inline">\(\mathbf{X}\)</span>
 <ul>
-<li>if <span class="math inline"><strong>X</strong><sub><strong>i</strong></sub> ∈ <strong>V</strong><sub><strong>t</strong></sub></span>
-and <span class="math inline"><strong>X</strong><sub><strong>i</strong> <strong>+</strong> <strong>1</strong></sub> ∈ <strong>V</strong><sub><strong>t</strong></sub></span>,
-then <span class="math inline"><strong>X</strong><sub><strong>i</strong></sub> = ·<strong>X</strong><sub><strong>i</strong> <strong>+</strong> <strong>1</strong></sub></span></li>
-<li>if <span class="math inline"><strong>X</strong><sub><strong>i</strong></sub> ∈ <strong>V</strong><sub><strong>t</strong></sub></span>
-and <span class="math inline"><strong>X</strong><sub><strong>i</strong> <strong>+</strong> <strong>2</strong></sub> ∈ <strong>V</strong><sub><strong>t</strong></sub></span>
-and <span class="math inline"><strong>X</strong><sub><strong>i</strong> <strong>+</strong> <strong>1</strong></sub> ∈ <strong>V</strong><sub><strong>n</strong></sub></span>,
-then <span class="math inline"><strong>X</strong><sub><strong>i</strong></sub> = ·<strong>X</strong><sub><strong>i</strong> <strong>+</strong> <strong>2</strong></sub></span></li>
-<li>if <span class="math inline"><strong>X</strong><sub><strong>i</strong></sub> ∈ <strong>V</strong><sub><strong>t</strong></sub></span>
-and <span class="math inline"><strong>X</strong><sub><strong>i</strong> <strong>+</strong> <strong>1</strong></sub> ∈ <strong>V</strong><sub><strong>n</strong></sub></span>,
-then <span class="math inline"><strong>X</strong><sub><strong>i</strong></sub> &lt; ·<strong>L</strong><strong>E</strong><strong>A</strong><strong>D</strong><strong>I</strong><strong>N</strong><strong>G</strong><strong>(</strong><strong>X</strong><sub><strong>i</strong> <strong>+</strong> <strong>1</strong></sub><strong>)</strong></span></li>
-<li>if <span class="math inline"><strong>X</strong><sub><strong>i</strong></sub> ∈ <strong>V</strong><sub><strong>n</strong></sub></span>
-and <span class="math inline"><strong>X</strong><sub><strong>i</strong> <strong>+</strong> <strong>1</strong></sub> ∈ <strong>V</strong><sub><strong>t</strong></sub></span>,
-then <span class="math inline"><strong>X</strong><sub><strong>i</strong></sub> = ·<strong>X</strong><sub><strong>i</strong> <strong>+</strong> <strong>1</strong></sub></span>
-and <span class="math inline"><strong>T</strong><strong>R</strong><strong>A</strong><strong>I</strong><strong>L</strong><strong>I</strong><strong>N</strong><strong>G</strong><strong>(</strong><strong>X</strong><sub><strong>i</strong></sub><strong>)</strong> &gt; ·<strong>X</strong><sub><strong>i</strong> <strong>+</strong> <strong>1</strong></sub></span></li>
+<li>if <span class="math inline">\(\mathbf{X_i} \in
+\mathbf{V_t}\)</span> and <span class="math inline">\(\mathbf{X_{i+1}}
+\in \mathbf{V_t}\)</span>, then <span class="math inline">\(\mathbf{X_i}
+=· \mathbf{X_{i+1}}\)</span></li>
+<li>if <span class="math inline">\(\mathbf{X_i} \in
+\mathbf{V_t}\)</span> and <span class="math inline">\(\mathbf{X_{i+2}}
+\in \mathbf{V_t}\)</span> and <span class="math inline">\(\mathbf{X_{i+1}} \in \mathbf{V_n}\)</span>, then
+<span class="math inline">\(\mathbf{X_i} =·
+\mathbf{X_{i+2}}\)</span></li>
+<li>if <span class="math inline">\(\mathbf{X_i} \in
+\mathbf{V_t}\)</span> and <span class="math inline">\(\mathbf{X_{i+1}}
+\in \mathbf{V_n}\)</span>, then <span class="math inline">\(\mathbf{X_i}
+&lt;· \mathbf{LEADING(X_{i+1})}\)</span></li>
+<li>if <span class="math inline">\(\mathbf{X_i} \in
+\mathbf{V_n}\)</span> and <span class="math inline">\(\mathbf{X_{i+1}}
+\in \mathbf{V_t}\)</span>, then <span class="math inline">\(\mathbf{X_i}
+=· \mathbf{X_{i+1}}\)</span> and <span class="math inline">\(\mathbf{TRAILING(X_i)} &gt;·
+\mathbf{X_{i+1}}\)</span></li>
 </ul></li>
 </ul></li>
-<li>for the Start Symbol <span class="math inline"><strong>S</strong></span>:
+<li>for the Start Symbol <span class="math inline">\(\mathbf{S}\)</span>:
 <ul>
-<li><span class="math inline">$ &lt; ·<strong>L</strong><strong>E</strong><strong>A</strong><strong>D</strong><strong>I</strong><strong>N</strong><strong>G</strong><strong>(</strong><strong>S</strong><strong>)</strong></span></li>
-<li><span class="math inline"><strong>T</strong><strong>R</strong><strong>A</strong><strong>I</strong><strong>L</strong><strong>I</strong><strong>N</strong><strong>G</strong><strong>(</strong><strong>S</strong><strong>)</strong> &gt; ·$</span></li>
+<li><span class="math inline">\(\$ &lt;·
+\mathbf{LEADING(S)}\)</span></li>
+<li><span class="math inline">\(\mathbf{TRAILING(S)} &gt;·
+\$\)</span></li>
 </ul></li>
 </ul></li>
 <li><strong>Example</strong>: <img src="image-33.webp" srcset="/img/loading/loading3.gif" lazyload></li>
@@ -2524,20 +2564,18 @@ position in its body （LR(0) 项目：在其主体的某个位置有一个点�
 <ul>
 <li>prefixes of a valid production, indicating how much we have seen at
 the point （有效产生式的前缀，指示我们在该点上已经看到多少）</li>
-<li>e.g.&nbsp;<span class="math inline"><strong>A</strong> → <strong>X</strong><strong>Y</strong><strong>Z</strong></span>
-yields four items（例如<span class="math inline"><strong>A</strong> → <strong>X</strong><strong>Y</strong><strong>Z</strong></span>产生四个项）：
+<li>e.g.&nbsp;<span class="math inline">\(\mathbf{A} \rightarrow
+\mathbf{XYZ}\)</span> yields four items（例如<span class="math inline">\(\mathbf{A} \rightarrow
+\mathbf{XYZ}\)</span>产生四个项）：
 <ul>
-<li><span class="math inline"><strong>A</strong> → ⋅<strong>X</strong><strong>Y</strong><strong>Z</strong></span>:
-hope to see <span class="math inline"><strong>X</strong><strong>Y</strong><strong>Z</strong></span>
-next on the input</li>
-<li><span class="math inline"><strong>A</strong> → <strong>X</strong> ⋅ <strong>Y</strong><strong>Z</strong></span>:
-hope to see <span class="math inline"><strong>Y</strong><strong>Z</strong></span> next on
-the input</li>
-<li><span class="math inline"><strong>A</strong> → <strong>X</strong><strong>Y</strong> ⋅ <strong>Z</strong></span>:
-hope to see <span class="math inline"><strong>Z</strong></span> next on
-the input</li>
-<li><span class="math inline"><strong>A</strong> → <strong>X</strong><strong>Y</strong><strong>Z</strong>⋅</span>:
-hope to see nothing next on the input</li>
+<li><span class="math inline">\(\mathbf{A} \rightarrow \cdot
+\mathbf{XYZ}\)</span>: hope to see <span class="math inline">\(\mathbf{XYZ}\)</span> next on the input</li>
+<li><span class="math inline">\(\mathbf{A} \rightarrow \mathbf{X} \cdot
+\mathbf{YZ}\)</span>: hope to see <span class="math inline">\(\mathbf{YZ}\)</span> next on the input</li>
+<li><span class="math inline">\(\mathbf{A} \rightarrow \mathbf{XY} \cdot
+\mathbf{Z}\)</span>: hope to see <span class="math inline">\(\mathbf{Z}\)</span> next on the input</li>
+<li><span class="math inline">\(\mathbf{A} \rightarrow \mathbf{XYZ}
+\cdot\)</span>: hope to see nothing next on the input</li>
 </ul></li>
 <li>kind of state + transition → automaton</li>
 </ul></li>
@@ -2557,108 +2595,111 @@ are not at the left</li>
 </ul>
 <h4 id="closure-and-goto">CLOSURE and GOTO</h4>
 <ul>
-<li><span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>I</strong><strong>)</strong></span>:
+<li><span class="math inline">\(\mathbf{CLOSURE(I)}\)</span>:
 <ul>
-<li><span class="math inline"><strong>I</strong></span>: a set of Items
-for a grammar <span class="math inline"><strong>G</strong></span>（文法<span class="math inline"><strong>G</strong></span>的项集）</li>
+<li><span class="math inline">\(\mathbf{I}\)</span>: a set of Items for
+a grammar <span class="math inline">\(\mathbf{G}\)</span>（文法<span class="math inline">\(\mathbf{G}\)</span>的项集）</li>
 <li>construct by two rules:
 <ol type="1">
-<li>every Item in <span class="math inline"><strong>I</strong></span> is
-added in to <span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>I</strong><strong>)</strong></span>
-（<span class="math inline"><strong>I</strong></span>中的每个项目都添加到<span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>I</strong><strong>)</strong></span>中）</li>
-<li>if <span class="math inline"><strong>A</strong> → <strong>α</strong> ⋅ <strong>B</strong><strong>β</strong></span>
-is in <span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>I</strong><strong>)</strong></span>
-and <span class="math inline"><strong>B</strong> → <strong>γ</strong></span> is a
-production of <span class="math inline"><strong>G</strong></span>, then
-add <span class="math inline"><strong>B</strong> → ⋅<strong>γ</strong></span> to
-<span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>I</strong><strong>)</strong></span>
-（如果<span class="math inline"><strong>A</strong> → <strong>α</strong> ⋅ <strong>B</strong><strong>β</strong></span>在<span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>I</strong><strong>)</strong></span>中，并且<span class="math inline"><strong>B</strong> → <strong>γ</strong></span>是<span class="math inline"><strong>G</strong></span>的一个产生式，则将<span class="math inline"><strong>B</strong> → ⋅<strong>γ</strong></span>添加到<span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>I</strong><strong>)</strong></span>中）</li>
+<li>every Item in <span class="math inline">\(\mathbf{I}\)</span> is
+added in to <span class="math inline">\(\mathbf{CLOSURE(I)}\)</span>
+（<span class="math inline">\(\mathbf{I}\)</span>中的每个项目都添加到<span class="math inline">\(\mathbf{CLOSURE(I)}\)</span>中）</li>
+<li>if <span class="math inline">\(\mathbf{A} \rightarrow
+\mathbf{\alpha} \cdot \mathbf{B} \mathbf{\beta}\)</span> is in <span class="math inline">\(\mathbf{CLOSURE(I)}\)</span> and <span class="math inline">\(\mathbf{B} \rightarrow \mathbf{\gamma}\)</span> is
+a production of <span class="math inline">\(\mathbf{G}\)</span>, then
+add <span class="math inline">\(\mathbf{B} \rightarrow \cdot
+\mathbf{γ}\)</span> to <span class="math inline">\(\mathbf{CLOSURE(I)}\)</span> （如果<span class="math inline">\(\mathbf{A} \rightarrow \mathbf{\alpha} \cdot
+\mathbf{B} \mathbf{\beta}\)</span>在<span class="math inline">\(\mathbf{CLOSURE(I)}\)</span>中，并且<span class="math inline">\(\mathbf{B} \rightarrow
+\mathbf{\gamma}\)</span>是<span class="math inline">\(\mathbf{G}\)</span>的一个产生式，则将<span class="math inline">\(\mathbf{B} \rightarrow \cdot
+\mathbf{γ}\)</span>添加到<span class="math inline">\(\mathbf{CLOSURE(I)}\)</span>中）</li>
 </ol></li>
 <li><strong>Example</strong>: <img src="image-34.webp" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul></li>
-<li><span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong><strong>(</strong><strong>I</strong><strong>,</strong> <strong>X</strong><strong>)</strong></span>:
+<li><span class="math inline">\(\mathbf{GOTO(I, X)}\)</span>:
 <ul>
-<li><span class="math inline"><strong>I</strong></span>: a set of Items
-for a grammar <span class="math inline"><strong>G</strong></span>
-（文法<span class="math inline"><strong>G</strong></span>的项集）</li>
-<li><span class="math inline"><strong>X</strong></span>: a grammar
-symbol （文法符号）</li>
-<li>the closure of the set of items [<span class="math inline"><strong>A</strong> → <strong>α</strong><strong>X</strong> ⋅ <strong>β</strong></span>]
-such that [<span class="math inline"><strong>A</strong> → <strong>α</strong> ⋅ <strong>X</strong><strong>β</strong></span>]
-is in <span class="math inline"><strong>I</strong></span> （<span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong><strong>(</strong><strong>I</strong><strong>,</strong> <strong>X</strong><strong>)</strong></span>是<span class="math inline"><strong>I</strong></span>中所有形如[<span class="math inline"><strong>A</strong> → <strong>α</strong> ⋅ <strong>X</strong><strong>β</strong></span>]的项所对应的项[<span class="math inline"><strong>A</strong> → <strong>α</strong><strong>X</strong> ⋅ <strong>β</strong></span>]的集合的闭包）
+<li><span class="math inline">\(\mathbf{I}\)</span>: a set of Items for
+a grammar <span class="math inline">\(\mathbf{G}\)</span> （文法<span class="math inline">\(\mathbf{G}\)</span>的项集）</li>
+<li><span class="math inline">\(\mathbf{X}\)</span>: a grammar symbol
+（文法符号）</li>
+<li>the closure of the set of items [<span class="math inline">\(\mathbf{A} \rightarrow \mathbf{\alpha X} \cdot
+\mathbf{\beta}\)</span>] such that [<span class="math inline">\(\mathbf{A} \rightarrow \mathbf{\alpha} \cdot
+\mathbf{X} \mathbf{\beta}\)</span>] is in <span class="math inline">\(\mathbf{I}\)</span> （<span class="math inline">\(\mathbf{GOTO(I, X)}\)</span>是<span class="math inline">\(\mathbf{I}\)</span>中所有形如[<span class="math inline">\(\mathbf{A} \rightarrow \mathbf{\alpha} \cdot
+\mathbf{X \beta}\)</span>]的项所对应的项[<span class="math inline">\(\mathbf{A} \rightarrow \mathbf{\alpha X} \cdot
+\mathbf{\beta}\)</span>]的集合的闭包）
 <ul>
-<li>the transition from the state for <span class="math inline"><strong>I</strong></span> under input <span class="math inline"><strong>X</strong></span> （在输入<span class="math inline"><strong>X</strong></span>下，<span class="math inline"><strong>I</strong></span>的状态转换）</li>
+<li>the transition from the state for <span class="math inline">\(\mathbf{I}\)</span> under input <span class="math inline">\(\mathbf{X}\)</span> （在输入<span class="math inline">\(\mathbf{X}\)</span>下，<span class="math inline">\(\mathbf{I}\)</span>的状态转换）</li>
 </ul></li>
 <li>construct by
 <ol type="1">
-<li>for each Item <span class="math inline"><strong>A</strong> → <strong>α</strong> ⋅ <strong>X</strong><strong>β</strong></span>
-in <span class="math inline"><strong>I</strong></span></li>
-<li>then every Item in <span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>A</strong> <strong>→</strong> <strong>α</strong><strong>X</strong> <strong>⋅</strong> <strong>β</strong><strong>)</strong></span>
-is added to <span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong><strong>(</strong><strong>I</strong><strong>,</strong> <strong>X</strong><strong>)</strong></span></li>
+<li>for each Item <span class="math inline">\(\mathbf{A} \rightarrow
+\mathbf{\alpha} \cdot \mathbf{X} \mathbf{\beta}\)</span> in <span class="math inline">\(\mathbf{I}\)</span></li>
+<li>then every Item in <span class="math inline">\(\mathbf{CLOSURE(A
+\rightarrow \alpha X \cdot \beta)}\)</span> is added to <span class="math inline">\(\mathbf{GOTO(I, X)}\)</span></li>
 </ol></li>
 <li><strong>Example</strong>: <img src="image-35.webp" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul></li>
 </ul>
 <h4 id="automaton-construction">Automaton Construction</h4>
 <ul>
-<li><strong>INPUT</strong>: a grammar <span class="math inline"><strong>G</strong></span></li>
+<li><strong>INPUT</strong>: a grammar <span class="math inline">\(\mathbf{G}\)</span></li>
 <li><strong>OUTPUT</strong>: a LR(0) automaton</li>
 <li><strong>Construction</strong>:
 <ol type="1">
-<li>augment <span class="math inline"><strong>G</strong></span> to <span class="math inline"><strong>G</strong><sup><strong>′</strong></sup></span>
-by adding a new start symbol <span class="math inline"><strong>S</strong><sup><strong>′</strong></sup></span>
-and production <span class="math inline"><strong>S</strong><sup><strong>′</strong></sup> → <strong>S</strong></span>
-（通过添加新的起始符号<span class="math inline"><strong>S</strong><sup><strong>′</strong></sup></span>和产生式<span class="math inline"><strong>S</strong><sup><strong>′</strong></sup> → <strong>S</strong></span>扩展文法<span class="math inline"><strong>G</strong></span>至<span class="math inline"><strong>G</strong><sup><strong>′</strong></sup></span>）</li>
-<li><span class="math inline"><strong>C</strong></span>:= {<span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>S</strong><sup><strong>′</strong></sup> <strong>→</strong> <strong>⋅</strong><strong>S</strong><strong>)</strong></span>}
-（先求<span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>S</strong><sup><strong>′</strong></sup> <strong>→</strong> <strong>⋅</strong><strong>S</strong><strong>)</strong></span>，作为闭包的集合<span class="math inline"><strong>C</strong></span>中的第一个闭包）</li>
+<li>augment <span class="math inline">\(\mathbf{G}\)</span> to <span class="math inline">\(\mathbf{G'}\)</span> by adding a new start
+symbol <span class="math inline">\(\mathbf{S'}\)</span> and
+production <span class="math inline">\(\mathbf{S'} \rightarrow
+\mathbf{S}\)</span> （通过添加新的起始符号<span class="math inline">\(\mathbf{S'}\)</span>和产生式<span class="math inline">\(\mathbf{S'} \rightarrow
+\mathbf{S}\)</span>扩展文法<span class="math inline">\(\mathbf{G}\)</span>至<span class="math inline">\(\mathbf{G'}\)</span>）</li>
+<li><span class="math inline">\(\mathbf{C}\)</span>:= {<span class="math inline">\(\mathbf{CLOSURE(S' \rightarrow \cdot
+S)}\)</span>} （先求<span class="math inline">\(\mathbf{CLOSURE(S'
+\rightarrow \cdot S)}\)</span>，作为闭包的集合<span class="math inline">\(\mathbf{C}\)</span>中的第一个闭包）</li>
 <li>repeat:
 <ul>
-<li>for each Item <span class="math inline"><strong>I</strong></span> in
-<span class="math inline"><strong>C</strong></span> and each grammar
-symbol <span class="math inline"><strong>X</strong></span> in <span class="math inline"><strong>G</strong><sup><strong>′</strong></sup></span>
-（对<span class="math inline"><strong>C</strong></span>中每个项目<span class="math inline"><strong>I</strong></span>和<span class="math inline"><strong>G</strong><sup><strong>′</strong></sup></span>中的每个文法符号<span class="math inline"><strong>X</strong></span>）
+<li>for each Item <span class="math inline">\(\mathbf{I}\)</span> in
+<span class="math inline">\(\mathbf{C}\)</span> and each grammar symbol
+<span class="math inline">\(\mathbf{X}\)</span> in <span class="math inline">\(\mathbf{G'}\)</span> （对<span class="math inline">\(\mathbf{C}\)</span>中每个项目<span class="math inline">\(\mathbf{I}\)</span>和<span class="math inline">\(\mathbf{G'}\)</span>中的每个文法符号<span class="math inline">\(\mathbf{X}\)</span>）
 <ul>
-<li>if <span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong><strong>(</strong><strong>I</strong><strong>,</strong> <strong>X</strong><strong>)</strong></span>
-is not empty and not in <span class="math inline"><strong>C</strong></span> （如果<span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong><strong>(</strong><strong>I</strong><strong>,</strong> <strong>X</strong><strong>)</strong></span>不为空且不在<span class="math inline"><strong>C</strong></span>中，注意<span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong><strong>(</strong><strong>I</strong><strong>,</strong> <strong>X</strong><strong>)</strong></span>是项集<span class="math inline"><strong>I</strong></span>在输入符号<span class="math inline"><strong>X</strong></span>下的转换的闭包）
+<li>if <span class="math inline">\(\mathbf{GOTO(I, X)}\)</span> is not
+empty and not in <span class="math inline">\(\mathbf{C}\)</span>
+（如果<span class="math inline">\(\mathbf{GOTO(I,
+X)}\)</span>不为空且不在<span class="math inline">\(\mathbf{C}\)</span>中，注意<span class="math inline">\(\mathbf{GOTO(I, X)}\)</span>是项集<span class="math inline">\(\mathbf{I}\)</span>在输入符号<span class="math inline">\(\mathbf{X}\)</span>下的转换的闭包）
 <ul>
-<li>add <span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong><strong>(</strong><strong>I</strong><strong>,</strong> <strong>X</strong><strong>)</strong></span>
-to <span class="math inline"><strong>C</strong></span></li>
+<li>add <span class="math inline">\(\mathbf{GOTO(I, X)}\)</span> to
+<span class="math inline">\(\mathbf{C}\)</span></li>
 </ul></li>
 </ul></li>
 </ul></li>
-<li>until no new Items are added to <span class="math inline"><strong>C</strong></span></li>
+<li>until no new Items are added to <span class="math inline">\(\mathbf{C}\)</span></li>
 </ol></li>
 <li><strong>Example</strong>: <img src="image-36.webp" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul>
 <h4 id="parsing-table-construction">Parsing Table Construction</h4>
 <ul>
-<li><strong>LR(0) Parsing Table <span class="math inline">𝕋</span></strong>:
+<li><strong>LR(0) Parsing Table <span class="math inline">\(\mathbb{T}\)</span></strong>:
 <ul>
 <li><strong>Rows</strong>: <strong>states</strong></li>
 <li><strong>Columns</strong>: <strong>grammar symbols</strong>
 <ul>
-<li><strong>terminals</strong> for <span class="math inline"><strong>S</strong><strong>H</strong><strong>I</strong><strong>F</strong><strong>T</strong></span>
-and <span class="math inline"><strong>R</strong><strong>E</strong><strong>D</strong><strong>U</strong><strong>C</strong><strong>E</strong></span>
-actions</li>
-<li><strong>non-terminals</strong> for <span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong></span>
-actions</li>
+<li><strong>terminals</strong> for <span class="math inline">\(\mathbf{SHIFT}\)</span> and <span class="math inline">\(\mathbf{REDUCE}\)</span> actions</li>
+<li><strong>non-terminals</strong> for <span class="math inline">\(\mathbf{GOTO}\)</span> actions</li>
 </ul></li>
-<li><strong>Construction</strong>: each edge <span class="math inline"><strong>X</strong></span>: <span class="math inline">(<em>s</em><sub><em>m</em></sub>, <em>s</em><sub><em>n</em></sub>)</span>
-（对于每条边<span class="math inline"><strong>X</strong></span>，<span class="math inline">(<em>s</em><sub><em>m</em></sub>, <em>s</em><sub><em>n</em></sub>)</span>为其起始和终止状态，X为文法符号）
+<li><strong>Construction</strong>: each edge <span class="math inline">\(\mathbf{X}\)</span>: <span class="math inline">\((s_m, s_n)\)</span> （对于每条边<span class="math inline">\(\mathbf{X}\)</span>，<span class="math inline">\((s_m,
+s_n)\)</span>为其起始和终止状态，X为文法符号）
 <ul>
-<li>if <span class="math inline"><strong>X</strong></span> is a
-<strong>terminal</strong> <span class="math inline"><strong>a</strong></span>, then <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, <em>a</em>] = <strong>S</strong><strong>H</strong><strong>I</strong><strong>F</strong><strong>T</strong>&nbsp;<em>n</em></span>
+<li>if <span class="math inline">\(\mathbf{X}\)</span> is a
+<strong>terminal</strong> <span class="math inline">\(\mathbf{a}\)</span>, then <span class="math inline">\(\mathbb{T}[s_m, a] = \mathbf{SHIFT}\ n\)</span>
 （记作s n）</li>
-<li>if <span class="math inline"><strong>X</strong></span> is a
-<strong>non-terminal</strong> <span class="math inline"><strong>A</strong></span>, then <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, <em>A</em>] = <strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong>&nbsp;<em>n</em></span>
+<li>if <span class="math inline">\(\mathbf{X}\)</span> is a
+<strong>non-terminal</strong> <span class="math inline">\(\mathbf{A}\)</span>, then <span class="math inline">\(\mathbb{T}[s_m, A] = \mathbf{GOTO}\ n\)</span>
 （记作n）</li>
-<li>if <span class="math inline"><strong>A</strong> → <strong>β</strong>⋅</span> is
-in <span class="math inline"><em>s</em><sub><em>m</em></sub></span>,
-then for each <strong>terminal</strong> <span class="math inline"><strong>a</strong></span>, <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, <em>a</em>] = <strong>R</strong><strong>E</strong><strong>D</strong><strong>U</strong><strong>C</strong><strong>E</strong>&nbsp;<strong>A</strong> → <strong>β</strong></span>
-（记作r n，其中n是产生式的编号，用罗马数字表示）</li>
-<li>if <span class="math inline"><strong>S</strong><sup><strong>′</strong></sup> → <strong>S</strong>⋅</span>
-is in <span class="math inline"><em>s</em><sub><em>m</em></sub></span>,
-then for each <strong>terminal</strong> <span class="math inline"><strong>a</strong></span>, <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, <em>a</em>] = <strong>A</strong><strong>C</strong><strong>C</strong><strong>E</strong><strong>P</strong><strong>T</strong></span>
+<li>if <span class="math inline">\(\mathbf{A} \rightarrow \mathbf{\beta}
+\cdot\)</span> is in <span class="math inline">\(s_m\)</span>, then for
+each <strong>terminal</strong> <span class="math inline">\(\mathbf{a}\)</span>, <span class="math inline">\(\mathbb{T}[s_m, a] = \mathbf{REDUCE}\ \mathbf{A}
+\rightarrow \mathbf{\beta}\)</span> （记作r
+n，其中n是产生式的编号，用罗马数字表示）</li>
+<li>if <span class="math inline">\(\mathbf{S'} \rightarrow
+\mathbf{S} \cdot\)</span> is in <span class="math inline">\(s_m\)</span>, then for each
+<strong>terminal</strong> <span class="math inline">\(\mathbf{a}\)</span>, <span class="math inline">\(\mathbb{T}[s_m, a] = \mathbf{ACCEPT}\)</span>
 （记作a/acc）</li>
 </ul></li>
 <li><img src="image-37.webp" srcset="/img/loading/loading3.gif" lazyload></li>
@@ -2669,10 +2710,10 @@ then for each <strong>terminal</strong> <span class="math inline"><strong>a</str
 <h4 id="alogrithm-and-implementation-算法与实现">Alogrithm and
 Implementation （算法与实现）</h4>
 <ul>
-<li><p><strong>INPUT</strong>: an input string <span class="math inline"><strong>ω</strong></span> and an LR-parsing table
-<span class="math inline">𝕋</span> for a grammar <span class="math inline"><strong>G</strong></span></p></li>
-<li><p><strong>OUTPUT</strong>: if <span class="math inline"><strong>ω</strong> ∈ <strong>L</strong><strong>(</strong><strong>G</strong><strong>)</strong></span>,
-the reduction steps of a bottom-up parse for <span class="math inline"><strong>ω</strong></span></p></li>
+<li><p><strong>INPUT</strong>: an input string <span class="math inline">\(\mathbf{\omega}\)</span> and an LR-parsing table
+<span class="math inline">\(\mathbb{T}\)</span> for a grammar <span class="math inline">\(\mathbf{G}\)</span></p></li>
+<li><p><strong>OUTPUT</strong>: if <span class="math inline">\(\mathbf{\omega} \in \mathbf{L(G)}\)</span>, the
+reduction steps of a bottom-up parse for <span class="math inline">\(\mathbf{\omega}\)</span></p></li>
 <li><p><strong>STEPS</strong>: </p><figure class="shiki java"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #E06C75">let a be the first symbol of 𝜔$ </span><span style="color: #7F848E; font-style: italic">//设a是输入字符串𝜔$的第一个符号</span></span>
 <span class="line"><span style="color: #E06C75">push state </span><span style="color: #D19A66">0</span><span style="color: #E06C75"> onto the stack </span><span style="color: #7F848E; font-style: italic">//将状态0推入栈中</span></span>
 <span class="line"><span style="color: #C678DD">while</span><span style="color: #E06C75"> (</span><span style="color: #D19A66">1</span><span style="color: #E06C75">) {</span></span>
@@ -2696,46 +2737,46 @@ the reduction steps of a bottom-up parse for <span class="math inline"><strong>�
 <li><strong>Reduce-Reduce Conflicts</strong>:
 <ul>
 <li>state has two reduce items</li>
-<li>e.g.&nbsp;<span class="math inline"><strong>A</strong> → <strong>α</strong>⋅</span> and
-<span class="math inline"><strong>B</strong> → <strong>β</strong>⋅</span></li>
+<li>e.g.&nbsp;<span class="math inline">\(\mathbf{A} \rightarrow
+\mathbf{\alpha} \cdot\)</span> and <span class="math inline">\(\mathbf{B} \rightarrow \mathbf{\beta}
+\cdot\)</span></li>
 </ul></li>
 <li><strong>Shift-Reduce Conflicts</strong>:
 <ul>
 <li>state has a reduce item and a shift item</li>
-<li>e.g.&nbsp;<span class="math inline"><strong>A</strong> → <strong>α</strong> ⋅ <strong>k</strong><strong>γ</strong></span>
-and <span class="math inline"><strong>B</strong> → <strong>β</strong>⋅</span></li>
+<li>e.g.&nbsp;<span class="math inline">\(\mathbf{A} \rightarrow
+\mathbf{\alpha} \cdot \mathbf{k \gamma}\)</span> and <span class="math inline">\(\mathbf{B} \rightarrow \mathbf{\beta}
+\cdot\)</span></li>
 </ul></li>
 <li>To avoid conflicts: <strong>SLR(1) Parsing</strong></li>
 </ul>
 <h3 id="slr1-parsing">SLR(1) Parsing</h3>
 <h4 id="parsing-table-construction-1">Parsing Table Construction</h4>
 <ul>
-<li><strong>LR(0) Parsing Table</strong> <span class="math inline">𝕋</span> <span class="math inline">⇒</span>
-<strong>SLR(1) Parsing Table</strong> <span class="math inline">𝕋</span>
+<li><strong>LR(0) Parsing Table</strong> <span class="math inline">\(\mathbb{T}\)</span> <span class="math inline">\(\Rightarrow\)</span> <strong>SLR(1) Parsing
+Table</strong> <span class="math inline">\(\mathbb{T}\)</span>
 <ul>
 <li><strong>Rows</strong>: <strong>states</strong></li>
 <li><strong>Columns</strong>: <strong>grammar symbols</strong>
 <ul>
-<li><strong>terminals</strong> for <span class="math inline"><strong>S</strong><strong>H</strong><strong>I</strong><strong>F</strong><strong>T</strong></span>
-and <span class="math inline"><strong>R</strong><strong>E</strong><strong>D</strong><strong>U</strong><strong>C</strong><strong>E</strong></span>
-actions</li>
-<li><strong>non-terminals</strong> for <span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong></span>
-actions</li>
+<li><strong>terminals</strong> for <span class="math inline">\(\mathbf{SHIFT}\)</span> and <span class="math inline">\(\mathbf{REDUCE}\)</span> actions</li>
+<li><strong>non-terminals</strong> for <span class="math inline">\(\mathbf{GOTO}\)</span> actions</li>
 </ul></li>
-<li><strong>Construction</strong>: each edge <span class="math inline"><strong>X</strong></span>: <span class="math inline">(<em>s</em><sub><em>m</em></sub>, <em>s</em><sub><em>n</em></sub>)</span>
+<li><strong>Construction</strong>: each edge <span class="math inline">\(\mathbf{X}\)</span>: <span class="math inline">\((s_m, s_n)\)</span>
 <ul>
-<li>if <span class="math inline"><strong>X</strong></span> is a
-<strong>terminal</strong> <span class="math inline"><strong>a</strong></span>, then <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, <em>a</em>] = <strong>S</strong><strong>H</strong><strong>I</strong><strong>F</strong><strong>T</strong>&nbsp;<em>n</em></span></li>
-<li>if <span class="math inline"><strong>X</strong></span> is a
-<strong>non-terminal</strong> <span class="math inline"><strong>A</strong></span>, then <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, <em>A</em>] = <strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong>&nbsp;<em>n</em></span></li>
-<li>if <span class="math inline"><strong>A</strong> → <strong>β</strong>⋅</span> is
-in <span class="math inline"><em>s</em><sub><em>m</em></sub></span>,
-then for each <strong>terminal</strong> <span class="math inline"><strong>a</strong> ∈ <strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>A</strong><strong>)</strong></span>,
-<span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, <em>a</em>] = <strong>R</strong><strong>E</strong><strong>D</strong><strong>U</strong><strong>C</strong><strong>E</strong>&nbsp;<strong>A</strong> → <strong>β</strong></span>
-（只对<span class="math inline"><strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>A</strong><strong>)</strong></span>中的终结符进行归约）</li>
-<li>if <span class="math inline"><strong>S</strong><sup><strong>′</strong></sup> → <strong>S</strong>⋅</span>
-is in <span class="math inline"><em>s</em><sub><em>m</em></sub></span>,
-then <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, $] = <strong>A</strong><strong>C</strong><strong>C</strong><strong>E</strong><strong>P</strong><strong>T</strong></span>
+<li>if <span class="math inline">\(\mathbf{X}\)</span> is a
+<strong>terminal</strong> <span class="math inline">\(\mathbf{a}\)</span>, then <span class="math inline">\(\mathbb{T}[s_m, a] = \mathbf{SHIFT}\
+n\)</span></li>
+<li>if <span class="math inline">\(\mathbf{X}\)</span> is a
+<strong>non-terminal</strong> <span class="math inline">\(\mathbf{A}\)</span>, then <span class="math inline">\(\mathbb{T}[s_m, A] = \mathbf{GOTO}\
+n\)</span></li>
+<li>if <span class="math inline">\(\mathbf{A} \rightarrow \mathbf{\beta}
+\cdot\)</span> is in <span class="math inline">\(s_m\)</span>, then for
+each <strong>terminal</strong> <span class="math inline">\(\mathbf{a}
+\in \mathbf{FOLLOW(A)}\)</span>, <span class="math inline">\(\mathbb{T}[s_m, a] = \mathbf{REDUCE}\ \mathbf{A}
+\rightarrow \mathbf{\beta}\)</span> （只对<span class="math inline">\(\mathbf{FOLLOW(A)}\)</span>中的终结符进行归约）</li>
+<li>if <span class="math inline">\(\mathbf{S'} \rightarrow
+\mathbf{S} \cdot\)</span> is in <span class="math inline">\(s_m\)</span>, then <span class="math inline">\(\mathbb{T}[s_m, \$] = \mathbf{ACCEPT}\)</span>
 （只对$进行归约）</li>
 </ul></li>
 </ul></li>
@@ -2746,21 +2787,25 @@ then <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, $] = 
 <li><strong>Reduce-Reduce Conflicts</strong>:
 <ul>
 <li>state has two reduce items</li>
-<li>e.g.&nbsp;<span class="math inline"><strong>A</strong> → <strong>α</strong>⋅</span> and
-<span class="math inline"><strong>B</strong> → <strong>β</strong>⋅</span>
+<li>e.g.&nbsp;<span class="math inline">\(\mathbf{A} \rightarrow
+\mathbf{\alpha} \cdot\)</span> and <span class="math inline">\(\mathbf{B} \rightarrow \mathbf{\beta}
+\cdot\)</span>
 <ul>
-<li>if <span class="math inline"><strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>A</strong><strong>)</strong> ∩ <strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>B</strong><strong>)</strong> = ∅</span>,
-safe for SLR(1) （如果<span class="math inline"><strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>A</strong><strong>)</strong> ∩ <strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>B</strong><strong>)</strong> = ∅</span>，则SLR(1)安全）</li>
+<li>if <span class="math inline">\(\mathbf{FOLLOW(A)} \cap
+\mathbf{FOLLOW(B)} = \emptyset\)</span>, safe for SLR(1) （如果<span class="math inline">\(\mathbf{FOLLOW(A)} \cap \mathbf{FOLLOW(B)} =
+\emptyset\)</span>，则SLR(1)安全）</li>
 </ul></li>
 </ul></li>
 <li><strong>Shift-Reduce Conflicts</strong>:
 <ul>
 <li>state has a reduce item and a shift item</li>
-<li>e.g.&nbsp;<span class="math inline"><strong>A</strong> → <strong>α</strong> ⋅ <strong>k</strong><strong>γ</strong></span>
-and <span class="math inline"><strong>B</strong> → <strong>β</strong>⋅</span>
+<li>e.g.&nbsp;<span class="math inline">\(\mathbf{A} \rightarrow
+\mathbf{\alpha} \cdot \mathbf{k \gamma}\)</span> and <span class="math inline">\(\mathbf{B} \rightarrow \mathbf{\beta}
+\cdot\)</span>
 <ul>
-<li>if <span class="math inline"><strong>k</strong> ∉ <strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>B</strong><strong>)</strong></span>,
-safe for SLR(1) （如果<span class="math inline"><strong>k</strong> ∉ <strong>F</strong><strong>O</strong><strong>L</strong><strong>L</strong><strong>O</strong><strong>W</strong><strong>(</strong><strong>B</strong><strong>)</strong></span>，则SLR(1)安全）</li>
+<li>if <span class="math inline">\(\mathbf{k} \notin
+\mathbf{FOLLOW(B)}\)</span>, safe for SLR(1) （如果<span class="math inline">\(\mathbf{k} \notin
+\mathbf{FOLLOW(B)}\)</span>，则SLR(1)安全）</li>
 </ul></li>
 </ul></li>
 </ul>
@@ -2772,50 +2817,58 @@ symbols of non-terminals for reduction
 <li><strong>LR(1) Item</strong> = [<strong>LR(0) Item</strong>,
 <strong>Following Symbol</strong>]
 <ul>
-<li>e.g.&nbsp;<span class="math inline">[<strong>A</strong> → <strong>X</strong><strong>Y</strong> ⋅ <strong>Z</strong>, <strong>a</strong>]</span></li>
-<li>where <span class="math inline"><strong>a</strong></span> is the
-following <strong>terminal</strong> symbol of <span class="math inline"><strong>A</strong></span> （<span class="math inline"><strong>a</strong></span>是<span class="math inline"><strong>A</strong></span>的后续终结符）</li>
-<li>when <span class="math inline"><strong>Z</strong></span> is not
-empty, the same as LR(0) Item （当<span class="math inline"><strong>Z</strong></span>不为空时，与LR(0)项相同）</li>
-<li>otherwise, <span class="math inline"><strong>A</strong> → <strong>X</strong><strong>Y</strong> ⋅ <strong>Z</strong></span>
-is applied only when the next input symbol is <span class="math inline"><strong>a</strong></span>
-（否则，只有在下一个输入符号为<span class="math inline"><strong>a</strong></span>时才应用<span class="math inline"><strong>A</strong> → <strong>X</strong><strong>Y</strong> ⋅ <strong>Z</strong></span>）
+<li>e.g.&nbsp;<span class="math inline">\([\mathbf{A} \rightarrow \mathbf{XY}
+\cdot \mathbf{Z}, \mathbf{a}]\)</span></li>
+<li>where <span class="math inline">\(\mathbf{a}\)</span> is the
+following <strong>terminal</strong> symbol of <span class="math inline">\(\mathbf{A}\)</span> （<span class="math inline">\(\mathbf{a}\)</span>是<span class="math inline">\(\mathbf{A}\)</span>的后续终结符）</li>
+<li>when <span class="math inline">\(\mathbf{Z}\)</span> is not empty,
+the same as LR(0) Item （当<span class="math inline">\(\mathbf{Z}\)</span>不为空时，与LR(0)项相同）</li>
+<li>otherwise, <span class="math inline">\(\mathbf{A} \rightarrow
+\mathbf{XY} \cdot \mathbf{Z}\)</span> is applied only when the next
+input symbol is <span class="math inline">\(\mathbf{a}\)</span>
+（否则，只有在下一个输入符号为<span class="math inline">\(\mathbf{a}\)</span>时才应用<span class="math inline">\(\mathbf{A} \rightarrow \mathbf{XY} \cdot
+\mathbf{Z}\)</span>）
 <ul>
-<li>instead of SLR(1)’s ALL <span class="math inline"><strong>A</strong></span>’s following symbols, let
-along LR(0)’s ALL terminal symbols （而不是SLR(1)的所有<span class="math inline"><strong>A</strong></span>的后续符号，甚至LR(0)的所有终结符）</li>
+<li>instead of SLR(1)’s ALL <span class="math inline">\(\mathbf{A}\)</span>’s following symbols, let along
+LR(0)’s ALL terminal symbols （而不是SLR(1)的所有<span class="math inline">\(\mathbf{A}\)</span>的后续符号，甚至LR(0)的所有终结符）</li>
 </ul></li>
 </ul></li>
 </ul>
 <h4 id="lr1s-closure-and-goto">LR(1)’s CLOSURE and GOTO</h4>
 <ul>
-<li><strong>LR(1)’s <span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>I</strong><strong>)</strong></span></strong>
+<li><strong>LR(1)’s <span class="math inline">\(\mathbf{CLOSURE(I)}\)</span></strong>
 <ul>
-<li>every Item in <span class="math inline"><strong>I</strong></span> is
-added in to <span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>I</strong><strong>)</strong></span></li>
+<li>every Item in <span class="math inline">\(\mathbf{I}\)</span> is
+added in to <span class="math inline">\(\mathbf{CLOSURE(I)}\)</span></li>
 <li>repeat:
 <ul>
-<li>if <span class="math inline">[<strong>A</strong> → <strong>α</strong> ⋅ <strong>B</strong><strong>β</strong>, <strong>a</strong>]</span>
-is in <span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>I</strong><strong>)</strong></span>
-and <span class="math inline"><strong>B</strong> → <strong>γ</strong></span> is a
-production of <span class="math inline"><strong>G</strong></span>, then
-for each terminal <span class="math inline"><strong>b</strong></span> in
-<span class="math inline"><strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>β</strong><strong>a</strong><strong>)</strong></span>,
-add <span class="math inline">[<strong>B</strong> → ⋅<strong>γ</strong>, <strong>b</strong>]</span>
-into <span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>I</strong><strong>)</strong></span></li>
-<li>until no more new Items can be added into <span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>I</strong><strong>)</strong></span></li>
+<li>if <span class="math inline">\([\mathbf{A} \rightarrow
+\mathbf{\alpha} \cdot \mathbf{B} \mathbf{\beta}, \mathbf{a}]\)</span> is
+in <span class="math inline">\(\mathbf{CLOSURE(I)}\)</span> and <span class="math inline">\(\mathbf{B} \rightarrow \mathbf{\gamma}\)</span> is
+a production of <span class="math inline">\(\mathbf{G}\)</span>, then
+for each terminal <span class="math inline">\(\mathbf{b}\)</span> in
+<span class="math inline">\(\mathbf{FIRST(\beta a)}\)</span>, add <span class="math inline">\([\mathbf{B} \rightarrow \cdot \mathbf{\gamma},
+\mathbf{b}]\)</span> into <span class="math inline">\(\mathbf{CLOSURE(I)}\)</span></li>
+<li>until no more new Items can be added into <span class="math inline">\(\mathbf{CLOSURE(I)}\)</span></li>
 </ul></li>
-<li>only reduce <span class="math inline"><strong>B</strong></span> when
-it is followed by that in <span class="math inline"><strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>β</strong><strong>a</strong><strong>)</strong></span>
-（仅在后面跟着<span class="math inline"><strong>F</strong><strong>I</strong><strong>R</strong><strong>S</strong><strong>T</strong><strong>(</strong><strong>β</strong><strong>a</strong><strong>)</strong></span>中的项时才归约<span class="math inline"><strong>B</strong></span>）</li>
+<li>only reduce <span class="math inline">\(\mathbf{B}\)</span> when it
+is followed by that in <span class="math inline">\(\mathbf{FIRST(\beta
+a)}\)</span> （仅在后面跟着<span class="math inline">\(\mathbf{FIRST(\beta
+a)}\)</span>中的项时才归约<span class="math inline">\(\mathbf{B}\)</span>）</li>
 </ul></li>
-<li><strong>LR(1)’s <span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong><strong>(</strong><strong>I</strong><strong>,</strong> <strong>B</strong><strong>)</strong></span></strong>
+<li><strong>LR(1)’s <span class="math inline">\(\mathbf{GOTO(I,
+B)}\)</span></strong>
 <ul>
-<li>if <span class="math inline">[<strong>A</strong> → <strong>α</strong> ⋅ <strong>B</strong><strong>β</strong>, <strong>a</strong>]</span>
-in <span class="math inline"><strong>I</strong></span></li>
-<li>then every Item in <span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>{</strong><strong>[</strong><strong>A</strong> <strong>→</strong> <strong>α</strong><strong>B</strong> <strong>⋅</strong> <strong>β</strong><strong>,</strong> <strong>a</strong><strong>]</strong><strong>}</strong><strong>)</strong></span>
-is in <span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong><strong>(</strong><strong>I</strong><strong>,</strong> <strong>B</strong><strong>)</strong></span>
+<li>if <span class="math inline">\([\mathbf{A} \rightarrow
+\mathbf{\alpha} \cdot \mathbf{B} \mathbf{\beta}, \mathbf{a}]\)</span> in
+<span class="math inline">\(\mathbf{I}\)</span></li>
+<li>then every Item in <span class="math inline">\(\mathbf{CLOSURE(\{[\mathbf{A} \rightarrow
+\mathbf{\alpha} \mathbf{B} \cdot \mathbf{\beta},
+\mathbf{a}]\})}\)</span> is in <span class="math inline">\(\mathbf{GOTO(I, B)}\)</span>
 <ul>
-<li><span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong><strong>(</strong><strong>I</strong><strong>,</strong> <strong>B</strong><strong>)</strong> ⊇ <strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>{</strong><strong>[</strong><strong>A</strong> <strong>→</strong> <strong>α</strong><strong>B</strong> <strong>⋅</strong> <strong>β</strong><strong>,</strong> <strong>a</strong><strong>]</strong><strong>}</strong><strong>)</strong></span>
+<li><span class="math inline">\(\mathbf{GOTO(I, B)} \supseteq
+\mathbf{CLOSURE(\{[\mathbf{A} \rightarrow \mathbf{\alpha} \mathbf{B}
+\cdot \mathbf{\beta}, \mathbf{a}]\})}\)</span>
 <ul>
 <li></li>
 </ul></li>
@@ -2827,31 +2880,31 @@ state</strong> （从前一个状态继承的内核项）</li>
 </ul>
 <h4 id="automaton-construction-1">Automaton Construction</h4>
 <ul>
-<li><strong>INPUT</strong>: a grammar <span class="math inline"><strong>G</strong></span></li>
+<li><strong>INPUT</strong>: a grammar <span class="math inline">\(\mathbf{G}\)</span></li>
 <li><strong>OUTPUT</strong>: a LR(1) automaton</li>
 <li><strong>Construction</strong>:
 <ol type="1">
-<li>augment <span class="math inline"><strong>G</strong></span> to <span class="math inline"><strong>G</strong><sup><strong>′</strong></sup></span>
-by adding a new start symbol <span class="math inline"><strong>S</strong><sup><strong>′</strong></sup></span>
-and production <span class="math inline"><strong>S</strong><sup><strong>′</strong></sup> → <strong>S</strong></span>
-（扩展文法）</li>
-<li><span class="math inline"><strong>C</strong></span>:= {<span class="math inline"><strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>[</strong><strong>S</strong><sup><strong>′</strong></sup> <strong>→</strong> <strong>⋅</strong><strong>S</strong><strong>,</strong> <strong>$</strong><strong>]</strong><strong>)</strong></span>}
-（初始化项集C）</li>
+<li>augment <span class="math inline">\(\mathbf{G}\)</span> to <span class="math inline">\(\mathbf{G'}\)</span> by adding a new start
+symbol <span class="math inline">\(\mathbf{S'}\)</span> and
+production <span class="math inline">\(\mathbf{S'} \rightarrow
+\mathbf{S}\)</span> （扩展文法）</li>
+<li><span class="math inline">\(\mathbf{C}\)</span>:= {<span class="math inline">\(\mathbf{CLOSURE({[S' \rightarrow \cdot S,
+\$]})}\)</span>} （初始化项集C）</li>
 <li>repeat:
 <ul>
-<li>for each Item <span class="math inline"><strong>I</strong></span> in
-<span class="math inline"><strong>C</strong></span> and each grammar
-symbol <span class="math inline"><strong>X</strong></span> in <span class="math inline"><strong>G</strong><sup><strong>′</strong></sup></span>
+<li>for each Item <span class="math inline">\(\mathbf{I}\)</span> in
+<span class="math inline">\(\mathbf{C}\)</span> and each grammar symbol
+<span class="math inline">\(\mathbf{X}\)</span> in <span class="math inline">\(\mathbf{G'}\)</span>
 <ul>
-<li>if <span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong><strong>(</strong><strong>I</strong><strong>,</strong> <strong>X</strong><strong>)</strong></span>
-is not empty and not in <span class="math inline"><strong>C</strong></span>
+<li>if <span class="math inline">\(\mathbf{GOTO(I, X)}\)</span> is not
+empty and not in <span class="math inline">\(\mathbf{C}\)</span>
 <ul>
-<li>add <span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong><strong>(</strong><strong>I</strong><strong>,</strong> <strong>X</strong><strong>)</strong></span>
-to <span class="math inline"><strong>C</strong></span></li>
+<li>add <span class="math inline">\(\mathbf{GOTO(I, X)}\)</span> to
+<span class="math inline">\(\mathbf{C}\)</span></li>
 </ul></li>
 </ul></li>
 </ul></li>
-<li>until no new Items are added to <span class="math inline"><strong>C</strong></span></li>
+<li>until no new Items are added to <span class="math inline">\(\mathbf{C}\)</span></li>
 </ol></li>
 <li><strong>Example</strong>:
 <ol type="1">
@@ -2861,32 +2914,32 @@ to <span class="math inline"><strong>C</strong></span></li>
 </ul>
 <h4 id="parsing-table-construction-2">Parsing Table Construction</h4>
 <ul>
-<li><strong>LR(1) Parsing Table <span class="math inline">𝕋</span></strong>:
+<li><strong>LR(1) Parsing Table <span class="math inline">\(\mathbb{T}\)</span></strong>:
 <ul>
 <li><strong>Rows</strong>: <strong>states</strong></li>
 <li><strong>Columns</strong>: <strong>grammar symbols</strong>
 <ul>
-<li><strong>terminals</strong> for <span class="math inline"><strong>S</strong><strong>H</strong><strong>I</strong><strong>F</strong><strong>T</strong></span>
-and <span class="math inline"><strong>R</strong><strong>E</strong><strong>D</strong><strong>U</strong><strong>C</strong><strong>E</strong></span>
-actions</li>
-<li><strong>non-terminals</strong> for <span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong></span>
-actions</li>
+<li><strong>terminals</strong> for <span class="math inline">\(\mathbf{SHIFT}\)</span> and <span class="math inline">\(\mathbf{REDUCE}\)</span> actions</li>
+<li><strong>non-terminals</strong> for <span class="math inline">\(\mathbf{GOTO}\)</span> actions</li>
 </ul></li>
-<li><strong>Construction</strong>: each edge <span class="math inline"><strong>X</strong></span>: <span class="math inline">(<em>s</em><sub><em>m</em></sub>, <em>s</em><sub><em>n</em></sub>)</span>
+<li><strong>Construction</strong>: each edge <span class="math inline">\(\mathbf{X}\)</span>: <span class="math inline">\((s_m, s_n)\)</span>
 <ul>
-<li>if <span class="math inline"><strong>X</strong></span> is a
-<strong>terminal</strong> <span class="math inline"><strong>a</strong></span>, then <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, <em>a</em>] = <strong>S</strong><strong>H</strong><strong>I</strong><strong>F</strong><strong>T</strong>&nbsp;<em>n</em></span></li>
-<li>if <span class="math inline"><strong>X</strong></span> is a
-<strong>non-terminal</strong> <span class="math inline"><strong>A</strong></span>, then <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, <em>A</em>] = <strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong>&nbsp;<em>n</em></span></li>
-<li>if <span class="math inline">[<strong>A</strong> → <strong>β</strong>⋅, <strong>a</strong>]</span>
-(the kernel) is in <span class="math inline"><em>s</em><sub><em>m</em></sub></span>, then <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, <em>a</em>] = <strong>R</strong><strong>E</strong><strong>D</strong><strong>U</strong><strong>C</strong><strong>E</strong>&nbsp;<strong>A</strong> → <strong>β</strong></span></li>
-<li>if <span class="math inline">[<strong>S</strong><sup><strong>′</strong></sup> → <strong>S</strong>⋅, $]</span>
-is in <span class="math inline"><em>s</em><sub><em>m</em></sub></span>,
-then <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, $] = <strong>A</strong><strong>C</strong><strong>C</strong><strong>E</strong><strong>P</strong><strong>T</strong></span></li>
+<li>if <span class="math inline">\(\mathbf{X}\)</span> is a
+<strong>terminal</strong> <span class="math inline">\(\mathbf{a}\)</span>, then <span class="math inline">\(\mathbb{T}[s_m, a] = \mathbf{SHIFT}\
+n\)</span></li>
+<li>if <span class="math inline">\(\mathbf{X}\)</span> is a
+<strong>non-terminal</strong> <span class="math inline">\(\mathbf{A}\)</span>, then <span class="math inline">\(\mathbb{T}[s_m, A] = \mathbf{GOTO}\
+n\)</span></li>
+<li>if <span class="math inline">\([\mathbf{A} \rightarrow
+\mathbf{\beta} \cdot, \mathbf{a}]\)</span> (the kernel) is in <span class="math inline">\(s_m\)</span>, then <span class="math inline">\(\mathbb{T}[s_m, a] = \mathbf{REDUCE}\ \mathbf{A}
+\rightarrow \mathbf{\beta}\)</span></li>
+<li>if <span class="math inline">\([\mathbf{S'} \rightarrow
+\mathbf{S} \cdot, \$]\)</span> is in <span class="math inline">\(s_m\)</span>, then <span class="math inline">\(\mathbb{T}[s_m, \$] =
+\mathbf{ACCEPT}\)</span></li>
 </ul></li>
 </ul></li>
 <li><strong>Example</strong>: <img src="image-43.webp" srcset="/img/loading/loading3.gif" lazyload> &gt;
-注：上表中<span class="math inline">[11, <em>i</em><em>d</em>]</span>应为<span class="math inline"><em>s</em>12</span>，即<span class="math inline">𝕋[11, <em>i</em><em>d</em>] = <em>s</em>12</span>。</li>
+注：上表中<span class="math inline">\([11, id]\)</span>应为<span class="math inline">\(s12\)</span>，即<span class="math inline">\(\mathbb{T}[11, id] = s12\)</span>。</li>
 </ul>
 <h3 id="lalr1-parsing">LALR(1) Parsing</h3>
 <ul>
@@ -2908,57 +2961,58 @@ grammars （比SLR(1)更强大，能处理更多文法）</li>
 <strong>Production Set</strong> in LR(1)
 （将LR(1)中具有相同产生式集的项（同心集）组合在一起）
 <ul>
-<li>e.g.&nbsp;<span class="math inline">[<strong>A</strong> → <strong>α</strong>⋅, <strong>a</strong>]</span>
-and <span class="math inline">[<strong>A</strong> → <strong>α</strong>⋅, <strong>b</strong>]</span>
-are combined into one state</li>
+<li>e.g.&nbsp;<span class="math inline">\([\mathbf{A} \rightarrow
+\mathbf{\alpha} \cdot, \mathbf{a}]\)</span> and <span class="math inline">\([\mathbf{A} \rightarrow \mathbf{\alpha} \cdot,
+\mathbf{b}]\)</span> are combined into one state</li>
 </ul></li>
 <li>Compared to <strong>LR(1)</strong>: <img src="image-45.webp" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul>
 <h4 id="automaton-construction-2">Automaton Construction</h4>
 <ul>
-<li><strong>INPUT</strong>: a grammar <span class="math inline"><strong>G</strong></span></li>
+<li><strong>INPUT</strong>: a grammar <span class="math inline">\(\mathbf{G}\)</span></li>
 <li><strong>OUTPUT</strong>: a LALR(1) automaton</li>
 <li><strong>Construction</strong>:
 <ol type="1">
 <li>Construct <strong>LR(0)</strong> items as <strong>LALR(1)</strong>
-items’ cores for the grammar <span class="math inline"><strong>G</strong><sup><strong>′</strong></sup></span>，then
-remove the non-kernel items （为文法<span class="math inline"><strong>G</strong><sup><strong>′</strong></sup></span>构造LR(0)项作为LALR(1)项的核心，然后删除非核心项）</li>
-<li>For each kernal items <span class="math inline"><strong>K</strong></span> in <span class="math inline"><strong>I</strong><sub><strong>i</strong></sub></span>
-and each grammar symbol <span class="math inline"><strong>X</strong></span> in <span class="math inline"><strong>G</strong><sup><strong>′</strong></sup></span>,
-calculate the lookahead symbols’ <strong>INIT</strong> and
-<strong>PROPAGATION</strong>. （对于每个项集<span class="math inline"><strong>I</strong><sub><strong>i</strong></sub></span>中的核心项<span class="math inline"><strong>K</strong></span>和文法符号<span class="math inline"><strong>X</strong></span>，计算前瞻符号的初始值和传播）
+items’ cores for the grammar <span class="math inline">\(\mathbf{G'}\)</span>，then remove the
+non-kernel items （为文法<span class="math inline">\(\mathbf{G'}\)</span>构造LR(0)项作为LALR(1)项的核心，然后删除非核心项）</li>
+<li>For each kernal items <span class="math inline">\(\mathbf{K}\)</span> in <span class="math inline">\(\mathbf{I_i}\)</span> and each grammar symbol
+<span class="math inline">\(\mathbf{X}\)</span> in <span class="math inline">\(\mathbf{G'}\)</span>, calculate the lookahead
+symbols’ <strong>INIT</strong> and <strong>PROPAGATION</strong>.
+（对于每个项集<span class="math inline">\(\mathbf{I_i}\)</span>中的核心项<span class="math inline">\(\mathbf{K}\)</span>和文法符号<span class="math inline">\(\mathbf{X}\)</span>，计算前瞻符号的初始值和传播）
 <ul>
-<li>For each item <span class="math inline">(<strong>A</strong> → <strong>α</strong> ⋅ <strong>β</strong>)</span>
-in <span class="math inline"><strong>K</strong></span>
+<li>For each item <span class="math inline">\((\mathbf{A} \rightarrow
+\mathbf{\alpha} \cdot \mathbf{\beta})\)</span> in <span class="math inline">\(\mathbf{K}\)</span>
 <ul>
-<li><span class="math inline"><strong>J</strong> := {<strong>C</strong><strong>L</strong><strong>O</strong><strong>S</strong><strong>U</strong><strong>R</strong><strong>E</strong><strong>(</strong><strong>[</strong><strong>A</strong> <strong>→</strong> <strong>α</strong> <strong>⋅</strong> <strong>β</strong><strong>,</strong> <strong>#</strong><strong>]</strong><strong>)</strong>}</span>
-（初始化<span class="math inline"><strong>J</strong></span>）</li>
-<li>if <span class="math inline">[<strong>B</strong> <strong>→</strong> <strong>γ</strong> <strong>⋅</strong> <strong>X</strong><strong>δ</strong><strong>,</strong> <strong>a</strong>]</span>
-in <span class="math inline"><strong>J</strong></span> and <span class="math inline"><strong>a</strong> <strong>≠</strong> <strong>#</strong></span>,
-then <span class="math inline"><strong>B</strong> <strong>→</strong> <strong>γ</strong><strong>X</strong> <strong>⋅</strong> <strong>δ</strong></span>
-in <span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong><strong>(</strong><strong>I</strong><sub><strong>i</strong></sub><strong>,</strong> <strong>X</strong><strong>)</strong></span>
-has a <strong>SELF-generated</strong> lookahead symbol <span class="math inline"><strong>a</strong></span> （<span class="math inline"><strong>J</strong></span>中的项若出现不为#的前瞻符号，则它是自发生成的）</li>
-<li>if <span class="math inline">[<strong>B</strong> <strong>→</strong> <strong>γ</strong> <strong>⋅</strong> <strong>X</strong><strong>δ</strong><strong>,</strong> <strong>#</strong>]</span>
-in <span class="math inline"><strong>J</strong></span>, then lookahead
-symbols are <strong>propagated</strong> from <span class="math inline"><strong>A</strong> <strong>→</strong> <strong>α</strong> <strong>⋅</strong> <strong>β</strong></span>
-to <span class="math inline"><strong>B</strong> <strong>→</strong> <strong>γ</strong><strong>X</strong> <strong>⋅</strong> <strong>δ</strong></span>
-in <span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong><strong>(</strong><strong>I</strong><sub><strong>i</strong></sub><strong>,</strong> <strong>X</strong><strong>)</strong></span>.
-（<span class="math inline"><strong>J</strong></span>中的项若出现#的前瞻符号，则该项会传播前瞻符号）</li>
+<li><span class="math inline">\(\mathbf{J} := \{\mathbf{CLOSURE({[A
+\rightarrow \alpha \cdot \beta, \#]})}\}\)</span> （初始化<span class="math inline">\(\mathbf{J}\)</span>）</li>
+<li>if <span class="math inline">\([\mathbf{B \rightarrow \gamma \cdot X
+\delta, a}]\)</span> in <span class="math inline">\(\mathbf{J}\)</span>
+and <span class="math inline">\(\mathbf{a \neq} \#\)</span>, then <span class="math inline">\(\mathbf{B \rightarrow \gamma X \cdot
+\delta}\)</span> in <span class="math inline">\(\mathbf{GOTO(I_i,
+X)}\)</span> has a <strong>SELF-generated</strong> lookahead symbol
+<span class="math inline">\(\mathbf{a}\)</span> （<span class="math inline">\(\mathbf{J}\)</span>中的项若出现不为#的前瞻符号，则它是自发生成的）</li>
+<li>if <span class="math inline">\([\mathbf{B \rightarrow \gamma \cdot X
+\delta,} \#]\)</span> in <span class="math inline">\(\mathbf{J}\)</span>, then lookahead symbols are
+<strong>propagated</strong> from <span class="math inline">\(\mathbf{A
+\rightarrow \alpha \cdot \beta}\)</span> to <span class="math inline">\(\mathbf{B \rightarrow \gamma X \cdot
+\delta}\)</span> in <span class="math inline">\(\mathbf{GOTO(I_i,
+X)}\)</span>. （<span class="math inline">\(\mathbf{J}\)</span>中的项若出现#的前瞻符号，则该项会传播前瞻符号）</li>
 </ul></li>
-<li>Specifically, <span class="math inline"><strong>$</strong></span> in
-<span class="math inline"><strong>[</strong><strong>S</strong><sup><strong>′</strong></sup> <strong>→</strong> <strong>S</strong><strong>⋅</strong><strong>,</strong> <strong>$</strong><strong>]</strong></span>
-is SELF-generated.</li>
+<li>Specifically, <span class="math inline">\(\mathbf{\$}\)</span> in
+<span class="math inline">\(\mathbf{[S' \rightarrow S \cdot,
+\$]}\)</span> is SELF-generated.</li>
 </ul></li>
-<li>Construct the <span class="math inline"><strong>F</strong><strong>R</strong><strong>O</strong><strong>M</strong> <strong>−</strong> <strong>T</strong><strong>O</strong></span>
-table base on <span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong></span>
-for the kernel items to show the propagation of lookahead symbols
-（为核心项构建<span class="math inline"><strong>F</strong><strong>R</strong><strong>O</strong><strong>M</strong> <strong>−</strong> <strong>T</strong><strong>O</strong></span>表，以显示前瞻符号的传播）
+<li>Construct the <span class="math inline">\(\mathbf{FROM-TO}\)</span>
+table base on <span class="math inline">\(\mathbf{GOTO}\)</span> for the
+kernel items to show the propagation of lookahead symbols
+（为核心项构建<span class="math inline">\(\mathbf{FROM-TO}\)</span>表，以显示前瞻符号的传播）
 <ul>
 <li>in step 2, we calculate <strong>propagated</strong>
 relationships.</li>
 </ul></li>
-<li>Propagate the lookahead symbols according to the <span class="math inline"><strong>F</strong><strong>R</strong><strong>O</strong><strong>M</strong> <strong>−</strong> <strong>T</strong><strong>O</strong></span>
-relationships until the fixed point achieved （根据<span class="math inline"><strong>F</strong><strong>R</strong><strong>O</strong><strong>M</strong> <strong>−</strong> <strong>T</strong><strong>O</strong></span>关系传播前瞻符号，直到达到不变点）
+<li>Propagate the lookahead symbols according to the <span class="math inline">\(\mathbf{FROM-TO}\)</span> relationships until the
+fixed point achieved （根据<span class="math inline">\(\mathbf{FROM-TO}\)</span>关系传播前瞻符号，直到达到不变点）
 <ul>
 <li>in step 2, we calculate <strong>self-generated</strong> lookahead
 symbols.</li>
@@ -2970,28 +3024,28 @@ symbols.</li>
 <h4 id="parsing-table-construction-3">Parsing Table Construction</h4>
 <ul>
 <li>the same as <strong>LR(1)</strong> method</li>
-<li><strong>LALR(1) Parsing Table <span class="math inline">𝕋</span></strong>:
+<li><strong>LALR(1) Parsing Table <span class="math inline">\(\mathbb{T}\)</span></strong>:
 <ul>
 <li><strong>Rows</strong>: <strong>states</strong></li>
 <li><strong>Columns</strong>: <strong>grammar symbols</strong>
 <ul>
-<li><strong>terminals</strong> for <span class="math inline"><strong>S</strong><strong>H</strong><strong>I</strong><strong>F</strong><strong>T</strong></span>
-and <span class="math inline"><strong>R</strong><strong>E</strong><strong>D</strong><strong>U</strong><strong>C</strong><strong>E</strong></span>
-actions</li>
-<li><strong>non-terminals</strong> for <span class="math inline"><strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong></span>
-actions</li>
+<li><strong>terminals</strong> for <span class="math inline">\(\mathbf{SHIFT}\)</span> and <span class="math inline">\(\mathbf{REDUCE}\)</span> actions</li>
+<li><strong>non-terminals</strong> for <span class="math inline">\(\mathbf{GOTO}\)</span> actions</li>
 </ul></li>
-<li><strong>Construction</strong>: each edge <span class="math inline"><strong>X</strong></span>: <span class="math inline">(<em>s</em><sub><em>m</em></sub>, <em>s</em><sub><em>n</em></sub>)</span>
+<li><strong>Construction</strong>: each edge <span class="math inline">\(\mathbf{X}\)</span>: <span class="math inline">\((s_m, s_n)\)</span>
 <ul>
-<li>if <span class="math inline"><strong>X</strong></span> is a
-<strong>terminal</strong> <span class="math inline"><strong>a</strong></span>, then <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, <em>a</em>] = <strong>S</strong><strong>H</strong><strong>I</strong><strong>F</strong><strong>T</strong>&nbsp;<em>n</em></span></li>
-<li>if <span class="math inline"><strong>X</strong></span> is a
-<strong>non-terminal</strong> <span class="math inline"><strong>A</strong></span>, then <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, <em>A</em>] = <strong>G</strong><strong>O</strong><strong>T</strong><strong>O</strong>&nbsp;<em>n</em></span></li>
-<li>if <span class="math inline">[<strong>A</strong> → <strong>β</strong>⋅, <strong>a</strong>]</span>
-(the kernel) is in <span class="math inline"><em>s</em><sub><em>m</em></sub></span>, then <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, <em>a</em>] = <strong>R</strong><strong>E</strong><strong>D</strong><strong>U</strong><strong>C</strong><strong>E</strong>&nbsp;<strong>A</strong> → <strong>β</strong></span></li>
-<li>if <span class="math inline">[<strong>S</strong><sup><strong>′</strong></sup> → <strong>S</strong>⋅, $]</span>
-is in <span class="math inline"><em>s</em><sub><em>m</em></sub></span>,
-then <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, $] = <strong>A</strong><strong>C</strong><strong>C</strong><strong>E</strong><strong>P</strong><strong>T</strong></span></li>
+<li>if <span class="math inline">\(\mathbf{X}\)</span> is a
+<strong>terminal</strong> <span class="math inline">\(\mathbf{a}\)</span>, then <span class="math inline">\(\mathbb{T}[s_m, a] = \mathbf{SHIFT}\
+n\)</span></li>
+<li>if <span class="math inline">\(\mathbf{X}\)</span> is a
+<strong>non-terminal</strong> <span class="math inline">\(\mathbf{A}\)</span>, then <span class="math inline">\(\mathbb{T}[s_m, A] = \mathbf{GOTO}\
+n\)</span></li>
+<li>if <span class="math inline">\([\mathbf{A} \rightarrow
+\mathbf{\beta} \cdot, \mathbf{a}]\)</span> (the kernel) is in <span class="math inline">\(s_m\)</span>, then <span class="math inline">\(\mathbb{T}[s_m, a] = \mathbf{REDUCE}\ \mathbf{A}
+\rightarrow \mathbf{\beta}\)</span></li>
+<li>if <span class="math inline">\([\mathbf{S'} \rightarrow
+\mathbf{S} \cdot, \$]\)</span> is in <span class="math inline">\(s_m\)</span>, then <span class="math inline">\(\mathbb{T}[s_m, \$] =
+\mathbf{ACCEPT}\)</span></li>
 </ul></li>
 </ul></li>
 <li><strong>Example</strong>: <img src="image-53.webp" srcset="/img/loading/loading3.gif" lazyload></li>
@@ -3555,7 +3609,7 @@ then <span class="math inline">𝕋[<em>s</em><sub><em>m</em></sub>, $] = 
 
 
   <script type="text/javascript">
-  document.getElementById("g-total-word-id").innerHTML = "354k";
+  document.getElementById("g-total-word-id").innerHTML = "366k";
   document.getElementById('g-total-posts-id').textContent ="45";
 </script>
 
