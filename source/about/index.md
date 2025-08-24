@@ -29,7 +29,7 @@ Hi, here is
 <img src="https://ghchart.rshah.org/0d6aae/youyeyejie" style="width: 100%; max-width: 100%"/>
 
 ## Travel Footprint
-<div id="myMap" style="width: 100%; max-width: 100%; height: 450px;"></div>
+<div id="footprint" style="width: 100%; max-width: 100%; height: 450px;"></div>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/map/js/china.js"></script>
 <script type="text/javascript" src="/js/Footprint.js"></script>
