@@ -238,9 +238,9 @@ footprintChart.getZr().on('dblclick', function() {
 
 正如前文所述，我将足迹数据存放在了 `source/json/footprint.json` 文件中，数据格式如下：
 
-- `name` ：城市名称，字符串，必须
-- `province` ：省份名称，字符串，  必须
-- `value` ：包含经纬度的数组，必须
+- `name` ：城市名称，字符串，必填
+- `province` ：省份名称，字符串，必填
+- `value` ：包含经纬度的数组，必填
 - `description` ：描述，字符串，选填
 - `url` ：相关链接，字符串，在有描述的基础上进一步选填
 - `symbol` ：足迹点图标路径，字符串，选填
