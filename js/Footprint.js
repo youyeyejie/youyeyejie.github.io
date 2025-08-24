@@ -1,4 +1,4 @@
-var myChart = echarts.init(document.getElementById('myMap'));
+var footprintChart = echarts.init(document.getElementById('footprint'));
 
 // 统计各省访问次数
 function getProvinceCounts(data) {
@@ -46,7 +46,7 @@ fetch('/json/footprint.json')
                 top: 15,
                 textStyle: {
                     fontSize: 20,
-                    color: '#',
+                    color: '#171a24',
                     fontWeight: 'bold',
                     fontFamily: 'serif'
                 }
@@ -83,8 +83,14 @@ fetch('/json/footprint.json')
                 inRange: {
                     color: ["#e6e6e6", "#a7d0ed", "#5ab7fb", "#409de1", "#398cc0", "#0e76c0"]
                 },
-                text: ['走过城市', ''],
-                left: 20,
+                outOfRange: {
+                    color: '#e6e6e6'
+                },
+                // text: ['走过城市', ''],
+                left: '5%', // 距离左侧位置
+                bottom: '5%', // 距离底部位置
+                itemWidth: 20, // 标尺宽度
+                itemHeight: 100, // 标尺高度
                 calculable: true
             },
             geo: {
@@ -140,21 +146,33 @@ fetch('/json/footprint.json')
             ],
         };
 
-        myChart.setOption(option);
-        // 在myChart.setOption(option);之后添加点击事件监听
-        myChart.on('click', function(params) {
-            // 检查是否是足迹点（effectScatter类型）且包含url属性
-            if (params.seriesType === 'effectScatter' && params.data && params.data.url) {
-                // 在新窗口打开链接
-                window.open(params.data.url, '_blank');
-            }
-        });
+        footprintChart.setOption(option);
     })
     .catch(error => {
         console.error('Error loading footprint data:', error);
     });
 
-// 处理窗口大小变化
+// 处理窗口大小变化时地图显示超出页面的问题
 window.addEventListener('resize', function () {
-    myChart.resize();
+    footprintChart.resize();
+});
+
+// 添加点击事件监听，当点击足迹点时若存在 url 条目则打开链接
+footprintChart.on('click', function(params) {
+    if (params.seriesType === 'effectScatter' && params.data && params.data.url) {
+        window.open(params.data.url, '_blank'); // 在新窗口打开链接
+    }
+});
+
+// 添加双击事件监听，恢复初始放大倍率和位置
+footprintChart.getZr().on('dblclick', function() {
+    footprintChart.setOption({
+        geo: {
+            zoom: 1.2, // 恢复初始放大倍率
+            center: null // 恢复初始位置
+        },
+        visualMap: {
+            range: null // 恢复初始选择范围
+        }
+    });
 });

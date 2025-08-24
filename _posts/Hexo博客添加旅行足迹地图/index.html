@@ -1,0 +1,1363 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head><!-- hexo injector head_begin start --><meta name="msvalidate.01" content="DF9F232801BA9D0CABB002E4774A3228" />
+<meta name="google-site-verification" content="vOm5Zs9tuUlEh-wVBlpvs_spnOou-q2CoTiFQ1ZV1h4" />
+<script defer src="https://cloud.umami.is/script.js" data-website-id="0369421f-4354-4d7b-99c7-ae077c591b4f"></script>
+<!-- hexo injector head_begin end -->
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar/avatar2.webp">
+  <link rel="icon" href="/img/avatar/avatar2.webp">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="youyeyejie">
+  <meta name="keywords" content="yyyj,YYYJ,youyeyejie,有野野芥">
+  
+    <meta name="description" content="在Hexo博客中添加一个旅行足迹地图，摊开那些被脚步丈量过的时光。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo博客添加旅行足迹地图">
+<meta property="og:url" content="https://youyeyejie.github.io/_posts/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E6%97%85%E8%A1%8C%E8%B6%B3%E8%BF%B9%E5%9C%B0%E5%9B%BE/index.html">
+<meta property="og:site_name" content="有野野芥的博客">
+<meta property="og:description" content="在Hexo博客中添加一个旅行足迹地图，摊开那些被脚步丈量过的时光。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://youyeyejie.github.io/_posts/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E6%97%85%E8%A1%8C%E8%B6%B3%E8%BF%B9%E5%9C%B0%E5%9B%BE/image.webp">
+<meta property="article:published_time" content="2025-08-24T16:42:48.000Z">
+<meta property="article:modified_time" content="2025-08-24T18:04:57.366Z">
+<meta property="article:author" content="youyeyejie">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Fluid">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://youyeyejie.github.io/_posts/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E6%97%85%E8%A1%8C%E8%B6%B3%E8%BF%B9%E5%9C%B0%E5%9B%BE/image.webp">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>Hexo博客添加旅行足迹地图 - 有野野芥的博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+<link rel="stylesheet" href="//lib.baomitu.com/font-awesome/6.1.2/css/all.min.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+
+
+  
+<link rel="stylesheet" href="/css/CodeBlock.css">
+<link rel="stylesheet" href="/css/CodeInLine.css">
+<link rel="stylesheet" href="/css/FrostedGlassBg.css">
+<link rel="stylesheet" href="/css/Gallery.css">
+<link rel="stylesheet" href="/css/IndexImgHover.css">
+<link rel="stylesheet" href="/css/LinkCard.css">
+<link rel="stylesheet" href="/css/ScrollAnimation.css">
+<link rel="stylesheet" href="/css/ScrollBar.css">
+<link rel="stylesheet" href="/css/Sidebar.css">
+<link rel="stylesheet" href="/css/StrongInDark.css">
+<link rel="stylesheet" href="/css/TitleGradient.css">
+<link rel="stylesheet" href="/css/TitleNeon.css">
+<link rel="stylesheet" href="/css/UnifyImgWidth.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"youyeyejie.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":false,"default":"TEXT"},"copy_btn":false,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading/loading3.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-shiki-plugin@latest/lib/codeblock.css">
+<style>:root{--hl-color:#abb2bf;--hl-bg:#282c34;--hltools-bg:#21252b;--hltools-color:#bbbbbc;--hlnumber-bg:#282c34;--hlnumber-color:#495162;--hlscrollbar-bg:#373c47;--hlexpand-bg:linear-gradient(180deg,rgba(40,44,52,0.1),rgba(40,44,52,0.9))}</style>
+    <style>
+    .code-expand-btn:not(.expand-done) ~ div.codeblock,
+    .code-expand-btn:not(.expand-done) ~ * div.codeblock {
+      overflow: hidden;
+      height: 360px;
+    }
+    </style>
+  <!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+
+<body>
+  <div id="loader-container"> 
+    <div id="loader" class="loader"></div>
+    <div class="loader-inner">
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/RainbowLoading.js" type="text/javascript"></script>
+<link href="/css/RainbowLoading.css" type="text/css" rel="stylesheet"/><div id="tooltip-rightmenu" class="tooltip-rightmenu">如需原始右键菜单请按下 <strong>Ctrl+右键</strong></div>
+<div id="tooltip-rightmenu-return" class="tooltip-rightmenu"></div>
+
+<div id="rightmenu-wrapper">
+  <ul class="list-v rightmenu" id="rightmenu-content">
+	    <li class="navigation menuNavigation-Content">
+            <a class="nav icon-only fix-cursor-default" aria-label="back" onclick="history.back()"><i class="fa-solid fa-chevron-left"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="forward" onclick="history.forward()"><i class="fa-solid fa-chevron-right"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="reload" onclick="window.location.reload()"><i class="fa-solid fa-rotate-right"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="top" onclick="scrollToTopSmooth();"><i class="fa-solid fa-chevron-up"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="bottom" onclick="scrollToBottomSmooth();"><i class="fa-solid fa-chevron-down"></i></a>
+	    </li>
+
+        <hr class="menuLoad-Content" style="display: block;" id="top-line" hidden>
+
+        <li class="menuLoad-Content" style="display: block;" id="copy-selected-text" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copySelectedText();">
+                <span>
+                    <i class="fa-solid fa-copy"></i>
+                    &nbsp;复制选中
+                </span>
+            </a>
+        </li>
+
+        <li class="menuLoad-Content" style="display: block;" id="search-selected-text-BING" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_blank" onclick="searchSelectedTextBing();">
+                <span>
+                    <i class="fa-solid fa-magnifying-glass-arrow-right"></i>
+                    &nbsp;必应搜索
+                </span>
+            </a>
+        </li>
+
+        <li class="menuLoad-Content" style="display: block;" id="go-to-link" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_blank">
+                <span>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    &nbsp;转到链接
+                </span>
+            </a>
+        </li>
+
+        <li class="menuLoad-Content" style="display: block;" id="download-image" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="downloadImage();">
+                <span>
+                    <i class="fa-solid fa-image"></i>
+                    &nbsp;下载图片
+                </span>
+            </a>
+        </li>
+
+        <li class="menuLoad-Content" style="display: block;" id="copy-image-link" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copyImageLink();">
+                <span>
+                    <i class="fa-solid fa-link"></i>
+                    复制图片链接
+                </span>
+            </a>
+        </li>
+
+		<hr class="menuLoad-Content" style="display: block;">
+
+        <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" onclick="RandomGo()">
+		        <span>
+			        <i class="fa-solid fa-paper-plane"></i>
+                    &nbsp;随便看看
+		        </span>
+		    </a>
+	    </li>
+	    <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+		        <span>
+			        <i class="fa-solid fa-magnifying-glass"></i>
+                    &nbsp;站内搜索
+		        </span>
+		    </a>
+	    </li>
+        <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" href="/categories/">
+		        <span>
+			        <i class="iconfont icon-category-fill"></i>
+                    &nbsp;博客分类
+		        </span>
+		    </a>
+	    </li>
+        <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" href="/tags/">
+		        <span>
+			        <i class="fa-solid fa-tags"></i>
+                    &nbsp;文章标签
+		        </span>
+		    </a>
+	    </li>
+        
+	    <hr class="menuLoad-Content" style="display: block;">
+
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copyLink();">
+                <span>
+                    <i class="fa-solid fa-copy"></i>
+                    &nbsp;复制链接
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="document.getElementById('color-toggle-btn').click();">
+            <span>
+                <i class="fa-solid fa-circle-half-stroke"></i>
+                &nbsp;切换昼夜
+            </span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+<script src="/js/RightMenu.js" type="text/javascript"></script>
+<link href="/css/RightMenu.css" type="text/css" rel="stylesheet"/>
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <!-- <strong>YYYJ&#39;s Blog</strong> -->
+       <strong class="navbar-title">YYYJ&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/DayDream-Gallery/" target="_self">
+                <i class="fas fa-images"></i>
+                <span>图集</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.travellings.cn/go-by-clouds.html" target="_self">
+                <i class="fas fa-train-subway"></i>
+                <span>开往</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/banner/random.webp') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Hexo博客添加旅行足迹地图"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        youyeyejie
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-08-25 00:42" pubdate>
+          2025年8月25日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          17 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar category-bar" style="margin-right: -1rem">
+    
+
+
+
+
+
+<div class="category-list">
+  
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Hexo Blog Building"
+        id="heading-9b84d3ac4a7bc6fefd79d5872f3510b0" role="tab" data-toggle="collapse" href="#collapse-9b84d3ac4a7bc6fefd79d5872f3510b0"
+        aria-expanded="true"
+      >
+        Hexo Blog Building
+        <span class="list-group-count">(9)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-9b84d3ac4a7bc6fefd79d5872f3510b0"
+           role="tabpanel" aria-labelledby="heading-9b84d3ac4a7bc6fefd79d5872f3510b0">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/_posts/Fluid%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/" title="Fluid主题美化"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Fluid主题美化</span>
+        </a>
+      
+    
+      
+      
+        <a href="/_posts/Fluid%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/" title="Fluid自定义右键菜单"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Fluid自定义右键菜单</span>
+        </a>
+      
+    
+      
+      
+        <a href="/_posts/Fluid%E9%9A%8F%E6%9C%BA%E8%83%8C%E6%99%AF/" title="Fluid随机背景"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Fluid随机背景</span>
+        </a>
+      
+    
+      
+      
+        <a href="/_posts/Fluid%E9%A1%B5%E8%84%9A%E7%BE%8E%E5%8C%96/" title="Fluid页脚美化"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Fluid页脚美化</span>
+        </a>
+      
+    
+      
+      
+        <a href="/_posts/Fluid%E9%A6%96%E9%A1%B5%E4%BE%A7%E8%BE%B9%E6%A0%8F%E7%BD%91%E7%AB%99%E7%BB%9F%E8%AE%A1/" title="Fluid首页侧边栏网站统计"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Fluid首页侧边栏网站统计</span>
+        </a>
+      
+    
+      
+      
+        <a href="/_posts/Hexo%E4%BD%BF%E7%94%A8Vercount%E7%BB%9F%E8%AE%A1%E8%AE%BF%E9%97%AE%E6%95%B0%E6%8D%AE/" title="Hexo使用Vercount统计访问数据"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Hexo使用Vercount统计访问数据</span>
+        </a>
+      
+    
+      
+      
+        <a href="/_posts/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E6%97%85%E8%A1%8C%E8%B6%B3%E8%BF%B9%E5%9C%B0%E5%9B%BE/" title="Hexo博客添加旅行足迹地图"
+           class="list-group-item list-group-item-action
+           active">
+          <span class="category-post">Hexo博客添加旅行足迹地图</span>
+        </a>
+      
+    
+      
+      
+        <a href="/_posts/%E4%B8%94%E4%BB%A5%E7%BE%A4%E8%AF%8D-%E6%B3%A8%E8%A7%A3%E6%88%91%E8%BF%99%E5%BA%A7%E8%8D%92%E5%B1%B1/" title="且以群词 注解我这座荒山"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">且以群词 注解我这座荒山</span>
+        </a>
+      
+    
+      
+      
+        <a href="/_posts/%E8%AE%A9%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E6%94%B6%E5%BD%95%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2/" title="让搜索引擎收录你的博客"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">让搜索引擎收录你的博客</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+</div>
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Hexo博客添加旅行足迹地图</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="前言">前言</h1>
+<p>旧年的光阴里，总有些脚步轻轻落在了别处的晨昏里，在某次旅途中，我萌生了一个想法：将这些足迹记录下来，形成一张属于自己的旅行地图。对此，在我自己的
+Hexo
+博客中添加一张旅行足迹地图再合适不过了。为了实现这一功能，我浏览了许多大佬的博客，也查询了许多资料，最终决定使用
+ECharts 来实现这张地图。鉴于我在冲浪过程并没有找到一个针对 Hexo
+博客的现成解决方案，因此我决定将我的实现过程记录下来，供后来的朋友们参考。</p>
+<p><a target="_blank" rel="noopener" href="https://echarts.apache.org/zh/index.html" name="https://echarts.apache.org/zh/images/favicon.png?_v_=20240226" class="LinkCard">ECharts
+官网首页</a></p>
+<h1 id="实现">实现</h1>
+<p>由于目前我的活动范围基本局限于国内，我决定选用中国地图来展示我的足迹，因此后续的实现也将基于中国地图进行。对于世界地图的实现也基本类似，相信大家可以参考本文自行实现。</p>
+<h2 id="准备工作">准备工作</h2>
+<p>在开始之前，我们需要做一些准备工作。首先，我们需要在博客中引入
+ECharts 库，由于我决定将足迹地图展示在“关于”页面，因此我在该页面引入了
+Apache ECharts，具体来说，即在 <code>source/about/index.md</code>
+文件中添加如下代码：</p>
+<figure class="shiki html"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">type</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"text/javascript"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">src</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">type</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"text/javascript"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">src</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"https://cdn.jsdelivr.net/npm/echarts/map/js/china.js"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF">&gt;</span></span></code></pre></div></div></figure>
+<p>其中，我们通过 jsDelivr CDN 引入了 ECharts
+的核心库和中国地图的配置文件。但要注意，ECharts
+之前提供下载的矢量地图数据来自第三方，由于部分数据不符合国家《测绘法》规定，因此官网暂时停止了下载服务，从
+CDN
+引入的地图数据可能会存在一定的风险。如果希望使用其他国家或地区的地图，可以以相同的方式导入，这里就不赘述了。</p>
+<h2 id="创建地图容器">创建地图容器</h2>
+<p>同样的，我们需要在 <code>source/about/index.md</code>
+文件中创建一个用于展示地图的容器，并引入我们接下来要实现的 JavaScript
+脚本，代码如下：</p>
+<figure class="shiki html"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">id</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"footprint"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">style</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"width: 100%; max-width: 100%; height: 450px;"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">type</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"text/javascript"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">src</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"/js/Footprint.js"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF">&gt;</span></span></code></pre></div></div></figure>
+<h2 id="实现地图脚本">实现地图脚本</h2>
+<p>接下来，我们需要在 <code>source/js/Footprint.js</code>
+文件中实现地图的具体逻辑，代码如下：</p>
+<figure class="shiki javascript"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">var</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">footprintChart</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">echarts</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">init</span><span style="color: #ABB2BF">(</span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getElementById</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'footprint'</span><span style="color: #ABB2BF">));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">// 统计各省访问次数</span></span>
+<span class="line"><span style="color: #C678DD">function</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">getProvinceCounts</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">data</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">counts</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> {};</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E5C07B">data</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">forEach</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">item</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=&gt;</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (</span><span style="color: #E06C75">counts</span><span style="color: #ABB2BF">[</span><span style="color: #E5C07B">item</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">province</span><span style="color: #ABB2BF">]) {</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #E06C75">counts</span><span style="color: #ABB2BF">[</span><span style="color: #E5C07B">item</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">province</span><span style="color: #ABB2BF">]</span><span style="color: #56B6C2">++</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">        } </span><span style="color: #C678DD">else</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #E06C75">counts</span><span style="color: #ABB2BF">[</span><span style="color: #E5C07B">item</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">province</span><span style="color: #ABB2BF">] </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">    });</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">return</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">counts</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">// 生成省份数据用于着色</span></span>
+<span class="line"><span style="color: #C678DD">function</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">getProvinceData</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">counts</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">provinceList</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> [</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #98C379">'北京'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'天津'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'河北'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'山西'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'内蒙古'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'辽宁'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'吉林'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'黑龙江'</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #98C379">'上海'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'江苏'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'浙江'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'安徽'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'福建'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'江西'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'山东'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'河南'</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #98C379">'湖北'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'湖南'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'广东'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'广西'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'海南'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'重庆'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'四川'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'贵州'</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #98C379">'云南'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'西藏'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'陕西'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'甘肃'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'青海'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'宁夏'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'新疆'</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #98C379">'香港'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'澳门'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'台湾'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'南海诸岛'</span></span>
+<span class="line"><span style="color: #ABB2BF">    ];</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">return</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">provinceList</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">map</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">province</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=&gt;</span><span style="color: #ABB2BF"> ({</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">name</span><span style="color: #ABB2BF">: </span><span style="color: #E06C75">province</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">value</span><span style="color: #ABB2BF">: </span><span style="color: #E06C75">counts</span><span style="color: #ABB2BF">[</span><span style="color: #E06C75">province</span><span style="color: #ABB2BF">] </span><span style="color: #56B6C2">||</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span></span>
+<span class="line"><span style="color: #ABB2BF">    }));</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">// 从 JSON 文件加载数据</span></span>
+<span class="line"><span style="color: #61AFEF">fetch</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'/json/footprint.json'</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">    .</span><span style="color: #61AFEF">then</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">response</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">response</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">json</span><span style="color: #ABB2BF">())</span></span>
+<span class="line"><span style="color: #ABB2BF">    .</span><span style="color: #61AFEF">then</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">pointData</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=&gt;</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #7F848E; font-style: italic">// 获取统计数据</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">provinceCounts</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">getProvinceCounts</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">pointData</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">provinceData</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">getProvinceData</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">provinceCounts</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">maxCount</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">Math</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">max</span><span style="color: #ABB2BF">(...</span><span style="color: #E5C07B">Object</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">values</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">provinceCounts</span><span style="color: #ABB2BF">), </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">option</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #E06C75">title</span><span style="color: #ABB2BF">: {</span></span>
+<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #E06C75">show</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">false</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #E06C75">text</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">'有野野芥的足迹'</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #E06C75">left</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">'center'</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #E06C75">top</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">15</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #E06C75">textStyle</span><span style="color: #ABB2BF">: {</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #E06C75">fontSize</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">20</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #E06C75">color</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">'#171a24'</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #E06C75">fontWeight</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">'bold'</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #E06C75">fontFamily</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">'serif'</span></span>
+<span class="line"><span style="color: #ABB2BF">                }</span></span>
+<span class="line"><span style="color: #ABB2BF">            },</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #E06C75">tooltip</span><span style="color: #ABB2BF">: {</span></span>
+<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #E06C75">trigger</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">'item'</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #E06C75">borderColor</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">'#171a24'</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #E06C75">borderWidth</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #61AFEF">formatter</span><span style="color: #ABB2BF">: </span><span style="color: #C678DD">function</span><span style="color: #ABB2BF"> (</span><span style="color: #E06C75; font-style: italic">params</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #C678DD">var</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">res</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">''</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #7F848E; font-style: italic">// 城市点的tooltip</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (</span><span style="color: #E5C07B">params</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">seriesType</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">===</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'effectScatter'</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">                        </span><span style="color: #E06C75">res</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">`&lt;div style="font-size: 16px"&gt;</span><span style="color: #C678DD">${</span><span style="color: #E5C07B">params</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">name</span><span style="color: #C678DD">}</span><span style="color: #98C379">&lt;/div&gt;`</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">                        </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (</span><span style="color: #E5C07B">params</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">data</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&amp;&amp;</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">params</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">data</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">description</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">                            </span><span style="color: #E06C75">res</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">+=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">`&lt;div&gt;</span><span style="color: #C678DD">${</span><span style="color: #E5C07B">params</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">data</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">description</span><span style="color: #C678DD">}</span><span style="color: #98C379">&lt;/div&gt;`</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">                        }</span></span>
+<span class="line"><span style="color: #ABB2BF">                    }</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #7F848E; font-style: italic">// 省份的tooltip</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #C678DD">else</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (</span><span style="color: #E5C07B">params</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">seriesType</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">===</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'map'</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">                        </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">count</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">provinceCounts</span><span style="color: #ABB2BF">[</span><span style="color: #E5C07B">params</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">name</span><span style="color: #ABB2BF">] </span><span style="color: #56B6C2">||</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">                        </span><span style="color: #E06C75">res</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">`&lt;div style="font-size: 16px"&gt;</span><span style="color: #C678DD">${</span><span style="color: #E5C07B">params</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">name</span><span style="color: #C678DD">}</span><span style="color: #98C379">&lt;/div&gt;`</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">                        </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (</span><span style="color: #E06C75">count</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">                            </span><span style="color: #E06C75">res</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">+=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">`&lt;div&gt;走过</span><span style="color: #C678DD">${</span><span style="color: #E06C75">count</span><span style="color: #C678DD">}</span><span style="color: #98C379">座城&lt;/div&gt;`</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">                        }</span></span>
+<span class="line"><span style="color: #ABB2BF">                    }</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #C678DD">return</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">res</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">                }</span></span>
+<span class="line"><span style="color: #ABB2BF">            },</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #E06C75">visualMap</span><span style="color: #ABB2BF">: {</span></span>
+<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #E06C75">show</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">true</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #E06C75">seriesIndex</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">, </span><span style="color: #7F848E; font-style: italic">// 关联到省份数据系列</span></span>
+<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #E06C75">min</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #E06C75">max</span><span style="color: #ABB2BF">: </span><span style="color: #E06C75">maxCount</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">?</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">maxCount</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">:</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">, </span><span style="color: #7F848E; font-style: italic">// 处理没有数据的情况</span></span>
+<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #E06C75">inRange</span><span style="color: #ABB2BF">: {</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #E06C75">color</span><span style="color: #ABB2BF">: [</span><span style="color: #98C379">"#e6e6e6"</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">"#a7d0ed"</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">"#5ab7fb"</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">"#409de1"</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">"#398cc0"</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">"#0e76c0"</span><span style="color: #ABB2BF">]</span></span>
+<span class="line"><span style="color: #ABB2BF">                },</span></span>
+<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #E06C75">outOfRange</span><span style="color: #ABB2BF">: {</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #E06C75">color</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">'#e6e6e6'</span></span>
+<span class="line"><span style="color: #ABB2BF">                },</span></span>
+<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #7F848E; font-style: italic">// text: ['走过城市', ''],</span></span>
+<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #E06C75">left</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">'5%'</span><span style="color: #ABB2BF">, </span><span style="color: #7F848E; font-style: italic">// 距离左侧位置</span></span>
+<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #E06C75">bottom</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">'5%'</span><span style="color: #ABB2BF">, </span><span style="color: #7F848E; font-style: italic">// 距离底部位置</span></span>
+<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #E06C75">itemWidth</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">20</span><span style="color: #ABB2BF">, </span><span style="color: #7F848E; font-style: italic">// 标尺宽度</span></span>
+<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #E06C75">itemHeight</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">100</span><span style="color: #ABB2BF">, </span><span style="color: #7F848E; font-style: italic">// 标尺高度</span></span>
+<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #E06C75">calculable</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">true</span></span>
+<span class="line"><span style="color: #ABB2BF">            },</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #E06C75">geo</span><span style="color: #ABB2BF">: {</span></span>
+<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #E06C75">map</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">'china'</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #E06C75">zoom</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">1.2</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #E06C75">scaleLimit</span><span style="color: #ABB2BF">: {</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #E06C75">min</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #E06C75">max</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">8</span></span>
+<span class="line"><span style="color: #ABB2BF">                },</span></span>
+<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #E06C75">show</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">true</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #E06C75">roam</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">true</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #E06C75">emphasis</span><span style="color: #ABB2BF">: {</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #E06C75">label</span><span style="color: #ABB2BF">: {</span></span>
+<span class="line"><span style="color: #ABB2BF">                        </span><span style="color: #E06C75">show</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">false</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">                    },</span></span>
+<span class="line"><span style="color: #ABB2BF">                },</span></span>
+<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #E06C75">itemStyle</span><span style="color: #ABB2BF">: {</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #E06C75">normal</span><span style="color: #ABB2BF">: {</span></span>
+<span class="line"><span style="color: #ABB2BF">                        </span><span style="color: #E06C75">areaColor</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">'#e6e6e6'</span><span style="color: #ABB2BF">, </span><span style="color: #7F848E; font-style: italic">// 区域默认颜色</span></span>
+<span class="line"><span style="color: #ABB2BF">                        </span><span style="color: #E06C75">borderColor</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">'#171a24'</span><span style="color: #ABB2BF">, </span><span style="color: #7F848E; font-style: italic">// 边界颜色</span></span>
+<span class="line"><span style="color: #ABB2BF">                    },</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #E06C75">emphasis</span><span style="color: #ABB2BF">: {</span></span>
+<span class="line"><span style="color: #ABB2BF">                        </span><span style="color: #E06C75">areaColor</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">'#f1b03f'</span><span style="color: #ABB2BF"> </span><span style="color: #7F848E; font-style: italic">// 选中区域颜色</span></span>
+<span class="line"><span style="color: #ABB2BF">                    }</span></span>
+<span class="line"><span style="color: #ABB2BF">                }</span></span>
+<span class="line"><span style="color: #ABB2BF">            },</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #E06C75">series</span><span style="color: #ABB2BF">: [</span></span>
+<span class="line"><span style="color: #ABB2BF">                {</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #E06C75">name</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">'足迹'</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #E06C75">type</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">'effectScatter'</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #E06C75">coordinateSystem</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">'geo'</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #E06C75">data</span><span style="color: #ABB2BF">: </span><span style="color: #E06C75">pointData</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #E06C75">geoIndex</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #E06C75">showEffectOn</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">'render'</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #E06C75">hoverAnimation</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">true</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #E06C75">symbolSize</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">8</span><span style="color: #ABB2BF">, </span><span style="color: #7F848E; font-style: italic">// 点的大小</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #E06C75">itemStyle</span><span style="color: #ABB2BF">: {</span></span>
+<span class="line"><span style="color: #ABB2BF">                        </span><span style="color: #E06C75">normal</span><span style="color: #ABB2BF">: {</span></span>
+<span class="line"><span style="color: #ABB2BF">                            </span><span style="color: #E06C75">color</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">'#ffffff'</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">                            </span><span style="color: #E06C75">shadowBlur</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">10</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">                            </span><span style="color: #7F848E; font-style: italic">// shadowColor: '#0055ff'</span></span>
+<span class="line"><span style="color: #ABB2BF">                        }</span></span>
+<span class="line"><span style="color: #ABB2BF">                    },</span></span>
+<span class="line"><span style="color: #ABB2BF">                },</span></span>
+<span class="line"><span style="color: #ABB2BF">                {</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #E06C75">name</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">'省份访问次数'</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #E06C75">type</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">'map'</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #E06C75">mapType</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">'china'</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #E06C75">data</span><span style="color: #ABB2BF">: </span><span style="color: #E06C75">provinceData</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #E06C75">geoIndex</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #E06C75">showLegendSymbol</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">false</span><span style="color: #ABB2BF">, </span><span style="color: #7F848E; font-style: italic">// 隐藏图例标记</span></span>
+<span class="line"><span style="color: #ABB2BF">                }</span></span>
+<span class="line"><span style="color: #ABB2BF">            ],</span></span>
+<span class="line"><span style="color: #ABB2BF">        };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">footprintChart</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">setOption</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">option</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    })</span></span>
+<span class="line"><span style="color: #ABB2BF">    .</span><span style="color: #61AFEF">catch</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">error</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=&gt;</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">console</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">error</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'Error loading footprint data:'</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75">error</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">// 处理窗口大小变化时地图显示超出页面的问题</span></span>
+<span class="line"><span style="color: #E5C07B">window</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">addEventListener</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'resize'</span><span style="color: #ABB2BF">, </span><span style="color: #C678DD">function</span><span style="color: #ABB2BF"> () {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E5C07B">footprintChart</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">resize</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">// 添加点击事件监听，当点击足迹点时若存在 url 条目则打开链接</span></span>
+<span class="line"><span style="color: #E5C07B">footprintChart</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">on</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'click'</span><span style="color: #ABB2BF">, </span><span style="color: #C678DD">function</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">params</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (</span><span style="color: #E5C07B">params</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">seriesType</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">===</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'effectScatter'</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&amp;&amp;</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">params</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">data</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&amp;&amp;</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">params</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">data</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">url</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">window</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">open</span><span style="color: #ABB2BF">(</span><span style="color: #E5C07B">params</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">data</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">url</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'_blank'</span><span style="color: #ABB2BF">); </span><span style="color: #7F848E; font-style: italic">// 在新窗口打开链接</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">// 添加双击事件监听，恢复初始放大倍率和位置</span></span>
+<span class="line"><span style="color: #E5C07B">footprintChart</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getZr</span><span style="color: #ABB2BF">().</span><span style="color: #61AFEF">on</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'dblclick'</span><span style="color: #ABB2BF">, </span><span style="color: #C678DD">function</span><span style="color: #ABB2BF">() {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E5C07B">footprintChart</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">setOption</span><span style="color: #ABB2BF">({</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">geo</span><span style="color: #ABB2BF">: {</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #E06C75">zoom</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">1.2</span><span style="color: #ABB2BF">, </span><span style="color: #7F848E; font-style: italic">// 恢复初始放大倍率</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #E06C75">center</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">null</span><span style="color: #ABB2BF"> </span><span style="color: #7F848E; font-style: italic">// 恢复初始位置</span></span>
+<span class="line"><span style="color: #ABB2BF">        },</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">visualMap</span><span style="color: #ABB2BF">: {</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #E06C75">range</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">null</span><span style="color: #ABB2BF"> </span><span style="color: #7F848E; font-style: italic">// 恢复初始选择范围</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">    });</span></span>
+<span class="line"><span style="color: #ABB2BF">});</span></span></code></pre></div></div></figure>
+<p>代码中的注释已经非常清晰了，这里挑重点再解释一二：</p>
+<ol type="1">
+<li>我将旅行足迹的数据存放在了 <code>source/json/footprint.json</code>
+文件中，数据格式见下文，其中 <code>name</code>
+表示城市名称，<code>province</code> 表示省份名称，<code>value</code>
+是一个包含经纬度的数组，这三者是必须存在的字段。</li>
+<li>在 <code>getProvinceData()</code> 函数中，<code>provinceList</code>
+包含了所有省份的名称，这需要与此前引入的地图配置文件（即前面的<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/npm/echarts/map/js/china.js">china.js</a>）中的省份名称一一对应。</li>
+<li>在成功加载数据后，我们会调用
+<code>footprintChart.setOption(option)</code> 来渲染地图，其中
+<code>option</code> 是我们为图表定义的配置项，包括标题
+<code>title</code>、提示框 <code>tooltip</code>、视觉映射
+<code>visualMap</code>（用于将一个省份中去过的城市数量映射成不同颜色）、地理坐标系
+<code>geo</code> 和系列 <code>series</code> 等信息。注意地理坐标系中的
+<code>map</code> 属性需要与引入的地图文件名一致。<code>series</code>
+作为一个列表，其中两项分别对应足迹点和省份访问次数。</li>
+<li>为了解决窗口大小变化时地图显示超出页面的问题，我通过监听
+<code>resize</code> 事件来调用 <code>footprintChart.resize()</code>
+方法，确保地图能够自适应容器大小。</li>
+<li>为了提升用户体验，我还添加了一些交互功能，比如点击足迹点时打开对应的链接、双击地图时恢复初始位置、缩放比例和选择范围等。</li>
+</ol>
+<h2 id="创建足迹数据">创建足迹数据</h2>
+<p>正如前文所述，我将足迹数据存放在了
+<code>source/json/footprint.json</code> 文件中，数据格式如下：</p>
+<ul>
+<li><code>name</code> ：城市名称，字符串，必须</li>
+<li><code>province</code> ：省份名称，字符串， 必须</li>
+<li><code>value</code> ：包含经纬度的数组，必须</li>
+<li><code>description</code> ：描述，字符串，选填</li>
+<li><code>url</code> ：相关链接，字符串，在有描述的基础上进一步选填</li>
+<li><code>symbol</code> ：足迹点图标路径，字符串，选填</li>
+<li><code>symbolSize</code> ：足迹点图标大小，数字，选填</li>
+</ul>
+<p>举个例子：</p>
+<figure class="shiki json"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">[</span></span>
+<span class="line"><span style="color: #ABB2BF">    {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">"name"</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">"上海"</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">"province"</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">"上海"</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">"value"</span><span style="color: #ABB2BF">: [</span><span style="color: #D19A66">121.473701</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">31.230416</span><span style="color: #ABB2BF">],</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">"description"</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">"饮水思源，爱国荣校。 —— 上海交通大学"</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">"symbol"</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">"image:// data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAATrAAAE6wHYKlsNAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAABmtJREFUeJztnVuIlVUUx39rHM3ULqDSxQummWOQRWqYJb2EFZqXp0roQlAYmKSl40NGL120pJSgXksoEnWUbhRRUUkimnQjDUwbTcuUamLK++phn3OayOHMOWetvb/Pvh+cFznzX/tbf/f+zrf25RNVpSAdTakb8H+nMCAxhQGJKQxITGFAYgoDElMYkJjm1A2oikgzMB64HmgBxgBDgfOBAYACncBvwD5gJ7AD+BTYhuqJBK3uMZLJBzGRPsA04E7gRuCcOpU6gPeB1cDbqB6zaaAd2TJAZBDwEDAXGGisfhh4EViJ6iFj7brJhgEi/YGlwDygv3O0TmAV8ASqnc6xqpLeAJFZhIQMixy5HZiP6sbIcf9FOgNE+gLLgPlpGlBhNTAX1T9TBE9jgMhQ4E3gyvjBT8t2YDqq+2MHjm+AyCjgXWBU3MBV+QG4CdWdMYPGNUCkBfgYGBwvaE0cBKag+l2sgPEMEBlCeDgaESdg3ewDJqO6N0awOAaEG+5msjPmV+NzgglHvQPFqgWtJD/JB7gaWBEjkH8PEJkNrPcN4sYMVN/wDOBrgEg/4BuyP+53RztwuecTs/cQtJT8Jh9gOLDEM4BfDxAZCOwhlIzzTCcwwquA59kDFpD/5EMoDj7oJe7TA0I9fz/2JeVUHAKGeMwnePWA6fgk/xjwOjCHMDs2oPRpKf3bmtJ3rBkE3OKgC6pq/4H1Cmr8WaswsgexRznFX+ORK4/kNyv8bnjhJxQerqMdixROGrbjV4VeeTBgkvH/vNqT/09bFhu3ZYJ1vjzuAdcZaq1Dtf6SgOpyYINdc5hiqAX43ITHGukcA1oNdBZid2NuMdKp4GHAZUY6bajualhFdTdgNe87xkingocBVpPrlpPlVlrDjXQqeBhwrpHOViMdS616F4h1i4cBVuWHA0Y6AD8a6eTCAHHQbBSr6zTPl4cBVutrLjbSsdQynxfwMOCwkc4EIx2AiUY65iVpDwPajXRmGukAzDDSMV8p4WHADiOdWaVFXI0hMho7M62urYKHAVuMdPoAzzSkICLAs0BviwZhd20VsmwAwGxEFjXw963YDT/gYIBHNbRJocOwAnlSYXGNbRCFVuNydIdCU/aroaqngE2Gik3AMkTaELm06rfDmN8GPI1tD99UujZTvDbpbQBuNtacBUxDZAOhtrONsI4TQv1pPOFmOxO7Mb8rbQ6abpPyFxAe/3vZiyfhFGFS/idrYZ9JedWfgc9ctNOwySP54LsuaJ2jdmzcrsV7Zdw+oK9PgGgcBYah+ouHuF8PUD0MrHXTj8car+SD/+Lcl5z1Y+B6DTH2B2wHrvIN4saXqLpuLImxQ2ZVhBhePOcdIEYP6E04weQS30DmtAOjcT7gw78HqB6n0apmGp7yTj7E2yV5FrALGOIfzIQDwEhUj3gHirNLMmz3XBYllg1Pxkg+xN2o3ZuwYW90nIB18z0wNsbwAzHPjAv3gkejxauf1ljJh/hnRQjhuILJ8YLWxBZgEhGTEvfUxHBhS4CIrvcYBR6JmXxIcWyl6ifAa9HjVufVUtuikurApgsJSzzOix/8tHQQbrzRD2xKc3BrmNx4PEns0/NYiuRD2jPjmgnzuuPSNKDCF8AEEh3wmu7o4nDB9wEnk7UhzPU+kCr5kPrsaNUtwPMJW7AC1aRz11k4N/RswjAQ+wl5N3AFiQ9vTX96uupfwP3EfTZQ4N7UyYcsGACg+hFxh6LnSjGTk34IKhNK1pvxn778GpgYq9pZjewYACAylrCjsZ9ThCPANah+5aRfM9kYgsqofgs0shy9GguzlHzIWg8oI7IR23X9AO8A02IX26qRVQMGE36aXmSkeBAYV1qzmimyNQSVCSvR7sHmp2n5J2fmkg9ZNQBA9T1guYHSclTfMtBxIZtDUBmRJsLYPbVOhQ+BqSlrPdXItgFQXmW9ldoPgN0LjPdcWGtBdoegMmGV9W2EZeI95ThwR9aTD3kwAMpV0wU1/MV8VC03CrqR/SGoKyIvA3dV+dYrqN4dozkW5M2AvsAHwLXdfGMrcAOJ3ohUD/kyAMpv29vMf18CtIewpieTv/e7Ix/3gK6EU8xvJby8s8wfhJct5Cr5kEcDoFy0ux04QZhTnpO1IltPyd8Q1BWReQCovpC4JXWTbwPOAPI5BJ1BFAYkpjAgMYUBiSkMSExhQGIKAxLzN9ndr0I69qmIAAAAAElFTkSuQmCC"</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">"symbolSize"</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">15</span></span>
+<span class="line"><span style="color: #ABB2BF">    },</span></span>
+<span class="line"><span style="color: #ABB2BF">]</span></span></code></pre></div></div></figure>
+<p>其中足迹点图标使用了 Base64 编码的 PNG
+图片，具体内容可以根据需要进行替换。（注意需要加上 <code>image://</code>
+前缀）</p>
+<h1 id="总结">总结</h1>
+<p>通过以上步骤，我们成功地在 Hexo
+博客中添加了一个旅行足迹地图，具体的显示效果见下方，你可以使用鼠标滚轮放大、左键拖拽以及双击回正。</p>
+<div id="footprint" style="width: 100%; max-width: 100%; height: 450px;">
+
+</div>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/map/js/china.js"></script>
+<script type="text/javascript" src="/js/Footprint.js"></script>
+<p>我们步履所至，不再是你我独有的记忆，而是可以与世界分享的故事。摊开那些被脚步丈量过的时光，细数旧日里酸甜苦辣的回忆，这就是实现这个地图的意义所在！</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Hexo-Blog-Building/" class="category-chain-item">Hexo Blog Building</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Hexo/" class="print-no-link">#Hexo</a>
+      
+        <a href="/tags/Fluid/" class="print-no-link">#Fluid</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Hexo博客添加旅行足迹地图</div>
+      <div>https://youyeyejie.github.io/_posts/Hexo博客添加旅行足迹地图/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>youyeyejie</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年8月25日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2025年8月25日</div>
+        </div>
+      
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/_posts/%E5%8D%8A%E5%9F%8E%E7%83%9F%E7%81%AB%E5%8D%8A%E5%9F%8E%E4%BB%99/" title="半城烟火半城仙">
+                        <span class="hidden-mobile">半城烟火半城仙</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments">
+      
+    <div id="giscus" class="giscus"></div>
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#giscus', function() {
+        var options = {"repo":"youyeyejie/youyeyejie.github.io","repo-id":"R_kgDOO-Uo1g","category":"General","category-id":"DIC_kwDOO-Uo1s4Crz5J","theme-light":"light","theme-dark":"dark","mapping":"pathname","reactions-enabled":1,"emit-metadata":0,"input-position":"top","lang":"zh-CN"};
+        var attributes = {};
+        for (let option in options) {
+          if (!option.startsWith('theme-')) {
+            var key = option.startsWith('data-') ? option : 'data-' + option;
+            attributes[key] = options[option];
+          }
+        }
+        var light = 'light';
+        var dark = 'dark';
+        window.GiscusThemeLight = light;
+        window.GiscusThemeDark = dark;
+        attributes['data-theme'] = document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ? dark : light;
+        for (let attribute in attributes) {
+          var value = attributes[attribute];
+          if (value === undefined || value === null || value === '') {
+            delete attributes[attribute];
+          }
+        }
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://giscus.app/client.js');
+        s.setAttribute('crossorigin', 'anonymous');
+        for (let attribute in attributes) {
+          s.setAttribute(attribute, attributes[attribute]);
+        }
+        var ss = document.getElementsByTagName('script');
+        var e = ss.length > 0 ? ss[ss.length - 1] : document.head || document.documentElement;
+        e.parentNode.insertBefore(s, e.nextSibling);
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+  
+  
+</div>
+<div class="footer-inner">
+    <div class="powered-by">
+        <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+        <i class="iconfont icon-love"></i>
+        <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+        <i class="iconfont icon-love"></i>
+        <a href="https://eu.umami.is/share/1fs3cnD9TAP8JzML/youyeyejie.github.io" target="_blank" rel="nofollow noopener"><span>Umami</span></a>
+    </div>
+    <div class="hitokoto">
+        <i class="fas fa-quote-left"></i>
+        <a target="_blank" rel="noopener" href="https://developer.hitokoto.cn/" id="hitokoto_text"><span id="hitokoto">且以群词 注解我这座荒山</span></a>
+        <script src="/js/Hitokoto.js" defer></script>
+    </div>
+    <div class="data">
+        <span class="total-word-container">
+            <i class="fas fa-chart-bar"></i>
+            <span id="g-total-word-id"></span>
+            字汇长河
+        </span>
+        &nbsp;
+        <span id="total-posts-container">
+            <i class="fas fa-file-alt"></i>
+            <span id="g-total-posts-id"></span>
+            文舟靠岸
+        </span>
+        &nbsp;
+        <span id="busuanzi_container_site_pv">
+            <i class="fas fa-eye"></i>
+            <span id="busuanzi_value_site_pv">1314</span>
+            目光所及
+        </span>
+        &nbsp;
+        <span id="busuanzi_container_site_uv">
+            <i class="fas fa-user-friends"></i>
+            <span id="busuanzi_value_site_uv">520</span>
+            访客驻足
+        </span>
+    </div>
+    <div class="duration">
+        <i class="fas fa-calendar"></i>
+        <span id="duration-container">人生缓缓&nbsp;自有答案</span>
+        <script src="/js/Duration.js"></script>
+    </div>
+</div>
+
+<link href="/css/Footer.css" type="text/css" rel="stylesheet"/>
+<script>
+    document.querySelectorAll("[id^='busuanzi_value_']").forEach(element => {
+        element.id = element.id.replace("busuanzi_value_", "vercount_value_");
+    });
+</script>
+<script defer src="https://events.vercount.one/js"></script>
+<!-- <script src="https://npm.elemecdn.com/penndu@1.0.0/bsz.js" defer></script> -->
+<!-- <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script> -->
+<!-- <script async src="https://busuanzi.icodeq.com/busuanzi.pure.mini.js"></script> -->
+<!-- <script async src="https://busuanzi.sukap.cn/busuanzi.pure.mini.js"></script> -->
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    
+      <script  src="/js/img-lazyload.js" ></script>
+    
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="/js/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="/js/DynamicLine.js"></script>
+<script src="/js/LinkCard.js"></script>
+<script src="/js/RandomBanner.js"></script>
+<script src="/js/ScrollAnimation.js"></script>
+<script src="/js/Sidebar.js"></script>
+<script src="/js/TabDisplay.js"></script>
+<script src="/js/Umami.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  <script type="text/javascript">
+  document.getElementById("g-total-word-id").innerHTML = "354k";
+  document.getElementById('g-total-posts-id').textContent ="45";
+</script>
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start -->
+<script src="https://cdn.jsdelivr.net/npm/hexo-shiki-plugin@latest/lib/codeblock.js"></script>
+
+  <script>
+  const CODE_CONFIG = {
+    beautify: true,
+    highlightCopy: true,
+    highlightLang: true,
+    highlightHeightLimit: 360,
+    isHighlightShrink: false,
+    copy: {
+      success: 'Copy Success',
+      error: 'Copy Error',
+      noSupport: 'Browser Not Support',
+    }
+  };
+  console.log(
+    `%c hexo-shiki-plugin %c v1.0.27 %c https://github.com/nova1751/hexo-shiki-plugin`,
+    "color: #fff; background: #5f5f5f",
+    "color: #fff; background: #80c8f8",
+    ""
+  );
+  </script>
+  <!-- hexo injector body_end end --></body>
+</html>
