@@ -80,6 +80,7 @@ def main():
             print(f"提示：目录 {posts_dir} 下没有 Markdown 文件。")
             return
         print("请选择一个 Markdown 文件：")
+        md_files.sort(key=lambda f: os.path.getmtime(os.path.join(posts_dir, f)))
         for idx, fname in enumerate(md_files, 1):
             print(f"{idx}. {fname}")
         try:
