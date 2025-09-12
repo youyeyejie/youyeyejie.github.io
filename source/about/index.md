@@ -8,10 +8,10 @@ layout: "about"
 ## About Me
 
 ```bash
+YYYJ@youyeyejie: ~$ cd Blog
 YYYJ@youyeyejie: ~/Blog$ cat AboutMe.md
 
 Hi, here is
-
 ██╗   ██╗ ██████╗ ██╗   ██╗██╗   ██╗███████╗██╗   ██╗███████╗     ██╗██╗███████╗
 ╚██╗ ██╔╝██╔═══██╗██║   ██║╚██╗ ██╔╝██╔════╝╚██╗ ██╔╝██╔════╝     ██║██║██╔════╝
  ╚████╔╝ ██║   ██║██║   ██║ ╚████╔╝ █████╗   ╚████╔╝ █████╗       ██║██║█████╗  
@@ -22,8 +22,19 @@ Hi, here is
 - Shanghai Jiao Tong University
 - School of Computer Science
 - Major in Information Security
-- New to the Hexo blog
+- Welcome to my blog！
 ```
+
+<script>
+const codeContainers = document.querySelectorAll('.line');
+const targetFonts = '"Courier New", Consolas, "Fira Code", "Fira Mono", Menlo, "DejaVu Sans Mono", monospace, 宋体';
+codeContainers.forEach(container => {
+  container.style.fontFamily = targetFonts;
+  container.querySelectorAll('*').forEach(child => {
+    child.style.fontFamily = targetFonts;
+  });
+});
+</script>
 
 ## Github Contributions
 <img src="https://ghchart.rshah.org/0d6aae/youyeyejie" style="width: 100%; max-width: 100%"/>
