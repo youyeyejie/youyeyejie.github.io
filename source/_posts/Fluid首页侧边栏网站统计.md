@@ -169,6 +169,9 @@ if (document.querySelector('meta[property="og:url"][content="https://youyeyejie.
     margin: 15px 0 15px 0;
     font-size: 0.95rem;
 }
+.sidebar-element:hover {
+    color: #83aecc;
+}
 ```
 
 ## 在配置文件中引入

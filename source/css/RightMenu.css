@@ -69,6 +69,10 @@ ul.list-v.rightmenu a.vlts-menu {
     line-height: 36px;
     font-weight: normal;
     margin-left: 10px;
+    transition: all 0.4s ease;
+}
+ul.list-v.rightmenu a.vlts-menu:hover {
+    padding-left: 30px;
 }
 .rightmenu-icon{
 	margin: 0 110px 0 8px;
