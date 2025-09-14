@@ -34,7 +34,8 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render:
+skip_render: 
+  - 'original/*.html' # do not render files in source/original folder
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -103,7 +104,9 @@ pagination_dir: page
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
 include:
-  - "_posts/*/*"
+  - "_posts/*/*" # include all files in subfolders of _posts
+  - ".well-known/*" # include .well-known folder for verification
+  - ".nojekyll" # include .nojekyll file to bypass GitHub Pages Jekyll processing
 exclude:
 ignore:
 

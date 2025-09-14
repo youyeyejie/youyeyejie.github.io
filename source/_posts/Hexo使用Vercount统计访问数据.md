@@ -44,30 +44,43 @@ Vercount 初始化自动同步所有不蒜子的数据，兼容不蒜子的 span
 
 如果你希望更进一步，自定义访客数据，或者和我一样由于在 Busuanzi 服务瘫痪时切换到 Vercount，未能成功同步原有的数据，那么你可以参考下面的步骤来进行配置。
 
-首先，你需要在 [Vercount仪表盘](https://www.vercount.one/dashboard) 中关联你的站点。如果你和我一样，使用 Github Pages 站点托管服务，那么可以选择第二种认证方式——"File Upload"，在站点根目录下创建一个验证文件。为了避免每次部署都需要手动上传验证文件，你可以在 `scripts/` 目录下创建一个脚本，自动上传验证文件。
+首先，你需要在 [Vercount仪表盘](https://www.vercount.one/dashboard) 中关联你的站点。如果你和我一样，使用 Github Pages 站点托管服务，那么可以选择第二种认证方式——"File Upload"，在站点根目录下创建一个验证文件。为了避免每次部署都需要手动上传验证文件，这里有两种方法可以实现：
 
-```javascript
-const fs = require('fs');
-const path = require('path');
 
-const content = '<your-vercount-verify-content>'; // 替换为你的 Vercount 验证码
-const filePath1 = path.join(__dirname, '../.deploy_git/.well-known/<your-vercount-verify-filename>'); // 替换为你的 Vercount 验证文件名
-const filePath2 = path.join(__dirname, '../.deploy_git/.nojekyll');
+1. 你可以在 `scripts/` 目录下创建一个脚本，自动上传验证文件。
 
-fs.mkdirSync(path.dirname(filePath1), { recursive: true });
-fs.writeFileSync(filePath1, content);
+    ```javascript
+    const fs = require('fs');
+    const path = require('path');
 
-fs.writeFileSync(filePath2, '');
-```
+    const content = '<your-vercount-verify-content>'; // 替换为你的 Vercount 验证码
+    const filePath1 = path.join(__dirname, '../.deploy_git/.well-known/<your-vercount-verify-filename>'); // 替换为你的 Vercount 验证文件名
+    const filePath2 = path.join(__dirname, '../.deploy_git/.nojekyll');
 
-其中
+    fs.mkdirSync(path.dirname(filePath1), { recursive: true });
+    fs.writeFileSync(filePath1, content);
 
-- \<your-vercount-verify-content\> 形如 `vercount-domain-verify=<your-domain>,<verify-code>`
-- \<your-vercount-verify-filename\> 形如 `vercount-verify-<something else>.txt`。
+    fs.writeFileSync(filePath2, '');
+    ```
 
-你可以在 Vercount 仪表盘中找到相应的验证信息。
+    其中
 
-由于 Github Pages 默认启用了 Jekyll，屏蔽了以 `.` 开头的目录和文件，因此需要在站点根目录下创建一个 `.nojekyll` 文件来禁用 Jekyll 的处理，脚本中也已经实现。
+    - \<your-vercount-verify-content\> 形如 `vercount-domain-verify=<your-domain>,<verify-code>`
+    - \<your-vercount-verify-filename\> 形如 `vercount-verify-<something else>.txt`。
+
+    你可以在 Vercount 仪表盘中找到相应的验证信息。
+
+    由于 Github Pages 默认启用了 Jekyll，屏蔽了以 `.` 开头的目录和文件，因此需要在站点根目录下创建一个 `.nojekyll` 文件来禁用 Jekyll 的处理，脚本中也已经实现。
+
+2. 你也可以在 Hexo 的 `_config.yml` 文件中添加如下配置：
+
+    ```yaml
+    include:
+      - ".well-known/**"
+      - ".nojekyll"
+    ```
+
+    并在 `source/` 目录下创建 `.well-known/` 目录，并在其中添加验证文件，同时在 `source/` 目录下添加 `.nojekyll` 文件。
 
 ## Vercount 与 Busuanzi 的数据对比
 

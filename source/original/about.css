@@ -1,0 +1,242 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    /* 确保html和body占满视口高度 */
+}
+
+body {
+    font-family: 'Noto Sans SC', sans-serif;
+    color: #333;
+    line-height: 1.7;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    position: relative;
+    padding-top: calc(30vh + 2rem);
+    /* 为顶部Banner留出30%视口高度+额外间距 */
+}
+
+/* 顶部Banner作为固定背景，占视口高度60% */
+.banner-container {
+    position: fixed;
+    /* 固定在顶部 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 66vh;
+    /* 占视口高度的66% */
+    z-index: -1;
+    /* 置于内容下方 */
+    overflow: hidden;
+}
+
+.banner {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 保持比例填充容器 */
+}
+
+
+/* 内容容器 - 增加白色背景提高可读性 */
+.content-wrapper {
+    background-color: rgba(255, 255, 255, 0.92);
+    border-radius: 8px; 
+    padding: 2.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 90%; /* 占据页面90%宽度 */
+    margin: 0 auto; /* 居中 */
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    border: 4px solid #fff;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease;
+    /* 添加过渡效果 */
+}
+
+.avatar:hover {
+    transform: scale(1.1);
+    /* 鼠标悬浮时放大1.1倍 */
+}
+
+.title {
+    text-align: center;
+    font-size: 2.1rem;
+    color: #2d3748;
+    margin: 1rem 0 0.3rem 0;
+    font-weight: 700;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #4a5568;
+    margin-bottom: 0.6rem;
+    font-weight: 500;
+}
+
+h1 {
+    font-size: 1.5rem;
+    color: #2d3748;
+    margin: 1rem;
+    font-weight: 700;
+}
+
+hr {
+    color: #718096;
+    margin: 1rem;
+}
+
+h2 {
+    font-size: 1.3rem;
+    color: #718096;
+    margin: 1rem;
+    font-weight: 600;
+}
+
+p {
+    text-indent: 2em;
+    /* 首行缩进两个字符 */
+    font-size: 1rem;
+    margin: 0.6rem 2rem 0cm 2rem;
+}
+
+a {
+    color: #4299e1;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* 列表 */
+.info-list {
+    list-style: none;
+    margin: 0.6rem 2rem 1.2rem 2rem;
+}
+
+.info-list li {
+    font-size: 1.02rem;
+    padding-left: 1.4rem;
+    position: relative;
+}
+
+.info-list li::before {
+    content: "•";
+    color: #4299e1;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 1.1rem;
+}
+
+.contrib-chart {
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    height: auto;
+}
+
+/* 底部信息 */
+.footer-info {
+    margin-top: 3.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+    color: #868e96;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.footer-info p {
+    margin: 0.3rem 0;
+}
+
+.course-table {
+    width: 90%;
+    border-collapse: collapse;
+    display: block;
+    margin: 20px auto;
+}
+
+.course-table caption {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+.course-table th.left,
+.course-table td.left {
+    width: 3%;
+}
+
+.course-table th,
+.course-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+    width: calc((90% - 3%) / 5);
+}
+
+.course-table th {
+    background-color: #f2f2f2;
+}
+
+.course {
+    background-color: #e6f2ff;
+}
+
+
+.form-group {
+    margin: 0.6rem 2rem 0cm 2rem;
+    text-align: center;
+}
+label {
+    display: inline-block;
+    width: 60px;
+}
+input[type="text"] {
+    width: 120px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin: 0 20px 0 0;
+}
+input[type="radio"] {
+    margin-right: 0 -10px 0 0;
+}
+button {
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 0 0 0 20px;
+}
+button:hover {
+    background-color: #45a049;
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+    body {
+        padding-top: calc(70vh + 1.5rem);
+        /* 移动端Banner稍矮 */
+    }
+}
