@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/_posts/Hexo%E4%BD%BF%E7%94%A8Vercount%E7%BB%9F%E8%AE%A1%E8%AE%BF%E9%97%AE%E6%95%B0%E6%8D%AE/image.webp">
 <meta property="article:published_time" content="2025-07-20T04:19:01.000Z">
-<meta property="article:modified_time" content="2025-08-11T05:03:06.666Z">
+<meta property="article:modified_time" content="2025-09-14T05:37:04.608Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Fluid">
@@ -426,7 +426,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          972 字
+          1k 字
         
       </span>
     
@@ -653,9 +653,11 @@ Vercount，未能成功同步原有的数据，那么你可以参考下面的步
 <p>首先，你需要在 <a target="_blank" rel="noopener" href="https://www.vercount.one/dashboard">Vercount仪表盘</a>
 中关联你的站点。如果你和我一样，使用 Github Pages
 站点托管服务，那么可以选择第二种认证方式——“File
-Upload”，在站点根目录下创建一个验证文件。为了避免每次部署都需要手动上传验证文件，你可以在
-<code>scripts/</code> 目录下创建一个脚本，自动上传验证文件。</p>
-<figure class="shiki javascript"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">fs</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">require</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'fs'</span><span style="color: #ABB2BF">);</span></span>
+Upload”，在站点根目录下创建一个验证文件。为了避免每次部署都需要手动上传验证文件，这里有两种方法可以实现：</p>
+<ol type="1">
+<li><p>你可以在 <code>scripts/</code>
+目录下创建一个脚本，自动上传验证文件。</p>
+<p></p><figure class="shiki javascript"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">fs</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">require</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'fs'</span><span style="color: #ABB2BF">);</span></span>
 <span class="line"><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">path</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">require</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'path'</span><span style="color: #ABB2BF">);</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">content</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'&lt;your-vercount-verify-content&gt;'</span><span style="color: #ABB2BF">; </span><span style="color: #7F848E; font-style: italic">// 替换为你的 Vercount 验证码</span></span>
@@ -665,7 +667,7 @@ Upload”，在站点根目录下创建一个验证文件。为了避免每次�
 <span class="line"><span style="color: #E5C07B">fs</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">mkdirSync</span><span style="color: #ABB2BF">(</span><span style="color: #E5C07B">path</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">dirname</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">filePath1</span><span style="color: #ABB2BF">), { </span><span style="color: #E06C75">recursive</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">true</span><span style="color: #ABB2BF"> });</span></span>
 <span class="line"><span style="color: #E5C07B">fs</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">writeFileSync</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">filePath1</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75">content</span><span style="color: #ABB2BF">);</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #E5C07B">fs</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">writeFileSync</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">filePath2</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">''</span><span style="color: #ABB2BF">);</span></span></code></pre></div></div></figure>
+<span class="line"><span style="color: #E5C07B">fs</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">writeFileSync</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">filePath2</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">''</span><span style="color: #ABB2BF">);</span></span></code></pre></div></div></figure><p></p>
 <p>其中</p>
 <ul>
 <li>&lt;your-vercount-verify-content&gt; 形如
@@ -676,7 +678,16 @@ Upload”，在站点根目录下创建一个验证文件。为了避免每次�
 <p>你可以在 Vercount 仪表盘中找到相应的验证信息。</p>
 <p>由于 Github Pages 默认启用了 Jekyll，屏蔽了以 <code>.</code>
 开头的目录和文件，因此需要在站点根目录下创建一个 <code>.nojekyll</code>
-文件来禁用 Jekyll 的处理，脚本中也已经实现。</p>
+文件来禁用 Jekyll 的处理，脚本中也已经实现。</p></li>
+<li><p>你也可以在 Hexo 的 <code>_config.yml</code>
+文件中添加如下配置：</p>
+<p></p><figure class="shiki yaml"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #E06C75">include</span><span style="color: #ABB2BF">:</span></span>
+<span class="line"><span style="color: #ABB2BF">  - </span><span style="color: #98C379">".well-known/**"</span></span>
+<span class="line"><span style="color: #ABB2BF">  - </span><span style="color: #98C379">".nojekyll"</span></span></code></pre></div></div></figure><p></p>
+<p>并在 <code>source/</code> 目录下创建 <code>.well-known/</code>
+目录，并在其中添加验证文件，同时在 <code>source/</code> 目录下添加
+<code>.nojekyll</code> 文件。</p></li>
+</ol>
 <h2 id="vercount-与-busuanzi-的数据对比">Vercount 与 Busuanzi
 的数据对比</h2>
 <table style="text-align: center; width: 100%;">
@@ -822,7 +833,7 @@ Busuanzi 的 API。因此，每次访问一个页面，Busuanzi
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年8月11日</div>
+          <div>2025年9月14日</div>
         </div>
       
       
@@ -1208,7 +1219,7 @@ Busuanzi 的 API。因此，每次访问一个页面，Busuanzi
 
 
   <script type="text/javascript">
-  document.getElementById("g-total-word-id").innerHTML = "366k";
+  document.getElementById("g-total-word-id").innerHTML = "367k";
   document.getElementById('g-total-posts-id').textContent ="46";
 </script>
 
