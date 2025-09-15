@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="icon" href="/img/avatar/avatar2.webp">
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="todolist.css">
+    <script src="todolist.js" defer></script>
+</head>
+<body>
+    <!-- 主容器 -->
+    <div class="container">
+        <header>
+            <h1>Todo List</h1>
+            <p>By youyeyejie</p>
+        </header>
+        
+        <!-- 添加任务区域 -->
+        <div class="add-task-container">
+            <form id="add-task-form">
+                <input 
+                    type="text" 
+                    id="task-input" 
+                    placeholder="Enter your task here" 
+                    autocomplete="off"
+                >
+                <button type="submit">
+                    <i class="fa fa-plus"></i>
+                    <span>Add task</span>
+                </button>
+            </form>
+        </div>
+        
+        <!-- 颜色筛选区域 -->
+        <div class="color-filter">
+            <div class="filter-buttons">
+                <button data-filter="all" class="filter-btn filter-active"></button>
+                <button data-filter="red" class="filter-btn"></button>
+                <button data-filter="orange" class="filter-btn"></button>
+                <button data-filter="yellow" class="filter-btn"></button>
+                <button data-filter="green" class="filter-btn"></button>
+                <button data-filter="cyan" class="filter-btn"></button>
+                <button data-filter="blue" class="filter-btn"></button>
+                <button data-filter="purple" class="filter-btn"></button>
+                <button data-filter="white" class="filter-btn"></button>
+            </div>
+        </div>
+        
+        <!-- 任务列表区域 -->
+        <div class="task-list-container">
+            <div id="empty-state">
+                <p>No tasks available. Add a task to get started!</p>
+            </div>
+            
+            <ul id="task-list">
+                <!-- 任务项将通过JavaScript动态添加 -->
+            </ul>
+        </div>
+        
+        <!-- 任务统计 -->
+        <div class="task-stats">
+            <button id="clear-completed" style="display: none;">
+                Clear Completed Tasks
+            </button>
+            <button id="clear-all" style="display: none;">
+                Clear All Tasks
+            </button>
+        </div>
+    </div>
+
+    <!-- 页脚信息 -->
+    <div class="footer-info">
+        <p>&#174; YOUYEYEJIE &nbsp; | &nbsp; SJTU NIS3368</p>
+    </div>
+</body>
+</html>
