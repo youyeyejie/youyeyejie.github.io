@@ -168,6 +168,7 @@ if (document.querySelector('meta[property="og:url"][content="https://youyeyejie.
     justify-content: space-between;
     margin: 15px 0 15px 0;
     font-size: 0.95rem;
+    cursor: default;
 }
 .sidebar-element:hover {
     color: #83aecc;
