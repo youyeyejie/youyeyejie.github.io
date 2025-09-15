@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Noto Sans SC', sans-serif;
 }
 
 html,
@@ -12,7 +13,6 @@ body {
 }
 
 body {
-    font-family: 'Noto Sans SC', sans-serif;
     color: #333;
     line-height: 1.7;
     max-width: 1000px;
@@ -52,6 +52,8 @@ body {
     padding: 2.5rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     width: 90%; /* 占据页面90%宽度 */
+    top: 10vh;
+    position: relative;
     margin: 0 auto; /* 居中 */
 }
 
@@ -220,7 +222,7 @@ input[type="text"] {
 input[type="radio"] {
     margin-right: 0 -10px 0 0;
 }
-button {
+input[type="submit"] {
     padding: 8px 15px;
     background-color: #4CAF50;
     color: white;
@@ -229,7 +231,7 @@ button {
     cursor: pointer;
     margin: 0 0 0 20px;
 }
-button:hover {
+input[type="submit"]:hover {
     background-color: #45a049;
 }
 
@@ -238,5 +240,9 @@ button:hover {
     body {
         padding-top: calc(70vh + 1.5rem);
         /* 移动端Banner稍矮 */
+    }
+    .content-wrapper {
+        top: -30vh;
+        position: relative;
     }
 }
