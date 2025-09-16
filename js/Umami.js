@@ -4,7 +4,7 @@ function umamiTrackEvent() {
         navbar_brand.dataset.umamiEvent = "Homepage";
     }
 
-    const navLinks = document.querySelectorAll('.nav-link');
+    const navLinks = document.querySelectorAll('.nav-link, .dropdown-item');
     navLinks.forEach(link => {
         if (link.pathname === '/') {
             link.dataset.umamiEvent = "Homepage";
