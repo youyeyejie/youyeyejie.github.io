@@ -396,13 +396,24 @@ navbar:
   # Navigation bar menu. `key` is used to associate languages/*.yml. If there is no association, the value of `key` itself will be displayed; if `icon` is a css class, it can be omitted; adding `name` can force the display of the specified name
   menu:
     - { key: "home", link: "/", icon: "iconfont icon-home-fill" }
-    - { key: "archive", link: "/archives/", icon: "iconfont icon-archive-fill" }
     - { key: "category", link: "/categories/", icon: "iconfont icon-category-fill"}
-    - { key: "tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
-    - { key: "gallery", link: "/categories/DayDream-Gallery/", icon: "fas fa-images", name: "图集" }
+    # - { key: "archive", link: "/archives/", icon: "iconfont icon-archive-fill" }
+    # - { key: "tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
+    # - { key: "gallery", link: "/categories/DayDream-Gallery/", icon: "fas fa-images", name: "图集" }
+    # - { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
     - { key: "about", link: "/about/", icon: "iconfont icon-user-fill" }
     - { key: "travelling", link: "https://www.travellings.cn/go-by-clouds.html", icon: "fas fa-train-subway", name: "开往" }
-    #- { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
+    - {
+      key: 'more',
+      name: '更多',
+      icon: 'fa-solid fa-folder-open',
+      submenu: [
+        { key: "archive", link: "/archives/", icon: "iconfont icon-archive-fill" },
+        { key: "tag", link: "/tags/", icon: "fa-solid fa-tags" },
+        { key: "links", link: "/links/", icon: "iconfont icon-link-fill" },
+        { key: "gallery", link: "/categories/DayDream-Gallery/", icon: "fas fa-images", name: "图集" }
+      ]
+    }
 
 # 搜索功能，基于 hexo-generator-search 插件，若已安装其他搜索插件请关闭此功能，以避免生成多余的索引文件
 # Search feature, based on hexo-generator-search. If you have installed other search plugins, please disable this feature to avoid generating redundant index files
@@ -949,7 +960,7 @@ discuss:
 # Archive Page
 #---------------------------
 archive:
-  banner_img: /img/banner/banner2.webp
+  banner_img: /img/banner/banner3.webp
   banner_img_height: 100
   banner_mask_alpha: 0.3
 
@@ -960,7 +971,7 @@ archive:
 #---------------------------
 category:
   enable: true
-  banner_img: /img/banner/banner3.webp
+  banner_img: /img/banner/banner2.webp
   banner_img_height: 100
   banner_mask_alpha: 0.3
 
@@ -989,7 +1000,7 @@ category:
 #---------------------------
 tag:
   enable: true
-  banner_img: /img/banner/banner4.webp
+  banner_img: /img/banner/banner10.webp
   banner_img_height: 100
   banner_mask_alpha: 0.3
   tagcloud:
@@ -1062,7 +1073,7 @@ links:
   items:
     - {
       title: "Youyeyejie's Blog",
-      intro: "有野野芥的白日梦陈列馆",
+      intro: "原地TP——有野野芥的白日梦陈列馆",
       link: "https://youyeyejie.github.io/",
       avatar: "/img/avatar/avatar2.webp"
       }
@@ -1074,17 +1085,27 @@ links:
   # 友链下方自定义区域，支持 HTML，可插入例如申请友链的文字
   # Custom content at the bottom of the links
   custom:
-    enable: false
-    content: '<hr><p>在下方留言申请加入我的友链，按如下格式提供信息：</p><ul><li>博客名：Fluid</li><li>简介：Fluid 主题官方博客</li><li>链接：https://hexo.fluid-dev.com</li><li>图片：https://hexo.fluid-dev.com/img/favicon.png</li></ul>'
+    enable: true
+    content: 
+      '
+      <hr>
+      <p style="margin: 1em 0;">欢迎在下方评论区留言交换友链，参考格式：</p>
+      <ul>
+        <li>博客标题: &nbsp;YYYJ’s Blog</li>
+        <li>博客简介: &nbsp;有野野芥的白日梦陈列馆</li>
+        <li>博客链接: &nbsp;<a href="https://youyeyejie.github.io/"><i>https://youyeyejie.github.io/</i></a></li>
+        <li>头像链接: &nbsp;<a href="https://youyeyejie.github.io/img/avatar/avatar2.webp"><i>https://youyeyejie.github.io/img/avatar/avatar2.webp</i></a></li>
+      </ul>
+      '
 
   # 评论插件
   # Comment plugin
   comments:
-    enable: false
+    enable: true
     # 指定的插件，需要同时设置对应插件的必要参数
     # The specified plugin needs to set the necessary parameters at the same time
     # Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo | cusdis | giscus | discuss
-    type: disqus
+    type: giscus
 
 
 #---------------------------
