@@ -167,7 +167,7 @@ function renderTasks() {
         // 复选框
         const checkbox = document.createElement('div');
         checkbox.className = `checkbox-custom ${task.completed ? 'checkbox-checked' : ''}`;
-        checkbox.innerHTML = task.completed ? '<i class="fa fa-check"></i>' : '';
+        checkbox.innerHTML = task.completed ? '<i class="fa fa-check" style="cursor: pointer;"></i>' : '';
         
         // 任务文本
         const taskContent = document.createElement('div');
@@ -193,7 +193,7 @@ function renderTasks() {
         // 删除按钮
         const deleteBtn = document.createElement('button');
         deleteBtn.className = 'delete-btn';
-        deleteBtn.innerHTML = '<i class="fa fa-trash-o"></i>';
+        deleteBtn.innerHTML = '<i class="fa fa-trash-o" style="cursor: pointer;"></i>';
         deleteBtn.title = '删除任务';
         
         // 组装任务项
