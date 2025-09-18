@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    cursor: default;
 }
 
 body {
@@ -65,12 +66,13 @@ header p {
     border-radius: 0.5rem;
     font-size: 1rem;
     transition: all 0.2s ease;
+    cursor: text;
 }
 
 #task-input:focus {
     outline: none;
-    outline: 2px solid #4f8be4;
-    border-color: transparent;
+    border-color: #4f8be4;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
 }
 
 button[type="submit"] {
