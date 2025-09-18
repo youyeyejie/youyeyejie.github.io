@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis3368.webp">
 <meta property="article:published_time" content="2025-09-15T13:16:51.000Z">
-<meta property="article:modified_time" content="2025-09-18T08:24:52.133Z">
+<meta property="article:modified_time" content="2025-09-18T12:01:04.730Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU">
 <meta property="article:tag" content="Web">
@@ -438,7 +438,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          5.6k 字
+          9.4k 字
         
       </span>
     
@@ -450,7 +450,7 @@
         
         
           <!-- compatible with older versions-->
-          47 分钟
+          79 分钟
         
       </span>
     
@@ -1298,14 +1298,18 @@ JavaScript 的基本语法和用法。通过实践项目，我们最终将使用
 <span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure>
 <h2 id="css-样式">CSS 样式</h2>
 <h3 id="高度和宽度-height-width">高度和宽度 (height &amp; width)</h3>
-<figure class="shiki css"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #D19A66">.c1</span><span style="color: #ABB2BF">{</span></span>
-<span class="line"><span style="color: #ABB2BF">    height: </span><span style="color: #D19A66">300</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">;</span></span>
-<span class="line"><span style="color: #ABB2BF">    width: </span><span style="color: #D19A66">500</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">;</span></span>
-<span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure>
 <ul>
+<li>单位：<code>px</code> / <code>%</code> / <code>em</code> /
+<code>rem</code>
+<ul>
+<li><code>px</code>：像素，绝对单位</li>
+<li><code>%</code>：百分比，相对于父元素的宽度或高度</li>
+<li><code>em</code>：相对于当前元素的字体大小</li>
+<li><code>rem</code>：相对于根元素（通常是html）的字体大小</li>
+</ul></li>
 <li>注意事项：
 <ul>
-<li>宽度，支持百分比。</li>
+<li>宽度支持百分比。</li>
 <li>行内标签：默认无效
 <ul>
 <li>比如：为<code>&lt;span&gt;</code>标签设置高度和宽度无效</li>
@@ -1313,29 +1317,18 @@ JavaScript 的基本语法和用法。通过实践项目，我们最终将使用
 <li>块级标签：默认有效</li>
 </ul></li>
 </ul>
-<h3 id="块级和行内标签-displayinline-block">“块级和行内”标签
-(display:inline-block)</h3>
-<ul>
-<li>用 <code>display:inline-block</code> 定义“块级和行内”标签：
-<ul>
-<li>常用的显示属性</li>
-<li>同时具有块级和行内标签的属性，在一行内显示的同时，还可以设置宽度、长度和边距</li>
-</ul></li>
-</ul>
-<figure class="shiki css"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #D19A66">.c1</span><span style="color: #ABB2BF">{</span></span>
-<span class="line"><span style="color: #ABB2BF">    display: </span><span style="color: #D19A66">inline-block</span><span style="color: #ABB2BF">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color: #ABB2BF">    height: </span><span style="color: #D19A66">100</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">;</span></span>
-<span class="line"><span style="color: #ABB2BF">    width: </span><span style="color: #D19A66">300</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">;</span></span>
+<figure class="shiki css"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #D19A66">.c1</span><span style="color: #ABB2BF">{</span></span>
+<span class="line"><span style="color: #ABB2BF">    height: </span><span style="color: #D19A66">300</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    width: </span><span style="color: #D19A66">500</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">;</span></span>
 <span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure>
 <h3 id="字体设置">字体设置</h3>
 <ul>
 <li>常用的字体属性
 <ul>
-<li>颜色</li>
-<li>大小</li>
-<li>加粗</li>
-<li>字体格式</li>
+<li>颜色: <code>color</code></li>
+<li>大小: <code>font-size</code></li>
+<li>加粗: <code>font-weight</code></li>
+<li>字体格式: <code>font-family</code></li>
 </ul></li>
 </ul>
 <figure class="shiki css"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #D19A66">.c1</span><span style="color: #ABB2BF">{</span></span>
@@ -1348,15 +1341,62 @@ JavaScript 的基本语法和用法。通过实践项目，我们最终将使用
 <span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure>
 <h3 id="文字对齐方式-text-align-line-height">文字对齐方式 (text-align
 &amp; line-height)</h3>
+<ul>
+<li>水平对齐方式：<code>text-align</code>
+<ul>
+<li><code>left</code>：左对齐</li>
+<li><code>center</code>：居中对齐</li>
+<li><code>right</code>：右对齐</li>
+<li><code>justify</code>：两端对齐</li>
+</ul></li>
+<li>垂直对齐方式：<code>line-height</code>
+<ul>
+<li>通过设置行高来实现垂直居中</li>
+<li>行高通常设置为与容器高度相同的值</li>
+</ul></li>
+</ul>
 <figure class="shiki css"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #D19A66">.c1</span><span style="color: #ABB2BF">{</span></span>
 <span class="line"><span style="color: #ABB2BF">    text-align: </span><span style="color: #D19A66">center</span><span style="color: #ABB2BF">; </span><span style="color: #7F848E; font-style: italic">/* 水平方向居中 */</span></span>
 <span class="line"><span style="color: #ABB2BF">    line-height: </span><span style="color: #D19A66">59</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">; </span><span style="color: #7F848E; font-style: italic">/* 垂直方向居中 */</span></span>
 <span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure>
-<h3 id="背景色-background-color">背景色 (background-color)</h3>
-<figure class="shiki css"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #D19A66">.c1</span><span style="color: #ABB2BF">{</span></span>
+<h3 id="背景">背景</h3>
+<ul>
+<li>常用的背景属性
+<ul>
+<li>背景颜色: <code>background-color</code>
+<ul>
+<li>颜色值可以是：颜色名称、十六进制颜色值、RGB颜色值、RGBA颜色值</li>
+</ul></li>
+<li>背景图片: <code>background-image</code>
+<ul>
+<li>语法：<code>url(图片地址) center center/cover no-repeat;</code>，
+<ul>
+<li><code>center center</code>：背景图片位置，水平居中，垂直居中</li>
+<li><code>cover</code>：背景图片大小，覆盖整个容器</li>
+<li><code>no-repeat</code>：背景图片不重复</li>
+</ul></li>
+</ul></li>
+<li>背景重复: <code>background-repeat</code></li>
+<li>背景位置: <code>background-position</code></li>
+<li>背景大小: <code>background-size</code></li>
+</ul></li>
+</ul>
+<figure class="shiki css"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #D19A66">.c1</span><span style="color: #ABB2BF">{</span></span>
 <span class="line"><span style="color: #ABB2BF">    background-color: </span><span style="color: #D19A66">#5f5750</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    background-image: </span><span style="color: #56B6C2">url</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'/static/bg1.jpg'</span><span style="color: #ABB2BF">) </span><span style="color: #D19A66">center</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">center</span><span style="color: #ABB2BF">/</span><span style="color: #D19A66">cover</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">no-repeat</span><span style="color: #ABB2BF">;</span></span>
 <span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure>
 <h3 id="浮动-float">浮动 (float)</h3>
+<ul>
+<li><code>float</code>
+属性用于将元素从正常的文档流中取出，并将其向左或向右浮动，从而允许其他内容环绕它。</li>
+<li>常见值：
+<ul>
+<li><code>left</code>：将元素向左浮动</li>
+<li><code>right</code>：将元素向右浮动</li>
+<li><code>none</code>：默认值，元素不浮动，保持在正常的文档流中</li>
+<li><code>inherit</code>：元素继承其父元素的浮动属性</li>
+</ul></li>
+</ul>
 <figure class="shiki html"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">&lt;!</span><span style="color: #E06C75">DOCTYPE</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">html</span><span style="color: #ABB2BF">&gt;</span></span>
 <span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">html</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">lang</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"en"</span><span style="color: #ABB2BF">&gt;</span></span>
 <span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">head</span><span style="color: #ABB2BF">&gt;</span></span>
@@ -1429,6 +1469,15 @@ JavaScript 的基本语法和用法。通过实践项目，我们最终将使用
 <span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">html</span><span style="color: #ABB2BF">&gt;</span></span></code></pre></div></div></figure>
 <h3 id="内边距-padding">内边距 (padding)</h3>
 <p><img src="image-1.webp" srcset="/img/loading/loading3.gif" lazyload></p>
+<ul>
+<li><code>padding</code>
+属性用于设置元素内容与其边框之间的内边距（padding）。内边距是元素内容与边框之间的空间，可以用来增加内容与边框之间的距离，从而改善布局和视觉效果。</li>
+<li>常用属性：
+<ul>
+<li><code>padding</code>：简写属性，可以只设置一个值，表示四个方向的内边距相同；可以设置两个值，分别表示上下和左右的内边距；也可以同时设置四个方向的内边距，顺序为上、右、下、左</li>
+<li><code>padding-top</code>、<code>padding-right</code>、<code>padding-bottom</code>、<code>padding-left</code>：设置元素四个方向的内边距</li>
+</ul></li>
+</ul>
 <figure class="shiki css"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #D19A66">.inner</span><span style="color: #ABB2BF"> {</span></span>
 <span class="line"><span style="color: #ABB2BF">    padding-top: </span><span style="color: #D19A66">20</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">;</span></span>
 <span class="line"><span style="color: #ABB2BF">    padding-right: </span><span style="color: #D19A66">10</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">;</span></span>
@@ -1439,12 +1488,39 @@ JavaScript 的基本语法和用法。通过实践项目，我们最终将使用
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #7F848E; font-style: italic">/* padding: 20px 10px 5px 0px; */</span></span>
 <span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure>
 <h3 id="边框-border">边框 (border)</h3>
+<ul>
+<li><code>border</code>
+属性用于设置元素的边框样式。边框是围绕元素内容和内边距的线条，可以用来突出显示元素、分隔内容或增强视觉效果。</li>
+<li>常用属性：
+<ul>
+<li><code>border-width</code>：设置边框的宽度</li>
+<li><code>border-style</code>：设置边框的样式（如实线、虚线、点线等）</li>
+<li><code>border-color</code>：设置边框的颜色</li>
+<li><code>border</code>：简写属性，可以同时设置边框的宽度、样式和颜色</li>
+<li><code>border-top</code>、<code>border-right</code>、<code>border-bottom</code>、<code>border-left</code>：分别设置元素四个方向的边框</li>
+<li><code>border-radius</code>：设置边框的圆角半径</li>
+<li><code>border-image</code>：使用图片作为边框</li>
+<li><code>box-shadow</code>：为元素添加阴影效果
+<ul>
+<li>语法：<code>box-shadow: h-shadow v-shadow blur-radius spread-radius color;</code></li>
+</ul></li>
+</ul></li>
+</ul>
 <figure class="shiki css"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #D19A66">.bordered</span><span style="color: #ABB2BF"> {</span></span>
 <span class="line"><span style="color: #ABB2BF">    border: </span><span style="color: #D19A66">1</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">solid</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">red</span><span style="color: #ABB2BF">;</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #7F848E; font-style: italic">/* 左边框透明 */</span></span>
 <span class="line"><span style="color: #ABB2BF">    border-left: </span><span style="color: #D19A66">2</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">solid</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">transparent</span><span style="color: #ABB2BF">;</span></span>
 <span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure>
 <h3 id="外边距-margin">外边距 (margin)</h3>
+<ul>
+<li><code>margin</code>
+属性用于设置元素的外边距（margin）。外边距是元素与其相邻元素之间的空间，可以用来控制元素之间的距离和布局。</li>
+<li>常用属性：
+<ul>
+<li><code>margin</code>：简写属性，可以只设置一个值，表示四个方向的外边距相同；可以设置两个值，分别表示上下和左右的外边距；也可以同时设置四个方向的外边距，顺序为上、右、下、左</li>
+<li><code>margin-top</code>、<code>margin-right</code>、<code>margin-bottom</code>、<code>margin-left</code>：设置元素四个方向的外边距</li>
+</ul></li>
+</ul>
 <figure class="shiki css"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #D19A66">.outer</span><span style="color: #ABB2BF"> {</span></span>
 <span class="line"><span style="color: #ABB2BF">    margin-top: </span><span style="color: #D19A66">20</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">;</span></span>
 <span class="line"><span style="color: #ABB2BF">    margin-right: </span><span style="color: #D19A66">10</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">;</span></span>
@@ -1508,9 +1584,9 @@ JavaScript 的基本语法和用法。通过实践项目，我们最终将使用
 <span class="line"></span>
 <span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">body</span><span style="color: #ABB2BF">&gt;</span></span>
 <span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">html</span><span style="color: #ABB2BF">&gt;</span></span></code></pre></div></div></figure>
-<h3 id="伪元素-after">伪元素 (::after)</h3>
+<h3 id="伪元素-after">伪元素 (:after)</h3>
 <ul>
-<li>CSS的<code>::after</code>伪元素用于在选定元素的最后一个子元素之后插入内容。它常与content属性一起使用，用于添加装饰性元素而不影响HTML结构。</li>
+<li>CSS的<code>:after</code>伪元素用于在选定元素的最后一个子元素之后插入内容。它常与content属性一起使用，用于添加装饰性元素而不影响HTML结构。</li>
 </ul>
 <figure class="shiki html"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">&lt;!</span><span style="color: #E06C75">DOCTYPE</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">html</span><span style="color: #ABB2BF">&gt;</span></span>
 <span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">html</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">lang</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"en"</span><span style="color: #ABB2BF">&gt;</span></span>
@@ -1529,8 +1605,11 @@ JavaScript 的基本语法和用法。通过实践项目，我们最终将使用
 <span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">body</span><span style="color: #ABB2BF">&gt;</span></span>
 <span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">html</span><span style="color: #ABB2BF">&gt;</span></span></code></pre></div></div></figure>
 <ul>
-<li>很重要的应用：清除浮动 - 用<code>clearfix</code> 替代
+<li>很重要的应用：<strong>清除浮动</strong>
+<ul>
+<li>用<code>clearfix</code> 替代
 <code>&lt;div style="clear: both;"&gt; &lt;/div&gt;</code></li>
+</ul></li>
 </ul>
 <figure class="shiki html"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">&lt;!</span><span style="color: #E06C75">DOCTYPE</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">html</span><span style="color: #ABB2BF">&gt;</span></span>
 <span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">html</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">lang</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"en"</span><span style="color: #ABB2BF">&gt;</span></span>
@@ -1557,6 +1636,52 @@ JavaScript 的基本语法和用法。通过实践项目，我们最终将使用
 <span class="line"><span style="color: #ABB2BF">    &lt;/</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF">&gt;</span></span>
 <span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">body</span><span style="color: #ABB2BF">&gt;</span></span>
 <span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">html</span><span style="color: #ABB2BF">&gt;</span></span></code></pre></div></div></figure>
+<h3 id="伪类-active">伪类 (:active)</h3>
+<ul>
+<li>CSS的<code>:active</code>伪类选择器用于在用户点击并按住元素时应用样式。这种状态通常持续到用户释放鼠标按钮或触摸屏幕为止。<code>:active</code>伪类常用于按钮、链接和其他可交互元素，以提供视觉反馈，增强用户体验。</li>
+</ul>
+<figure class="shiki html"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">&lt;!</span><span style="color: #E06C75">DOCTYPE</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">html</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">html</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">lang</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"en"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">head</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">meta</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">charset</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"UTF-8"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">title</span><span style="color: #ABB2BF">&gt;Title&lt;/</span><span style="color: #E06C75">title</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">style</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #D19A66">.btn</span><span style="color: #ABB2BF">{</span></span>
+<span class="line"><span style="color: #ABB2BF">            width: </span><span style="color: #D19A66">100</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">            height: </span><span style="color: #D19A66">40</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">            line-height: </span><span style="color: #D19A66">40</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">            text-align: </span><span style="color: #D19A66">center</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">            background-color: dodgerblue;</span></span>
+<span class="line"><span style="color: #ABB2BF">            color: </span><span style="color: #D19A66">white</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">            user-select: </span><span style="color: #D19A66">none</span><span style="color: #ABB2BF">; </span><span style="color: #7F848E; font-style: italic">/* 禁止选中 */</span></span>
+<span class="line"><span style="color: #ABB2BF">            cursor: </span><span style="color: #D19A66">pointer</span><span style="color: #ABB2BF">; </span><span style="color: #7F848E; font-style: italic">/* 鼠标手型 */</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #D19A66">.btn</span><span style="color: #56B6C2">:active</span><span style="color: #ABB2BF">{</span></span>
+<span class="line"><span style="color: #ABB2BF">            background-color: </span><span style="color: #D19A66">green</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">            transform: </span><span style="color: #56B6C2">translateY</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">2</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">); </span><span style="color: #7F848E; font-style: italic">/* 按下去的效果 */</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;/</span><span style="color: #E06C75">style</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">head</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">body</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"btn"</span><span style="color: #ABB2BF">&gt;按钮&lt;/</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">body</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">html</span><span style="color: #ABB2BF">&gt;</span></span></code></pre></div></div></figure>
+<h3 id="鼠标样式-cursor">鼠标样式 (cursor)</h3>
+<ul>
+<li><code>cursor</code>
+属性用于设置鼠标指针在悬停在元素上时的样式。通过改变鼠标指针的外观，可以提供视觉反馈，增强用户体验。</li>
+<li>常见值：
+<ul>
+<li><code>default</code>：默认指针</li>
+<li><code>pointer</code>：手型指针，通常用于链接和按钮</li>
+<li><code>text</code>：文本选择指针，通常用于文本输入区域</li>
+<li><code>move</code>：移动指针，表示元素可以被拖动</li>
+<li><code>not-allowed</code>：禁止指针，表示元素不可交互</li>
+</ul></li>
+</ul>
+<figure class="shiki css"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #D19A66">.c1</span><span style="color: #ABB2BF">{</span></span>
+<span class="line"><span style="color: #ABB2BF">    cursor: </span><span style="color: #D19A66">pointer</span><span style="color: #ABB2BF">; </span><span style="color: #7F848E; font-style: italic">/* 鼠标手型 */</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure>
 <h3 id="位置-position">位置 (position)</h3>
 <ul>
 <li>fixed
@@ -1586,6 +1711,164 @@ JavaScript 的基本语法和用法。通过实践项目，我们最终将使用
 <span class="line"><span style="color: #ABB2BF">    right: </span><span style="color: #D19A66">10</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">; </span><span style="color: #7F848E; font-style: italic">/* 离开右边10像素*/</span></span>
 <span class="line"><span style="color: #ABB2BF">    bottom: </span><span style="color: #D19A66">50</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">; </span><span style="color: #7F848E; font-style: italic">/* 离底边50像素*/</span></span>
 <span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure>
+<h3 id="显示与隐藏元素-display">显示与隐藏元素 (display)</h3>
+<ul>
+<li>使用 <code>display</code> 属性可以控制元素的显示与隐藏。</li>
+<li>常见值：
+<ul>
+<li><code>none</code>：隐藏元素，元素不占据任何空间。</li>
+<li><code>block</code>：将元素显示为块级元素。</li>
+<li><code>inline</code>：将元素显示为行内元素。</li>
+<li><code>inline-block</code>：将元素显示为行内块级元素。
+<ul>
+<li>常用的显示属性</li>
+<li>同时具有块级和行内标签的属性，在一行内显示的同时，还可以设置宽度、长度和边距</li>
+</ul></li>
+<li><code>flex</code>：将元素显示为弹性盒子布局。
+<ul>
+<li><code>justify-content</code>：主轴对齐方式</li>
+<li><code>align-items</code>：交叉轴对齐方式</li>
+<li><code>flex-direction</code>：主轴方向</li>
+</ul></li>
+<li><code>grid</code>：将元素显示为网格布局。
+<ul>
+<li><code>grid-template-columns</code>：定义列</li>
+<li><code>grid-template-rows</code>：定义行</li>
+<li><code>gap</code>：定义网格间距</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="bootstrap">BootStrap</h2>
+<p>Bootstrap
+是一个流行的前端框架，用于简化网页设计和开发。它提供了一套预定义的CSS和JavaScript组件，使开发者能够快速创建响应式和美观的网页。</p>
+<h3 id="引入-bootstrap">引入 Bootstrap</h3>
+<p>在HTML文件的<code>&lt;head&gt;</code>部分引入Bootstrap的CSS和JavaScript文件：</p>
+<figure class="shiki html"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #7F848E; font-style: italic">&lt;!-- 最新版本的 Bootstrap 核心 CSS 文件 --&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">link</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">rel</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"stylesheet"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">href</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">integrity</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">crossorigin</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"anonymous"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">&lt;!-- 最新的 Bootstrap 核心 JavaScript 文件 --&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">src</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">integrity</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">crossorigin</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"anonymous"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF">&gt;</span></span></code></pre></div></div></figure>
+<h3 id="使用-bootstrap-组件">使用 Bootstrap 组件</h3>
+<p>Bootstrap
+提供了许多预定义的组件，如按钮、导航栏、表格等。以下是一些常用组件的示例：</p>
+<ul>
+<li>按钮 <figure class="shiki html"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">button</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"btn btn-primary"</span><span style="color: #ABB2BF">&gt;Primary Button&lt;/</span><span style="color: #E06C75">button</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">button</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"btn btn-success"</span><span style="color: #ABB2BF">&gt;Success Button&lt;/</span><span style="color: #E06C75">button</span><span style="color: #ABB2BF">&gt;</span></span></code></pre></div></div></figure></li>
+<li>导航栏 <figure class="shiki html"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">nav</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"navbar navbar-default"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"container-fluid"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"navbar-header"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"navbar-brand"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">href</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"#"</span><span style="color: #ABB2BF">&gt;Brand&lt;/</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;/</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;</span><span style="color: #E06C75">ul</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"nav navbar-nav"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"active"</span><span style="color: #ABB2BF">&gt;&lt;</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">href</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"#"</span><span style="color: #ABB2BF">&gt;Home&lt;/</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF">&gt;&lt;</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">href</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"#"</span><span style="color: #ABB2BF">&gt;Page 1&lt;/</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF">&gt;&lt;</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">href</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"#"</span><span style="color: #ABB2BF">&gt;Page 2&lt;/</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;/</span><span style="color: #E06C75">ul</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;/</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">nav</span><span style="color: #ABB2BF">&gt;</span></span></code></pre></div></div></figure></li>
+<li>表格 <figure class="shiki html"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">table</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"table table-striped"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">thead</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;</span><span style="color: #E06C75">tr</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">th</span><span style="color: #ABB2BF">&gt;姓名&lt;/</span><span style="color: #E06C75">th</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">th</span><span style="color: #ABB2BF">&gt;学号&lt;/</span><span style="color: #E06C75">th</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">th</span><span style="color: #ABB2BF">&gt;专业&lt;/</span><span style="color: #E06C75">th</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;/</span><span style="color: #E06C75">tr</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;/</span><span style="color: #E06C75">thead</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">tbody</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;</span><span style="color: #E06C75">tr</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">td</span><span style="color: #ABB2BF">&gt;Alice&lt;/</span><span style="color: #E06C75">td</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">td</span><span style="color: #ABB2BF">&gt;12345&lt;/</span><span style="color: #E06C75">td</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">td</span><span style="color: #ABB2BF">&gt;信息安全&lt;/</span><span style="color: #E06C75">td</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;/</span><span style="color: #E06C75">tr</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;</span><span style="color: #E06C75">tr</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">td</span><span style="color: #ABB2BF">&gt;Bob&lt;/</span><span style="color: #E06C75">td</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">td</span><span style="color: #ABB2BF">&gt;12346&lt;/</span><span style="color: #E06C75">td</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">td</span><span style="color: #ABB2BF">&gt;信息安全&lt;/</span><span style="color: #E06C75">td</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;/</span><span style="color: #E06C75">tr</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;/</span><span style="color: #E06C75">tbody</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">table</span><span style="color: #ABB2BF">&gt;</span></span></code></pre></div></div></figure></li>
+<li>表单 <figure class="shiki html"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">form</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"form-group"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;</span><span style="color: #E06C75">label</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">for</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"username"</span><span style="color: #ABB2BF">&gt;用户名:&lt;/</span><span style="color: #E06C75">label</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;</span><span style="color: #E06C75">input</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">type</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"text"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"form-control"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">id</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"username"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">placeholder</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"输入用户名"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;/</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"form-group"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;</span><span style="color: #E06C75">label</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">for</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"pwd"</span><span style="color: #ABB2BF">&gt;密码:&lt;/</span><span style="color: #E06C75">label</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;</span><span style="color: #E06C75">input</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">type</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"password"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"form-control"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">id</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"pwd"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">placeholder</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"输入密码"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;/</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">button</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">type</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"submit"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"btn btn-default"</span><span style="color: #ABB2BF">&gt;提交&lt;/</span><span style="color: #E06C75">button</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">form</span><span style="color: #ABB2BF">&gt;</span></span></code></pre></div></div></figure></li>
+<li>面板 <figure class="shiki html"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"panel panel-primary"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"panel-heading"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        Panel heading without title</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;/</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"panel-body"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        Panel content</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;/</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF">&gt;</span></span></code></pre></div></div></figure></li>
+</ul>
+<h3 id="网格系统">网格系统</h3>
+<p>Bootstrap
+的网格系统允许你创建响应式布局。你可以使用行（row）和列（col）来组织内容。</p>
+<figure>
+<img src="image-2.webp" srcset="/img/loading/loading3.gif" lazyload alt="Bootstrap 网格系统">
+<figcaption aria-hidden="true">Bootstrap 网格系统</figcaption>
+</figure>
+<ul>
+<li>把整体划分为了12格，根据屏幕宽度不同，Bootstrap 5 网格系统有六个类
+<ul>
+<li><code>.col-</code>：超小型设备 - 屏幕宽度小于 576px</li>
+<li><code>.col-sm-</code>：小型设备 - 屏幕宽度等于或大于 576px</li>
+<li><code>.col-md-</code>：中型设备 - 屏幕宽度等于或大于 768 像素</li>
+<li><code>.col-lg-</code>：大型设备 - 屏幕宽度等于或大于 992 像素</li>
+<li><code>.col-xl-</code>：xlarge 设备 - 屏幕宽度等于或大于 1200px</li>
+<li><code>.col-xxl-</code>：xxlarge 设备 - 屏幕宽度等于或大于
+1400px</li>
+</ul></li>
+<li>案例：两个不同宽度的列</li>
+</ul>
+<figure class="shiki html"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"row"</span><span style="color: #ABB2BF"> &gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"col-sm-4"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">style</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"border-color:red;border-style:solid"</span><span style="color: #ABB2BF">&gt;col-sm-4&lt;/</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"col-sm-8"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">style</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"border-color:blue;border-style:solid"</span><span style="color: #ABB2BF">&gt;col-sm-8&lt;/</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF">&gt;</span></span></code></pre></div></div></figure>
+<h3 id="容器">容器</h3>
+<p>Bootstrap 需要为页面内容和栅格系统包裹一个 .container 容器。Bootstrap
+有两种容器类可供选择：</p>
+<ul>
+<li><code>.container</code> 类提供了一个响应式的固定宽度容器</li>
+<li><code>.container-fluid</code>
+类提供了一个全宽容器，跨越视口的整个宽度</li>
+</ul>
+<figure class="shiki html"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"container-fluid"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"col-sm-9"</span><span style="color: #ABB2BF">&gt;左边&lt;/</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"col-sm-3"</span><span style="color: #ABB2BF">&gt;右边&lt;/</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF">&gt;</span></span></code></pre></div></div></figure>
+<figure class="shiki html"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"container"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"col-sm-9"</span><span style="color: #ABB2BF">&gt;左边&lt;/</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"col-sm-3"</span><span style="color: #ABB2BF">&gt;右边&lt;/</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF">&gt;</span></span></code></pre></div></div></figure>
+<h2 id="font-awesome">Font Awesome</h2>
+<p>Font Awesome
+是一个流行的图标库和工具包，提供了大量的矢量图标，可以轻松地集成到网页和应用程序中。它支持多种格式，包括字体图标、SVG
+图标等，允许开发者通过简单的类名来使用各种图标，从而提升用户界面的视觉效果和交互体验。</p>
+<h3 id="引入-font-awesome">引入 Font Awesome</h3>
+<p>在HTML文件的<code>&lt;head&gt;</code>部分引入Font
+Awesome的CSS文件：</p>
+<ul>
+<li><p>引入7.0版本的Font Awesome </p><figure class="shiki html"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">link</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">href</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"</span></span>
+<span class="line"><span style="color: #98C379">https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/css/fontawesome.min.css</span></span>
+<span class="line"><span style="color: #98C379">"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">rel</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"stylesheet"</span><span style="color: #ABB2BF">&gt;</span></span></code></pre></div></div></figure><p></p></li>
+<li><p>可以从<a target="_blank" rel="noopener" href="https://fontawesome.com/">Font
+Awesome官网</a>获取最新版本的CDN链接</p></li>
+</ul>
+<h3 id="使用-font-awesome-图标">使用 Font Awesome 图标</h3>
+<p>Font Awesome
+提供了丰富的图标，可以通过添加特定的类名来使用这些图标。以下是一些常用图标的示例：</p>
+<figure class="shiki html"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #7F848E; font-style: italic">&lt;!-- 使用 Font Awesome 图标 --&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"fa fa-home"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF">&gt; </span><span style="color: #7F848E; font-style: italic">&lt;!-- 首页图标 --&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"fa fa-user"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF">&gt; </span><span style="color: #7F848E; font-style: italic">&lt;!-- 用户图标 --&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"fa fa-envelope"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF">&gt; </span><span style="color: #7F848E; font-style: italic">&lt;!-- 邮件图标 --&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"fa fa-cog"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">i</span><span style="color: #ABB2BF">&gt; </span><span style="color: #7F848E; font-style: italic">&lt;!-- 设置图标 --&gt;</span></span></code></pre></div></div></figure>
 <h1 id="lab3---javascript">Lab3 - JavaScript</h1>
 <h2 id="javascript-应用方式">JavaScript 应用方式</h2>
 <ul>
@@ -1866,25 +2149,74 @@ JavaScript 的基本语法和用法。通过实践项目，我们最终将使用
 <span class="line"><span style="color: #7F848E; font-style: italic">// 调用函数</span></span>
 <span class="line"><span style="color: #61AFEF">func</span><span style="color: #ABB2BF">()</span></span></code></pre></div></div></figure>
 <h2 id="dom">DOM</h2>
-<p>DOM是一个模块，可以对HTML页面中的标签进行操作。</p>
+<p>DOM 是 Document Object
+Model（文档对象模型）的缩写，是一种用于表示和操作 HTML和 XML
+文档的编程接口。DOM
+将文档表示为一个树状结构，其中每个节点代表文档的一部分，如元素、属性和文本内容。通过
+DOM，开发者可以动态地访问和修改网页的内容、结构和样式，从而实现交互性和动态效果。</p>
 <h3 id="dom-常用操作">DOM 常用操作</h3>
-<figure class="shiki javascript"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #7F848E; font-style: italic">// 创建标签 &lt;div&gt;哈哈哈哈哈&lt;/div&gt;</span></span>
-<span class="line"><span style="color: #C678DD">var</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">tag</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">createElement</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"div"</span><span style="color: #ABB2BF">);</span></span>
-<span class="line"></span>
-<span class="line"><span style="color: #7F848E; font-style: italic">// 标签写内容</span></span>
-<span class="line"><span style="color: #E5C07B">tag</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">innerText</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"哈哈哈哈哈"</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure>
-<figure class="shiki html"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">ul</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">id</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"city"</span><span style="color: #ABB2BF">&gt;</span></span>
-<span class="line"><span style="color: #ABB2BF">	&lt;</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF">&gt;北京&lt;/</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF">&gt;</span></span>
-<span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">ul</span><span style="color: #ABB2BF">&gt;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">type</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"text/javascript"</span><span style="color: #ABB2BF">&gt;</span></span>
-<span class="line"><span style="color: #ABB2BF">	</span><span style="color: #C678DD">var</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">tag</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getElementById</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"city"</span><span style="color: #ABB2BF">);</span></span>
-<span class="line"><span style="color: #ABB2BF">	</span><span style="color: #C678DD">var</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">newTag</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">createElement</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"li"</span><span style="color: #ABB2BF">);</span></span>
-<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E5C07B">newTag</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">innerText</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"上海"</span><span style="color: #ABB2BF">;</span></span>
-<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E5C07B">tag</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">appendChild</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">newTag</span><span style="color: #ABB2BF">);</span></span>
-<span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF">&gt;</span></span></code></pre></div></div></figure>
+<ul>
+<li>获取元素
+<ul>
+<li><code>document.getElementById("id")</code>：通过ID获取元素</li>
+<li><code>document.getElementsByClassName("class")</code>：通过类名获取元素集合</li>
+<li><code>document.getElementsByTagName("tag")</code>：通过标签名获取元素集合</li>
+<li><code>document.querySelector("selector")</code>：通过CSS选择器获取第一个匹配的元素</li>
+<li><code>document.querySelectorAll("selector")</code>：通过CSS选择器获取所有匹配的元素集合</li>
+</ul></li>
+<li>创建和删除元素
+<ul>
+<li><code>document.createElement("tag")</code>：创建一个新的元素</li>
+<li><code>parentElement.appendChild(childElement)</code>：将子元素添加到父元素中</li>
+<li><code>parentElement.removeChild(childElement)</code>：从父元素中移除子元素</li>
+</ul></li>
+<li>修改元素内容
+<ul>
+<li><code>element.innerText</code>：获取或设置元素的文本内容</li>
+<li><code>element.innerHTML</code>：获取或设置元素的HTML内容</li>
+<li><code>element.textContent</code>：获取或设置元素的文本内容（包括隐藏的文本）</li>
+</ul></li>
+<li>修改元素属性
+<ul>
+<li><code>element.getAttribute("attr")</code>：获取元素的属性值</li>
+<li><code>element.setAttribute("attr", "value")</code>：设置元素的属性值</li>
+<li><code>element.removeAttribute("attr")</code>：移除元素的属性</li>
+</ul></li>
+<li>修改元素样式
+<ul>
+<li><code>element.style.property</code>：获取或设置元素的内联样式属性</li>
+</ul></li>
+<li>事件处理
+<ul>
+<li><code>element.addEventListener("event", function)</code>：为元素添加事件监听器</li>
+<li><code>element.removeEventListener("event", function)</code>：移除元素的事件监听器</li>
+<li><code>element.onclick = function</code>：为元素添加点击事件处理函数</li>
+</ul></li>
+<li>遍历元素
+<ul>
+<li><code>element.parentNode</code>：获取元素的父节点</li>
+<li><code>element.childNodes</code>：获取元素的所有子节点集合</li>
+<li><code>element.firstChild</code>：获取元素的第一个子节点</li>
+<li><code>element.lastChild</code>：获取元素的最后一个子节点</li>
+<li><code>element.nextSibling</code>：获取元素的下一个兄弟节点</li>
+<li><code>element.previousSibling</code>：获取元素的上一个兄弟节点</li>
+</ul></li>
+<li>表单操作
+<ul>
+<li><code>formElement.elements</code>：获取表单中的所有元素集合</li>
+<li><code>inputElement.value</code>：获取或设置输入元素的值</li>
+<li><code>selectElement.selectedIndex</code>：获取或设置选择元素的选中索引</li>
+<li><code>checkboxElement.checked</code>：获取或设置复选框的选中状态</li>
+</ul></li>
+<li>文档操作
+<ul>
+<li><code>document.title</code>：获取或设置文档的标题</li>
+<li><code>document.body</code>：获取文档的主体元素</li>
+<li><code>document.head</code>：获取文档的头部元素</li>
+</ul></li>
+</ul>
 <h3 id="使用-dom-进行事件的绑定">使用 DOM 进行事件的绑定</h3>
-<figure class="shiki html"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">&lt;!</span><span style="color: #E06C75">DOCTYPE</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">html</span><span style="color: #ABB2BF">&gt;</span></span>
+<figure class="shiki html"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">&lt;!</span><span style="color: #E06C75">DOCTYPE</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">html</span><span style="color: #ABB2BF">&gt;</span></span>
 <span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">html</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">lang</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"en"</span><span style="color: #ABB2BF">&gt;</span></span>
 <span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">head</span><span style="color: #ABB2BF">&gt;</span></span>
 <span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">meta</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">charset</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"UTF-8"</span><span style="color: #ABB2BF">&gt;</span></span>
@@ -1893,6 +2225,7 @@ JavaScript 的基本语法和用法。通过实践项目，我们最终将使用
 <span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">body</span><span style="color: #ABB2BF">&gt;</span></span>
 <span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">input</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">type</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"button"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">value</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"点击添加"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">onclick</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"</span><span style="color: #61AFEF">addCityInfo</span><span style="color: #98C379">()"</span><span style="color: #ABB2BF">&gt;</span></span>
 <span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">ul</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">id</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"city"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">	    &lt;</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF">&gt;北京&lt;/</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF">&gt;</span></span>
 <span class="line"><span style="color: #ABB2BF">    &lt;/</span><span style="color: #E06C75">ul</span><span style="color: #ABB2BF">&gt;</span></span>
 <span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">type</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"text/javascript"</span><span style="color: #ABB2BF">&gt;</span></span>
 <span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">function</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">addCityInfo</span><span style="color: #ABB2BF">() {</span></span>
@@ -1904,45 +2237,220 @@ JavaScript 的基本语法和用法。通过实践项目，我们最终将使用
 <span class="line"><span style="color: #ABB2BF">    &lt;/</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF">&gt;</span></span>
 <span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">body</span><span style="color: #ABB2BF">&gt;</span></span>
 <span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">html</span><span style="color: #ABB2BF">&gt;</span></span></code></pre></div></div></figure>
+<h3 id="事件监听器-addeventlistener">事件监听器 (addEventListener)</h3>
+<figure class="shiki javascript"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getElementById</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"btnAdd"</span><span style="color: #ABB2BF">).</span><span style="color: #61AFEF">addEventListener</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"click"</span><span style="color: #ABB2BF">, </span><span style="color: #C678DD">function</span><span style="color: #ABB2BF">() {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">var</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">txtTag</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getElementById</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"txtUser"</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">var</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">newString</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">txtTag</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">value</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (</span><span style="color: #E5C07B">newString</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">length</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">var</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">newTag</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">createElement</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"li"</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">newTag</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">innerText</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">newString</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">var</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">parentTag</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getElementById</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"city"</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">parentTag</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">appendChild</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">newTag</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">txtTag</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">value</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">""</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    } </span><span style="color: #C678DD">else</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">alert</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"输入不能为空"</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">});</span></span></code></pre></div></div></figure>
+<h2 id="jquery">jQuery</h2>
+<p>jQuery 是一个快速、小巧且功能丰富的JavaScript 库。它简化了 HTML
+文档遍历和操作、事件处理、动画以及 Ajax
+交互，使得开发者能够更轻松地编写跨浏览器兼容的代码。</p>
+<h3 id="引入-jquery">引入 jQuery</h3>
+<figure class="shiki html"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">src</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"https://code.jquery.com/jquery-3.6.0.min.js"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF">&gt;</span></span></code></pre></div></div></figure>
+<h3 id="jquery-选择器">jQuery 选择器</h3>
 <ul>
-<li>案例：动态获取页面输入，添加到动态列表</li>
+<li>基本语法：<code>$(selector).action()</code></li>
+<li>选择器示例：
+<ul>
+<li><code>$("selector")</code>：通过CSS选择器选择元素
+<ul>
+<li><code>$("#id")</code>：通过ID选择元素</li>
+<li><code>$(".class")</code>：通过类名选择元素<br>
+</li>
+<li><code>$("tag")</code>：通过标签名选择元素</li>
+<li><code>$("div &gt; .class")</code> 选择所有div下的class类元素</li>
+<li><code>$("input[name='n1']")</code>：选择所有name属性为n1的input元素</li>
+</ul></li>
+<li><code>$(this)</code>：选择当前元素</li>
+<li><code>$("*")</code>：选择所有元素</li>
+<li>多选择器
+<ul>
+<li><code>$("#id, .class, tag")</code>：选择多个不同的元素</li>
+</ul></li>
+<li>过滤器
+<ul>
+<li><code>$("div").filter(".class")</code>：选择所有div中带有class类的元素</li>
+</ul></li>
+</ul></li>
 </ul>
-<figure class="shiki html"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">&lt;!</span><span style="color: #E06C75">DOCTYPE</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">html</span><span style="color: #ABB2BF">&gt;</span></span>
+<h3 id="间接寻找">间接寻找</h3>
+<ul>
+<li><code>$(parent).find("selector")</code>：在父元素中查找子元素</li>
+<li><code>$(child).parent()</code>：获取子元素的父元素</li>
+<li><code>$(sibling).next()</code>：获取兄弟元素中的下一个元素</li>
+<li><code>$(sibling).prev()</code>：获取兄弟元素中的上一个元素</li>
+<li><code>$(element).children("selector")</code>：获取元素的所有子元素</li>
+<li><code>$(element).closest("selector")</code>：获取元素的最近的祖先元素</li>
+</ul>
+<h3 id="操作样式">操作样式</h3>
+<ul>
+<li><p><code>$(element).css("property", "value")</code>：设置元素的样式属性</p></li>
+<li><p><code>$(element).addClass("class")</code>：为元素添加类</p></li>
+<li><p><code>$(element).removeClass("class")</code>：为元素移除类</p></li>
+<li><p><code>$(element).toggleClass("class")</code>：切换元素的类</p></li>
+<li><p>案例：菜单的切换</p></li>
+</ul>
+<figure class="shiki html"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">&lt;!</span><span style="color: #E06C75">DOCTYPE</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">html</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">html</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">lang</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"en"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">head</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">meta</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">charset</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"UTF-8"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">title</span><span style="color: #ABB2BF">&gt;Title&lt;/</span><span style="color: #E06C75">title</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">style</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #D19A66">.menus</span><span style="color: #ABB2BF">{</span></span>
+<span class="line"><span style="color: #ABB2BF">            width: </span><span style="color: #D19A66">200</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">            height: </span><span style="color: #D19A66">800</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">            border: </span><span style="color: #D19A66">1</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">solid</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">red</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #D19A66">.menus</span><span style="color: #C678DD"> </span><span style="color: #D19A66">.header</span><span style="color: #ABB2BF">{</span></span>
+<span class="line"><span style="color: #ABB2BF">            background-color: gold;</span></span>
+<span class="line"><span style="color: #ABB2BF">            padding: </span><span style="color: #D19A66">10</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">5</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">            border-bottom: </span><span style="color: #D19A66">1</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">dotted</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">#dddddd</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #D19A66">.menus</span><span style="color: #C678DD"> </span><span style="color: #D19A66">.content</span><span style="color: #C678DD"> </span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">{</span></span>
+<span class="line"><span style="color: #ABB2BF">            display: </span><span style="color: #D19A66">block</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">            padding: </span><span style="color: #D19A66">5</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">5</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">            border-bottom: </span><span style="color: #D19A66">1</span><span style="color: #E06C75">px</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">dotted</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">#dddddd</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #D19A66">.hide</span><span style="color: #ABB2BF">{</span></span>
+<span class="line"><span style="color: #ABB2BF">            display: </span><span style="color: #D19A66">none</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;/</span><span style="color: #E06C75">style</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">head</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">body</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"menus"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"item"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"header"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">onclick</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"</span><span style="color: #61AFEF">clickMe</span><span style="color: #98C379">(</span><span style="color: #E5C07B">this</span><span style="color: #98C379">);"</span><span style="color: #ABB2BF">&gt;上海&lt;/</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"content hide"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">                &lt;</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;宝山区&lt;/</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">                &lt;</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;青浦区&lt;/</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">                &lt;</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;浦东新区&lt;/</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">                &lt;</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;普陀区&lt;/</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;/</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;/</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"item"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"header"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">onclick</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"</span><span style="color: #61AFEF">clickMe</span><span style="color: #98C379">(</span><span style="color: #E5C07B">this</span><span style="color: #98C379">);"</span><span style="color: #ABB2BF">&gt;北京&lt;/</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">class</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"content hide"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">                &lt;</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;海淀区&lt;/</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">                &lt;</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;朝阳区&lt;/</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">                &lt;</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;大兴区&lt;/</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">                &lt;</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;昌平区&lt;/</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">            &lt;/</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        &lt;/</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;/</span><span style="color: #E06C75">div</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">src</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"static/jquery-3.6.0.min.js"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">function</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">clickMe</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">self</span><span style="color: #ABB2BF">) {</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #7F848E; font-style: italic">// $(self)  -&gt; 表示当前点击的那个标签。</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #7F848E; font-style: italic">// $(self).next() 下一个标签</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #7F848E; font-style: italic">// $(self).next().removeClass("hide");   删除样式</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #7F848E; font-style: italic">// 让自己下面的功能展示出来/隐藏</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #7F848E; font-style: italic">/*var hasHide = $(self).next().hasClass("hide");</span></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">            if(hasHide){</span></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">                $(self).next().removeClass("hide");</span></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">            }else{</span></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">                $(self).next().addClass("hide");</span></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">            } */</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #7F848E; font-style: italic">// 让自己下面的功能展示出来</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #61AFEF">$</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">self</span><span style="color: #ABB2BF">).</span><span style="color: #61AFEF">next</span><span style="color: #ABB2BF">().</span><span style="color: #61AFEF">removeClass</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"hide"</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #7F848E; font-style: italic">// 找父亲，父亲的所有兄弟，再去每个兄弟的子孙中寻找 class=content，添加hide样式</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #61AFEF">$</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">self</span><span style="color: #ABB2BF">).</span><span style="color: #61AFEF">parent</span><span style="color: #ABB2BF">().</span><span style="color: #61AFEF">siblings</span><span style="color: #ABB2BF">().</span><span style="color: #61AFEF">find</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">".content"</span><span style="color: #ABB2BF">).</span><span style="color: #61AFEF">addClass</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"hide"</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;/</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">body</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">html</span><span style="color: #ABB2BF">&gt;</span></span></code></pre></div></div></figure>
+<h3 id="值的操作">值的操作</h3>
+<ul>
+<li><p><code>$(element).text()</code>：获取元素的文本内容</p></li>
+<li><p><code>$(element).text("value")</code>：设置元素的文本内容</p></li>
+<li><p><code>$(element).val()</code>：获取表单元素的值</p></li>
+<li><p><code>$(element).val("value")</code>：设置表单元素的值</p></li>
+<li><p>案例：动态创建数据</p></li>
+</ul>
+<figure class="shiki html"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">&lt;!</span><span style="color: #E06C75">DOCTYPE</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">html</span><span style="color: #ABB2BF">&gt;</span></span>
 <span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">html</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">lang</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"en"</span><span style="color: #ABB2BF">&gt;</span></span>
 <span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">head</span><span style="color: #ABB2BF">&gt;</span></span>
 <span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">meta</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">charset</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"UTF-8"</span><span style="color: #ABB2BF">&gt;</span></span>
 <span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">title</span><span style="color: #ABB2BF">&gt;Title&lt;/</span><span style="color: #E06C75">title</span><span style="color: #ABB2BF">&gt;</span></span>
 <span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">head</span><span style="color: #ABB2BF">&gt;</span></span>
 <span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">body</span><span style="color: #ABB2BF">&gt;</span></span>
-<span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">input</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">type</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"text"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">placeholder</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"请输入内容"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">id</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"txtUser"</span><span style="color: #ABB2BF">/&gt;</span></span>
-<span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">input</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">type</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"button"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">value</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"点击添加"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">onclick</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"</span><span style="color: #61AFEF">addCityInfo</span><span style="color: #98C379">()"</span><span style="color: #ABB2BF">&gt;</span></span>
-<span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">ul</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">id</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"city"</span><span style="color: #ABB2BF">&gt;</span></span>
-<span class="line"><span style="color: #ABB2BF">    &lt;/</span><span style="color: #E06C75">ul</span><span style="color: #ABB2BF">&gt;</span></span>
-<span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">type</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"text/javascript"</span><span style="color: #ABB2BF">&gt;</span></span>
-<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">function</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">addCityInfo</span><span style="color: #ABB2BF">() {</span></span>
-<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #7F848E; font-style: italic">// 1.找到输入标签</span></span>
-<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #C678DD">var</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">txtTag</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getElementById</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"txtUser"</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">input</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">type</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"text"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">id</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"txtUser"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">placeholder</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"用户名"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">input</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">type</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"text"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">id</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"txtEmail"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">placeholder</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"邮箱"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">input</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">type</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"button"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">value</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"提交"</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">onclick</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"</span><span style="color: #61AFEF">getInfo</span><span style="color: #98C379">()"</span><span style="color: #ABB2BF">/&gt;</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #7F848E; font-style: italic">// 2.获取input框中用户输入的内容</span></span>
-<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #C678DD">var</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">newString</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">txtTag</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">value</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">ul</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">id</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"view"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">ul</span><span style="color: #ABB2BF">&gt;</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #7F848E; font-style: italic">// 判断用户输入是否为空，只有不为空才能继续。</span></span>
-<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (</span><span style="color: #E5C07B">newString</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">length</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">) {</span></span>
-<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #7F848E; font-style: italic">// 3.创建标签 &lt;li&gt;&lt;/li&gt; 中间的文本信息就是用户输入的内容</span></span>
-<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #C678DD">var</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">newTag</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">createElement</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"li"</span><span style="color: #ABB2BF">);</span></span>
-<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #E5C07B">newTag</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">innerText</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">newString</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">src</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"static/jquery-3.6.0.min.js"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">function</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">getInfo</span><span style="color: #ABB2BF">() {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #7F848E; font-style: italic">// 1.获取用户输入的用户名和密码</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">var</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">username</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">$</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"#txtUser"</span><span style="color: #ABB2BF">).</span><span style="color: #61AFEF">val</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">var</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">email</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">$</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"#txtEmail"</span><span style="color: #ABB2BF">).</span><span style="color: #61AFEF">val</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">var</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">dataString</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">username</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">" - "</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">email</span><span style="color: #ABB2BF">;</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #7F848E; font-style: italic">// 4.标签添加到ul中</span></span>
-<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #C678DD">var</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">parentTag</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getElementById</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"city"</span><span style="color: #ABB2BF">);</span></span>
-<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #E5C07B">parentTag</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">appendChild</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">newTag</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #7F848E; font-style: italic">// 2.创建li标签，在li的内部写入内容。 &lt;li&gt;：创建li标签</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">var</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">newLi</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">$</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"&lt;li&gt;"</span><span style="color: #ABB2BF">).</span><span style="color: #61AFEF">text</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">dataString</span><span style="color: #ABB2BF">);</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #7F848E; font-style: italic">// 3.将input框内容清空</span></span>
-<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #E5C07B">txtTag</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">value</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">""</span><span style="color: #ABB2BF">;</span></span>
-<span class="line"><span style="color: #ABB2BF">            }</span><span style="color: #C678DD">else</span><span style="color: #ABB2BF">{</span></span>
-<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #61AFEF">alert</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"输入不能为空"</span><span style="color: #ABB2BF">);</span></span>
-<span class="line"><span style="color: #ABB2BF">            }</span></span>
-<span class="line"><span style="color: #ABB2BF">        }</span></span>
-<span class="line"><span style="color: #ABB2BF">    &lt;/</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #7F848E; font-style: italic">// 3.把新创建的li标签添加到ul里面。</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">$</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"#view"</span><span style="color: #ABB2BF">).</span><span style="color: #61AFEF">append</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">newLi</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">body</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">html</span><span style="color: #ABB2BF">&gt;</span></span></code></pre></div></div></figure>
+<h3 id="绑定事件">绑定事件</h3>
+<ul>
+<li><p><code>$(element).on("event", function)</code>：为元素绑定事件处理函数</p></li>
+<li><p><code>$(element).off("event", function)</code>：移除元素的事件处理函数</p></li>
+<li><p><code>$(element).click(function)</code>：为元素绑定点击事件处理函数</p></li>
+<li><p><code>$(element).dblclick(function)</code>：为元素绑定双击事件处理函数</p></li>
+<li><p><code>$(element).hover(function1, function2)</code>：为元素绑定鼠标悬停和离开事件处理函数</p></li>
+<li><p><code>$(element).remove()</code>：移除元素</p></li>
+<li><p>为了让页面框架加载完成之后立即执行代码：在 script 中添加声明
+<code>$(function(){})</code></p></li>
+<li><p>案例：自动删除</p></li>
+</ul>
+<figure class="shiki html"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">&lt;!</span><span style="color: #E06C75">DOCTYPE</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">html</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">html</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">lang</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"en"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">head</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">meta</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">charset</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"UTF-8"</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">title</span><span style="color: #ABB2BF">&gt;Title&lt;/</span><span style="color: #E06C75">title</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">head</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">body</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">ul</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF">&gt;百度&lt;/</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF">&gt;谷歌&lt;/</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    &lt;</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF">&gt;搜狗&lt;/</span><span style="color: #E06C75">li</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">ul</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">src</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"static/jquery-3.6.0.min.js"</span><span style="color: #ABB2BF">&gt;&lt;/</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF">&gt;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #61AFEF">$</span><span style="color: #ABB2BF">(</span><span style="color: #C678DD">function</span><span style="color: #ABB2BF"> () {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #7F848E; font-style: italic">// 当页面的框架加载完成之后，自动就执行。</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">$</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"li"</span><span style="color: #ABB2BF">).</span><span style="color: #61AFEF">click</span><span style="color: #ABB2BF">(</span><span style="color: #C678DD">function</span><span style="color: #ABB2BF"> () {</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #61AFEF">$</span><span style="color: #ABB2BF">(</span><span style="color: #E5C07B">this</span><span style="color: #ABB2BF">).</span><span style="color: #61AFEF">remove</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">        });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">    });</span></span>
+<span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF">&gt;</span></span>
 <span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">body</span><span style="color: #ABB2BF">&gt;</span></span>
 <span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">html</span><span style="color: #ABB2BF">&gt;</span></span></code></pre></div></div></figure>
 
@@ -2398,7 +2906,7 @@ JavaScript 的基本语法和用法。通过实践项目，我们最终将使用
 
 
   <script type="text/javascript">
-  document.getElementById("g-total-word-id").innerHTML = "372k";
+  document.getElementById("g-total-word-id").innerHTML = "376k";
   document.getElementById('g-total-posts-id').textContent ="47";
 </script>
 
