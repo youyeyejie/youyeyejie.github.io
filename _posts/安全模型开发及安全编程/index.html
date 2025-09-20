@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis3368.webp">
 <meta property="article:published_time" content="2025-09-15T13:16:51.000Z">
-<meta property="article:modified_time" content="2025-09-18T12:01:04.730Z">
+<meta property="article:modified_time" content="2025-09-20T09:41:41.755Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU">
 <meta property="article:tag" content="Web">
@@ -438,7 +438,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          9.4k 字
+          11k 字
         
       </span>
     
@@ -450,7 +450,7 @@
         
         
           <!-- compatible with older versions-->
-          79 分钟
+          96 分钟
         
       </span>
     
@@ -2453,6 +2453,309 @@ DOM，开发者可以动态地访问和修改网页的内容、结构和样式�
 <span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">script</span><span style="color: #ABB2BF">&gt;</span></span>
 <span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">body</span><span style="color: #ABB2BF">&gt;</span></span>
 <span class="line"><span style="color: #ABB2BF">&lt;/</span><span style="color: #E06C75">html</span><span style="color: #ABB2BF">&gt;</span></span></code></pre></div></div></figure>
+<h1 id="lab4---mysql">Lab4 - MySQL</h1>
+<h2 id="mysql-基础">MySQL 基础</h2>
+<h3 id="数据库管理-database">数据库管理 (Database)</h3>
+<ul>
+<li>数据库是一个有组织的数据集合，通常用于存储、管理和检索信息。它可以包含多个表格，每个表格由行和列组成，用于存储相关的数据。数据库广泛应用于各种应用程序和系统中，以便高效地管理大量数据。</li>
+<li>创建数据库 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">DATABASE</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">数据库名</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure>
+也可以在后面指定字符集和校对规则，确保数据库支持多语言字符。
+<figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">DATABASE</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">数据库名</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">DEFAULT</span><span style="color: #ABB2BF"> CHARSET utf8 </span><span style="color: #C678DD">COLLATE</span><span style="color: #ABB2BF"> utf8_general_ci;</span></span></code></pre></div></div></figure></li>
+<li>删除数据库 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">DROP</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">DATABASE</span><span style="color: #ABB2BF"> 数据库名;</span></span></code></pre></div></div></figure></li>
+<li>使用数据库 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">USE</span><span style="color: #ABB2BF"> 数据库名;</span></span></code></pre></div></div></figure></li>
+<li>查看所有数据库 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">SHOW DATABASES;</span></span></code></pre></div></div></figure></li>
+<li>查看当前使用的数据库 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">DATABASE</span><span style="color: #ABB2BF">();</span></span></code></pre></div></div></figure></li>
+</ul>
+<h3 id="数据表管理-table">数据表管理 (Table)</h3>
+<ul>
+<li>表是数据库中的基本存储结构，用于组织和存储相关的数据。每个表由行和列组成，行表示记录，列表示字段。表通过定义字段的数据类型和约束来确保数据的完整性和一致性。表之间可以通过外键建立关系，从而实现复杂的数据模型。</li>
+<li>创建表 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">TABLE</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">表名</span><span style="color: #ABB2BF"> (</span></span>
+<span class="line"><span style="color: #ABB2BF">    字段名1 数据类型 约束,</span></span>
+<span class="line"><span style="color: #ABB2BF">    字段名2 数据类型 约束,</span></span>
+<span class="line"><span style="color: #ABB2BF">    ...</span></span>
+<span class="line"><span style="color: #ABB2BF">);</span></span></code></pre></div></div></figure></li>
+<li>删除表 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">DROP</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">TABLE</span><span style="color: #ABB2BF"> 表名;</span></span></code></pre></div></div></figure></li>
+<li>查看所有表 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">SHOW TABLES;</span></span></code></pre></div></div></figure></li>
+<li>查看表结构 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">DESCRIBE 表名;</span></span></code></pre></div></div></figure></li>
+<li>常见数据类型
+<ul>
+<li>整数类型
+<ul>
+<li><code>TINYINT</code>：有符号整数类型，取值范围： -128 到 127</li>
+<li><code>TINYINT UNSIGNED</code>：无符号整数类型，取值范围： 0 到
+255</li>
+<li><code>INT</code>：有符号整数类型，取值范围： -2147483648 到
+2147483647</li>
+<li><code>INT UNSIGNED</code>：无符号整数类型，取值范围： 0 到
+4294967295</li>
+<li><code>BIGINT</code>：有符号大整数类型，取值范围：
+-9223372036854775808 到 9223372036854775807</li>
+<li><code>BIGINT UNSIGNED</code>：无符号大整数类型，取值范围： 0 到
+18446744073709551615</li>
+</ul></li>
+<li>浮点数类型
+<ul>
+<li><code>FLOAT</code>：单精度浮点数类型，适用于存储小数</li>
+<li><code>DOUBLE</code>：双精度浮点数类型，适用于存储更大范围的小数</li>
+<li><code>DECIMAL</code>：定点数类型，适用于存储精确的小数，常用于财务计算</li>
+</ul></li>
+<li>字符串类型
+<ul>
+<li><code>CHAR(n)</code>：定长字符串类型，长度为 n</li>
+<li><code>VARCHAR(n)</code>：变长字符串类型，<strong>最大长度</strong>为
+n</li>
+</ul></li>
+<li>文本类型
+<ul>
+<li><code>TEXT</code>：大文本类型，适用于存储大量文本数据</li>
+<li><code>TINYTEXT</code>：小文本类型，适用于存储较小的文本数据</li>
+<li><code>MEDIUMTEXT</code>：中等文本类型，适用于存储中等量的文本数据</li>
+<li><code>LONGTEXT</code>：超大文本类型，适用于存储非常大量的文本数据</li>
+</ul></li>
+<li>日期和时间类型
+<ul>
+<li><code>DATE</code>：日期类型，格式为 ‘YYYY-MM-DD’</li>
+<li><code>DATETIME</code>：日期和时间类型，格式为 ‘YYYY-MM-DD
+HH:MM:SS’</li>
+<li><code>TIMESTAMP</code>：时间戳类型，存储自 1970 年 1 月 1
+日以来的秒数</li>
+<li><code>TIME</code>：时间类型，格式为 ‘HH:MM:SS’</li>
+</ul></li>
+<li>布尔类型
+<ul>
+<li><code>BOOLEAN</code>：布尔类型，取值为 TRUE 或 FALSE</li>
+<li><code>TINYINT(1)</code>：通常用于表示布尔值，0 表示 FALSE，非 0 表示
+TRUE</li>
+</ul></li>
+</ul></li>
+<li>常见约束
+<ul>
+<li><code>PRIMARY KEY</code>：主键约束，唯一标识表中的每一行数据</li>
+<li><code>AUTO_INCREMENT</code>：自动递增约束，通常用于主键</li>
+<li><code>NOT NULL</code>：非空约束，确保字段不能为空</li>
+<li><code>UNIQUE</code>：唯一约束，确保字段值唯一</li>
+<li><code>DEFAULT</code>：默认值约束，为字段指定默认值</li>
+<li><code>FOREIGN KEY</code>：外键约束，确保字段值在另一个表中存在</li>
+</ul></li>
+<li><strong>一般情况下，我们在创建表时都会这样来写</strong>：
+<figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">create</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">table</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">tb1</span><span style="color: #ABB2BF">(</span></span>
+<span class="line"><span style="color: #ABB2BF">    id </span><span style="color: #C678DD">int</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">not null</span><span style="color: #ABB2BF"> auto_increment </span><span style="color: #C678DD">primary key</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">name</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">varchar</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">16</span><span style="color: #ABB2BF">),</span></span>
+<span class="line"><span style="color: #ABB2BF">    age </span><span style="color: #C678DD">int</span></span>
+<span class="line"><span style="color: #ABB2BF">) </span><span style="color: #C678DD">default</span><span style="color: #ABB2BF"> charset</span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF">utf8;</span></span></code></pre></div></div></figure> <figure class="shiki"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #abb2bf">mysql&gt; desc tb1;</span></span>
+<span class="line"><span style="color: #abb2bf">+-------+-------------+------+-----+---------+----------------+</span></span>
+<span class="line"><span style="color: #abb2bf">| Field | Type        | Null | Key | Default | Extra          |</span></span>
+<span class="line"><span style="color: #abb2bf">+-------+-------------+------+-----+---------+----------------+</span></span>
+<span class="line"><span style="color: #abb2bf">| id    | int(11)     | NO   | PRI | NULL    | auto_increment |</span></span>
+<span class="line"><span style="color: #abb2bf">| name  | varchar(16) | YES  |     | NULL    |                |</span></span>
+<span class="line"><span style="color: #abb2bf">| age   | int(11)     | YES  |     | NULL    |                |</span></span>
+<span class="line"><span style="color: #abb2bf">+-------+-------------+------+-----+---------+----------------+</span></span>
+<span class="line"><span style="color: #abb2bf">3 rows in set (0.00 sec)</span></span></code></pre></div></div></figure></li>
+</ul>
+<h3 id="数据行管理">数据行管理</h3>
+<ul>
+<li>行是数据库表中的基本存储单元，表示一条完整的记录。每行由多个字段组成，每个字段对应表中的一个列。行通过主键唯一标识，可以包含各种类型的数据，如整数、字符串、日期等。行之间可以通过外键建立关系，从而实现复杂的数据模型和数据完整性。</li>
+<li>插入数据 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">INSERT INTO</span><span style="color: #ABB2BF"> 表名 (字段1, 字段2, ...) </span><span style="color: #C678DD">VALUES</span><span style="color: #ABB2BF"> (值1, 值2, ...);</span></span>
+<span class="line"><span style="color: #C678DD">INSERT INTO</span><span style="color: #ABB2BF"> 表名 (字段1, 字段2, ...) </span><span style="color: #C678DD">VALUES</span><span style="color: #ABB2BF"> (值1, 值2, ...), (值1, 值2, ...), ...;</span></span></code></pre></div></div></figure></li>
+<li>删除数据 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">DELETE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> 表名 </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> 条件;</span></span></code></pre></div></div></figure></li>
+<li>更新数据 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">UPDATE</span><span style="color: #ABB2BF"> 表名 </span><span style="color: #C678DD">SET</span><span style="color: #ABB2BF"> 字段</span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF">值 </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> 条件;</span></span>
+<span class="line"><span style="color: #C678DD">UPDATE</span><span style="color: #ABB2BF"> 表名 </span><span style="color: #C678DD">SET</span><span style="color: #ABB2BF"> 字段1</span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF">值1, 字段2</span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF">值2, ... </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> 条件;</span></span></code></pre></div></div></figure></li>
+<li>查询数据 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> * </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> 表名;</span></span>
+<span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> 字段1, 字段2, ... </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> 表名;</span></span></code></pre></div></div></figure> 也可以添加查询条件 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> * </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> 表名 </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> 条件;</span></span>
+<span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> 字段1, 字段2, ... </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> 表名 </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> 条件;</span></span></code></pre></div></div></figure></li>
+<li>常用查询条件
+<ul>
+<li><code>=</code>：等于</li>
+<li><code>!=</code> 或 <code>&lt;&gt;</code>：不等于</li>
+<li><code>&gt;</code>：大于</li>
+<li><code>&lt;</code>：小于</li>
+<li><code>&gt;=</code>：大于等于</li>
+<li><code>&lt;=</code>：小于等于</li>
+<li><code>BETWEEN ... AND ...</code>：在某个范围内</li>
+<li><code>LIKE</code>：模糊匹配
+<ul>
+<li><code>%</code>：表示任意数量的字符</li>
+<li><code>_</code>：表示单个字符</li>
+</ul></li>
+<li><code>IN</code>：在某个集合中</li>
+<li><code>IS NULL</code>：为空</li>
+<li><code>IS NOT NULL</code>：不为空</li>
+</ul></li>
+<li>排序查询结果 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> * </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> 表名 </span><span style="color: #C678DD">ORDER BY</span><span style="color: #ABB2BF"> 字段 </span><span style="color: #C678DD">ASC</span><span style="color: #ABB2BF">;  </span><span style="color: #7F848E; font-style: italic">-- 升序</span></span>
+<span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> * </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> 表名 </span><span style="color: #C678DD">ORDER BY</span><span style="color: #ABB2BF"> 字段 </span><span style="color: #C678DD">DESC</span><span style="color: #ABB2BF">; </span><span style="color: #7F848E; font-style: italic">-- 降序</span></span></code></pre></div></div></figure></li>
+<li>分页查询 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> * </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> 表名 </span><span style="color: #C678DD">LIMIT</span><span style="color: #ABB2BF"> 偏移量, 行数;</span></span></code></pre></div></div></figure></li>
+<li>聚合函数
+<ul>
+<li><code>COUNT()</code>：计算行数</li>
+<li><code>SUM()</code>：计算总和</li>
+<li><code>AVG()</code>：计算平均值</li>
+<li><code>MAX()</code>：计算最大值</li>
+<li><code>MIN()</code>：计算最小值</li>
+</ul></li>
+<li>分组查询 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> 字段, 聚合函数(字段) </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> 表名 </span><span style="color: #C678DD">GROUP BY</span><span style="color: #ABB2BF"> 字段;</span></span>
+<span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> 字段, 聚合函数(字段) </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> 表名 </span><span style="color: #C678DD">GROUP BY</span><span style="color: #ABB2BF"> 字段 </span><span style="color: #C678DD">HAVING</span><span style="color: #ABB2BF"> 条件;</span></span></code></pre></div></div></figure></li>
+<li>多表查询
+<ul>
+<li>内连接（INNER JOIN） <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> * </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> 表1 </span><span style="color: #C678DD">INNER JOIN</span><span style="color: #ABB2BF"> 表2 </span><span style="color: #C678DD">ON</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">表1</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">字段</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">表2</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">字段</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
+<li>左连接（LEFT JOIN） <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> * </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> 表1 </span><span style="color: #C678DD">LEFT JOIN</span><span style="color: #ABB2BF"> 表2 </span><span style="color: #C678DD">ON</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">表1</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">字段</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">表2</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">字段</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
+<li>右连接（RIGHT JOIN） <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> * </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> 表1 </span><span style="color: #C678DD">RIGHT JOIN</span><span style="color: #ABB2BF"> 表2 </span><span style="color: #C678DD">ON</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">表1</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">字段</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">表2</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">字段</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
+<li>全连接（FULL JOIN） <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> * </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> 表1 </span><span style="color: #C678DD">FULL JOIN</span><span style="color: #ABB2BF"> 表2 </span><span style="color: #C678DD">ON</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">表1</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">字段</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">表2</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">字段</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
+</ul></li>
+<li>子查询 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> * </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> 表名 </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> 字段 </span><span style="color: #C678DD">IN</span><span style="color: #ABB2BF"> (</span><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> 字段 </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> 另一个表 </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> 条件);</span></span></code></pre></div></div></figure></li>
+</ul>
+<h2 id="使用-python-操作-mysql">使用 Python 操作 MySQL</h2>
+<ul>
+<li>使用MySQL内置工具（命令）
+<ul>
+<li>创建数据库：nis3368</li>
+<li>数据一张表：admin
+<ul>
+<li>表名：admin</li>
+<li>列：
+<ul>
+<li>id，整型，自增，主键</li>
+<li>username 字符串 不为空</li>
+<li>password 字符串 不为空</li>
+<li>mobile 字符串 不为空</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Python代码实现：
+<ul>
+<li>添加用户</li>
+<li>删除用户</li>
+<li>查看用户</li>
+<li>更新用户信息</li>
+</ul></li>
+</ul>
+<h3 id="使用-mysql-内置工具创建表结构">使用 MySQL
+内置工具创建表结构</h3>
+<figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">create</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">database</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">nis3368</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">DEFAULT</span><span style="color: #ABB2BF"> CHARSET utf8 </span><span style="color: #C678DD">COLLATE</span><span style="color: #ABB2BF"> utf8_general_ci;</span></span></code></pre></div></div></figure>
+<figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">use</span><span style="color: #ABB2BF"> nis3368;</span></span></code></pre></div></div></figure>
+<figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">create</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">table</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">admin</span><span style="color: #ABB2BF">(</span></span>
+<span class="line"><span style="color: #ABB2BF">    id </span><span style="color: #C678DD">int</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">not null</span><span style="color: #ABB2BF"> auto_increment </span><span style="color: #C678DD">primary key</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">    username </span><span style="color: #C678DD">varchar</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">16</span><span style="color: #ABB2BF">) </span><span style="color: #C678DD">not null</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">password</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">varchar</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">64</span><span style="color: #ABB2BF">) </span><span style="color: #C678DD">not null</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">    mobile </span><span style="color: #C678DD">char</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">11</span><span style="color: #ABB2BF">) </span><span style="color: #C678DD">not null</span></span>
+<span class="line"><span style="color: #ABB2BF">) </span><span style="color: #C678DD">default</span><span style="color: #ABB2BF"> charset</span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF">utf8;</span></span></code></pre></div></div></figure>
+<h3 id="为-python-安装依赖包">为 Python 安装依赖包</h3>
+<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">pip</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">pymysql</span></span>
+<span class="line"><span style="color: #61AFEF">pip</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">cryptography</span></span></code></pre></div></div></figure>
+<h3 id="创建数据">创建数据</h3>
+<figure class="shiki python"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">import</span><span style="color: #ABB2BF"> pymysql</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic"># 1.连接MySQL</span></span>
+<span class="line"><span style="color: #ABB2BF">conn </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> pymysql.</span><span style="color: #61AFEF">connect</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">host</span><span style="color: #56B6C2">=</span><span style="color: #98C379">"127.0.0.1"</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75; font-style: italic">port</span><span style="color: #56B6C2">=</span><span style="color: #D19A66">3306</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75; font-style: italic">user</span><span style="color: #56B6C2">=</span><span style="color: #98C379">'root'</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75; font-style: italic">passwd</span><span style="color: #56B6C2">=</span><span style="color: #98C379">"root123"</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75; font-style: italic">charset</span><span style="color: #56B6C2">=</span><span style="color: #98C379">'utf8'</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75; font-style: italic">db</span><span style="color: #56B6C2">=</span><span style="color: #98C379">'nis3368'</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">cursor </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> conn.</span><span style="color: #61AFEF">cursor</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">cursor</span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF">pymysql.cursors.DictCursor)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic"># 2.发送指令</span></span>
+<span class="line"><span style="color: #7F848E; font-style: italic"># cursor.execute("insert into admin(username,password,mobile) values('刘备','qwe123','15155555555')")</span></span>
+<span class="line"><span style="color: #7F848E; font-style: italic"># 防止SQL注入</span></span>
+<span class="line"><span style="color: #ABB2BF">sql </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"insert into admin(username,password,mobile) values(</span><span style="color: #D19A66">%s</span><span style="color: #98C379">,</span><span style="color: #D19A66">%s</span><span style="color: #98C379">,</span><span style="color: #D19A66">%s</span><span style="color: #98C379">)"</span></span>
+<span class="line"><span style="color: #ABB2BF">cursor.</span><span style="color: #61AFEF">execute</span><span style="color: #ABB2BF">(sql, [</span><span style="color: #98C379">"关羽"</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">"qwe123"</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">"1999999999"</span><span style="color: #ABB2BF">])</span></span>
+<span class="line"><span style="color: #ABB2BF">conn.</span><span style="color: #61AFEF">commit</span><span style="color: #ABB2BF">()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic"># 3.关闭</span></span>
+<span class="line"><span style="color: #ABB2BF">cursor.</span><span style="color: #61AFEF">close</span><span style="color: #ABB2BF">()</span></span>
+<span class="line"><span style="color: #ABB2BF">conn.</span><span style="color: #61AFEF">close</span><span style="color: #ABB2BF">()</span></span></code></pre></div></div></figure>
+<ul>
+<li>例：从键盘输入用户名、密码和手机号，保存到数据库：</li>
+</ul>
+<figure class="shiki python"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">import</span><span style="color: #ABB2BF"> pymysql</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C678DD">while</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">True</span><span style="color: #ABB2BF">:</span></span>
+<span class="line"><span style="color: #ABB2BF">    user </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">input</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"用户名："</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> user.</span><span style="color: #61AFEF">upper</span><span style="color: #ABB2BF">() </span><span style="color: #56B6C2">==</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'Q'</span><span style="color: #ABB2BF">:</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">break</span></span>
+<span class="line"><span style="color: #ABB2BF">    pwd </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">input</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"密码："</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">    mobile </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">input</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"手机号："</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #7F848E; font-style: italic"># 1.连接MySQL</span></span>
+<span class="line"><span style="color: #ABB2BF">    conn </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> pymysql.</span><span style="color: #61AFEF">connect</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">host</span><span style="color: #56B6C2">=</span><span style="color: #98C379">"127.0.0.1"</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75; font-style: italic">port</span><span style="color: #56B6C2">=</span><span style="color: #D19A66">3306</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75; font-style: italic">user</span><span style="color: #56B6C2">=</span><span style="color: #98C379">'root'</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75; font-style: italic">passwd</span><span style="color: #56B6C2">=</span><span style="color: #98C379">"root123"</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75; font-style: italic">charset</span><span style="color: #56B6C2">=</span><span style="color: #98C379">'utf8'</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75; font-style: italic">db</span><span style="color: #56B6C2">=</span><span style="color: #98C379">'nis3368'</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">    cursor </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> conn.</span><span style="color: #61AFEF">cursor</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">cursor</span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF">pymysql.cursors.DictCursor)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #7F848E; font-style: italic"># 2.发送指令（千万不要用字符串格式化去做SQL的拼接，安全隐患SQL注入）</span></span>
+<span class="line"><span style="color: #ABB2BF">    sql </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"insert into admin(username,password,mobile) values(</span><span style="color: #D19A66">%s</span><span style="color: #98C379">,</span><span style="color: #D19A66">%s</span><span style="color: #98C379">,</span><span style="color: #D19A66">%s</span><span style="color: #98C379">)"</span></span>
+<span class="line"><span style="color: #ABB2BF">    cursor.</span><span style="color: #61AFEF">execute</span><span style="color: #ABB2BF">(sql, [user, pwd, mobile])</span></span>
+<span class="line"><span style="color: #ABB2BF">    conn.</span><span style="color: #61AFEF">commit</span><span style="color: #ABB2BF">()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #7F848E; font-style: italic"># 3.关闭</span></span>
+<span class="line"><span style="color: #ABB2BF">    cursor.</span><span style="color: #61AFEF">close</span><span style="color: #ABB2BF">()</span></span>
+<span class="line"><span style="color: #ABB2BF">    conn.</span><span style="color: #61AFEF">close</span><span style="color: #ABB2BF">()</span></span></code></pre></div></div></figure>
+<h3 id="查询数据">查询数据</h3>
+<figure class="shiki python"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">import</span><span style="color: #ABB2BF"> pymysql</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic"># 1.连接MySQL</span></span>
+<span class="line"><span style="color: #ABB2BF">conn </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> pymysql.</span><span style="color: #61AFEF">connect</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">host</span><span style="color: #56B6C2">=</span><span style="color: #98C379">"127.0.0.1"</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75; font-style: italic">port</span><span style="color: #56B6C2">=</span><span style="color: #D19A66">3306</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75; font-style: italic">user</span><span style="color: #56B6C2">=</span><span style="color: #98C379">'root'</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75; font-style: italic">passwd</span><span style="color: #56B6C2">=</span><span style="color: #98C379">"root123"</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75; font-style: italic">charset</span><span style="color: #56B6C2">=</span><span style="color: #98C379">'utf8'</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75; font-style: italic">db</span><span style="color: #56B6C2">=</span><span style="color: #98C379">'nis3368'</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">cursor </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> conn.</span><span style="color: #61AFEF">cursor</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">cursor</span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF">pymysql.cursors.DictCursor)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic"># 2.发送指令（ *** 千万不要用字符串格式化去做SQL的拼接，安全隐患SQL注入***）</span></span>
+<span class="line"><span style="color: #ABB2BF">cursor.</span><span style="color: #61AFEF">execute</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"select * from admin where id &gt; </span><span style="color: #D19A66">%s</span><span style="color: #98C379">"</span><span style="color: #ABB2BF">, [</span><span style="color: #D19A66">2</span><span style="color: #ABB2BF">, ])</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic"># 获取符合条件的所有数据，得到的是 [字典,字典,···]/空列表</span></span>
+<span class="line"><span style="color: #ABB2BF">data_list </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> cursor.</span><span style="color: #61AFEF">fetchall</span><span style="color: #ABB2BF">()</span></span>
+<span class="line"><span style="color: #C678DD">for</span><span style="color: #ABB2BF"> row_dict </span><span style="color: #C678DD">in</span><span style="color: #ABB2BF"> data_list:</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #56B6C2">print</span><span style="color: #ABB2BF">(row_dict) </span><span style="color: #7F848E; font-style: italic"># {'id': 3, 'username': '集宁', 'password': 'qwe123', 'mobile': '1999999999'}</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic"># 获取符合条件的第一条数据，字典/None</span></span>
+<span class="line"><span style="color: #ABB2BF">res </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> cursor.</span><span style="color: #61AFEF">fetchone</span><span style="color: #ABB2BF">()</span></span>
+<span class="line"><span style="color: #56B6C2">print</span><span style="color: #ABB2BF">(res)  </span><span style="color: #7F848E; font-style: italic"># {'id': 3, 'username': '集宁', 'password': 'qwe123', 'mobile': '1999999999'}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic"># 3.关闭连接</span></span>
+<span class="line"><span style="color: #ABB2BF">cursor.</span><span style="color: #61AFEF">close</span><span style="color: #ABB2BF">()</span></span>
+<span class="line"><span style="color: #ABB2BF">conn.</span><span style="color: #61AFEF">close</span><span style="color: #ABB2BF">()</span></span></code></pre></div></div></figure>
+<h3 id="修改数据">修改数据</h3>
+<ul>
+<li>例：将id=7的用户的手机号改为1888888888</li>
+</ul>
+<figure class="shiki python"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">import</span><span style="color: #ABB2BF"> pymysql</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic"># 1.连接MySQL</span></span>
+<span class="line"><span style="color: #ABB2BF">conn </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> pymysql.</span><span style="color: #61AFEF">connect</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">host</span><span style="color: #56B6C2">=</span><span style="color: #98C379">"127.0.0.1"</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75; font-style: italic">port</span><span style="color: #56B6C2">=</span><span style="color: #D19A66">3306</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75; font-style: italic">user</span><span style="color: #56B6C2">=</span><span style="color: #98C379">'root'</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75; font-style: italic">passwd</span><span style="color: #56B6C2">=</span><span style="color: #98C379">"root123"</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75; font-style: italic">charset</span><span style="color: #56B6C2">=</span><span style="color: #98C379">'utf8'</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75; font-style: italic">db</span><span style="color: #56B6C2">=</span><span style="color: #98C379">'nis3368'</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">cursor </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> conn.</span><span style="color: #61AFEF">cursor</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">cursor</span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF">pymysql.cursors.DictCursor)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic"># 2.发送指令（ *** 千万不要用字符串格式化去做SQL的拼接，安全隐患SQL注入***）</span></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">#将id=7的用户的手机号改为1888888888</span></span>
+<span class="line"><span style="color: #ABB2BF">cursor.</span><span style="color: #61AFEF">execute</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"update admin set mobile=</span><span style="color: #D19A66">%s</span><span style="color: #98C379"> where id=</span><span style="color: #D19A66">%s</span><span style="color: #98C379">"</span><span style="color: #ABB2BF">, [</span><span style="color: #98C379">"1888888888"</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">7</span><span style="color: #ABB2BF">, ])</span></span>
+<span class="line"><span style="color: #ABB2BF">conn.</span><span style="color: #61AFEF">commit</span><span style="color: #ABB2BF">()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic"># 3.关闭</span></span>
+<span class="line"><span style="color: #ABB2BF">cursor.</span><span style="color: #61AFEF">close</span><span style="color: #ABB2BF">()</span></span>
+<span class="line"><span style="color: #ABB2BF">conn.</span><span style="color: #61AFEF">close</span><span style="color: #ABB2BF">()</span></span></code></pre></div></div></figure>
+<h3 id="删除数据">删除数据</h3>
+<ul>
+<li>将id=3的用户删除</li>
+</ul>
+<figure class="shiki python"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">import</span><span style="color: #ABB2BF"> pymysql</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic"># 1.连接MySQL</span></span>
+<span class="line"><span style="color: #ABB2BF">conn </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> pymysql.</span><span style="color: #61AFEF">connect</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">host</span><span style="color: #56B6C2">=</span><span style="color: #98C379">"127.0.0.1"</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75; font-style: italic">port</span><span style="color: #56B6C2">=</span><span style="color: #D19A66">3306</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75; font-style: italic">user</span><span style="color: #56B6C2">=</span><span style="color: #98C379">'root'</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75; font-style: italic">passwd</span><span style="color: #56B6C2">=</span><span style="color: #98C379">"root123"</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75; font-style: italic">charset</span><span style="color: #56B6C2">=</span><span style="color: #98C379">'utf8'</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75; font-style: italic">db</span><span style="color: #56B6C2">=</span><span style="color: #98C379">'nis3368'</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">cursor </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> conn.</span><span style="color: #61AFEF">cursor</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">cursor</span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF">pymysql.cursors.DictCursor)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic"># 2.发送指令（ *** 千万不要用字符串格式化去做SQL的拼接，安全隐患SQL注入***）</span></span>
+<span class="line"><span style="color: #ABB2BF">cursor.</span><span style="color: #61AFEF">execute</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"delete from admin where id=</span><span style="color: #D19A66">%s</span><span style="color: #98C379">"</span><span style="color: #ABB2BF">, [</span><span style="color: #D19A66">3</span><span style="color: #ABB2BF">, ])</span></span>
+<span class="line"><span style="color: #ABB2BF">conn.</span><span style="color: #61AFEF">commit</span><span style="color: #ABB2BF">()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic"># 3.关闭</span></span>
+<span class="line"><span style="color: #ABB2BF">cursor.</span><span style="color: #61AFEF">close</span><span style="color: #ABB2BF">()</span></span>
+<span class="line"><span style="color: #ABB2BF">conn.</span><span style="color: #61AFEF">close</span><span style="color: #ABB2BF">()</span></span></code></pre></div></div></figure>
+<h3 id="注意事项">注意事项</h3>
+<ul>
+<li>在进行 新增、删除、修改时，一定要记得
+<code>commit</code>，不然数据库没有数据。 <figure class="shiki python"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">cursor.</span><span style="color: #61AFEF">execute</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">".."</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">conn.</span><span style="color: #61AFEF">commit</span><span style="color: #ABB2BF">()</span></span></code></pre></div></div></figure></li>
+<li>在查询时，不需要 <code>commit</code>，执行 <code>fetchall</code> /
+<code>fetchone</code> <figure class="shiki"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #abb2bf">cursor.execute("...")</span></span>
+<span class="line"><span style="color: #abb2bf"></span></span>
+<span class="line"><span style="color: #abb2bf"># 第一条数据，字典，无数据时是空列表</span></span>
+<span class="line"><span style="color: #abb2bf">v1 = cursor.fetchone()</span></span>
+<span class="line"><span style="color: #abb2bf"></span></span>
+<span class="line"><span style="color: #abb2bf"># 所有数据，列表套字典，无数据时是None</span></span>
+<span class="line"><span style="color: #abb2bf">v1 = cursor.fetchall()</span></span></code></pre></div></div></figure></li>
+<li>对于SQL语句不要用Python的字符串格式化进行拼接（会被SQL注入），一定要用
+<code>execute</code> + 参数 <figure class="shiki python"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">cursor.</span><span style="color: #61AFEF">execute</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">".</span><span style="color: #D19A66">%s</span><span style="color: #98C379">..... </span><span style="color: #D19A66">%s</span><span style="color: #98C379">"</span><span style="color: #ABB2BF">, [</span><span style="color: #98C379">"xx"</span><span style="color: #ABB2BF">,</span><span style="color: #98C379">"xx"</span><span style="color: #ABB2BF">])</span></span></code></pre></div></div></figure></li>
+</ul>
 
                 
               </div>
@@ -2526,7 +2829,7 @@ DOM，开发者可以动态地访问和修改网页的内容、结构和样式�
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年9月18日</div>
+          <div>2025年9月20日</div>
         </div>
       
       
@@ -2906,7 +3209,7 @@ DOM，开发者可以动态地访问和修改网页的内容、结构和样式�
 
 
   <script type="text/javascript">
-  document.getElementById("g-total-word-id").innerHTML = "376k";
+  document.getElementById("g-total-word-id").innerHTML = "378k";
   document.getElementById('g-total-posts-id').textContent ="47";
 </script>
 
