@@ -78,7 +78,7 @@ function umamiTrackEvent() {
             link.dataset.umamiEvent = "Powered by Hexo";
         } else if (link.href === 'https://github.com/fluid-dev/hexo-theme-fluid') {
             link.dataset.umamiEvent = "Powered by Fluid";
-        } else if (link.href === 'https://eu.umami.is/share/1fs3cnD9TAP8JzML/youyeyejie.github.io') {
+        } else if (link.href === 'https://cloud.umami.is/share/1fs3cnD9TAP8JzML') {
             link.dataset.umamiEvent = "Powered by Umami";
         } 
     });
