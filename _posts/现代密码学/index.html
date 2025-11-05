@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis3365.webp">
 <meta property="article:published_time" content="2025-11-05T02:05:07.000Z">
-<meta property="article:modified_time" content="2025-11-05T12:22:04.417Z">
+<meta property="article:modified_time" content="2025-11-05T12:28:46.501Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU">
 <meta property="article:tag" content="现代密码学">
@@ -1010,13 +1010,14 @@ X \to A, Y \to B, Z \to C\)</span></li>
 <h3 id="混合单表代换密码">混合单表代换密码</h3>
 <ul>
 <li>替换方法：每个字母用另一个字母替换，但不是简单的位移，每个字母随机映射到另一个字母</li>
-<li>一般形式：令 $ P = C = K = <em>{26} $，对 $ 0 i &lt; 26 $，任意
-<span class="math inline">\(x, y \in \mathbb{Z}_{26}\)</span> 加密函数为
-<span class="math display">\[ E(x) = (ax + b) \bmod 26 \]</span>
-解密函数为 <span class="math display">\[ D(y) = a^{-1}(y - b) \bmod 26
-\]</span> 其中 $ a, b </em>{26} $，且 $ (a, 26) = 1 $</li>
+<li>一般形式：令 <span class="math inline">\(P = C = K =
+\mathbb{Z}_{26}\)</span>，对 $0 i &lt; 26 $，任意 <span class="math inline">\(x, y \in \mathbb{Z}_{26}\)</span> 加密函数为 <span class="math display">\[E(x) = (ax + b) \bmod 26\]</span> 解密函数为
+<span class="math display">\[D(y) = a^{-1}(y - b) \bmod 26\]</span> 其中
+$a, b _{26} $，且 <span class="math inline">\(\gcd(a, 26) =
+1\)</span></li>
 <li>密钥长度：<span class="math inline">\(26\)</span></li>
-<li>密钥空间：$ 26! ^{88} $，比凯撒密码更安全</li>
+<li>密钥空间：<span class="math inline">\(26! \approx
+2^{88}\)</span>，比凯撒密码更安全</li>
 <li>有多种方法，一种简单方法是写没有重复字母的“密钥字”，其它字母按顺序写在密钥字最后字母后面
 <ul>
 <li>例如，给定密钥字 “JULIUSCAESAR” ，则映射为： <span class="math display">\[
@@ -1031,12 +1032,15 @@ X \to A, Y \to B, Z \to C\)</span></li>
 <h3 id="维吉尼亚密码">维吉尼亚密码</h3>
 <ul>
 <li>替换方法：使用多个单字母代换表，因此一个字母可以被多个字母代换</li>
-<li>一般形式：令 $ P = C = K = <em>{26} $，设 <span class="math inline">\(m \in \mathbb{Z}^+\)</span> 为密钥长度，任意 <span class="math inline">\(x, y \in \mathbb{Z}_{26}\)</span>，$ k = (k_1,
-k_2, , k_m) </em>{26}^m $，加密函数为 <span class="math display">\[
-E(x_i) = (x_i + k_{(i \bmod m) + 1}) \bmod 26 \]</span> 解密函数为 <span class="math display">\[ D(y_i) = (y_i - k_{(i \bmod m) + 1}) \bmod 26
-\]</span></li>
-<li>密钥长度：$ m $</li>
-<li>密钥空间：$ 26^m $，比混合单表代换密码更安全</li>
+<li>一般形式：令 <span class="math inline">\(P = C = K =
+\mathbb{Z}_{26}\)</span>，设 <span class="math inline">\(m \in
+\mathbb{Z}^+\)</span> 为密钥长度，任意 <span class="math inline">\(x, y
+\in \mathbb{Z}_{26}\)</span>，<span class="math inline">\(k = (k_1, k_2,
+\ldots, k_m) \in \mathbb{Z}_{26}^m\)</span>，加密函数为 <span class="math display">\[E(x_i) = (x_i + k_{(i \bmod m) + 1}) \bmod
+26\]</span> 解密函数为 <span class="math display">\[D(y_i) = (y_i -
+k_{(i \bmod m) + 1}) \bmod 26\]</span></li>
+<li>密钥长度：<span class="math inline">\(m\)</span></li>
+<li>密钥空间：<span class="math inline">\(26^m\)</span>，比混合单表代换密码更安全</li>
 <li>例子：明文 “ATTACKATDAWN” ，密钥 “LEMON” ，加密过程如下： <span class="math display">\[
   \begin{aligned}
   Plain:  &amp; \mathtt{A T T A C K A T D A W N} \\
