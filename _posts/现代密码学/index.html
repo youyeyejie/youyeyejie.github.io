@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis3365.webp">
 <meta property="article:published_time" content="2025-11-05T02:05:07.000Z">
-<meta property="article:modified_time" content="2025-11-05T05:25:29.482Z">
+<meta property="article:modified_time" content="2025-11-05T12:19:18.736Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU">
 <meta property="article:tag" content="现代密码学">
@@ -1121,6 +1121,372 @@ E(x_i) = (x_i + k_{(i \bmod m) + 1}) \bmod 26 \]</span> 解密函数为 <span cl
 <li>藏头诗</li>
 <li>反切码</li>
 </ul>
+<h1 id="序列密码">序列密码</h1>
+<ul>
+<li>序列密码(stream
+cipher)是一种对明文消息流中的每一个符号分别进行加密的对称密钥密码，又称为流密码</li>
+<li>流密码和分组密码之间的区别并不是绝对的
+<ul>
+<li>流密码可以通过使用分组密码的 CFB 模式、OFB 模式或 CTR
+模式来构建</li>
+<li>在 ECB 或 CBC
+下的分组密码，可以视为一种操作于大字符上的流密码。</li>
+</ul></li>
+</ul>
+<h2 id="序列密码概述-stream-cipher">序列密码概述 (Stream Cipher)</h2>
+<ul>
+<li>定义：也称流密码：将被加密的消息 <span class="math inline">\(m\)</span> 分成连续的符号(一般为比特串)，<span class="math inline">\(m=m_1 m_2 m_3 \cdots\)</span>；然后使用密钥流
+<span class="math inline">\(k=k_1 k_2 k_3 \cdots\)</span> 中的第 <span class="math inline">\(i\)</span>个元素 <span class="math inline">\(k_i\)</span> 对 <span class="math inline">\(m\)</span> 的第 <span class="math inline">\(i\)</span> 个元素 <span class="math inline">\(m_i\)</span> 执行加密变换，<span class="math inline">\(i=1,2,3,\cdots\)</span>；所有的加密输出连接在一起就构成了对
+<span class="math inline">\(m\)</span> 执行加密后的密文 <span class="math inline">\(c\)</span>。</li>
+</ul>
+<figure>
+<img src="image-25.webp" srcset="/img/loading/loading3.gif" lazyload alt="流密码">
+<figcaption aria-hidden="true">流密码</figcaption>
+</figure>
+<ul>
+<li>结构：
+<ul>
+<li>简单结构： <img src="image-26.webp" srcset="/img/loading/loading3.gif" lazyload alt="流密码结构"></li>
+<li>完整结构： <img src="image-27.webp" srcset="/img/loading/loading3.gif" lazyload alt="流密码完整结构"></li>
+<li>如何生成一个可以用作密钥流的“随机”比特序列，要求易于使用，但又不能太短以至于不安全</li>
+<li>通常加、解密所需要的这种序列是由一个确定性（deterministic）的密钥流生成器（key
+generator）产生的，该生成器的输入是一个容易记住的密钥，称之为密钥流生成器的初始密钥或种子（seed）密钥</li>
+</ul></li>
+<li>安全性：
+<ul>
+<li>流密码的安全性完全取决于密钥的安全等级</li>
+<li>实用的流密码以少量的、一定长度的种子密钥经过逻辑运算产生周期较长、可用于加解密运算的伪随机序列。</li>
+</ul></li>
+</ul>
+<h3 id="同步流密码-synchronous-stream-ciphers">同步流密码 (Synchronous
+stream ciphers)</h3>
+<figure>
+<img src="image-28.webp" srcset="/img/loading/loading3.gif" lazyload alt="同步流密码">
+<figcaption aria-hidden="true">同步流密码</figcaption>
+</figure>
+<ul>
+<li>密钥流的产生与明文消息流相互独立</li>
+<li>密钥流与明文串无关，所以同步流密码中的每个密文 <span class="math inline">\(c_i\)</span> 不依赖于之前的明文 <span class="math inline">\(m_{i−1}，\cdots，m_1\)</span>。从而，同步流密码的一个重要优点就是无错误传播：在传输期间一个密文字符被改变只影响该符号的恢复，不会对后继的符号产生影响。</li>
+</ul>
+<h3 id="自同步流密码-self-synchronizing-stream-ciphers">自同步流密码
+(Self-synchronizing stream ciphers)</h3>
+<figure>
+<img src="image-29.webp" srcset="/img/loading/loading3.gif" lazyload alt="自同步流密码">
+<figcaption aria-hidden="true">自同步流密码</figcaption>
+</figure>
+<ul>
+<li>密钥流与之前已经产生的若干密文有关 <span class="math display">\[\begin{aligned}
+  &amp;\sigma_i=(c_{i-t},c_{i-t+1},\cdots,c_{i-1}) \\
+  &amp;k_i=G(\sigma_i,K)\\
+  &amp;c_i=E(k_i,m_i)
+  \end{aligned}\]</span></li>
+</ul>
+<h2 id="密钥流的生成方式">密钥流的生成方式</h2>
+<ul>
+<li>密钥流的生成方法：
+<ul>
+<li>有多种产生同步密钥流生成器的方法</li>
+<li>最普遍的是使用一种称为线性反馈移位寄存器(Linear Feedback Shift
+Register，LFSR)
+<ul>
+<li>LFSR的结构非常适合硬件实现；</li>
+<li>LFSR的结构便于使用代数方法进行理论分析；</li>
+<li>产生的序列的周期可以很大；</li>
+<li>产生的序列具有良好的统计特性。</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="线性反馈移位寄存器lfsr">线性反馈移位寄存器（LFSR）</h3>
+<ul>
+<li><p>反馈移位寄存器： <img src="image-30.webp" srcset="/img/loading/loading3.gif" lazyload alt="反馈移位寄存器"></p>
+<ul>
+<li>上图为一个反馈移位寄存器的流程图，信号从左到右。</li>
+<li><span class="math inline">\(a_i\)</span> 表示存储单元，取值为 0 或
+1，<span class="math inline">\(a_i\)</span> 的个数 <span class="math inline">\(n\)</span>
+称为反馈移位寄存器的<strong>级</strong>。</li>
+<li>在某一时刻，这些级的内容构成该反馈移位寄存器的一个<strong>状态</strong>，共有<span class="math inline">\(2^n\)</span> 个可能的状态，每一个状态对应于与
+<span class="math inline">\(\mathbb{F}_2\)</span> 上的一个 <span class="math inline">\(n\)</span> 维向量，用 <span class="math inline">\((a_1,a_2,…,a_n)\)</span> 表示。</li>
+<li>函数 <span class="math inline">\(f\)</span> 是一个 <span class="math inline">\(n\)</span>
+元布尔函数，称之为<strong>反馈函数</strong>。</li>
+</ul></li>
+<li><p>线性反馈移位寄存器（LFSR） <img src="image-31.webp" srcset="/img/loading/loading3.gif" lazyload alt="线性反馈移位寄存器"></p>
+<ul>
+<li>反馈函数 <span class="math inline">\(f\)</span> 是线性的，即 <span class="math display">\[
+  f(a_1,a_2,\cdots,a_n)=c_n a_1\oplus c_{n-1} a_2\oplus\cdots\oplus c_1
+a_n
+  \]</span> 其中 <span class="math inline">\(c_i \in
+\mathbb{F}_2\)</span>，<span class="math inline">\(\oplus\)</span>
+为模二加法，和乘法均在 <span class="math inline">\(\mathbb{F}_2\)</span>
+上进行。</li>
+<li>令 <span class="math inline">\(a_i(t)\)</span> 为第 <span class="math inline">\(i\)</span> 级在时刻 <span class="math inline">\(t\)</span> 的内容，则 LFSR 的状态转移可表示为：
+<span class="math display">\[
+  \begin{aligned}
+  &amp;a_i^{(t+1)}=a_{i+1}^{(t)} \\
+  &amp;a_n^{(t+1)}=c_n a_1^{(t)}\oplus c_{n-1} a_2^{(t)}\oplus
+\cdots\oplus c_1 a_n^{(t)}
+  \end{aligned}
+  \]</span></li>
+<li>则称多项式 <span class="math inline">\(C(x)=1+c_1 x+c_2
+x^2+\cdots+c_n x^n\)</span> 为该 LFSR 的
+<strong>联接多项式</strong>（connection polynomial）。</li>
+<li>线性反馈移位寄存器的状态转移可以用矩阵表示： <span class="math display">\[\begin{bmatrix}
+  a_1^{(t+1)}\\
+  a_2^{(t+1)}\\
+  \vdots\\
+  a_n^{(t+1)}
+  \end{bmatrix}=
+  \begin{bmatrix}
+  0 &amp; 1 &amp; 0 &amp; \cdots &amp; 0\\
+  0 &amp; 0 &amp; 1 &amp; \cdots &amp; 0\\
+  \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots\\
+  0 &amp; 0 &amp; 0 &amp; \cdots &amp; 1\\
+  c_n &amp; c_{n-1} &amp; c_{n-2} &amp; \cdots &amp; c_1
+  \end{bmatrix}
+  \begin{bmatrix}
+  a_1^{(t)}\\
+  a_2^{(t)}\\
+  \vdots\\
+  a_n^{(t)}
+  \end{bmatrix}\]</span></li>
+</ul></li>
+</ul>
+<h4 id="m-序列与最大周期移位寄存器"><span class="math inline">\(m\)</span> 序列与最大周期移位寄存器</h4>
+<ul>
+<li>根据 LFSR 的状态转移图可以看出，一个 <span class="math inline">\(n\)</span> 级 LFSR 序列的周期最大只能为 <span class="math inline">\(2^n−1\)</span>
+<ul>
+<li>全零状态总是独立循环的且产生的是全零序列</li>
+</ul></li>
+<li><span class="math inline">\(\mathbb{F_2}\)</span> 上 <span class="math inline">\(n\)</span> 次多项式为联接多项式的 <span class="math inline">\(n\)</span> 级 LFSR 所产生的非零序列的周期为 <span class="math inline">\(2^n−1\)</span>，称这个序列是 <span class="math inline">\(n\)</span> 级最大的线性移位寄存器周期序列，简称
+<span class="math inline">\(m\)</span> 序列（Maximal length
+sequence）。</li>
+<li>如果一个 <span class="math inline">\(n\)</span> 级 LFSR 产生了 <span class="math inline">\(m\)</span> 序列，则该 LFSR 的状态转移图仅由 <span class="math inline">\(2\)</span>
+个圈构成，其中一个是由全零状态构成的长度为 <span class="math inline">\(1\)</span> 的圈，另一个是由全部其余 <span class="math inline">\(2^n−1\)</span> 个状态构成的长度为 <span class="math inline">\(2^n−1\)</span> 的圈。</li>
+<li><strong>定义</strong>：若 <span class="math inline">\(f(x)\)</span>
+是 <span class="math inline">\(GF(q)\)</span> 上的不可约多项式且 <span class="math inline">\(f(x)\)</span> 的根是 <span class="math inline">\(GF(q^n)\)</span> 的本原元，则称 <span class="math inline">\(f(x)\)</span> 为 <span class="math inline">\(GF(q)\)</span> 上的本原多项式。
+<ul>
+<li>一个 <span class="math inline">\(n\)</span> 级 LFSR
+为最长移位寄存器的充要条件是它的联接多项式为 <span class="math inline">\(\mathbb{F_2}\)</span> 上的 <span class="math inline">\(n\)</span> 次本原多项式 <span class="math inline">\(C(x)\)</span>。</li>
+<li>当 <span class="math inline">\(2^n−1\)</span> 为素数时， <span class="math inline">\(\mathbb{F_2}\)</span> 上的每一个 <span class="math inline">\(n\)</span> 次不可约多项式均为 <span class="math inline">\(n\)</span> 次本原多项式。</li>
+</ul></li>
+</ul>
+<h3 id="伪随机序列">伪随机序列</h3>
+<ul>
+<li>伪随机序列：在统计意义上与真正的随机序列没有区别的确定性序列</li>
+<li><strong>游程</strong>：
+<ul>
+<li>在二进制序列中，连续的一串 0 或 1 称为一个游程(run)。</li>
+<li>游程的长度是指该串中 0 或 1 的个数。</li>
+</ul></li>
+<li><strong>Golomb 随机性假设</strong>：
+<ul>
+<li>在每一周期内，0 的个数与 1 的个数近似相等；</li>
+<li>在每一周期内，长度为 <span class="math inline">\(i\)</span>
+的游程数占游程总数的 <span class="math inline">\(1/2^i\)</span>；</li>
+<li>定义自相关函数 <span class="math display">\[
+  C(\tau) = \sum_{i=1}^{n}(-1)^{(a_i+a_{i+\tau})} =\begin{cases}
+  n，&amp; \tau \equiv 0 \bmod n \\
+  c，&amp; \tau \neq 0
+  \end{cases}
+  \]</span> 其值 <span class="math inline">\(c\)</span>
+为一个常数。</li>
+</ul></li>
+<li><span class="math inline">\(m\)</span>
+<strong>序列的伪随机性</strong>：
+<ul>
+<li>在 <span class="math inline">\(n\)</span> 级 <span class="math inline">\(m\)</span> 序列的一个周期段内，1 出现的次数恰为
+<span class="math inline">\(2^{(n−1)}\)</span>，0 出现的次数恰为 <span class="math inline">\(2^{(n−1)}−1\)</span> ；</li>
+<li>在 <span class="math inline">\(n\)</span> 级 <span class="math inline">\(m\)</span> 序列的一个周期段内，游程总数为 <span class="math inline">\(2^{(n−1)}\)</span>；长为 <span class="math inline">\(k(1\leq k\leq n−2)\)</span> 的 0-游程（或
+1-游程）数为 <span class="math inline">\(2^{(n−2−k)}\)</span>；长为
+<span class="math inline">\(n−1\)</span> 的游程只有 1 个，为
+0-游程；长为 <span class="math inline">\(n\)</span> 的游程也只有 1
+个，为 1-游程；</li>
+<li>自相关函数是二值的，且为 <span class="math display">\[
+  C(\tau) = \begin{cases}
+  2^n-1，&amp; \tau \equiv 0 \bmod 2^n−1 \\
+  -1，&amp; \tau \neq 0
+  \end{cases}
+  \]</span> 其值 <span class="math inline">\(c\)</span>
+为一个常数。</li>
+</ul></li>
+<li><strong>线性复杂度</strong>：
+<ul>
+<li>二元序列 <span class="math inline">\(a=a_1 a_2 a_3 \cdots\)</span>
+的线性复杂度：能够输出该序列的最短线性移位寄存器的级数
+<ul>
+<li>例如，给定序列 <span class="math inline">\(0,1,1,0,1,1,\ldots\)</span>，联接多项式 <span class="math inline">\(x^2+x+1\)</span> 的 LFSR
+可以生成该序列，联接多项式为 <span class="math inline">\(x^3+1\)</span>
+的 LFSR 也可以生成该序列。但联接多项式为 <span class="math inline">\(x+1\)</span> 的 LFSR
+则无法做到这一点，所以，该序列的线性复杂度为 <span class="math inline">\(2\)</span></li>
+</ul></li>
+<li>如果序列的线性复杂度为 <span class="math inline">\(l(≥1)\)</span>，则只要知道序列中任意相继的 <span class="math inline">\(2l\)</span> 位，就可确定整个序列</li>
+<li>序列线性复杂度是流密码安全性的重要指标</li>
+</ul></li>
+<li><strong>安全的密钥流应该满足这样三个基本条件</strong>：
+<ul>
+<li><strong>周期充分长</strong>：一般不少于 <span class="math inline">\(10^{16}\)</span>；</li>
+<li><strong>随机统计特性好</strong>（即基本满足 Golomb
+的随机性公设）；</li>
+<li><strong>线性复杂度足够大</strong>：线性复杂度为序列长度的一半是比较合适的。</li>
+</ul></li>
+</ul>
+<h3 id="基于lfsr的伪随机序列生成器">基于LFSR的伪随机序列生成器</h3>
+<ul>
+<li>在LFSR的基础上加入非线性化的手段，产生适合于流密码应用的密钥序列。这也是目前实现密钥流生成器的主流方法，可进一步将这种方法分为三类：
+<ul>
+<li>滤波生成器</li>
+<li>组合生成器</li>
+<li>钟控生成器</li>
+</ul></li>
+</ul>
+<h4 id="滤波生成器">滤波生成器</h4>
+<ul>
+<li>由一个 <span class="math inline">\(n\)</span> 级线性移位寄存器和一个
+<span class="math inline">\(m\)</span> (<span class="math inline">\(&lt;n\)</span>) 元非线性滤波函数 <span class="math inline">\(g\)</span> 组成</li>
+<li><span class="math inline">\(g\)</span> 为一个 <span class="math inline">\(m\)</span>
+元布尔函数，滤波函数的输出为密钥流序列，工作模式如下图：</li>
+</ul>
+<figure>
+<img src="image-32.webp" srcset="/img/loading/loading3.gif" lazyload alt="滤波生成器">
+<figcaption aria-hidden="true">滤波生成器</figcaption>
+</figure>
+<h4 id="组合生成器">组合生成器</h4>
+<ul>
+<li>若干个线性移位寄存器 <span class="math inline">\(LFSR_i
+(i=1,…,n)\)</span> 和一个非线性组合函数 <span class="math inline">\(f\)</span>
+组成，组合函数的输出构成密钥流序列。组合生成器工作模式如下：</li>
+</ul>
+<figure>
+<img src="image-33.webp" srcset="/img/loading/loading3.gif" lazyload alt="组合生成器">
+<figcaption aria-hidden="true">组合生成器</figcaption>
+</figure>
+<ul>
+<li>其中 <span class="math inline">\(LFSR_i (i=1,\cdots,n)\)</span> 为
+<span class="math inline">\(n\)</span> 个级数分别为 <span class="math inline">\(r_1,r_2,\cdots,r_n\)</span>
+的线性移位寄存器，相应的移位寄存器序列为 <span class="math inline">\(\{a_{i_{j}}\} \left(i=1,\cdots,n
+\right)\)</span>，函数 <span class="math inline">\(f
+\left(x_{1},x_{2},\cdots,x_{n} \right)\)</span> 是 <span class="math inline">\(n\)</span> 元布尔函数。</li>
+<li>使用组合生成器可以极大地提高序列的周期。事实上，如果 <span class="math inline">\(r_1,r_2,\cdots,r_n\)</span> 两两互质，函数 <span class="math inline">\(f(x_1，x_2，\cdots，x_n)\)</span>
+与各变元均有关，则 <span class="math inline">\(\{k_j\}\)</span> 的周期为
+<span class="math inline">\(\prod_{i=1}^{n}(2^{r_i}-1)\)</span></li>
+</ul>
+<h4 id="钟控生成器">钟控生成器</h4>
+<ul>
+<li>基本思想：用一个或多个移位寄存器来控制另一个或多个移位寄存器的时钟，这样的序列生成器叫做钟控生成器（clock-controlled
+generator），也叫停走生成器（stop and go
+generator），最终的输出被称为钟控序列，基本模型如图所示。</li>
+</ul>
+<figure>
+<img src="image-34.webp" srcset="/img/loading/loading3.gif" lazyload alt="钟控生成器">
+<figcaption aria-hidden="true">钟控生成器</figcaption>
+</figure>
+<ul>
+<li>基本假设：<span class="math inline">\(LFSR_1\)</span> 和 <span class="math inline">\(LFSR_2\)</span> 分别输出序列 <span class="math inline">\(\{a_k\}\)</span> 和 <span class="math inline">\(\{b_k\}\)</span>。当 <span class="math inline">\(LFSR_1\)</span> 输出 1 时，移位时钟脉冲通过与门使
+<span class="math inline">\(LFSR_2\)</span>
+进行一次移位，从而生成下一位。当 <span class="math inline">\(LFSR_1\)</span> 输出 0
+时，移位时钟脉冲无法通过与门影响 <span class="math inline">\(LFSR_2\)</span>，因此 <span class="math inline">\(LFSR_2\)</span> 重复输出前一位。
+<ul>
+<li>例如:
+<ul>
+<li><span class="math inline">\(LFSR_1\)</span> 输出周期序列 <span class="math inline">\(1,0,1,0,1,1,0,1,0,1,\cdots\)</span></li>
+<li><span class="math inline">\(LFSR_2\)</span> 输出周期为 3 的序列
+<span class="math inline">\(a_0,a_1,a_2,a_0,a_1,a_2,\cdots\)</span></li>
+<li>则上述钟控生成器输出的钟控序列为 <span class="math inline">\(a_0,a_0,a_1,a_1,a_2,a_0,a_0,a_1,a_1,a_2,\cdots\)</span>，周期为
+5。</li>
+</ul></li>
+</ul></li>
+<li>交错停走式生成器（一种钟控序列）
+<ul>
+<li>交错停走式生成器(interleaved stop-and-go
+generator)是钟控生成器的一种特殊形式，由三个移位寄存器 <span class="math inline">\(LFSR_1，LFSR_2\)</span> 和 <span class="math inline">\(LFSR_3\)</span> 组成，其中 <span class="math inline">\(LFSR_1\)</span> 控制 <span class="math inline">\(LFSR_2\)</span> 和 <span class="math inline">\(LFSR_3\)</span> 的时钟，<span class="math inline">\(LFSR_2\)</span> 和 <span class="math inline">\(LFSR_3\)</span>
+的输出通过异或门得到最终的输出序列，如下图所示。</li>
+<li><figure>
+<img src="image-35.webp" srcset="/img/loading/loading3.gif" lazyload alt="钟控生成器">
+<figcaption aria-hidden="true">钟控生成器</figcaption>
+</figure></li>
+<li><span class="math inline">\(LFSR_1\)</span> 的输出是 1 时，<span class="math inline">\(LFSR_2\)</span> 被时钟驱动；当 <span class="math inline">\(LFSR_1\)</span> 的输出是 0 时，<span class="math inline">\(LFSR_3\)</span> 被时钟驱动。最后，<span class="math inline">\(LFSR_1\)</span> 的输出与 <span class="math inline">\(LFSR_2\)</span>
+的输出做异或运算即为这个交错式停走生成器的输出，输出的序列具有长周期和大的线性复杂度。</li>
+</ul></li>
+</ul>
+<h2 id="实用流密码">实用流密码</h2>
+<ul>
+<li>实用流密码：RC4、A5/1、A5/2、E0等</li>
+</ul>
+<h3 id="a5">A5</h3>
+<ul>
+<li>A5 是 GSM
+中执行加密运算的流密码算法，它用于从用户手机到基站的连接加密。</li>
+<li>A5
+中的钟控机制是：如果在某一时刻钟控单元中三个值的某两个或三个相同，则对应的移位寄存器在下一时刻被驱动，而剩下的一个（或
+0 个）值对应的移位寄存器则停走。</li>
+</ul>
+<p><img src="image-36.webp" srcset="/img/loading/loading3.gif" lazyload alt="A5算法的结构"> <img src="image-37.webp" srcset="/img/loading/loading3.gif" lazyload alt="A5中的钟控机制"> <img src="image-86.webp" srcset="/img/loading/loading3.gif" lazyload alt="移位寄存器具体参数"></p>
+<ul>
+<li>A5算法的效率很高，输出的序列统计性好，能够通过所有的已知测试。但使用的移位寄存器太短，极易受穷尽攻击。若A5采用级数较长的移位寄存器则会更安全。</li>
+</ul>
+<h3 id="rc4">RC4</h3>
+<ul>
+<li>RC4 是由 Ron Rivest 在 1987
+年设计的一种流密码算法，是目前应用最广泛的流密码算法之一。RC4
+的核心是一个伪随机字节生成器，RC4
+的加密和解密过程相同，都是将明文或密文与伪随机字节流进行逐字节异或运算</li>
+<li>相关参数：
+<ul>
+<li>参数 <span class="math inline">\(n\)</span>，长为 <span class="math inline">\(n\)</span> 的秘密内部状态(<span class="math inline">\(2^n\)</span> 数组)，通常取 <span class="math inline">\(n=8\)</span></li>
+<li>对应的内部状态由 <span class="math inline">\(256=2^8\)</span> 个元素
+<span class="math inline">\(S[0], \cdots, S[255]\)</span>
+构成，每个元素都是 <span class="math inline">\(0\sim 255\)</span>
+间的一个数字</li>
+<li>输入是一个可变长度的密钥，该密钥用于初始化内部状态。</li>
+<li>输出是状态中按照一定方式选出的某一个元素 <span class="math inline">\(K\)</span>，该输出构成密钥流的一个字节，加解密时这个字节
+<span class="math inline">\(K\)</span> 与一个明文/密文字节执行 <span class="math inline">\(XOR\)</span> 运算。</li>
+<li>每生成一个 <span class="math inline">\(K\)</span>
+值，内部状态中的元素会被重新置换一次，以便下次生成 <span class="math inline">\(K\)</span> 值</li>
+</ul></li>
+<li>RC4 算法： <img src="image-38.webp" srcset="/img/loading/loading3.gif" lazyload alt="RC4算法"></li>
+<li>密钥调度算法：
+<ul>
+<li>用来设置内部状态 <span class="math inline">\(S[0], \cdots,
+S[255]\)</span> 的随机排列</li>
+<li>开始时，内部状态被初始化为 <span class="math inline">\(0\sim
+255\)</span>，即 <span class="math inline">\(S[i]=i(i=0,\cdots,255)\)</span></li>
+<li>密钥长度可变，假设为 <span class="math inline">\(L\)</span>
+个字节，<span class="math inline">\((K[0], \cdots,
+K[L−1])\)</span>，一般 <span class="math inline">\(L\)</span> 在 5～32
+之间</li>
+<li>用这 <span class="math inline">\(L\)</span>
+个字节不断重复填充，直至得到 <span class="math inline">\((K[0], \cdots,
+K[255])\)</span>。数组 <span class="math inline">\(K\)</span>
+将被用于对内部状态 <span class="math inline">\(S\)</span>
+进行随机化</li>
+<li><figure>
+<img src="image-40.webp" srcset="/img/loading/loading3.gif" lazyload alt="RC4密钥调度算法">
+<figcaption aria-hidden="true">RC4密钥调度算法</figcaption>
+</figure></li>
+</ul></li>
+<li>伪随机生成算法：
+<ul>
+<li>它从内部状态中选取一个随机元素作为密钥流中的一个字节，并修改内部状态以便下一次选取。选取过程取决于两个索引值
+<span class="math inline">\(i\)</span> 和 <span class="math inline">\(j\)</span>，它们的初始值均为
+0。具体选取过程如下：</li>
+<li><figure>
+<img src="image-40.webp" srcset="/img/loading/loading3.gif" lazyload alt="伪随机生成算法">
+<figcaption aria-hidden="true">伪随机生成算法</figcaption>
+</figure></li>
+</ul></li>
+<li>示例： <img src="image-72.webp" srcset="/img/loading/loading3.gif" lazyload alt="RC4示例"></li>
+</ul>
+<h2 id="轻量级密码算法">轻量级密码算法</h2>
+<ul>
+<li>轻量级密码算法（lightweight
+cryptography）是指在资源受限的环境下使用的密码算法，通常用于物联网设备、嵌入式系统和智能卡等场景。</li>
+<li>资源受限环境终端设备的特点
+<ul>
+<li>数量巨大（电卡、汽车ETC等）</li>
+<li>内存资源较少</li>
+<li>处理（计算）能力有限</li>
+<li>功耗要求严格</li>
+</ul></li>
+</ul>
 <h1 id="分组密码">分组密码</h1>
 <h2 id="常见的分组密码算法">常见的分组密码算法</h2>
 <table>
@@ -2155,371 +2521,6 @@ attack（选择密文攻击）：选择密文并获得相应的明文。</li>
 attack（自适应选择密文攻击）：选择密文攻击，其中密文的选择可能依赖于先前请求中收到的明文。</li>
 </ul></li>
 <li>差分密码分析</li>
-</ul>
-<h1 id="序列密码">序列密码</h1>
-<ul>
-<li>序列密码(stream
-cipher)是一种对明文消息流中的每一个符号分别进行加密的对称密钥密码，又称为流密码</li>
-<li>流密码和分组密码之间的区别并不是绝对的
-<ul>
-<li>流密码可以通过使用分组密码的 CFB 模式、OFB 模式或 CTR
-模式来构建</li>
-<li>在 ECB 或 CBC
-下的分组密码，可以视为一种操作于大字符上的流密码。</li>
-</ul></li>
-</ul>
-<h2 id="序列密码概述-stream-cipher">序列密码概述 (Stream Cipher)</h2>
-<ul>
-<li>定义：也称流密码：将被加密的消息 <span class="math inline">\(m\)</span> 分成连续的符号(一般为比特串)，<span class="math inline">\(m=m_1 m_2 m_3 \cdots\)</span>；然后使用密钥流
-<span class="math inline">\(k=k_1 k_2 k_3 \cdots\)</span> 中的第 <span class="math inline">\(i\)</span>个元素 <span class="math inline">\(k_i\)</span> 对 <span class="math inline">\(m\)</span> 的第 <span class="math inline">\(i\)</span> 个元素 <span class="math inline">\(m_i\)</span> 执行加密变换，<span class="math inline">\(i=1,2,3,\cdots\)</span>；所有的加密输出连接在一起就构成了对
-<span class="math inline">\(m\)</span> 执行加密后的密文 <span class="math inline">\(c\)</span>。</li>
-</ul>
-<figure>
-<img src="image-25.webp" srcset="/img/loading/loading3.gif" lazyload alt="流密码">
-<figcaption aria-hidden="true">流密码</figcaption>
-</figure>
-<ul>
-<li>结构：
-<ul>
-<li>简单结构： <img src="image-26.webp" srcset="/img/loading/loading3.gif" lazyload alt="流密码结构"></li>
-<li>完整结构： <img src="image-27.webp" srcset="/img/loading/loading3.gif" lazyload alt="流密码完整结构"></li>
-<li>如何生成一个可以用作密钥流的“随机”比特序列，要求易于使用，但又不能太短以至于不安全</li>
-<li>通常加、解密所需要的这种序列是由一个确定性（deterministic）的密钥流生成器（key
-generator）产生的，该生成器的输入是一个容易记住的密钥，称之为密钥流生成器的初始密钥或种子（seed）密钥</li>
-</ul></li>
-<li>安全性：
-<ul>
-<li>流密码的安全性完全取决于密钥的安全等级</li>
-<li>实用的流密码以少量的、一定长度的种子密钥经过逻辑运算产生周期较长、可用于加解密运算的伪随机序列。</li>
-</ul></li>
-</ul>
-<h3 id="同步流密码-synchronous-stream-ciphers">同步流密码 (Synchronous
-stream ciphers)</h3>
-<figure>
-<img src="image-28.webp" srcset="/img/loading/loading3.gif" lazyload alt="同步流密码">
-<figcaption aria-hidden="true">同步流密码</figcaption>
-</figure>
-<ul>
-<li>密钥流的产生与明文消息流相互独立</li>
-<li>密钥流与明文串无关，所以同步流密码中的每个密文 <span class="math inline">\(c_i\)</span> 不依赖于之前的明文 <span class="math inline">\(m_{i−1}，\cdots，m_1\)</span>。从而，同步流密码的一个重要优点就是无错误传播：在传输期间一个密文字符被改变只影响该符号的恢复，不会对后继的符号产生影响。</li>
-</ul>
-<h3 id="自同步流密码-self-synchronizing-stream-ciphers">自同步流密码
-(Self-synchronizing stream ciphers)</h3>
-<figure>
-<img src="image-29.webp" srcset="/img/loading/loading3.gif" lazyload alt="自同步流密码">
-<figcaption aria-hidden="true">自同步流密码</figcaption>
-</figure>
-<ul>
-<li>密钥流与之前已经产生的若干密文有关 <span class="math display">\[\begin{aligned}
-  &amp;\sigma_i=(c_{i-t},c_{i-t+1},\cdots,c_{i-1}) \\
-  &amp;k_i=G(\sigma_i,K)\\
-  &amp;c_i=E(k_i,m_i)
-  \end{aligned}\]</span></li>
-</ul>
-<h2 id="密钥流的生成方式">密钥流的生成方式</h2>
-<ul>
-<li>密钥流的生成方法：
-<ul>
-<li>有多种产生同步密钥流生成器的方法</li>
-<li>最普遍的是使用一种称为线性反馈移位寄存器(Linear Feedback Shift
-Register，LFSR)
-<ul>
-<li>LFSR的结构非常适合硬件实现；</li>
-<li>LFSR的结构便于使用代数方法进行理论分析；</li>
-<li>产生的序列的周期可以很大；</li>
-<li>产生的序列具有良好的统计特性。</li>
-</ul></li>
-</ul></li>
-</ul>
-<h3 id="线性反馈移位寄存器lfsr">线性反馈移位寄存器（LFSR）</h3>
-<ul>
-<li><p>反馈移位寄存器： <img src="image-30.webp" srcset="/img/loading/loading3.gif" lazyload alt="反馈移位寄存器"></p>
-<ul>
-<li>上图为一个反馈移位寄存器的流程图，信号从左到右。</li>
-<li><span class="math inline">\(a_i\)</span> 表示存储单元，取值为 0 或
-1，<span class="math inline">\(a_i\)</span> 的个数 <span class="math inline">\(n\)</span>
-称为反馈移位寄存器的<strong>级</strong>。</li>
-<li>在某一时刻，这些级的内容构成该反馈移位寄存器的一个<strong>状态</strong>，共有<span class="math inline">\(2^n\)</span> 个可能的状态，每一个状态对应于与
-<span class="math inline">\(\mathbb{F}_2\)</span> 上的一个 <span class="math inline">\(n\)</span> 维向量，用 <span class="math inline">\((a_1,a_2,…,a_n)\)</span> 表示。</li>
-<li>函数 <span class="math inline">\(f\)</span> 是一个 <span class="math inline">\(n\)</span>
-元布尔函数，称之为<strong>反馈函数</strong>。</li>
-</ul></li>
-<li><p>线性反馈移位寄存器（LFSR） <img src="image-31.webp" srcset="/img/loading/loading3.gif" lazyload alt="线性反馈移位寄存器"></p>
-<ul>
-<li>反馈函数 <span class="math inline">\(f\)</span> 是线性的，即 <span class="math display">\[
-  f(a_1,a_2,\cdots,a_n)=c_n a_1\oplus c_{n-1} a_2\oplus\cdots\oplus c_1
-a_n
-  \]</span> 其中 <span class="math inline">\(c_i \in
-\mathbb{F}_2\)</span>，<span class="math inline">\(\oplus\)</span>
-为模二加法，和乘法均在 <span class="math inline">\(\mathbb{F}_2\)</span>
-上进行。</li>
-<li>令 <span class="math inline">\(a_i(t)\)</span> 为第 <span class="math inline">\(i\)</span> 级在时刻 <span class="math inline">\(t\)</span> 的内容，则 LFSR 的状态转移可表示为：
-<span class="math display">\[
-  \begin{aligned}
-  &amp;a_i^{(t+1)}=a_{i+1}^{(t)} \\
-  &amp;a_n^{(t+1)}=c_n a_1^{(t)}\oplus c_{n-1} a_2^{(t)}\oplus
-\cdots\oplus c_1 a_n^{(t)}
-  \end{aligned}
-  \]</span></li>
-<li>则称多项式 <span class="math inline">\(C(x)=1+c_1 x+c_2
-x^2+\cdots+c_n x^n\)</span> 为该 LFSR 的
-<strong>联接多项式</strong>（connection polynomial）。</li>
-<li>线性反馈移位寄存器的状态转移可以用矩阵表示： <span class="math display">\[\begin{bmatrix}
-  a_1^{(t+1)}\\
-  a_2^{(t+1)}\\
-  \vdots\\
-  a_n^{(t+1)}
-  \end{bmatrix}=
-  \begin{bmatrix}
-  0 &amp; 1 &amp; 0 &amp; \cdots &amp; 0\\
-  0 &amp; 0 &amp; 1 &amp; \cdots &amp; 0\\
-  \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots\\
-  0 &amp; 0 &amp; 0 &amp; \cdots &amp; 1\\
-  c_n &amp; c_{n-1} &amp; c_{n-2} &amp; \cdots &amp; c_1
-  \end{bmatrix}
-  \begin{bmatrix}
-  a_1^{(t)}\\
-  a_2^{(t)}\\
-  \vdots\\
-  a_n^{(t)}
-  \end{bmatrix}\]</span></li>
-</ul></li>
-</ul>
-<h4 id="m-序列与最大周期移位寄存器"><span class="math inline">\(m\)</span> 序列与最大周期移位寄存器</h4>
-<ul>
-<li>根据 LFSR 的状态转移图可以看出，一个 <span class="math inline">\(n\)</span> 级 LFSR 序列的周期最大只能为 <span class="math inline">\(2^n−1\)</span>
-<ul>
-<li>全零状态总是独立循环的且产生的是全零序列</li>
-</ul></li>
-<li><span class="math inline">\(\mathbb{F_2}\)</span> 上 <span class="math inline">\(n\)</span> 次多项式为联接多项式的 <span class="math inline">\(n\)</span> 级 LFSR 所产生的非零序列的周期为 <span class="math inline">\(2^n−1\)</span>，称这个序列是 <span class="math inline">\(n\)</span> 级最大的线性移位寄存器周期序列，简称
-<span class="math inline">\(m\)</span> 序列（Maximal length
-sequence）。</li>
-<li>如果一个 <span class="math inline">\(n\)</span> 级 LFSR 产生了 <span class="math inline">\(m\)</span> 序列，则该 LFSR 的状态转移图仅由 <span class="math inline">\(2\)</span>
-个圈构成，其中一个是由全零状态构成的长度为 <span class="math inline">\(1\)</span> 的圈，另一个是由全部其余 <span class="math inline">\(2^n−1\)</span> 个状态构成的长度为 <span class="math inline">\(2^n−1\)</span> 的圈。</li>
-<li><strong>定义</strong>：若 <span class="math inline">\(f(x)\)</span>
-是 <span class="math inline">\(GF(q)\)</span> 上的不可约多项式且 <span class="math inline">\(f(x)\)</span> 的根是 <span class="math inline">\(GF(q^n)\)</span> 的本原元，则称 <span class="math inline">\(f(x)\)</span> 为 <span class="math inline">\(GF(q)\)</span> 上的本原多项式。
-<ul>
-<li>一个 <span class="math inline">\(n\)</span> 级 LFSR
-为最长移位寄存器的充要条件是它的联接多项式为 <span class="math inline">\(\mathbb{F_2}\)</span> 上的 <span class="math inline">\(n\)</span> 次本原多项式 <span class="math inline">\(C(x)\)</span>。</li>
-<li>当 <span class="math inline">\(2^n−1\)</span> 为素数时， <span class="math inline">\(\mathbb{F_2}\)</span> 上的每一个 <span class="math inline">\(n\)</span> 次不可约多项式均为 <span class="math inline">\(n\)</span> 次本原多项式。</li>
-</ul></li>
-</ul>
-<h3 id="伪随机序列">伪随机序列</h3>
-<ul>
-<li>伪随机序列：在统计意义上与真正的随机序列没有区别的确定性序列</li>
-<li><strong>游程</strong>：
-<ul>
-<li>在二进制序列中，连续的一串 0 或 1 称为一个游程(run)。</li>
-<li>游程的长度是指该串中 0 或 1 的个数。</li>
-</ul></li>
-<li><strong>Golomb 随机性假设</strong>：
-<ul>
-<li>在每一周期内，0 的个数与 1 的个数近似相等；</li>
-<li>在每一周期内，长度为 <span class="math inline">\(i\)</span>
-的游程数占游程总数的 <span class="math inline">\(1/2^i\)</span>；</li>
-<li>定义自相关函数 <span class="math display">\[
-  C(\tau) = \sum_{i=1}^{n}(-1)^{(a_i+a_{i+\tau})} =\begin{cases}
-  n，&amp; \tau \equiv 0 \bmod n \\
-  c，&amp; \tau \neq 0
-  \end{cases}
-  \]</span> 其值 <span class="math inline">\(c\)</span>
-为一个常数。</li>
-</ul></li>
-<li><span class="math inline">\(m\)</span>
-<strong>序列的伪随机性</strong>：
-<ul>
-<li>在 <span class="math inline">\(n\)</span> 级 <span class="math inline">\(m\)</span> 序列的一个周期段内，1 出现的次数恰为
-<span class="math inline">\(2^{(n−1)}\)</span>，0 出现的次数恰为 <span class="math inline">\(2^{(n−1)}−1\)</span> ；</li>
-<li>在 <span class="math inline">\(n\)</span> 级 <span class="math inline">\(m\)</span> 序列的一个周期段内，游程总数为 <span class="math inline">\(2^{(n−1)}\)</span>；长为 <span class="math inline">\(k(1\leq k\leq n−2)\)</span> 的 0-游程（或
-1-游程）数为 <span class="math inline">\(2^{(n−2−k)}\)</span>；长为
-<span class="math inline">\(n−1\)</span> 的游程只有 1 个，为
-0-游程；长为 <span class="math inline">\(n\)</span> 的游程也只有 1
-个，为 1-游程；</li>
-<li>自相关函数是二值的，且为 <span class="math display">\[
-  C(\tau) = \begin{cases}
-  2^n-1，&amp; \tau \equiv 0 \bmod 2^n−1 \\
-  -1，&amp; \tau \neq 0
-  \end{cases}
-  \]</span> 其值 <span class="math inline">\(c\)</span>
-为一个常数。</li>
-</ul></li>
-<li><strong>线性复杂度</strong>：
-<ul>
-<li>二元序列 <span class="math inline">\(a=a_1 a_2 a_3 \cdots\)</span>
-的线性复杂度：能够输出该序列的最短线性移位寄存器的级数
-<ul>
-<li>例如，给定序列 <span class="math inline">\(0,1,1,0,1,1,\ldots\)</span>，联接多项式 <span class="math inline">\(x^2+x+1\)</span> 的 LFSR
-可以生成该序列，联接多项式为 <span class="math inline">\(x^3+1\)</span>
-的 LFSR 也可以生成该序列。但联接多项式为 <span class="math inline">\(x+1\)</span> 的 LFSR
-则无法做到这一点，所以，该序列的线性复杂度为 <span class="math inline">\(2\)</span></li>
-</ul></li>
-<li>如果序列的线性复杂度为 <span class="math inline">\(l(≥1)\)</span>，则只要知道序列中任意相继的 <span class="math inline">\(2l\)</span> 位，就可确定整个序列</li>
-<li>序列线性复杂度是流密码安全性的重要指标</li>
-</ul></li>
-<li><strong>安全的密钥流应该满足这样三个基本条件</strong>：
-<ul>
-<li><strong>周期充分长</strong>：一般不少于 <span class="math inline">\(10^{16}\)</span>；</li>
-<li><strong>随机统计特性好</strong>（即基本满足 Golomb
-的随机性公设）；</li>
-<li><strong>线性复杂度足够大</strong>：线性复杂度为序列长度的一半是比较合适的。</li>
-</ul></li>
-</ul>
-<h3 id="基于lfsr的伪随机序列生成器">基于LFSR的伪随机序列生成器</h3>
-<ul>
-<li>在LFSR的基础上加入非线性化的手段，产生适合于流密码应用的密钥序列。这也是目前实现密钥流生成器的主流方法，可进一步将这种方法分为三类：
-<ul>
-<li>滤波生成器</li>
-<li>组合生成器</li>
-<li>钟控生成器</li>
-</ul></li>
-</ul>
-<h4 id="滤波生成器">滤波生成器</h4>
-<ul>
-<li>由一个 <span class="math inline">\(n\)</span> 级线性移位寄存器和一个
-<span class="math inline">\(m\)</span> (<span class="math inline">\(&lt;n\)</span>) 元非线性滤波函数 <span class="math inline">\(g\)</span> 组成</li>
-<li><span class="math inline">\(g\)</span> 为一个 <span class="math inline">\(m\)</span>
-元布尔函数，滤波函数的输出为密钥流序列，工作模式如下图：</li>
-</ul>
-<figure>
-<img src="image-32.webp" srcset="/img/loading/loading3.gif" lazyload alt="滤波生成器">
-<figcaption aria-hidden="true">滤波生成器</figcaption>
-</figure>
-<h4 id="组合生成器">组合生成器</h4>
-<ul>
-<li>若干个线性移位寄存器 <span class="math inline">\(LFSR_i
-(i=1,…,n)\)</span> 和一个非线性组合函数 <span class="math inline">\(f\)</span>
-组成，组合函数的输出构成密钥流序列。组合生成器工作模式如下：</li>
-</ul>
-<figure>
-<img src="image-33.webp" srcset="/img/loading/loading3.gif" lazyload alt="组合生成器">
-<figcaption aria-hidden="true">组合生成器</figcaption>
-</figure>
-<ul>
-<li>其中 <span class="math inline">\(LFSR_i (i=1,\cdots,n)\)</span> 为
-<span class="math inline">\(n\)</span> 个级数分别为 <span class="math inline">\(r_1,r_2,\cdots,r_n\)</span>
-的线性移位寄存器，相应的移位寄存器序列为 <span class="math inline">\(\{a_{i_{j}}\} \left(i=1,\cdots,n
-\right)\)</span>，函数 <span class="math inline">\(f
-\left(x_{1},x_{2},\cdots,x_{n} \right)\)</span> 是 <span class="math inline">\(n\)</span> 元布尔函数。</li>
-<li>使用组合生成器可以极大地提高序列的周期。事实上，如果 <span class="math inline">\(r_1,r_2,\cdots,r_n\)</span> 两两互质，函数 <span class="math inline">\(f(x_1，x_2，\cdots，x_n)\)</span>
-与各变元均有关，则 <span class="math inline">\(\{k_j\}\)</span> 的周期为
-<span class="math inline">\(\prod_{i=1}^{n}(2^{r_i}-1)\)</span></li>
-</ul>
-<h4 id="钟控生成器">钟控生成器</h4>
-<ul>
-<li>基本思想：用一个或多个移位寄存器来控制另一个或多个移位寄存器的时钟，这样的序列生成器叫做钟控生成器（clock-controlled
-generator），也叫停走生成器（stop and go
-generator），最终的输出被称为钟控序列，基本模型如图所示。</li>
-</ul>
-<figure>
-<img src="image-34.webp" srcset="/img/loading/loading3.gif" lazyload alt="钟控生成器">
-<figcaption aria-hidden="true">钟控生成器</figcaption>
-</figure>
-<ul>
-<li>基本假设：<span class="math inline">\(LFSR_1\)</span> 和 <span class="math inline">\(LFSR_2\)</span> 分别输出序列 <span class="math inline">\(\{a_k\}\)</span> 和 <span class="math inline">\(\{b_k\}\)</span>。当 <span class="math inline">\(LFSR_1\)</span> 输出 1 时，移位时钟脉冲通过与门使
-<span class="math inline">\(LFSR_2\)</span>
-进行一次移位，从而生成下一位。当 <span class="math inline">\(LFSR_1\)</span> 输出 0
-时，移位时钟脉冲无法通过与门影响 <span class="math inline">\(LFSR_2\)</span>，因此 <span class="math inline">\(LFSR_2\)</span> 重复输出前一位。
-<ul>
-<li>例如:
-<ul>
-<li><span class="math inline">\(LFSR_1\)</span> 输出周期序列 <span class="math inline">\(1,0,1,0,1,1,0,1,0,1,\cdots\)</span></li>
-<li><span class="math inline">\(LFSR_2\)</span> 输出周期为 3 的序列
-<span class="math inline">\(a_0,a_1,a_2,a_0,a_1,a_2,\cdots\)</span></li>
-<li>则上述钟控生成器输出的钟控序列为 <span class="math inline">\(a_0,a_0,a_1,a_1,a_2,a_0,a_0,a_1,a_1,a_2,\cdots\)</span>，周期为
-5。</li>
-</ul></li>
-</ul></li>
-<li>交错停走式生成器（一种钟控序列）
-<ul>
-<li>交错停走式生成器(interleaved stop-and-go
-generator)是钟控生成器的一种特殊形式，由三个移位寄存器 <span class="math inline">\(LFSR_1，LFSR_2\)</span> 和 <span class="math inline">\(LFSR_3\)</span> 组成，其中 <span class="math inline">\(LFSR_1\)</span> 控制 <span class="math inline">\(LFSR_2\)</span> 和 <span class="math inline">\(LFSR_3\)</span> 的时钟，<span class="math inline">\(LFSR_2\)</span> 和 <span class="math inline">\(LFSR_3\)</span>
-的输出通过异或门得到最终的输出序列，如下图所示。</li>
-<li><figure>
-<img src="image-35.webp" srcset="/img/loading/loading3.gif" lazyload alt="钟控生成器">
-<figcaption aria-hidden="true">钟控生成器</figcaption>
-</figure></li>
-<li><span class="math inline">\(LFSR_1\)</span> 的输出是 1 时，<span class="math inline">\(LFSR_2\)</span> 被时钟驱动；当 <span class="math inline">\(LFSR_1\)</span> 的输出是 0 时，<span class="math inline">\(LFSR_3\)</span> 被时钟驱动。最后，<span class="math inline">\(LFSR_1\)</span> 的输出与 <span class="math inline">\(LFSR_2\)</span>
-的输出做异或运算即为这个交错式停走生成器的输出，输出的序列具有长周期和大的线性复杂度。</li>
-</ul></li>
-</ul>
-<h2 id="实用流密码">实用流密码</h2>
-<ul>
-<li>实用流密码：RC4、A5/1、A5/2、E0等</li>
-</ul>
-<h3 id="a5">A5</h3>
-<ul>
-<li>A5 是 GSM
-中执行加密运算的流密码算法，它用于从用户手机到基站的连接加密。</li>
-<li>A5
-中的钟控机制是：如果在某一时刻钟控单元中三个值的某两个或三个相同，则对应的移位寄存器在下一时刻被驱动，而剩下的一个（或
-0 个）值对应的移位寄存器则停走。</li>
-</ul>
-<p><img src="image-36.webp" srcset="/img/loading/loading3.gif" lazyload alt="A5算法的结构"> <img src="image-37.webp" srcset="/img/loading/loading3.gif" lazyload alt="A5中的钟控机制"> <img src="image-86.webp" srcset="/img/loading/loading3.gif" lazyload alt="移位寄存器具体参数"></p>
-<ul>
-<li>A5算法的效率很高，输出的序列统计性好，能够通过所有的已知测试。但使用的移位寄存器太短，极易受穷尽攻击。若A5采用级数较长的移位寄存器则会更安全。</li>
-</ul>
-<h3 id="rc4">RC4</h3>
-<ul>
-<li>RC4 是由 Ron Rivest 在 1987
-年设计的一种流密码算法，是目前应用最广泛的流密码算法之一。RC4
-的核心是一个伪随机字节生成器，RC4
-的加密和解密过程相同，都是将明文或密文与伪随机字节流进行逐字节异或运算</li>
-<li>相关参数：
-<ul>
-<li>参数 <span class="math inline">\(n\)</span>，长为 <span class="math inline">\(n\)</span> 的秘密内部状态(<span class="math inline">\(2^n\)</span> 数组)，通常取 <span class="math inline">\(n=8\)</span></li>
-<li>对应的内部状态由 <span class="math inline">\(256=2^8\)</span> 个元素
-<span class="math inline">\(S[0], \cdots, S[255]\)</span>
-构成，每个元素都是 <span class="math inline">\(0\sim 255\)</span>
-间的一个数字</li>
-<li>输入是一个可变长度的密钥，该密钥用于初始化内部状态。</li>
-<li>输出是状态中按照一定方式选出的某一个元素 <span class="math inline">\(K\)</span>，该输出构成密钥流的一个字节，加解密时这个字节
-<span class="math inline">\(K\)</span> 与一个明文/密文字节执行 <span class="math inline">\(XOR\)</span> 运算。</li>
-<li>每生成一个 <span class="math inline">\(K\)</span>
-值，内部状态中的元素会被重新置换一次，以便下次生成 <span class="math inline">\(K\)</span> 值</li>
-</ul></li>
-<li>RC4 算法： <img src="image-38.webp" srcset="/img/loading/loading3.gif" lazyload alt="RC4算法"></li>
-<li>密钥调度算法：
-<ul>
-<li>用来设置内部状态 <span class="math inline">\(S[0], \cdots,
-S[255]\)</span> 的随机排列</li>
-<li>开始时，内部状态被初始化为 <span class="math inline">\(0\sim
-255\)</span>，即 <span class="math inline">\(S[i]=i(i=0,\cdots,255)\)</span></li>
-<li>密钥长度可变，假设为 <span class="math inline">\(L\)</span>
-个字节，<span class="math inline">\((K[0], \cdots,
-K[L−1])\)</span>，一般 <span class="math inline">\(L\)</span> 在 5～32
-之间</li>
-<li>用这 <span class="math inline">\(L\)</span>
-个字节不断重复填充，直至得到 <span class="math inline">\((K[0], \cdots,
-K[255])\)</span>。数组 <span class="math inline">\(K\)</span>
-将被用于对内部状态 <span class="math inline">\(S\)</span>
-进行随机化</li>
-<li><figure>
-<img src="image-40.webp" srcset="/img/loading/loading3.gif" lazyload alt="RC4密钥调度算法">
-<figcaption aria-hidden="true">RC4密钥调度算法</figcaption>
-</figure></li>
-</ul></li>
-<li>伪随机生成算法：
-<ul>
-<li>它从内部状态中选取一个随机元素作为密钥流中的一个字节，并修改内部状态以便下一次选取。选取过程取决于两个索引值
-<span class="math inline">\(i\)</span> 和 <span class="math inline">\(j\)</span>，它们的初始值均为
-0。具体选取过程如下：</li>
-<li><figure>
-<img src="image-40.webp" srcset="/img/loading/loading3.gif" lazyload alt="伪随机生成算法">
-<figcaption aria-hidden="true">伪随机生成算法</figcaption>
-</figure></li>
-</ul></li>
-</ul>
-<h2 id="轻量级密码算法">轻量级密码算法</h2>
-<ul>
-<li>轻量级密码算法（lightweight
-cryptography）是指在资源受限的环境下使用的密码算法，通常用于物联网设备、嵌入式系统和智能卡等场景。</li>
-<li>资源受限环境终端设备的特点
-<ul>
-<li>数量巨大（电卡、汽车ETC等）</li>
-<li>内存资源较少</li>
-<li>处理（计算）能力有限</li>
-<li>功耗要求严格</li>
-</ul></li>
 </ul>
 <h1 id="公钥密码">公钥密码</h1>
 <ul>
