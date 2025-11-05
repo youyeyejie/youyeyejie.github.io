@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis3365.webp">
 <meta property="article:published_time" content="2025-11-05T02:05:07.000Z">
-<meta property="article:modified_time" content="2025-11-05T12:28:46.501Z">
+<meta property="article:modified_time" content="2025-11-05T12:36:12.768Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU">
 <meta property="article:tag" content="现代密码学">
@@ -1631,7 +1631,7 @@ x_i')\)</span>，每对向量只有一个比特不同，定义 <span class="math
 <ul>
 <li>每个输出比特是所有输入比特的复杂函数的输出</li>
 <li>一个函数 <span class="math inline">\(F\)</span>
-具有好的完备性是指：对密文输出向量的每一比特 <span class="math inline">\(j\)</span>，<span class="math inline">\(0&lt;j&lt;m\)</span>，至少存在一个明文对 <span class="math inline">\((x_i,  x_i')\)</span>，此明文对只在第 <span class="math inline">\(i\)</span> 比特不同，且 <span class="math inline">\(F(x_i)\)</span> 与 <span class="math inline">\(F(x_i')\)</span> 的第 <span class="math inline">\(j\)</span> 比特不同</li>
+具有好的完备性是指：对密文输出向量的每一比特 <span class="math inline">\(j\)</span>，<span class="math inline">\(0&lt;j&lt;m\)</span>，至少存在一个明文对 <span class="math inline">\((x_i, x_i')\)</span>，此明文对只在第 <span class="math inline">\(i\)</span> 比特不同，且 <span class="math inline">\(F(x_i)\)</span> 与 <span class="math inline">\(F(x_i')\)</span> 的第 <span class="math inline">\(j\)</span> 比特不同</li>
 </ul></li>
 <li>设计密码时, 下列参数需要考虑：
 <ul>
@@ -2129,14 +2129,14 @@ Z_8\)</span> 直接从密钥中取出；</li>
 然后和一个固定多项式在模 <span class="math inline">\(x^4+1\)</span>
 下相乘，变换公式如下： <span class="math display">\[
   \begin{aligned}
-  &amp;S\prime(x) = a(x) \otimes S(x)\\
-  &amp;S\prime_{0c} = \{02\} \times S_{0c} \oplus \{03\} \times S_{1c}
+  &amp;S^\prime(x) = a(x) \otimes S(x)\\
+  &amp;S^\prime_{0c} = \{02\} \times S_{0c} \oplus \{03\} \times S_{1c}
 \oplus \{01\} \times S_{2c} \oplus \{01\} \times S_{3c}\\
-  &amp;S\prime_{1c} = \{01\} \times S_{0c} \oplus \{02\} \times S_{1c}
+  &amp;S^\prime_{1c} = \{01\} \times S_{0c} \oplus \{02\} \times S_{1c}
 \oplus \{03\} \times S_{2c} \oplus \{01\} \times S_{3c}\\
-  &amp;S\prime_{2c} = \{01\} \times S_{0c} \oplus \{01\} \times S_{1c}
+  &amp;S^\prime_{2c} = \{01\} \times S_{0c} \oplus \{01\} \times S_{1c}
 \oplus \{02\} \times S_{2c} \oplus \{03\} \times S_{3c}\\
-  &amp;S\prime_{3c} = \{03\} \times S_{0c} \oplus \{01\} \times S_{1c}
+  &amp;S^\prime_{3c} = \{03\} \times S_{0c} \oplus \{01\} \times S_{1c}
 \oplus \{01\} \times S_{2c} \oplus \{02\} \times S_{3c}
   \end{aligned}
   \]</span>
@@ -2306,7 +2306,7 @@ Chaining）模式将消息分成模块，加密是相互联系的，每个明文
   \]</span></li>
 <li>如果攻击者能欺骗接收方使用不同的 <span class="math inline">\(IV\)</span> 值，就能够在明文的第 1
 个分组中插入自己选择的比特值，这是因为用 <span class="math inline">\(X(i)\)</span> 表示 64-bit 分组 <span class="math inline">\(X\)</span> 的第 <span class="math inline">\(i\)</span> 个比特，那么 <span class="math inline">\(P_1(i)=IV(i)\oplus
-D_K[C_1](i)\)</span>，由异或的性质得 <span class="math inline">\(P_1(i)\prime = IV(i)\prime \oplus
+D_K[C_1](i)\)</span>，由异或的性质得 <span class="math inline">\(P_1(i)^\prime = IV(i)^\prime \oplus
 D_K[C_1](i)\)</span>，其中撇号 <span class="math inline">\(\prime\)</span> 表示比特补。
 <ul>
 <li>意味着如果攻击者篡改 <span class="math inline">\(IV\)</span>
@@ -2331,8 +2331,8 @@ D_K[C_1](i)\)</span>，其中撇号 <span class="math inline">\(\prime\)</span> 
 <li>密文块 <span class="math inline">\(C_j\)</span>
 中的一个比特错误会影响第 <span class="math inline">\(j\)</span> 个和第
 <span class="math inline">\((j+1)\)</span> 个明文块</li>
-<li><span class="math inline">\(P_j\prime\)</span> 完全变为乱码，而
-<span class="math inline">\(P_{j+1}\prime\)</span> 在 <span class="math inline">\(C_j\)</span> 发生错误的比特位置也会出现错误</li>
+<li><span class="math inline">\(P_j^\prime\)</span> 完全变为乱码，而
+<span class="math inline">\(P_{j+1}^\prime\)</span> 在 <span class="math inline">\(C_j\)</span> 发生错误的比特位置也会出现错误</li>
 </ul></li>
 </ul></li>
 </ul>
@@ -2400,7 +2400,7 @@ CFB-64 等</li>
 中的一个比特错误会影响该块及后续 <span class="math inline">\(n/r\)</span>
 个密文块的解密（错误会在移位寄存器中持续 <span class="math inline">\(n/r\)</span> 步）
 <ul>
-<li><span class="math inline">\(P_m\prime\)</span> 在 <span class="math inline">\(C_m\)</span>
+<li><span class="math inline">\(P_m^\prime\)</span> 在 <span class="math inline">\(C_m\)</span>
 发生错误的比特位置也会出现错误，而其他错误的明文块则完全变为乱码</li>
 <li>攻击者可能会在第 <span class="math inline">\(m\)</span>
 个明文块中引起可预测的比特变化</li>
@@ -2452,7 +2452,7 @@ CFB-64 等</li>
 <li>比特错误不会传播，密文块 <span class="math inline">\(C_m\)</span>
 中的一个比特错误仅影响该密文块的解密
 <ul>
-<li><span class="math inline">\(P_m\prime\)</span> 在 <span class="math inline">\(C_m\)</span> 发生错误的比特位置也会出现错误</li>
+<li><span class="math inline">\(P_m^\prime\)</span> 在 <span class="math inline">\(C_m\)</span> 发生错误的比特位置也会出现错误</li>
 <li>攻击者可能会在第 <span class="math inline">\(m\)</span>
 个明文块中引起可预测的比特变化</li>
 </ul></li>
@@ -2674,19 +2674,19 @@ Attack（中间人攻击）</h3>
 <li>A 将公钥 <span class="math inline">\(y_A\)</span> 发送给 B，但被 E
 截获
 <ul>
-<li>E 选择一个私钥 <span class="math inline">\(x_A\prime\)</span>，计算公钥 <span class="math inline">\(y_A\prime = g^{x_A\prime} \bmod p\)</span> 发送给
-B</li>
+<li>E 选择一个私钥 <span class="math inline">\(x_A^\prime\)</span>，计算公钥 <span class="math inline">\(y_A^\prime = g^{x_A^\prime} \bmod p\)</span>
+发送给 B</li>
 </ul></li>
 <li>B 将公钥 <span class="math inline">\(y_B\)</span> 发送给 A，但被 E
 截获
 <ul>
-<li>E 选择一个私钥 <span class="math inline">\(x_B\prime\)</span>，计算公钥 <span class="math inline">\(y_B\prime = g^{x_B\prime} \bmod p\)</span> 发送给
-A</li>
+<li>E 选择一个私钥 <span class="math inline">\(x_B^\prime\)</span>，计算公钥 <span class="math inline">\(y_B^\prime = g^{x_B^\prime} \bmod p\)</span>
+发送给 A</li>
 </ul></li>
 <li>A 和 E 共享密钥 <span class="math inline">\(K_{AE} =
-(y_B\prime)^{x_A} \bmod p = g^{x_A x_B\prime} \bmod p\)</span></li>
+(y_B^\prime)^{x_A} \bmod p = g^{x_A x_B^\prime} \bmod p\)</span></li>
 <li>B 和 E 共享密钥 <span class="math inline">\(K_{BE} =
-(y_A\prime)^{x_B} \bmod p = g^{x_A\prime x_B} \bmod p\)</span></li>
+(y_A^\prime)^{x_B} \bmod p = g^{x_A^\prime x_B} \bmod p\)</span></li>
 </ul></li>
 <li>结果：
 <ul>
@@ -2763,7 +2763,7 @@ p=47, q=71\}\)</span></li>
 </ul>
 <h3 id="rsa-理论">RSA 理论</h3>
 <ul>
-<li>基于 Fermat‘s Theorem
+<li>基于 Fermat’s Theorem
 <ul>
 <li>如果 <span class="math inline">\(n = pq\)</span>，其中 <span class="math inline">\(p, q\)</span> 是素数，则有：<span class="math inline">\(X^{(\phi(n))} = 1 \bmod n\)</span>，对于所有与
 <span class="math inline">\(n\)</span> 互质的 <span class="math inline">\(x\)</span>，即 <span class="math inline">\(\gcd(x,
@@ -2789,7 +2789,7 @@ n) = 1\)</span>，其中 <span class="math inline">\(\phi(n) =
 <li>给定 <span class="math inline">\(n = p \times q\)</span> 和合法明文
 <span class="math inline">\(m \in
 \mathbb{Z}_n\)</span>，可以唯一地计算出密文 <span class="math inline">\(c = (m^e \mod n) \in \mathbb{Z}_n\)</span>，对于
-<span class="math inline">\(m \neq m\prime\)</span>，有 <span class="math inline">\(c \neq c\prime\)</span></li>
+<span class="math inline">\(m \neq m^\prime\)</span>，有 <span class="math inline">\(c \neq c^\prime\)</span></li>
 <li><span class="math inline">\(\mathbb{Z}_n\)</span>
 中的任一元素（<span class="math inline">\(0, p, q\)</span>
 的倍数除外）是一个明文，但它也是与某个明文相对应的一个密文。</li>
