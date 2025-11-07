@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis3365.webp">
 <meta property="article:published_time" content="2025-11-05T02:05:07.000Z">
-<meta property="article:modified_time" content="2025-11-05T12:59:04.543Z">
+<meta property="article:modified_time" content="2025-11-07T03:33:57.111Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU">
 <meta property="article:tag" content="现代密码学">
@@ -450,7 +450,7 @@
         
         
           <!-- compatible with older versions-->
-          227 分钟
+          228 分钟
         
       </span>
     
@@ -1190,11 +1190,11 @@ stream ciphers)</h3>
 <li>密钥流的生成方法：
 <ul>
 <li>有多种产生同步密钥流生成器的方法</li>
-<li>最普遍的是使用一种称为线性反馈移位寄存器(Linear Feedback Shift
-Register，LFSR)
+<li>最普遍的是使用一种称为线性反馈移位寄存器（Linear Feedback Shift
+Register，LFSR）
 <ul>
-<li>LFSR的结构非常适合硬件实现；</li>
-<li>LFSR的结构便于使用代数方法进行理论分析；</li>
+<li>LFSR 的结构非常适合硬件实现；</li>
+<li>LFSR 的结构便于使用代数方法进行理论分析；</li>
 <li>产生的序列的周期可以很大；</li>
 <li>产生的序列具有良好的统计特性。</li>
 </ul></li>
@@ -1208,8 +1208,9 @@ Register，LFSR)
 <li><span class="math inline">\(a_i\)</span> 表示存储单元，取值为 0 或
 1，<span class="math inline">\(a_i\)</span> 的个数 <span class="math inline">\(n\)</span>
 称为反馈移位寄存器的<strong>级</strong>。</li>
-<li>在某一时刻，这些级的内容构成该反馈移位寄存器的一个<strong>状态</strong>，共有<span class="math inline">\(2^n\)</span> 个可能的状态，每一个状态对应于与
-<span class="math inline">\(\mathbb{F}_2\)</span> 上的一个 <span class="math inline">\(n\)</span> 维向量，用 <span class="math inline">\((a_1,a_2,…,a_n)\)</span> 表示。</li>
+<li>在某一时刻，这些级的内容构成该反馈移位寄存器的一个<strong>状态</strong>，共有
+<span class="math inline">\(2^n\)</span>
+个可能的状态，每一个状态对应于与 <span class="math inline">\(\mathbb{F}_2\)</span> 上的一个 <span class="math inline">\(n\)</span> 维向量，用 <span class="math inline">\((a_1,a_2,…,a_n)\)</span> 表示。</li>
 <li>函数 <span class="math inline">\(f\)</span> 是一个 <span class="math inline">\(n\)</span>
 元布尔函数，称之为<strong>反馈函数</strong>。</li>
 </ul></li>
@@ -1335,7 +1336,8 @@ sequence）。</li>
 </ul>
 <h3 id="基于lfsr的伪随机序列生成器">基于LFSR的伪随机序列生成器</h3>
 <ul>
-<li>在LFSR的基础上加入非线性化的手段，产生适合于流密码应用的密钥序列。这也是目前实现密钥流生成器的主流方法，可进一步将这种方法分为三类：
+<li>在 LFSR
+的基础上加入非线性化的手段，产生适合于流密码应用的密钥序列。这也是目前实现密钥流生成器的主流方法，可进一步将这种方法分为三类：
 <ul>
 <li>滤波生成器</li>
 <li>组合生成器</li>
@@ -1627,20 +1629,24 @@ box）实现，重新排列输入的位，提供<strong>扩散</strong>效果</l
 x_i')\)</span>，每对向量只有一个比特不同，定义 <span class="math inline">\(V_i=f(x_i) \oplus f(x_i')\)</span>，则近一半的
 <span class="math inline">\(V_i\)</span> 为 1</li>
 </ul></li>
-<li>完备性效应（Completeness Effect）
+<li><strong>完备性效应</strong>（Completeness Effect）
 <ul>
 <li>每个输出比特是所有输入比特的复杂函数的输出</li>
 <li>一个函数 <span class="math inline">\(F\)</span>
-具有好的完备性是指：对密文输出向量的每一比特 <span class="math inline">\(j\)</span>，<span class="math inline">\(0&lt;j&lt;m\)</span>，至少存在一个明文对 <span class="math inline">\((x_i, x_i')\)</span>，此明文对只在第 <span class="math inline">\(i\)</span> 比特不同，且 <span class="math inline">\(F(x_i)\)</span> 与 <span class="math inline">\(F(x_i')\)</span> 的第 <span class="math inline">\(j\)</span> 比特不同</li>
+具有好的完备性是指：对密文输出向量的每一比特 <span class="math inline">\(j\)</span>，<span class="math inline">\(0&lt;j&lt;m\)</span>，至少存在一个明文对 <span class="math inline">\((x_i,  x_i')\)</span>，此明文对只在第 <span class="math inline">\(i\)</span> 比特不同，且 <span class="math inline">\(F(x_i)\)</span> 与 <span class="math inline">\(F(x_i')\)</span> 的第 <span class="math inline">\(j\)</span> 比特不同</li>
+</ul></li>
+<li><strong>不可预料性</strong>（Unpredictability）
+<ul>
+<li>给定部分输入或输出，无法有效地预测剩余的输入或输出</li>
 </ul></li>
 <li>设计密码时, 下列参数需要考虑：
 <ul>
-<li>分组大小(block
-size)：增加分组长度会提高安全性，但降低了密码运算速度</li>
-<li>密钥大小(key
-size)：增加密钥长度，可以提高安全性(使得穷搜索困难)，但降低了密码速度</li>
-<li>轮数: 增加轮数可以提高安全性，但降低速度</li>
-<li>子密钥生成: 子密钥生成越复杂，就越安全，但降低速度</li>
+<li>分组大小（block
+size）：增加分组长度会提高安全性，但降低了密码运算速度</li>
+<li>密钥大小（key
+size）：增加密钥长度，可以提高安全性（使得穷搜索困难），但降低了密码速度</li>
+<li>轮数：增加轮数可以提高安全性，但降低速度</li>
+<li>子密钥生成：子密钥生成越复杂，就越安全，但降低速度</li>
 <li>轮函数：复杂的轮函数能够使的密码分析困难，但降低速度</li>
 </ul></li>
 </ul>
@@ -2323,8 +2329,10 @@ D_K[C_1](i)\)</span>，其中撇号 <span class="math inline">\(\prime\)</span> 
 中相应的比特也发生了变化。</li>
 </ul></li>
 </ul></li>
-<li>由于CBC模式的链接机制，CBC模式对加密长于64比特的消息非常合适。</li>
-<li>CBC模式除能够获得保密性外，还能用于认证，进行用户鉴别。</li>
+<li>由于 CBC 模式的链接机制，CBC 模式对加密长于 64
+比特的消息非常合适。</li>
+<li>CBC 模式除能够获得保密性外，<strong>还能用于认证（生成 MAC
+码），进行用户鉴别</strong>。</li>
 <li><strong>工作模式特点</strong>
 <ul>
 <li>在相同密钥 <span class="math inline">\(K\)</span> 但不同初始向量
@@ -2389,7 +2397,7 @@ CFB-64 等</li>
 <figcaption aria-hidden="true">CFB</figcaption>
 </figure></li>
 </ul></li>
-<li>CFB模式除能获得保密性外，还能用于认证。</li>
+<li>CFB 模式除能获得保密性外，还能用于认证。</li>
 <li>工作模式特点：
 <ul>
 <li>适合数据以比特或字节为单位出现</li>
@@ -2401,7 +2409,7 @@ CFB-64 等</li>
 <ul>
 <li>重新排列密文块会影响解密。</li>
 <li>正确解密一个密文块需要其前 <span class="math inline">\(n/r\)</span>
-个密文块是正确的(对于DES, <span class="math inline">\(n=64\)</span>)。</li>
+个密文块是正确的（对于 DES, <span class="math inline">\(n=64\)</span>）。</li>
 </ul></li>
 <li><strong>错误传播</strong>：
 <ul>
@@ -2489,11 +2497,11 @@ CFB-64 等</li>
 </ul></li>
 <li>加密数据块的随机访问</li>
 <li>可证明安全</li>
-<li>周期长度取决于计数器的大小（通常为<span class="math inline">\(2^n\)</span>）</li>
+<li>周期长度取决于计数器的大小（通常为 <span class="math inline">\(2^n\)</span>）</li>
 <li>第 <span class="math inline">\(i\)</span>
 个块可以独立于其他块进行解密
 <ul>
-<li>可并行化（与OFB不同）</li>
+<li>可并行化（与 OFB 不同）</li>
 <li>支持随机访问</li>
 </ul></li>
 <li><strong>与明文进行异或运算的值可以预先计算</strong></li>
@@ -4872,12 +4880,11 @@ Algorithm)</h2>
 </ul>
 <h3 id="dsa-密钥生成">DSA 密钥生成</h3>
 <ul>
-<li>首先选取公开参数 <span class="math inline">\((p, q, g)\)</span> :
+<li>首先选取公开参数 <span class="math inline">\((p, q, g)\)</span>：
 <ul>
-<li>选取大素数 <span class="math inline">\(p = 2 L\)</span>
+<li>选取大素数 <span class="math inline">\(p\)</span>
 <ul>
-<li><span class="math inline">\(L= 512 \sim 1024\)</span> bits（64
-倍数）</li>
+<li>512 ～ 1024 bit（64 倍数）</li>
 </ul></li>
 <li>选取素数 <span class="math inline">\(q\)</span>
 <ul>
@@ -5040,7 +5047,7 @@ Message))
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年11月5日</div>
+          <div>2025年11月7日</div>
         </div>
       
       
