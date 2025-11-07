@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis3365.webp">
 <meta property="article:published_time" content="2025-11-05T02:05:07.000Z">
-<meta property="article:modified_time" content="2025-11-07T07:03:25.021Z">
+<meta property="article:modified_time" content="2025-11-07T09:22:11.936Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU">
 <meta property="article:tag" content="现代密码学">
@@ -1566,8 +1566,8 @@ cryptography）是指在资源受限的环境下使用的密码算法，通常�
 <ul>
 <li><p>在分组密码中，消息被分成许多块，每块都要被加密，类似于许多字符被替换
 <img src="image-2.webp" srcset="/img/loading/loading3.gif" lazyload></p></li>
-<li><p>理想的方法是使用尽可能大的替换模块，但不实际，因为对每个64bit的模块，将需要
-<span class="math inline">\(2^{64}\)</span>
+<li><p>理想的方法是使用尽可能大的替换模块，但不实际，因为对每个 64-bit
+的模块，将需要 <span class="math inline">\(2^{64}\)</span>
 个实体的替换表，因此使用一些小的模块代替</p></li>
 </ul>
 <h2 id="分组密码的基本结构">分组密码的基本结构</h2>
@@ -1642,7 +1642,7 @@ x_i')\)</span>，每对向量只有一个比特不同，定义 <span class="math
 <li>一个函数 <span class="math inline">\(F\)</span>
 具有好的完备性是指：对密文输出向量的每一比特 <span class="math inline">\(j\)</span>，<span class="math inline">\(0&lt;j&lt;m\)</span>，至少存在一个明文对 <span class="math inline">\((x_i,  x_i')\)</span>，此明文对只在第 <span class="math inline">\(i\)</span> 比特不同，且 <span class="math inline">\(F(x_i)\)</span> 与 <span class="math inline">\(F(x_i')\)</span> 的第 <span class="math inline">\(j\)</span> 比特不同</li>
 </ul></li>
-<li><strong>不可预料性</strong>（Unpredictability）
+<li><strong>不可预测性</strong>（Unpredictability）
 <ul>
 <li>给定部分输入或输出，无法有效地预测剩余的输入或输出</li>
 </ul></li>
@@ -1744,16 +1744,16 @@ P_8(LS_{2}(LS_{1}(P_{10}(K))))\)</span></li>
 <li><span class="math inline">\(P_{10}(k_1,k_2,\cdots,k_{10})=(k_3,k_5,k_2,k_7,k_4,k_{10},k_1,k_9,k_8,k_6)\)</span></li>
 <li><span class="math inline">\(P_8(k_1,k_2,\cdots,k_{10})=(k_6,k_3,k_7,k_4,k_8,k_5,k_{10},k_9)\)</span></li>
 </ul></li>
-<li><span class="math inline">\(LS_{1}\)</span>为循环左移1位， <span class="math inline">\(LS_{2}\)</span>为循环左移2位</li>
+<li><span class="math inline">\(LS_{1}\)</span> 为循环左移 1 位， <span class="math inline">\(LS_{2}\)</span> 为循环左移 2 位</li>
 <li>示例：
 <ul>
 <li>若 <span class="math inline">\(K=(1010000010)\)</span></li>
 <li><span class="math inline">\(P_{10}(K)=(1000001100)\)</span></li>
-<li><span class="math inline">\(LS_{1}(10000)\mid
-LS_{1}(01100)=(00001\mid 11000)\)</span></li>
+<li><span class="math inline">\(LS_{1}(10000)\parallel
+LS_{1}(01100)=(00001\parallel 11000)\)</span></li>
 <li><span class="math inline">\(K_1=P_8(0000111000)=(10100100)\)</span></li>
-<li><span class="math inline">\(LS_{2}(00001)\mid
-LS_{2}(11000)=(00100\mid 00011)\)</span></li>
+<li><span class="math inline">\(LS_{2}(00001)\parallel
+LS_{2}(11000)=(00100\parallel 00011)\)</span></li>
 <li><span class="math inline">\(K_2=P_8(0010000011)=(01000011)\)</span></li>
 </ul></li>
 </ul></li>
@@ -1780,7 +1780,7 @@ LS_{2}(11000)=(00100\mid 00011)\)</span></li>
 </ul></li>
 <li>函数 <span class="math inline">\(f_k\)</span>: <span class="math display">\[f_k (L,R)=(L⊕F(R,SK),R)\]</span>
 <ul>
-<li>其中 <span class="math inline">\(L\mid R\)</span> 为 8 位输入,
+<li>其中 <span class="math inline">\(L\parallel R\)</span> 为 8 位输入,
 左右各为 4 位, <span class="math inline">\(F\)</span> 为从 4 位集到 4
 位集的一个映射, 并不要求是 1-1 的。<span class="math inline">\(SK\)</span> 为子密钥。</li>
 </ul></li>
@@ -1827,7 +1827,8 @@ P_{0,3})=(00),  并且(P_{0,1} P_{0,2})=(1 0)\)</span>，确定了 <span class="
 <ul>
 <li>交换函数 <span class="math inline">\(SW\)</span> 将 8-bit
 输入的左右两半交换位置</li>
-<li>即 <span class="math inline">\(SW(L\mid R)=R\mid L\)</span></li>
+<li>即 <span class="math inline">\(SW(L\parallel R)=R\parallel
+L\)</span></li>
 </ul></li>
 <li>再进行一次 <span class="math inline">\(f_k\)</span>
 运算，使用第二个子密钥 <span class="math inline">\(K_2\)</span></li>
@@ -1850,8 +1851,8 @@ P_{0,3})=(00),  并且(P_{0,1} P_{0,2})=(1 0)\)</span>，确定了 <span class="
 </ul></li>
 <li>算法分三个阶段实现：
 <ol type="1">
-<li>对明文 <span class="math inline">\(X\)</span>，通过一个固定的初始置换 <span class="math inline">\(IP\)</span> 得到 <span class="math inline">\(X_0\)</span>，分为左右两部分 <span class="math display">\[X_0=IP(X)=L_0\mid R_0\]</span></li>
-<li>函数 <span class="math inline">\(F\)</span> 的 <span class="math inline">\(16\)</span> 次迭代：<span class="math inline">\(L_i\mid R_i (1 \leq i \leq 16)\)</span> <span class="math display">\[
+<li>对明文 <span class="math inline">\(X\)</span>，通过一个固定的初始置换 <span class="math inline">\(IP\)</span> 得到 <span class="math inline">\(X_0\)</span>，分为左右两部分 <span class="math display">\[X_0=IP(X)=L_0\parallel R_0\]</span></li>
+<li>函数 <span class="math inline">\(F\)</span> 的 <span class="math inline">\(16\)</span> 次迭代：<span class="math inline">\(L_i\parallel R_i (1 \leq i \leq 16)\)</span> <span class="math display">\[
 \begin{aligned}
 &amp;L_i=R_{i−1} \\
 &amp;R_i=L_{i−1} \oplus F(R_{i−1}, K_i)
@@ -1861,8 +1862,8 @@ P_{0,3})=(00),  并且(P_{0,1} P_{0,2})=(1 0)\)</span>，确定了 <span class="
 <li>其中 <span class="math inline">\(K_i\)</span> 是长为 48
 位的子密钥。子密钥 <span class="math inline">\(K_1,K_2,\cdots,K_{16}\)</span> 是作为密钥 <span class="math inline">\(K\)</span>（56 位）的函数而计算出的。</li>
 </ul></li>
-<li>对比特串 <span class="math inline">\(R_{16}\mid L_{16}\)</span>
-使用逆置换 <span class="math inline">\(IP^{-1}\)</span> 得到密文 <span class="math inline">\(Y\)</span>。 <span class="math display">\[Y=IP^{-1}(R_{16}\mid L_{16})\]</span></li>
+<li>对比特串 <span class="math inline">\(R_{16}\parallel L_{16}\)</span>
+使用逆置换 <span class="math inline">\(IP^{-1}\)</span> 得到密文 <span class="math inline">\(Y\)</span>。 <span class="math display">\[Y=IP^{-1}(R_{16}\parallel L_{16})\]</span></li>
 </ol></li>
 <li>初始置换 <span class="math inline">\(IP\)</span> 和 <span class="math inline">\(IP^{-1}\)</span>
 的定义：表中的数字表示这个比特在置换前的位置 <span class="math display">\[IP = \begin{bmatrix}
@@ -1927,7 +1928,8 @@ P_{0,3})=(00),  并且(P_{0,1} P_{0,2})=(1 0)\)</span>，确定了 <span class="
 <li>计算 <span class="math inline">\(A = E(R_{i−1})\oplus
 K_i\)</span>，结果写成 <span class="math inline">\(8\)</span> 个 <span class="math inline">\(6\)</span> 位串 <span class="math display">\[
 \begin{aligned}
-&amp;A=A_1\mid A_2\mid A_3\mid A_4\mid A_5\mid A_6\mid A_7\mid A_8 \\
+&amp;A=A_1\parallel A_2\parallel A_3\parallel A_4\parallel A_5\parallel
+A_6\parallel A_7\parallel A_8 \\
 &amp;A_j=a_1 a_2 a_3 a_4 a_5 a_6
 \end{aligned}
 \]</span></li>
@@ -1961,16 +1963,17 @@ S_8\)</span>（6到4）</li>
 位参加子密钥编排。8
 位是奇偶校验位（为了检错），在密钥编排的计算中，不参加运算。
 <ol type="1">
-<li>给定 64 位的密钥 <span class="math inline">\(K\)</span>，放弃奇偶校验位 <span class="math inline">\((8, 16, \ldots, 64)\)</span> 并根据固定置换 <span class="math inline">\(PC1\)</span> 来排列 <span class="math inline">\(K\)</span> 中剩下的位。我们写 <span class="math display">\[PC1(K)=C_0\mid D_0\]</span> 其中 <span class="math inline">\(C_0\)</span> 由 <span class="math inline">\(PC1(K)\)</span> 的前 28 位组成；<span class="math inline">\(D_0\)</span> 由后 28 位组成。</li>
-<li>对 <span class="math inline">\(1 \leq i \leq 16\)</span>，计算 <span class="math display">\[C_i=LS_i (C_{i−1}) \\ D_i=LS_i (D_{i−1})\]</span>
-其中 <span class="math inline">\(LS_i\)</span> 表示循环左移 2 或 1
-个位置，取决于 <span class="math inline">\(i\)</span> 的值。
+<li>给定 64 位的密钥 <span class="math inline">\(K\)</span>，放弃奇偶校验位 <span class="math inline">\((8, 16, \ldots, 64)\)</span> 并根据固定置换 <span class="math inline">\(PC1\)</span> 来排列 <span class="math inline">\(K\)</span> 中剩下的位。我们写 <span class="math display">\[PC1(K)=C_0\parallel D_0\]</span> 其中 <span class="math inline">\(C_0\)</span> 由 <span class="math inline">\(PC1(K)\)</span> 的前 28 位组成；<span class="math inline">\(D_0\)</span> 由后 28 位组成。</li>
+<li>对 <span class="math inline">\(1 \leq i \leq 16\)</span>，计算 <span class="math display">\[C_i=LS_i (C_{i−1}) \quad D_i=LS_i
+(D_{i−1})\]</span> 其中 <span class="math inline">\(LS_i\)</span>
+表示循环左移 2 或 1 个位置，取决于 <span class="math inline">\(i\)</span> 的值。
 <ul>
 <li><span class="math inline">\(i=1,2,9,16\)</span> 时移 1
 个位置，否则移 2 位置</li>
-<li><span class="math inline">\(K_i=PC2(C_i D_i)\)</span>，<span class="math inline">\(PC2\)</span> 为固定置换，将前 28 位中的 24
-位置换，并去掉 9、18、22、25，将后 28 位中的 24 位置换，并去掉
-35、38、43、54 位</li>
+<li><span class="math inline">\(K_i=PC2(C_i\parallel
+D_i)\)</span>，<span class="math inline">\(PC2\)</span> 为固定置换，将前
+28 位中的 24 位置换，并去掉 9、18、22、25，将后 28 位中的 24
+位置换，并去掉 35、38、43、54 位</li>
 </ul></li>
 </ol></li>
 <li>一共 16 轮迭代，总共生成 16 个 48 比特的子密钥 <span class="math inline">\(K_1, K_2, \ldots, K_{16}\)</span>。</li>
@@ -2020,7 +2023,7 @@ D_{K_1}(E_{K_2}(D_{K_3}(C)))\]</span></li>
 <li>IDEA的“混淆”和“扩散”设计原则来自三种运算，它们易于软、硬件实现（加密速度快）：
 <ol type="1">
 <li>异或运算：<span class="math inline">\(\oplus\)</span></li>
-<li>整数模 <span class="math inline">\(2^{16}\)</span> 加：<span class="math inline">\(⊞\)</span></li>
+<li>整数模 <span class="math inline">\(2^{16}\)</span> 加：<span class="math inline">\(\boxplus\)</span></li>
 <li>整数模 <span class="math inline">\(2^{16}+1\)</span> 乘：<span class="math inline">\(\odot\)</span> (IDEA的S盒)</li>
 <li>MA 单元 <img src="image-79.webp" srcset="/img/loading/loading3.gif" lazyload></li>
 </ol></li>
@@ -2238,9 +2241,9 @@ of Operation）。</li>
 <li>CTR(Counter)：计数器模式</li>
 </ul></li>
 </ul></li>
-<li>在CFB、OFB和CTR模式中，仅使用加密算法（不需要解密算法）
+<li>在 CFB、OFB 和 CTR 模式中，仅使用加密算法（不需要解密算法）
 <ul>
-<li>这就是为什么Rijndael（AES）针对加密进行了优化</li>
+<li>这就是为什么 Rijndael（AES）针对加密进行了优化</li>
 <li>这些模式不应与公钥加密算法一起使用</li>
 </ul></li>
 </ul>
@@ -2280,8 +2283,8 @@ codebook）模式是最简单的运行模式，它将消息分成相互独立的
 用于长消息时可能不够安全，如果消息有固定结构，密码分析者有可能找出这种关系。
 <ul>
 <li>如果已知消息总是以某个预定义字段开始，那么分析者就可能得到很多明文密文对。</li>
-<li>如果消息有重复的元素而重复的周期是 64
-的倍数，那么密码分析者就能够识别这些元素。</li>
+<li>如果消息有重复的元素而重复的周期是 64-bit（以 DES
+为例）的倍数，那么密码分析者就能够识别这些元素。</li>
 </ul></li>
 </ul>
 <h3 id="cbc工作模式-cipher-block-chaining">CBC工作模式 (Cipher Block
@@ -2371,7 +2374,7 @@ CFB-64 等</li>
 <li>加密： <span class="math display">\[
   \begin{aligned}
   C_i &amp;= P_i \oplus E_{K}[J_{i}][0:r] \\
-  J_{i} &amp;= (J_{i−1}) \ll r \mid C_{i−1} \\
+  J_{i} &amp;= (J_{i−1}) \ll r \parallel C_{i−1} \\
   J_{1} &amp;= IV_0
   \end{aligned}
   \]</span>
@@ -2391,7 +2394,7 @@ CFB-64 等</li>
 <li>解密： <span class="math display">\[
   \begin{aligned}
   P_i &amp;= C_i \oplus E_{K}[J_{i}][0:r] \\
-  J_{i} &amp;= (J_{i−1}) \ll r \mid C_{i−1} \\
+  J_{i} &amp;= (J_{i−1}) \ll r \parallel C_{i−1} \\
   J_{1} &amp;= IV_0
   \end{aligned}
   \]</span>
@@ -2415,14 +2418,14 @@ CFB-64 等</li>
 <li>密文块 <span class="math inline">\(C_m\)</span> 依赖于明文块 <span class="math inline">\(P_m\)</span> 以及所有先前的明文块
 <ul>
 <li>重新排列密文块会影响解密。</li>
-<li>正确解密一个密文块需要其前 <span class="math inline">\(n/r\)</span>
-个密文块是正确的（对于 DES, <span class="math inline">\(n=64\)</span>）。</li>
+<li>正确解密一个密文块需要其前 <span class="math inline">\(\lceil n/r
+\rceil\)</span> 个密文块是正确的（对于 DES, <span class="math inline">\(n=64\)</span>）。</li>
 </ul></li>
 <li><strong>错误传播</strong>：
 <ul>
 <li>密文块 <span class="math inline">\(C_m\)</span>
-中的一个比特错误会影响该块及后续 <span class="math inline">\(n/r\)</span>
-个密文块的解密（错误会在移位寄存器中持续 <span class="math inline">\(n/r\)</span> 步）
+中的一个比特错误会影响该块及后续 <span class="math inline">\(\lceil n/r
+\rceil\)</span> 个密文块的解密（错误会在移位寄存器中持续 <span class="math inline">\(\lceil n/r \rceil\)</span> 步）
 <ul>
 <li><span class="math inline">\(P_m^\prime\)</span> 在 <span class="math inline">\(C_m\)</span>
 发生错误的比特位置也会出现错误，而其他错误的明文块则完全变为乱码</li>
@@ -2442,7 +2445,7 @@ CFB-64 等</li>
   \begin{aligned}
   C_i &amp;= P_i \oplus O_i[0:r] \\
   O_i &amp;= E_{K}[I_i] \\
-  I_i &amp;= (I_{i−1}) \ll r \mid O_{i−1}[0:r] \\
+  I_i &amp;= (I_{i−1}) \ll r \parallel O_{i−1}[0:r] \\
   I_1 &amp;= IV_0
   \end{aligned}
   \]</span></li>
@@ -2450,7 +2453,7 @@ CFB-64 等</li>
   \begin{aligned}
   P_i &amp;= C_i \oplus O_i[0:r] \\
   O_i &amp;= E_{K}[I_i] \\
-  I_i &amp;= (I_{i−1}) \ll r \mid O_{i−1}[0:r] \\
+  I_i &amp;= (I_{i−1}) \ll r \parallel O_{i−1}[0:r] \\
   I_1 &amp;= IV_0
   \end{aligned}
   \]</span></li>
@@ -3397,20 +3400,20 @@ M))\)</span>
 </ul></li>
 <li>消息认证码的基本用法
 <ol type="1">
-<li><span class="math inline">\(A \rightarrow B:  M \mid\mid C_k
+<li><span class="math inline">\(A \rightarrow B:  M \parallel C_k
 (M)\)</span>
 <ul>
 <li><strong>提供认证</strong>，因仅 A 和 B 共享 <span class="math inline">\(K\)</span>;</li>
 <li><img src="image-52.webp" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul></li>
-<li><span class="math inline">\(A \rightarrow B:  E_{K_2} (M \mid\mid
+<li><span class="math inline">\(A \rightarrow B:  E_{K_2} (M \parallel
 C_{K_1} (M))\)</span>：先认证，后加密
 <ul>
 <li><strong>提供认证</strong>，因仅 A 和 B 共享 <span class="math inline">\(K_1\)</span>;</li>
 <li><strong>提供保密</strong>，因仅 A 和 B 共享 <span class="math inline">\(K_2\)</span>;</li>
 <li><img src="image-53.webp" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul></li>
-<li><span class="math inline">\(A \rightarrow B:  E_{K_2} (M) \mid\mid
+<li><span class="math inline">\(A \rightarrow B:  E_{K_2} (M) \parallel
 C_{K_1} (E_{K_2} (M))\)</span>：先加密，后认证
 <ul>
 <li><strong>提供认证</strong>，因仅 A 和 B 共享 <span class="math inline">\(K_1\)</span>;</li>
@@ -3453,36 +3456,36 @@ C_k(M)\)</span>，这在计算上不可行；</li>
 </ul></li>
 <li>使用哈希码提供消息鉴别的方式
 <ol type="1">
-<li><span class="math inline">\(A \rightarrow B:  E_k (M \mid\mid H(M)
+<li><span class="math inline">\(A \rightarrow B:  E_k (M \parallel H(M)
 )\)</span>
 <ul>
 <li>提供保密（仅 A 和 B 共享 <span class="math inline">\(K\)</span>）</li>
 <li>提供鉴别（加密保护 <span class="math inline">\(H(M)\)</span>）</li>
 </ul></li>
-<li><span class="math inline">\(A \rightarrow B:  M \mid\mid E_k
+<li><span class="math inline">\(A \rightarrow B:  M \parallel E_k
 (H(M))\)</span>
 <ul>
 <li>提供鉴别（加密保护 <span class="math inline">\(H(M)\)</span>）</li>
 </ul></li>
-<li><span class="math inline">\(A \rightarrow B:  M \mid\mid E_{K_{Ra}}
+<li><span class="math inline">\(A \rightarrow B:  M \parallel E_{K_{Ra}}
 (H(M))\)</span>
 <ul>
 <li>提供鉴别和数字签名（加密保护 <span class="math inline">\(H(M)\)</span> , 且仅 A 能生成 <span class="math inline">\(E_{K_{Ra}} (H(M))\)</span>）</li>
 </ul></li>
-<li><span class="math inline">\(A \rightarrow B:  E_k (M \mid\mid
+<li><span class="math inline">\(A \rightarrow B:  E_k (M \parallel
 E_{K_{Ra}} (H(M)) )\)</span>
 <ul>
 <li>提供鉴别和数字签名</li>
 <li>提供保密（仅 A 和 B 共享 <span class="math inline">\(K\)</span>）</li>
 </ul></li>
-<li><span class="math inline">\(A \rightarrow B:  M \mid\mid H(M
-\mid\mid S)\)</span>
+<li><span class="math inline">\(A \rightarrow B:  M \parallel H(M
+\parallel S)\)</span>
 <ul>
 <li>提供鉴别（<span class="math inline">\(S\)</span>
 是通信双方共享的一个秘密值，仅 A 和 B 共享 <span class="math inline">\(S\)</span>）</li>
 </ul></li>
-<li><span class="math inline">\(A \rightarrow B:  E_k (M \mid\mid H(M
-\mid\mid S ))\)</span>
+<li><span class="math inline">\(A \rightarrow B:  E_k (M \parallel H(M
+\parallel S ))\)</span>
 <ul>
 <li>提供鉴别（仅 A 和 B 共享 <span class="math inline">\(S\)</span>）</li>
 <li>提供保密（仅 A 和 B 共享 <span class="math inline">\(K\)</span>）</li>
@@ -4953,13 +4956,13 @@ g)\)</span></li>
 <ul>
 <li>好的方法是使用快速的 hash 函数：</li>
 <li>密钥与消息同时参加运算： <span class="math display">\[
-  KeyedHash = \mathbf{Hash}(Key \mid Message)
+  KeyedHash = \mathbf{Hash}(Key \parallel Message)
   \]</span></li>
 <li>存在一些弱点</li>
 </ul></li>
 <li>随后建议： <span class="math display">\[
-  KeyedHash = \mathbf{Hash} (Key_1 \mid \mathbf{Hash} (Key_2 \mid
-Message))
+  KeyedHash = \mathbf{Hash} (Key_1 \parallel \mathbf{Hash} (Key_2
+\parallel Message))
   \]</span></li>
 </ul>
 <h3 id="hmac">HMAC</h3>
@@ -4967,8 +4970,8 @@ Message))
 <li>HMAC 是使用带密钥的 HASH 函数的结果</li>
 <li>成为 internet 标准（RFC2104）</li>
 <li>结构: <span class="math display">\[
-  HMAC_K = \mathbf{Hash}((K^+ \oplus opad) \mid \mathbf{Hash}((K^+
-\oplus \text{ipad}) \mid M))
+  HMAC_K = \mathbf{Hash}((K^+ \oplus opad) \parallel \mathbf{Hash}((K^+
+\oplus \text{ipad}) \parallel M))
   \]</span>
 <ul>
 <li><span class="math inline">\(K^+\)</span>：经过填充的密钥</li>
