@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis3365.webp">
 <meta property="article:published_time" content="2025-11-05T02:05:07.000Z">
-<meta property="article:modified_time" content="2025-11-07T09:22:11.936Z">
+<meta property="article:modified_time" content="2025-11-07T14:05:21.352Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU">
 <meta property="article:tag" content="现代密码学">
@@ -450,7 +450,7 @@
         
         
           <!-- compatible with older versions-->
-          228 分钟
+          229 分钟
         
       </span>
     
@@ -2768,7 +2768,8 @@ q\}\)</span></li>
 <li>加密：
 <ul>
 <li>使用公钥 <span class="math inline">\(K = \{e, n\}\)</span></li>
-<li>将消息 <span class="math inline">\(m\)</span> 映射为整数 <span class="math inline">\(0 \leq m &lt; n\)</span></li>
+<li>将消息 <span class="math inline">\(M\)</span> 映射为整数 <span class="math inline">\(m\)</span>，满足 <span class="math inline">\(0
+\leq m &lt; n\)</span></li>
 <li>计算密文 <span class="math inline">\(c = m^e \bmod n\)</span></li>
 </ul></li>
 <li>解密：
@@ -2792,7 +2793,7 @@ p=47, q=71\}\)</span></li>
 <ul>
 <li>基于 Fermat’s Theorem
 <ul>
-<li>如果 <span class="math inline">\(n = pq\)</span>，其中 <span class="math inline">\(p, q\)</span> 是素数，则有：<span class="math inline">\(X^{(\phi(n))} = 1 \bmod n\)</span>，对于所有与
+<li>如果 <span class="math inline">\(n = pq\)</span>，其中 <span class="math inline">\(p, q\)</span> 是素数，则有：<span class="math inline">\(x^{(\phi(n))} = 1 \bmod n\)</span>，对于所有与
 <span class="math inline">\(n\)</span> 互质的 <span class="math inline">\(x\)</span>，即 <span class="math inline">\(\gcd(x,
 n) = 1\)</span>，其中 <span class="math inline">\(\phi(n) =
 (p−1)(q−1)\)</span>。</li>
@@ -2815,7 +2816,7 @@ n) = 1\)</span>，其中 <span class="math inline">\(\phi(n) =
 <ul>
 <li>给定 <span class="math inline">\(n = p \times q\)</span> 和合法明文
 <span class="math inline">\(m \in
-\mathbb{Z}_n\)</span>，可以唯一地计算出密文 <span class="math inline">\(c = (m^e \mod n) \in \mathbb{Z}_n\)</span>，对于
+\mathbb{Z}_n\)</span>，可以唯一地计算出密文 <span class="math inline">\(c = (m^e \bmod n) \in \mathbb{Z}_n\)</span>，对于
 <span class="math inline">\(m \neq m^\prime\)</span>，有 <span class="math inline">\(c \neq c^\prime\)</span></li>
 <li><span class="math inline">\(\mathbb{Z}_n\)</span>
 中的任一元素（<span class="math inline">\(0, p, q\)</span>
@@ -2890,7 +2891,7 @@ n) = 1\)</span>，其中 <span class="math inline">\(\phi(n) =
 <ul>
 <li>加密很快，指数小</li>
 <li>解密比较慢，指数较大</li>
-<li>利用中国剩余定理 CRT：对 RSA 解密算法生成两个解密方程（利用 <span class="math inline">\(M = C^d \mod R\)</span> ）
+<li>利用中国剩余定理 CRT：对 RSA 解密算法生成两个解密方程（利用 <span class="math inline">\(M = C^d \bmod R\)</span> ）
 <ul>
 <li>即： <span class="math display">\[
   \begin{aligned}
@@ -2938,7 +2939,7 @@ q' \cdot M_1 + p \cdot p' \cdot M_2) \bmod R\)</span>
 <li>Rabin 的提出是对 RSA 的一种修正</li>
 <li>可以证明对它的破译等价于对 <span class="math inline">\(n\)</span>
 的分解</li>
-<li>RSA 是选择加密密钥 <span class="math inline">\(e\)</span> 满足 <span class="math inline">\(1 \leq e &lt; \phi(n)\)</span> 且 <span class="math inline">\((e, \phi(n)) = 1\)</span>，Rabin 是取 <span class="math inline">\(e = 2\)</span></li>
+<li>RSA 是选择加密密钥 <span class="math inline">\(e\)</span> 满足 <span class="math inline">\(1 &lt; e &lt; \phi(n)\)</span> 且 <span class="math inline">\((e, \phi(n)) = 1\)</span>，Rabin 是取 <span class="math inline">\(e = 2\)</span></li>
 </ul></li>
 </ul>
 <h3 id="二次剩余的概念">二次剩余的概念</h3>
@@ -2951,18 +2952,14 @@ q' \cdot M_1 + p \cdot p' \cdot M_2) \bmod R\)</span>
 </ul></li>
 <li><strong>定理1</strong>：假定 <span class="math inline">\(n = p_1
 p_2\)</span>，<span class="math inline">\(p_1\)</span> 和 <span class="math inline">\(p_2\)</span> 是不相同的素数，<span class="math inline">\(Z_n\)</span> 中有 <span class="math inline">\((p_1−1)(p_2−1)/4\)</span> 个元素属于 <span class="math inline">\(QR_n\)</span>，每个属于 <span class="math inline">\(QR_n\)</span> 的元素有 <span class="math inline">\(4\)</span> 个平方根。</li>
-<li><strong>定理2</strong>：若 <span class="math inline">\(\alpha\)</span> 和 <span class="math inline">\(\gamma\)</span> 属于本质上不同的 <span class="math inline">\(\beta\)</span> 的平方根, 且 <span class="math inline">\(\alpha\)</span> 和 <span class="math inline">\(\gamma\)</span> 为小于 <span class="math inline">\(n/2\)</span> 的正整数，<span class="math inline">\(\alpha\)</span> 和 <span class="math inline">\(\gamma\)</span> 满足 <span class="math inline">\(x^2 \equiv \beta \mod n\)</span>
-<ul>
-<li>则 <span class="math inline">\(\gcd(\alpha+\gamma,m)=p_1\)</span>,
-或 <span class="math inline">\(\gcd(\alpha+\gamma,m)=p_2\)</span>,
+<li><strong>定理2</strong>：若 <span class="math inline">\(\alpha\)</span> 和 <span class="math inline">\(\gamma\)</span> 属于本质上不同的 <span class="math inline">\(\beta\)</span> 的平方根, 且 <span class="math inline">\(\alpha\)</span> 和 <span class="math inline">\(\gamma\)</span> 为小于 <span class="math inline">\(n/2\)</span> 的正整数，<span class="math inline">\(\alpha\)</span> 和 <span class="math inline">\(\gamma\)</span> 满足 <span class="math inline">\(x^2 \equiv \beta \bmod n\)</span>，则 <span class="math inline">\(\gcd(\alpha+\gamma,n)=p_1\)</span>, 或 <span class="math inline">\(\gcd(\alpha+\gamma,n)=p_2\)</span>,
 其中必有一式成立。</li>
-</ul></li>
 </ul>
 <h3 id="rabin-密钥生成">RABIN 密钥生成</h3>
 <ul>
 <li>令 <span class="math inline">\(p\)</span> 和 <span class="math inline">\(q\)</span> 是两个素数，在模 4 下与 3 同余（即
 <span class="math inline">\(p \bmod 4 = q \bmod 4 = 3\)</span>），计算
-<span class="math inline">\(n=pq\)</span>（这样的 <span class="math inline">\(n\)</span> 成为 blum 整数）。</li>
+<span class="math inline">\(n=pq\)</span>（这样的 <span class="math inline">\(n\)</span> 称为 blum 整数）。</li>
 <li>公钥为 <span class="math inline">\(K=\{n\}\)</span></li>
 <li>私钥为 <span class="math inline">\(K^{-1}=\{p,q\}\)</span></li>
 </ul>
@@ -3004,7 +3001,7 @@ M_4\)</span>，其中必有一个与 <span class="math inline">\(M\)</span>
 </ul>
 <h3 id="rabin-的安全性">RABIN 的安全性</h3>
 <ul>
-<li>定理：设 <span class="math inline">\(n=pq\)</span>, <span class="math inline">\(p\)</span>, <span class="math inline">\(q\)</span>
+<li>定理：设 <span class="math inline">\(n=pq\)</span>, <span class="math inline">\(p\)</span>、<span class="math inline">\(q\)</span>
 为blum整数，<span class="math inline">\(x^2 \equiv a \bmod n\)</span>
 有解，则求解该同余式等价于分解大整数 <span class="math inline">\(n\)</span>
 <ul>
@@ -3023,8 +3020,9 @@ M_4\)</span>，其中必有一个与 <span class="math inline">\(M\)</span>
   \gcd(x_1 + x_2, n)
   \end{aligned}
   \]</span></li>
-<li>因此就相当于分解了整数𝑛。</li>
-<li>反之，如果知道𝑛的分解，则类似于解密过程可将同余式的四个解求出来</li>
+<li>因此就相当于分解了整数 <span class="math inline">\(n\)</span>。</li>
+<li>反之，如果知道 <span class="math inline">\(n\)</span>
+的分解，则类似于解密过程可将同余式的四个解求出来</li>
 </ul></li>
 </ul></li>
 <li>等价于对 <span class="math inline">\(n\)</span> 的因数分解
@@ -3064,13 +3062,12 @@ n\)</span>；如果攻击者能够成功骗取签名者对 <span class="math inl
 <h3 id="elgamal-密钥生成">ElGamal 密钥生成</h3>
 <ul>
 <li>选取一个大素数 <span class="math inline">\(p\)</span> 及生成元 <span class="math inline">\(g\)</span></li>
-<li>随机选取一个私钥 <span class="math inline">\(x_B\)</span> 满足 <span class="math inline">\(0 &lt; x_B &lt; p-1\)</span>
+<li>随机选取一个私钥 <span class="math inline">\(x\)</span> 满足 <span class="math inline">\(0 &lt; x &lt; p-1\)</span>
 <ul>
-<li>计算公钥 <span class="math inline">\(y_B = g^{x_B} \bmod
-p\)</span></li>
+<li>计算公钥 <span class="math inline">\(y = g^{x} \bmod p\)</span></li>
 </ul></li>
-<li>公钥为 <span class="math inline">\(K = \{p, g, y_B\}\)</span></li>
-<li>私钥为 <span class="math inline">\(K^{-1} = \{x_B\}\)</span></li>
+<li>公钥为 <span class="math inline">\(K = \{p, g, y\}\)</span></li>
+<li>私钥为 <span class="math inline">\(K^{-1} = \{x\}\)</span></li>
 </ul>
 <h3 id="elgamal-加解密算法">ElGamal 加解密算法</h3>
 <ul>
@@ -3080,7 +3077,7 @@ p\)</span></li>
 &lt; k &lt; p−1\)</span>，<span class="math inline">\(k\)</span>
 需要永久保密或销毁</li>
 <li>计算消息密钥 <span class="math inline">\(K\)</span>： <span class="math display">\[
-  K = y_B^k \bmod p
+  K = y^k \bmod p
   \]</span></li>
 <li>计算密文对：<span class="math inline">\(C =
 \{C_1,C_2\}\)</span>，并发送到接收者 <span class="math display">\[
@@ -3093,7 +3090,7 @@ p\)</span></li>
 <li>为解密 <span class="math inline">\(C = \{C_1,C_2\}\)</span>:
 <ul>
 <li><strong>接收者</strong>首先计算 <span class="math inline">\(K\)</span> <span class="math display">\[
-  K = C_1^{x_B} \bmod p = g^{(k\cdot x_B)} \bmod p = y_B^k \bmod p
+  K = C_1^{x} \bmod p = g^{(k\cdot x)} \bmod p = y^k \bmod p
   \]</span></li>
 <li>然后利用费马小定理计算 <span class="math inline">\(K^{-1}\)</span>:
 <span class="math display">\[
@@ -3184,6 +3181,7 @@ x &amp;= (y_1^a \cdot y_2^b) \bmod n \\
 \end{aligned}
 \]</span></li>
 </ol></li>
+<li>为对抗该攻击，建议每个用户使用不同的模数 <span class="math inline">\(n\)</span>。</li>
 </ul>
 <h4 id="低加密指数攻击">低加密指数攻击</h4>
 <ul>
@@ -3502,8 +3500,8 @@ E_{K_{Ra}} (H(M)) )\)</span>
 <li>任意给定分组 <span class="math inline">\(x\)</span>，寻求不等于
 <span class="math inline">\(x\)</span> 的 <span class="math inline">\(y\)</span>，使得 <span class="math inline">\(H(y)=
 H(x)\)</span> 在计算上不可行（<strong>弱抗碰撞性</strong>）</li>
-<li>寻求对任何的 <span class="math inline">\((x,y)\)</span> 对使得 <span class="math inline">\(H(x)=H(y)\)</span>
-在计算上不可行（<strong>强抗碰撞性</strong>）</li>
+<li>寻求任意使得 <span class="math inline">\(H(x)=H(y)\)</span> 的 <span class="math inline">\((x,y)\)</span>
+对在计算上不可行（<strong>强抗碰撞性</strong>）</li>
 </ul></li>
 <li>单向函数
 <ul>
@@ -3517,25 +3515,26 @@ H(x)\)</span> 在计算上不可行（<strong>弱抗碰撞性</strong>）</li>
 <ul>
 <li>简单的哈希函数（异或方式）
 <ul>
-<li>每个分组按比特异或: <span class="math display">\[ C_i  =  b_{i1}
-\oplus b_{i2} \oplus\cdots\oplus  b_{im} \]</span></li>
+<li>每个分组按比特异或: <span class="math display">\[
+  C_i  =  b_{i1} \oplus b_{i2} \oplus\cdots\oplus  b_{im}
+  \]</span></li>
 <li>其中：
 <ul>
-<li><span class="math inline">\(C_i\)</span> 是第 <span class="math inline">\(i\)</span> 个比特的哈希码, <span class="math inline">\(1≤i≤n\)</span>;</li>
-<li><span class="math inline">\(m\)</span> 是输入的 <span class="math inline">\(n\)</span> 比特分组数;</li>
-<li><span class="math inline">\(b_{ij}\)</span> 是第 <span class="math inline">\(j\)</span> 分组的第 <span class="math inline">\(i\)</span> 比特;</li>
+<li><span class="math inline">\(C_i\)</span> 是第 <span class="math inline">\(i\)</span> 个比特的哈希码, <span class="math inline">\(1 \leq i \leq n\)</span></li>
+<li><span class="math inline">\(m\)</span> 是输入的 <span class="math inline">\(n\)</span> 比特分组</li>
+<li><span class="math inline">\(b_{ij}\)</span> 是第 <span class="math inline">\(j\)</span> 分组的第 <span class="math inline">\(i\)</span> 比特</li>
 </ul></li>
 <li>简单的奇偶校验</li>
 </ul></li>
 <li>简单的哈希函数的改进方案
 <ul>
-<li>先将 n 比特的哈希值设置为 0;</li>
-<li>按如下方式依次处理数据分组:
+<li>先将 n 比特的哈希值设置为 0</li>
+<li>按如下方式依次处理数据分组：
 <ul>
-<li>将当前的哈希值循环左移一位.</li>
-<li>将数据分组与哈希值异或形成新的哈希值.</li>
+<li>将当前的哈希值循环左移一位</li>
+<li>将数据分组与哈希值异或形成新的哈希值</li>
 </ul></li>
-<li>这将起到输入数据完全随机化的效果, 并且将输入中的数据格式掩盖掉.</li>
+<li>这将起到输入数据完全随机化的效果，并且将输入中的数据格式掩盖掉</li>
 </ul></li>
 </ul>
 <h4 id="杂凑函数的代表性设计模式">杂凑函数的代表性设计模式</h4>
@@ -3557,7 +3556,7 @@ H(x)\)</span> 在计算上不可行（<strong>弱抗碰撞性</strong>）</li>
 <li>迭代：
 <ul>
 <li>设 <span class="math inline">\(M=(Y_0, \cdots, Y_L)\)</span>，则
-<span class="math inline">\(CV_0=IV=初始n比特值\)</span> <span class="math display">\[
+<span class="math inline">\(CV_0=IV=\)</span> 初始 <span class="math inline">\(n\)</span> 比特值 <span class="math display">\[
   \begin{cases}
   CV_i = f(CV_{i-1},Y_{i-1}),&amp; 1\leq i\leq L\\
   H(M) = CV_L
@@ -3566,7 +3565,22 @@ H(x)\)</span> 在计算上不可行（<strong>弱抗碰撞性</strong>）</li>
 </ul></li>
 <li>安全性：如果压缩函数是抗碰撞的，则 <span class="math inline">\(H\)</span> 是抗碰撞的。</li>
 </ul></li>
-<li><p>海绵结构 (Sponge Construction)</p></li>
+<li><p>海绵结构 (Sponge Construction)</p>
+<ul>
+<li>海绵结构是一种用于构建哈希函数和伪随机数生成器的设计模式。它通过反复吸收输入数据并挤压输出数据来实现信息的混合和压缩。</li>
+<li>主要组成部分：
+<ul>
+<li>状态（State）：海绵结构的核心，包含吸收和挤压过程中的中间数据。</li>
+<li>吸收（Absorb）：将输入数据分块并与状态进行混合的过程。</li>
+<li>挤压（Squeeze）：从状态中提取输出数据的过程。</li>
+</ul></li>
+<li>海绵结构的工作原理：
+<ol type="1">
+<li>初始化状态为零。</li>
+<li>吸收阶段：将输入数据分块，每个分块与状态进行异或操作，然后通过一个固定的转换函数更新状态。</li>
+<li>挤压阶段：从状态中提取输出数据，直到达到所需的输出长度。</li>
+</ol></li>
+</ul></li>
 </ul>
 <h2 id="md5">MD5</h2>
 <h3 id="概述">概述</h3>
@@ -3836,9 +3850,10 @@ s(k,i)) \\
 </ul>
 <h3 id="md5的应用">MD5的应用</h3>
 <ul>
-<li>MD5的典型应用是对一段明文消息（message）生成消息摘要（message-digest），防止消息被篡改</li>
-<li>MD5广泛应用于数字签名中</li>
-<li>广泛应用于unix、Linux等操作系统用于保护用户口令</li>
+<li>MD5
+的典型应用是对一段明文消息（message）生成消息摘要（message-digest），防止消息被篡改</li>
+<li>MD5 广泛应用于数字签名中</li>
+<li>广泛应用于 unix、Linux 等操作系统用于保护用户口令</li>
 </ul>
 <h3 id="md5口令的逆向简析">MD5口令的逆向简析</h3>
 <ol type="1">
@@ -5486,7 +5501,7 @@ g)\)</span></li>
 
 
   <script type="text/javascript">
-  document.getElementById("g-total-word-id").innerHTML = "450k";
+  document.getElementById("g-total-word-id").innerHTML = "451k";
   document.getElementById('g-total-posts-id').textContent ="49";
 </script>
 
