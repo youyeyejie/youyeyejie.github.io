@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis3365.webp">
 <meta property="article:published_time" content="2025-11-05T02:05:07.000Z">
-<meta property="article:modified_time" content="2025-11-07T06:46:02.392Z">
+<meta property="article:modified_time" content="2025-11-07T07:01:43.336Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU">
 <meta property="article:tag" content="现代密码学">
@@ -1001,8 +1001,12 @@ algorithms)/非对称加密算法(asymmetric encryption algorithms)</li>
 <li>例子：<span class="math inline">\(A \to D, B \to E, C \to F, \ldots,
 X \to A, Y \to B, Z \to C\)</span></li>
 </ul></li>
-<li>一般形式：令 $ P = C = K = _{26} $，对 $ 0 i &lt; 26 $，任意 <span class="math inline">\(x, y \in \mathbb{Z}_{26}\)</span> 加密函数为 <span class="math display">\[ E(x) = (x + i) \bmod 26 \]</span> 解密函数为
-<span class="math display">\[ D(y) = (y - i) \bmod 26 \]</span></li>
+<li>一般形式：令 <span class="math inline">\(P = C = K =
+\mathbb{Z}_{26}\)</span>，对 <span class="math inline">\(0 \leq i &lt;
+26\)</span>，任意 <span class="math inline">\(x, y \in
+\mathbb{Z}_{26}\)</span> 加密函数为 <span class="math display">\[E(x) =
+(x + i) \bmod 26\]</span> 解密函数为 <span class="math display">\[D(y) =
+(y - i) \bmod 26\]</span></li>
 <li>密钥长度：1（位移量）</li>
 <li>密钥空间：25（因为位移26会回到原字母）</li>
 <li>缺点：字母频率不变，容易被频率分析法破解</li>
