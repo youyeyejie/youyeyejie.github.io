@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis3351.webp">
 <meta property="article:published_time" content="2025-10-25T12:25:12.000Z">
-<meta property="article:modified_time" content="2025-10-25T13:14:21.954Z">
+<meta property="article:modified_time" content="2025-11-09T16:54:17.866Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU">
 <meta property="article:tag" content="数据库">
@@ -450,7 +450,7 @@
         
         
           <!-- compatible with older versions-->
-          377 分钟
+          378 分钟
         
       </span>
     
@@ -1188,14 +1188,23 @@ model，简称E-R模型）
 <li>两个实体型之间的联系
 <ul>
 <li><img src="image.webp" srcset="/img/loading/loading3.gif" lazyload></li>
-<li>一对一联系：如果对于实体集A中的每一个实体，实体集B中至多有一个实体与之联系，反之亦然，则称实体集A与实体集B具有一对一联系。记为1:1。</li>
-<li>一对多联系：如果对于实体集A中的每一个实体，实体集B中有n个实体（n≥0）与之联系，反之，对于实体集B中的每一个实体，实体集A中至多只有一个实体与之联系，则称实体集A与实体集B有一对多联系，记为1:n。</li>
-<li>多对多联系：如果对于实体集A中的每一个实体，实体集B中有n个实体（n≥0）与之联系，反之，对于实体集B中的每一个实体，实体集A中也有m个实体（m≥0）与之联系，则称实体集A与实体B具有多对多联系。记为m:n。</li>
+<li><strong>一对一联系</strong>：如果对于实体集 A 中的每一个实体，实体集
+B 中至多有一个实体与之联系，反之亦然，则称实体集 A 与实体集 B
+具有一对一联系。记为 <span class="math inline">\(1:1\)</span>。</li>
+<li><strong>一对多联系</strong>：如果对于实体集 A 中的每一个实体，实体集
+B 中有 <span class="math inline">\(n\)</span> 个实体（<span class="math inline">\(n\geq 0\)</span>）与之联系，反之，对于实体集 B
+中的每一个实体，实体集 A 中至多只有一个实体与之联系，则称实体集 A
+与实体集 B 有一对多联系，记为 <span class="math inline">\(1:n\)</span>。</li>
+<li><strong>多对多联系</strong>：如果对于实体集 A 中的每一个实体，实体集
+B 中有 <span class="math inline">\(n\)</span> 个实体（<span class="math inline">\(n\geq 0\)</span>）与之联系，反之，对于实体集 B
+中的每一个实体，实体集 A 中也有 <span class="math inline">\(m\)</span>
+个实体（<span class="math inline">\(m\geq
+0\)</span>）与之联系，则称实体集 A 与实体 B 具有多对多联系。记为 <span class="math inline">\(m:n\)</span>。</li>
 </ul></li>
 <li>多个实体型之间的联系
 <ul>
 <li>多个实体型间的一对多联系：若实体型 <span class="math inline">\(E_1,
-E_2, \cdots, E_n\)</span> 存在联系，对于实体型 <span class="math inline">\(E_j(j=1, 2, \cdots,i-1, i+1, \cdots, n)\)</span>
+E_2, \cdots, E_n\)</span> 存在联系，对于实体型 <span class="math inline">\(E_j~(j=1, 2, \cdots,i-1, i+1, \cdots, n)\)</span>
 中的给定实体，最多只和 <span class="math inline">\(E_i\)</span>
 中的一个实体相联系，则我们说 <span class="math inline">\(E_i\)</span> 与
 <span class="math inline">\(E_1, E_2, \cdots, E_{i-1}, E_{i+1}, \cdots,
@@ -1261,7 +1270,7 @@ E_n\)</span> 之间的联系是一对多的
 <li>主要包括两种数据模型：
 <ul>
 <li>层次模型（Hierarchical Model）</li>
-<li>网状模型(Network Model )</li>
+<li>网状模型（Network Model）</li>
 </ul></li>
 <li>数据结构：以基本层次联系为基本单位</li>
 </ul>
@@ -1303,7 +1312,7 @@ E_n\)</span> 之间的联系是一对多的
 <li>查询及更新操作必须给出完整路径</li>
 </ul></li>
 </ul>
-<h4 id="网状数据模型的数据结构">网状数据模型的数据结构</h4>
+<h5 id="网状数据模型的数据结构">网状数据模型的数据结构</h5>
 <ul>
 <li><strong>定义</strong>：满足允许一个以上的结点无双亲、一个结点可以有多于一个的双亲两个条件的基本层次联系的集合为网状模型。</li>
 <li>表示方法与层次数据模型相同：
@@ -1355,7 +1364,7 @@ Key）：表中的某个属性组，可唯一确定一个元组。</li>
 <li><strong>域</strong>（Domain）：属性的取值范围。</li>
 <li><strong>分量</strong>（Component）：元组中的一个属性值。</li>
 <li><strong>关系模式</strong>（Relation
-Schema）：对关系的描述，格式为关系名(属性1，属性2，…，属性n)。</li>
+Schema）：对关系的描述，格式为关系名（属性1，属性2，…，属性n）。</li>
 </ul></li>
 <li>数据结构
 <ul>
@@ -1404,8 +1413,8 @@ Schema）：对关系的描述，格式为关系名(属性1，属性2，…，�
 </ul>
 <h4 id="新一代数据库">新一代数据库</h4>
 <ul>
-<li>面向对象模型(Object Oriented Data Model)</li>
-<li>对象关系模型(Object Relational Model)</li>
+<li>面向对象模型（Object Oriented Data Model）</li>
+<li>对象关系模型（Object Relational Model）</li>
 <li>半结构化的XML数据模型</li>
 <li>新型数据模型
 <ul>
@@ -1482,13 +1491,13 @@ Schema）：对关系的描述，格式为关系名(属性1，属性2，…，�
 </ul></li>
 <li>外模式的地位：介于模式与应用之间
 <ul>
-<li>模式与外模式的关系：一对多
+<li><strong>模式与外模式的关系</strong>：一对多
 <ul>
 <li>外模式通常是模式的子集</li>
 <li>一个数据库可以有多个外模式，反映不同用户的应用需求、看待数据的方式、对数据保密的要求</li>
 <li>对模式中同一数据，在外模式中的结构、类型、长度、保密级别等都可以不同；</li>
 </ul></li>
-<li>外模式与应用的关系：一对多
+<li><strong>外模式与应用的关系</strong>：一对多
 <ul>
 <li>同一外模式可为某一用户的多个应用系统所使用</li>
 <li>但一个应用程序只能使用一个外模式</li>
@@ -1508,13 +1517,13 @@ Schema）：对关系的描述，格式为关系名(属性1，属性2，…，�
 <li>是数据在数据库内部的表示方式
 <ul>
 <li>记录的存储方式（堆存储，聚簇存储，属性升降存储）</li>
-<li>索引的组织方式（按照B+树索引？按hash索引）</li>
+<li>索引的组织方式（按照B+树索引？按hash索引？）</li>
 <li>数据是否压缩存储</li>
 <li>数据是否加密</li>
 <li>数据存储记录结构的规定（定长？变长？）等</li>
 </ul></li>
 </ul></li>
-<li>一个数据库只有一个内模式。</li>
+<li><strong>一个数据库只有一个内模式</strong>。</li>
 </ul>
 <h3 id="数据库的二级映像功能与数据独立性">数据库的二级映像功能与数据独立性</h3>
 <h4 id="三级模式与二级映象">三级模式与二级映象</h4>
@@ -1525,7 +1534,7 @@ Schema）：对关系的描述，格式为关系名(属性1，属性2，…，�
 <li>外模式/模式映像
 <ul>
 <li>定义外模式（局部逻辑结构）与模式（全局逻辑结构）之间的对应关系</li>
-<li>每一个外模式都对应一个外模式/模式映象</li>
+<li><strong>每一个外模式都对应一个外模式/模式映象</strong></li>
 <li>映象定义通常包含在各自外模式的描述中</li>
 <li>用途：保证数据的<strong>逻辑独立性</strong>
 <ul>
@@ -1536,7 +1545,7 @@ Schema）：对关系的描述，格式为关系名(属性1，属性2，…，�
 <li>模式/内模式映象
 <ul>
 <li>定义了数据全局逻辑结构与存储结构之间的对应关系，例如说明某个逻辑记录和字段在内部是如何表示的。</li>
-<li>数据库中模式/内模式映象是唯一的</li>
+<li><strong>数据库中模式/内模式映象是唯一的</strong></li>
 <li>该映象定义通常包含在模式描述中</li>
 <li>用途：保证数据的<strong>物理独立性</strong>
 <ul>
@@ -1579,7 +1588,7 @@ Schema）：对关系的描述，格式为关系名(属性1，属性2，…，�
 <li>不同人员涉及不同的数据抽象级别，具有不同的数据视图。</li>
 <li>主要包括：
 <ul>
-<li>数据库管理员（DBA）
+<li><strong>数据库管理员</strong>（DBA）
 <ul>
 <li>确定数据库中的信息内容和结构</li>
 <li>决定数据库的存储结构和存取策略</li>
@@ -1686,20 +1695,25 @@ D_{2},…, D_{n}\)</span> 上的关系，表示为 <span class="math display">\[
 <li><strong>码</strong>：
 <ul>
 <li><strong>候选码</strong>（Candidate
-key）：若关系中的<strong>某一属性组的值能唯一地标识一个元组</strong>，而其子集不能，则称该属性组为候选码。在最简单的情况下，候选码只包含一个属性。</li>
+key）：若关系中的<strong>某一属性组的值能唯一地标识一个元组</strong>，而其子集不能，则称该属性组为候选码。
+<ul>
+<li>在最简单的情况下，候选码只包含一个属性。</li>
 <li><strong>全码</strong>（All-key）：在最极端的情况下，关系模式的所有属性组是这个关系模式的候选码，称为全码。</li>
 <li><strong>主码</strong>（Primary key）：
 <ul>
 <li>若一个关系有多个候选码，则选定其中一个为主码；</li>
-<li><strong>候选码的诸属性称为主属性</strong>（Prime attribute）；</li>
+</ul></li>
+</ul></li>
+<li><strong>候选码的诸属性称为主属性</strong>（Prime attribute）；
+<ul>
 <li>不包含在任何候选码中的属性称为非主属性（Non-key attribute）。</li>
 </ul></li>
 </ul></li>
 <li><strong>三类关系</strong>：
 <ul>
-<li>基本关系（基本表或基表）：实际存在的表，是实际存储数据的逻辑表示。</li>
-<li>查询表：查询结果对应的表。</li>
-<li>视图表：由基本表或其他视图表导出的表，是虚表，不对应实际存储的数据。</li>
+<li>基本关系（<strong>基本表或基表</strong>）：实际存在的表，是实际存储数据的逻辑表示。</li>
+<li><strong>查询表</strong>：查询结果对应的表。</li>
+<li><strong>视图表</strong>：由基本表或其他视图表导出的表，是虚表，不对应实际存储的数据。</li>
 </ul></li>
 <li>注意
 <ul>
@@ -1748,37 +1762,46 @@ Schema）是对关系的描述，是“型”；关系是“值”，是关系�
 <ul>
 <li><p>关系模式可形式化地表示为：<span class="math inline">\(R(U,D,dom,F)\)</span></p>
 <table>
+
 <thead>
 <tr>
 <th>符号</th>
 <th>含义</th>
+<th>示例</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><span class="math inline">\(R\)</span></td>
 <td>关系名</td>
+<td>学生</td>
 </tr>
 <tr>
 <td><span class="math inline">\(U\)</span></td>
 <td>组成该关系的属性名集合</td>
+<td>{学号, 姓名, 性别, 专业号, 年龄}</td>
 </tr>
 <tr>
 <td><span class="math inline">\(D\)</span></td>
-<td>属性组<span class="math inline">\(U\)</span>中属性所来自的域</td>
+<td>属性组 <span class="math inline">\(U\)</span>
+中属性所来自的域的集合</td>
+<td>{整数, 字符串, 日期}</td>
 </tr>
 <tr>
 <td><span class="math inline">\(dom\)</span></td>
 <td>属性向域的映象集合</td>
+<td>{学号 <span class="math inline">\(\to\)</span> 整数, 姓名 <span class="math inline">\(\to\)</span> 字符串, 性别 <span class="math inline">\(\to\)</span> {‘男’,‘女’}, 专业号 <span class="math inline">\(\to\)</span> 整数, 年龄 <span class="math inline">\(\to\)</span> 整数}</td>
 </tr>
 <tr>
 <td><span class="math inline">\(F\)</span></td>
 <td>属性间的数据依赖关系集合</td>
+<td>{学号 <span class="math inline">\(\to\)</span> 姓名, 学号 <span class="math inline">\(\to\)</span> 性别, 学号 <span class="math inline">\(\to\)</span> 专业号, 学号 <span class="math inline">\(\to\)</span> 年龄}</td>
 </tr>
 </tbody>
 </table></li>
-<li><p>关系模式通常简记为<span class="math inline">\(R(U)\)</span>或<span class="math inline">\(R(A_1,
-A_2, \cdots, A_n)\)</span>，其中<span class="math inline">\(R\)</span>为关系名，<span class="math inline">\(A_1, A_2, \cdots, A_n\)</span>为属性名。</p>
+<li><p>关系模式通常简记为 <span class="math inline">\(R(U)\)</span> 或
+<span class="math inline">\(R(A_1, A_2, \cdots, A_n)\)</span>，其中
+<span class="math inline">\(R\)</span> 为关系名，<span class="math inline">\(A_1, A_2, \cdots, A_n\)</span> 为属性名。</p>
 <ul>
 <li>域名及属性向域的映象常常直接说明为属性的类型、长度。</li>
 </ul></li>
@@ -1840,19 +1863,19 @@ A_2, \cdots, A_n)\)</span>，其中<span class="math inline">\(R\)</span>为关�
 <ol type="1">
 <li>关系代数（代数方式）：用对关系的运算来表达查询要求
 <ul>
-<li>典型代表：ISBL。</li>
+<li>典型代表：ISBL</li>
 </ul></li>
 <li>关系演算（逻辑方式）：用谓词来表达查询要求，分为：
 <ul>
 <li>元组关系演算语言：
 <ul>
 <li>谓词变元的基本对象是元组变量</li>
-<li>典型代表：APLHA、QUEL。</li>
+<li>典型代表：APLHA、QUEL</li>
 </ul></li>
 <li>域关系演算语言：
 <ul>
 <li>谓词变元的基本对象是域变量</li>
-<li>典型代表：QBE。</li>
+<li>典型代表：QBE</li>
 </ul></li>
 </ul></li>
 <li>具有关系代数和关系演算双重特点的结构化查询语言
@@ -1881,9 +1904,9 @@ A_2, \cdots, A_n)\)</span>，其中<span class="math inline">\(R\)</span>为关�
 </ul>
 <h3 id="实体完整性">实体完整性</h3>
 <ul>
-<li>实体完整性规则（Entity Integrity）：若属性 <span class="math inline">\(A\)</span> 是基本关系 <span class="math inline">\(R\)</span> 的<strong>主属性</strong>，则属性 <span class="math inline">\(A\)</span>
-<strong>不能取空值</strong>。空值即“不存在”或“无意义”的值。
+<li>实体完整性规则（Entity Integrity）：若属性 <span class="math inline">\(A\)</span> 是基本关系 <span class="math inline">\(R\)</span> 的<strong>主属性</strong>，则属性 <span class="math inline">\(A\)</span> <strong>不能取空值</strong>。
 <ul>
+<li>空值即“不存在”或“无意义”的值。</li>
 <li>实体完整性规则规定基本关系的<strong>所有主属性都不能取空值</strong>。</li>
 </ul></li>
 <li>关系模型必须遵守实体完整性规则的原因
@@ -1892,7 +1915,7 @@ A_2, \cdots, A_n)\)</span>，其中<span class="math inline">\(R\)</span>为关�
 <li>现实世界中的实体和实体间的联系具有唯一性标识。</li>
 <li>关系模型中以主码作为唯一性标识。</li>
 </ol></li>
-<li><strong>示例</strong>：选修（学号，课程号，成绩）
+<li><strong>示例</strong>：选修（<strong>学号</strong>，<strong>课程号</strong>，成绩）
 <ul>
 <li>“学号、课程号”为主码，则两个属性都不能取空值。</li>
 </ul></li>
@@ -1903,13 +1926,15 @@ A_2, \cdots, A_n)\)</span>，其中<span class="math inline">\(R\)</span>为关�
 <li>在关系模型中，实体及实体间的联系都用关系描述，因此存在关系与关系间的引用。</li>
 <li><strong>示例</strong>：学生实体、专业实体以及专业与学生间的一对多联系：
 <ul>
-<li>学生(<em>学号</em>, 姓名, 性别, <em>专业号</em>, 年龄)</li>
-<li>专业(<em>专业号</em>, 专业名)</li>
+<li>学生（<strong>学号</strong>, 姓名, 性别, <em>专业号</em>,
+年龄）</li>
+<li>专业（<strong>专业号</strong>, 专业名）</li>
 </ul></li>
 </ul>
 <h4 id="外码foreign-key">外码（Foreign Key）</h4>
 <ul>
-<li><p>设 <span class="math inline">\(F\)</span> 是基本关系 <span class="math inline">\(R\)</span> 的一个或一组属性，但不是关系 <span class="math inline">\(R\)</span> 的码。如果 <span class="math inline">\(F\)</span> 与基本关系 <span class="math inline">\(S\)</span> 的主码 <span class="math inline">\(K_s\)</span> 相对应，则称 <span class="math inline">\(F\)</span> 是基本关系 <span class="math inline">\(R\)</span> 的外码（Foreign Key）；</p>
+<li><p>设 <span class="math inline">\(F\)</span> 是基本关系 <span class="math inline">\(R\)</span> 的一个或一组属性，但不是关系 <span class="math inline">\(R\)</span> 的码。如果 <span class="math inline">\(F\)</span> 与基本关系 <span class="math inline">\(S\)</span> 的主码 <span class="math inline">\(K_s\)</span> 相对应，则称 <span class="math inline">\(F\)</span> 是基本关系 <span class="math inline">\(R\)</span> 的<strong>外码</strong>（Foreign
+Key）；</p>
 <ul>
 <li>基本关系 <span class="math inline">\(R\)</span>
 称为参照关系（Referencing Relation）</li>
@@ -1981,7 +2006,7 @@ A_2, \cdots, A_n)\)</span>，其中<span class="math inline">\(R\)</span>为关�
 </ul>
 <h4 id="参照完整性规则">参照完整性规则</h4>
 <ul>
-<li>若属性（或属性组） <span class="math inline">\(F\)</span> 是基本关系
+<li>若属性（或属性组）<span class="math inline">\(F\)</span> 是基本关系
 <span class="math inline">\(R\)</span> 的外码，它与基本关系 <span class="math inline">\(S\)</span> 的主码 <span class="math inline">\(K_s\)</span> 相对应（基本关系 <span class="math inline">\(R\)</span> 和 <span class="math inline">\(S\)</span> 不一定是不同的关系），则对于 <span class="math inline">\(R\)</span> 中每个元组在 <span class="math inline">\(F\)</span> 上的值必须为：
 <ul>
 <li>或者取空值（<span class="math inline">\(F\)</span>
@@ -1991,7 +2016,7 @@ A_2, \cdots, A_n)\)</span>，其中<span class="math inline">\(R\)</span>为关�
 </ul></li>
 <li><strong>示例</strong>：
 <ul>
-<li>学生(学号，姓名，性别，专业号，年龄)
+<li>学生（<strong>学号</strong>，姓名，性别，<em>专业号</em>，年龄，<em>班长</em>）与专业（<strong>专业号</strong>，专业名）：
 <ul>
 <li>“专业号”的属性只取两类值：
 <ol type="1">
@@ -2004,11 +2029,7 @@ A_2, \cdots, A_n)\)</span>，其中<span class="math inline">\(R\)</span>为关�
 <li>非空值，这时该值必须是本关系中某个元组的学号值。</li>
 </ol></li>
 </ul></li>
-<li>学生、课程、学生与课程之间的多对多联系：
-<ul>
-<li>学生（<em>学号</em>，姓名，性别，专业号，年龄）</li>
-<li>课程（<em>课程号</em>，课程名，学分）</li>
-<li>选修（<em>学号</em>，<em>课程号</em>，成绩）
+<li>学生（<strong>学号</strong>，姓名，性别，专业号，年龄）与课程（<strong>课程号</strong>，课程名，学分）与选修（<strong><em>学号</em>，<em>课程号</em></strong>，成绩），则选修关系中的：
 <ul>
 <li>主码：{学号, 课程号}</li>
 <li>外码：{学号} 和 {课程号}
@@ -2020,13 +2041,12 @@ A_2, \cdots, A_n)\)</span>，其中<span class="math inline">\(R\)</span>为关�
 课程号}不能为空，因为它是选修关系的主码，为空违背了实体完整性规则。</li>
 </ul></li>
 </ul></li>
-</ul></li>
 </ul>
 <h3 id="用户定义的完整性">用户定义的完整性</h3>
 <ul>
 <li>用户定义的完整性是针对某一具体关系数据库的约束条件，反映某一具体应用所涉及的数据必须满足的语义要求。</li>
 <li>关系模型应提供定义和检验这类完整性的机制，以便用统一的系统的方法处理它们，而不要由应用程序承担这一功能。</li>
-<li><strong>示例</strong>：课程(课程号,课程名,学分)：
+<li><strong>示例</strong>：课程（<strong>课程号</strong>，课程名，学分）：
 <ul>
 <li>非主属性“课程名”也不能取空值；</li>
 <li>“学分”属性只能取值{1,2,3,4}。</li>
@@ -7144,7 +7164,7 @@ M\)</span>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年10月25日</div>
+          <div>2025年11月10日</div>
         </div>
       
       
