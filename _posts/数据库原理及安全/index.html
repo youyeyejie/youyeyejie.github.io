@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis3351.webp">
 <meta property="article:published_time" content="2025-10-25T12:25:12.000Z">
-<meta property="article:modified_time" content="2025-11-09T16:54:17.866Z">
+<meta property="article:modified_time" content="2025-11-10T17:12:36.830Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU">
 <meta property="article:tag" content="数据库">
@@ -2074,6 +2074,9 @@ Key）；</p>
 <th>
 <strong>含义</strong>
 </th>
+<th>
+<strong>特点</strong>
+</th>
 </tr>
 <tr>
 <td rowspan="4">
@@ -2084,6 +2087,9 @@ Key）；</p>
 </td>
 <td>
 并
+</td>
+<td rowspan="4">
+将关系看成元组的集合。<br>从关系的“水平”方向（行的角度）进行运算。
 </td>
 </tr>
 <tr>
@@ -2111,49 +2117,6 @@ Key）；</p>
 </td>
 </tr>
 <tr>
-<td rowspan="5">
-比较运算符
-</td>
-<td>
-<span class="math inline">\(&gt;\)</span>
-</td>
-<td>
-大于
-</td>
-</tr>
-<tr>
-<td>
-<span class="math inline">\(\geq\)</span>
-</td>
-<td>
-大于等于
-</td>
-</tr>
-<tr>
-<td>
-<span class="math inline">\(&lt;\)</span>
-</td>
-<td>
-小于
-</td>
-</tr>
-<tr>
-<td>
-<span class="math inline">\(\leq\)</span>
-</td>
-<td>
-小于等于
-</td>
-</tr>
-<tr>
-<td>
-<span class="math inline">\(&lt;&gt;\)</span>
-</td>
-<td>
-不等于
-</td>
-</tr>
-<tr>
 <td rowspan="4">
 专门的关系运算符
 </td>
@@ -2162,6 +2125,9 @@ Key）；</p>
 </td>
 <td>
 选择
+</td>
+<td rowspan="4">
+不仅涉及行而且涉及列。
 </td>
 </tr>
 <tr>
@@ -2198,6 +2164,9 @@ Key）；</p>
 <td>
 大于
 </td>
+<td rowspan="5">
+辅助专门的关系运算符进行操作。
+</td>
 </tr>
 <tr>
 <td>
@@ -2229,41 +2198,6 @@ Key）；</p>
 </td>
 <td>
 不等于
-</td>
-</tr>
-<tr>
-<td rowspan="4">
-专门的关系运算符
-</td>
-<td>
-<span class="math inline">\(\sigma\)</span>
-</td>
-<td>
-选择
-</td>
-</tr>
-<tr>
-<td>
-<span class="math inline">\(\pi\)</span>
-</td>
-<td>
-投影
-</td>
-</tr>
-<tr>
-<td>
-<span class="math inline">\(\bowtie\)</span>
-</td>
-<td>
-连接
-</td>
-</tr>
-<tr>
-<td>
-<span class="math inline">\(\div\)</span>
-</td>
-<td>
-除
 </td>
 </tr>
 <tr>
@@ -2275,6 +2209,9 @@ Key）；</p>
 </td>
 <td>
 非
+</td>
+<td rowspan="3">
+辅助专门的关系运算符进行操作。
 </td>
 </tr>
 <tr>
@@ -2294,28 +2231,6 @@ Key）；</p>
 </td>
 </tr>
 </tbody></table>
-<ul>
-<li><strong>各类运算符特点</strong>
-<ul>
-<li>集合运算符：
-<ul>
-<li>将关系看成元组的集合</li>
-<li>从关系的“水平”方向（行的角度）进行运算。</li>
-</ul></li>
-<li>专门的关系运算符：
-<ul>
-<li>不仅涉及行而且涉及列。</li>
-</ul></li>
-<li>算术比较符：
-<ul>
-<li>辅助专门的关系运算符进行操作。</li>
-</ul></li>
-<li>逻辑运算符：
-<ul>
-<li>辅助专门的关系运算符进行操作。</li>
-</ul></li>
-</ul></li>
-</ul>
 <h3 id="关系代数的表示记号">关系代数的表示记号</h3>
 <ol type="1">
 <li><span class="math inline">\(R, t \in R, t[A_i]\)</span>：
@@ -2362,8 +2277,8 @@ A_n\)</span> 中的一部分，则 <span class="math inline">\(A\)</span>
 <li><span class="math inline">\(R\)</span> 和 <span class="math inline">\(S\)</span> 具有相同的目 <span class="math inline">\(n\)</span>（即两个关系都有 <span class="math inline">\(n\)</span> 个属性）</li>
 <li>相应的属性取自同一个域</li>
 </ul></li>
-<li>定义：<span class="math inline">\(R \cup S = \{t | t \in R \lor t
-\in S\}\)</span>
+<li>定义：<span class="math display">\[R \cup S = \{t | t \in R \lor t
+\in S\}\]</span>
 <ul>
 <li>仍为 <span class="math inline">\(n\)</span> 目关系，由属于 <span class="math inline">\(R\)</span> 或属于 <span class="math inline">\(S\)</span> 的元组组成。</li>
 </ul></li>
@@ -2377,9 +2292,11 @@ R\)</span>。</li>
 <li><span class="math inline">\(R\)</span> 和 <span class="math inline">\(S\)</span> 具有相同的目 <span class="math inline">\(n\)</span></li>
 <li>相应的属性取自同一个域。</li>
 </ul></li>
-<li>定义：<span class="math inline">\(R - S = \{t | t \in R \land t
-\notin S\}\)</span> 仍为 <span class="math inline">\(n\)</span>
-目关系，由属于 <span class="math inline">\(R\)</span> 而不属于 <span class="math inline">\(S\)</span> 的所有元组组成。</li>
+<li>定义：<span class="math display">\[R - S = \{t | t \in R \land t
+\notin S\}\]</span>
+<ul>
+<li>仍为 <span class="math inline">\(n\)</span> 目关系，由属于 <span class="math inline">\(R\)</span> 而不属于 <span class="math inline">\(S\)</span> 的所有元组组成。</li>
+</ul></li>
 <li>性质：<span class="math inline">\(R - S \neq S - R\)</span>。</li>
 </ul>
 <h4 id="交intersection">交（Intersection）</h4>
@@ -2389,8 +2306,8 @@ R\)</span>。</li>
 <li><span class="math inline">\(R\)</span> 和 <span class="math inline">\(S\)</span> 具有相同的目 <span class="math inline">\(n\)</span></li>
 <li>相应的属性取自同一个域。</li>
 </ul></li>
-<li>定义：<span class="math inline">\(R \cap S = \{t | t \in R \land t
-\in S\}\)</span>
+<li>定义：<span class="math display">\[R \cap S = \{t | t \in R \land t
+\in S\}\]</span>
 <ul>
 <li>仍为 <span class="math inline">\(n\)</span> 目关系，由既属于 <span class="math inline">\(R\)</span> 又属于 <span class="math inline">\(S\)</span> 的元组组成。</li>
 </ul></li>
@@ -2405,8 +2322,8 @@ Cartesian Product）</h4>
 <li><span class="math inline">\(R\)</span> 为 <span class="math inline">\(n\)</span> 目关系，有 <span class="math inline">\(k_1\)</span> 个元组；</li>
 <li><span class="math inline">\(S\)</span> 为 <span class="math inline">\(m\)</span> 目关系，有 <span class="math inline">\(k_2\)</span> 个元组。</li>
 </ul></li>
-<li>定义：<span class="math inline">\(R×S = \{\overset{\frown}{t_r t_s}
-| t_r \in R \land t_s \in S\}\)</span>
+<li>定义：<span class="math display">\[R×S = \{\overset{\frown}{t_r t_s}
+| t_r \in R \land t_s \in S\}\]</span>
 <ul>
 <li>列：为 <span class="math inline">\(n+m\)</span> 列的元组集合
 <ul>
@@ -2421,8 +2338,8 @@ Cartesian Product）</h4>
 <ul>
 <li>选择又称为限制（Restriction）。</li>
 <li>定义：在关系 <span class="math inline">\(R\)</span>
-中选择满足给定条件的诸元组：<span class="math inline">\(\sigma_F(R) =
-\{t | t \in R \land F(t) = \text{True}\}\)</span>。
+中选择满足给定条件的诸元组：<span class="math display">\[\sigma_F(R) =
+\{t | t \in R \land F(t) = \text{True}\}\]</span>
 <ul>
 <li><span class="math inline">\(F\)</span>：选择条件，是一个逻辑表达式，基本形式为：<span class="math inline">\([\neg(] X_1 \theta Y_1 [)][\phi [\neg(] X_2 \theta
 Y_2 [)]]\ldots\)</span>
@@ -2500,8 +2417,8 @@ Y_2 [)]]\ldots\)</span>
 <h4 id="投影projection">投影（Projection）</h4>
 <ul>
 <li>定义：从 <span class="math inline">\(R\)</span>
-选择出若干属性列组成新的关系：<span class="math inline">\(\pi_A(R) =
-\{t[A] | t \in R\}\)</span>，
+选择出若干属性列组成新的关系：<span class="math display">\[\pi_A(R) =
+\{t[A] | t \in R\}\]</span>
 <ul>
 <li>其中 <span class="math inline">\(A\)</span> 为 <span class="math inline">\(R\)</span> 中的属性列。</li>
 </ul></li>
@@ -2559,9 +2476,9 @@ Y_2 [)]]\ldots\)</span>
 <h4 id="连接join">连接（Join）</h4>
 <ul>
 <li>连接也称为 <span class="math inline">\(\theta\)</span> 连接。</li>
-<li>定义：从两个关系的笛卡儿积中选取属性间满足一定条件的元组：<span class="math inline">\(R \underset{A\theta B}{\bowtie} S =
+<li>定义：从两个关系的笛卡儿积中选取属性间满足一定条件的元组：<span class="math display">\[R \underset{A\theta B}{\bowtie} S =
 \{\overset{\frown}{t_r t_s} | t_r \in R \land t_s \in S \land t_r[A]
-\theta t_s[B]\}\)</span>。
+\theta t_s[B]\}\]</span>
 <ul>
 <li><span class="math inline">\(A\)</span> 和 <span class="math inline">\(B\)</span>：分别为 <span class="math inline">\(R\)</span> 和 <span class="math inline">\(S\)</span> 上度数相等且可比的属性组；</li>
 <li><span class="math inline">\(\theta\)</span>：比较运算符。</li>
@@ -2573,30 +2490,29 @@ S)\)</span></li>
 </ul></li>
 <li>两类常用连接运算：
 <ul>
-<li>等值连接（equi join）：<span class="math inline">\(\theta\)</span>
-为 <span class="math inline">\(=\)</span> 的连接运算
+<li><p><strong>等值连接</strong>（equi join）：<span class="math inline">\(\theta\)</span> 为 <span class="math inline">\(=\)</span> 的连接运算 <span class="math display">\[
+  \begin{aligned}
+  R \underset{A=B}{\bowtie} S &amp;= \{\overset{\frown}{t_r t_s} | t_r
+\in R \land t_s \in S \land t_r[A] = t_s[B]\} \\
+  &amp;= \sigma_{ t_r[A] = t_s[B]}(R \times S)
+  \end{aligned}
+  \]</span></p>
 <ul>
-<li><span class="math inline">\(R \underset{A=B}{\bowtie} S =
-\{\overset{\frown}{t_r t_s} | t_r \in R \land t_s \in S \land t_r[A] =
-t_s[B]\}\)</span>
-<ul>
-<li><span class="math inline">\(\sigma_{ t_r[A] = t_s[B]}(R \times
-S)\)</span></li>
-</ul></li>
 <li>从关系 <span class="math inline">\(R\)</span> 与 <span class="math inline">\(S\)</span> 的广义笛卡儿积中选取 <span class="math inline">\(A\)</span>、<span class="math inline">\(B\)</span>
 属性值相等的那些元组。</li>
 <li>若 <span class="math inline">\(R\)</span> 为 <span class="math inline">\(n\)</span> 目关系，<span class="math inline">\(S\)</span> 为 <span class="math inline">\(m\)</span> 目关系，且 <span class="math inline">\(A\)</span> 和 <span class="math inline">\(B\)</span> 分别为 <span class="math inline">\(R\)</span> 和 <span class="math inline">\(S\)</span> 上的 <span class="math inline">\(k\)</span> 个属性，则连接结果为 <span class="math inline">\(n+m\)</span> 列的关系。</li>
 </ul></li>
-<li>自然连接（Natural
+<li><p><strong>自然连接</strong>（Natural
 join）：一种特殊的等值连接，两个关系中进行比较的分量必须是相同的属性组，且在结果中<strong>把重复的属性列去掉</strong>。
+<span class="math display">\[
+  \begin{aligned}
+  R \bowtie S &amp;= \{\overset{\frown}{t_r t_s}[U-B] | t_r \in R \land
+t_s \in S \land t_r[B] = t_s[B]\} \\
+  &amp;= \pi_{U-B}(\sigma_{ t_r[A] = t_s[B]}(R \times S))
+  \end{aligned}
+  \]</span></p>
 <ul>
 <li>自然连接<strong>不需要写明连接条件</strong></li>
-<li><span class="math inline">\(R \bowtie S = \{\overset{\frown}{t_r
-t_s}[U-B] | t_r \in R \land t_s \in S \land t_r[B] = t_s[B]\}\)</span>
-<ul>
-<li><span class="math inline">\(\pi_{U-B}(\sigma_{ t_r[A] = t_s[B]}(R
-\times S))\)</span></li>
-</ul></li>
 <li>其中 <span class="math inline">\(R\)</span> 和 <span class="math inline">\(S\)</span> 具有相同的属性组 <span class="math inline">\(B\)</span>，<span class="math inline">\(U\)</span>
 为 <span class="math inline">\(R\)</span> 和 <span class="math inline">\(S\)</span> 的全体属性集合。</li>
 <li>若 <span class="math inline">\(R\)</span> 为 <span class="math inline">\(n\)</span> 目关系，<span class="math inline">\(S\)</span> 为 <span class="math inline">\(m\)</span> 目关系，且 <span class="math inline">\(A\)</span> 和 <span class="math inline">\(B\)</span> 分别为 <span class="math inline">\(R\)</span> 和 <span class="math inline">\(S\)</span> 上的 <span class="math inline">\(k\)</span> 个属性，则连接结果为 <span class="math inline">\(n+m-k\)</span> 列的关系。</li>
@@ -2619,25 +2535,23 @@ m\)</span> 数量级（<span class="math inline">\(n\)</span> 和 <span class="m
 <li>为减少关系运算的时间复杂度，从而提高效率，通常<strong>先做选择运算，再做投影运算，最后做连接运算</strong>。
 <ul>
 <li>先 <code>WHERE</code>，再 <code>SELECT</code>，最后
-<code>FROM</code>。</li>
+<code>JOIN</code>。</li>
 <li>先选择：减少行数，再投影：减少列数，最后连接：减少笛卡儿积的计算量。</li>
 </ul></li>
 </ul></li>
 </ul>
 <h4 id="除division">除（Division）</h4>
 <ul>
-<li>给定关系 <span class="math inline">\(R(X,Y)\)</span> 和 <span class="math inline">\(S(Y,Z)\)</span>，其中 <span class="math inline">\(X, Y, Z\)</span> 为属性组。<span class="math inline">\(R\)</span> 中的 <span class="math inline">\(Y\)</span> 与 <span class="math inline">\(S\)</span> 中的 <span class="math inline">\(Y\)</span>
-可以有不同的属性名，但必须出自相同的域集。</li>
-<li>定义：<span class="math inline">\(R\)</span> 与 <span class="math inline">\(S\)</span> 的除运算得到一个新的关系 <span class="math inline">\(P(X)\)</span>，<span class="math inline">\(P\)</span> 是 <span class="math inline">\(R\)</span> 中满足下列条件的元组在 <span class="math inline">\(X\)</span> 属性列上的投影：
+<li><p>给定关系 <span class="math inline">\(R(X,Y)\)</span> 和 <span class="math inline">\(S(Y,Z)\)</span>，其中 <span class="math inline">\(X, Y, Z\)</span> 为属性组。<span class="math inline">\(R\)</span> 中的 <span class="math inline">\(Y\)</span> 与 <span class="math inline">\(S\)</span> 中的 <span class="math inline">\(Y\)</span>
+可以有不同的属性名，但必须出自相同的域集。</p></li>
+<li><p>定义：<span class="math inline">\(R\)</span> 与 <span class="math inline">\(S\)</span> 的除运算得到一个新的关系 <span class="math inline">\(P(X)\)</span>，<span class="math inline">\(P\)</span> 是 <span class="math inline">\(R\)</span> 中满足在 <span class="math inline">\(X\)</span> 上分量值 <span class="math inline">\(x\)</span> 的象集 <span class="math inline">\(Y_x\)</span> 包含 <span class="math inline">\(S\)</span> 在 <span class="math inline">\(Y\)</span> 上投影的集合的元组在 <span class="math inline">\(X\)</span> 属性列上的投影： <span class="math display">\[R ÷ S = \{t_r[X] | t_r \in R \land \pi_Y(S)
+\subseteq Y_x\}\]</span></p>
 <ul>
-<li>元组在 <span class="math inline">\(X\)</span> 上分量值 <span class="math inline">\(x\)</span> 的象集 <span class="math inline">\(Y_x\)</span> 包含 <span class="math inline">\(S\)</span> 在 <span class="math inline">\(Y\)</span> 上投影的集合。</li>
-<li><span class="math inline">\(R ÷ S = \{t_r[X] | t_r \in R \land
-\pi_Y(S) \subseteq Y_x\}\)</span></li>
 <li>其中 <span class="math inline">\(Y_x\)</span> 为 <span class="math inline">\(x\)</span> 在 <span class="math inline">\(R\)</span> 中的象集，<span class="math inline">\(x
 = t_r[X]\)</span>。</li>
 </ul></li>
-<li>特点：同时从行和列角度进行运算。</li>
-<li><strong>示例</strong>
+<li><p>特点：同时从行和列角度进行运算。</p></li>
+<li><p><strong>示例</strong></p>
 <ul>
 <li><p>关系 <span class="math inline">\(R\)</span>：</p>
 <table>
@@ -2686,7 +2600,7 @@ m\)</span> 数量级（<span class="math inline">\(n\)</span> 和 <span class="m
 </tr>
 </tbody>
 </table></li>
-<li><p>关系 <span class="math inline">\(S\)</span>（<span class="math inline">\(S\)</span> 在 <span class="math inline">\((B,C)\)</span> 上的投影为 <span class="math inline">\(\{(b_1,c_2),(b_2,c_1),(b_2,c_3)\}\)</span>）：</p>
+<li><p>关系 <span class="math inline">\(S\)</span>：</p>
 <table>
 <thead>
 <tr>
@@ -2718,10 +2632,10 @@ m\)</span> 数量级（<span class="math inline">\(n\)</span> 和 <span class="m
 <li>在关系 <span class="math inline">\(R\)</span> 中，<span class="math inline">\(A\)</span> 可以取 <span class="math inline">\(a_1,
 a_2, a_3, a_4\)</span> 四个值
 <ul>
-<li><span class="math inline">\(a_1\)</span>的象集为<span class="math inline">\(\{(b_1,c_2),(b_2,c_3),(b_2,c_1)\}\)</span></li>
-<li><span class="math inline">\(a_2\)</span>的象集为<span class="math inline">\(\{(b_3,c_7),(b_2,c_3)\}\)</span></li>
-<li><span class="math inline">\(a_3\)</span>的象集为<span class="math inline">\(\{(b_4,c_6)\}\)</span></li>
-<li><span class="math inline">\(a_4\)</span>的象集为<span class="math inline">\(\{(b_6,c_6)\}\)</span></li>
+<li><span class="math inline">\(a_1\)</span> 的象集为 <span class="math inline">\(\{(b_1,c_2),(b_2,c_3),(b_2,c_1)\}\)</span></li>
+<li><span class="math inline">\(a_2\)</span> 的象集为 <span class="math inline">\(\{(b_3,c_7),(b_2,c_3)\}\)</span></li>
+<li><span class="math inline">\(a_3\)</span> 的象集为 <span class="math inline">\(\{(b_4,c_6)\}\)</span></li>
+<li><span class="math inline">\(a_4\)</span> 的象集为 <span class="math inline">\(\{(b_6,c_6)\}\)</span></li>
 </ul></li>
 <li>关系 <span class="math inline">\(S\)</span> 在 <span class="math inline">\((B,C)\)</span> 属性组上的投影为 <span class="math inline">\(\{(b_1,c_2),(b_2,c_1),(b_2,c_3)\}\)</span>。</li>
 <li>只有 <span class="math inline">\(a_1\)</span> 的象集包含了 <span class="math inline">\(S\)</span> 在 <span class="math inline">\((B,C)\)</span> 属性组上的投影，所以 <span class="math inline">\(R ÷ S = \{a_1\}\)</span>。</li>
@@ -2732,44 +2646,15 @@ a_2, a_3, a_4\)</span> 四个值
 <h2 id="问题的提出">问题的提出</h2>
 <h3 id="概念回顾">概念回顾</h3>
 <ul>
-<li><p><strong>关系</strong>：描述实体、属性、实体间的联系。从形式上看，它是一张二维表，是所涉及属性的笛卡尔积的一个子集。</p></li>
-<li><p><strong>关系模式</strong>：用来定义关系。</p></li>
-<li><p><strong>关系数据库</strong>：基于关系模型的数据库，利用关系来描述现实世界。</p>
+<li><strong>关系</strong>：描述实体、属性、实体间的联系。从形式上看，它是一张二维表，是所涉及属性的笛卡尔积的一个子集。</li>
+<li><strong>关系模式</strong>：用来定义关系。</li>
+<li><strong>关系数据库</strong>：基于关系模型的数据库，利用关系来描述现实世界。
 <ul>
 <li>从形式上看，它由一组关系组成。</li>
 </ul></li>
-<li><p><strong>关系数据库的模式</strong>：定义这组关系的关系模式的全体。</p></li>
-<li><p>关系模式的形式化定义：关系模式由五部分组成，即它是一个五元组：<span class="math inline">\(R(U, D, DOM, F)\)</span>，可简化为三元组<span class="math inline">\(R(U, F)\)</span>。</p>
-<table>
-<thead>
-<tr>
-<th>组成部分</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="math inline">\(R\)</span></td>
-<td>关系名</td>
-</tr>
-<tr>
-<td><span class="math inline">\(U\)</span></td>
-<td>组成该关系的属性名集合</td>
-</tr>
-<tr>
-<td><span class="math inline">\(D\)</span></td>
-<td>属性组<span class="math inline">\(U\)</span>中属性所来自的域</td>
-</tr>
-<tr>
-<td><span class="math inline">\(DOM\)</span></td>
-<td>属性向域的映象集合</td>
-</tr>
-<tr>
-<td><span class="math inline">\(F\)</span></td>
-<td>属性间数据的依赖关系集合</td>
-</tr>
-</tbody>
-</table></li>
+<li><strong>关系数据库的模式</strong>：定义这组关系的关系模式的全体。</li>
+<li>关系模式的形式化定义：关系模式由五部分组成，即它是一个五元组：<span class="math inline">\(R(U, D, DOM, F)\)</span>，可简化为三元组 <span class="math inline">\(R(U, F)\)</span>。 | 组成部分 | 含义 | | —- | —- |
+| <span class="math inline">\(R\)</span> | 关系名 | | <span class="math inline">\(U\)</span> | 组成该关系的属性名集合 | | <span class="math inline">\(D\)</span> | 属性组<span class="math inline">\(U\)</span>中属性所来自的域 | | <span class="math inline">\(DOM\)</span> | 属性向域的映象集合 | | <span class="math inline">\(F\)</span> | 属性间数据的依赖关系集合 |</li>
 </ul>
 <h3 id="数据依赖">数据依赖</h3>
 <ul>
@@ -2789,11 +2674,11 @@ a_2, a_3, a_4\)</span> 四个值
 </ul></li>
 </ul></li>
 </ul>
-<h3 id="关系模式的简化表示">1.5 关系模式的简化表示</h3>
+<h3 id="关系模式的简化表示">关系模式的简化表示</h3>
 <ul>
 <li>关系模式 <span class="math inline">\(R(U, D, DOM, F)\)</span>
 简化为一个三元组：<span class="math display">\[R(U, F)\]</span></li>
-<li>当且仅当<span class="math inline">\(U\)</span>上的一个关系<span class="math inline">\(r\)</span>满足<span class="math inline">\(F\)</span>时，<span class="math inline">\(r\)</span>称为关系模式<span class="math inline">\(R(U, F)\)</span>的一个关系。</li>
+<li>当且仅当 <span class="math inline">\(U\)</span> 上的一个关系 <span class="math inline">\(r\)</span> 满足 <span class="math inline">\(F\)</span> 时，<span class="math inline">\(r\)</span> 称为关系模式 <span class="math inline">\(R(U, F)\)</span> 的一个关系。</li>
 </ul>
 <h3 id="数据依赖对关系模式的影响">数据依赖对关系模式的影响</h3>
 <ul>
@@ -2810,7 +2695,7 @@ a_2, a_3, a_4\)</span> 四个值
 <li>函数依赖集 <span class="math inline">\(F\)</span>：<span class="math display">\[F = \{Sno \to Sdept, Sdept \to Mname, (Sno, Cno)
 \to Grade\}\]</span> <img src="image-2.webp" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul></li>
-<li>关系模式 <span class="math inline">\(Student&lt;U, F&gt;\)</span>
+<li>关系模式 <span class="math inline">\(Student(U, F)\)</span>
 中存在的问题
 <ol type="1">
 <li><strong>数据冗余太大</strong>：浪费大量的存储空间。
@@ -2841,7 +2726,7 @@ Anomalies）</strong>：不该删除的数据不得不删。
 <li><strong>问题原因</strong>：由存在于模式中的某些<strong>数据依赖</strong>引起的。</li>
 <li><strong>解决方法</strong>：通过<strong>分解关系模式</strong>来消除其中不合适的数据依赖。
 <ul>
-<li>分解为3个关系模式：
+<li>分解为 3 个关系模式：
 <ul>
 <li><span class="math inline">\(S(Sno, Sdept, Sno \to
 Sdept)\)</span>；</li>
@@ -2863,7 +2748,6 @@ Mname)\)</span>。</li>
 \to Y\)</span>。</li>
 <li><span class="math inline">\(X\)</span>
 称为这个函数依赖的决定属性组，又称<strong>决定因素</strong>（Determinant）。</li>
-<li>若 <span class="math inline">\(X \to Y\)</span>，并且 <span class="math inline">\(Y \to X\)</span>，则记为 <span class="math inline">\(X \leftrightarrow Y\)</span>。</li>
 <li>若 <span class="math inline">\(Y\)</span> 不函数依赖于 <span class="math inline">\(X\)</span>，则记为 <span class="math inline">\(X
 \nrightarrow Y\)</span>。</li>
 <li>若 <span class="math inline">\(X \to Y\)</span> 且 <span class="math inline">\(Y \to X\)</span>，则称 <span class="math inline">\(X\)</span> 和 <span class="math inline">\(Y\)</span> 互相函数依赖，记作 <span class="math inline">\(X \leftrightarrow Y\)</span>。</li>
@@ -2883,9 +2767,17 @@ Mname)\)</span>。</li>
 <li>示例
 <ul>
 <li><span class="math inline">\(Student(Sno, Sname, Ssex, Sage,
-Sdept)\)</span>，假设不允许重名，则有：<span class="math inline">\(Sno
-\to Ssex\)</span>，<span class="math inline">\(Sno \to
-Sage\)</span>，<span class="math inline">\(Sno \to Sdept\)</span>，<span class="math inline">\(Sno \leftrightarrow Sname\)</span>，<span class="math inline">\(Sname \to Ssex\)</span>，<span class="math inline">\(Sname \to Sage\)</span>，<span class="math inline">\(Sname \to Sdept\)</span>，但<span class="math inline">\(Ssex \nrightarrow Sage\)</span>。</li>
+Sdept)\)</span>，假设不允许重名，则有：
+<ul>
+<li><span class="math inline">\(Sno \to Ssex\)</span></li>
+<li><span class="math inline">\(Sno \to Sage\)</span></li>
+<li><span class="math inline">\(Sno \to Sdept\)</span></li>
+<li><span class="math inline">\(Sno \leftrightarrow Sname\)</span></li>
+<li><span class="math inline">\(Sname \to Ssex\)</span></li>
+<li><span class="math inline">\(Sname \to Sage\)</span></li>
+<li><span class="math inline">\(Sname \to Sdept\)</span></li>
+<li>但 <span class="math inline">\(Ssex \nrightarrow Sage\)</span></li>
+</ul></li>
 </ul></li>
 </ul>
 <h3 id="平凡函数依赖与非平凡函数依赖">平凡函数依赖与非平凡函数依赖</h3>
@@ -2895,8 +2787,8 @@ Sage\)</span>，<span class="math inline">\(Sno \to Sdept\)</span>，<span class
 <li>如果 <span class="math inline">\(X \to Y\)</span>，但 <span class="math inline">\(Y \nsubseteq X\)</span>，则称 <span class="math inline">\(X \to Y\)</span> 是非平凡的函数依赖；</li>
 <li>若 <span class="math inline">\(X \to Y\)</span>，但 <span class="math inline">\(Y \subseteq X\)</span>，则称 <span class="math inline">\(X \to Y\)</span> 是平凡的函数依赖。</li>
 </ul></li>
-<li>示例：在关系<span class="math inline">\(SC(Sno, Cno,
-Grade)\)</span>中：
+<li>示例：在关系 <span class="math inline">\(SC(Sno, Cno,
+Grade)\)</span> 中：
 <ul>
 <li>非平凡函数依赖：<span class="math inline">\((Sno, Cno) \to
 Grade\)</span>；</li>
@@ -2928,22 +2820,20 @@ Grade\)</span>，因此 <span class="math inline">\((Sno, Cno)
 </ul>
 <h3 id="传递函数依赖">传递函数依赖</h3>
 <ul>
-<li><strong>定义</strong>：在关系模式<span class="math inline">\(R(U)\)</span>中，如果<span class="math inline">\(X
-\to Y\)</span>（<span class="math inline">\(Y \nsubseteq
-X\)</span>），<span class="math inline">\(Y \nrightarrow
-X\)</span>，<span class="math inline">\(Y \to Z\)</span>（<span class="math inline">\(Z \subseteq Y\)</span>），则称<span class="math inline">\(Z\)</span>对<span class="math inline">\(X\)</span>传递函数依赖，记为<span class="math inline">\(X \stackrel{T}{\to} Z\)</span>。
+<li><strong>定义</strong>：在关系模式 <span class="math inline">\(R(U)\)</span> 中，如果 <span class="math inline">\(X \to Y\)</span>（<span class="math inline">\(Y
+\nsubseteq X\)</span>），<span class="math inline">\(Y \nrightarrow
+X\)</span>，<span class="math inline">\(Y \to Z\)</span>（<span class="math inline">\(Z \subseteq Y\)</span>），则称 <span class="math inline">\(Z\)</span> 对 <span class="math inline">\(X\)</span> 传递函数依赖，记为 <span class="math inline">\(X \stackrel{T}{\to} Z\)</span>。
 <ul>
-<li>注：如果<span class="math inline">\(Y \to X\)</span>，即<span class="math inline">\(X \leftrightarrow Y\)</span>，则<span class="math inline">\(X \to Z\)</span>为直接函数依赖。</li>
+<li>注：如果 <span class="math inline">\(Y \to X\)</span>，即 <span class="math inline">\(X \leftrightarrow Y\)</span>，则 <span class="math inline">\(X \to Z\)</span> 为直接函数依赖。</li>
 </ul></li>
-<li>示例：在关系<span class="math inline">\(Std(Sno, Sdept,
-Mname)\)</span>中，有<span class="math inline">\(Sno \to
-Sdept\)</span>，<span class="math inline">\(Sdept \to
-Mname\)</span>，则<span class="math inline">\(Sno \stackrel{T}{\to}
-Mname\)</span>。</li>
+<li>示例：在关系 <span class="math inline">\(Std(Sno, Sdept,
+Mname)\)</span> 中，有 <span class="math inline">\(Sno \to
+Sdept\)</span>，<span class="math inline">\(Sdept \to Mname\)</span>，则
+<span class="math inline">\(Sno \stackrel{T}{\to} Mname\)</span>。</li>
 </ul>
 <h3 id="码">码</h3>
 <ul>
-<li><strong>候选码定义</strong>：设 <span class="math inline">\(K\)</span> 为关系模式 <span class="math inline">\(R&lt;U, F&gt;\)</span>
+<li><strong>候选码定义</strong>：设 <span class="math inline">\(K\)</span> 为关系模式 <span class="math inline">\(R(U, F)\)</span>
 中的属性或<strong>属性组合</strong>。若 <span class="math inline">\(K
 \stackrel{F}{\to} U\)</span>，则 <span class="math inline">\(K\)</span>
 称为 <span class="math inline">\(R\)</span> 的一个候选码（Candidate
@@ -2957,7 +2847,7 @@ Key）。</li>
 的<strong>超码</strong>，即候选码或其与任意属性的组合。候选码是最小的超码。</li>
 <li>说明：
 <ul>
-<li>完全确定所有的属性：正确</li>
+<li><strong>完全确定所有的属性</strong>：正确</li>
 <li>完全确定每一个属性：错误（可以是传递函数依赖）</li>
 </ul></li>
 </ul></li>
@@ -2987,7 +2877,8 @@ Key）。</li>
 </ul>
 <h3 id="第一范式1nf">第一范式（1NF）</h3>
 <ul>
-<li><strong>定义</strong>：如果一个关系模式<span class="math inline">\(R\)</span>的所有属性都是不可分的基本数据项，则<span class="math inline">\(R \in 1NF\)</span>。</li>
+<li><strong>第一范式定义</strong>：如果一个关系模式 <span class="math inline">\(R\)</span> 的所有属性都是不可分的基本数据项，则
+<span class="math inline">\(R \in 1NF\)</span>。</li>
 <li>说明：
 <ul>
 <li>第一范式是对关系模式的最起码的要求，不满足第一范式的数据库模式不能称为关系数据库。</li>
@@ -2999,8 +2890,9 @@ Key）。</li>
 <li>在元组上展开</li>
 <li>关系模式分解</li>
 </ul></li>
-<li>示例：关系模式<span class="math inline">\(SLC(Sno, Sdept, Sloc, Cno,
-Grade)\)</span>，<span class="math inline">\(Sloc\)</span>为学生住处，假设每个系的学生住在同一个地方。
+<li>示例：关系模式 <span class="math inline">\(SLC(Sno, Sdept, Sloc,
+Cno, Grade)\)</span>，<span class="math inline">\(Sloc\)</span>
+为学生住处，假设每个系的学生住在同一个地方。
 <ul>
 <li>函数依赖：<span class="math inline">\((Sno, Cno) \stackrel{F}{\to}
 Grade\)</span>，<span class="math inline">\(Sno \to
@@ -3010,59 +2902,69 @@ Sloc\)</span>，<span class="math inline">\((Sno, Cno) \stackrel{P}{\to}
 Sloc\)</span>，<span class="math inline">\(Sdept \to
 Sloc\)</span>。</li>
 <li><img src="image-3.webp" srcset="/img/loading/loading3.gif" lazyload></li>
-<li>码：<span class="math inline">\(SLC\)</span>的码为<span class="math inline">\((Sno, Cno)\)</span>。</li>
-<li><span class="math inline">\(SLC\)</span>满足第一范式，但非主属性<span class="math inline">\(Sdept\)</span>和<span class="math inline">\(Sloc\)</span>部分函数依赖于码<span class="math inline">\((Sno, Cno)\)</span>。</li>
-</ul></li>
-<li><span class="math inline">\(SLC\)</span>存在的问题
+<li>码：<span class="math inline">\(SLC\)</span> 的码为 <span class="math inline">\((Sno, Cno)\)</span>。</li>
+<li><span class="math inline">\(SLC\)</span> 满足第一范式，但非主属性
+<span class="math inline">\(Sdept\)</span> 和 <span class="math inline">\(Sloc\)</span> 部分函数依赖于码 <span class="math inline">\((Sno, Cno)\)</span>。</li>
+<li><span class="math inline">\(SLC\)</span> 存在的问题
 <ol type="1">
-<li><strong>插入异常</strong>：假设<span class="math inline">\(Sno =
-95102\)</span>，<span class="math inline">\(Sdept = IS\)</span>，<span class="math inline">\(Sloc =
-N\)</span>的学生还未选课，因课程号是主属性，因此该学生的信息无法插入<span class="math inline">\(SLC\)</span>。</li>
-<li><strong>删除异常</strong>：假定某个学生本来只选修了3号课程这一门课。现在因身体不适，他连3号课程也不选修了。因课程号是主属性，此操作将导致该学生信息的整个元组都要删除。</li>
-<li><strong>数据冗余度大</strong>：如果一个学生选修了10门课程，那么他的<span class="math inline">\(Sdept\)</span>和<span class="math inline">\(Sloc\)</span>值就要重复存储了10次。</li>
-<li><strong>修改复杂</strong>：例如学生转系，在修改此学生元组的<span class="math inline">\(Sdept\)</span>值的同时，还可能需要修改住处（<span class="math inline">\(Sloc\)</span>）。如果这个学生选修了<span class="math inline">\(K\)</span>门课，则必须无遗漏地修改<span class="math inline">\(K\)</span>个元组中全部<span class="math inline">\(Sdept\)</span>、<span class="math inline">\(Sloc\)</span>信息。</li>
+<li><strong>插入异常</strong>：假设 <span class="math inline">\(Sno =
+95102\)</span>，<span class="math inline">\(Sdept = IS\)</span>，<span class="math inline">\(Sloc = N\)</span>
+的学生还未选课，因课程号是主属性，因此该学生的信息无法插入 <span class="math inline">\(SLC\)</span>。</li>
+<li><strong>删除异常</strong>：假定某个学生本来只选修了 3
+号课程这一门课。现在因身体不适，他连 3
+号课程也不选修了。因课程号是主属性，此操作将导致该学生信息的整个元组都要删除。</li>
+<li><strong>数据冗余度大</strong>：如果一个学生选修了 10
+门课程，那么他的 <span class="math inline">\(Sdept\)</span> 和 <span class="math inline">\(Sloc\)</span> 值就要重复存储了 10 次。</li>
+<li><strong>修改复杂</strong>：例如学生转系，在修改此学生元组的 <span class="math inline">\(Sdept\)</span> 值的同时，还可能需要修改住处（<span class="math inline">\(Sloc\)</span>）。如果这个学生选修了 <span class="math inline">\(K\)</span> 门课，则必须无遗漏地修改 <span class="math inline">\(K\)</span> 个元组中全部 <span class="math inline">\(Sdept\)</span>、<span class="math inline">\(Sloc\)</span> 信息。</li>
 </ol></li>
-<li><strong>问题原因</strong>：<span class="math inline">\(Sdept\)</span>、<span class="math inline">\(Sloc\)</span>部分函数依赖于码。</li>
-<li><strong>解决方法</strong>：将<span class="math inline">\(SLC\)</span>关系分解为两个关系模式，以消除这些部分函数依赖：
+<li>问题原因：<span class="math inline">\(Sdept\)</span>、<span class="math inline">\(Sloc\)</span> 部分函数依赖于码。</li>
+<li>解决方法：将 <span class="math inline">\(SLC\)</span>
+关系分解为两个关系模式，以消除这些部分函数依赖：
 <ul>
 <li><span class="math inline">\(SC(Sno, Cno, Grade)\)</span>；</li>
 <li><span class="math inline">\(SL(Sno, Sdept, Sloc)\)</span>。</li>
 </ul></li>
 <li>函数依赖图： <img src="image-4.webp" srcset="/img/loading/loading3.gif" lazyload alt="函数依赖图"></li>
+</ul></li>
 </ul>
 <h3 id="第二范式2nf">第二范式（2NF）</h3>
 <ul>
-<li><strong>第二范式定义</strong>：如果一个关系模式<span class="math inline">\(R \in
-1NF\)</span>，并且每一个非主属性都完全函数依赖于<span class="math inline">\(R\)</span>的码，则<span class="math inline">\(R
+<li><strong>第二范式定义</strong>：如果一个关系模式 <span class="math inline">\(R \in
+1NF\)</span>，并且每一个非主属性都完全函数依赖于 <span class="math inline">\(R\)</span> 的码，则 <span class="math inline">\(R
 \in 2NF\)</span>。</li>
 <li>示例：
 <ul>
 <li><span class="math inline">\(SLC(Sno, Cno, Sdept, Sloc, Grade) \in
-1NF\)</span>，但<span class="math inline">\(\notin 2NF\)</span>；</li>
+1NF\)</span>，但 <span class="math inline">\(\notin 2NF\)</span>；</li>
 <li><span class="math inline">\(SC(Sno, Cno, Grade) \in
 2NF\)</span>；</li>
 <li><span class="math inline">\(SL(Sno, Sdept, Sloc) \in
 2NF\)</span>。</li>
 </ul></li>
-<li>作用：采用投影分解法将一个1NF的关系分解为多个<span class="math inline">\(2NF\)</span>的关系，可以在一定程度上减轻原<span class="math inline">\(1NF\)</span>关系中存在的插入异常、删除异常、数据冗余度大、修改复杂等问题。</li>
-<li>局限：达到<span class="math inline">\(2NF\)</span>的关系仍可能存在问题。</li>
-<li>示例：<span class="math inline">\(2NF\)</span>关系模式<span class="math inline">\(SL(Sno, Sdept, Sloc)\)</span>
+<li>作用：采用投影分解法将一个 1NF 的关系分解为多个 <span class="math inline">\(2NF\)</span> 的关系，可以在一定程度上减轻原 <span class="math inline">\(1NF\)</span>
+关系中存在的插入异常、删除异常、数据冗余度大、修改复杂等问题。</li>
+<li>局限：达到 <span class="math inline">\(2NF\)</span>
+的关系仍可能存在问题。</li>
+<li>示例：<span class="math inline">\(2NF\)</span> 关系模式 <span class="math inline">\(SL(Sno, Sdept, Sloc)\)</span>
 <ul>
 <li>函数依赖：<span class="math inline">\(Sno \to Sdept\)</span>，<span class="math inline">\(Sdept \to Sloc\)</span>，<span class="math inline">\(Sno \stackrel{T}{\to} Sloc\)</span>。</li>
 <li><img src="image-5.webp" srcset="/img/loading/loading3.gif" lazyload></li>
-<li>问题：<span class="math inline">\(Sloc\)</span>传递函数依赖于<span class="math inline">\(Sno\)</span>，即<span class="math inline">\(SL\)</span>中存在非主属性对码的传递函数依赖，会出现与1NF相类似的问题。</li>
-<li>解决方法：采用关系分解法，将具有传递函数依赖关系的属性（组）逐层提取出来。例如，把<span class="math inline">\(SL\)</span>分解为两个关系模式，以消除传递函数依赖：
+<li>问题：<span class="math inline">\(Sloc\)</span> 传递函数依赖于 <span class="math inline">\(Sno\)</span>，即 <span class="math inline">\(SL\)</span>
+中存在非主属性对码的传递函数依赖，会出现与 <span class="math inline">\(1NF\)</span> 相类似的问题。</li>
+<li>解决方法：采用关系分解法，将具有传递函数依赖关系的属性（组）逐层提取出来。例如，把
+<span class="math inline">\(SL\)</span>
+分解为两个关系模式，以消除传递函数依赖：
 <ul>
-<li><span class="math inline">\(SD(Sno, Sdept)\)</span>，码为<span class="math inline">\(Sno\)</span>；</li>
-<li><span class="math inline">\(DL(Sdept, Sloc)\)</span>，码为<span class="math inline">\(Sdept\)</span>。</li>
+<li><span class="math inline">\(SD(Sno, Sdept)\)</span>，码为 <span class="math inline">\(Sno\)</span>；</li>
+<li><span class="math inline">\(DL(Sdept, Sloc)\)</span>，码为 <span class="math inline">\(Sdept\)</span>。</li>
 </ul></li>
 </ul></li>
 </ul>
 <h3 id="第三范式3nf">第三范式（3NF）</h3>
 <ul>
-<li><strong>第三范式定义</strong>：关系模式 <span class="math inline">\(R&lt;U, F&gt;\in 1NF\)</span> ，若 <span class="math inline">\(R\)</span> 中不存在这样的码 <span class="math inline">\(X\)</span>、属性组 <span class="math inline">\(Y\)</span> 及非主属性 <span class="math inline">\(Z\)</span>（<span class="math inline">\(Z
+<li><strong>第三范式定义</strong>：关系模式 <span class="math inline">\(R(U, F)\in 1NF\)</span> ，若 <span class="math inline">\(R\)</span> 中不存在这样的码 <span class="math inline">\(X\)</span>、属性组 <span class="math inline">\(Y\)</span> 及非主属性 <span class="math inline">\(Z\)</span>（<span class="math inline">\(Z
 \nsubseteq Y\)</span>），使得 <span class="math inline">\(X \to
-Y\)</span>，<span class="math inline">\(Y \nrightarrow X\)</span>，<span class="math inline">\(Y \to Z\)</span> 成立，则称 <span class="math inline">\(R&lt;U, F&gt; \in 3NF\)</span>。</li>
+Y\)</span>，<span class="math inline">\(Y \nrightarrow X\)</span>，<span class="math inline">\(Y \to Z\)</span> 成立，则称 <span class="math inline">\(R(U, F) \in 3NF\)</span>。</li>
 <li>示例判断
 <ul>
 <li><span class="math inline">\(SL(Sno, Sdept, Sloc) \in
@@ -3073,16 +2975,26 @@ Y\)</span>，<span class="math inline">\(Y \nrightarrow X\)</span>，<span class
 <li><strong>性质</strong>：若 <span class="math inline">\(R \in
 3NF\)</span>，则 <span class="math inline">\(R\)</span>
 的每一个非主属性既不部分函数依赖于候选码也不传递函数依赖于候选码；如果
-<span class="math inline">\(R \in 3NF\)</span>，则 <span class="math inline">\(R\)</span> 也是<span class="math inline">\(2NF\)</span>。</li>
-<li><strong>作用</strong>：采用投影分解法将一个<span class="math inline">\(2NF\)</span>的关系分解为多个<span class="math inline">\(3NF\)</span>的关系，可以在一定程度上解决原<span class="math inline">\(2NF\)</span>关系中存在的插入异常、删除异常、数据冗余度大、修改复杂等问题。</li>
-<li><strong>局限</strong>：将一个<span class="math inline">\(2NF\)</span>关系分解为多个<span class="math inline">\(3NF\)</span>的关系后，并不能完全消除关系模式中的各种异常情况和数据冗余。</li>
+<span class="math inline">\(R \in 3NF\)</span>，则 <span class="math inline">\(R \in 2NF\)</span>。
+<ul>
+<li>证明：采用反证法，设 <span class="math inline">\(R \in
+3NF\)</span>，若 <span class="math inline">\(R \notin
+2NF\)</span>，则存在部分函数依赖，不妨设 <span class="math inline">\((X,
+Y)\stackrel{P}{\to} Z, X\to Z\)</span>，则 <span class="math inline">\(XY \to X \to Z\)</span>，<span class="math inline">\(X \nrightarrow XY\)</span>，即 <span class="math inline">\(XY \stackrel{T}{\to} Z\)</span>，与 <span class="math inline">\(R \in 3NF\)</span> 矛盾，故 <span class="math inline">\(R \in 2NF\)</span>。</li>
+</ul></li>
+<li>作用：采用投影分解法将一个 <span class="math inline">\(2NF\)</span>
+的关系分解为多个 <span class="math inline">\(3NF\)</span>
+的关系，可以在一定程度上解决原 <span class="math inline">\(2NF\)</span>
+关系中存在的插入异常、删除异常、数据冗余度大、修改复杂等问题。</li>
+<li>局限：将一个 <span class="math inline">\(2NF\)</span> 关系分解为多个
+<span class="math inline">\(3NF\)</span>
+的关系后，并不能完全消除关系模式中的各种异常情况和数据冗余。</li>
 </ul>
 <h3 id="bc范式bcnf">BC范式（BCNF）</h3>
 <ul>
-<li><strong>定义</strong>：设关系模式 <span class="math inline">\(R&lt;U, F&gt; \in 1NF\)</span>，如果对于 <span class="math inline">\(R\)</span> 的每个函数依赖<span class="math inline">\(X \to Y\)</span>，若 <span class="math inline">\(Y
-\nsubseteq X\)</span>，则 <span class="math inline">\(X\)</span>
-必含有码，那么 <span class="math inline">\(R \in BCNF\)</span>。</li>
-<li>BCNF的性质
+<li><strong>BC范式定义</strong>：设关系模式 <span class="math inline">\(R(U, F) \in 1NF\)</span>，如果对于 <span class="math inline">\(R\)</span> 的每个函数依赖<span class="math inline">\(X \to Y\)</span>，若 <span class="math inline">\(Y
+\nsubseteq X\)</span>（非平凡函数依赖），则 <span class="math inline">\(X\)</span> 必含有码，那么 <span class="math inline">\(R \in BCNF\)</span>。</li>
+<li><strong>性质</strong>：
 <ul>
 <li><strong>每一个决定属性集（因素）都包含（候选）码</strong>；</li>
 <li><span class="math inline">\(R\)</span>
@@ -3091,21 +3003,47 @@ Y\)</span>，<span class="math inline">\(Y \nrightarrow X\)</span>，<span class
 <li>若 <span class="math inline">\(R \in BCNF\)</span>，则 <span class="math inline">\(R \in 3NF\)</span>；若 <span class="math inline">\(R \in 3NF\)</span>，则 <span class="math inline">\(R\)</span> 不一定 <span class="math inline">\(\in
 BCNF\)</span>。</li>
 </ul></li>
-<li>示例
-<ol type="1">
-<li>关系模式<span class="math inline">\(C(Cno, Cname,
-Pcno)\)</span>，函数依赖<span class="math inline">\(Cno \to
-Cname\)</span>，<span class="math inline">\(Cno \to Pcno\)</span>，<span class="math inline">\(C \in BCNF\)</span>。</li>
-<li>关系模式<span class="math inline">\(S(Sno, Sname, Sdept,
-Sage)\)</span>，假定<span class="math inline">\(Sname\)</span>具有唯一性，函数依赖<span class="math inline">\(Sno \to Sname\)</span>，<span class="math inline">\(Sno \to Sdept\)</span>，<span class="math inline">\(Sno \to Sage\)</span>，<span class="math inline">\(Sname \to Sno\)</span>，<span class="math inline">\(Sname \to Sdept\)</span>，<span class="math inline">\(Sname \to Sage\)</span>，<span class="math inline">\(S \in BCNF\)</span>。</li>
-<li>在关系模式<span class="math inline">\(STJ(S, T, J)\)</span>中，<span class="math inline">\(S\)</span>表示学生，<span class="math inline">\(T\)</span>表示教师，<span class="math inline">\(J\)</span>表示课程。每一教师只教一门课。每门课由若干教师教，某一学生选定某门课，就确定了一个固定的教师。某个学生选修某个教师的课就确定了所选课的名称。
+<li><span class="math inline">\(3NF\)</span> 与 <span class="math inline">\(BCNF\)</span> 的关系
 <ul>
-<li>函数依赖<span class="math inline">\(T \to J\)</span>，<span class="math inline">\((S, J) \to T\)</span>，<span class="math inline">\((S, T) \to J\)</span>，则<span class="math inline">\(STJ\in 3NF\)</span>。</li>
+<li>如果关系模式 <span class="math inline">\(R \in BCNF\)</span>，必定有
+<span class="math inline">\(R \in 3NF\)</span>；
+<ul>
+<li>证明：采用反证法，设 <span class="math inline">\(R \in
+BCNF\)</span>，若 <span class="math inline">\(R \notin
+3NF\)</span>，则存在码 <span class="math inline">\(X\)</span>、属性组
+<span class="math inline">\(Y\)</span> 及非主属性 <span class="math inline">\(Z\)</span>（<span class="math inline">\(Z
+\nsubseteq Y\)</span>），使得 <span class="math inline">\(X \to
+Y\)</span>，<span class="math inline">\(Y \nrightarrow X\)</span>，<span class="math inline">\(Y \to Z\)</span> 成立。由于 <span class="math inline">\(Y \to Z\)</span> 是非平凡函数依赖，而 <span class="math inline">\(R \in BCNF\)</span>，则 <span class="math inline">\(Y\)</span> 必含有码（即超码），故 <span class="math inline">\(Y \to X\)</span>，与 <span class="math inline">\(Y
+\nrightarrow X\)</span> 矛盾，故 <span class="math inline">\(R \in
+3NF\)</span>。</li>
+</ul></li>
+<li>如果 <span class="math inline">\(R \in 3NF\)</span>，且 <span class="math inline">\(R\)</span> <strong>只有一个候选码</strong>，则
+<span class="math inline">\(R \in BCNF\)</span>。</li>
+</ul></li>
+<li>示例：
+<ol type="1">
+<li>关系模式 <span class="math inline">\(C(Cno, Cname,
+Pcno)\)</span>，函数依赖 <span class="math inline">\(Cno \to
+Cname\)</span>，<span class="math inline">\(Cno \to Pcno\)</span>，<span class="math inline">\(C \in BCNF\)</span>。</li>
+<li>关系模式 <span class="math inline">\(S(Sno, Sname, Sdept,
+Sage)\)</span>，假定 <span class="math inline">\(Sname\)</span>
+具有唯一性，函数依赖 <span class="math inline">\(Sno \to
+Sname\)</span>，<span class="math inline">\(Sno \to
+Sdept\)</span>，<span class="math inline">\(Sno \to Sage\)</span>，<span class="math inline">\(Sname \to Sno\)</span>，<span class="math inline">\(Sname \to Sdept\)</span>，<span class="math inline">\(Sname \to Sage\)</span>，<span class="math inline">\(S \in BCNF\)</span>。</li>
+<li>在关系模式 <span class="math inline">\(STJ(S, T, J)\)</span>
+中，<span class="math inline">\(S\)</span> 表示学生，<span class="math inline">\(T\)</span> 表示教师，<span class="math inline">\(J\)</span>
+表示课程。每一教师只教一门课。每门课由若干教师教，某一学生选定某门课，就确定了一个固定的教师。某个学生选修某个教师的课就确定了所选课的名称。
+<ul>
+<li>函数依赖 <span class="math inline">\(T \to J\)</span>，<span class="math inline">\((S, J) \to T\)</span>，<span class="math inline">\((S, T) \to J\)</span>，候选码 <span class="math inline">\((S, T)\)</span> 和 <span class="math inline">\((S,
+J)\)</span>，全都是主属性，则 <span class="math inline">\(STJ \in
+3NF\)</span>。</li>
 <li><figure>
 <img src="image-7.webp" srcset="/img/loading/loading3.gif" lazyload alt="函数依赖图">
 <figcaption aria-hidden="true">函数依赖图</figcaption>
 </figure></li>
-<li>解决方法：将<span class="math inline">\(STJ\)</span>分解为二个关系模式<span class="math inline">\(SJ(S, J) \in BCNF\)</span>，<span class="math inline">\(TJ(T, J) \in
+<li>解决方法：将 <span class="math inline">\(STJ\)</span>
+分解为二个关系模式 <span class="math inline">\(SJ(S, J) \in
+BCNF\)</span>，<span class="math inline">\(TJ(T, J) \in
 BCNF\)</span>，分解后没有任何属性对码的部分函数依赖和传递函数依赖。</li>
 <li><figure>
 <img src="image-8.webp" srcset="/img/loading/loading3.gif" lazyload alt="分解后的函数依赖图">
@@ -3113,30 +3051,24 @@ BCNF\)</span>，分解后没有任何属性对码的部分函数依赖和传递�
 </figure></li>
 </ul></li>
 </ol></li>
-<li><span class="math inline">\(3NF\)</span>与<span class="math inline">\(BCNF\)</span>的关系
-<ul>
-<li>如果关系模式 <span class="math inline">\(R \in BCNF\)</span>，必定有
-<span class="math inline">\(R \in 3NF\)</span>；</li>
-<li>如果 <span class="math inline">\(R \in 3NF\)</span>，且 <span class="math inline">\(R\)</span> <strong>只有一个候选码</strong>，则
-<span class="math inline">\(R\)</span> 必属于<span class="math inline">\(BCNF\)</span>。</li>
-</ul></li>
 </ul>
 <h3 id="小结">小结</h3>
 <ul>
-<li>关系模式规范化的基本步骤
+<li><strong>关系模式规范化的基本步骤</strong>
 <ul>
 <li><span class="math inline">\(1NF\)</span>
-消除非主属性对码的部分函数依赖，得到<span class="math inline">\(2NF\)</span>；</li>
+消除非主属性对码的部分函数依赖，得到 <span class="math inline">\(2NF\)</span>；</li>
 <li><span class="math inline">\(2NF\)</span>
-消除非主属性对码的传递函数依赖，得到<span class="math inline">\(3NF\)</span>；</li>
+消除非主属性对码的传递函数依赖，得到 <span class="math inline">\(3NF\)</span>；</li>
 <li><span class="math inline">\(3NF\)</span>
-消除主属性对码的部分和传递函数依赖，得到<span class="math inline">\(BCNF\)</span>；</li>
+消除主属性对码的部分和传递函数依赖，得到 <span class="math inline">\(BCNF\)</span>；</li>
 <li><span class="math inline">\(BCNF\)</span>
-消除非平凡且非函数依赖的多值依赖，得到<span class="math inline">\(4NF\)</span>。</li>
+消除非平凡且非函数依赖的多值依赖，得到 <span class="math inline">\(4NF\)</span>。</li>
 </ul></li>
-<li>快速判断：
+<li><strong>快速判断</strong>：
 <ul>
-<li>任意<strong>二元</strong>关系模式 <span class="math inline">\(R&lt;U, F&gt;\)</span> 至少属于 <span class="math inline">\(BCNF\)</span>。</li>
+<li>任意<strong>二元</strong>关系模式 <span class="math inline">\(R(U,
+F)\)</span> 至少属于 <span class="math inline">\(BCNF\)</span>。</li>
 <li>关系模式 <span class="math inline">\(R\)</span>
 中的属性全部是主属性，则 <span class="math inline">\(R\)</span>
 至少可以达到 <span class="math inline">\(3NF\)</span>。</li>
@@ -3163,8 +3095,9 @@ BCNF\)</span>，分解后没有任何属性对码的部分函数依赖和传递�
 </ul>
 <h2 id="数据依赖的公理系统">数据依赖的公理系统</h2>
 <ul>
-<li><strong>逻辑蕴含</strong>：对于满足一组函数依赖<span class="math inline">\(F\)</span>的关系模式<span class="math inline">\(R&lt;U, F&gt;\)</span>，其任何一个关系<span class="math inline">\(r\)</span>，若函数依赖<span class="math inline">\(X \to Y\)</span>都成立，则称<span class="math inline">\(F\)</span>逻辑蕴含<span class="math inline">\(X
-\to Y\)</span>。
+<li><strong>逻辑蕴含</strong>：对于满足一组函数依赖 <span class="math inline">\(F\)</span> 的关系模式 <span class="math inline">\(R(U, F)\)</span>，若对其任何一个关系 <span class="math inline">\(r\)</span> 函数依赖 <span class="math inline">\(X
+\to Y\)</span> 都成立，则称 <span class="math inline">\(F\)</span>
+逻辑蕴含 <span class="math inline">\(X \to Y\)</span>。
 <ul>
 <li>即 <span class="math inline">\(r\)</span> 中任意两元组 <span class="math inline">\(t\)</span> 和 <span class="math inline">\(s\)</span>，若 <span class="math inline">\(t[X] =
 s[X]\)</span>，则必有 <span class="math inline">\(t[Y] =
@@ -3174,59 +3107,61 @@ s[Y]\)</span>。</li>
 </ul>
 <h3 id="armstrong公理系统">Armstrong公理系统</h3>
 <h4 id="armstrong推理规则">Armstrong推理规则</h4>
-<p>关系模式 $R&lt;U, F&gt; $来说有以下的推理规则：</p>
+<p>关系模式 $R(U, F) $来说有以下的推理规则：</p>
 <ol type="1">
-<li><strong>A1. 自反律（Reflexivity Rule）</strong>：若<span class="math inline">\(Y \subseteq X \subseteq U\)</span>，则<span class="math inline">\(X \to Y\)</span>为<span class="math inline">\(F\)</span>所蕴含（平凡函数依赖）。
+<li><strong>A1. 自反律（Reflexivity Rule）</strong>：若 <span class="math inline">\(Y \subseteq X \subseteq U\)</span>，则 <span class="math inline">\(X \to Y\)</span> 为 <span class="math inline">\(F\)</span> 所蕴含（平凡函数依赖）。
 <ul>
-<li><strong>证明</strong>：设<span class="math inline">\(Y \subseteq X
-\subseteq U\)</span>，对<span class="math inline">\(R&lt;U,
-F&gt;\)</span>的任一关系<span class="math inline">\(r\)</span>中的任意两个元组<span class="math inline">\(t\)</span>，<span class="math inline">\(s\)</span>。若<span class="math inline">\(t[X] =
-s[X]\)</span>，由于<span class="math inline">\(Y \subseteq
-X\)</span>，有<span class="math inline">\(t[Y] =
-s[Y]\)</span>，所以<span class="math inline">\(X \to
-Y\)</span>成立。自反律得证。</li>
+<li><strong>证明</strong>：设 <span class="math inline">\(Y \subseteq X
+\subseteq U\)</span>，对 <span class="math inline">\(R(U, F)\)</span>
+的任一关系 <span class="math inline">\(r\)</span> 中的任意两个元组 <span class="math inline">\(t\)</span>，<span class="math inline">\(s\)</span>，若 <span class="math inline">\(t[X] =
+s[X]\)</span>，由于 <span class="math inline">\(Y \subseteq
+X\)</span>，有 <span class="math inline">\(t[Y] = s[Y]\)</span>，所以
+<span class="math inline">\(X \to Y\)</span> 成立。自反律得证。</li>
 </ul></li>
-<li><strong>A2. 增广律（Augmentation Rule）</strong>：若<span class="math inline">\(X \to Y\)</span>为<span class="math inline">\(F\)</span>所蕴含，且<span class="math inline">\(Z
-\subseteq U\)</span>，则<span class="math inline">\(XZ \to
-YZ\)</span>为<span class="math inline">\(F\)</span>所蕴含。
+<li><strong>A2. 增广律（Augmentation Rule）</strong>：若 <span class="math inline">\(X \to Y\)</span> 为 <span class="math inline">\(F\)</span> 所蕴含，且 <span class="math inline">\(Z \subseteq U\)</span>，则 <span class="math inline">\(XZ \to YZ\)</span> 为 <span class="math inline">\(F\)</span> 所蕴含。
 <ul>
-<li><strong>证明</strong>：设<span class="math inline">\(X \to
-Y\)</span>为<span class="math inline">\(F\)</span>所蕴含，且<span class="math inline">\(Z \subseteq U\)</span>。设<span class="math inline">\(R&lt;U, F&gt;\)</span>的任一关系<span class="math inline">\(r\)</span>中任意的两个元组<span class="math inline">\(t\)</span>，<span class="math inline">\(s\)</span>；若<span class="math inline">\(t[XZ] =
-s[XZ]\)</span>，则有<span class="math inline">\(t[X] =
-s[X]\)</span>和<span class="math inline">\(t[Z] = s[Z]\)</span>；由<span class="math inline">\(X \to Y\)</span>，于是有<span class="math inline">\(t[Y] = s[Y]\)</span>，所以<span class="math inline">\(t[YZ] = s[YZ]\)</span>，<span class="math inline">\(XZ \to YZ\)</span>为<span class="math inline">\(F\)</span>所蕴含。增广律得证。</li>
+<li><strong>证明</strong>：设 <span class="math inline">\(X \to
+Y\)</span> 为 <span class="math inline">\(F\)</span> 所蕴含，且 <span class="math inline">\(Z \subseteq U\)</span>。对 <span class="math inline">\(R(U, F)\)</span> 的任一关系 <span class="math inline">\(r\)</span> 中任意的两个元组 <span class="math inline">\(t\)</span>，<span class="math inline">\(s\)</span>，若 <span class="math inline">\(t[XZ] =
+s[XZ]\)</span>，则有 <span class="math inline">\(t[X] = s[X]\)</span> 和
+<span class="math inline">\(t[Z] = s[Z]\)</span>；由 <span class="math inline">\(X \to Y\)</span>，于是有 <span class="math inline">\(t[Y] = s[Y]\)</span>，所以 <span class="math inline">\(t[YZ] = s[YZ]\)</span>，<span class="math inline">\(XZ \to YZ\)</span> 为 <span class="math inline">\(F\)</span> 所蕴含。增广律得证。</li>
 </ul></li>
-<li><strong>A3. 传递律（Transitivity Rule）</strong>：若<span class="math inline">\(X \to Y\)</span>及<span class="math inline">\(Y
-\to Z\)</span>为<span class="math inline">\(F\)</span>所蕴含，则<span class="math inline">\(X \to Z\)</span>为<span class="math inline">\(F\)</span>所蕴含。
+<li><strong>A3. 传递律（Transitivity Rule）</strong>：若 <span class="math inline">\(X \to Y\)</span> 及 <span class="math inline">\(Y
+\to Z\)</span> 为 <span class="math inline">\(F\)</span> 所蕴含，则
+<span class="math inline">\(X \to Z\)</span> 为 <span class="math inline">\(F\)</span> 所蕴含。
 <ul>
-<li><strong>证明</strong>：设<span class="math inline">\(X \to
-Y\)</span>及<span class="math inline">\(Y \to Z\)</span>为<span class="math inline">\(F\)</span>所蕴含。对<span class="math inline">\(R&lt;U, F&gt;\)</span>的任一关系<span class="math inline">\(r\)</span>中的任意两个元组<span class="math inline">\(t\)</span>，<span class="math inline">\(s\)</span>。若<span class="math inline">\(t[X] =
-s[X]\)</span>，由于<span class="math inline">\(X \to Y\)</span>，有<span class="math inline">\(t[Y] = s[Y]\)</span>；再由<span class="math inline">\(Y \to Z\)</span>，有<span class="math inline">\(t[Z] = s[Z]\)</span>，所以<span class="math inline">\(X \to Z\)</span>为<span class="math inline">\(F\)</span>所蕴含。传递律得证。</li>
+<li><strong>证明</strong>：设 <span class="math inline">\(X \to
+Y\)</span> 及 <span class="math inline">\(Y \to Z\)</span> 为 <span class="math inline">\(F\)</span> 所蕴含。对 <span class="math inline">\(R(U, F)\)</span> 的任一关系 <span class="math inline">\(r\)</span> 中的任意两个元组 <span class="math inline">\(t\)</span>，<span class="math inline">\(s\)</span>，若 <span class="math inline">\(t[X] =
+s[X]\)</span>，由于 <span class="math inline">\(X \to Y\)</span>，有
+<span class="math inline">\(t[Y] = s[Y]\)</span>；再由 <span class="math inline">\(Y \to Z\)</span>，有 <span class="math inline">\(t[Z] = s[Z]\)</span>，所以 <span class="math inline">\(X \to Z\)</span> 为 <span class="math inline">\(F\)</span> 所蕴含。传递律得证。</li>
 </ul></li>
 </ol>
 <h4 id="导出规则">导出规则</h4>
 <ol type="1">
-<li><strong>合并规则（Union Rule）</strong>：由<span class="math inline">\(X \to Y\)</span>，<span class="math inline">\(X
-\to Z\)</span>，有<span class="math inline">\(X \to YZ\)</span>。</li>
-<li><strong>伪传递规则（Pseudo Transitivity Rule）</strong>：由<span class="math inline">\(X \to Y\)</span>，<span class="math inline">\(WY
-\to Z\)</span>，有<span class="math inline">\(XW \to Z\)</span>。</li>
-<li><strong>分解规则（Decomposition Rule）</strong>：由<span class="math inline">\(X \to Y\)</span>及<span class="math inline">\(Z
-\subseteq Y\)</span>，有<span class="math inline">\(X \to
+<li><strong>合并规则（Union Rule）</strong>：由 <span class="math inline">\(X \to Y\)</span>，<span class="math inline">\(X
+\to Z\)</span>，有 <span class="math inline">\(X \to YZ\)</span>。</li>
+<li><strong>伪传递规则（Pseudo Transitivity Rule）</strong>：由 <span class="math inline">\(X \to Y\)</span>，<span class="math inline">\(WY
+\to Z\)</span>，有 <span class="math inline">\(XW \to Z\)</span>。</li>
+<li><strong>分解规则（Decomposition Rule）</strong>：由 <span class="math inline">\(X \to Y\)</span> 及 <span class="math inline">\(Z
+\subseteq Y\)</span>，有 <span class="math inline">\(X \to
 Z\)</span>。</li>
 </ol>
 <h3 id="函数依赖闭包">函数依赖闭包</h3>
 <h4 id="定义-2">定义</h4>
 <ul>
-<li><strong>函数依赖的闭包定义</strong>：在关系模式<span class="math inline">\(R(U, F)\)</span>中为<span class="math inline">\(F\)</span>所逻辑蕴含的函数依赖的全体，叫作<span class="math inline">\(F\)</span>的闭包，记为<span class="math inline">\(F^+\)</span>。</li>
-<li><strong>属性集关于函数依赖集的闭包定义</strong>：设<span class="math inline">\(F\)</span>为属性集<span class="math inline">\(U\)</span>上的一组函数依赖，<span class="math inline">\(X\)</span>为<span class="math inline">\(U\)</span>的子集，<span class="math inline">\(X
-\subseteq U\)</span>，<span class="math inline">\(X_{F^+} = \{A \mid X
-\to A 能由\)</span>F<span class="math inline">\(根据Armstrong公理导出
-\}\)</span>，<span class="math inline">\(X_{F^+}\)</span>称为属性集<span class="math inline">\(X\)</span>关于函数依赖集<span class="math inline">\(F\)</span>的闭包。</li>
-<li><strong>引理</strong>：设<span class="math inline">\(F\)</span>为属性组<span class="math inline">\(U\)</span>上的一组函数依赖，<span class="math inline">\(X\)</span>，<span class="math inline">\(Y
-\subseteq U\)</span>，<span class="math inline">\(X \to
-Y\)</span>能由<span class="math inline">\(F\)</span>根据Armstrong公理导出的充分必要条件是<span class="math inline">\(Y \subseteq X_{F^+}\)</span>。
+<li><strong>函数依赖的闭包定义</strong>：在关系模式 <span class="math inline">\(R(U, F)\)</span> 中为 <span class="math inline">\(F\)</span> 所逻辑蕴含的函数依赖的全体，叫作 <span class="math inline">\(F\)</span> 的闭包，记为 <span class="math inline">\(F^+\)</span>。</li>
+<li><strong>属性集关于函数依赖集的闭包定义</strong>：设 <span class="math inline">\(F\)</span> 为属性集 <span class="math inline">\(U\)</span> 上的一组函数依赖，定义属性集 <span class="math inline">\(X\)</span> 关于函数依赖集 <span class="math inline">\(F\)</span> 的闭包 <span class="math inline">\(X
+\subseteq U\)</span>，<span class="math inline">\(X_{F}^+ = \{A \mid X
+\to A \text{ 能由 } F \text{ 根据 Armstrong 公理导出} \}\)</span>。</li>
+<li><strong>引理</strong>：设 <span class="math inline">\(F\)</span>
+为属性组 <span class="math inline">\(U\)</span> 上的一组函数依赖，<span class="math inline">\(X\)</span>、<span class="math inline">\(Y
+\subseteq U\)</span>，<span class="math inline">\(X \to Y\)</span> 能由
+<span class="math inline">\(F\)</span> 根据 Armstrong
+公理导出的充分必要条件是 <span class="math inline">\(Y \subseteq
+X_{F}^+\)</span>。
 <ul>
-<li>用途：将判定<span class="math inline">\(X \to
-Y\)</span>是否能由<span class="math inline">\(F\)</span>根据Armstrong公理导出的问题，转化为求出<span class="math inline">\(X_{F^+}\)</span>，判定<span class="math inline">\(Y\)</span>是否为<span class="math inline">\(X_{F^+}\)</span>的子集的问题。</li>
+<li>用途：将判定 <span class="math inline">\(X \to Y\)</span> 是否能由
+<span class="math inline">\(F\)</span> 根据 Armstrong
+公理导出的问题，转化为求出 <span class="math inline">\(X_{F}^+\)</span>，判定 <span class="math inline">\(Y\)</span> 是否为 <span class="math inline">\(X_{F}^+\)</span> 的子集的问题。</li>
 </ul></li>
 </ul>
 <h4 id="求闭包的算法">求闭包的算法</h4>
@@ -3239,9 +3174,12 @@ Y\)</span>是否能由<span class="math inline">\(F\)</span>根据Armstrong公�
 <li>步骤：
 <ol type="1">
 <li>置 <span class="math inline">\(X_{F}^{+} := X\)</span>；</li>
-<li>若 <span class="math inline">\(Y \to Z \in F\)</span>，且 <span class="math inline">\(Y \subseteq X_{F}^{+}\)</span>，则置 <span class="math inline">\(X_{F}^{+} := X_{F}^{+} \cup Z\)</span>，若 <span class="math inline">\(X_{F}^{+} = U\)</span> 或 <span class="math inline">\(X_{F}^{+}\)</span>
-不再变化，则转到步骤c，否则重复步骤b；</li>
-<li>输出 <span class="math inline">\(X_{F}^{+}\)</span>，算法结束。</li>
+<li>对 <span class="math inline">\(F\)</span> 中的每一个函数依赖 <span class="math inline">\(Y \to Z\)</span>，若 <span class="math inline">\(Y
+\subseteq X_{F}^{+}\)</span>，则置 <span class="math inline">\(X_{F}^{+}
+:= X_{F}^{+} \cup Z\)</span>；</li>
+<li>重复步骤2，直到 <span class="math inline">\(X_{F}^{+}\)</span>
+不再增大为止；</li>
+<li>输出 <span class="math inline">\(X_{F}^{+}\)</span>。</li>
 </ol></li>
 </ul></li>
 </ul>
@@ -3258,7 +3196,7 @@ Y\)</span>是否能由<span class="math inline">\(F\)</span>根据Armstrong公�
 <li><span class="math inline">\(LR\)</span>
 类属性：出现在函数依赖集左、右两边的属性</li>
 </ul></li>
-<li>求解步骤：
+<li><strong>求解步骤</strong>：
 <ol type="1">
 <li>列出 <span class="math inline">\(L\)</span>、<span class="math inline">\(R\)</span>、<span class="math inline">\(N\)</span>、<span class="math inline">\(LR\)</span> 属性包含的元素；</li>
 <li>设 <span class="math inline">\(X\)</span> 代表 <span class="math inline">\(L\)</span> 与 <span class="math inline">\(N\)</span> 类属性，<span class="math inline">\(Y\)</span> 代表 <span class="math inline">\(LR\)</span> 类属性；</li>
@@ -3270,9 +3208,8 @@ Y\)</span>是否能由<span class="math inline">\(F\)</span>根据Armstrong公�
 U\)</span>，则进入第5步；</li>
 </ul></li>
 <li>从 <span class="math inline">\(Y\)</span>
-中依次取出一个元素，设该元素为 <span class="math inline">\(A\)</span>，求 <span class="math inline">\(XA^+\)</span>，若取出元素和 <span class="math inline">\(X\)</span>
-组合求得的闭包，如果包含关系模式中的所有属性，则为候选码，继续直到试完
-<span class="math inline">\(Y\)</span> 中全部的元素。
+中依次取出一个元素，设该元素为 <span class="math inline">\(A\)</span>，求 <span class="math inline">\((XA)^+\)</span>，若取出元素和 <span class="math inline">\(X\)</span>
+组合求得的闭包包含关系模式中的所有属性，则为候选码，继续直到试完 <span class="math inline">\(Y\)</span> 中全部的元素。
 <ul>
 <li>若 <span class="math inline">\(Y\)</span> 中的元素取出与 <span class="math inline">\(X\)</span> 组合均包含 <span class="math inline">\(U\)</span> 全部属性，此时所有候选码被找出。</li>
 <li>若 <span class="math inline">\(Y\)</span> 中还有元素与 <span class="math inline">\(X\)</span>
@@ -3293,69 +3230,82 @@ C)\)</span>，其中：<span class="math inline">\(F=\{B \to C，AC \to B
 <li><span class="math inline">\(X = (L \cup N) = A\)</span>，<span class="math inline">\(Y = LR = BC\)</span></li>
 <li><span class="math inline">\(X^+ = A^+ =
 \{A\}\)</span>，不是唯一候选码</li>
-<li>从<span class="math inline">\(Y\)</span>依次取出元素与<span class="math inline">\(X\)</span>组合求闭包:
+<li>从 <span class="math inline">\(Y\)</span> 依次取出元素与 <span class="math inline">\(X\)</span> 组合求闭包:
 <ul>
-<li>从<span class="math inline">\(Y\)</span>中取出<span class="math inline">\(B\)</span>与<span class="math inline">\(X\)</span>组合，<span class="math inline">\((AB)^+
-= \{ABC\}\)</span>，包含<span class="math inline">\(R\)</span>中全部属性，<span class="math inline">\(A\)</span>为<span class="math inline">\(R\)</span>的候选键</li>
-<li>从<span class="math inline">\(Y\)</span>中取出<span class="math inline">\(C\)</span>与<span class="math inline">\(X\)</span>组合，<span class="math inline">\((AC)^+
-= \{ACB\}\)</span>，包含<span class="math inline">\(R\)</span>中全部属性，<span class="math inline">\(AC\)</span>为<span class="math inline">\(R\)</span>是候选键</li>
-<li>因为<span class="math inline">\(Y\)</span>中<span class="math inline">\(B\)</span>、<span class="math inline">\(C\)</span>均和<span class="math inline">\(A\)</span>组合为候选键，所以无需再进行下一步取两个元素<span class="math inline">\(BC\)</span>与<span class="math inline">\(A\)</span>组合</li>
+<li>从 <span class="math inline">\(Y\)</span> 中取出 <span class="math inline">\(B\)</span> 与 <span class="math inline">\(X\)</span> 组合，<span class="math inline">\((AB)^+ = \{ABC\}\)</span>，包含 <span class="math inline">\(R\)</span> 中全部属性，<span class="math inline">\(A\)</span> 为 <span class="math inline">\(R\)</span> 的候选键</li>
+<li>从 <span class="math inline">\(Y\)</span> 中取出 <span class="math inline">\(C\)</span> 与 <span class="math inline">\(X\)</span> 组合，<span class="math inline">\((AC)^+ = \{ACB\}\)</span>，包含 <span class="math inline">\(R\)</span> 中全部属性，<span class="math inline">\(AC\)</span> 为 <span class="math inline">\(R\)</span> 的候选键</li>
+<li>因为 <span class="math inline">\(Y\)</span> 中 <span class="math inline">\(B\)</span>、<span class="math inline">\(C\)</span>
+均和 <span class="math inline">\(A\)</span>
+组合为候选键，所以无需再进行下一步取两个元素 <span class="math inline">\(BC\)</span> 与 <span class="math inline">\(A\)</span> 组合</li>
 </ul></li>
-<li>所以，<span class="math inline">\(R\)</span>的候选键有<span class="math inline">\(AB\)</span>、<span class="math inline">\(AC\)</span></li>
+<li>所以，<span class="math inline">\(R\)</span> 的候选键有 <span class="math inline">\(AB\)</span>、<span class="math inline">\(AC\)</span></li>
 </ol></li>
 </ul>
 <h3 id="armstrong公理系统的有效性与完备性">Armstrong公理系统的有效性与完备性</h3>
 <ul>
 <li>有效性与完备性的含义
 <ul>
-<li><strong>有效性</strong>：由<span class="math inline">\(F\)</span>出发根据Armstrong公理推导出来的每一个函数依赖一定在<span class="math inline">\(F^+\)</span>中。</li>
-<li><strong>完备性</strong>：<span class="math inline">\(F^+\)</span>中的每一个函数依赖，必定可以由<span class="math inline">\(F\)</span>出发根据Armstrong公理推导出来。</li>
+<li><strong>有效性</strong>：由 <span class="math inline">\(F\)</span>
+出发根据 Armstrong 公理推导出来的每一个函数依赖一定在 <span class="math inline">\(F^+\)</span> 中。</li>
+<li><strong>完备性</strong>：<span class="math inline">\(F^+\)</span>
+中的每一个函数依赖，必定可以由 <span class="math inline">\(F\)</span>
+出发根据 Armstrong 公理推导出来。</li>
 </ul></li>
 </ul>
 <h3 id="函数依赖集等价">函数依赖集等价</h3>
 <ul>
-<li>定义：如果<span class="math inline">\(G^+ =
-F^+\)</span>，就说函数依赖集<span class="math inline">\(F\)</span>覆盖<span class="math inline">\(G\)</span>（<span class="math inline">\(F\)</span>是<span class="math inline">\(G\)</span>的覆盖，或<span class="math inline">\(G\)</span>是<span class="math inline">\(F\)</span>的覆盖），或者<span class="math inline">\(F\)</span>与<span class="math inline">\(G\)</span>等价。
+<li>定义：如果 <span class="math inline">\(G^+ =
+F^+\)</span>，就说函数依赖集 <span class="math inline">\(F\)</span> 覆盖
+<span class="math inline">\(G\)</span>（<span class="math inline">\(F\)</span> 是 <span class="math inline">\(G\)</span> 的覆盖，或 <span class="math inline">\(G\)</span> 是 <span class="math inline">\(F\)</span> 的覆盖），或者 <span class="math inline">\(F\)</span> 与 <span class="math inline">\(G\)</span> 等价。
 <ul>
 <li>两个函数依赖集等价是指它们的闭包等价！</li>
 </ul></li>
-<li>引理：<span class="math inline">\(F^+ =
-G^+\)</span>的充分必要条件是<span class="math inline">\(F \subseteq
-G^+\)</span>和<span class="math inline">\(G \subseteq
-F^+\)</span>。</li>
+<li>引理：<span class="math inline">\(F^+ = G^+\)</span>
+的充分必要条件是 <span class="math inline">\(F \subseteq G^+\)</span> 和
+<span class="math inline">\(G \subseteq F^+\)</span>。
+<ul>
+<li>证明：
+<ul>
+<li>充分性：设 <span class="math inline">\(F \subseteq G^+\)</span> 和
+<span class="math inline">\(G \subseteq F^+\)</span>。对任一 <span class="math inline">\(X \to Y \in F^+\)</span>，由 <span class="math inline">\(F \subseteq G^+\)</span>，有 <span class="math inline">\(X \to Y \in G^+\)</span>，所以 <span class="math inline">\(F^+ \subseteq G^+\)</span>。同理可证 <span class="math inline">\(G^+ \subseteq F^+\)</span>，故 <span class="math inline">\(F^+ = G^+\)</span>。</li>
+<li>必要性：设 <span class="math inline">\(F^+ = G^+\)</span>。由于
+<span class="math inline">\(F \subseteq F^+\)</span>，所以 <span class="math inline">\(F \subseteq G^+\)</span>；同理可证 <span class="math inline">\(G \subseteq F^+\)</span>。</li>
+</ul></li>
+</ul></li>
 </ul>
 <h3 id="最小依赖集">最小依赖集</h3>
-<h4 id="定义-3">定义</h4>
+<h4 id="最小依赖集定义">最小依赖集定义</h4>
 <ul>
-<li><strong>定义</strong>：如果函数依赖集<span class="math inline">\(F\)</span>满足下列条件，则称<span class="math inline">\(F\)</span>为一个极小函数依赖集，亦称为最小依赖集或最小覆盖。
+<li><strong>定义</strong>：如果函数依赖集 <span class="math inline">\(F\)</span> 满足下列条件，则称 <span class="math inline">\(F\)</span>
+为一个极小函数依赖集，亦称为最小依赖集或最小覆盖。
 <ol type="1">
-<li><span class="math inline">\(F\)</span>中任一函数依赖的<strong>右部仅含有一个属性</strong>。</li>
-<li><span class="math inline">\(F\)</span>中不存在这样的函数依赖<span class="math inline">\(X \to A\)</span>，使得<span class="math inline">\(F\)</span>与<span class="math inline">\(F - \{X
-\to A\}\)</span>等价。
+<li><span class="math inline">\(F\)</span>
+中任一函数依赖的<strong>右部仅含有一个属性</strong>。</li>
+<li><span class="math inline">\(F\)</span> 中不存在这样的函数依赖 <span class="math inline">\(X \to A\)</span>，使得 <span class="math inline">\(F\)</span> 与 <span class="math inline">\(F - \{X
+\to A\}\)</span> 等价。
 <ul>
 <li>即 <span class="math inline">\(F\)</span>
-中的函数依赖均不能由其他函数依赖推导出来（不存在冗余依赖）</li>
+中的函数依赖均不能由其他函数依赖推导出来（<strong>不存在冗余依赖</strong>）</li>
 </ul></li>
-<li><span class="math inline">\(F\)</span>中不存在这样的函数依赖<span class="math inline">\(X \to A\)</span>，<span class="math inline">\(X\)</span>有真子集<span class="math inline">\(Z\)</span>使得<span class="math inline">\(F - \{X
-\to A\} \cup \{Z \to A\}\)</span>与<span class="math inline">\(F\)</span>等价。
+<li><span class="math inline">\(F\)</span> 中不存在这样的函数依赖 <span class="math inline">\(X \to A\)</span>，<span class="math inline">\(X\)</span> 有真子集 <span class="math inline">\(Z\)</span> 使得 <span class="math inline">\(F -
+\{X \to A\} \cup \{Z \to A\}\)</span> 与 <span class="math inline">\(F\)</span> 等价。
 <ul>
 <li>即 <span class="math inline">\(F\)</span>
-中各函数依赖左部均为最小属性集（不存在冗余属性）</li>
+中各函数依赖左部均为最小属性集（<strong>函数依赖不存在冗余属性</strong>）</li>
 </ul></li>
 </ol></li>
-<li>示例：对于关系模式<span class="math inline">\(S&lt;U,
-F&gt;\)</span>，其中
+<li>示例：对于关系模式 <span class="math inline">\(S(U,
+F)\)</span>，其中
 <ul>
-<li><span class="math inline">\(U = \{SNO, SDEPT, MN, CNAME,
+<li><span class="math inline">\(U = \{Sno, Sdept, Mn, Cname,
 G\}\)</span></li>
-<li><span class="math inline">\(F = \{SNO \to SDEPT, SDEPT \to
-MN,\)</span> <span class="math inline">\((SNO, CNAME) \to
-G\}\)</span>。</li>
-<li>设 <span class="math inline">\(F' = \{SNO \to SDEPT, SNO \to MN,
-SDEPT \to MN,\)</span> <span class="math inline">\((SNO, CNAME) \to G,
-(SNO, SDEPT) \to SDEPT\}\)</span>。</li>
-<li><span class="math inline">\(F\)</span>是最小覆盖，而<span class="math inline">\(F'\)</span>不是。因为<span class="math inline">\(F' - \{(SNO, SDEPT) \to
-SDEPT\}\)</span>也与<span class="math inline">\(F'\)</span>等价。</li>
+<li><span class="math inline">\(F = \{Sno \to Sdept, Sdept \to Mn, (Sno,
+Cname) \to G\}\)</span>。</li>
+<li><span class="math inline">\(F' = \{Sno \to Sdept, Sno \to Mn,
+Sdept \to Mn, (Sno, Cname) \to G, (Sno, Sdept) \to
+Sdept\}\)</span>。</li>
+<li><span class="math inline">\(F\)</span> 是最小覆盖，而 <span class="math inline">\(F'\)</span> 不是。因为 <span class="math inline">\(F' - \{(Sno, Sdept) \to Sdept\}\)</span> 也与
+<span class="math inline">\(F'\)</span> 等价。</li>
 </ul></li>
 </ul>
 <h4 id="极小化过程">极小化过程</h4>
@@ -3363,15 +3313,12 @@ SDEPT\}\)</span>也与<span class="math inline">\(F'\)</span>等价。</li>
 <li>定理：每一个函数依赖集 <span class="math inline">\(F\)</span>
 均等价于一个极小函数依赖集 <span class="math inline">\(F_m\)</span>。此
 <span class="math inline">\(F_m\)</span> ，称为 <span class="math inline">\(F\)</span> 的最小依赖集。</li>
-<li>算法：求函数依赖集 <span class="math inline">\(F\)</span>
-的最小依赖集 <span class="math inline">\(F_m\)</span>
+<li><strong>算法</strong>：求函数依赖集 <span class="math inline">\(F\)</span> 的最小依赖集 <span class="math inline">\(F_m\)</span>
 <ol type="1">
-<li><strong>去除右边冗余</strong>：逐一检查 <span class="math inline">\(F\)</span> 中各函数依赖 <span class="math inline">\(FD_i：X \to Y\)</span>，若 <span class="math inline">\(Y=A_1,A_2\cdots A_k,    k&gt;2\)</span>，则用
-<span class="math inline">\(\{X\to A_j|j=1,2,\cdots k\}\)</span> 来取代
-<span class="math inline">\(Y\)</span>。</li>
-<li><strong>去除依赖冗余</strong>：逐一检查 <span class="math inline">\(F\)</span> 中各函数依赖 <span class="math inline">\(FD_i: X \to A\)</span>，令 <span class="math inline">\(G=F-\{X\to A\}\)</span>，若<span class="math inline">\(A\in X_{G}^{+}\)</span>，则从 <span class="math inline">\(F\)</span> 中去掉此函数依赖。</li>
-<li><strong>去除左边冗余</strong>：逐一检查 <span class="math inline">\(F\)</span> 中各函数依赖 <span class="math inline">\(FD_i: X \to A\)</span>，设 <span class="math inline">\(X=B_1B_2\cdots B_m\)</span>，逐一考查 <span class="math inline">\(B_i\)</span>，若 <span class="math inline">\(A \in
-(X-B_i)_{F}^{+}\)</span>，则以 <span class="math inline">\(X-B_i\)</span> 取代 <span class="math inline">\(X\)</span>。</li>
+<li><strong>去除右边冗余</strong>：逐一检查 <span class="math inline">\(F\)</span> 中各函数依赖 <span class="math inline">\(FD_i：X \to Y\)</span>，若 <span class="math inline">\(Y=A_1,A_2\cdots A_k, k \geq 2\)</span>，则用 <span class="math inline">\(\{X\to A_j|j=1,2,\cdots k\}\)</span> 来取代 <span class="math inline">\(Y\)</span>。</li>
+<li><strong>去除依赖冗余</strong>：逐一检查 <span class="math inline">\(F\)</span> 中各函数依赖 <span class="math inline">\(FD_i: X \to A\)</span>，令 <span class="math inline">\(G=F-\{X\to A\}\)</span>，若 <span class="math inline">\(A\in X_{G}^{+}\)</span>，则从 <span class="math inline">\(F\)</span> 中去掉此函数依赖。</li>
+<li><strong>去除左边冗余</strong>：逐一检查 <span class="math inline">\(F\)</span> 中各函数依赖 <span class="math inline">\(FD_i: X \to A\)</span>，设 <span class="math inline">\(X=B_1B_2\cdots B_m\)</span>，逐一考查 <span class="math inline">\(B_i\)</span>，令 <span class="math inline">\(G=F-\{X\to A\} \cup \{(X-B_i)\to A\}\)</span>，若
+<span class="math inline">\(A\in (X-B_i)_{G}^{+}\)</span>，则以 <span class="math inline">\(X-B_i\)</span> 取代 <span class="math inline">\(X\)</span>。</li>
 </ol></li>
 <li>示例：
 <ul>
@@ -3381,14 +3328,15 @@ C, C \to A\}\)</span></li>
 A\}\)</span></li>
 <li><span class="math inline">\(F_{m2} = \{A \to B, B \to A, A \to C, C
 \to A\}\)</span></li>
-<li><span class="math inline">\(F_{m1}\)</span>、<span class="math inline">\(F_{m2}\)</span>都是<span class="math inline">\(F\)</span>的最小依赖集。</li>
-<li><span class="math inline">\(F\)</span>的最小依赖集<span class="math inline">\(F_m\)</span><strong>不一定是唯一的</strong>，它与对各函数依赖<span class="math inline">\(FD_i\)</span>及<span class="math inline">\(X\)</span>中各属性的处置顺序有关。</li>
+<li><span class="math inline">\(F_{m1}\)</span>、<span class="math inline">\(F_{m2}\)</span> 都是 <span class="math inline">\(F\)</span> 的最小依赖集。</li>
+<li><span class="math inline">\(F\)</span> 的最小依赖集 <span class="math inline">\(F_m\)</span>
+<strong>不一定是唯一的</strong>，它与对各函数依赖 <span class="math inline">\(FD_i\)</span> 及 <span class="math inline">\(X\)</span> 中各属性的处置顺序有关。</li>
 </ul></li>
 </ul>
 <h3 id="关系模式分解的标准">关系模式分解的标准</h3>
 <ul>
-<li>无损连接性：进行关系分解后得到的关系按照外码自然连接能够得到原来的关系。</li>
-<li>函数依赖性：关系分解后每个关系的最小函数依赖集是原关系的最小函数依赖集的子集，并且所有子集的并等于原关系的最小函数依赖集。</li>
+<li><strong>无损连接性</strong>：进行关系分解后得到的关系按照外码自然连接能够得到原来的关系。</li>
+<li><strong>函数依赖性</strong>：关系分解后每个关系的最小函数依赖集是原关系的最小函数依赖集的子集，并且所有子集的并等于原关系的最小函数依赖集。</li>
 <li>三种模式分解的等价定义
 <ol type="1">
 <li>分解具有无损连接性；</li>
@@ -7164,7 +7112,7 @@ M\)</span>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年11月10日</div>
+          <div>2025年11月11日</div>
         </div>
       
       
@@ -7614,7 +7562,7 @@ M\)</span>
 
 
   <script type="text/javascript">
-  document.getElementById("g-total-word-id").innerHTML = "453k";
+  document.getElementById("g-total-word-id").innerHTML = "454k";
   document.getElementById('g-total-posts-id').textContent ="50";
 </script>
 
