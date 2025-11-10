@@ -1,5 +1,5 @@
 ---
-title: 分层可导航小世界图 HNSW 简介
+title: 分层可导航小世界图HNSW简介
 math: true
 date: 2025-11-08 11:39:11
 updated:

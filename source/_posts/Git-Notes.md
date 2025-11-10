@@ -144,6 +144,7 @@ git push -f origin [分支名]
 
 # 子模块
 子模块是 Git 中的一种机制，用于在一个 Git 仓库中嵌套另一个 Git 仓库。它允许你将一个独立的 Git 仓库作为另一个仓库的子目录来管理。
+
 1. 子仓库的创建（正常创建）
     ```bash
     cd [path_to_submodule]
@@ -157,6 +158,23 @@ git push -f origin [分支名]
     git add .gitmodules [path-to-submodule]
     git commit -m "Add submodule"
     git push
+    ```
+
+# 提取部分文件到新仓库
+1. 安装 `git-filter-repo` 工具（如果尚未安装）：
+    ```bash
+    pip install git-filter-repo
+    ```
+2. 复制现有仓库，使用以下命令提取特定目录或文件到一个新的分支：
+    ```bash
+    cp -r [existing-repo-path] [new-repo-path]
+    cd [new-repo-path]
+    git filter-repo --path [path/to/directory_or_file] --to-subdirectory-filter [new_subdirectory_name]
+    ```
+3. 创建一个新的仓库并将提取的内容推送到新仓库：
+    ```bash
+    git remote add origin [new-repository-url]
+    git push -u origin master
     ```
 
 # 修改commit信息
