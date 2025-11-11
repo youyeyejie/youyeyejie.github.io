@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis3351.webp">
 <meta property="article:published_time" content="2025-10-25T12:25:12.000Z">
-<meta property="article:modified_time" content="2025-11-11T15:15:57.112Z">
+<meta property="article:modified_time" content="2025-11-11T15:20:57.555Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU">
 <meta property="article:tag" content="数据库">
@@ -3483,10 +3483,10 @@ C、C++、Java）程序中，供程序员设计程序时使用。</li>
 <li><strong>语句格式</strong>： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">DROP</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">SCHEMA</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">模式名</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">CASCADE | RESTRICT</span><span style="color: #56B6C2">&gt;</span></span></code></pre></div></div></figure></li>
 <li>说明：
 <ul>
-<li><strong>CASCADE（级联）</strong>：删除模式的同时，删除该模式中所有数据库对象；</li>
-<li><strong>RESTRICT（限制）</strong>：若模式中存在下属对象（如表、视图等），则拒绝删除，仅当无下属对象时可执行。</li>
+<li><code>CASCADE</code>（级联）：删除模式的同时，删除该模式中所有数据库对象；</li>
+<li><code>RESTRICT</code>（限制）：若模式中存在下属对象（如表、视图等），则拒绝删除，仅当无下属对象时可执行。</li>
 </ul></li>
-<li><strong>示例</strong>：删除模式ZHANG及其下属所有对象：
+<li><strong>示例</strong>：删除模式 ZHANG 及其下属所有对象：
 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">DROP</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">SCHEMA</span><span style="color: #ABB2BF"> ZHANG CASCADE;</span></span></code></pre></div></div></figure></li>
 </ul>
 <h3 id="基本表的定义删除与修改">基本表的定义、删除与修改</h3>
