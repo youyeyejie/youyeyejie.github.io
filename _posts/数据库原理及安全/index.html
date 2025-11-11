@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis3351.webp">
 <meta property="article:published_time" content="2025-10-25T12:25:12.000Z">
-<meta property="article:modified_time" content="2025-11-10T17:12:36.830Z">
+<meta property="article:modified_time" content="2025-11-11T15:15:57.112Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU">
 <meta property="article:tag" content="数据库">
@@ -450,7 +450,7 @@
         
         
           <!-- compatible with older versions-->
-          378 分钟
+          379 分钟
         
       </span>
     
@@ -3353,9 +3353,9 @@ A\}\)</span></li>
 Language）即结构化查询语言，是关系数据库的标准语言。</li>
 <li>它是一种通用的、功能极强的关系数据库语言</li>
 <li>功能涵盖查询、操纵、定义和控制，是综合的、通用的关系数据库语言，同时也是高度非过程化语言——仅要求用户指出“做什么”，无需说明“怎么做”。</li>
-<li>SQL集成实现了数据库生命周期的全部操作。</li>
+<li>SQL 集成实现了数据库生命周期的全部操作。</li>
 </ul></li>
-<li><p>SQL语言的特点</p>
+<li><p>SQL 语言的特点</p>
 <ol type="1">
 <li>综合统一
 <ul>
@@ -3371,13 +3371,13 @@ Language）即结构化查询语言，是关系数据库的标准语言。</li>
 <li>高度非过程化
 <ul>
 <li>非关系数据模型的数据操纵语言“面向过程”，需制定存取路径；</li>
-<li>而SQL只需提出“做什么”，<strong>无需了解存取路径</strong>；</li>
-<li>存取路径的选择及SQL操作过程由系统自动完成。</li>
+<li>而 SQL 只需提出“做什么”，<strong>无需了解存取路径</strong>；</li>
+<li>存取路径的选择及 SQL 操作过程由系统自动完成。</li>
 </ul></li>
 <li>面向集合的操作方式
 <ul>
 <li>非关系数据模型采用面向记录的操作方式，操作对象为一条记录；</li>
-<li>SQL采用集合操作方式：
+<li>SQL 采用集合操作方式：
 <ul>
 <li>操作对象、查找结果可以是元组的集合；</li>
 <li>一次插入、删除、更新操作的对象也可以是元组的集合。</li>
@@ -3386,7 +3386,8 @@ Language）即结构化查询语言，是关系数据库的标准语言。</li>
 <li>以同一种语法结构提供多种使用方式
 <ul>
 <li><strong>SQL是独立的语言</strong>：可独立用于联机交互的使用方式；</li>
-<li><strong>SQL也是嵌入式语言</strong>：可嵌入到高级语言（如C、C++、Java）程序中，供程序员设计程序时使用。</li>
+<li><strong>SQL也是嵌入式语言</strong>：可嵌入到高级语言（如
+C、C++、Java）程序中，供程序员设计程序时使用。</li>
 </ul></li>
 <li>语言简捷，易学易用</li>
 </ol></li>
@@ -3395,7 +3396,7 @@ Language）即结构化查询语言，是关系数据库的标准语言。</li>
 <li>基本表
 <ul>
 <li>本身独立存在的表；</li>
-<li>SQL中一个关系对应一个基本表；</li>
+<li>SQL 中一个关系对应一个基本表；</li>
 <li>一个（或多个）基本表对应一个存储文件；</li>
 <li>一个表可带若干索引。</li>
 </ul></li>
@@ -3413,7 +3414,8 @@ Language）即结构化查询语言，是关系数据库的标准语言。</li>
 </ul></li>
 </ul>
 <h2 id="数据定义">数据定义</h2>
-<p>SQL的数据定义功能包括模式定义、表定义、视图定义和索引定义，核心语句如下表所示：</p>
+<p>SQL
+的数据定义功能包括模式定义、表定义、视图定义和索引定义，核心语句如下表所示：</p>
 <table>
 
 <thead>
@@ -3427,27 +3429,27 @@ Language）即结构化查询语言，是关系数据库的标准语言。</li>
 <tbody>
 <tr>
 <td>模式</td>
-<td>CREATE SCHEMA</td>
-<td>DROP SCHEMA</td>
+<td><code>CREATE SCHEMA</code></td>
+<td><code>DROP SCHEMA</code></td>
 <td>-</td>
 </tr>
 <tr>
 <td>表</td>
-<td>CREATE TABLE</td>
-<td>DROP TABLE</td>
-<td>ALTER TABLE</td>
+<td><code>CREATE TABLE</code></td>
+<td><code>DROP TABLE</code></td>
+<td><code>ALTER TABLE</code></td>
 </tr>
 <tr>
 <td>视图</td>
-<td>CREATE VIEW</td>
-<td>DROP VIEW</td>
+<td><code>CREATE VIEW</code></td>
+<td><code>DROP VIEW</code></td>
 <td>-</td>
 </tr>
 <tr>
 <td>索引</td>
-<td>CREATE INDEX</td>
-<td>DROP INDEX</td>
-<td>ALTER INDEX</td>
+<td><code>CREATE INDEX</code></td>
+<td><code>DROP INDEX</code></td>
+<td><code>ALTER INDEX</code></td>
 </tr>
 </tbody>
 </table>
@@ -3462,10 +3464,10 @@ Language）即结构化查询语言，是关系数据库的标准语言。</li>
 </ul></li>
 <li><strong>示例</strong>：
 <ol type="1">
-<li>为用户WANG定义模式S-T： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">SCHEMA</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"S-T"</span><span style="color: #ABB2BF"> AUTHORIZATION WANG;</span></span></code></pre></div></div></figure></li>
-<li>隐含模式名（为WANG定义模式，模式名即为WANG）： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">SCHEMA</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">AUTHORIZATION</span><span style="color: #ABB2BF"> WANG;</span></span></code></pre></div></div></figure></li>
-<li>为用户ZHANG创建模式TEST，并在其中定义表TAB1，授权PUBLIC用户组对TAB1的查询权限：
-<figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">SCHEMA</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">TEST</span><span style="color: #ABB2BF"> AUTHORIZATION ZHANG</span></span>
+<li>为用户 WANG 定义模式 S-T： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">SCHEMA</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"S-T"</span><span style="color: #ABB2BF"> AUTHORIZATION WANG;</span></span></code></pre></div></div></figure></li>
+<li>隐含模式名（为 WANG 定义模式，模式名即为 WANG）： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">SCHEMA</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">AUTHORIZATION</span><span style="color: #ABB2BF"> WANG;</span></span></code></pre></div></div></figure></li>
+<li>为用户 ZHANG 创建模式 TEST，并在其中定义表 TAB1，授权 PUBLIC
+用户组对 TAB1 的查询权限： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">SCHEMA</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">TEST</span><span style="color: #ABB2BF"> AUTHORIZATION ZHANG</span></span>
 <span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">TABLE</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">TAB1</span><span style="color: #ABB2BF">(</span></span>
 <span class="line"><span style="color: #ABB2BF">    COL1 </span><span style="color: #C678DD">SMALLINT</span><span style="color: #ABB2BF">,</span></span>
 <span class="line"><span style="color: #ABB2BF">    COL2 </span><span style="color: #C678DD">INT</span><span style="color: #ABB2BF">,</span></span>
@@ -3514,50 +3516,48 @@ Language）即结构化查询语言，是关系数据库的标准语言。</li>
 </thead>
 <tbody>
 <tr>
-<td>PRIMARY KEY (PK)</td>
-<td>标识该字段为该表的主码，可以唯一的标识记录，不可以为空 UNIQUE + NOT
-NULL</td>
+<td><code>PRIMARY KEY (PK)</code></td>
+<td>标识该字段为该表的主码，可以唯一的标识记录，不可以为空，与
+<code>UNIQUE + NOT NULL</code> 等价</td>
 </tr>
 <tr>
-<td>FOREIGN KEY (FK)</td>
+<td><code>FOREIGN KEY (FK)</code></td>
 <td>标识该字段为该表的外码，实现表与表（父表主码/子表外码）之间的关联</td>
 </tr>
 <tr>
-<td>NOT NULL</td>
+<td><code>NOT NULL</code></td>
 <td>标识该字段不能为空</td>
 </tr>
 <tr>
-<td>UNIQUE KEY (UK)</td>
-<td>标识该字段的值是唯一的，可以为空，一个表中可以有多个UNIQUE KEY</td>
+<td><code>UNIQUE KEY (UK)</code></td>
+<td>标识该字段的值是唯一的，可以为空，一个表中可以有多个
+<code>UNIQUE KEY</code></td>
 </tr>
 <tr>
-<td>AUTO_INCREMENT</td>
+<td><code>AUTO_INCREMENT</code></td>
 <td>标识该字段的值自动增长（整数类型，而且为主键）</td>
 </tr>
 <tr>
-<td>DEFAULT</td>
+<td><code>DEFAULT</code></td>
 <td>为该字段设置默认值</td>
 </tr>
 <tr>
-<td>UNSIGNED</td>
-<td>无符号，正数</td>
-</tr>
-<tr>
-<td>ZEROFILL</td>
-<td>使用0填充</td>
+<td><code>ZEROFILL</code></td>
+<td>使用 0 填充</td>
 </tr>
 </tbody>
 </table></li>
 <li><p><strong>示例</strong>：</p>
 <ol type="1">
-<li>建立“学生”表Student（学号为主码，姓名取值唯一）： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">TABLE</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">Student</span><span style="color: #ABB2BF"> (</span></span>
+<li>建立“学生”表 Student（学号为主码，姓名取值唯一）：
+<figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">TABLE</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">Student</span><span style="color: #ABB2BF"> (</span></span>
 <span class="line"><span style="color: #ABB2BF">    Sno </span><span style="color: #C678DD">CHAR</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">9</span><span style="color: #ABB2BF">) </span><span style="color: #C678DD">PRIMARY KEY</span><span style="color: #ABB2BF">,  </span><span style="color: #7F848E; font-style: italic">-- 列级主码约束</span></span>
 <span class="line"><span style="color: #ABB2BF">    Sname </span><span style="color: #C678DD">CHAR</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">20</span><span style="color: #ABB2BF">) </span><span style="color: #C678DD">UNIQUE</span><span style="color: #ABB2BF">,    </span><span style="color: #7F848E; font-style: italic">-- 列级唯一性约束</span></span>
 <span class="line"><span style="color: #ABB2BF">    Ssex </span><span style="color: #C678DD">CHAR</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">2</span><span style="color: #ABB2BF">),</span></span>
 <span class="line"><span style="color: #ABB2BF">    Sage </span><span style="color: #C678DD">SMALLINT</span><span style="color: #ABB2BF">,</span></span>
 <span class="line"><span style="color: #ABB2BF">    Sdept </span><span style="color: #C678DD">CHAR</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">20</span><span style="color: #ABB2BF">)</span></span>
 <span class="line"><span style="color: #ABB2BF">);</span></span></code></pre></div></div></figure></li>
-<li>建立“课程”表Course（课程号为主码，课程名非空，先修课参照课程号）：
+<li>建立“课程”表 Course（课程号为主码，课程名非空，先修课参照课程号）：
 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">TABLE</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">Course</span><span style="color: #ABB2BF"> (</span></span>
 <span class="line"><span style="color: #ABB2BF">    Cno </span><span style="color: #C678DD">CHAR</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">4</span><span style="color: #ABB2BF">) </span><span style="color: #C678DD">PRIMARY KEY</span><span style="color: #ABB2BF">,   </span><span style="color: #7F848E; font-style: italic">-- 列级主码约束</span></span>
 <span class="line"><span style="color: #ABB2BF">    Cname </span><span style="color: #C678DD">CHAR</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">40</span><span style="color: #ABB2BF">) </span><span style="color: #C678DD">NOT NULL</span><span style="color: #ABB2BF">,   </span><span style="color: #7F848E; font-style: italic">-- 列级非空约束</span></span>
@@ -3565,8 +3565,8 @@ NULL</td>
 <span class="line"><span style="color: #ABB2BF">    Ccredit </span><span style="color: #C678DD">SMALLINT</span><span style="color: #ABB2BF">,</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">FOREIGN KEY</span><span style="color: #ABB2BF"> (Cpno) </span><span style="color: #C678DD">REFERENCES</span><span style="color: #ABB2BF"> Course(Cno)  </span><span style="color: #7F848E; font-style: italic">-- 表级参照约束</span></span>
 <span class="line"><span style="color: #ABB2BF">);</span></span></code></pre></div></div></figure></li>
-<li>建立“学生选课”表SC（学号+课程号为主码，分别参照Student和Course表）：
-<figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">TABLE</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">SC</span><span style="color: #ABB2BF"> (</span></span>
+<li>建立“学生选课”表 SC（学号+课程号为主码，分别参照 Student 和 Course
+表）： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">TABLE</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">SC</span><span style="color: #ABB2BF"> (</span></span>
 <span class="line"><span style="color: #ABB2BF">    Sno </span><span style="color: #C678DD">CHAR</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">9</span><span style="color: #ABB2BF">),</span></span>
 <span class="line"><span style="color: #ABB2BF">    Cno </span><span style="color: #C678DD">CHAR</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">4</span><span style="color: #ABB2BF">),</span></span>
 <span class="line"><span style="color: #ABB2BF">    Grade </span><span style="color: #C678DD">SMALLINT</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">CHECK</span><span style="color: #ABB2BF">(Grade </span><span style="color: #56B6C2">&gt;=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">AND</span><span style="color: #ABB2BF"> Grade </span><span style="color: #56B6C2">&lt;=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">100</span><span style="color: #ABB2BF">),  </span><span style="color: #7F848E; font-style: italic">-- 列级检查约束</span></span>
@@ -3578,7 +3578,8 @@ NULL</td>
 </ul>
 <h4 id="数据类型">数据类型</h4>
 <ul>
-<li>SQL中域的概念通过数据类型实现，定义表的属性时需指明数据类型及长度</li>
+<li>SQL
+中域的概念通过数据类型实现，定义表的属性时需指明数据类型及长度</li>
 <li>选择依据：
 <ul>
 <li>属性的取值范围</li>
@@ -3607,7 +3608,7 @@ NULL</td>
 </ol></li>
 <li>创建基本表（其他数据库对象也一样）时，若没有指定模式，系统根据搜索路径来确定该对象所属的模式。
 <ul>
-<li>RDBMS会使用模式列表中第一个存在的模式作为数据库对象的模式名。</li>
+<li>RDBMS 会使用模式列表中第一个存在的模式作为数据库对象的模式名。</li>
 <li>若搜索路径中的模式名都不存在，系统将给出错误。</li>
 <li>显示当前搜索路径：<code>SHOW search_path</code>（默认值：$user,
 PUBLIC）；</li>
@@ -3630,22 +3631,23 @@ PUBLIC）；</li>
 <li>说明：
 <ul>
 <li><code>&lt;表名&gt;</code>：要修改的基本表</li>
-<li><strong>ADD子句</strong>：增加新列、新的列完整性约束条件、新的表完整性约束条件；</li>
-<li><strong>DROP COLUMN子句</strong>：删除指定的列；
+<li><code>ADD</code>
+子句：增加新列、新的列完整性约束条件、新的表完整性约束条件；</li>
+<li><code>DROP COLUMN</code> 子句：删除指定的列；
 <ul>
-<li><strong>CASCADE（级联）</strong>：删除该列时，同时删除所有依赖该列的对象（如视图、索引等）；</li>
-<li><strong>RESTRICT（限制）</strong>：若存在依赖对象则拒绝删除该列。缺省情况是RESTRICT。</li>
+<li><code>CASCADE</code>（级联）：删除该列时，同时删除所有依赖该列的对象（如视图、索引等）；</li>
+<li><code>RESTRICT</code>（限制）：若存在依赖对象则拒绝删除该列。缺省情况是
+<code>RESTRICT</code>。</li>
 </ul></li>
-<li><strong>DROP
-CONSTRAINT子句</strong>：删除指定的完整性约束条件；</li>
-<li><strong>RENAME COLUMN子句</strong>：修改列名；</li>
-<li><strong>ALTER COLUMN子句</strong>：修改列的数据类型。</li>
+<li><code>DROP CONSTRAINT</code> 子句：删除指定的完整性约束条件；</li>
+<li><code>RENAME COLUMN</code> 子句：修改列名；</li>
+<li><code>ALTER COLUMN</code> 子句：修改列的数据类型。</li>
 </ul></li>
 <li><strong>示例</strong>：
 <ol type="1">
-<li>向Student表增加“入学时间”列（日期型）： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">ALTER</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">TABLE</span><span style="color: #ABB2BF"> Student </span><span style="color: #C678DD">ADD</span><span style="color: #ABB2BF"> S_entrance </span><span style="color: #C678DD">DATE</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
-<li>将Student表的年龄列（原字符型）改为整数型： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">ALTER</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">TABLE</span><span style="color: #ABB2BF"> Student </span><span style="color: #C678DD">ALTER</span><span style="color: #ABB2BF"> COLUMN Sage </span><span style="color: #C678DD">INT</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
-<li>为Course表增加课程名称唯一的约束： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">ALTER</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">TABLE</span><span style="color: #ABB2BF"> Course </span><span style="color: #C678DD">ADD</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">UNIQUE</span><span style="color: #ABB2BF">(Cname);</span></span></code></pre></div></div></figure></li>
+<li>向 Student 表增加“入学时间”列（日期型）： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">ALTER</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">TABLE</span><span style="color: #ABB2BF"> Student </span><span style="color: #C678DD">ADD</span><span style="color: #ABB2BF"> S_entrance </span><span style="color: #C678DD">DATE</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
+<li>将 Student 表的年龄列（原字符型）改为整数型： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">ALTER</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">TABLE</span><span style="color: #ABB2BF"> Student </span><span style="color: #C678DD">ALTER</span><span style="color: #ABB2BF"> COLUMN Sage </span><span style="color: #C678DD">INT</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
+<li>为 Course 表增加课程名称唯一的约束： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">ALTER</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">TABLE</span><span style="color: #ABB2BF"> Course </span><span style="color: #C678DD">ADD</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">UNIQUE</span><span style="color: #ABB2BF">(Cname);</span></span></code></pre></div></div></figure></li>
 </ol></li>
 </ul>
 <h4 id="删除基本表">删除基本表</h4>
@@ -3653,22 +3655,22 @@ CONSTRAINT子句</strong>：删除指定的完整性约束条件；</li>
 <li><strong>语句格式</strong>： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">DROP</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">TABLE</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">表名</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">[ RESTRICT | CASCADE ]</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
 <li>说明：
 <ul>
-<li><strong>RESTRICT（限制）</strong>：删除表是有限制的。
+<li><code>RESTRICT</code>（限制）：删除表是有限制的。
 <ul>
 <li>欲删除的表不能被其他表的约束引用</li>
 <li>若存在依赖对象则拒绝删除</li>
-<li><strong>缺省情况是RESTRICT</strong></li>
+<li><strong>缺省情况是</strong> <code>RESTRICT</code></li>
 </ul></li>
-<li><strong>CASCADE（级联）</strong>：删除该表没有限制。
+<li><code>CASCADE</code>（级联）：删除该表没有限制。
 <ul>
 <li>删除表的同时，删除所有依赖该表的对象（如索引、视图等）。</li>
 </ul></li>
 </ul></li>
 <li><strong>示例</strong>：
 <ol type="1">
-<li>级联删除Student表（含依赖的视图等）： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">DROP</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">TABLE</span><span style="color: #ABB2BF"> Student CASCADE;</span></span>
+<li>级联删除 Student 表（含依赖的视图等）： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">DROP</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">TABLE</span><span style="color: #ABB2BF"> Student CASCADE;</span></span>
 <span class="line"><span style="color: #7F848E; font-style: italic">-- 若存在视图IS_Student依赖Student，则一并删除该视图，返回信息：NOTICE: drop view IS_Student</span></span></code></pre></div></div></figure></li>
-<li>限制删除Student表（若存在依赖对象则报错）： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">DROP</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">TABLE</span><span style="color: #ABB2BF"> Student RESTRICT;</span></span>
+<li>限制删除 Student 表（若存在依赖对象则报错）： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">DROP</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">TABLE</span><span style="color: #ABB2BF"> Student RESTRICT;</span></span>
 <span class="line"><span style="color: #7F848E; font-style: italic">-- 若存在视图IS_Student依赖Student，则报错：ERROR: cannot drop table Student because other objects depend on it</span></span></code></pre></div></div></figure></li>
 </ol></li>
 </ul>
@@ -3676,16 +3678,17 @@ CONSTRAINT子句</strong>：删除指定的完整性约束条件；</li>
 <ul>
 <li>索引是加快查询速度的有效手段（属于内模式范畴）
 <ul>
-<li>顺序文件索引、B+树索引、hash索引、位图索引等。</li>
+<li>顺序文件索引、B+ 树索引、hash 索引、位图索引等。</li>
 </ul></li>
 <li>建立索引
 <ul>
-<li>DBA或表的属主可根据需要建立索引</li>
-<li>部分DBMS会自动为PRIMARY KEY、UNIQUE列建立索引</li>
+<li>DBA 或表的属主可根据需要建立索引</li>
+<li>部分 DBMS 会自动为 <code>PRIMARY KEY</code>、<code>UNIQUE</code>
+列建立索引</li>
 </ul></li>
 <li>使用索引
 <ul>
-<li>DBMS会自动选择是否使用索引</li>
+<li>DBMS 会自动选择是否使用索引</li>
 </ul></li>
 </ul>
 <h4 id="建立索引">建立索引</h4>
@@ -3696,13 +3699,15 @@ CONSTRAINT子句</strong>：删除指定的完整性约束条件；</li>
 <ul>
 <li><code>&lt;表名&gt;</code>指定要建索引的基本表名字</li>
 <li>索引可以建立在该表的一列或多列上，各列名之间用逗号分隔</li>
-<li><code>&lt;次序&gt;</code>指定索引值的排列次序：ASC（升序，缺省值）、DESC（降序）。</li>
-<li><strong>UNIQUE</strong>：索引值对应唯一数据记录；
+<li><code>&lt;次序&gt;</code>指定索引值的排列次序：<code>ASC</code>（升序，缺省值）、<code>DESC</code>（降序）。</li>
+<li><code>UNIQUE</code>：索引值对应唯一数据记录
 <ul>
-<li>对于已含重复值的属性列不能建UNIQUE索引</li>
-<li>对某个列建立UNIQUE索引后，插入新记录时DBMS会自动检查新记录在该列上是否取了重复值。这相当于增加了一个UNIQUE约束</li>
+<li>对于已含重复值的属性列不能建 <code>UNIQUE</code> 索引</li>
+<li>对某个列建立 <code>UNIQUE</code> 索引后，插入新记录时 DBMS
+会自动检查新记录在该列上是否取了重复值。这相当于增加了一个
+<code>UNIQUE</code> 约束</li>
 </ul></li>
-<li><strong>CLUSTER</strong>：建立<strong>聚簇索引</strong>
+<li><code>CLUSTER</code>：建立<strong>聚簇索引</strong>
 <ul>
 <li>基表中数据也需要按指定的聚簇属性值的升序或降序存放</li>
 <li>索引项顺序与表中记录<strong>物理顺序一致</strong></li>
@@ -3710,8 +3715,8 @@ CONSTRAINT子句</strong>：删除指定的完整性约束条件；</li>
 </ul></li>
 <li><strong>示例</strong>：
 <ol type="1">
-<li>在Student表的Sname列上建立聚簇索引： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> CLUSTER </span><span style="color: #C678DD">INDEX</span><span style="color: #ABB2BF"> Stusname </span><span style="color: #C678DD">ON</span><span style="color: #ABB2BF"> Student(Sname);</span></span></code></pre></div></div></figure></li>
-<li>为Student、Course、SC表建立唯一索引： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">UNIQUE INDEX</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">Stusno</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">ON</span><span style="color: #ABB2BF"> Student(Sno);  </span><span style="color: #7F848E; font-style: italic">-- 学号升序唯一索引</span></span>
+<li>在 Student 表的 Sname 列上建立聚簇索引： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> CLUSTER </span><span style="color: #C678DD">INDEX</span><span style="color: #ABB2BF"> Stusname </span><span style="color: #C678DD">ON</span><span style="color: #ABB2BF"> Student(Sname);</span></span></code></pre></div></div></figure></li>
+<li>为 Student、Course、SC 表建立唯一索引： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">UNIQUE INDEX</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">Stusno</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">ON</span><span style="color: #ABB2BF"> Student(Sno);  </span><span style="color: #7F848E; font-style: italic">-- 学号升序唯一索引</span></span>
 <span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">UNIQUE INDEX</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">Coucno</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">ON</span><span style="color: #ABB2BF"> Course(Cno);  </span><span style="color: #7F848E; font-style: italic">-- 课程号升序唯一索引</span></span>
 <span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">UNIQUE INDEX</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">SCno</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">ON</span><span style="color: #ABB2BF"> SC(Sno </span><span style="color: #C678DD">ASC</span><span style="color: #ABB2BF">, Cno </span><span style="color: #C678DD">DESC</span><span style="color: #ABB2BF">);  </span><span style="color: #7F848E; font-style: italic">-- 学号升序、课程号降序唯一索引</span></span></code></pre></div></div></figure></li>
 </ol></li>
@@ -3719,18 +3724,19 @@ CONSTRAINT子句</strong>：删除指定的完整性约束条件；</li>
 <h4 id="修改索引">修改索引</h4>
 <ul>
 <li><strong>语句格式</strong>： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">ALTER</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">INDEX</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">旧索引名</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> RENAME </span><span style="color: #C678DD">TO</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">新索引名</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
-<li><strong>示例</strong>：将SC表的SCno索引改名为SCSno：
+<li><strong>示例</strong>：将 SC 表的 SCno 索引改名为 SCSno：
 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">ALTER</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">INDEX</span><span style="color: #ABB2BF"> SCno RENAME </span><span style="color: #C678DD">TO</span><span style="color: #ABB2BF"> SCSno;</span></span></code></pre></div></div></figure></li>
 </ul>
 <h4 id="删除索引">删除索引</h4>
 <ul>
 <li><strong>语句格式</strong>： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">DROP</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">INDEX</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">索引名</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
 <li>说明：删除索引时，系统从数据字典中删去该索引的描述。</li>
-<li><strong>示例</strong>：删除Student表的Stusname索引：
+<li><strong>示例</strong>：删除 Student 表的 Stusname 索引：
 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">DROP</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">INDEX</span><span style="color: #ABB2BF"> Stusname;</span></span></code></pre></div></div></figure></li>
 </ul>
 <h2 id="数据查询">数据查询</h2>
-<p>数据查询是SQL的核心功能，可实现单表查询、连接查询、嵌套查询、集合查询等多种操作。</p>
+<p>数据查询是 SQL
+的核心功能，可实现单表查询、连接查询、嵌套查询、集合查询等多种操作。</p>
 <h3 id="基本语法">基本语法</h3>
 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">[ ALL | DISTINCT ]</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">目标列表达式</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">[, &lt;目标列表达式&gt; ]</span><span style="color: #ABB2BF">...</span></span>
 <span class="line"><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">表名或视图名</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">[, &lt;表名或视图名&gt;... ]</span><span style="color: #ABB2BF"> | ( </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">SELECT语句</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> ) </span><span style="color: #E06C75">[ AS ]</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">别名</span><span style="color: #56B6C2">&gt;</span></span>
@@ -3739,13 +3745,13 @@ CONSTRAINT子句</strong>：删除指定的完整性约束条件；</li>
 <span class="line"><span style="color: #E06C75">[ ORDER BY &lt;列名2&gt; [ ASC | DESC ]</span><span style="color: #ABB2BF"> ];</span></span>
 <span class="line"><span style="color: #E06C75">[ LIMIT &lt;行数&gt; [ OFFSET &lt;偏移量&gt; ]</span><span style="color: #ABB2BF"> ];</span></span></code></pre></div></div></figure>
 <ul>
-<li><strong>SELECT子句</strong>：指定查询结果的列；</li>
-<li><strong>FROM子句</strong>：指定查询的数据源；</li>
-<li><strong>WHERE子句</strong>：筛选满足条件的元组；</li>
-<li><strong>GROUP BY子句</strong>：按指定列分组；</li>
-<li><strong>HAVING子句</strong>：筛选满足条件的组；</li>
-<li><strong>ORDER BY子句</strong>：对查询结果排序。</li>
-<li><strong>LIMIT子句</strong>：限制查询结果的元组数。</li>
+<li><code>SELECT</code> 子句：指定查询结果的列；</li>
+<li><code>FROM</code> 子句：指定查询的数据源；</li>
+<li><code>WHERE</code> 子句：筛选满足条件的元组；</li>
+<li><code>GROUP BY</code> 子句：按指定列分组；</li>
+<li><code>HAVING</code> 子句：筛选满足条件的组；</li>
+<li><code>ORDER BY</code> 子句：对查询结果排序。</li>
+<li><code>LIMIT</code> 子句：限制查询结果的元组数。</li>
 </ul>
 <h3 id="单表查询">单表查询</h3>
 <h4 id="选择表中的若干列">选择表中的若干列</h4>
@@ -3760,7 +3766,7 @@ CONSTRAINT子句</strong>：删除指定的完整性约束条件；</li>
 </ul></li>
 <li><strong>查询全部列</strong>：
 <ul>
-<li>使用通配符<code>*</code>表示查询表中的所有列</li>
+<li>使用通配符 <code>*</code> 表示查询表中的所有列</li>
 <li><strong>语句格式</strong>： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> * </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">表名</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
 <li><strong>示例</strong>： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #7F848E; font-style: italic">-- 例3：查询全体学生的详细记录</span></span>
 <span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sno, Sname, Ssex, Sage, Sdept </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> Student;</span></span>
@@ -3792,16 +3798,16 @@ CONSTRAINT子句</strong>：删除指定的完整性约束条件；</li>
 </ol>
 <h4 id="选择表中的若干元组">选择表中的若干元组</h4>
 <ol type="1">
-<li><strong>消除重复行</strong>：使用<code>DISTINCT</code>短语
+<li><strong>消除重复行</strong>：使用 <code>DISTINCT</code> 短语
 <ul>
 <li><strong>语句格式</strong>： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">[ DISTINCT | ALL ]</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">列名1</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">[, &lt;列名2&gt; ...]</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">表名</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
 <li><strong>示例</strong>： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #7F848E; font-style: italic">-- 例6：查询选修了课程的学生学号（去重）</span></span>
 <span class="line"><span style="color: #C678DD">SELECT DISTINCT</span><span style="color: #ABB2BF"> Sno </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> SC;</span></span></code></pre></div></div></figure></li>
-<li><strong>说明</strong>：缺省值为<code>ALL</code>：保留重复行</li>
+<li><strong>说明</strong>：缺省值为 <code>ALL</code>：保留重复行</li>
 </ul></li>
 <li><strong>按条件筛选元组</strong>：
 <ul>
-<li><p><code>WHERE</code>子句支持多种查询条件，如下表所示：</p>
+<li><p><code>WHERE</code> 子句支持多种查询条件，如下表所示：</p>
 <table>
 <thead>
 <tr>
@@ -3812,28 +3818,28 @@ CONSTRAINT子句</strong>：删除指定的完整性约束条件；</li>
 <tbody>
 <tr>
 <td>比较</td>
-<td>=, &gt;, &lt;, &gt;=, &lt;=, !=, &lt;&gt;, !&gt;, !&lt;;
-NOT+上述运算符</td>
+<td><code>=, &gt;, &lt;, &gt;=, &lt;=, !=, &lt;&gt;, !&gt;, !&lt;</code>;
+<code>NOT</code>+上述运算符</td>
 </tr>
 <tr>
 <td>确定范围</td>
-<td>BETWEEN AND, NOT BETWEEN AND</td>
+<td><code>BETWEEN AND</code>, <code>NOT BETWEEN AND</code></td>
 </tr>
 <tr>
 <td>确定集合</td>
-<td>IN, NOT IN</td>
+<td><code>IN</code>, <code>NOT IN</code></td>
 </tr>
 <tr>
 <td>字符匹配</td>
-<td>LIKE, NOT LIKE</td>
+<td><code>LIKE</code>, <code>NOT LIKE</code></td>
 </tr>
 <tr>
 <td>空值</td>
-<td>IS NULL, IS NOT NULL</td>
+<td><code>IS NULL</code>, <code>IS NOT NULL</code></td>
 </tr>
 <tr>
 <td>多重条件</td>
-<td>AND, OR, NOT</td>
+<td><code>AND</code>, <code>OR</code>, <code>NOT</code></td>
 </tr>
 </tbody>
 </table></li>
@@ -3876,15 +3882,17 @@ NOT+上述运算符</td>
 <ul>
 <li>当匹配模板为固定字符串时，
 <ul>
-<li>用 = 运算符取代 LIKE 谓词</li>
-<li>用 != 或 &lt; &gt;运算符取代 NOT LIKE 谓词</li>
+<li>用 <code>=</code> 运算符取代 LIKE 谓词</li>
+<li>用 <code>!=</code> 或 <code>&lt;&gt;</code> 运算符取代 NOT LIKE
+谓词</li>
 </ul></li>
 <li>当匹配模板含通配符时，必须使用 LIKE 或 NOT LIKE 谓词
 <ul>
-<li><code>%</code> 代表任意长度（长度可以为0）的字符串</li>
+<li><code>%</code> 代表任意长度（长度可以为 0）的字符串</li>
 <li><code>_</code> 代表任意单个字符</li>
 </ul></li>
-<li>若匹配串中含有通配符字符本身，则需用换码字符（如）转义</li>
+<li>若匹配串中含有通配符字符本身，则需用换码字符（如
+<code>\</code>）转义</li>
 </ul></li>
 <li><strong>示例</strong>： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #7F848E; font-style: italic">-- 例13：查询姓刘的学生姓名、学号和性别</span></span>
 <span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sname, Sno, Ssex </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> Student </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sname </span><span style="color: #C678DD">LIKE</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'刘%'</span><span style="color: #ABB2BF">;</span></span>
@@ -3900,7 +3908,7 @@ NOT+上述运算符</td>
 <ul>
 <li><strong>语句格式</strong>： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">列名1</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">[, &lt;列名2&gt; ...]</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">表名</span><span style="color: #56B6C2">&gt;</span></span>
 <span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">列名</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">IS</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">[ NOT ]</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">NULL</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
-<li>说明：“IS NULL” 不能用 “= NULL” 代替</li>
+<li>说明：<code>IS NULL</code> 不能用 <code>= NULL</code> 代替</li>
 <li><strong>示例</strong>： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #7F848E; font-style: italic">-- 例16：查询缺少成绩的学生学号和课程号</span></span>
 <span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sno, Cno </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> SC </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Grade </span><span style="color: #C678DD">IS</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">NULL</span><span style="color: #ABB2BF">;</span></span>
 <span class="line"><span style="color: #7F848E; font-style: italic">-- 例17：查询有成绩的学生学号和课程号</span></span>
@@ -3908,7 +3916,7 @@ NOT+上述运算符</td>
 </ul></li>
 <li><strong>多重条件查询</strong>：
 <ul>
-<li>使用<code>AND</code>、<code>OR</code>连接多个条件</li>
+<li>使用 <code>AND</code>、<code>OR</code> 连接多个条件</li>
 <li><strong>语句格式</strong>： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">列名1</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">[, &lt;列名2&gt; ...]</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">表名</span><span style="color: #56B6C2">&gt;</span></span>
 <span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">条件1</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">[ AND | OR ]</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">条件2</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> ... ;</span></span></code></pre></div></div></figure></li>
 <li><strong>示例</strong>： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #7F848E; font-style: italic">-- 例18：查询计算机系年龄小于20岁的学生姓名</span></span>
@@ -3918,7 +3926,7 @@ NOT+上述运算符</td>
 </ol>
 <h4 id="对查询结果排序">对查询结果排序</h4>
 <ul>
-<li>使用<code>ORDER BY</code>子句
+<li>使用 <code>ORDER BY</code> 子句
 <ul>
 <li>可按一个或多个属性列排序</li>
 <li>升序：<code>ASC</code>（缺省值）</li>
@@ -3958,66 +3966,67 @@ NOT+上述运算符</td>
 <tbody>
 <tr>
 <td>计数</td>
-<td><code>COUNT([DISTINCT \| ALL] *)</code></td>
+<td><code>COUNT( [DISTINCT | ALL] *)</code></td>
 <td>统计元组个数</td>
 </tr>
 <tr>
 <td></td>
-<td><code>COUNT([DISTINCT \| ALL] &lt;列名&gt;)</code></td>
+<td><code>COUNT( [DISTINCT | ALL] &lt;列名&gt;)</code></td>
 <td>统计一列中非空值的个数</td>
 </tr>
 <tr>
 <td>求和</td>
-<td><code>SUM([DISTINCT \| ALL] &lt;列名&gt;)</code></td>
+<td><code>SUM( [DISTINCT | ALL] &lt;列名&gt;)</code></td>
 <td>计算一列值的总和（数值型）</td>
 </tr>
 <tr>
 <td>求平均</td>
-<td><code>AVG([DISTINCT \| ALL] &lt;列名&gt;)</code></td>
+<td><code>AVG( [DISTINCT | ALL] &lt;列名&gt;)</code></td>
 <td>计算一列值的平均值（数值型）</td>
 </tr>
 <tr>
 <td>求最大值</td>
-<td><code>MAX([DISTINCT \| ALL] &lt;列名&gt;)</code></td>
+<td><code>MAX( [DISTINCT | ALL] &lt;列名&gt;)</code></td>
 <td>求一列值中的最大值</td>
 </tr>
 <tr>
 <td>求最小值</td>
-<td><code>MIN([DISTINCT \| ALL] &lt;列名&gt;)</code></td>
+<td><code>MIN( [DISTINCT | ALL] &lt;列名&gt;)</code></td>
 <td>求一列值中的最小值</td>
 </tr>
 </tbody>
 </table></li>
-<li><p><strong>语句格式</strong>： </p><figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">聚集函数</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> (</span><span style="color: #E06C75">[DISTINCT | ALL]</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">列名</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> | *) </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">表名</span><span style="color: #56B6C2">&gt;</span></span></code></pre></div></div></figure><p></p></li>
+<li><p><strong>语句格式</strong>： </p><figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">聚集函数</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF">( </span><span style="color: #E06C75">[DISTINCT | ALL]</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">列名</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> | *) </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">表名</span><span style="color: #56B6C2">&gt;</span></span></code></pre></div></div></figure><p></p></li>
 <li><p><strong>说明</strong>：</p>
 <ul>
-<li>除<code>COUNT(*)</code>外，其他聚集函数均忽略空值</li>
+<li>除 <code>COUNT(*)</code> 外，其他聚集函数均忽略空值</li>
 <li><code>SUM</code>、<code>AVG</code>函数只能用于数值型列</li>
 <li><code>MAX</code>、<code>MIN</code>函数可用于数值型、字符型和日期型列，只能求一列中的最大值或最小值</li>
-<li>聚集函数只能使用于
-<code>SELECT</code>子句和<code>HAVING</code>子句中</li>
+<li>聚集函数只能使用于 <code>SELECT</code> 子句和 <code>HAVING</code>
+子句中</li>
 </ul></li>
 <li><p><strong>示例</strong>：</p>
 <ol type="1">
 <li>查询学生总人数： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">COUNT</span><span style="color: #ABB2BF">(*) </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> Student;</span></span></code></pre></div></div></figure></li>
 <li>查询选修了课程的学生人数（去重）： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">COUNT</span><span style="color: #ABB2BF">(</span><span style="color: #C678DD">DISTINCT</span><span style="color: #ABB2BF"> Sno) </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> SC;</span></span></code></pre></div></div></figure></li>
 <li>计算1号课程的平均成绩： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">AVG</span><span style="color: #ABB2BF">(Grade) </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> SC </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Cno </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'1'</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
-<li>查询学生201215012选修课程的总学分数： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">SUM</span><span style="color: #ABB2BF">(Ccredit) </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> SC, Course</span></span>
+<li>查询学生 201215012 选修课程的总学分数： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">SUM</span><span style="color: #ABB2BF">(Ccredit) </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> SC, Course</span></span>
 <span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sno </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'201215012'</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">AND</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">SC</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Cno</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">Course</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Cno</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
 </ol></li>
 </ul>
 <h4 id="对查询结果分组">对查询结果分组</h4>
 <ul>
-<li>使用<code>GROUP BY</code>子句按指定列分组，按某一列或多列的值分组，值相等的为一组。</li>
+<li>使用 <code>GROUP BY</code>
+子句按指定列分组，按某一列或多列的值分组，值相等的为一组。</li>
 <li><strong>细化聚集函数的作用对象</strong>：
 <ul>
 <li>未对查询结果分组，聚集函数将作用于<strong>整个查询结果</strong></li>
 <li>对查询结果分组后，聚集函数将分别作用于<strong>每个组</strong></li>
 </ul></li>
-<li><code>HAVING</code>子句用于筛选满足条件的组
+<li><code>HAVING</code> 子句用于筛选满足条件的组
 <ul>
-<li><code>WHERE</code>字句作用于基本表或视图，选择满足条件的元组</li>
-<li><code>HAVING</code>短语作用于组，从分好的组中选择满足条件的组</li>
+<li><code>WHERE</code> 字句作用于基本表或视图，选择满足条件的元组</li>
+<li><code>HAVING</code> 短语作用于组，从分好的组中选择满足条件的组</li>
 </ul></li>
 <li><strong>语句格式</strong>： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">列名1</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">[, &lt;列名2&gt; ...]</span><span style="color: #ABB2BF"> | </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">聚集函数</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">[DISTINCT | ALL]</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">列名</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> | *)</span></span>
 <span class="line"><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">表名</span><span style="color: #56B6C2">&gt;</span></span>
@@ -4027,16 +4036,16 @@ NOT+上述运算符</td>
 <li><strong>示例</strong>：
 <ol type="1">
 <li>求各个课程号及相应的选课人数： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Cno, </span><span style="color: #56B6C2">COUNT</span><span style="color: #ABB2BF">(Sno) </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> SC </span><span style="color: #C678DD">GROUP BY</span><span style="color: #ABB2BF"> Cno;</span></span></code></pre></div></div></figure></li>
-<li>查询选修了3门以上课程的学生学号： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sno </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> SC </span><span style="color: #C678DD">GROUP BY</span><span style="color: #ABB2BF"> Sno </span><span style="color: #C678DD">HAVING</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">COUNT</span><span style="color: #ABB2BF">(*) </span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">3</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
-<li>查询平均成绩大于等于90分的学生学号和平均成绩： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sno, </span><span style="color: #56B6C2">AVG</span><span style="color: #ABB2BF">(Grade)</span></span>
+<li>查询选修了 3 门以上课程的学生学号： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sno </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> SC </span><span style="color: #C678DD">GROUP BY</span><span style="color: #ABB2BF"> Sno </span><span style="color: #C678DD">HAVING</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">COUNT</span><span style="color: #ABB2BF">(*) </span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">3</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
+<li>查询平均成绩大于等于 90 分的学生学号和平均成绩： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sno, </span><span style="color: #56B6C2">AVG</span><span style="color: #ABB2BF">(Grade)</span></span>
 <span class="line"><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> SC</span></span>
 <span class="line"><span style="color: #C678DD">GROUP BY</span><span style="color: #ABB2BF"> Sno</span></span>
 <span class="line"><span style="color: #C678DD">HAVING</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">AVG</span><span style="color: #ABB2BF">(Grade) </span><span style="color: #56B6C2">&gt;=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">90</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
 </ol></li>
 </ul>
-<h4 id="limit子句">LIMIT子句</h4>
+<h4 id="限制查询结果的元组数">限制查询结果的元组数</h4>
 <ul>
-<li><code>LIMIT</code>子句用于限制查询结果的元组数量</li>
+<li><code>LIMIT</code> 子句用于限制查询结果的元组数量</li>
 <li><strong>语句格式</strong>： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">列名1</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">[, &lt;列名2&gt; ...]</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">表名</span><span style="color: #56B6C2">&gt;</span></span>
 <span class="line"><span style="color: #C678DD">LIMIT</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">行数1</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">[ OFFSET &lt;行数2&gt; ]</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
 <li>说明：
@@ -4045,17 +4054,18 @@ NOT+上述运算符</td>
 <code>&lt;行数1&gt;</code>；</li>
 <li><code>OFFSET &lt;行数2&gt;</code>：忽略查询结果的前
 <code>&lt;行数2&gt;</code> 行，从第 <code>&lt;行数2&gt; + 1</code>
-行开始返回结果，缺省值为0。</li>
-<li><code>LIMIT</code>子句经常和<code>ORDER BY</code>子句一起使用</li>
+行开始返回结果，缺省值为 0。</li>
+<li><code>LIMIT</code> 子句经常和 <code>ORDER BY</code>
+子句一起使用</li>
 </ul></li>
 <li><strong>示例</strong>：
 <ol type="1">
-<li>查询选修“数据库”课程成绩排名前10的学生学号： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sno</span></span>
+<li>查询选修“数据库”课程成绩排名前 10 的学生学号： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sno</span></span>
 <span class="line"><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> SC, Course</span></span>
 <span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">Course</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Cname</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'数据库'</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">AND</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">SC</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Cno</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">Course</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Cno</span><span style="color: #ABB2BF"> </span></span>
 <span class="line"><span style="color: #C678DD">ORDER BY</span><span style="color: #ABB2BF"> Grade </span><span style="color: #C678DD">DESC</span></span>
 <span class="line"><span style="color: #C678DD">LIMIT</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">10</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
-<li>查询平均成绩排名3-7名的学生学号和平均成绩： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sno, </span><span style="color: #56B6C2">AVG</span><span style="color: #ABB2BF">(Grade)</span></span>
+<li>查询平均成绩排名 3-7 名的学生学号和平均成绩： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sno, </span><span style="color: #56B6C2">AVG</span><span style="color: #ABB2BF">(Grade)</span></span>
 <span class="line"><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> SC</span></span>
 <span class="line"><span style="color: #C678DD">GROUP BY</span><span style="color: #ABB2BF"> Sno</span></span>
 <span class="line"><span style="color: #C678DD">ORDER BY</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">AVG</span><span style="color: #ABB2BF">(Grade) </span><span style="color: #C678DD">DESC</span></span>
@@ -4070,36 +4080,52 @@ NOT+上述运算符</td>
 <li>连接谓词中的列名称为连接字段；</li>
 <li>连接条件中的各连接字段类型必须是可比的，但<strong>不必相同</strong></li>
 </ul></li>
-<li>SQL中连接查询主要包括等值连接、非等值连接、自身连接、外连接、复合条件连接等。</li>
-<li><strong>语句格式</strong>： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">目标列表达式</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">[, &lt;目标列表达式&gt; ...]</span></span>
+<li>SQL
+中连接查询主要包括等值连接、非等值连接、自身连接、外连接、复合条件连接等。</li>
+<li><strong>语句格式</strong>： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #7F848E; font-style: italic">-- 使用隐式连接语法：</span></span>
+<span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">目标列表达式</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">[, &lt;目标列表达式&gt; ...]</span></span>
 <span class="line"><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">表名1</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">[, &lt;表名2&gt; ...]</span></span>
-<span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">连接条件</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">[ AND | OR &lt;其他条件&gt; ... ]</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
+<span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">连接条件</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">[ AND | OR &lt;其他条件&gt; ... ]</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">-- 或使用显式连接语法：</span></span>
+<span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">目标列表达式</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">[, &lt;目标列表达式&gt; ...]</span></span>
+<span class="line"><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">表名1</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">[ INNER | LEFT | RIGHT | FULL ]</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">JOIN</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">表名2</span><span style="color: #56B6C2">&gt;</span></span>
+<span class="line"><span style="color: #C678DD">ON</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">连接条件</span><span style="color: #56B6C2">&gt;</span></span></code></pre></div></div></figure></li>
 </ul>
-<h4 id="等值与非等值连接查询">等值与非等值连接查询</h4>
+<h4 id="等值与非等值连接">等值与非等值连接</h4>
 <ul>
-<li><strong>等值连接</strong>：连接运算符为<code>=</code>，查询结果会保留重复的连接字段；</li>
-<li><strong>非等值连接</strong>：使用除<code>=</code>外的比较运算符（如&gt;、&lt;、BETWEEN等）。</li>
+<li><strong>等值连接</strong>：连接运算符为
+<code>=</code>，查询结果会保留重复的连接字段；</li>
+<li><strong>非等值连接</strong>：使用除 <code>=</code>
+外的比较运算符（如
+<code>&gt;</code>、<code>&lt;</code>、<code>BETWEEN</code> 等）。</li>
 <li><strong>示例</strong>：查询每个学生及其选修课程的情况（等值连接）：
 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Student.*, SC.* </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> Student, SC </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">Student</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Sno</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">SC</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Sno</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
 <li><strong>执行过程</strong>
 <ul>
-<li>嵌套循环连接算法(NESTED-LOOP)
+<li>嵌套循环连接算法（NESTED-LOOP）
 <ul>
-<li>首先在表1中找到第一个元组，然后从头开始扫描表2，逐一查找满足连接条件的元组，找到后就将表1中的第一个元组与该元组拼接起来，形成结果表中一个元组。</li>
-<li>表2全部查找完后，再找表1中第二个元组，然后再从头开始扫描表2，逐一查找满足连接条件的元组，找到后就将表1中的第二个元组与该元组拼接起来，形成结果表中一个元组。</li>
-<li>重复上述操作，直到表1中的全部元组都处理完毕。</li>
+<li>首先在表 1 中找到第一个元组，然后从头开始扫描表
+2，逐一查找满足连接条件的元组，找到后就将表 1
+中的第一个元组与该元组拼接起来，形成结果表中一个元组。</li>
+<li>表 2 全部查找完后，再找表 1 中第二个元组，然后再从头开始扫描表
+2，逐一查找满足连接条件的元组，找到后就将表 1
+中的第二个元组与该元组拼接起来，形成结果表中一个元组。</li>
+<li>重复上述操作，直到表 1 中的全部元组都处理完毕。</li>
 </ul></li>
-<li>索引连接(INDEX-JOIN)
+<li>索引连接（INDEX-JOIN）
 <ul>
-<li>对表2按连接字段Sno建立索引。</li>
-<li>对表1中的每个元组，依次根据其连接字段值查询表2的索引，从中找到满足条件的元组，找到后就将表1中的第一个元组与该元组拼接起来，形成结果表中一个元组。</li>
+<li>对表 2 按连接字段 Sno 建立索引。</li>
+<li>对表 1 中的每个元组，依次根据其连接字段值查询表 2
+的索引，从中找到满足条件的元组，找到后就将表 1
+中的第一个元组与该元组拼接起来，形成结果表中一个元组。</li>
 </ul></li>
 </ul></li>
 </ul>
 <h4 id="自然连接">自然连接</h4>
 <ul>
 <li>等值连接的特殊情况，<strong>把目标列中重复的属性列去掉</strong>。</li>
-<li>SQL中，自然连接也需要指定连接条件</li>
+<li>SQL 中，自然连接也需要指定连接条件</li>
 <li><strong>示例</strong>：用自然连接查询学生及其选修课程的情况：
 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">Student</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Sno</span><span style="color: #ABB2BF">, Sname, Ssex, Sage, Sdept, Cno, Grade </span></span>
 <span class="line"><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> Student, SC </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">Student</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Sno</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">SC</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Sno</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
@@ -4131,7 +4157,8 @@ JOIN）</strong>：保留右边表的所有元组。</li>
 </ul>
 <h4 id="复合条件连接">复合条件连接</h4>
 <ul>
-<li><code>WHERE</code>子句中包含多个条件（连接条件+其他限定条件）时，称为复合条件连接。</li>
+<li><code>WHERE</code>
+子句中包含多个条件（连接条件+其他限定条件）时，称为复合条件连接。</li>
 <li><strong>示例</strong>：查询选修2号课程且成绩90分以上的学生学号和姓名：
 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">Student</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Sno</span><span style="color: #ABB2BF">, Sname</span></span>
 <span class="line"><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> Student, SC</span></span>
@@ -4153,12 +4180,13 @@ JOIN）</strong>：保留右边表的所有元组。</li>
 <ul>
 <li>嵌套查询概述
 <ul>
-<li>一个<code>SELECT-FROM-WHERE</code>语句称为一个查询块</li>
-<li>将一个查询块（子查询）嵌套在另一个查询块的<code>WHERE</code>子句或<code>HAVING</code>短语中，称为嵌套查询。</li>
+<li>一个 <code>SELECT-FROM-WHERE</code> 语句称为一个查询块</li>
+<li>将一个查询块（子查询）嵌套在另一个查询块的 <code>WHERE</code> 子句或
+<code>HAVING</code> 短语中，称为嵌套查询。</li>
 <li>外层查询称为父查询，内层查询称为子查询。</li>
-<li>子查询不能包含<code>ORDER BY</code>子句，且可多层嵌套
+<li>子查询不能包含 <code>ORDER BY</code> 子句，且可多层嵌套
 <ul>
-<li><code>ORDER BY</code>子句只能对最终查询结果排序</li>
+<li><code>ORDER BY</code> 子句只能对最终查询结果排序</li>
 </ul></li>
 </ul></li>
 <li>嵌套查询分类
@@ -4171,16 +4199,18 @@ JOIN）</strong>：保留右边表的所有元组。</li>
 <ul>
 <li>处理过程：
 <ul>
-<li>首先取外层查询中表的第一个元组，根据它与内层查询相关的属性值处理内层查询，若WHERE子句返回值为真，则取此元组放入结果表；</li>
+<li>首先取外层查询中表的第一个元组，根据它与内层查询相关的属性值处理内层查询，若
+<code>WHERE</code> 子句返回值为真，则取此元组放入结果表；</li>
 <li>然后再取外层表的下一个元组；</li>
 <li>重复这一过程，直至外层表全部检查完为止。</li>
 </ul></li>
 </ul></li>
 </ul></li>
 </ul>
-<h4 id="带有in谓词的子查询">带有IN谓词的子查询</h4>
+<h4 id="带有-in-谓词的子查询">带有 IN 谓词的子查询</h4>
 <ul>
-<li>子查询返回多个值，父查询通过<code>IN</code>判断是否在子查询结果集中。</li>
+<li>子查询返回多个值，父查询通过 <code>IN</code>
+判断是否在子查询结果集中。</li>
 <li><strong>语句格式</strong>： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">列名1</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">[, &lt;列名2&gt; ...]</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">表名</span><span style="color: #56B6C2">&gt;</span></span>
 <span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">列名</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">[ NOT ]</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">IN</span><span style="color: #ABB2BF"> ( </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">子查询</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> );</span></span></code></pre></div></div></figure></li>
 <li><strong>示例</strong>：查询与“刘晨”在同一个系学习的学生：
@@ -4198,17 +4228,18 @@ JOIN）</strong>：保留右边表的所有元组。</li>
 </ul>
 <h4 id="带有比较运算符的子查询">带有比较运算符的子查询</h4>
 <ul>
-<li>能确切知道内层查询<strong>返回单值</strong>时，可使用比较运算符（&gt;、&lt;、=等）。
+<li>能确切知道内层查询<strong>返回单值</strong>时，可使用比较运算符（<code>&gt;</code>、<code>&lt;</code>、<code>=</code>
+等）。
 <ul>
-<li>与<code>ANY</code>或<code>ALL</code>谓词配合使用</li>
+<li>与 <code>ANY</code> 或 <code>ALL</code> 谓词配合使用</li>
 </ul></li>
 <li><strong>语句格式</strong>： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">列名1</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">[, &lt;列名2&gt; ...]</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">表名</span><span style="color: #56B6C2">&gt;</span></span>
 <span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">列名</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">比较运算符</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> ( </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">子查询</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> );</span></span></code></pre></div></div></figure></li>
 <li>注意事项：子查询一定要跟在比较符之后</li>
 <li><strong>示例</strong>：
 <ul>
-<li>查询与“刘晨”在同一个系学习的学生（子查询返回单值，用=代替IN）：
-<figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sno, Sname, Sdept </span></span>
+<li>查询与“刘晨”在同一个系学习的学生（子查询返回单值，用 <code>=</code>
+代替 <code>IN</code>）： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sno, Sname, Sdept </span></span>
 <span class="line"><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> Student </span></span>
 <span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sdept </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> (</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sdept </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> Student </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sname </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'刘晨'</span></span>
@@ -4225,12 +4256,12 @@ JOIN）</strong>：保留右边表的所有元组。</li>
 <ul>
 <li>可能的执行过程：
 <ol type="1">
-<li>从外层查询中取出SC的一个元组x，将元组x的Sno值（201215121）传送给内层查询。
-<figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">AVG</span><span style="color: #ABB2BF">(Grade)</span></span>
+<li>从外层查询中取出 SC 的一个元组 x，将元组 x 的 Sno
+值（201215121）传送给内层查询。 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">AVG</span><span style="color: #ABB2BF">(Grade)</span></span>
 <span class="line"><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> SC y</span></span>
 <span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">y</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Sno</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'201215121'</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
-<li>执行内层查询，得到值88（近似值），用该值代替内层查询，得到外层查询：
-<figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sno，Cno</span></span>
+<li>执行内层查询，得到值
+88（近似值），用该值代替内层查询，得到外层查询： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sno，Cno</span></span>
 <span class="line"><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> SC x</span></span>
 <span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Grade </span><span style="color: #56B6C2">&gt;=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">88</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
 <li>执行这个查询，得到： <figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">（201215121，1）</span></span></code></pre></div></div></figure></li>
@@ -4241,10 +4272,10 @@ JOIN）</strong>：保留右边表的所有元组。</li>
 </ol></li>
 </ul></li>
 </ul>
-<h4 id="带有any或all谓词的子查询">带有ANY或ALL谓词的子查询</h4>
+<h4 id="带有-any-或-all-谓词的子查询">带有 ANY 或 ALL 谓词的子查询</h4>
 <ul>
-<li><strong>ANY</strong>：表示“任意一个”，等价于“大于/小于子查询结果中的某个值”；</li>
-<li><strong>ALL</strong>：表示“所有”，等价于“大于/小于子查询结果中的所有值”。</li>
+<li><code>ANY</code>：表示“任意一个”，等价于“大于/小于子查询结果中的某个值”；</li>
+<li><code>ALL</code>：表示“所有”，等价于“大于/小于子查询结果中的所有值”。</li>
 </ul>
 <table>
 <thead>
@@ -4255,43 +4286,43 @@ JOIN）</strong>：保留右边表的所有元组。</li>
 </thead>
 <tbody>
 <tr>
-<td><code>&gt;ANY</code></td>
+<td><code>&gt; ANY</code></td>
 <td>大于子查询结果中的某个值</td>
 </tr>
 <tr>
-<td><code>&gt;ALL</code></td>
+<td><code>&gt; ALL</code></td>
 <td>大于子查询结果中的所有值</td>
 </tr>
 <tr>
-<td><code>&lt;ANY</code></td>
+<td><code>&lt; ANY</code></td>
 <td>小于子查询结果中的某个值</td>
 </tr>
 <tr>
-<td><code>&lt;ALL</code></td>
+<td><code>&lt; ALL</code></td>
 <td>小于子查询结果中的所有值</td>
 </tr>
 <tr>
-<td><code>&gt;=ANY</code></td>
+<td><code>&gt;= ANY</code></td>
 <td>大于等于子查询结果中的某个值</td>
 </tr>
 <tr>
-<td><code>&gt;=ALL</code></td>
+<td><code>&gt;= ALL</code></td>
 <td>大于等于子查询结果中的所有值</td>
 </tr>
 <tr>
-<td><code>&lt;=ANY</code></td>
+<td><code>&lt;= ANY</code></td>
 <td>小于等于子查询结果中的某个值</td>
 </tr>
 <tr>
-<td><code>&lt;=ALL</code></td>
+<td><code>&lt;= ALL</code></td>
 <td>小于等于子查询结果中的所有值</td>
 </tr>
 <tr>
-<td><code>=ANY</code></td>
+<td><code>= ANY</code></td>
 <td>等于子查询结果中的某个值</td>
 </tr>
 <tr>
-<td><code>=ALL</code></td>
+<td><code>= ALL</code></td>
 <td>等于子查询结果中的所有值（无意义）</td>
 </tr>
 <tr>
@@ -4305,32 +4336,38 @@ JOIN）</strong>：保留右边表的所有元组。</li>
 </tbody>
 </table>
 <ul>
-<li><p><strong>示例</strong>：</p>
+<li><strong>示例</strong>：
 <ol type="1">
 <li>查询其他系中比计算机系某一个学生年龄小的学生姓名和年龄：
-<figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sname, Sage</span></span>
+<figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sname, Sage</span></span>
 <span class="line"><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> Student</span></span>
-<span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sage </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF"> ANY (</span><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sage</span></span>
-<span class="line"><span style="color: #ABB2BF">                  </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> Student</span></span>
-<span class="line"><span style="color: #ABB2BF">                  </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sdept </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'CS'</span><span style="color: #ABB2BF">)</span></span>
-<span class="line"><span style="color: #C678DD">AND</span><span style="color: #ABB2BF"> Sdept </span><span style="color: #56B6C2">&lt;&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'CS'</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
+<span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sage </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF"> ANY (</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sage</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> Student</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sdept </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'CS'</span></span>
+<span class="line"><span style="color: #ABB2BF">) </span><span style="color: #C678DD">AND</span><span style="color: #ABB2BF"> Sdept </span><span style="color: #56B6C2">&lt;&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'CS'</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
 <li>查询其他系中比计算机系所有学生年龄都小的学生姓名和年龄：
-<figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sname, Sage</span></span>
+<figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sname, Sage</span></span>
 <span class="line"><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> Student</span></span>
-<span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sage </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF"> ALL (</span><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sage</span></span>
-<span class="line"><span style="color: #ABB2BF">                  </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> Student</span></span>
-<span class="line"><span style="color: #ABB2BF">                  </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sdept </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'CS'</span><span style="color: #ABB2BF">)</span></span>
-<span class="line"><span style="color: #C678DD">AND</span><span style="color: #ABB2BF"> Sdept </span><span style="color: #56B6C2">&lt;&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'CS'</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sage </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF"> ALL (</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sage</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> Student</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sdept </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'CS'</span></span>
+<span class="line"><span style="color: #ABB2BF">) </span><span style="color: #C678DD">AND</span><span style="color: #ABB2BF"> Sdept </span><span style="color: #56B6C2">&lt;&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'CS'</span><span style="color: #ABB2BF">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #7F848E; font-style: italic">-- 用聚集函数完成本查询要求</span></span>
 <span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sname，Sage</span></span>
 <span class="line"><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> Student</span></span>
-<span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sage </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF"> (</span><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">MIN</span><span style="color: #ABB2BF">(Sage)</span></span>
-<span class="line"><span style="color: #ABB2BF">              </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> Student</span></span>
-<span class="line"><span style="color: #ABB2BF">              </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sdept</span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'CS'</span><span style="color: #ABB2BF">)</span></span>
-<span class="line"><span style="color: #C678DD">AND</span><span style="color: #ABB2BF"> Sdept </span><span style="color: #56B6C2">&lt;&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'CS'</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
+<span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sage </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF"> (</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">MIN</span><span style="color: #ABB2BF">(Sage)</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> Student</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sdept</span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'CS'</span></span>
+<span class="line"><span style="color: #ABB2BF">) </span><span style="color: #C678DD">AND</span><span style="color: #ABB2BF"> Sdept </span><span style="color: #56B6C2">&lt;&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'CS'</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
 </ol></li>
-<li><p>ANY和ALL谓词有时可以用聚集函数实现</p>
+<li><code>ANY</code> 和 <code>ALL</code> 谓词有时可以用聚集函数实现
+<ul>
+<li><p><code>ANY</code> 与 <code>ALL</code>
+与聚集函数（<code>MIN</code>、<code>MAX</code>）的对应关系：</p>
 <table>
 <thead>
 <tr>
@@ -4348,38 +4385,41 @@ JOIN）</strong>：保留右边表的所有元组。</li>
 <td><code>ANY</code></td>
 <td><code>IN</code></td>
 <td></td>
-<td><code>&lt;MAX</code></td>
-<td><code>&lt;=MAX</code></td>
-<td><code>&gt;MIN</code></td>
-<td><code>&gt;=MIN</code></td>
+<td><code>&lt; MAX</code></td>
+<td><code>&lt;= MAX</code></td>
+<td><code>&gt; MIN</code></td>
+<td><code>&gt;= MIN</code></td>
 </tr>
 <tr>
 <td><code>ALL</code></td>
 <td></td>
 <td><code>NOT IN</code></td>
-<td><code>&lt;MIN</code></td>
-<td><code>&lt;=MIN</code></td>
-<td><code>&gt;MAX</code></td>
-<td><code>&gt;=MAX</code></td>
+<td><code>&lt; MIN</code></td>
+<td><code>&lt;= MIN</code></td>
+<td><code>&gt; MAX</code></td>
+<td><code>&gt;= MAX</code></td>
 </tr>
 </tbody>
 </table></li>
+</ul></li>
 </ul>
-<h4 id="带有exists谓词的子查询">带有EXISTS谓词的子查询</h4>
-<h5 id="existsnot-exists存在量词"><code>EXISTS</code>/<code>NOT EXISTS</code>——<strong>存在量词</strong></h5>
+<h4 id="带有-exists-谓词的子查询">带有 EXISTS 谓词的子查询</h4>
+<h5 id="existsnot-exists-存在量词">EXISTS/NOT EXISTS —— 存在量词</h5>
 <ul>
-<li><code>EXISTS</code>谓词:
+<li><code>EXISTS</code> 谓词:
 <ul>
 <li>存在量词 <span class="math inline">\(\exists\)</span>，判断子查询结果是否非空：</li>
-<li>带有<code>EXISTS</code>谓词的子查询不返回任何数据，只产生逻辑真值<code>TRUE</code>或逻辑假值<code>FALSE</code>。
+<li>带有 <code>EXISTS</code> 谓词的子查询不返回任何数据，只产生逻辑真值
+<code>TRUE</code> 或逻辑假值 <code>FALSE</code>。
 <ul>
-<li>若子查询返回元组，则为<code>TRUE</code>；</li>
-<li>若子查询不返回元组，则为<code>FALSE</code>。</li>
+<li>若子查询返回元组，则为 <code>TRUE</code>；</li>
+<li>若子查询不返回元组，则为 <code>FALSE</code>。</li>
 </ul></li>
-<li>由<code>EXISTS</code>引出的子查询，其目标列表达式通常都用<code>*</code>
-，因为带EXISTS的子查询只返回真值或假值，给出列名无实际意义。</li>
+<li>由 <code>EXISTS</code> 引出的子查询，其目标列表达式通常都用
+<code>*</code> ，因为带 <code>EXISTS</code>
+的子查询只返回真值或假值，给出列名无实际意义。</li>
 </ul></li>
-<li><code>NOT EXISTS</code>则相反。</li>
+<li><code>NOT EXISTS</code> 则相反。</li>
 <li><strong>示例</strong>：
 <ol type="1">
 <li>查询所有选修了1号课程的学生姓名： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sname</span></span>
@@ -4394,30 +4434,45 @@ JOIN）</strong>：保留右边表的所有元组。</li>
 <span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sname</span></span>
 <span class="line"><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> Student, SC</span></span>
 <span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">Student</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Sno</span><span style="color: #56B6C2">=</span><span style="color: #D19A66">SC</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Sno</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">AND</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">SC</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Cno</span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'1'</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
-<li>查询没有选修1号课程的学生姓名： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sname </span></span>
+<li>查询没有选修1号课程的学生姓名： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sname </span></span>
 <span class="line"><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> Student </span></span>
 <span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">NOT</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">EXISTS</span><span style="color: #ABB2BF"> (</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> *</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> SC</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sno </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">Student</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Sno</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">AND</span><span style="color: #ABB2BF"> Cno </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'1'</span></span>
+<span class="line"><span style="color: #ABB2BF">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">-- 用谓词实现本查询要求</span></span>
+<span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sname</span></span>
+<span class="line"><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> Student</span></span>
+<span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sno </span><span style="color: #C678DD">NOT</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">IN</span><span style="color: #ABB2BF"> (</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sno</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> SC</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Cno </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'1'</span></span>
 <span class="line"><span style="color: #ABB2BF">);</span></span></code></pre></div></div></figure></li>
 </ol></li>
 <li>不同形式的查询间的替换
 <ul>
-<li>一些带<code>EXISTS</code>或<code>NOT EXISTS</code>谓词的子查询不能被其他形式的子查询等价替换。</li>
-<li>所有带<code>IN</code>谓词、比较运算符、<code>ANY</code>和<code>ALL</code>谓词的子查询都能用带<code>EXISTS</code>谓词的子查询等价替换。</li>
-<li>示例：查询与“刘晨”在同一个系学习的学生。可以用带<code>EXISTS</code>谓词的子查询替换：
-<figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sno，Sname，Sdept</span></span>
+<li>一些带 <code>EXISTS</code> 或 <code>NOT EXISTS</code>
+谓词的子查询不能被其他形式的子查询等价替换。</li>
+<li>所有带 <code>IN</code> 谓词、比较运算符、<code>ANY</code> 和
+<code>ALL</code> 谓词的子查询都能用带 <code>EXISTS</code>
+谓词的子查询等价替换。</li>
+<li>示例：查询与“刘晨”在同一个系学习的学生。可以用带 <code>EXISTS</code>
+谓词的子查询替换： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sno，Sname，Sdept</span></span>
 <span class="line"><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> Student S1</span></span>
-<span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">EXISTS</span><span style="color: #ABB2BF"> (</span><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> *</span></span>
-<span class="line"><span style="color: #ABB2BF">             </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> Student S2</span></span>
-<span class="line"><span style="color: #ABB2BF">             </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">S2</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Sdept</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">S1</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Sdept</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">AND</span></span>
-<span class="line"><span style="color: #ABB2BF">                   </span><span style="color: #D19A66">S2</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Sname</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">' 刘晨'</span><span style="color: #ABB2BF"> );</span></span></code></pre></div></div></figure></li>
+<span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">EXISTS</span><span style="color: #ABB2BF"> (</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> *</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> Student S2</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">S2</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Sdept</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">S1</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Sdept</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">AND</span></span>
+<span class="line"><span style="color: #ABB2BF">          </span><span style="color: #D19A66">S2</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Sname</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'刘晨'</span></span>
+<span class="line"><span style="color: #ABB2BF">);</span></span></code></pre></div></div></figure></li>
 </ul></li>
 </ul>
-<h5 id="用existsnot-exists实现全称量词">用<code>EXISTS</code>/<code>NOT EXISTS</code>实现<strong>全称量词</strong></h5>
+<h5 id="用-existsnot-exists-实现全称量词">用 EXISTS/NOT EXISTS
+实现全称量词</h5>
 <ul>
-<li>SQL语言中没有全称量词 <span class="math inline">\(\forall\)</span>（For all）</li>
+<li>SQL 语言中没有全称量词 <span class="math inline">\(\forall\)</span>（For all）</li>
 <li>可以把<strong>带有全称量词的谓词</strong>转换为等价的<strong>带有存在量词的谓词</strong>：
 <span class="math display">\[(\forall x)P \equiv \neg (\exists x(\neg
 P))\]</span></li>
@@ -4435,22 +4490,22 @@ P))\]</span></li>
 <span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> *</span></span>
 <span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> SC</span></span>
 <span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sno</span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">Student</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Sno</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">AND</span><span style="color: #ABB2BF"> </span></span>
-<span class="line"><span style="color: #ABB2BF">                Cno</span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">Course</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Cno</span></span>
+<span class="line"><span style="color: #ABB2BF">              Cno</span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">Course</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Cno</span></span>
 <span class="line"><span style="color: #ABB2BF">    )</span></span>
 <span class="line"><span style="color: #ABB2BF">);</span></span></code></pre></div></div></figure></li>
 </ul>
 <h5 id="用existsnot-exists实现逻辑蕴函">用<code>EXISTS</code>/<code>NOT EXISTS</code>实现<strong>逻辑蕴函</strong></h5>
 <ul>
-<li>SQL语言中没有蕴函(Implication)逻辑运算</li>
+<li>SQL 语言中没有蕴函（Implication）逻辑运算</li>
 <li>可以利用谓词演算将逻辑蕴函谓词等价转换为： <span class="math display">\[P \rightarrow Q \equiv \neg P \lor Q
 \]</span></li>
-<li>示例：查询至少选修了学生201215122选修的全部课程的学生号码。
+<li>示例：查询至少选修了学生 201215122 选修的全部课程的学生号码。
 <ul>
-<li>用逻辑蕴函表达：查询学号为x的学生，对所有的课程y，只要201215122学生选修了课程y，则x也选修了y。</li>
-<li>形式化表示：用<span class="math inline">\(p\)</span>表示谓词
-“学生201215122选修了课程y”，用<span class="math inline">\(q\)</span>表示谓词
-“学生x选修了课程y”，则上述查询为: <span class="math inline">\((\forall
-y) p \rightarrow q\)</span></li>
+<li>用逻辑蕴函表达：查询学号为 x 的学生，对所有的课程 y，只要 201215122
+学生选修了课程 y，则 x 也选修了 y。</li>
+<li>形式化表示：用 <span class="math inline">\(p\)</span> 表示谓词 “学生
+201215122 选修了课程 y”，用 <span class="math inline">\(q\)</span>
+表示谓词 “学生 x 选修了课程 y”，则上述查询为: <span class="math inline">\((\forall y) p \rightarrow q\)</span></li>
 <li>等价变换： <span class="math display">\[
   \begin{aligned}
   (\forall y)p \rightarrow q &amp;\equiv \neg (\exists y (\neg (p
@@ -4459,25 +4514,26 @@ y) p \rightarrow q\)</span></li>
   &amp;\equiv \neg (\exists y (p \land \neg q))
   \end{aligned}
   \]</span></li>
-<li>变换后语义：不存在这样的课程y，学生201215122选修了y，而学生x没有选。
-<figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT DISTINCT</span><span style="color: #ABB2BF"> Sno </span><span style="color: #7F848E; font-style: italic">-- 查询这样的学生x</span></span>
+<li>变换后语义：不存在这样的课程 y，学生 201215122 选修了 y，而学生 x
+没有选。 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT DISTINCT</span><span style="color: #ABB2BF"> Sno </span><span style="color: #7F848E; font-style: italic">-- 查询这样的学生x</span></span>
 <span class="line"><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> SC SCX</span></span>
 <span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">NOT</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">EXISTS</span><span style="color: #ABB2BF"> ( </span><span style="color: #7F848E; font-style: italic">-- 不存在这样的课程y</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> * </span><span style="color: #7F848E; font-style: italic">-- 201215122选修了y</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> SC SCY</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">SCY</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Sno</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'201215122'</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">AND</span></span>
-<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #C678DD">NOT</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">EXISTS</span><span style="color: #ABB2BF"> ( </span><span style="color: #7F848E; font-style: italic">-- 而学生x没有选</span></span>
-<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> *</span></span>
-<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> SC SCZ</span></span>
-<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">SCZ</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Sno</span><span style="color: #56B6C2">=</span><span style="color: #D19A66">SCX</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Sno</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">AND</span></span>
-<span class="line"><span style="color: #ABB2BF">                    </span><span style="color: #D19A66">SCZ</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Cno</span><span style="color: #56B6C2">=</span><span style="color: #D19A66">SCY</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Cno</span></span>
-<span class="line"><span style="color: #ABB2BF">            )</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">NOT</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">EXISTS</span><span style="color: #ABB2BF"> ( </span><span style="color: #7F848E; font-style: italic">-- 而学生x没有选</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> *</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> SC SCZ</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">SCZ</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Sno</span><span style="color: #56B6C2">=</span><span style="color: #D19A66">SCX</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Sno</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">AND</span></span>
+<span class="line"><span style="color: #ABB2BF">                </span><span style="color: #D19A66">SCZ</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Cno</span><span style="color: #56B6C2">=</span><span style="color: #D19A66">SCY</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Cno</span></span>
+<span class="line"><span style="color: #ABB2BF">        )</span></span>
 <span class="line"><span style="color: #ABB2BF">);</span></span></code></pre></div></div></figure></li>
 </ul></li>
 </ul>
 <h3 id="集合查询">集合查询</h3>
 <ul>
-<li>SQL支持集合操作，包括并（UNION）、交（INTERSECT）、差（EXCEPT）</li>
+<li>SQL
+支持集合操作，包括并（UNION）、交（INTERSECT）、差（EXCEPT）</li>
 <li>要求参加操作的查询结果<strong>列数相同</strong>、对应项<strong>数据类型一致</strong>。</li>
 </ul>
 <h4 id="并操作union">并操作（UNION）</h4>
@@ -4534,7 +4590,8 @@ y) p \rightarrow q\)</span></li>
 </ul>
 <h3 id="派生查询">派生查询</h3>
 <ul>
-<li>子查询出现在<code>FROM</code>子句中，生成的临时表称为临时派生表（derived
+<li>子查询出现在 <code>FROM</code>
+子句中，生成的临时表称为临时派生表（derived
 table），作为主查询的查询对象。</li>
 <li>基于派生表的查询称为派生查询。</li>
 <li><strong>语句格式</strong>： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">目标列表达式</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">[, &lt;目标列表达式&gt; ...]</span></span>
@@ -4554,13 +4611,21 @@ table），作为主查询的查询对象。</li>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sno, </span><span style="color: #56B6C2">AVG</span><span style="color: #ABB2BF">(Grade) </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> SC </span><span style="color: #C678DD">GROUP BY</span><span style="color: #ABB2BF"> Sno</span></span>
 <span class="line"><span style="color: #ABB2BF">) </span><span style="color: #C678DD">AS</span><span style="color: #ABB2BF"> Avg_sc(avg_sno, avg_grade)  </span><span style="color: #7F848E; font-style: italic">-- 指定派生表属性列名</span></span>
 <span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">SC</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Sno</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">Avg_sc</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">avg_sno</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">AND</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">SC</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Grade</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&gt;=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">Avg_sc</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">avg_grade</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
-<li>查询所有选修了1号课程的学生姓名。 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sname</span></span>
+<li>查询所有选修了1号课程的学生姓名。 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sname</span></span>
 <span class="line"><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> Student, (</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sno </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> SC </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Cno</span><span style="color: #56B6C2">=</span><span style="color: #98C379">'1'</span></span>
 <span class="line"><span style="color: #ABB2BF">) </span><span style="color: #C678DD">AS</span><span style="color: #ABB2BF"> SC1</span></span>
-<span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">Student</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Sno</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">SC1</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Sno</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
+<span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">Student</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Sno</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">SC1</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Sno</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">-- 或者使用IN谓词</span></span>
+<span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sname</span></span>
+<span class="line"><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> Student</span></span>
+<span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sno </span><span style="color: #C678DD">IN</span><span style="color: #ABB2BF"> (</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sno </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> SC </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Cno</span><span style="color: #56B6C2">=</span><span style="color: #98C379">'1'</span></span>
+<span class="line"><span style="color: #ABB2BF">);</span></span></code></pre></div></div></figure></li>
 </ol></li>
-<li>如果子查询没有聚集函数，派生表可以不指定属性列，子查询<code>SELECT</code>子句后面的列名为其默认属性；</li>
+<li>如果子查询没有聚集函数，派生表可以不指定属性列，子查询
+<code>SELECT</code> 子句后面的列名为其默认属性；</li>
 </ul>
 <h2 id="数据更新">数据更新</h2>
 <p>数据更新包括插入、修改、删除三类操作，均需遵守表的完整性约束。</p>
@@ -4576,7 +4641,8 @@ table），作为主查询的查询对象。</li>
 <li>如果不指定任何属性列，则新插入的元组必须在每个属性列上均有值；</li>
 <li>属性列的顺序可与表定义中的顺序不一致；</li>
 <li>如果仅指定部分属性列，则新元组在没有出现的属性列上取空值。</li>
-<li><code>VALUES</code>子句提供的值必须与<code>INTO</code>子句匹配（值的个数，值的类型）。</li>
+<li><code>VALUES</code> 子句提供的值必须与 <code>INTO</code>
+子句匹配（值的个数，值的类型）。</li>
 </ul></li>
 <li><strong>示例</strong>：插入新学生记录（学号：201215128；姓名：陈冬；性别：男；系别：IS；年龄：18）：
 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">INSERT INTO</span><span style="color: #ABB2BF"> Student (Sno, Sname, Ssex, Sdept, Sage)</span></span>
@@ -4586,9 +4652,9 @@ table），作为主查询的查询对象。</li>
 <ul>
 <li><strong>语句格式</strong>： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">INSERT INTO</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">表名</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">[ ( &lt;属性列1&gt; [, &lt;属性列2&gt;... ]</span><span style="color: #ABB2BF"> ) ]</span></span>
 <span class="line"><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">子查询</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
-<li><strong>示例</strong>：对每一个系求学生平均年龄，并存入Deptage表：
+<li><strong>示例</strong>：对每一个系求学生平均年龄，并存入 Deptage 表：
 <ol type="1">
-<li>先创建Deptage表： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">TABLE</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">Deptage</span><span style="color: #ABB2BF"> (</span></span>
+<li>先创建 Deptage 表： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">TABLE</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">Deptage</span><span style="color: #ABB2BF"> (</span></span>
 <span class="line"><span style="color: #ABB2BF">    Sdept </span><span style="color: #C678DD">CHAR</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">15</span><span style="color: #ABB2BF">),  </span><span style="color: #7F848E; font-style: italic">-- 系名</span></span>
 <span class="line"><span style="color: #ABB2BF">    Avgage </span><span style="color: #C678DD">SMALLINT</span><span style="color: #ABB2BF">  </span><span style="color: #7F848E; font-style: italic">-- 平均年龄</span></span>
 <span class="line"><span style="color: #ABB2BF">);</span></span></code></pre></div></div></figure></li>
@@ -4597,7 +4663,7 @@ table），作为主查询的查询对象。</li>
 </ol></li>
 <li>说明：
 <ul>
-<li>INTO子句(与插入单条元组类似)
+<li><code>INTO</code> 子句（与插入单条元组类似）
 <ul>
 <li>指定要插入数据的表名及属性列</li>
 <li>属性列的顺序可与表定义中的顺序不一致</li>
@@ -4606,20 +4672,20 @@ table），作为主查询的查询对象。</li>
 </ul></li>
 <li>子查询
 <ul>
-<li><code>SELECT</code>子句目标列必须与<code>INTO</code>子句匹配
+<li><code>SELECT</code> 子句目标列必须与 <code>INTO</code> 子句匹配
 <ul>
 <li>值的个数</li>
 <li>值的类型</li>
 </ul></li>
 </ul></li>
-<li>DBMS在执行插入语句时会检查所插元组是否破坏表上已定义的完整性规则
+<li>DBMS 在执行插入语句时会检查所插元组是否破坏表上已定义的完整性规则
 <ul>
 <li>实体完整性</li>
 <li>参照完整性</li>
 <li>用户定义的完整性
 <ul>
-<li>对于有NOT NULL约束的属性列是否提供了非空值</li>
-<li>对于有UNIQUE约束的属性列是否提供了非重复值</li>
+<li>对于有 <code>NOT NULL</code> 约束的属性列是否提供了非空值</li>
+<li>对于有 <code>UNIQUE</code> 约束的属性列是否提供了非重复值</li>
 <li>对于有值域约束的属性列所提供的属性值是否在值域范围内</li>
 </ul></li>
 </ul></li>
@@ -4632,14 +4698,16 @@ table），作为主查询的查询对象。</li>
 <span class="line"><span style="color: #E06C75">[ WHERE &lt;条件&gt; ]</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
 <li>说明：
 <ul>
-<li><code>SET</code>子句指定要修改的属性列及其新值，可以修改一个或多个属性列；</li>
-<li><code>WHERE</code>子句指定要修改的元组，缺省将修改表中所有元组。</li>
+<li><code>SET</code>
+子句指定要修改的属性列及其新值，可以修改一个或多个属性列；</li>
+<li><code>WHERE</code>
+子句指定要修改的元组，缺省将修改表中所有元组。</li>
 </ul></li>
 <li>功能：修改指定表中满足条件的元组。</li>
 </ul>
 <h4 id="修改元组的值">修改元组的值</h4>
 <ul>
-<li><strong>示例</strong>：将学生201215121的年龄改为22岁：
+<li><strong>示例</strong>：将学生 201215121 的年龄改为 22 岁：
 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">UPDATE</span><span style="color: #ABB2BF"> Student </span><span style="color: #C678DD">SET</span><span style="color: #ABB2BF"> Sage </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">22</span></span>
 <span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sno </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'201215121'</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
 </ul>
@@ -4654,9 +4722,11 @@ table），作为主查询的查询对象。</li>
 <h3 id="删除数据">删除数据</h3>
 <ul>
 <li><strong>语句格式</strong>： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">DELETE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">表名</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">[ WHERE &lt;条件&gt; ]</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
-<li><code>WHERE</code>子句指定要删除的元组，缺省将删除表中所有元组（表结构仍存在）。</li>
+<li><code>WHERE</code>
+子句指定要删除的元组，缺省将删除表中所有元组（表结构仍存在）。</li>
 <li>功能：删除指定表中满足条件的元组。</li>
-<li>说明：DBMS在执行插入语句时会检查所插元组，不能破坏表上已定义的完整性规则
+<li>说明：DBMS
+在执行插入语句时会检查所插元组，不能破坏表上已定义的完整性规则
 <ul>
 <li>参照完整性
 <ul>
@@ -4667,7 +4737,7 @@ table），作为主查询的查询对象。</li>
 </ul>
 <h4 id="删除元组的值">删除元组的值</h4>
 <ul>
-<li><strong>示例</strong>：删除学号为201215128的学生记录：
+<li><strong>示例</strong>：删除学号为 201215128 的学生记录：
 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">DELETE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> Student</span></span>
 <span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sno </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'201215128'</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
 </ul>
@@ -4695,36 +4765,39 @@ table），作为主查询的查询对象。</li>
 <li>可能情况：
 <ul>
 <li>插入元组时未指定属性值；</li>
-<li>修改元组时将属性值设为<code>NULL</code>；</li>
+<li>修改元组时将属性值设为 <code>NULL</code>；</li>
 <li>外连接或关系运算的结果。</li>
 </ul></li>
 <li><strong>示例</strong>：
 <ol type="1">
-<li>插入选课记录（学号201215126，课程号1，成绩空）：
+<li>插入选课记录（学号：201215126；课程号：1；成绩：空）：
 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #7F848E; font-style: italic">-- 插入时将成绩设为NULL</span></span>
 <span class="line"><span style="color: #C678DD">INSERT INTO</span><span style="color: #ABB2BF"> SC (Sno, Cno, Grade) </span><span style="color: #C678DD">VALUES</span><span style="color: #ABB2BF"> (</span><span style="color: #98C379">'201215126'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'1'</span><span style="color: #ABB2BF">, </span><span style="color: #C678DD">NULL</span><span style="color: #ABB2BF">);</span></span>
 <span class="line"><span style="color: #7F848E; font-style: italic">-- 或省略Grade列</span></span>
 <span class="line"><span style="color: #C678DD">INSERT INTO</span><span style="color: #ABB2BF"> SC (Sno, Cno) </span><span style="color: #C678DD">VALUES</span><span style="color: #ABB2BF"> (</span><span style="color: #98C379">'201215126'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'1'</span><span style="color: #ABB2BF">);</span></span></code></pre></div></div></figure></li>
-<li>将学号201215200的学生系别改为空值： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">UPDATE</span><span style="color: #ABB2BF"> Student </span><span style="color: #C678DD">SET</span><span style="color: #ABB2BF"> Sdept </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">NULL</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sno </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'201215200'</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
+<li>将学号 201215200 的学生系别改为空值： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">UPDATE</span><span style="color: #ABB2BF"> Student </span><span style="color: #C678DD">SET</span><span style="color: #ABB2BF"> Sdept </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">NULL</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sno </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'201215200'</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
 </ol></li>
 </ul>
 <h3 id="空值的判断">空值的判断</h3>
 <ul>
-<li>使用<code>IS NULL</code>或<code>IS NOT NULL</code>判断，不能用<code>=</code>或<code>!=</code>。</li>
-<li><strong>示例</strong>：查询Student表中漏填数据的学生信息：
+<li>使用 <code>IS NULL</code> 或 <code>IS NOT NULL</code> 判断，不能用
+<code>=</code> 或 <code>!=</code>。</li>
+<li><strong>示例</strong>：查询 Student 表中漏填数据的学生信息：
 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> * </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> Student </span></span>
 <span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sname </span><span style="color: #C678DD">IS</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">NULL</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">OR</span><span style="color: #ABB2BF"> Ssex </span><span style="color: #C678DD">IS</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">NULL</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">OR</span><span style="color: #ABB2BF"> Sage </span><span style="color: #C678DD">IS</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">NULL</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">OR</span><span style="color: #ABB2BF"> Sdept </span><span style="color: #C678DD">IS</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">NULL</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
 </ul>
 <h3 id="空值的约束条件">空值的约束条件</h3>
 <ul>
-<li>属性定义（或域定义）中有<code>NOT NULL</code>约束的属性不能取空值；</li>
-<li>含<code>UNIQUE</code>约束的属性不能取空值；</li>
+<li>属性定义（或域定义）中有 <code>NOT NULL</code>
+约束的属性不能取空值；</li>
+<li>含 <code>UNIQUE</code> 约束的属性不能取空值；</li>
 <li>码属性不能取空值。</li>
 </ul>
 <h3 id="空值的运算规则">空值的运算规则</h3>
 <ul>
 <li><p><strong>算术运算</strong>：空值与任何值的算术运算结果为<strong>空值</strong>；</p></li>
-<li><p><strong>比较运算</strong>：空值与任何值的比较结果为<code>UNKNOWN</code>；</p></li>
+<li><p><strong>比较运算</strong>：空值与任何值的比较结果为
+<code>UNKNOWN</code>；</p></li>
 <li><p><strong>逻辑运算</strong>：遵循三值逻辑（T、F、U），真值表如下：</p>
 <table>
 <thead>
@@ -4820,9 +4893,10 @@ table），作为主查询的查询对象。</li>
 <span class="line"><span style="color: #E06C75">[ WITH CHECK OPTION ]</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
 <li>说明：
 <ul>
-<li>子查询可以是任意的<code>SELECT</code>语句，是否含有<code>ORDER BY</code>子句和<code>DISTINCT</code>短语，取决于具体系统的实现；</li>
-<li><strong>WITH CHECK
-OPTION</strong>：对视图进行更新、插入、删除操作时需要满足子查询的谓词条件；</li>
+<li>子查询可以是任意的 <code>SELECT</code> 语句，是否含有
+<code>ORDER BY</code> 子句和 <code>DISTINCT</code>
+短语，取决于具体系统的实现；</li>
+<li><code>WITH CHECK OPTION</code>：对视图进行更新、插入、删除操作时需要满足子查询的谓词条件；</li>
 <li>组成视图的属性列名：<strong>全部省略或全部指定</strong>。
 <ul>
 <li>必须明确指定组成视图的所有列名的情况：
@@ -4832,14 +4906,16 @@ OPTION</strong>：对视图进行更新、插入、删除操作时需要满足�
 <li>需要在视图中为某个列启用新的更合适的名字。</li>
 </ol></li>
 </ul></li>
-<li>DBMS执行<code>CREATE VIEW</code>语句时只是把视图的定义存入数据字典，并不执行其中的<code>SELECT</code>语句</li>
+<li>DBMS 执行 <code>CREATE VIEW</code>
+语句时只是把视图的定义存入数据字典，并不执行其中的 <code>SELECT</code>
+语句</li>
 </ul></li>
 </ul>
 <h5 id="行列子集视图">行列子集视图</h5>
 <ul>
 <li>若一个视图由单个基本表导出，只是去掉某些行列，但<strong>保留主码</strong>，这类视图称为行列子集视图。</li>
-<li><strong>示例</strong>：建立信息系（IS）学生的视图，并要求透过该视图进行的更新操作只涉及信息系学生。（带CHECK
-OPTION）： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">VIEW</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">IS_Student</span><span style="color: #ABB2BF"> </span></span>
+<li><strong>示例</strong>：建立信息系（IS）学生的视图，并要求透过该视图进行的更新操作只涉及信息系学生。（带
+CHECK OPTION）： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">VIEW</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">IS_Student</span><span style="color: #ABB2BF"> </span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">AS</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sno, Sname, Sage</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> Student</span></span>
@@ -4849,51 +4925,52 @@ OPTION）： <figure class="shiki sql"><div class="codeblock"><div class="gutter
 <h5 id="基于多个基表的视图">基于多个基表的视图</h5>
 <ul>
 <li><strong>示例</strong>：建立信息系选修了1号课程的学生视图。
-<figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">VIEW</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">IS_S1</span><span style="color: #ABB2BF">(Sno，Sname，Grade)</span></span>
+<figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">VIEW</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">IS_S1</span><span style="color: #ABB2BF">(Sno, Sname, Grade)</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">AS</span></span>
-<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">Student</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Sno</span><span style="color: #ABB2BF">，Sname，Grade</span></span>
-<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> Student，SC</span></span>
-<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sdept</span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'IS'</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">AND</span></span>
-<span class="line"><span style="color: #ABB2BF">          </span><span style="color: #D19A66">Student</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Sno</span><span style="color: #56B6C2">=</span><span style="color: #D19A66">SC</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Sno</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">AND</span></span>
-<span class="line"><span style="color: #ABB2BF">          </span><span style="color: #D19A66">SC</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Cno</span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'1'</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">Student</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Sno</span><span style="color: #ABB2BF">, Sname, Grade</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> Student, SC</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sdept </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'IS'</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">AND</span></span>
+<span class="line"><span style="color: #ABB2BF">          </span><span style="color: #D19A66">Student</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Sno</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">SC</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Sno</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">AND</span></span>
+<span class="line"><span style="color: #ABB2BF">          </span><span style="color: #D19A66">SC</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">Cno</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'1'</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
 </ul>
 <h5 id="基于视图的视图">基于视图的视图</h5>
 <ul>
 <li><strong>示例</strong>：建立信息系选修了1号课程且成绩在90分以上的学生的视图。
 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">VIEW</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">IS_S2</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">AS</span></span>
-<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sno，Sname，Grade</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sno, Sname, Grade</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> IS_S1</span></span>
-<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Grade</span><span style="color: #56B6C2">&gt;=</span><span style="color: #D19A66">90</span><span style="color: #ABB2BF">；</span></span></code></pre></div></div></figure></li>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Grade </span><span style="color: #56B6C2">&gt;=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">90</span><span style="color: #ABB2BF">；</span></span></code></pre></div></div></figure></li>
 </ul>
 <h5 id="带表达式的视图">带表达式的视图</h5>
 <ul>
 <li><strong>示例</strong>：定义一个反映学生出生年份的视图。
-<figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">VIEW</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">BT_S</span><span style="color: #ABB2BF">(Sno，Sname，Sbirth)</span></span>
+<figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">VIEW</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">BT_S</span><span style="color: #ABB2BF">(Sno, Sname, Sbirth)</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">AS</span></span>
-<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sno，Sname，</span><span style="color: #D19A66">2014</span><span style="color: #ABB2BF">-Sage</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sno, Sname, </span><span style="color: #D19A66">2014</span><span style="color: #ABB2BF">-Sage</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> Student</span></span></code></pre></div></div></figure></li>
-<li>设置一些派生属性列, 也称为虚拟列，例如<code>Sbirth</code>；</li>
+<li>设置一些派生属性列, 也称为虚拟列，例如 <code>Sbirth</code>；</li>
 <li>带表达式的视图必须明确定义组成视图的各个属性列名；</li>
 </ul>
 <h5 id="建立分组视图">建立分组视图</h5>
 <ul>
-<li><strong>示例</strong>：学生的学号及他的平均成绩定义为一个视图，假设SC表中“成绩”列Grade为数字型。
-<figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">VIEW</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">S_G</span><span style="color: #ABB2BF">(Sno，Gavg)</span></span>
+<li><strong>示例</strong>：学生的学号及他的平均成绩定义为一个视图，假设
+SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">VIEW</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">S_G</span><span style="color: #ABB2BF">(Sno, Gavg)</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">AS</span></span>
-<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sno，</span><span style="color: #56B6C2">AVG</span><span style="color: #ABB2BF">(Grade)</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sno, </span><span style="color: #56B6C2">AVG</span><span style="color: #ABB2BF">(Grade)</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> SC</span></span>
-<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">GROUP BY</span><span style="color: #ABB2BF"> Sno；</span></span></code></pre></div></div></figure></li>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">GROUP BY</span><span style="color: #ABB2BF"> Sno;</span></span></code></pre></div></div></figure></li>
 </ul>
 <h5 id="不指定属性列">不指定属性列</h5>
 <ul>
-<li><strong>示例</strong>：将Student表中所有女生记录定义为一个视图
-<figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">VIEW</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">F_Student1</span><span style="color: #ABB2BF">(F_sno，</span><span style="color: #C678DD">name</span><span style="color: #ABB2BF">，sex，age，dept)</span></span>
+<li><strong>示例</strong>：将 Student 表中所有女生记录定义为一个视图
+<figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">VIEW</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">F_Student1</span><span style="color: #ABB2BF">(F_sno, </span><span style="color: #C678DD">name</span><span style="color: #ABB2BF">, sex, age, dept)</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">AS</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> *</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> Student</span></span>
-<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Ssex</span><span style="color: #56B6C2">=</span><span style="color: #98C379">'女'</span><span style="color: #ABB2BF">；</span></span></code></pre></div></div></figure></li>
-<li>缺点：修改基表Student的结构后，Student表与F_Student1视图的映象关系被破坏，导致该视图不能正确工作。</li>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Ssex</span><span style="color: #56B6C2">=</span><span style="color: #98C379">'女'</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
+<li>缺点：修改基表 Student 的结构后，Student 表与 F_Student1
+视图的映象关系被破坏，导致该视图不能正确工作。</li>
 </ul>
 <h4 id="删除视图">删除视图</h4>
 <ul>
@@ -4903,15 +4980,15 @@ OPTION）： <figure class="shiki sql"><div class="codeblock"><div class="gutter
 <li>该语句从数据字典中删除指定的视图定义；</li>
 <li>由该视图导出的其他视图定义仍在数据字典中，但已不能使用，必须显式删除；</li>
 <li>删除基表时，由该基表导出的所有视图定义都必须显式删除；</li>
-<li><strong>CASCADE</strong>：级联删除依赖该视图的其他视图；</li>
+<li><code>CASCADE</code>：级联删除依赖该视图的其他视图；</li>
 </ul></li>
-<li><strong>示例</strong>：级联删除视图IS_S1及其依赖视图：
+<li><strong>示例</strong>：级联删除视图 IS_S1 及其依赖视图：
 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">DROP</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">VIEW</span><span style="color: #ABB2BF"> IS_S1 CASCADE;</span></span></code></pre></div></div></figure></li>
 </ul>
 <h4 id="查询视图">查询视图</h4>
 <ul>
 <li>从用户角度：查询视图与查询基本表相同</li>
-<li>DBMS实现视图查询的方法：
+<li>DBMS 实现视图查询的方法：
 <ul>
 <li>实体化视图（View Materialization）
 <ul>
@@ -4922,15 +4999,16 @@ OPTION）： <figure class="shiki sql"><div class="codeblock"><div class="gutter
 </ul></li>
 <li><strong>视图消解法</strong>（View Resolution）
 <ul>
-<li>进行有效性检查，检查查询的表、视图等是否存在。如果存在，则从数据字典中取出视图的定义;</li>
-<li>把视图定义中的子查询与用户的查询结合起来，转换成等价的对基本表的查询;</li>
-<li>执行修正后的查询;</li>
-<li><strong>局限</strong>：有些情况下，视图消解法不能生成正确查询，DBMS会限制这类查询</li>
+<li>进行有效性检查，检查查询的表、视图等是否存在。如果存在，则从数据字典中取出视图的定义</li>
+<li>把视图定义中的子查询与用户的查询结合起来，转换成等价的对基本表的查询</li>
+<li>执行修正后的查询</li>
+<li><strong>局限</strong>：有些情况下，视图消解法不能生成正确查询，DBMS
+会限制这类查询</li>
 </ul></li>
 </ul></li>
 <li><strong>示例</strong>：
 <ol type="1">
-<li>查询IS_Student视图中年龄小于20岁的学生： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sno, Sage </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> IS_Student </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sage </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">20</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure>
+<li>查询 IS_Student 视图中年龄小于20岁的学生： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sno, Sage </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> IS_Student </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sage </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">20</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure>
 转换后的基本表查询： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sno, Sage </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> Student </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sdept </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'IS'</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">AND</span><span style="color: #ABB2BF"> Sage </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">20</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
 <li>在S_G视图中查询平均成绩在90分以上的学生学号和平均成绩
 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> * </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> S_G </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Gavg </span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">90</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure> 转换后的基本表查询： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #7F848E; font-style: italic">-- 正确：</span></span>
@@ -4939,46 +5017,48 @@ OPTION）： <figure class="shiki sql"><div class="codeblock"><div class="gutter
 <span class="line"><span style="color: #C678DD">GROUP BY</span><span style="color: #ABB2BF"> Sno</span></span>
 <span class="line"><span style="color: #C678DD">HAVING</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">AVG</span><span style="color: #ABB2BF">(Grade) </span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">90</span><span style="color: #ABB2BF">;</span></span>
 <span class="line"><span style="color: #7F848E; font-style: italic">-- 错误：</span></span>
-<span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sno，</span><span style="color: #56B6C2">AVG</span><span style="color: #ABB2BF">(Grade)</span></span>
+<span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> Sno, </span><span style="color: #56B6C2">AVG</span><span style="color: #ABB2BF">(Grade)</span></span>
 <span class="line"><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> SC</span></span>
 <span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">AVG</span><span style="color: #ABB2BF">(Grade) </span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">90</span><span style="color: #ABB2BF"> </span><span style="color: #7F848E; font-style: italic">--查询出现语法错误</span></span>
-<span class="line"><span style="color: #C678DD">GROUP BY</span><span style="color: #ABB2BF"> Sno；</span></span></code></pre></div></div></figure></li>
+<span class="line"><span style="color: #C678DD">GROUP BY</span><span style="color: #ABB2BF"> Sno;</span></span></code></pre></div></div></figure></li>
 </ol></li>
 </ul>
 <h4 id="更新视图">更新视图</h4>
 <ul>
 <li>用户角度：更新视图与更新基本表相同</li>
-<li>DBMS实现视图更新的方法
+<li>DBMS 实现视图更新的方法
 <ul>
 <li>视图实体化法（View Materialization）</li>
 <li><strong>视图消解法</strong>（View Resolution）</li>
 </ul></li>
 <li>指定 <code>WITH CHECK OPTION</code> 子句后
 <ul>
-<li>DBMS在更新视图时会进行检查，防止用户通过视图对不属于视图范围内的基本表数据进行更新。</li>
+<li>DBMS
+在更新视图时会进行检查，防止用户通过视图对不属于视图范围内的基本表数据进行更新。</li>
 </ul></li>
 <li><strong>示例</strong>：
 <ol type="1">
-<li>将IS_Student视图中学号201215122的姓名改为“刘辰”： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">UPDATE</span><span style="color: #ABB2BF"> IS_Student</span></span>
+<li>将 IS_Student 视图中学号 201215122 的姓名改为“刘辰”：
+<figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">UPDATE</span><span style="color: #ABB2BF"> IS_Student</span></span>
 <span class="line"><span style="color: #C678DD">SET</span><span style="color: #ABB2BF"> Sname </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'刘辰'</span></span>
-<span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sno </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'201215122'</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure>
-转换后的基本表更新： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">UPDATE</span><span style="color: #ABB2BF"> Student</span></span>
+<span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sno </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'201215122'</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure> 转换后的基本表更新： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">UPDATE</span><span style="color: #ABB2BF"> Student</span></span>
 <span class="line"><span style="color: #C678DD">SET</span><span style="color: #ABB2BF"> Sname </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'刘辰'</span></span>
 <span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sno </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'201215122'</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">AND</span><span style="color: #ABB2BF"> Sdept </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'IS'</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
-<li>向信息系学生视图IS_S中插入一个新的学生记录：201215129，赵新，20岁
-<figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">INSERT</span></span>
+<li>向信息系学生视图 IS_Student
+中插入一个新的学生记录：201215129，赵新，20岁 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">INSERT</span></span>
 <span class="line"><span style="color: #C678DD">INTO</span><span style="color: #ABB2BF"> IS_Student</span></span>
-<span class="line"><span style="color: #C678DD">VALUES</span><span style="color: #ABB2BF">(‘</span><span style="color: #D19A66">201215129</span><span style="color: #ABB2BF">’，‘赵新’，</span><span style="color: #D19A66">20</span><span style="color: #ABB2BF">)；</span></span></code></pre></div></div></figure> 转换为对基本表的更新： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">INSERT</span></span>
-<span class="line"><span style="color: #C678DD">INTO</span><span style="color: #ABB2BF"> Student(Sno，Sname，Sage，Sdept)</span></span>
-<span class="line"><span style="color: #C678DD">VALUES</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">' 201215129 '</span><span style="color: #ABB2BF">，</span><span style="color: #98C379">'赵新'</span><span style="color: #ABB2BF">，</span><span style="color: #D19A66">20</span><span style="color: #ABB2BF">，</span><span style="color: #98C379">'IS'</span><span style="color: #ABB2BF"> )；</span></span></code></pre></div></div></figure></li>
-<li>删除视图CS_S中学号为201215129的记录 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">DELETE</span></span>
+<span class="line"><span style="color: #C678DD">VALUES</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'201215129'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'赵新'</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">20</span><span style="color: #ABB2BF">);</span></span></code></pre></div></div></figure>
+转换为对基本表的更新： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">INSERT</span></span>
+<span class="line"><span style="color: #C678DD">INTO</span><span style="color: #ABB2BF"> Student(Sno, Sname, Sage, Sdept)</span></span>
+<span class="line"><span style="color: #C678DD">VALUES</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'201215129'</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'赵新'</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">20</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">'IS'</span><span style="color: #ABB2BF">);</span></span></code></pre></div></div></figure></li>
+<li>删除视图 CS_S 中学号为 201215129 的记录 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">DELETE</span></span>
 <span class="line"><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> IS_Student</span></span>
-<span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sno</span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> ‘</span><span style="color: #D19A66">201215129</span><span style="color: #98C379">'；</span></span></code></pre></div></div></figure>
+<span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sno </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'201215129'</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure>
 转换为对基本表的更新： <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">DELETE</span></span>
 <span class="line"><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> Student</span></span>
-<span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sno</span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'201215129 '</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">AND</span><span style="color: #ABB2BF"> Sdept</span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'IS'</span><span style="color: #ABB2BF">；</span></span></code></pre></div></div></figure></li>
+<span class="line"><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sno </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'201215129'</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">AND</span><span style="color: #ABB2BF"> Sdept </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'IS'</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
 </ol></li>
-<li><strong>更新视图的限制</strong>：一些视图是不可更新的，因为对这些视图的更新不能唯一地有意义地转换成对相应基本表的更新(对两类方法均如此)</li>
+<li><strong>更新视图的限制</strong>：一些视图是不可更新的，因为对这些视图的更新不能唯一地有意义地转换成对相应基本表的更新（对两类方法均如此）</li>
 </ul>
 <h3 id="视图的作用">视图的作用</h3>
 <ol type="1">
@@ -4993,11 +5073,12 @@ OPTION）： <figure class="shiki sql"><div class="codeblock"><div class="gutter
 <li><strong>对机密数据提供安全保护</strong>：仅向用户开放其权限范围内的视图数据；
 <ul>
 <li>对不同用户定义不同视图，使每个用户只能看到他有权看到的数据；</li>
-<li>通过<code>WITH CHECK OPTION</code>对关键数据定义操作时间限制；</li>
+<li>通过 <code>WITH CHECK OPTION</code>
+对关键数据定义操作时间限制；</li>
 </ul></li>
-<li><strong>适当的视图能够更清晰表达查询</strong>：将复杂查询封装为视图，简化后续操作。</li>
+<li><strong>适当的视图能够更清晰表达查询</strong>：将复杂查询封装为视图，简化后续操作。
+# 第五章 数据库设计</li>
 </ol>
-<h1 id="第五章-数据库设计">第五章 数据库设计</h1>
 <h2 id="数据库设计概述">数据库设计概述</h2>
 <h3 id="数据库设计简介">数据库设计简介</h3>
 <ul>
