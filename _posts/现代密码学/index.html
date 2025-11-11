@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis3365.webp">
 <meta property="article:published_time" content="2025-11-05T02:05:07.000Z">
-<meta property="article:modified_time" content="2025-11-07T15:22:06.204Z">
+<meta property="article:modified_time" content="2025-11-11T05:34:20.324Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU">
 <meta property="article:tag" content="现代密码学">
@@ -438,7 +438,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          27k 字
+          30k 字
         
       </span>
     
@@ -450,7 +450,7 @@
         
         
           <!-- compatible with older versions-->
-          229 分钟
+          250 分钟
         
       </span>
     
@@ -2722,7 +2722,7 @@ Attack（中间人攻击）</h3>
 <li>A 和 B 之间没有共享密钥</li>
 </ul></li>
 </ul>
-<h2 id="rsa-公钥加密算法">RSA 公钥加密算法</h2>
+<h2 id="rsa">RSA</h2>
 <ul>
 <li>使用最广泛的公钥加密算法
 <ul>
@@ -2918,7 +2918,7 @@ q' \cdot M_1 + p \cdot p' \cdot M_2) \bmod R\)</span>
 </figure></li>
 </ul></li>
 </ul>
-<h2 id="rabin-公钥密码体制">RABIN 公钥密码体制</h2>
+<h2 id="rabin">RABIN</h2>
 <ul>
 <li><strong>第一个可证安全的公钥加密方案</strong></li>
 <li><strong>基于模合数下求平方根的困难性，即二次剩余问题</strong></li>
@@ -3049,7 +3049,7 @@ n\)</span>；如果攻击者能够成功骗取签名者对 <span class="math inl
 为奇数，要做两次幂运算，还要解中国剩余定理</li>
 </ul></li>
 </ul>
-<h2 id="elgamal-公钥加密方案">ElGamal 公钥加密方案</h2>
+<h2 id="elgamal">ElGamal</h2>
 <ul>
 <li>Diffie-Hellman key distribution scheme 的变形
 <ul>
@@ -3130,6 +3130,349 @@ n\)</span>；如果攻击者能够成功骗取签名者对 <span class="math inl
 3\)</span></li>
 </ul></li>
 </ul></li>
+</ul>
+<h2 id="ecc">ECC</h2>
+<ul>
+<li>椭圆曲线密码体制（Elliptic Curve Cryptography，ECC）
+<ul>
+<li>于 1985 年，由 Neal Koblitz 和 Victor Miller 分别独立提出</li>
+<li>数学难题：<strong>基于椭圆曲线的离散对数难题</strong></li>
+<li>ECC 算法所需的密钥长度远比 RSA 算法低</li>
+<li>有研究指出，ECC 算法 160-bit 密钥长度所提供的安全性，与 RSA 算法
+1024-bit 密钥所提供的安全性相当</li>
+</ul></li>
+</ul>
+<h3 id="椭圆曲线的概念">椭圆曲线的概念</h3>
+<ul>
+<li>椭圆曲线（Elliptic Curve）
+<ul>
+<li>由于连续的椭圆曲线，并不适合进行加解密操作，因此考虑将其定义在有限域上</li>
+<li>域的定义：
+<ul>
+<li>可以在其上进行加、减、乘、除运算，而结果不会超出其范围的集合</li>
+<li>有理数域、实数域、复数域，但整数集合不是</li>
+</ul></li>
+<li>有限域的定义：
+<ul>
+<li>域 <span class="math inline">\(F\)</span>
+只包含有限个元素。有限域中元素的个数称为阶</li>
+<li>每个有限域的阶必为素数的幂，即有限域的阶可表示为 <span class="math inline">\(p^n\)</span></li>
+<li>该有限域通常称为 Galois 域，记为 <span class="math inline">\(GF(p^n)\)</span></li>
+</ul></li>
+</ul></li>
+<li>通信双方（A和B）共享一套公开的椭圆曲线参数，包括曲线方程（如 <span class="math inline">\(y^2 = x^3 + ax + b\)</span>）、一个公开基点 <span class="math inline">\(G\)</span>，以及 <span class="math inline">\(G\)</span> 的阶 <span class="math inline">\(p\)</span>（最小正整数 <span class="math inline">\(n\)</span> 满足 <span class="math inline">\(nG=O\)</span>，<span class="math inline">\(O\)</span> 为无穷远点）</li>
+<li>椭圆曲线的核心数学基础：
+<ul>
+<li>在有限域上的椭圆曲线定义“点加”和“点乘”</li>
+<li>点乘是核心——即一个整数（私钥）与曲线上一个固定点（基点G）进行多次点加，得到曲线上另一个点（公钥）。该过程“正向易、反向难”，是安全性的根本</li>
+</ul></li>
+<li>椭圆曲线（Elliptic Curve）
+<ul>
+<li>椭圆曲线方程计算公式 <span class="math display">\[
+  y^2 \equiv x^3 + ax + b \bmod p
+  \]</span></li>
+<li>椭圆曲线上的点加法
+<ul>
+<li>设 <span class="math inline">\(P(x_1,y_1)\)</span> 和 <span class="math inline">\(Q(x_2,y_2)\)</span> 是椭圆曲线 <span class="math inline">\(E\)</span> 上的两个点，定义点加运算 <span class="math inline">\(R = P + Q\)</span> 如下：
+<ul>
+<li>若 <span class="math inline">\(P \neq Q\)</span>，则连接 <span class="math inline">\(P\)</span> 和 <span class="math inline">\(Q\)</span> 的直线与曲线 <span class="math inline">\(E\)</span> 相交于第三个点 <span class="math inline">\(R^\prime\)</span>，则 <span class="math inline">\(R\)</span> 是 <span class="math inline">\(R^\prime\)</span> 关于 <span class="math inline">\(x\)</span> 轴的对称点</li>
+<li>若 <span class="math inline">\(P = Q\)</span>，则过点 <span class="math inline">\(P\)</span> 的切线与曲线 <span class="math inline">\(E\)</span> 相交于另一个点 <span class="math inline">\(R^\prime\)</span>，则 <span class="math inline">\(R\)</span> 是 <span class="math inline">\(R^\prime\)</span> 关于 <span class="math inline">\(x\)</span> 轴的对称点</li>
+</ul></li>
+<li>数学表达：设 <span class="math inline">\(P = (x_1,
+y_1)\)</span>，<span class="math inline">\(Q = (x_2, y_2)\)</span>，则
+<ul>
+<li>若 <span class="math inline">\(x_1 = x_2\)</span> 且 $y_1 = -y_2
+$，则 <span class="math inline">\(P + Q = O\)</span>（无穷远点），记
+<span class="math inline">\(P=-Q\)</span></li>
+<li>否则，设 <span class="math inline">\(R = P + Q = (x_3,
+y_3)\)</span>，则 <span class="math display">\[
+  \begin{aligned}
+  &amp;x_3 = \lambda^2 - x_1 - x_2 \bmod p \\
+  &amp;y_3 = \lambda(x_1 - x_3) - y_1 \bmod p \\
+  &amp;\lambda =
+  \begin{cases}
+  \frac{y_2 - y_1}{x_2 - x_1} \bmod p, &amp; x_1 \neq x_2 \\
+  \frac{3x_1^2 + a}{2y_1} \bmod p, &amp; x_1 = x_2, y_1 \neq 0 \\
+  \end{cases}
+  \end{aligned}
+  \]</span></li>
+</ul></li>
+<li>点加法满足交换律和结合律</li>
+</ul></li>
+<li>椭圆曲线上的点乘法
+<ul>
+<li>设 <span class="math inline">\(P\)</span> 是椭圆曲线 <span class="math inline">\(E\)</span> 上的一个点，<span class="math inline">\(k\)</span> 是一个整数，定义点乘运算 <span class="math inline">\(Q = kP\)</span> 如下：
+<ul>
+<li>若 <span class="math inline">\(k = 0\)</span>，则 <span class="math inline">\(Q\)</span> 是无穷远点 <span class="math inline">\(O\)</span></li>
+<li>若 <span class="math inline">\(k &gt; 0\)</span>，则 <span class="math inline">\(Q\)</span> 是将点 <span class="math inline">\(P\)</span> 自身加 <span class="math inline">\(k\)</span> 次的结果，即在 <span class="math inline">\(P\)</span> 点作切线交于曲线并取关于 <span class="math inline">\(x\)</span> 轴对称点 <span class="math inline">\(P_1\)</span>，重复 <span class="math inline">\(k\)</span> 次得到 <span class="math inline">\(Q =
+P_k\)</span></li>
+<li>若 <span class="math inline">\(k &lt; 0\)</span>，则 <span class="math inline">\(Q\)</span> 是将点 <span class="math inline">\(-P\)</span> 自身加 <span class="math inline">\(|k|\)</span> 次的结果，即取 <span class="math inline">\(P\)</span> 关于 <span class="math inline">\(x\)</span> 轴的对称点 <span class="math inline">\(-P\)</span>，重复 <span class="math inline">\(|k|\)</span> 次得到 <span class="math inline">\(Q
+= P_{|k|}\)</span></li>
+</ul></li>
+<li>点乘法满足分配律和结合律</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="ecc-密钥生成">ECC 密钥生成</h3>
+<ol type="1">
+<li>公开参数
+<ul>
+<li>选取定义在有限域 <span class="math inline">\(GF(p)\)</span>
+上的椭圆曲线 <span class="math inline">\(E_p(a,b):
+y^2=x^3+ax+b\)</span></li>
+<li>选取椭圆曲线上一点作为基点 <span class="math inline">\(G(x_G,y_G)\)</span>（公开固定点，类似 DH 中的
+<span class="math inline">\(g\)</span>）</li>
+<li>有限域的模值 <span class="math inline">\(p\)</span> （类似 DH
+中的大质数 <span class="math inline">\(p\)</span>）</li>
+</ul></li>
+<li>公私钥生成
+<ul>
+<li>选定一个大数 <span class="math inline">\(x\)</span> 作为私钥</li>
+<li>生成公钥 <span class="math inline">\(Q=xG\)</span> （类似 DH 中的
+<span class="math inline">\(y=g^x\)</span>）</li>
+<li>公钥为 <span class="math inline">\(K = \{p, G, Q\}\)</span></li>
+<li>私钥为 <span class="math inline">\(K^{-1} = \{x\}\)</span></li>
+</ul></li>
+</ol>
+<h3 id="ecc-加解密算法">ECC 加解密算法</h3>
+<ul>
+<li>加密
+<ul>
+<li>选取一个随机数 <span class="math inline">\(k\)</span>，<span class="math inline">\(1 &lt; k &lt; p-1\)</span></li>
+<li>对于要加密的明文 <span class="math inline">\(M\)</span>，分别计算：
+<span class="math display">\[
+  \begin{aligned}
+  R &amp;= kG \\
+  K &amp;= kQ \\
+  S &amp;= M + K
+  \end{aligned}
+  \]</span></li>
+<li>生成密文 <span class="math inline">\(C=(R, S)\)</span></li>
+</ul></li>
+<li>解密
+<ul>
+<li>接收密文 <span class="math inline">\(C=(R, S)\)</span></li>
+<li>计算： <span class="math display">\[
+  \begin{aligned}
+  T &amp;= xR ~(= x(kG) = k(xG) = kQ = K) \\
+  M &amp;= S - T ~(= S - K = M)
+  \end{aligned}
+  \]</span></li>
+</ul></li>
+</ul>
+<h3 id="ecc-vs-rsa">ECC VS RSA</h3>
+<ul>
+<li>与 RSA 相比，ECC 在许多方面都有优势：
+<ul>
+<li>抗攻击性强。相同的密钥长度，其抗攻击性要比 RSA 强很多倍。</li>
+<li>计算量小，处理速度快。ECC 总的速度比 RSA 要快。</li>
+<li>存储空间占用小。</li>
+</ul></li>
+</ul>
+<h3 id="ecc-的应用">ECC 的应用</h3>
+<ul>
+<li>ECC 的签名算法：ECDSA</li>
+<li>ECC 与 DH 算法的结合：ECDH、ECDHE</li>
+<li>增强的密钥交换算法：ECMQV</li>
+<li>国密标准公钥加密算法：SM2</li>
+</ul>
+<h4 id="ecdsa">ECDSA</h4>
+<ul>
+<li>基于 ECC 的签名算法：ECDSA（Elliptic Curve Digital Signature Alg）
+<ul>
+<li>不同于 ECC，ECDSA 主要目的是确保消息 M 不被篡改和伪装</li>
+<li>ECDSA 不对消息 M 进行加密，因此无法保证其机密性</li>
+<li>ECDSA 的密钥生成过程与 ECC 相同</li>
+<li>基础思路：使用私钥进行签名，使用公钥进行验签</li>
+</ul></li>
+<li>ECDSA 签名与验签算法
+<ul>
+<li>使用椭圆曲线参数 <span class="math inline">\(E_p(a,b):
+y^2=x^3+ax+b\)</span>，基点 <span class="math inline">\(G\)</span>，以及私钥 <span class="math inline">\(x\)</span> 和公钥 <span class="math inline">\(Q=xG\)</span></li>
+<li>签名算法
+<ol type="1">
+<li>计算消息摘要 <span class="math inline">\(h=H(M)\)</span></li>
+<li>计算签名 <span class="math inline">\(s=xh\)</span></li>
+<li>输出消息签名对 <span class="math inline">\((M,s)\)</span></li>
+</ol></li>
+<li>验签算法
+<ol type="1">
+<li>计算消息摘要 <span class="math inline">\(h=H(M)\)</span></li>
+<li>计算 <span class="math inline">\(sG\)</span> 和 <span class="math inline">\(hQ\)</span></li>
+<li>若 <span class="math inline">\(sG =
+hQ\)</span>，则签名有效；否则签名无效</li>
+</ol></li>
+</ul></li>
+</ul>
+<h4 id="ecdh-与-ecdhe">ECDH 与 ECDHE</h4>
+<ul>
+<li>基于 ECC 的密钥分配（交换）算法：
+<ul>
+<li>ECDH：Elliptic Curve Diffie-Hellman</li>
+<li>ECDHE：Elliptic Curve Diffie-Hellman Ephemeral</li>
+</ul></li>
+<li>与传统 D-H 方案相同，该方案不能用于交换任意信息
+<ul>
+<li>传统 D-H 方案基于有限域上的离散对数计算困难问题</li>
+<li>ECDH、ECDHE 基于有限域上椭圆曲线离散对数计算困难问题</li>
+</ul></li>
+<li>ECDH 密钥交换算法
+<ol type="1">
+<li>双方公开椭圆曲线参数 <span class="math inline">\(E_p(a,b):
+y^2=x^3+ax+b\)</span>，基点 <span class="math inline">\(G\)</span></li>
+<li>双方生成各自的公私钥对 <span class="math inline">\((x_A,
+Q_A=x_AG)\)</span> 和 <span class="math inline">\((x_B,
+Q_B=x_BG)\)</span></li>
+<li>双方交换公钥 <span class="math inline">\(Q_A\)</span> 和 <span class="math inline">\(Q_B\)</span></li>
+<li>双方分别计算共享密钥： <span class="math display">\[
+\begin{aligned}
+K_A &amp;= x_A Q_B = x_A (x_B G) \\
+K_B &amp;= x_B Q_A = x_B (x_A G) \\
+K_A &amp;= K_B
+\end{aligned}
+\]</span></li>
+</ol></li>
+<li>ECDHE 密钥交换算法
+<ul>
+<li>与 ECDH 相同，但每次会话使用不同的临时密钥对 <span class="math inline">\((x_A^\prime, Q_A^\prime=x_A^\prime G)\)</span> 和
+<span class="math inline">\((x_B^\prime, Q_B^\prime=x_B^\prime
+G)\)</span></li>
+<li>提供<strong>前向保密性</strong>：即使服务器存储的长期私钥泄露，也不会影响历史通信的安全</li>
+</ul></li>
+<li>ECDH、ECDHE、DH、DHE 的比较
+<ul>
+<li>ECDH 无法提供前向安全性，ECDHE 则解决了这一缺点</li>
+<li>ECDHE 由于生成了多轮密钥，因此需要服务器提供密钥管理功能</li>
+<li>DH 也可以提供类似的算法 DHE</li>
+<li>DHE 由于密钥长度、需要大量乘法运算等原因，性能很差</li>
+</ul></li>
+<li>ECDHE 由于其良好的运算性能及安全性，目前在工业界广泛应用
+<ul>
+<li>TLS 1.2+</li>
+<li>WPA3 SAE(Simultaneous Authentication of Equals)
+对等实体同时验证</li>
+</ul></li>
+</ul>
+<h4 id="ecmqv">ECMQV</h4>
+<ul>
+<li>基于 ECC 的增强型密钥交换算法：ECMQV（Elliptic Curve
+Menezes-Qu-Vanstone）</li>
+<li>引入可信中心，获取通信双方的公钥 <span class="math inline">\(Q_a,
+Q_b\)</span> 及私钥 <span class="math inline">\(k_a, k_b\)</span> 分别为
+Alice 和 Bob 的私钥</li>
+<li>ECMQV 密钥交换算法
+<ol type="1">
+<li>选择椭圆曲线参数 <span class="math inline">\(E_p(a,b):
+y^2=x^3+ax+b\)</span>，基点 <span class="math inline">\(G\)</span></li>
+<li>Alice 选择随机数 <span class="math inline">\(r_a\)</span>，计算临时公钥 <span class="math inline">\(R_a = r_a G\)</span>，并发送给 Bob，计算 <span class="math inline">\(R_a\)</span> 的 <span class="math inline">\(x\)</span> 坐标 <span class="math inline">\(\overline{R_a}\)</span></li>
+<li>Bob 选择随机数 <span class="math inline">\(r_b\)</span>，计算临时公钥 <span class="math inline">\(R_b = r_b G\)</span>，并发送给 Alice，计算 <span class="math inline">\(R_b\)</span> 的 <span class="math inline">\(x\)</span> 坐标 <span class="math inline">\(\overline{R_b}\)</span></li>
+<li>Alice 验证 <span class="math inline">\(R_b\)</span>，计算其 <span class="math inline">\(x\)</span> 坐标 <span class="math inline">\(\overline{R_b}\)</span>，计算共享密钥： <span class="math display">\[
+\begin{aligned}
+&amp;s_a = r_a + \overline{R_b} k_a \bmod p \\
+&amp;K_{a,b} = s_a (Q_b + \overline{R_b} R_b)
+\end{aligned}
+\]</span></li>
+<li>Bob 验证 <span class="math inline">\(R_a\)</span>，计算其 <span class="math inline">\(x\)</span> 坐标 <span class="math inline">\(\overline{R_a}\)</span>，计算共享密钥： <span class="math display">\[
+\begin{aligned}
+&amp;s_b = r_b + \overline{R_a} k_b \bmod p \\
+&amp;K_{b,a} = s_b (Q_a + \overline{R_a} R_a)
+\end{aligned}
+\]</span></li>
+<li>由于 <span class="math inline">\(K_{a,b} = K_{b,a}\)</span>，因此
+Alice 和 Bob 获得相同的共享密钥</li>
+</ol></li>
+<li>ECMQV 算法的分析
+<ul>
+<li>与 DH 密钥交换协议的共享密钥为 <span class="math inline">\(r_A,r_B,p\)</span> 不同，ECMQV
+共享的信息包括了一个重要结构 <span class="math inline">\((\overline{R_a}
+k_a, \overline{R_b} k_b, P)\)</span>，这是一个既利用了随机数 <span class="math inline">\(r_A,
+r_B\)</span>，也使用了通信双方的公钥计算出来的结构</li>
+<li><span class="math inline">\(s_b=(r_b+\overline{R_b} k_b) \bmod
+p\)</span> 可以看作 Bob 对 <span class="math inline">\(R_b\)</span>
+的“隐式签名”。“签名”是因为只有 Bob 可以计算这个值；“隐式”是因为 Alice
+在计算共享秘密的时候可以利用 <span class="math inline">\(s_b
+P=R_b+\overline{R_b} Q_b\)</span> 间接验证其正确性</li>
+</ul></li>
+<li>ECMQV 算法的优势与不足
+<ul>
+<li>优势
+<ul>
+<li>使用双重公钥，可以防止中间人攻击</li>
+<li>隐式签名的方式，避免产生额外开销（引入 CA 等）</li>
+</ul></li>
+<li>不足
+<ul>
+<li>计算过程复杂，运算量大</li>
+</ul></li>
+</ul></li>
+<li>ECMQV 算法的应用
+<ul>
+<li>ANSI X9.63、IEEE 1363-2000、ISO/IEC 15946-3 等</li>
+</ul></li>
+</ul>
+<h2 id="sm2">SM2</h2>
+<ul>
+<li>SM2
+算法是中国国家密码管理局（CNCA）发布的一种基于椭圆曲线的非对称加密算法，包含密钥交换、数字签名和公钥加密等功能具体为：
+<ul>
+<li>SM2-1 椭圆曲线数字签名算法</li>
+<li>SM2-2 椭圆曲线密钥交换协议</li>
+<li>SM2-3 椭圆曲线公钥加密算法</li>
+</ul></li>
+</ul>
+<h3 id="sm2-密钥生成">SM2 密钥生成</h3>
+<ol type="1">
+<li>公开参数
+<ul>
+<li>选取定义在有限域 <span class="math inline">\(GF(p)\)</span>
+上的椭圆曲线 <span class="math inline">\(E_p(a,b):
+y^2=x^3+ax+b\)</span></li>
+<li>选取椭圆曲线上一点作为基点 <span class="math inline">\(G\)</span></li>
+<li>有限域的模值 <span class="math inline">\(p\)</span></li>
+</ul></li>
+<li>计算公私钥对
+<ul>
+<li>选定一个大数 <span class="math inline">\(k\)</span> 作为私钥</li>
+<li>生成公钥 <span class="math inline">\(Q=kG\)</span></li>
+<li>公钥为 <span class="math inline">\(K = \{Q\}\)</span>，私钥为 <span class="math inline">\(K^{-1} = \{k\}\)</span></li>
+</ul></li>
+</ol>
+<h3 id="sm2-加解密算法">SM2 加解密算法</h3>
+<ul>
+<li>加密
+<ol type="1">
+<li>选取随机数 <span class="math inline">\(r\)</span>，<span class="math inline">\(1 &lt; r &lt; p-1\)</span></li>
+<li>计算点 <span class="math inline">\(C_1 = rG\)</span></li>
+<li>计算点 <span class="math inline">\(S = rQ = (x_S, y_S)\)</span></li>
+<li>计算密钥 <span class="math inline">\(t = KDF(x_S \parallel y_S,
+klen(M))\)</span>
+<ul>
+<li>其中 <span class="math inline">\(KDF\)</span> 是密钥派生函数，<span class="math inline">\(klen(M)\)</span> 是明文 <span class="math inline">\(M\)</span> 的比特长度</li>
+</ul></li>
+<li>计算密文 <span class="math inline">\(C_2 = M \oplus t\)</span></li>
+<li>计算 <span class="math inline">\(C_3 = Hash(x_S \parallel M
+\parallel y_S)\)</span></li>
+<li>生成密文 <span class="math inline">\(C = (C_1, C_2,
+C_3)\)</span></li>
+</ol></li>
+<li>解密
+<ol type="1">
+<li>计算点 <span class="math inline">\(S = C_1 \cdot
+k^{-1}\)</span></li>
+<li>计算密钥 <span class="math inline">\(t = KDF(x_S \parallel y_S,
+klen(C_2))\)</span></li>
+<li>计算明文 <span class="math inline">\(M = C_2 \oplus t\)</span></li>
+<li>验证 <span class="math inline">\(C_3 = Hash(x_S \parallel M
+\parallel y_S)\)</span></li>
+</ol></li>
+</ul>
+<h3 id="sm2-vs-ecc">SM2 VS ECC</h3>
+<ul>
+<li>在加密过程中，引入了多个校验点</li>
+<li>引入密钥派生函数（KDF），增强了 SM2 算法随机性，提高破解强度</li>
+<li>引入哈希函数（如 SM3），加入了对传递消息完整性校验的特性</li>
+<li>加密运算是异或操作，运算速度快</li>
+<li>密文长度有所扩张，对于计算带宽要求更高</li>
 </ul>
 <h2 id="公钥密码现状">公钥密码现状</h2>
 <ul>
@@ -5073,7 +5416,7 @@ g)\)</span></li>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年11月7日</div>
+          <div>2025年11月11日</div>
         </div>
       
       
@@ -5508,7 +5851,7 @@ g)\)</span></li>
 
 
   <script type="text/javascript">
-  document.getElementById("g-total-word-id").innerHTML = "454k";
+  document.getElementById("g-total-word-id").innerHTML = "456k";
   document.getElementById('g-total-posts-id').textContent ="50";
 </script>
 
