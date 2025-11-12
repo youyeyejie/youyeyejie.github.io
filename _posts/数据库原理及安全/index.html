@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis3351.webp">
 <meta property="article:published_time" content="2025-10-25T12:25:12.000Z">
-<meta property="article:modified_time" content="2025-11-11T15:25:10.380Z">
+<meta property="article:modified_time" content="2025-11-12T07:22:31.192Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU">
 <meta property="article:tag" content="数据库">
@@ -438,7 +438,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          45k 字
+          46k 字
         
       </span>
     
@@ -450,7 +450,7 @@
         
         
           <!-- compatible with older versions-->
-          379 分钟
+          384 分钟
         
       </span>
     
@@ -1130,40 +1130,60 @@ model）这个工具来抽象描述、组织和处理现实世界中的数据和
 </ul>
 <h4 id="信息世界的基本概念">信息世界的基本概念</h4>
 <ul>
-<li><strong>实体</strong>(Entity)：
+<li><strong>实体</strong>（Entity）
 <ul>
 <li>客观存在并可相互区别的事物</li>
 <li>可以是具体的人、事、物或抽象的概念</li>
 </ul></li>
-<li><strong>属性</strong>(Attribute)：
+<li><strong>属性</strong>（Attribute）
 <ul>
 <li>实体所具有的某一特性</li>
 <li>一个实体可由若干个属性来刻画</li>
 </ul></li>
-<li><strong>码</strong>(Key)：
+<li><strong>码</strong>（Key）
 <ul>
 <li>唯一标识实体的<strong>属性集</strong></li>
 </ul></li>
-<li><strong>域</strong>(Domain)
+<li><strong>域</strong>（Domain）
 <ul>
 <li>属性的取值范围</li>
 </ul></li>
-<li><strong>实体类型</strong>(Entity Type)
+<li><strong>实体类型</strong>（Entity Type）
 <ul>
 <li>具有相同属性的实体必然具有共同的特征和性质</li>
 <li>用<strong>实体名及其属性名集合</strong>来抽象和刻画同类实体，称为实体型</li>
 </ul></li>
-<li><strong>实体集</strong>(Entity Set)
+<li><strong>实体集</strong>（Entity Set）
 <ul>
 <li>同一类型实体的集合</li>
 </ul></li>
-<li><strong>联系</strong>(Relationship)
+<li><strong>联系</strong>（Relationship）
 <ul>
 <li>现实世界中，事物内部以及事物之间的联系，在信息世界中反映为<strong>实体内部的联系</strong>（组成实体的各属性之间的联系）和<strong>实体之间的联系</strong>（不同实体集之间的联系）。</li>
 <li>实体之间的联系
 <ul>
 <li>可发生在两个实体型、三个实体型或一个实体型之间</li>
 <li>联系类型有一对一（1:1）、一对多（1:n）、多对多（m:n）。</li>
+</ul></li>
+</ul></li>
+<li>示例：
+<ul>
+<li>实体：学生张三</li>
+<li>属性：学号、姓名、性别、出生日期</li>
+<li>码：学号</li>
+<li>域：
+<ul>
+<li>学号的取值范围为 8 位数字；</li>
+<li>姓名的取值范围为 20 个汉字以内；</li>
+<li>性别的取值范围为“男”、“女”；</li>
+<li>出生日期的取值范围为“YYYY-MM-DD”格式的日期</li>
+</ul></li>
+<li>实体型：学生（学号、姓名、性别、出生日期）</li>
+<li>实体集：{ 张三、李四、王五、…… }</li>
+<li>联系：
+<ul>
+<li>实体内部联系：学号能确定学生的姓名、性别、出生日期等属性值；</li>
+<li>实体之间的联系：学生与课程之间的选修联系。</li>
 </ul></li>
 </ul></li>
 </ul>
@@ -4494,7 +4514,8 @@ P))\]</span></li>
 <span class="line"><span style="color: #ABB2BF">    )</span></span>
 <span class="line"><span style="color: #ABB2BF">);</span></span></code></pre></div></div></figure></li>
 </ul>
-<h5 id="用existsnot-exists实现逻辑蕴函">用<code>EXISTS</code>/<code>NOT EXISTS</code>实现<strong>逻辑蕴函</strong></h5>
+<h5 id="用-existsnot-exists-实现逻辑蕴函">用 EXISTS/NOT EXISTS
+实现逻辑蕴函</h5>
 <ul>
 <li>SQL 语言中没有蕴函（Implication）逻辑运算</li>
 <li>可以利用谓词演算将逻辑蕴函谓词等价转换为： <span class="math display">\[P \rightarrow Q \equiv \neg P \lor Q
@@ -5100,10 +5121,7 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 <li>行为（处理）设计：设计应用程序、事务处理等</li>
 </ul></li>
 </ul>
-<figure>
-<img src="image-9.webp" srcset="/img/loading/loading3.gif" lazyload alt="alt text">
-<figcaption aria-hidden="true">alt text</figcaption>
-</figure>
+<p><img src="image/image-9.png" srcset="/img/loading/loading3.gif" lazyload></p>
 <h3 id="数据库设计方法">数据库设计方法</h3>
 <ul>
 <li>手工与经验相结合方法
@@ -5120,7 +5138,7 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 <ul>
 <li>将数据库设计分为若干阶段和步骤。</li>
 </ul></li>
-<li>基于E-R模型的数据库设计方法
+<li>基于 E-R 模型的数据库设计方法
 <ul>
 <li>概念设计阶段广泛采用。</li>
 </ul></li>
@@ -5142,9 +5160,9 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 </ul>
 <h3 id="数据库设计的基本步骤">数据库设计的基本步骤</h3>
 <ul>
-<li>数据库设计分6个阶段：
+<li>数据库设计分 6 个阶段：
 <ul>
-<li>阶段：
+<li><strong>阶段</strong>：
 <ul>
 <li>需求分析</li>
 <li>概念结构设计</li>
@@ -5156,7 +5174,7 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 <li>说明
 <ul>
 <li>需求分析和概念设计独立于任何数据库管理系统;</li>
-<li>逻辑设计和物理设计与选用的DBMS密切相关;</li>
+<li>逻辑设计和物理设计与选用的 DBMS 密切相关;</li>
 </ul></li>
 </ul></li>
 <li>准备工作：选定参加设计的人
@@ -5185,7 +5203,7 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 <ul>
 <li>需求分析就是分析用户的需要与要求
 <ul>
-<li>需求分析是设计数据库的起点;</li>
+<li>需求分析是设计数据库的起点；</li>
 <li>需求分析的结果是否准确地反映了用户的实际要求，将直接影响到后面各个阶段的设计，并影响到设计结果是否合理和实用；</li>
 </ul></li>
 </ul>
@@ -5193,8 +5211,8 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 <ul>
 <li>详细调查现实世界要处理的对象（组织、部门、企业等）；</li>
 <li>充分了解原系统（手工系统或计算机系统）工作概况；</li>
-<li>明确用户的各种需求;</li>
-<li>在此基础上确定新系统的功能;</li>
+<li>明确用户的各种需求；</li>
+<li>在此基础上确定新系统的功能；</li>
 <li>充分考虑今后可能的扩充和改变，不能仅仅按当前应用需求来设计数据库；</li>
 </ul>
 <h3 id="需求分析的重点">需求分析的重点</h3>
@@ -5221,16 +5239,16 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 </ul>
 <h3 id="需求分析的方法">需求分析的方法</h3>
 <ul>
-<li>调查清楚用户的实际需求并进行初步分析 <img src="image-10.webp" srcset="/img/loading/loading3.gif" lazyload>
+<li>调查清楚用户的实际需求并进行初步分析 <img src="image/image-10.png" srcset="/img/loading/loading3.gif" lazyload>
 <ul>
 <li>常用调查方法：
 <ul>
-<li>跟班作业;</li>
-<li>开调查会;</li>
-<li>请专人介绍;</li>
-<li>询问;</li>
-<li>设计调查表请用户填写;</li>
-<li>查阅记录。</li>
+<li>跟班作业</li>
+<li>开调查会</li>
+<li>请专人介绍</li>
+<li>询问</li>
+<li>设计调查表请用户填写</li>
+<li>查阅记录</li>
 </ul></li>
 </ul></li>
 <li>与用户达成共识</li>
@@ -5238,7 +5256,7 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 <ul>
 <li>常用方法
 <ul>
-<li>结构化分析方法（Structured Analysis，简称SA方法）
+<li>结构化分析方法（Structured Analysis，简称 SA 方法）
 <ul>
 <li>从最上层的系统组织机构入手</li>
 <li>自顶向下、逐层分解</li>
@@ -5246,7 +5264,7 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 </ul></li>
 </ul>
 <ol type="1">
-<li>首先把任何一个系统都抽象为： <img src="image-11.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+<li>首先把任何一个系统都抽象为： <img src="image/image-11.png" srcset="/img/loading/loading3.gif" lazyload></li>
 <li>分解处理功能和数据：
 <ul>
 <li>分解处理功能
@@ -5276,13 +5294,13 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 </ul></li>
 <li>用途
 <ul>
-<li>数据字典是各类数据描述的集合;</li>
-<li>数据字典是进行详细的数据收集和数据分析所获得的主要结果;</li>
-<li>数据字典在数据库设计中占有很重要的地位;</li>
+<li>数据字典是各类数据描述的集合</li>
+<li>数据字典是进行详细的数据收集和数据分析所获得的主要结果</li>
+<li>数据字典在数据库设计中占有很重要的地位</li>
 </ul></li>
 <li>内容
 <ul>
-<li>数据字典的内容：
+<li><strong>数据字典的内容</strong>：
 <ul>
 <li>数据项</li>
 <li>数据结构</li>
@@ -5290,20 +5308,21 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 <li>数据存储</li>
 <li>处理过程</li>
 </ul></li>
-<li>数据项是数据的最小组成单位;</li>
-<li>若干个数据项可以组成一个数据结构;</li>
-<li>数据字典通过对数据项和数据结构的定义来描述数据流、数据存储的逻辑内容;</li>
+<li>数据项是数据的最小组成单位</li>
+<li>若干个数据项可以组成一个数据结构</li>
+<li>数据字典通过对数据项和数据结构的定义来描述数据流、数据存储的逻辑内容</li>
 </ul></li>
 </ul>
 <h4 id="数据项">数据项</h4>
 <ul>
-<li>数据项是不可再分的数据单位。</li>
+<li><strong>数据项是不可再分的数据单位</strong>。</li>
 <li>对数据项的描述：
 <ul>
-<li>数据项描述 =
-{数据项名，数据项含义说明，别名，数据类型，长度，取值范围，取值含义，与其他数据项的逻辑关系，数据项之间的联系}
+<li>数据项描述 = {
+数据项名，数据项含义说明，别名，数据类型，长度，取值范围，取值含义，与其他数据项的逻辑关系，数据项之间的联系
+}
 <ul>
-<li>取值范围、与其他数据项的逻辑关系定义了数据的完整性约束条件;</li>
+<li>取值范围、与其他数据项的逻辑关系定义了数据的完整性约束条件</li>
 </ul></li>
 </ul></li>
 <li>举例：学生学籍管理子系统的数据字典。数据项以“学号”为例：
@@ -5311,35 +5330,35 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 <li>数据项：学号</li>
 <li>含义说明：唯一标识每个学生</li>
 <li>别名：学生编号</li>
-<li>类型：字符型</li>
+<li>数据类型：字符型</li>
 <li>长度：8</li>
-<li>取值范围：00000000至99999999</li>
+<li>取值范围：00000000 至 99999999</li>
 <li>取值含义：前两位标别该学生所在年级，后六位按顺序编号</li>
 </ul></li>
 </ul>
 <h4 id="数据结构">数据结构</h4>
 <ul>
-<li>数据结构反映了数据之间的组合关系。</li>
+<li><strong>数据结构反映了数据之间的组合关系</strong>。</li>
 <li>一个数据结构可以由若干个数据项组成，也可以由若干个数据结构组成，或由若干个数据项和数据结构混合组成。</li>
 <li>对数据结构的描述：
 <ul>
-<li>数据结构描述 = { 数据结构名，含义说明，组成：{数据项或数据结构}
+<li>数据结构描述 = { 数据结构名，含义说明，组成：{ 数据项或数据结构 }
 }</li>
 </ul></li>
 <li>举例：学生学籍管理子系统的数据字典。“学生”是该系统中的一个核心数据结构：
 <ul>
 <li>数据结构：学生</li>
-<li>含义说明：是学籍管理子系统的主体数据结构，定义了一个学生的有关信息;</li>
-<li>组成：学号，姓名，性别，年龄，所在系，年级;</li>
+<li>含义说明：是学籍管理子系统的主体数据结构，定义了一个学生的有关信息</li>
+<li>组成：学号，姓名，性别，年龄，所在系，年级</li>
 </ul></li>
 </ul>
 <h4 id="数据流">数据流</h4>
 <ul>
-<li>数据流是数据结构在系统内传输的路径。</li>
+<li><strong>数据流是数据结构在系统内传输的路径</strong>。</li>
 <li>对数据流的描述：
 <ul>
-<li>数据流描述 =
-{数据流名，说明，数据流来源，数据流去向，组成：{数据结构}，平均流量，高峰期流量}
+<li>数据流描述 = { 数据流名，说明，数据流来源，数据流去向，组成：{
+数据结构 }，平均流量，高峰期流量 }
 <ul>
 <li>数据流来源是说明该数据流来自哪个过程</li>
 <li>数据流去向是说明该数据流将到哪个过程去</li>
@@ -5353,7 +5372,9 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 <li>说明：学生参加体格检查的最终结果</li>
 <li>数据流来源：体检</li>
 <li>数据流去向：批准</li>
-<li>……</li>
+<li>组成：学生，体检项目，体检结果</li>
+<li>平均流量：每年 3000 条</li>
+<li>高峰期流量：每月 1000 条</li>
 </ul></li>
 </ul>
 <h4 id="数据存储">数据存储</h4>
@@ -5361,8 +5382,8 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 <li>数据存储是数据结构停留或保存的地方，也是数据流的来源和去向之一。</li>
 <li>对数据存储的描述：
 <ul>
-<li>数据存储描述 =
-{数据存储名，说明，编号，输入的数据流，输出的数据流，组成：{ 数据结构
+<li>数据存储描述 = {
+数据存储名，说明，编号，输入的数据流，输出的数据流，组成：{ 数据结构
 }，数据量，存取频度，存取方式 }
 <ul>
 <li>输入的数据流：指出数据来源</li>
@@ -5371,13 +5392,17 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 <li>存取方法：批处理/联机处理；检索/更新；顺序检索/随机检索；</li>
 </ul></li>
 </ul></li>
-<li>举例：数据存储“学生登记表”可如下描述：
+<li>举例：数据存储“体检记录”可如下描述：
 <ul>
-<li>数据存储：学生登记表</li>
-<li>说明：记录学生的基本情况</li>
-<li>……</li>
-<li>数据量：每年3000张</li>
-<li>存取方式：随机存取</li>
+<li>数据存储：体检记录</li>
+<li>说明：保存学生体格检查的所有记录</li>
+<li>编号：DS-01</li>
+<li>输入的数据流：体检结果</li>
+<li>输出的数据流：体检结果查询</li>
+<li>组成：学生，体检项目，体检结果</li>
+<li>数据量：每年约 3000 条记录</li>
+<li>存取频度：每天存取 50 次</li>
+<li>存取方式：联机处理，随机检索，更新</li>
 </ul></li>
 </ul>
 <h4 id="处理过程">处理过程</h4>
@@ -5385,8 +5410,8 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 <li>处理过程的具体处理逻辑一般用判定表或判定树来描述，数据字典中只需要描述处理过程的说明性信息。</li>
 <li>处理过程说明信息的描述
 <ul>
-<li>处理过程描述 = {处理过程名，说明，输入：{ 数据流 }，输出： { 数据流
-}，处理： { 简要说明 } }</li>
+<li>处理过程描述 = { 处理过程名，说明，输入：{ 数据流 }，输出： { 数据流
+}，处理：{ 简要说明 } }</li>
 </ul></li>
 <li>举例：处理过程“分配宿舍”可如下描述：
 <ul>
@@ -5402,51 +5427,62 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 <ul>
 <li>定义：
 <ul>
-<li>需求分析阶段描述的用户应用需求是现实世界的具体需求;</li>
-<li>将需求分析得到的用户需求抽象为信息结构即概念模型的过程就是概念结构设计；</li>
+<li>需求分析阶段描述的用户应用需求是现实世界的具体需求，将需求分析得到的用户需求抽象为信息结构即概念模型的过程就是概念结构设计；</li>
 <li>概念结构是各种数据模型的共同基础，它比数据模型更独立于机器，更抽象，从而更加稳定；</li>
-<li>概念结构设计是整个数据库设计的关键;</li>
+<li><strong>概念结构设计是整个数据库设计的关键</strong>；</li>
 </ul>
 <figure>
-<img src="image-12.webp" srcset="/img/loading/loading3.gif" lazyload alt="概念结构">
+<img src="image/image-12.png" srcset="/img/loading/loading3.gif" lazyload alt="概念结构">
 <figcaption aria-hidden="true">概念结构</figcaption>
 </figure></li>
 <li>概念结构设计的特点：
 <ul>
 <li>能真实、充分地反映现实世界，包括事物和事物之间的联系，能满足用户对数据的处理要求。</li>
 <li>易于理解，从而可以用它和不熟悉计算机的用户交换意见。</li>
-<li>易于更改，当应用环境和应用要求改变时，容易对概念模型修改和扩充</li>
+<li>易于更改，当应用环境和应用要求改变时，容易对概念模型修改和扩充。</li>
 <li>易于向关系、网状、层次等各种数据模型转换。</li>
 </ul></li>
 <li>描述概念模型的工具
 <ul>
-<li>E-R模型
+<li>E-R 模型
 <ul>
 <li>两个实体之间的联系</li>
 </ul>
-<img src="image-13.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+<figure>
+<img src="image/image-13.png" srcset="/img/loading/loading3.gif" lazyload alt="两个实体之间的联系">
+<figcaption aria-hidden="true">两个实体之间的联系</figcaption>
+</figure></li>
 </ul></li>
 </ul>
 <h3 id="概念结构设计的方法">概念结构设计的方法</h3>
 <ul>
 <li><p>概念结构设计的四类方法</p>
 <ul>
-<li><p>自顶向下</p>
+<li><strong>自顶向下</strong>
 <ul>
 <li>首先定义全局概念结构的框架，然后逐步细化</li>
 </ul>
-<p><img src="image-14.webp" srcset="/img/loading/loading3.gif" lazyload></p></li>
-<li><p>自底向上</p>
+<figure>
+<img src="image/image-14.png" srcset="/img/loading/loading3.gif" lazyload alt="自顶向下">
+<figcaption aria-hidden="true">自顶向下</figcaption>
+</figure></li>
+<li><strong>自底向上</strong>
 <ul>
 <li>首先定义各局部应用的概念结构，然后将它们集成起来，得到全局概念结构</li>
 </ul>
-<p><img src="image-15.webp" srcset="/img/loading/loading3.gif" lazyload></p></li>
-<li><p>逐步扩张</p>
+<figure>
+<img src="image/image-15.png" srcset="/img/loading/loading3.gif" lazyload alt="自底向上">
+<figcaption aria-hidden="true">自底向上</figcaption>
+</figure></li>
+<li><strong>逐步扩张</strong>
 <ul>
 <li>首先定义最重要的核心概念结构，然后向外扩充，以滚雪球的方式逐步生成其他概念结构，直至总体概念结构</li>
 </ul>
-<p><img src="image-16.webp" srcset="/img/loading/loading3.gif" lazyload></p></li>
-<li><p>混合策略</p>
+<figure>
+<img src="image/image-16.png" srcset="/img/loading/loading3.gif" lazyload alt="逐步扩张">
+<figcaption aria-hidden="true">逐步扩张</figcaption>
+</figure></li>
+<li>混合策略
 <ul>
 <li>将自顶向下和自底向上相结合，用自顶向下策略设计一个全局概念结构的框架，以它为骨架集成由自底向上策略中设计的各局部概念结构。</li>
 </ul></li>
@@ -5456,46 +5492,59 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 <li><strong>自顶向下</strong>地进行需求分析</li>
 <li><strong>自底向上</strong>地设计概念结构</li>
 </ul>
-<p><img src="image-17.webp" srcset="/img/loading/loading3.gif" lazyload></p></li>
+<p><img src="image/image-17.png" srcset="/img/loading/loading3.gif" lazyload></p></li>
 <li><p>自底向上设计概念结构的步骤：</p>
 <ol type="1">
 <li>抽象数据并设计局部视图。</li>
 <li>集成局部视图，得到全局概念结构。</li>
 </ol>
-<p><img src="image-19.webp" srcset="/img/loading/loading3.gif" lazyload></p></li>
+<figure>
+<img src="image/image-19.png" srcset="/img/loading/loading3.gif" lazyload alt="自底向上设计概念结构">
+<figcaption aria-hidden="true">自底向上设计概念结构</figcaption>
+</figure></li>
 </ul>
-<h4 id="数据抽象">数据抽象</h4>
+<h3 id="概念结构设计的步骤">概念结构设计的步骤</h3>
+<ul>
+<li>抽象数据并设计局部视图。</li>
+<li>集成局部视图，得到全局概念结构。</li>
+<li>验证整体概念结构。</li>
+</ul>
+<h4 id="抽象数据并设计局部视图">抽象数据并设计局部视图</h4>
+<h5 id="数据抽象">数据抽象</h5>
 <ul>
 <li>概念结构是对现实世界的一种抽象
 <ul>
 <li>从实际的人、物、事和概念中抽取所关心的共同特性，忽略非本质的细节；</li>
-<li>把这些特性用各种概念精确地加以描述;</li>
+<li>把这些特性用各种概念精确地加以描述；</li>
 <li>这些概念组成了某种模型；</li>
 </ul></li>
 <li><strong>三类常用抽象</strong>
 <ol type="1">
-<li><p><strong>分类</strong> (Classification)</p>
+<li><p><strong>分类</strong>（Classification）</p>
 <ul>
 <li>定义某一类概念作为现实世界中一组对象的类型</li>
 <li>这些对象具有某些共同的特性和行为</li>
 <li>抽象了对象值和型之间的 “is member of” 的语义</li>
-<li>在E-R模型中，实体型就是这种抽象</li>
+<li>在 E-R 模型中，实体型就是这种抽象</li>
 </ul>
-<p><img src="image-20.webp" srcset="/img/loading/loading3.gif" lazyload></p></li>
+<figure>
+<img src="image/image-20.png" srcset="/img/loading/loading3.gif" lazyload alt="示例">
+<figcaption aria-hidden="true">示例</figcaption>
+</figure></li>
 <li><p><strong>聚集</strong>（Aggregation）</p>
 <ul>
 <li>定义某一类型的组成成分</li>
 <li>抽象了对象内部类型和成分之间“is part of”的语义</li>
-<li>在E-R模型中若干属性的聚集组成了实体型，就是这种抽象</li>
+<li>在 E-R 模型中若干属性的聚集组成了实体型，就是这种抽象</li>
 </ul>
-<p><img src="image-21.webp" srcset="/img/loading/loading3.gif" lazyload></p></li>
+<p><img src="image/image-21.png" srcset="/img/loading/loading3.gif" lazyload></p></li>
 <li><p><strong>概括</strong>（Generalization）</p>
 <ul>
 <li>定义类型之间的一种子集联系</li>
 <li>它抽象了类型之间的 “is subset of” 的语义</li>
 <li>概括有一个很重要的性质：继承性。</li>
 </ul>
-<p><img src="image-22.webp" srcset="/img/loading/loading3.gif" lazyload></p>
+<p><img src="image/image-22.png" srcset="/img/loading/loading3.gif" lazyload></p>
 <ul>
 <li>用双竖边的矩形框表示子类</li>
 <li>用直线加小圆圈表示超类-子类的联系</li>
@@ -5507,29 +5556,31 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 <ul>
 <li>实体</li>
 <li>实体的属性，标识实体的码</li>
-<li>确定实体之间的联系类型(1：1，1：n，m：n)</li>
+<li>确定实体之间的联系类型(1:1，1:n，m:n)</li>
 </ul></li>
 </ul></li>
 </ul>
-<h4 id="局部视图设计">局部视图设计</h4>
+<h5 id="局部视图设计">局部视图设计</h5>
 <ol type="1">
 <li><p>选择局部应用</p>
 <ul>
-<li>在多层的数据流图中选择一个适当层次的数据流图，作为设计分E-R图的出发点。</li>
-<li>通常以中层数据流图作为设计分 E-R图的依据</li>
+<li>在多层的数据流图中选择一个适当层次的数据流图，作为设计分 E-R
+图的出发点。</li>
+<li>通常以中层数据流图作为设计分 E-R 图的依据</li>
 </ul>
-<p><img src="image-23.webp" srcset="/img/loading/loading3.gif" lazyload></p></li>
-<li><p>逐一设计分E-R图</p>
+<p><img src="image/image-23.png" srcset="/img/loading/loading3.gif" lazyload></p></li>
+<li><p>逐一设计分 E-R 图</p>
 <ul>
 <li>任务：
 <ul>
 <li>将各局部应用涉及的数据分别从数据字典中抽取出来。</li>
 <li>参照数据流图，标定各局部应用中的实体、实体的属性、标识实体的码。</li>
-<li>确定实体之间的联系及其类型（1：1，1：n，m：n）。</li>
+<li>确定实体之间的联系及其类型（1:1，1:n，m:n）。</li>
 </ul></li>
 <li>设计原则：
 <ul>
-<li>为了简化E-R图的处置，现<strong>实世界中的事物凡能够作为属性对待的，应尽量作为属性</strong>。</li>
+<li>为了简化 E-R
+图的处置，现<strong>实世界中的事物凡能够作为属性对待的，应尽量作为属性</strong>。</li>
 <li>一般原则：
 <ul>
 <li>属性不能再具有需要描述的性质。即<strong>属性必须是不可分的数据项</strong>，不能再由另一些属性组成。</li>
@@ -5541,16 +5592,11 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 <ul>
 <li>实体与属性是相对而言的。同一事物，在一种应用环境中作为“属性”，在另一种应用环境中就必须作为“实体”。</li>
 </ul>
-<img src="image-24.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+<img src="image/image-24.png" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul></li>
 </ol>
-<h3 id="概念结构设计的步骤">概念结构设计的步骤</h3>
 <ul>
-<li>抽象数据并设计局部视图。</li>
-<li>集成局部视图，得到全局概念结构。</li>
-<li>验证整体概念结构。</li>
-</ul>
-<h3 id="案例分析销售管理子系统分e-r图的设计">案例分析：销售管理子系统分E-R图的设计。</h3>
+<li>案例分析：销售管理子系统分 E-R 图的设计
 <ul>
 <li>销售管理子系统的主要功能：
 <ul>
@@ -5559,56 +5605,66 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 <li>交出货物同时开出发票。</li>
 <li>收到顾客付款后，根据发票存根和信贷情况进行应收款处理。</li>
 </ul></li>
-<li>下图是第一层数据流图，虚线部分划出了系统边界。 <img src="image-25.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+<li>下图是第一层数据流图，虚线部分划出了系统边界。 <img src="image/image-25.png" srcset="/img/loading/loading3.gif" lazyload alt="第一层数据流图"></li>
 <li>第二层数据流图：
 <ul>
-<li>接收订单 <img src="image-26.webp" srcset="/img/loading/loading3.gif" lazyload></li>
-<li>处理订单 <img src="image-27.webp" srcset="/img/loading/loading3.gif" lazyload></li>
-<li>开发票 <img src="image-28.webp" srcset="/img/loading/loading3.gif" lazyload></li>
-<li>支付过账 <img src="image-29.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+<li>接收订单 <img src="image/image-26.png" srcset="/img/loading/loading3.gif" lazyload alt="接收订单"></li>
+<li>处理订单 <img src="image/image-27.png" srcset="/img/loading/loading3.gif" lazyload alt="处理订单"></li>
+<li>开发票 <img src="image/image-28.png" srcset="/img/loading/loading3.gif" lazyload alt="开发票"></li>
+<li>支付过账 <img src="image/image-29.png" srcset="/img/loading/loading3.gif" lazyload alt="支付过账"></li>
 </ul></li>
-<li>分E-R图的框架： <img src="image-30.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+<li>分 E-R 图的框架： <img src="image/image-30.png" srcset="/img/loading/loading3.gif" lazyload></li>
 <li>参照第二层数据流图和数据字典，遵循两个准则，进行如下调整：
 <ul>
-<li>订单与订单细节（有若干属性）是 <span class="math inline">\(1：n\)</span> 的联系。</li>
+<li>订单与订单细节（有若干属性）是 1:n 的联系。</li>
 <li>原订单和产品的联系实际上是订单细节和产品的联系。</li>
 <li>“发票主清单”是一个数据存储，不必作为实体。</li>
 <li>工厂对大宗订货给予优惠，每种产品有不同订货量的折扣</li>
 </ul></li>
-<li>修改后的分E-R图的框架： <img src="image-31.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+<li>修改后的分 E-R 图的框架： <img src="image/image-31.png" srcset="/img/loading/loading3.gif" lazyload></li>
 <li>对每个实体定义的属性如下：
 <ul>
-<li>顾客：{<strong>顾客号</strong>，顾客名，地址，电话，信贷状况，账目余额}</li>
-<li>订单：{<strong>订单号</strong>，顾客号，订货项数，订货日期，交货日期，工种号，生产地点}</li>
-<li>订单细则：{<strong>订单号，细则号</strong>，零件号，订货数，金额}</li>
-<li>应收账款：{<strong>顾客号，订单号</strong>，发票号，应收金额，支付日期，支付金额，当前余额，货款限额}</li>
-<li>产品描述：{<strong>产品号</strong>，产品名，单价，重量}</li>
-<li>折扣规则：{<strong>产品号，订货量</strong>，折扣}</li>
+<li>顾客（<strong>顾客号</strong>，顾客名，地址，电话，信贷状况，账目余额）</li>
+<li>订单（<strong>订单号</strong>，顾客号，订货项数，订货日期，交货日期，工种号，生产地点）</li>
+<li>订单细则（<strong>订单号，细则号</strong>，零件号，订货数，金额）</li>
+<li>应收账款（<strong>顾客号，订单号</strong>，发票号，应收金额，支付日期，支付金额，当前余额，货款限额）</li>
+<li>产品描述（<strong>产品号</strong>，产品名，单价，重量）</li>
+<li>折扣规则（<strong>产品号，订货量</strong>，折扣）</li>
+</ul></li>
 </ul></li>
 </ul>
-<h3 id="视图的集成">视图的集成</h3>
+<h4 id="集成视图">集成视图</h4>
 <ul>
-<li>各个局部视图即分E-R图建立好后，还需要对它们进行合并，集成为一个整体的数据概念结构，即总E-R图。</li>
+<li>各个局部视图即分 E-R
+图建立好后，还需要对它们进行合并，集成为一个整体的数据概念结构，即总 E-R
+图。</li>
 <li>视图集成的两种方式：
 <ul>
-<li>多个分E-R图一次集成
+<li><strong>多个分 E-R 图一次集成</strong>
 <ul>
-<li>一次集成多个分E-R图;</li>
+<li>一次集成多个分 E-R 图;</li>
 <li>通常用于局部视图比较简单时;</li>
-<li><img src="image-32.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+<li><figure>
+<img src="image/image-32.png" srcset="/img/loading/loading3.gif" lazyload alt="一次集成">
+<figcaption aria-hidden="true">一次集成</figcaption>
+</figure></li>
 </ul></li>
-<li>逐步累积式
+<li><strong>逐步累积式</strong>
 <ul>
 <li>首先集成两个局部视图（通常是比较关键的两个）</li>
 <li>以后每次将一个新的局部视图集成进来</li>
-<li><img src="image-33.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+<li><figure>
+<img src="image/image-33.png" srcset="/img/loading/loading3.gif" lazyload alt="逐步累积式">
+<figcaption aria-hidden="true">逐步累积式</figcaption>
+</figure></li>
 </ul></li>
 </ul></li>
-<li>集成局部E-R图的步骤 <img src="image-34.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+<li>集成局部 E-R 图的步骤 <img src="image/image-34.png" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul>
-<h4 id="合并分e-r图生成初步e-r图">合并分E-R图，生成初步E-R图</h4>
+<h5 id="合并分-e-r-图生成初步-e-r-图">合并分 E-R 图，生成初步 E-R
+图</h5>
 <ul>
-<li>各分E-R图存在冲突
+<li>各分 E-R 图存在冲突
 <ul>
 <li><strong>属性冲突</strong>
 <ul>
@@ -5625,7 +5681,8 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 <ul>
 <li><strong>同名异义</strong>：不同意义的对象在不同的局部应用中具有相同的名字
 <ul>
-<li>例：局部应用A中将教室称为房间，局部应用B中将学生宿舍称为房间</li>
+<li>例：局部应用 A 中将教室称为房间，局部应用 B
+中将学生宿舍称为房间</li>
 </ul></li>
 <li><strong>异名同义</strong>（一义多名）：同一意义的对象在不同的局部应用中具有不同的名字
 <ul>
@@ -5634,19 +5691,29 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 </ul></li>
 <li><strong>结构冲突</strong>
 <ul>
-<li>同一对象在不同应用中具有不同的抽象;</li>
-<li><strong>同一实体在不同分E-R图中所包含的属性个数和属性排列次序不完全相同</strong>;</li>
-<li>实体之间的联系在不同局部视图中呈现不同的类型;</li>
-</ul></li>
-</ul></li>
-<li>合并分E-R图的主要工作与关键
+<li>同一对象在不同应用中具有不同的抽象；
 <ul>
-<li>合理消除各分E-R图的冲突。</li>
+<li>例：某些局部应用中把职位作为实体，而另一些局部应用中把职位作为属性；</li>
+</ul></li>
+<li><strong>同一实体在不同分 E-R
+图中所包含的属性个数和属性排列次序不完全相同</strong>；
+<ul>
+<li>例：某些局部应用中职工的属性包括职工号、姓名、性别、出生日期，而另一些局部应用中职工的属性还包括职称、工资等；</li>
+</ul></li>
+<li>实体之间的联系在不同局部视图中呈现不同的类型；
+<ul>
+<li>例：某些局部应用中把职工和项目之间的联系看作多对多联系，而另一些局部应用中把它看作两个一对多联系的组合。</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>合并分 E-R 图的主要工作与关键
+<ul>
+<li>合理消除各分 E-R 图的冲突。</li>
 </ul></li>
 </ul>
-<h4 id="修改与重构生成基本e-r图">修改与重构，生成基本E-R图</h4>
+<h5 id="修改与重构生成基本-e-r-图">修改与重构，生成基本 E-R 图</h5>
 <ul>
-<li>基本任务：消除不必要的冗余，设计生成基本E-R图 <img src="image-35.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+<li>基本任务：消除不必要的冗余，设计生成基本 E-R 图 <img src="image/image-35.png" srcset="/img/loading/loading3.gif" lazyload></li>
 <li>冗余
 <ul>
 <li>冗余的数据是指可由基本数据导出的数据，冗余的联系是指可由其他联系导出的联系。</li>
@@ -5659,37 +5726,34 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 </ul></li>
 <li>若人为地保留了一些冗余数据，则应把数据字典中数据关联的说明作为完整性约束条件。
 <ul>
-<li><span class="math inline">\(Q4 = \sum Q5\)</span> 。</li>
-<li>一旦 <span class="math inline">\(Q5\)</span>
-修改后就应当触发完整性检查，对 <span class="math inline">\(Q4\)</span>
-进行修改。</li>
+<li>例如：<span class="math inline">\(Q4 = \sum Q5\)</span>，一旦 <span class="math inline">\(Q5\)</span> 修改后就应当触发完整性检查，对 <span class="math inline">\(Q4\)</span> 进行修改。</li>
 </ul></li>
 </ul></li>
 </ul></li>
 <li>消除冗余的方法
 <ul>
 <li>分析方法：以数据字典和数据流图为依据，根据数据字典中关于数据项之间逻辑关系的说明来消除冗余。
-<img src="image-36.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+<img src="image/image-36.png" srcset="/img/loading/loading3.gif" lazyload></li>
 <li>规范化理论：函数依赖的概念提供了消除冗余联系的形式化工具。
 <ol type="1">
-<li>确定分E-R图实体之间的数据依赖 <span class="math inline">\(F_{L}\)</span> 。
+<li>确定分 E-R 图实体之间的数据依赖 <span class="math inline">\(F_{L}\)</span> 。
 <ul>
 <li>例：部门和职工之间一对多的联系可表示为：职工号 <span class="math inline">\(\rightarrow\)</span> 部门号</li>
 <li>例：职工和项目之间多对多的联系可表示为：（职工号，项目号）→工作天数
-<img src="image-37.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+<img src="image/image-37.png" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul></li>
 <li>求 <span class="math inline">\(F_{L}\)</span> 的最小覆盖 <span class="math inline">\(G_{L}\)</span> ，差集为：<span class="math inline">\(D = F _ {L} - G _ {L}\)</span>，逐一考察 <span class="math inline">\(D\)</span>
 中的函数依赖，确定是否是冗余的联系，若是，就把它去掉。
 <ul>
-<li>冗余的联系一定在D中，而D中的联系不一定是冗余的；</li>
+<li>冗余的联系一定在 <span class="math inline">\(D\)</span> 中，而 <span class="math inline">\(D\)</span> 中的联系不一定是冗余的；</li>
 <li>当实体之间存在多种联系时，要将实体之间的联系在形式上加以区分；</li>
 </ul></li>
 </ol></li>
 </ul></li>
 <li>案例分析：某工厂管理信息系统的视图集成
 <ul>
-<li>工厂物资管理、销售管理子系统、劳动人事管理的分E-R图 <img src="image-38.webp" srcset="/img/loading/loading3.gif" lazyload></li>
-<li>工厂管理信息系统的基本E-R图 <img src="image-41.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+<li>工厂物资管理、销售管理子系统、劳动人事管理的分 E-R 图 <img src="image/image-38.png" srcset="/img/loading/loading3.gif" lazyload alt="分 E-R 图"></li>
+<li>工厂管理信息系统的基本 E-R 图 <img src="image/image-41.png" srcset="/img/loading/loading3.gif" lazyload alt="基本 E-R 图"></li>
 <li>集成过程，解决了以下问题：
 <ul>
 <li>异名同义，项目和产品含义相同。</li>
@@ -5698,7 +5762,7 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 </ul></li>
 </ul></li>
 </ul>
-<h3 id="验证整体概念结构">验证整体概念结构</h3>
+<h4 id="验证整体概念结构">验证整体概念结构</h4>
 <ul>
 <li>视图集成后形成一个整体的数据库概念结构，对该整体概念结构还必须进行进一步验证，确保它能够满足下列条件：
 <ul>
@@ -5709,16 +5773,18 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 </ul>
 <h2 id="逻辑结构设计">逻辑结构设计</h2>
 <ul>
-<li>逻辑结构设计的任务：把概念结构设计阶段设计好的基本E-R图转换为与选用DBMS产品所支持的数据模型相符合的逻辑结构。</li>
-<li>逻辑结构设计的步骤 <img src="image-42.webp" srcset="/img/loading/loading3.gif" lazyload alt="逻辑结构设计步骤"></li>
+<li>逻辑结构设计的任务：把概念结构设计阶段设计好的基本 E-R
+图转换为与选用 DBMS 产品所支持的数据模型相符合的逻辑结构。</li>
+<li>逻辑结构设计的步骤 <img src="image/image-42.png" srcset="/img/loading/loading3.gif" lazyload alt="逻辑结构设计步骤"></li>
 </ul>
-<h3 id="e-r图向关系模型的转换">E-R图向关系模型的转换</h3>
+<h3 id="e-r-图向关系模型的转换">E-R 图向关系模型的转换</h3>
 <ul>
 <li>转换内容
 <ul>
-<li>E-R图由实体、实体的属性和实体之间的联系三个要素组成</li>
+<li>E-R 图由实体、实体的属性和实体之间的联系三个要素组成</li>
 <li>关系模型的逻辑结构是一组关系模式的集合</li>
-<li>将E-R图转换为关系模型：将实体、实体的属性和实体之间的联系转化为关系模式。</li>
+<li>将 E-R
+图转换为关系模型：将实体、实体的属性和实体之间的联系转化为关系模式。</li>
 </ul></li>
 </ul>
 <h4 id="一个实体型转换为一个关系模式">一个实体型转换为一个关系模式</h4>
@@ -5731,39 +5797,50 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 <li>注意：性别、宿舍、班级、档案材料、教师、课程、教室、教科书可用别的关系模式表达。</li>
 </ul></li>
 </ul>
-<h4 id="一个mn联系转换为一个关系模式">一个m：n联系转换为一个关系模式</h4>
+<h4 id="一个-mn-联系转换为一个关系模式">一个 m:n
+联系转换为一个关系模式</h4>
 <ul>
 <li><strong>关系的属性</strong>：与该联系相连的各实体的码以及联系本身的属性</li>
 <li><strong>关系的码</strong>：各实体码的组合</li>
-<li>示例：“选修”联系是一个m：n联系，可以将它转换为如下关系模式，其中学号与课程号为关系的组合码：
+<li>示例：“选修”联系是一个 m:n
+联系，可以将它转换为如下关系模式，其中学号与课程号为关系的组合码：
 <ul>
 <li>选修（<strong>学号，课程号</strong>，成绩）</li>
-<li><img src="image-43.webp" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul></li>
 </ul>
-<h4 id="一个1n联系可以转换为一个独立的关系模式也可以与n端对应的关系模式合并">一个1：n联系可以转换为一个独立的关系模式，也可以与n端对应的关系模式合并</h4>
+<h4 id="一个-1n-联系可以转换为一个独立的关系模式也可以与-n-端对应的关系模式合并">一个
+1:n 联系可以转换为一个独立的关系模式，也可以与 n
+端对应的关系模式合并</h4>
 <ol type="1">
 <li>转换为一个独立的关系模式
 <ul>
 <li><strong>关系的属性</strong>：与该联系相连的各实体的码以及联系本身的属性</li>
-<li><strong>关系的码</strong>：n端实体的码</li>
-<li>示例：“组成”联系(学生组成班级)为 <span class="math inline">\(1：n\)</span>
-联系：组成（<strong>学号</strong>，班级号）
-<ul>
-<li><img src="image-44.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+<li><strong>关系的码</strong>：n 端实体的码</li>
 </ul></li>
-</ul></li>
-<li><strong>与n端对应的关系模式合并</strong>（更常用）
+<li><strong>与 n 端对应的关系模式合并</strong>（更常用）
 <ul>
-<li><strong>合并后关系的属性</strong>：在n端关系中加入1端关系的码和联系本身的属性</li>
+<li><strong>合并后关系的属性</strong>：在 n 端关系中加入 1
+端关系的码和联系本身的属性</li>
 <li><strong>合并后关系的码</strong>：不变</li>
-<li>示例：学生（<strong>学号</strong>，姓名，出生日期，所在系，年级，班级号，平均成绩）
-<ul>
 <li>可以减少系统中的关系个数，一般情况下更倾向于采用这种方法</li>
 </ul></li>
-</ul></li>
 </ol>
-<h4 id="一个11联系可以转换为一个独立的关系模式也可以与任意一端对应的关系模式合并">一个1：1联系可以转换为一个独立的关系模式，也可以与任意一端对应的关系模式合并</h4>
+<ul>
+<li>示例：“组成”联系（学生组成班级）为 1:n 联系，可以有两种转换方法：
+<ol type="1">
+<li>转换为一个独立的关系模式：
+<ul>
+<li>组成（<strong>学号</strong>，班级号）</li>
+</ul></li>
+<li>“组成”联系与学生关系模式合并，则只需在学生关系中加入班级关系的码，即班级号：
+<ul>
+<li>学生（<strong>学号</strong>，姓名，出生日期，所在系，年级，<em>班级号</em>，平均成绩）</li>
+</ul></li>
+</ol></li>
+</ul>
+<h4 id="一个-11-联系可以转换为一个独立的关系模式也可以与任意一端对应的关系模式合并">一个
+1:1
+联系可以转换为一个独立的关系模式，也可以与任意一端对应的关系模式合并</h4>
 <ol type="1">
 <li>转换为一个独立的关系模式
 <ul>
@@ -5777,7 +5854,7 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 </ul></li>
 </ol>
 <ul>
-<li>示例：“管理”联系(老师管理班级)为1：1联系，可以有三种转换方法：
+<li>示例：“管理”联系（老师管理班级）为 1:1 联系，可以有三种转换方法：
 <ol type="1">
 <li>转换为一个独立的关系模式：
 <ul>
@@ -5786,16 +5863,16 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 </ul></li>
 <li>“管理”联系与班级关系模式合并，则只需在班级关系中加入教师关系的码，即职工号：
 <ul>
-<li>班级：（<strong>班级号</strong>，学生人数，职工号）</li>
+<li>班级（<strong>班级号</strong>，学生人数，<em>管理职工号</em>）</li>
 </ul></li>
 <li>“管理”联系与教师关系模式合并，则只需在教师关系中加入班级关系的码，即班级号：
 <ul>
-<li>教师：（<strong>职工号</strong>，姓名，性别，职称，班级号，是否为优秀班主任）</li>
+<li>教师（<strong>职工号</strong>，姓名，性别，职称，<em>管理班级号</em>，是否为优秀班主任）</li>
 </ul></li>
 </ol></li>
 <li><strong>注意</strong>：
 <ul>
-<li>从理论上讲，1：1联系可以与任意一端对应的关系模式合并。</li>
+<li>从理论上讲，1:1 联系可以与任意一端对应的关系模式合并。</li>
 <li>但在一些情况下，与不同的关系模式合并效率会大不一样。因此究竟应该与哪端的关系模式合并需要依应用的具体情况而定。</li>
 <li>由于连接操作是最费时的操作，所以一般应以尽量减少连接操作为目标。
 <ul>
@@ -5819,7 +5896,7 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 <li>合并方法：将其中一个关系模式的全部属性加入到另一个关系模式中，然后去掉其中的同义属性（可能同名也可能不同名），并适当调整属性的次序。</li>
 </ul>
 <h4 id="案例分析">案例分析</h4>
-<p><img src="image-41.webp" srcset="/img/loading/loading3.gif" lazyload></p>
+<p><img src="image/image-41.png" srcset="/img/loading/loading3.gif" lazyload></p>
 <ul>
 <li>工厂管理信息系统的基本E-R图，虚线上方的部分转换为关系模式（<strong>加粗/下划线为主码，斜体/波浪线为外码</strong>）：
 <ul>
@@ -5859,18 +5936,18 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 <li>注意：并不是规范化程度越高的关系就越优，一般说来，第三范式就足够了。</li>
 <li>示例：
 <ul>
-<li>在关系模式 学生成绩单(学号，英语，数学，语文，平均成绩)
-中存在下列函数依赖：
+<li>在关系模式：学生成绩单（学号，英语，数学，语文，平均成绩）中存在下列函数依赖：
 <ul>
-<li>学号 <span class="math inline">\(\rightarrow\)</span> 英语</li>
-<li>学号 <span class="math inline">\(\rightarrow\)</span> 数学</li>
-<li>学号 <span class="math inline">\(\rightarrow\)</span> 语文</li>
-<li>学号 <span class="math inline">\(\rightarrow\)</span> 平均成绩</li>
-<li>(英语，数学，语文) <span class="math inline">\(\rightarrow\)</span>
+<li>学号 <span class="math inline">\(\to\)</span> 英语</li>
+<li>学号 <span class="math inline">\(\to\)</span> 数学</li>
+<li>学号 <span class="math inline">\(\to\)</span> 语文</li>
+<li>学号 <span class="math inline">\(\to\)</span> 平均成绩</li>
+<li>(英语，数学，语文) <span class="math inline">\(\to\)</span>
 平均成绩</li>
 </ul></li>
-<li>显然有：学号 <span class="math inline">\(\rightarrow\)</span>
-(英语，数学，语文)，因此该关系模式中存在传递函数依赖，是2NF关系。</li>
+<li>显然有：学号 <span class="math inline">\(\to\)</span>
+(英语，数学，语文) <span class="math inline">\(\to\)</span>
+平均成绩，因此该关系模式中存在传递函数依赖，是 2NF 关系。</li>
 <li>虽然平均成绩可以由其它属性推算出来，但如果应用中需要经常查询学生的平均成绩，为提高效率，仍然可保留该冗余数据，对关系模式不再做进一步分解。</li>
 </ul></li>
 </ul></li>
@@ -5880,7 +5957,7 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 <ul>
 <li>水平分解
 <ul>
-<li>把(基本)关系的元组分为若干子集合，定义每个子集合为一个子关系，以提高系统的效率。</li>
+<li>把（基本）关系的元组分为若干子集合，定义每个子集合为一个子关系，以提高系统的效率。</li>
 <li>适用范围
 <ol type="1">
 <li>满足“80/20原则”的应用</li>
@@ -5900,18 +5977,18 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 <h3 id="设计用户子模式">设计用户子模式</h3>
 <ul>
 <li>定义数据库全局模式主要是从系统的时间效率、空间效率、易维护等角度出发。</li>
-<li>定义用户外模式时应注重考虑用户的习惯与方便，包括：
+<li>定义用户外模式时应注重<strong>考虑用户的习惯与方便</strong>，包括：
 <ol type="1">
 <li>使用更符合用户习惯的别名。</li>
-<li>针对不同级别的用户定义不同的View，以满足系统对安全性的要求。</li>
+<li>针对不同级别的用户定义不同的视图（VIEW），以满足系统对安全性的要求。</li>
 <li>简化用户对系统的使用。</li>
 </ol></li>
 <li>示例：教师关系模式中包括职工号、姓名、性别、出生日期、婚姻状况、学历、学位、政治面貌、职称、职务、工资、工龄、教学效果等属性。
 <ul>
 <li>定义两个外模式：
 <ul>
-<li>教师_学籍管理(职工号，姓名，性别，职称)</li>
-<li>教师_课程管理(工号，姓名，性别，学历，学位，职称，教学效果)</li>
+<li>教师_学籍管理（职工号，姓名，性别，职称）</li>
+<li>教师_课程管理（工号，姓名，性别，学历，学位，职称，教学效果）</li>
 </ul></li>
 <li>则有：
 <ul>
@@ -5930,14 +6007,15 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 <li>数据库在物理设备上的存储结构与存取方法称为数据库的物理结构，它依赖于选定的数据库管理系统。</li>
 <li>为一个给定的逻辑数据模型选取一个最适合应用环境的物理结构的过程，就是数据库的物理设计。</li>
 </ul></li>
-<li>数据库物理设计的步骤 <img src="image-45.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+<li>数据库物理设计的步骤 <img src="image/image-45.png" srcset="/img/loading/loading3.gif" lazyload alt="数据库物理设计的步骤"></li>
 </ul>
 <h3 id="数据库物理设计的内容和方法">数据库物理设计的内容和方法</h3>
 <ul>
 <li>设计物理数据库结构的准备工作
 <ul>
 <li>对要运行的事务进行详细分析，获得选择物理数据库设计所需参数。</li>
-<li>充分了解所用RDBMS的内部特征，特别是系统提供的存取方法和存储结构。</li>
+<li>充分了解所用 RDBMS
+的内部特征，特别是系统提供的存取方法和存储结构。</li>
 </ul></li>
 <li>选择物理数据库设计所需参数
 <ul>
@@ -5966,17 +6044,17 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 <ul>
 <li>数据库系统是多用户共享的系统，对同一个关系要建立多条存取路径才能满足多用户的多种应用要求。</li>
 <li>物理设计的第一个任务就是要确定选择哪些存取方法，即建立哪些存取路径。</li>
-<li>DBMS常用存取方法
+<li>DBMS 常用存取方法
 <ul>
-<li>索引方法，
+<li>索引（Index）方法
 <ul>
-<li>B+树索引</li>
-<li>Hash索引</li>
+<li>B+ 树索引</li>
+<li>Hash 索引</li>
 </ul></li>
 <li>聚簇（Cluster）方法</li>
 </ul></li>
 </ul>
-<h4 id="b树索引存取方法">B+树索引存取方法</h4>
+<h4 id="b-树索引存取方法">B+ 树索引存取方法</h4>
 <ul>
 <li>选择索引存取方法的主要内容，根据应用要求确定：
 <ul>
@@ -5986,11 +6064,9 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 </ul></li>
 <li>选择索引存取方法的一般规则：
 <ul>
-<li>如果一个 (或一组)
-属性经常在<strong>查询条件</strong>中出现，则考虑在这个 (或这组)
-属性上建立索引 (或组合索引);</li>
+<li>如果一个（或一组）属性经常在<strong>查询条件</strong>中出现，则考虑在这个（或这组）属性上建立索引（或组合索引）；</li>
 <li>如果一个属性经常作为最大值和最小值等<strong>聚集函数</strong>的参数，则考虑在这个属性上建立索引；</li>
-<li>如果一个(或一组)属性经常在连接操作的<strong>连接条件</strong>中出现，则考虑在这个(或这组)属性上建立索引；</li>
+<li>如果一个（或一组）属性经常在连接操作的<strong>连接条件</strong>中出现，则考虑在这个（或这组）属性上建立索引；</li>
 </ul></li>
 <li>索引存取方法的选择
 <ul>
@@ -6002,16 +6078,16 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 <li>若一个关系更新频率很高，这个关系上不能定义太多索引</li>
 </ul></li>
 </ul>
-<h4 id="hash索引存取方法">Hash索引存取方法</h4>
+<h4 id="hash-索引存取方法">Hash 索引存取方法</h4>
 <ul>
-<li>选择hash索引存取方法的一般规则：
+<li>选择 hash 索引存取方法的一般规则：
 <ul>
-<li>一个关系的属性主要出现在<strong>等值连接条件</strong>;</li>
-<li>一个关系的属性主要出现在<strong>等值比较选择条件</strong>;</li>
+<li>一个关系的属性主要出现在<strong>等值连接条件</strong>；</li>
+<li>一个关系的属性主要出现在<strong>等值比较选择条件</strong>；</li>
 <li>而且满足下列两个条件之一：
 <ul>
 <li>一个关系的大小可预知，而且不变；</li>
-<li>关系的大小动态改变，但DBMS提供了动态hash存取方法。</li>
+<li>关系的大小动态改变，但 DBMS 提供了动态 hash 存取方法。</li>
 </ul></li>
 </ul></li>
 </ul>
@@ -6020,25 +6096,29 @@ SC 表中“成绩”列 Grade 为数字型。 <figure class="shiki sql"><div cl
 <li>聚簇的定义：
 <ul>
 <li>为了提高某个属性（或属性组）的查询速度，把这个或这些属性（称为聚簇码）上具有相同值的元组集中存放在连续的物理块称为聚簇。</li>
-<li>许多关系型DBMS都提供了聚簇功能</li>
-<li>聚簇存放与聚簇索引的区别？</li>
+<li>许多关系型 DBMS 都提供了聚簇功能</li>
+<li>聚簇存放与聚簇索引的区别？
+<ul>
+<li>聚簇存放是指把具有相同聚簇码值的元组物理上存放在一起，是一种物理存储结构</li>
+<li>聚簇索引是指在某个属性（或属性组）上建立索引，是一种存取方法。</li>
+</ul></li>
 </ul></li>
 <li>聚簇的用途
 <ol type="1">
-<li>大大提高按聚簇属性进行查询的效率
+<li><strong>大大提高按聚簇属性进行查询的效率</strong>
 <ul>
 <li>例：假设学生关系按所在系建有索引，现在要查询信息系的所有学生名单。
 <ul>
-<li>信息系的500名学生分布在500个不同的物理块上时，至少要执行500次
-I/O操作。</li>
+<li>信息系的 500 名学生分布在 500 个不同的物理块上时，至少要执行 500 次
+I/O 操作。</li>
 <li>如果将同一系的学生元组集中存放，则每读一个物理块可得到多个满足查询条件的元组，从而显著地减少了访问磁盘的次数。</li>
 </ul></li>
 </ul></li>
-<li>节省存储空间
+<li><strong>节省存储空间</strong>
 <ul>
 <li>聚簇以后，聚簇码相同的元组集中在一起了，因而聚簇码值不必在每个元组中重复存储，只要在一组中存一次就行了</li>
 </ul></li>
-<li>多表预连接
+<li><strong>多表预连接</strong>
 <ul>
 <li>例：假设用户经常要按系别查询学生成绩单，这一查询涉及学生关系和选修关系的连接操作，即需要按学号连接这两个关系，为提高连接操作的效率，可以把具有相同学号值的学生元组和选修元组在物理上聚簇在一起。这就相当于把多个关系按“预连接”的形式存放，从而大大提高连接操作的效率。</li>
 </ul></li>
@@ -6049,17 +6129,16 @@ I/O操作。</li>
 <ul>
 <li>对经常在一起进行<strong>连接操作</strong>的关系可以建立组合聚簇;</li>
 <li>如果一个关系的一组属性经常出现在<strong>相等比较条件</strong>中，则该单个关系可建立聚簇；</li>
-<li>如果一个关系的一个 (或一组)
-属性上的<strong>值重复率很高</strong>，则此单个关系可建立聚簇。</li>
+<li>如果一个关系的一个（或一组）属性上的<strong>值重复率很高</strong>，则此单个关系可建立聚簇。</li>
 <li>对应每个聚簇码值的平均元组数不太少，太少了，聚簇的效果不明显。</li>
 </ul></li>
 <li>检查候选聚簇中的关系，取消其中不必要的关系
 <ul>
-<li>从独立聚簇中删除经常进行全表扫描的关系;</li>
-<li>从独立/组合聚簇中删除更新操作远多于查询操作的关系;</li>
-<li>从独立/组合聚簇中删除重复出现的关系;
+<li>从独立聚簇中删除经常进行<strong>全表扫描</strong>的关系;</li>
+<li>从独立/组合聚簇中删除<strong>更新操作远多于查询</strong>操作的关系;</li>
+<li>从独立/组合聚簇中删除<strong>重复出现</strong>的关系;
 <ul>
-<li>当一个关系同时加入多个聚簇时，必须从这多个聚簇方案(包括不建立聚簇)中选择一个较优的，即在这个聚簇上运行各种事务的总代价最小</li>
+<li>当一个关系同时加入多个聚簇时，必须从这多个聚簇方案（包括不建立聚簇）中选择一个较优的，即在这个聚簇上运行各种事务的总代价最小</li>
 </ul></li>
 </ul></li>
 </ol></li>
@@ -6075,8 +6154,9 @@ I/O操作。</li>
 <li>聚簇的适用范围
 <ul>
 <li>当通过聚簇码进行访问或连接是该关系的主要应用，与聚簇码无关的其他访问很少或者是次要的时，可以使用聚簇。</li>
-<li>尤其当SQL语句中包含有与聚簇码有关的ORDER BY，GROUP
-BY，UNION，DISTINCT等子句或短语时，使用聚簇特别有利，可以省去对结果集的排序操作</li>
+<li>尤其当 SQL 语句中包含有与聚簇码有关的
+<code>ORDER BY</code>，<code>GROUP BY</code>，<code>UNION</code>，<code>DISTINCT</code>
+等子句或短语时，使用聚簇特别有利，可以省去对结果集的排序操作</li>
 </ul></li>
 </ul>
 <h4 id="位图索引存取方法">位图索引存取方法</h4>
@@ -6087,8 +6167,8 @@ BY，UNION，DISTINCT等子句或短语时，使用聚簇特别有利，可以�
 </ul></li>
 <li>位图索引的适用范围
 <ul>
-<li>适用于属性值重复率较高的属性</li>
-<li>适用于读操作远多于写操作的关系</li>
+<li>适用于<strong>属性值重复率较高</strong>的属性</li>
+<li>适用于<strong>读操作远多于写操作</strong>的关系</li>
 </ul></li>
 </ul>
 <h3 id="确定数据库的存储结构">确定数据库的存储结构</h3>
@@ -6116,8 +6196,8 @@ BY，UNION，DISTINCT等子句或短语时，使用聚簇特别有利，可以�
 <li>存取时间</li>
 <li>存储空间利用率</li>
 <li>维护代价</li>
-<li>注意：这三个方面常常是相互矛盾的，例如：消除一切冗余数据虽能够节约存储空间和减少维护代价，但往往会导致检索代价的增加必须进行权衡，选择一个折中方案。</li>
 </ul></li>
+<li>注意：这三个方面常常是相互矛盾的，例如：消除一切冗余数据虽能够节约存储空间和减少维护代价，但往往会导致检索代价的增加必须进行权衡，选择一个折中方案。</li>
 </ul></li>
 <li>基本原则：
 <ul>
@@ -6136,7 +6216,7 @@ BY，UNION，DISTINCT等子句或短语时，使用聚簇特别有利，可以�
 </ul>
 <h4 id="确定系统配置">确定系统配置</h4>
 <ul>
-<li>DBMS产品一般都提供了一些存储分配参数
+<li>DBMS 产品一般都提供了一些存储分配参数
 <ul>
 <li>同时使用数据库的用户数</li>
 <li>同时打开的数据库对象数</li>
@@ -6172,7 +6252,7 @@ BY，UNION，DISTINCT等子句或短语时，使用聚簇特别有利，可以�
 <ul>
 <li>数据库实施的工作内容：
 <ul>
-<li>用DDL定义数据库结构</li>
+<li>用 DDL 定义数据库结构</li>
 <li>数据载入，组织数据入库</li>
 <li>编制与调试应用程序</li>
 <li>数据库试运行</li>
@@ -6206,7 +6286,7 @@ BY，UNION，DISTINCT等子句或短语时，使用聚簇特别有利，可以�
 <li>由于数据入库工作量实在太大，所以可以采用分期输入数据的方法：
 <ul>
 <li>先输入小批量数据供先期联合调试使用；</li>
-<li>待试运行基本合格后再输入大批量数据;</li>
+<li>待试运行基本合格后再输入大批量数据；</li>
 <li>逐步增加数据量，逐步完成运行评价；</li>
 </ul></li>
 </ul></li>
@@ -6223,12 +6303,13 @@ BY，UNION，DISTINCT等子句或短语时，使用聚簇特别有利，可以�
 <li>应用环境在不断变化</li>
 <li>数据库运行过程中物理存储会不断变化</li>
 </ul></li>
-<li>在数据库运行阶段，对数据库经常性的维护工作主要是由DBA完成的，包括：
+<li>在数据库运行阶段，<strong>对数据库经常性的维护工作主要是由 DBA
+完成的</strong>，包括：
 <ol type="1">
-<li>数据库的转储和恢复;</li>
-<li>数据库的安全性、完整性控制;</li>
-<li>数据库性能的监督、分析和改进;</li>
-<li>数据库的重组织和重构造;</li>
+<li>数据库的转储和恢复；</li>
+<li>数据库的安全性、完整性控制；</li>
+<li>数据库性能的监督、分析和改进；</li>
+<li>数据库的重组织和重构造；</li>
 </ol></li>
 </ul>
 <h4 id="数据库的重组织和重构造">数据库的重组织和重构造</h4>
@@ -6267,33 +6348,37 @@ BY，UNION，DISTINCT等子句或短语时，使用聚簇特别有利，可以�
 <h3 id="数据库的不安全因素">数据库的不安全因素</h3>
 <ul>
 <li>数据库的安全性，是指保护数据库以防止不合法使用所造成的数据泄漏、更改或破坏。</li>
-<li>产生威胁的因素:
+<li>产生威胁的因素：
 <ul>
-<li>非授权用户对数据库的恶意存取和破坏;</li>
-<li>数据库中重要或敏感的数据被泄露;</li>
-<li>安全环境的脆弱性;</li>
+<li>非授权用户对数据库的恶意存取和破坏；</li>
+<li>数据库中重要或敏感的数据被泄露；</li>
+<li>安全环境的脆弱性；</li>
 </ul></li>
 </ul>
 <h3 id="可信计算机系统评测标准">可信计算机系统评测标准</h3>
 <ul>
 <li><p>为降低进而消除对系统的安全攻击，各国引用或制定了一系列安全标准：
-<img src="image-46.webp" srcset="/img/loading/loading3.gif" lazyload></p></li>
-<li><p>1985年美国国防部（DoD）正式颁布《DoD可信计算机系统评估标准》（简称TCSEC或DoD85）</p>
+<img src="image/image-46.png" srcset="/img/loading/loading3.gif" lazyload></p></li>
+<li><p>1985 年美国国防部（DoD）正式颁布《DoD
+可信计算机系统评估标准》（简称 TCSEC 或 DoD85）</p>
 <ul>
-<li>TCSEC又称<strong>桔皮书</strong></li>
-<li>TCSEC标准的目的:
+<li>TCSEC 又称<strong>桔皮书</strong></li>
+<li>TCSEC 标准的目的:
 <ul>
 <li>提供一种标准，使用户可以对其计算机系统内敏感信息安全操作的可信程度做评估。</li>
 <li>给计算机行业的制造商提供一种可循的指导规则，使其产品能够更好地满足敏感应用的安全需求。</li>
 </ul></li>
 </ul></li>
-<li><p>1991年4月美国NCSC（国家计算机安全中心）颁布了《可信计算机系统评估标准关于可信数据库系统的解释》（TCSEC/
-Trusted Database Interpretation 简称TCSEC/TDI）</p>
+<li><p>1991 年 4 月美国
+NCSC（国家计算机安全中心）颁布了《可信计算机系统评估标准关于可信数据库系统的解释》（TCSEC/
+Trusted Database Interpretation 简称 TCSEC/TDI）</p>
 <ul>
-<li>TDI又称<strong>紫皮书</strong>，它将TCSEC扩展到数据库管理系统。</li>
-<li>TDI中定义了数据库管理系统的设计与实现中需满足和用以进行安全性级别评估的标准。</li>
+<li>TDI 又称<strong>紫皮书</strong>，它将 TCSEC
+扩展到数据库管理系统。</li>
+<li>TDI
+中定义了数据库管理系统的设计与实现中需满足和用以进行安全性级别评估的标准。</li>
 </ul></li>
-<li><p>TCSEC/TDI安全级别划分</p>
+<li><p>TCSEC/TDI 安全级别划分</p>
 <table>
 <thead>
 <tr><td>
@@ -6320,7 +6405,7 @@ Trusted Database Interpretation 简称TCSEC/TDI）</p>
 <p>最小保护</p>
 </td>
 <td>
-<p>没有安全保护，如ms-dos</p>
+<p>没有安全保护，如 ms-dos</p>
 </td>
 </tr>
 <tr>
@@ -6334,7 +6419,7 @@ Trusted Database Interpretation 简称TCSEC/TDI）</p>
 <p>自主安全保护</p>
 </td>
 <td>
-<p>实现自主存取控制DAC，具有识别与授权的责任，如早期UN IX系统</p>
+<p>实现自主存取控制 DAC，具有识别与授权的责任，如早期 UNIX 系统</p>
 </td>
 </tr>
 <tr>
@@ -6345,8 +6430,8 @@ Trusted Database Interpretation 简称TCSEC/TDI）</p>
 <p>受控存储控制</p>
 </td>
 <td>
-<p>安全产品的最低档，提供受控的存取保护，实施审计和资源隔离，windows
-2000 和Oracle 7</p>
+<p>安全产品的最低档，提供受控的存取保护，实施审计和资源隔离，Windows
+2000 和 Oracle 7</p>
 </td>
 </tr>
 <tr>
@@ -6360,8 +6445,8 @@ Trusted Database Interpretation 简称TCSEC/TDI）</p>
 <p>标识安全保护</p>
 </td>
 <td>
-<p>对系统数据加以标记，实施强制存取控制MAC和审计，如Oracle公司的Trusted
-Oracle 7，Sybase公司的Secure SQL Server version 11.0.6</p>
+<p>对系统数据加以标记，实施强制存取控制 MAC 和审计，如 Oracle 公司的
+Trusted Oracle 7，Sybase 公司的 Secure SQL Server version 11.0.6</p>
 </td>
 </tr>
 <tr>
@@ -6372,8 +6457,8 @@ Oracle 7，Sybase公司的Secure SQL Server version 11.0.6</p>
 <p>结构化保护</p>
 </td>
 <td>
-<p>除满足B1要求外，要实行强制性的控制并进行严格的保护，如Trusted
-Xenix系统。</p>
+<p>除满足 B1 要求外，要实行强制性的控制并进行严格的保护，如 Trusted
+Xenix 系统。</p>
 </td>
 </tr>
 <tr>
@@ -6384,8 +6469,8 @@ Xenix系统。</p>
 <p>安全域</p>
 </td>
 <td>
-<p>提供可信设备的管理和恢复，即使计算机崩溃也不会泄露系统信息。如Honeywell
-Federal Systems XTS-200</p>
+<p>提供可信设备的管理和恢复，即使计算机崩溃也不会泄露系统信息。如
+Honeywell Federal Systems XTS-200</p>
 </td>
 </tr>
 <tr>
@@ -6403,7 +6488,7 @@ Federal Systems XTS-200</p>
 </td>
 </tr>
 </tbody></table></li>
-<li><p>CC标准</p>
+<li><p>CC 标准</p>
 <ul>
 <li>提出国际公认的表述信息技术安全性的结构。</li>
 <li>把信息产品的安全要求分为：
@@ -6412,7 +6497,7 @@ Federal Systems XTS-200</p>
 <li>安全保证要求：解决如何正确有效地实施这些功能。</li>
 </ul></li>
 </ul></li>
-<li><p>CC评估保证级划分</p>
+<li><p>CC 评估保证级划分</p>
 <table>
 
 <thead>
@@ -6468,12 +6553,13 @@ tested)</td>
 <ul>
 <li>非法使用数据库的情况
 <ul>
-<li>用户编写一段合法的程序绕过DBMS及其授权机制，通过操作系统直接存取、修改或备份数据库中的数据；</li>
-<li>直接或编写应用程序执行非授权操作;</li>
-<li>通过多次合法查询数据库从中推导出一些保密数据;</li>
-<li>破坏安全性的行为可能是无意的，故意的，恶意的。</li>
+<li>用户编写一段合法的程序绕过 DBMS
+及其授权机制，通过操作系统直接存取、修改或备份数据库中的数据；</li>
+<li>直接或编写应用程序执行非授权操作；</li>
+<li>通过多次合法查询数据库从中推导出一些保密数据；</li>
+<li>破坏安全性的行为可能是无意的、故意的、恶意的。</li>
 </ul></li>
-<li>安全性控制层次 <img src="image-47.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+<li>安全性控制层次 <img src="image/image-47.png" srcset="/img/loading/loading3.gif" lazyload></li>
 <li>数据库安全性控制的常用方法
 <ul>
 <li>用户标识和鉴定</li>
@@ -6488,7 +6574,7 @@ tested)</td>
 <li>用户标识与鉴别（Identification &amp; Authentication）
 <ul>
 <li>系统提供的最外层安全保护措施</li>
-<li>主要方法:
+<li>主要方法：
 <ul>
 <li>静态口令鉴别</li>
 <li>动态口令鉴别</li>
@@ -6504,29 +6590,29 @@ tested)</td>
 <li>定义用户存取权限</li>
 <li>合法存取权限检查</li>
 </ul></li>
-<li>用户权限定义和合法权检查机制一起组成了DBMS的存取控制子系统。</li>
+<li>用户权限定义和合法权检查机制一起组成了 DBMS 的存取控制子系统。</li>
 <li>常用存取控制方法:
 <ul>
-<li><strong>自主存取控制</strong>（Discretionary Access
-Control，简称DAC）
+<li><strong>自主存取控制</strong>（Discretionary Access Control，简称
+DAC）
 <ul>
 <li>用户对不同的数据对象有不同的存取权限，不同的用户对同一对象也有不同的权限，用户还可将其拥有的存取权限转授给其他用户。</li>
-<li>C2级</li>
+<li>C2 级</li>
 <li>灵活</li>
 </ul></li>
 <li><strong>强制存取控制</strong>（Mandatory Access Control，简称 MAC）
 <ul>
 <li>每一个数据对象被标以一定的密级，每一个用户也被授予某一个级别的许可证。对任意一个对象，只有具有合法许可证的用户才可以存取。</li>
-<li>B1级</li>
+<li>B1 级</li>
 <li>严格</li>
 </ul></li>
 </ul></li>
 </ul>
-<h4 id="自主存取控制dac">自主存取控制(DAC)</h4>
+<h4 id="自主存取控制-dac">自主存取控制 DAC</h4>
 <ul>
-<li>定义：
+<li><strong>定义</strong>：
 <ul>
-<li>自主存取控制(DAC)是指用户对自己所创建的数据库对象具有完全的控制权，可以决定其他用户对这些对象的存取权限。</li>
+<li>自主存取控制（DAC）是指用户对自己所创建的数据库对象具有完全的控制权，可以决定其他用户对这些对象的存取权限。</li>
 </ul></li>
 <li>特点：
 <ul>
@@ -6561,7 +6647,7 @@ Control，简称DAC）
 模式
 </td>
 <td>
-CREATE SCHEMA
+<code>CREATE SCHEMA</code>
 </td>
 </tr>
 <tr>
@@ -6569,7 +6655,7 @@ CREATE SCHEMA
 基本表
 </td>
 <td>
-CREATE TABLE, ALTER TABLE
+<code>CREATE TABLE</code>, <code>ALTER TABLE</code>
 </td>
 </tr>
 <tr>
@@ -6577,7 +6663,7 @@ CREATE TABLE, ALTER TABLE
 视图
 </td>
 <td>
-CREATE VIEW
+<code>CREATE VIEW</code>
 </td>
 </tr>
 <tr>
@@ -6585,7 +6671,7 @@ CREATE VIEW
 索引
 </td>
 <td>
-CREATE INDEX
+<code>CREATE INDEX</code>
 </td>
 </tr>
 <tr>
@@ -6596,7 +6682,9 @@ CREATE INDEX
 基本表和视图
 </td>
 <td>
-SELECT, INSERT, UPDATE, DELETE, REFERENCES, ALL PRIVILEGES
+<code>SELECT</code>, <code>INSERT</code>, <code>UPDATE</code>,
+<code>DELETE</code>, <code>REFERENCES</code>, <code>ALL
+PRIVILEGES</code>
 </td>
 </tr>
 <tr>
@@ -6604,7 +6692,8 @@ SELECT, INSERT, UPDATE, DELETE, REFERENCES, ALL PRIVILEGES
 属性列
 </td>
 <td>
-SELECT, INSERT, UPDATE, REFERENCES, ALL PRIVILEGES
+<code>SELECT</code>, <code>INSERT</code>, <code>UPDATE</code>,
+<code>REFERENCES</code>, <code>ALL PRIVILEGES</code>
 </td>
 </tr>
 </tbody></table></li>
@@ -6613,16 +6702,16 @@ SELECT, INSERT, UPDATE, REFERENCES, ALL PRIVILEGES
 <ul>
 <li>GRANT
 <ul>
-<li>GRANT语句的一般格式: <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">GRANT</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">权限</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">[ ,&lt;权限&gt; ]</span><span style="color: #ABB2BF">...</span></span>
+<li><code>GRANT</code> 语句的一般格式: <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">GRANT</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">权限</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">[ ,&lt;权限&gt; ]</span><span style="color: #ABB2BF">...</span></span>
 <span class="line"><span style="color: #E06C75">[ ON &lt;对象类型&gt; &lt;对象名&gt; ]</span></span>
 <span class="line"><span style="color: #C678DD">TO</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">用户</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">[ ,&lt;用户&gt; ]</span><span style="color: #ABB2BF">...</span></span>
 <span class="line"><span style="color: #E06C75">[ WITH GRANT OPTION ]</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
-<li>语义: 将对指定操作对象的指定操作权限授予指定的用户。</li>
-<li>发出GRANT:
+<li>语义：将对指定操作对象的指定操作权限授予指定的用户。</li>
+<li>发出 <code>GRANT</code>：
 <ul>
-<li>DBA;</li>
-<li>数据库对象创建者（即属Owner）；</li>
-<li>拥有该权限的用户。</li>
+<li>DBA</li>
+<li>数据库对象创建者（即属 Owner）</li>
+<li>拥有该权限的用户</li>
 </ul></li>
 <li>接受权限的用户:
 <ul>
@@ -6634,82 +6723,84 @@ SELECT, INSERT, UPDATE, REFERENCES, ALL PRIVILEGES
 <li>指定：可以再授予。</li>
 <li>没有指定：不能传播。</li>
 </ul></li>
-<li>不允许循环授权: <img src="image-48.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+<li>不允许循环授权: <img src="image/image-48.png" srcset="/img/loading/loading3.gif" lazyload></li>
 <li>示例:
 <ol type="1">
-<li>把查询Student表的权限授给用户U1。 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">GRANT</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">SELECT</span></span>
+<li>把查询 Student 表的权限授给用户 U1。 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">GRANT</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">SELECT</span></span>
 <span class="line"><span style="color: #C678DD">ON</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">TABLE</span><span style="color: #ABB2BF"> Student</span></span>
 <span class="line"><span style="color: #C678DD">TO</span><span style="color: #ABB2BF"> U1;</span></span></code></pre></div></div></figure></li>
-<li>把对Student表和Course表的全部操作权限授予用户U2和U3
+<li>把对 Student 表和 Course 表的全部操作权限授予用户 U2 和 U3
 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">GRANT</span><span style="color: #ABB2BF"> ALL PRIVILEGES</span></span>
 <span class="line"><span style="color: #C678DD">ON</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">TABLE</span><span style="color: #ABB2BF"> Student, Course</span></span>
 <span class="line"><span style="color: #C678DD">TO</span><span style="color: #ABB2BF"> U2, U3;</span></span></code></pre></div></div></figure></li>
-<li>把对表SC的查询权限授予所有用户。 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">GRANT</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">SELECT</span></span>
+<li>把对表 SC 的查询权限授予所有用户。 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">GRANT</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">SELECT</span></span>
 <span class="line"><span style="color: #C678DD">ON</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">TABLE</span><span style="color: #ABB2BF"> SC</span></span>
 <span class="line"><span style="color: #C678DD">TO</span><span style="color: #ABB2BF"> PUBLIC;</span></span></code></pre></div></div></figure></li>
-<li>把查询Student表和修改学生学号的权限授给用户U4。 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">GRANT</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">UPDATE</span><span style="color: #ABB2BF">(Sno), </span><span style="color: #C678DD">SELECT</span></span>
+<li>把查询 Student 表和修改学生学号的权限授给用户 U4。 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">GRANT</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">UPDATE</span><span style="color: #ABB2BF">(Sno), </span><span style="color: #C678DD">SELECT</span></span>
 <span class="line"><span style="color: #C678DD">ON</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">TABLE</span><span style="color: #ABB2BF"> Student</span></span>
 <span class="line"><span style="color: #C678DD">TO</span><span style="color: #ABB2BF"> U4;</span></span></code></pre></div></div></figure>
 <ul>
-<li>对属性列的授权时必须明确指出相应属性列名</li>
+<li><strong>对属性列的授权时必须明确指出相应属性列名</strong></li>
 </ul></li>
-<li>把对表SC的INSERT权限授予U5用户，并允许他再将此权限授予其他用户。
-<figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">GRANT</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">INSERT</span></span>
+<li>把对表 SC 的 INSERT 权限授予 U5
+用户，并允许他再将此权限授予其他用户。 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">GRANT</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">INSERT</span></span>
 <span class="line"><span style="color: #C678DD">ON</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">TABLE</span><span style="color: #ABB2BF"> SC</span></span>
 <span class="line"><span style="color: #C678DD">TO</span><span style="color: #ABB2BF"> U5</span></span>
 <span class="line"><span style="color: #C678DD">WITH</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">GRANT</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">OPTION</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure>
 <ul>
-<li>执行例5后，U5不仅拥有了对表SC的INSERT权限，还可传播此权限</li>
+<li>执行例5后，U5 不仅拥有了对表 SC 的 INSERT 权限，还可传播此权限</li>
 </ul></li>
-<li>但U6不能再传播此权限。 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">GRANT</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">INSERT</span></span>
+<li>但 U6 不能再传播此权限。 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">GRANT</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">INSERT</span></span>
 <span class="line"><span style="color: #C678DD">ON</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">TABLE</span><span style="color: #ABB2BF"> SC</span></span>
 <span class="line"><span style="color: #C678DD">TO</span><span style="color: #ABB2BF"> U6;</span></span></code></pre></div></div></figure></li>
 </ol></li>
 </ul></li>
 <li>REVOKE
 <ul>
-<li>授予的权限可以由DBA或其他授权者用REVOKE语句收回。</li>
-<li>REVOKE语句的一般格式为: <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">REVOKE</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">权限</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">[,&lt;权限&gt;]</span><span style="color: #ABB2BF">...</span></span>
+<li>授予的权限可以由 DBA 或其他授权者用 <code>REVOKE</code>
+语句收回。</li>
+<li><code>REVOKE</code> 语句的一般格式为: <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">REVOKE</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">权限</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">[,&lt;权限&gt;]</span><span style="color: #ABB2BF">...</span></span>
 <span class="line"><span style="color: #C678DD">ON</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">对象类型</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">对象名</span><span style="color: #56B6C2">&gt;</span></span>
 <span class="line"><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">用户</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">[, &lt;用户&gt;]</span><span style="color: #ABB2BF">...;</span></span></code></pre></div></div></figure></li>
 <li>示例：
 <ol type="1">
-<li>把用户U4修改学生学号的权限收回。 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">REVOKE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">UPDATE</span><span style="color: #ABB2BF"> (Sno)</span></span>
+<li>把用户 U4 修改学生学号的权限收回。 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">REVOKE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">UPDATE</span><span style="color: #ABB2BF"> (Sno)</span></span>
 <span class="line"><span style="color: #C678DD">ON</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">TABLE</span><span style="color: #ABB2BF"> Student</span></span>
 <span class="line"><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> U4;</span></span></code></pre></div></div></figure></li>
-<li>收回所有用户对表SC的查询权限。 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">REVOKE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">SELECT</span></span>
+<li>收回所有用户对表 SC 的查询权限。 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">REVOKE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">SELECT</span></span>
 <span class="line"><span style="color: #C678DD">ON</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">TABLE</span><span style="color: #ABB2BF"> SC</span></span>
 <span class="line"><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> PUBLIC;</span></span></code></pre></div></div></figure></li>
-<li>把用户U5对SC表的INSERT权限收回: <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">REVOKE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">INSERT</span></span>
+<li>把用户 U5 对 SC 表的 INSERT 权限收回: <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">REVOKE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">INSERT</span></span>
 <span class="line"><span style="color: #C678DD">ON</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">TABLE</span><span style="color: #ABB2BF"> SC</span></span>
 <span class="line"><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> U5 CASCADE;</span></span></code></pre></div></div></figure>
 <ul>
-<li>将用户U5的INSERT权限收回的时候必须级联（CASCADE）收回，不然系统将拒绝执行该命令。</li>
-<li>系统只收回直接或间接从U5处获得的权限。</li>
+<li>将用户 U5 的 INSERT
+权限收回的时候必须级联（<code>CASCADE</code>）收回，不然系统将拒绝执行该命令。</li>
+<li>系统只收回直接或间接从 U5 处获得的权限。</li>
 </ul></li>
 </ol></li>
 </ul></li>
-<li>小结：SQL灵活的授权机制
+<li>小结：SQL 灵活的授权机制
 <ul>
-<li>DBA: 拥有所有对象的所有权限
+<li>DBA：拥有所有对象的所有权限
 <ul>
 <li>不同的权限授予不同的用户。</li>
 </ul></li>
 <li>用户：拥有自己建立的对象的全部的操作权限
 <ul>
-<li>GRANT: 授予其他用户。</li>
+<li><code>GRANT</code>：授予其他用户。</li>
 </ul></li>
 <li>被授权的用户
 <ul>
 <li>“继续授权”许可：再授予。</li>
 </ul></li>
-<li>所有授予出去的权力在必要时又都可用REVOKE语句收回</li>
+<li>所有授予出去的权力在必要时又都可用 <code>REVOKE</code> 语句收回</li>
 </ul></li>
 </ul>
 <h5 id="创建数据库模式的权限">创建数据库模式的权限</h5>
 <ul>
-<li>DBA在创建用户时实现</li>
-<li>CREATE USER语句格式 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> USER </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">username</span><span style="color: #56B6C2">&gt;</span></span>
+<li>DBA 在创建用户时实现</li>
+<li><code>CREATE USER</code> 语句格式 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> USER </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">username</span><span style="color: #56B6C2">&gt;</span></span>
 <span class="line"><span style="color: #E06C75">[ WITH ]</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">[ DBA | RESOURCE | CONNECT ]</span></span></code></pre></div></div></figure></li>
 <li>权限与可执行的操作对照表:
 <table>
@@ -6732,7 +6823,7 @@ CREATE SCHEMA
 CREATE TABLE
 </td>
 <td>
-登陆数据库,执行数据查询和操纵
+登陆数据库，执行数据查询和操纵
 </td>
 </tr>
 <tr>
@@ -6814,21 +6905,21 @@ CONNECT
 <ol type="1">
 <li>通过角色来实现将一组权限授予一个用户。步骤如下:
 <ol type="1">
-<li>首先创建一个角色R1。 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">ROLE</span><span style="color: #ABB2BF"> R1;</span></span></code></pre></div></div></figure></li>
-<li>然后使用GRANT语句，使角色R1拥有Student表的SELECT、UPDATE、INSERT权限。
-<figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">GRANT</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF">, </span><span style="color: #C678DD">UPDATE</span><span style="color: #ABB2BF">, </span><span style="color: #C678DD">INSERT</span></span>
+<li>首先创建一个角色 R1。 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">ROLE</span><span style="color: #ABB2BF"> R1;</span></span></code></pre></div></div></figure></li>
+<li>然后使用 GRANT 语句，使角色 R1 拥有 Student 表的
+SELECT、UPDATE、INSERT 权限。 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">GRANT</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF">, </span><span style="color: #C678DD">UPDATE</span><span style="color: #ABB2BF">, </span><span style="color: #C678DD">INSERT</span></span>
 <span class="line"><span style="color: #C678DD">ON</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">TABLE</span><span style="color: #ABB2BF"> Student</span></span>
 <span class="line"><span style="color: #C678DD">TO</span><span style="color: #ABB2BF"> R1;</span></span></code></pre></div></div></figure></li>
-<li>将这个角色授予王平，张明，赵玲。使他们具有角色R1所包含的全部权限。
+<li>将这个角色授予王平，张明，赵玲。使他们具有角色 R1 所包含的全部权限。
 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">GRANT</span><span style="color: #ABB2BF"> R1</span></span>
 <span class="line"><span style="color: #C678DD">TO</span><span style="color: #ABB2BF"> 王平，张明，赵玲；</span></span></code></pre></div></div></figure></li>
-<li>可以一次性通过R1来回收王平的这3个权限。 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">REVOKE</span><span style="color: #ABB2BF"> R1</span></span>
+<li>可以一次性通过 R1 来回收王平的这 3 个权限。 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">REVOKE</span><span style="color: #ABB2BF"> R1</span></span>
 <span class="line"><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> 王平；</span></span></code></pre></div></div></figure></li>
 </ol></li>
-<li>角色的权限修改。 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">GRANT</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">DELETE</span></span>
+<li>角色的权限修改：授权 DELETE 权限给角色 R1。 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">GRANT</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">DELETE</span></span>
 <span class="line"><span style="color: #C678DD">ON</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">TABLE</span><span style="color: #ABB2BF"> Student</span></span>
 <span class="line"><span style="color: #C678DD">TO</span><span style="color: #ABB2BF"> R1;</span></span></code></pre></div></div></figure></li>
-<li>角色的权限修改。 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">REVOKE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">SELECT</span></span>
+<li>角色的权限修改：收回角色 R1 的 SELECT 权限。 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">REVOKE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">SELECT</span></span>
 <span class="line"><span style="color: #C678DD">ON</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">TABLE</span><span style="color: #ABB2BF"> Student</span></span>
 <span class="line"><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> R1;</span></span></code></pre></div></div></figure></li>
 </ol></li>
@@ -6839,7 +6930,7 @@ CONNECT
 <ul>
 <li>对于获得上机权后又进一步发出存取数据库操作的用户
 <ul>
-<li>DBMS查找数据字典，根据其存取权限对操作的合法性进行检查</li>
+<li>DBMS 查找数据字典，根据其存取权限对操作的合法性进行检查</li>
 <li>若用户的操作请求超出了定义的权限，系统将拒绝执行此操作</li>
 </ul></li>
 </ul></li>
@@ -6851,7 +6942,7 @@ CONNECT
 <li>能否提供与数据值有关的授权反映了授权子系统精巧程度</li>
 <li>授权定义中数据对象的粒度越细，即可以定义的数据对象的范围越小，授权子系统就越灵活。</li>
 </ul></li>
-<li>关系数据库中授权的数据对象粒度:
+<li>关系数据库中授权的数据对象粒度：
 <ul>
 <li>数据库</li>
 <li>表</li>
@@ -6866,13 +6957,14 @@ CONNECT
 </ul></li>
 </ul></li>
 </ul>
-<h4 id="强制存取控制方法mac">强制存取控制方法(MAC)</h4>
+<h4 id="强制存取控制-mac">强制存取控制 MAC</h4>
 <ul>
 <li>定义：
 <ul>
-<li>强制存取控制(MAC)是指系统为保证更高程度的安全性，按照TDI/TCSEC标准中安全策略的要求，所采取的强制存取检查手段。</li>
-<li>MAC不是用户能直接感知或进行控制的。</li>
-<li>MAC适用于对数据有严格而固定密级分类的部门
+<li>强制存取控制（MAC）是指系统为保证更高程度的安全性，按照 TDI/TCSEC
+标准中安全策略的要求，所采取的强制存取检查手段。</li>
+<li>MAC 不是用户能直接感知或进行控制的。</li>
+<li>MAC 适用于对数据有严格而固定密级分类的部门
 <ul>
 <li>军事部门</li>
 <li>政府部门</li>
@@ -6880,13 +6972,13 @@ CONNECT
 </ul></li>
 <li>主体与客体
 <ul>
-<li>在MAC中，DBMS所管理的全部实体被分为主体和客体两大类</li>
+<li>在 MAC 中，DBMS 所管理的全部实体被分为主体和客体两大类</li>
 <li><strong>主体是系统中的活动实体</strong>
 <ul>
-<li>DBMS所管理的实际用户</li>
+<li>DBMS 所管理的实际用户</li>
 <li>代表用户的各进程</li>
 </ul></li>
-<li>客体是系统中的被动实体，是受主体操纵的
+<li><strong>客体是系统中的被动实体，是受主体操纵的</strong>
 <ul>
 <li>文件</li>
 <li>基表</li>
@@ -6896,23 +6988,26 @@ CONNECT
 </ul></li>
 <li>敏感度标记
 <ul>
-<li>对于主体和客体，DBMS为它们每个实例（值）指派一个敏感度标记（Label）</li>
+<li>对于主体和客体，DBMS
+为它们每个实例（值）指派一个敏感度标记（Label）</li>
 <li>敏感度标记分成若干级别:
 <ol type="1">
 <li>公开（Public）</li>
 <li>可信（Confidential）</li>
 <li>机密（Secret）</li>
-<li>绝密 (Top Secret)</li>
+<li>绝密（Top Secret）</li>
 </ol></li>
 <li>主体的敏感度标记称为<strong>许可证级别</strong>（Clearance
 Level）；</li>
 <li>客体的敏感度标记称为<strong>密级</strong>（Classification
 Level）；</li>
-<li>MAC机制就是通过对比主体的Label和客体的Label，最终确定主体是否能够存取客体；</li>
+<li>MAC 机制就是通过对比主体的 Label 和客体的
+Label，最终确定主体是否能够存取客体；</li>
 </ul></li>
 <li>强制存取控制规则
 <ul>
-<li>当某一用户（或某一主体）以标记label注册入系统时，系统要求他对任何客体的存取必须遵循下面两条规则：
+<li>当某一用户（或某一主体）以标记 label
+注册入系统时，系统要求他对任何客体的存取必须遵循下面两条规则：
 <ol type="1">
 <li>仅当主体的许可证级别<strong>大于等于</strong>客体的密级时,
 该主体才能读取相应的客体;</li>
@@ -6933,43 +7028,44 @@ Level）；</li>
 </ul></li>
 <li>强制存取控制的特点:
 <ul>
-<li>MAC是对数据本身进行密级标记</li>
+<li>MAC 是<strong>对数据本身进行密级标记</strong></li>
 <li>无论数据如何复制，标记与数据是一个不可分的整体</li>
 <li>只有符合密级标记要求的用户才可以操纵数据</li>
 <li>从而提供了更高级别的安全性</li>
 </ul></li>
 </ul>
-<h4 id="mac与dac的关系">MAC与DAC的关系</h4>
+<h4 id="mac-与-dac-的关系">MAC 与 DAC 的关系</h4>
 <ul>
-<li><p>DAC与MAC共同构成DBMS的安全机制</p></li>
-<li><p>实现MAC时要首先实现DAC</p>
+<li><p>DAC 与 MAC 共同构成 DBMS 的安全机制</p></li>
+<li><p>实现 MAC 时要首先实现 DAC</p>
 <ul>
 <li>原因：较高安全性级别提供的安全保护要包含较低级别的所有保护。</li>
 </ul></li>
-<li><p>DAC + MAC安全检查示意图: <img src="image-49.webp" srcset="/img/loading/loading3.gif" lazyload></p>
+<li><p>DAC + MAC 安全检查示意图: <img src="image/image-49.png" srcset="/img/loading/loading3.gif" lazyload></p>
 <ul>
-<li>先进行DAC检查，通过DAC检查的数据对象再由系统进行MAC检查，只有通过MAC检查的数据对象方可存取。</li>
+<li>先进行 DAC 检查，通过 DAC 检查的数据对象再由系统进行 MAC
+检查，只有通过 MAC 检查的数据对象方可存取。</li>
 </ul></li>
 </ul>
-<h2 id="视图机制">视图机制</h2>
+<h3 id="视图机制">视图机制</h3>
 <ul>
 <li>视图机制把要保密的数据对无权存取这些数据的用户隐藏起来，对数据提供一定程度的安全保护
 <ul>
-<li>视图机制更主要的功能在于提供数据独立性，其安全保护功能太不精细，往往远不能达到应用系统的要求；</li>
+<li>视图机制更主要的功能在于提供<strong>数据独立性</strong>，其安全保护功能太不精细，往往远不能达到应用系统的要求；</li>
 <li>间接实现了支持存取谓词的用户权限定义;</li>
 </ul></li>
-<li>视图机制与授权机制配合使用：先用视图机制屏蔽掉一部分保密数据，再在视图上进一步定义存取权限。</li>
-<li>示例：建立计算机系学生的视图, 把对该视图的SELECT权限授于王平,
-把该视图上的所有操作权限授于张明。
+<li><strong>视图机制与授权机制配合使用</strong>：先用视图机制屏蔽掉一部分保密数据，再在视图上进一步定义存取权限。</li>
+<li>示例：建立计算机系学生的视图，把对该视图的 SELECT
+权限授于王平，把该视图上的所有操作权限授于张明。
 <ul>
-<li>先建立计算机系学生的视图CS_Student。 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">VIEW</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">CS_Student</span></span>
+<li>先建立计算机系学生的视图 CS_Student。 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">CREATE</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">VIEW</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">CS_Student</span></span>
 <span class="line"><span style="color: #C678DD">AS</span></span>
 <span class="line"><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> * </span><span style="color: #C678DD">FROM</span><span style="color: #ABB2BF"> Student </span><span style="color: #C678DD">WHERE</span><span style="color: #ABB2BF"> Sdept</span><span style="color: #56B6C2">=</span><span style="color: #98C379">'CS'</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
 <li>在视图上进一步定义存取权限: <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">GRANT</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">SELECT</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">ON</span><span style="color: #ABB2BF"> CS_Student </span><span style="color: #C678DD">TO</span><span style="color: #ABB2BF"> 王平;</span></span>
 <span class="line"><span style="color: #C678DD">GRANT</span><span style="color: #ABB2BF"> ALL PRIVILEGES </span><span style="color: #C678DD">ON</span><span style="color: #ABB2BF"> CS_Student </span><span style="color: #C678DD">TO</span><span style="color: #ABB2BF"> 张明;</span></span></code></pre></div></div></figure></li>
 </ul></li>
 </ul>
-<h2 id="审计">审计</h2>
+<h3 id="审计">审计</h3>
 <ul>
 <li>定义：
 <ul>
@@ -6977,60 +7073,63 @@ Level）；</li>
 <ul>
 <li>将用户对数据库的所有操作记录在上面;</li>
 </ul></li>
-<li>DBA可以利用审计日志中的追踪信息
+<li>DBA 可以利用审计日志中的追踪信息
 <ul>
 <li>找出非法存取数据的人;</li>
 </ul></li>
-<li>C2以上安全级别的DBMS必须具有审计功能;</li>
+<li>C2 以上安全级别的 DBMS 必须具有审计功能;</li>
 </ul></li>
-<li>审计分为:
+<li>审计分为：
 <ul>
 <li><strong>用户级审计</strong>
 <ul>
 <li>针对自己创建的数据库表或视图进行审计。</li>
-<li>记录所有用户对这些表或视图的一切成功和（或）不成功的访问要求，以及各种类型的SQL操作。</li>
+<li>记录所有用户对这些表或视图的一切成功和（或）不成功的访问要求，以及各种类型的
+SQL 操作。</li>
 </ul></li>
 <li><strong>系统级审计</strong>
 <ul>
-<li>DBA设置。</li>
+<li>DBA 设置。</li>
 <li>监测成功或失败的登录要求。</li>
-<li>监测GRANT和REVOKE操作以及其他数据库级权限下的操作。</li>
+<li>监测 <code>GRANT</code> 和 <code>REVOKE</code>
+操作以及其他数据库级权限下的操作。</li>
 </ul></li>
 </ul></li>
 <li>审计功能的实现
 <ul>
-<li>AUDIT语句：设置审计功能
+<li><code>AUDIT</code> 语句：设置审计功能
 <ul>
 <li>语句格式: <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">AUDIT</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">操作类型</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">[, &lt;操作类型&gt;]</span><span style="color: #ABB2BF"> ...</span></span>
 <span class="line"><span style="color: #C678DD">ON</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">对象类型</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">对象名</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
-<li>示例: 对修改SC表结构或修改SC表数据的操作进行审计。
+<li>示例：对修改 SC 表结构或修改 SC 表数据的操作进行审计。
 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">AUDIT</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">ALTER</span><span style="color: #ABB2BF">, </span><span style="color: #C678DD">UPDATE</span></span>
 <span class="line"><span style="color: #C678DD">ON</span><span style="color: #ABB2BF"> SC;</span></span></code></pre></div></div></figure></li>
 </ul></li>
-<li>NOAUDIT语句：取消审计功能
+<li><code>NOAUDIT</code> 语句：取消审计功能
 <ul>
 <li>语句格式: <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">NOAUDIT </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">操作类型</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">[, &lt;操作类型&gt;]</span><span style="color: #ABB2BF"> ...</span></span>
 <span class="line"><span style="color: #C678DD">ON</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">对象类型</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&lt;</span><span style="color: #ABB2BF">对象名</span><span style="color: #56B6C2">&gt;</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure></li>
-<li>示例: 取消对SC表的一切审计。 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">NOAUDIT ALL</span></span>
+<li>示例: 取消对 SC 表的一切审计。 <figure class="shiki sql"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">NOAUDIT ALL</span></span>
 <span class="line"><span style="color: #C678DD">ON</span><span style="color: #ABB2BF"> SC;</span></span></code></pre></div></div></figure></li>
 </ul></li>
 </ul></li>
 <li>审计功能的可选性:
 <ul>
-<li>由于审计很费时间和空间，DBA可以根据应用对安全性的要求，灵活地打开或关闭审计功能。</li>
+<li>由于审计很费时间和空间，DBA
+可以根据应用对安全性的要求，灵活地打开或关闭审计功能。</li>
 </ul></li>
 </ul>
 <h2 id="数据加密">数据加密</h2>
 <h3 id="经典加密技术">经典加密技术</h3>
 <ul>
-<li><p><strong>替代</strong>: 明文的字母由其它字母或数字或符号代替;</p>
+<li><p><strong>替代</strong>: 明文的字母由其它字母或数字或符号代替</p>
 <ul>
 <li>单一字母替代法：反映原来字母表频率，易被攻破；</li>
 <li>多字母加密密码：对明文多个字母加密，或使用多个密文字母表；</li>
 </ul></li>
 <li><p><strong>置换</strong>: 通过执行对明文字母的置换,
-取得一种类型完全不同的映射;</p></li>
-<li><p><strong>转子机</strong>：通过多个加密阶段的组合，能使密码分析变得极为困难，对置换和替代都适合；</p></li>
+取得一种类型完全不同的映射</p></li>
+<li><p><strong>转子机</strong>：通过多个加密阶段的组合，能使密码分析变得极为困难，对置换和替代都适合</p></li>
 <li><p>凯撒密码替换</p>
 <ul>
 <li>加密算法: <span class="math inline">\(C_i = E(P_i) = P_i + K,
@@ -7052,10 +7151,10 @@ IMPOSSIBLE}\)</span></li>
 <ul>
 <li>纯置换易于识别，因为它具有与原明文相同的字母频率；多次置换，可较大改观置换密码的安全性能。</li>
 </ul></li>
-<li><p>对称密码体制基本原理 <img src="image-51.webp" srcset="/img/loading/loading3.gif" lazyload></p>
+<li><p>对称密码体制基本原理 <img src="image/image-51.png" srcset="/img/loading/loading3.gif" lazyload></p>
 <ul>
-<li>基于公开密钥的加密过程 <img src="image-52.webp" srcset="/img/loading/loading3.gif" lazyload></li>
-<li>基于公开密钥的鉴别过程 <img src="image-53.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+<li>基于公开密钥的加密过程 <img src="image/image-52.png" srcset="/img/loading/loading3.gif" lazyload></li>
+<li>基于公开密钥的鉴别过程 <img src="image/image-53.png" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul></li>
 </ul>
 <h3 id="数据加密-1">数据加密</h3>
@@ -7069,7 +7168,7 @@ IMPOSSIBLE}\)</span></li>
 </ul>
 <h2 id="统计数据库安全性">统计数据库安全性</h2>
 <ul>
-<li>统计数据库的特点:
+<li>统计数据库的特点：
 <ul>
 <li>允许用户查询聚集类型的信息（例如合计、平均值等）</li>
 <li>不允许查询单个记录信息</li>
@@ -7081,7 +7180,7 @@ IMPOSSIBLE}\)</span></li>
 </ul></li>
 <li>统计数据库安全性的规则：
 <ol type="1">
-<li>任何查询至少要涉及 <span class="math inline">\(N\)</span> (<span class="math inline">\(N\)</span> 足够大) 个以上的记录</li>
+<li>任何查询至少要涉及 <span class="math inline">\(N\)</span>（<span class="math inline">\(N\)</span> 足够大）个以上的记录</li>
 <li>任意两个查询的相交数据项不能超过 <span class="math inline">\(M\)</span> 个</li>
 <li>任一用户的查询次数不能超过 <span class="math inline">\(1 + (N - 2) /
 M\)</span>
@@ -7102,17 +7201,18 @@ M\)</span>
 </ul></li>
 <li>例2：
 <ul>
-<li>用户A发出下面两个合法查询:
+<li>用户 A 发出下面两个合法查询:
 <ol type="1">
-<li>用户A和其他N个程序员的工资总额是多少？</li>
-<li>用户B和其他N个程序员的工资总额是多少？</li>
+<li>用户 A 和其他 N-1 个程序员的工资总额是多少？</li>
+<li>用户 B 和其他 N-1 个程序员的工资总额是多少？</li>
 </ol></li>
-<li>若第一个查询的结果是X，第二个查询的结果是Y，由于用户A知道自己的工资是Z，那么他可以计算出用户B的工资
-<span class="math inline">\(= \mathrm{Y} - (\mathrm{X} -
-\mathrm{Z})\)</span> 。</li>
+<li>若第一个查询的结果是 X，第二个查询的结果是 Y，由于用户 A
+知道自己的工资是 Z，那么他可以计算出用户 B 的工资 <span class="math inline">\(= \mathrm{Y} - (\mathrm{X} - \mathrm{Z})\)</span>
+。</li>
 <li>原因：两个查询之间有很多重复的数据项</li>
-<li>可以证明，在上述两条规定下，如果想获知用户B的工资额，A至少需要进行
-<span class="math inline">\(1 + (N - 2) / M\)</span> 次查询</li>
+<li>可以证明，在上述两条规定下，如果想获知用户 B 的工资额，A
+至少需要进行 <span class="math inline">\(1 + (N - 2) / M\)</span>
+次查询</li>
 </ul></li>
 </ol></li>
 <li>数据库安全机制的设计目标:
@@ -7193,7 +7293,7 @@ M\)</span>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年11月11日</div>
+          <div>2025年11月12日</div>
         </div>
       
       
@@ -7643,7 +7743,7 @@ M\)</span>
 
 
   <script type="text/javascript">
-  document.getElementById("g-total-word-id").innerHTML = "456k";
+  document.getElementById("g-total-word-id").innerHTML = "457k";
   document.getElementById('g-total-posts-id').textContent ="50";
 </script>
 
