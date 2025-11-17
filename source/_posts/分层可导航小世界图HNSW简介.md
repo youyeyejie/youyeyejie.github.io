@@ -115,7 +115,12 @@ index_img: https://notes.sjtu.edu.cn/uploads/upload_52554988be29ed3f5a8521eaf301
     - 构建时间较长：相比其他近邻搜索算法，HNSW 的图构建过程较复杂，难以并行化，时间开销较大。
     - 参数调优复杂：HNSW 有多个关键参数（如 $M$、$M_{max}$、$efConstruction$、$efSearch$ 等），需要根据具体数据集进行调优，增加了使用难度。
 
-## 参考资料
-1. Yu. A. Malkov, D. A. Yashunin. Efficient and robust approximate nearest neighbor search using Hierarchical Navigable Small World graphs[J]. arXiv:1603.09320 [cs.DS], 2018
+# 分享报告
+{% pdf LLM_时代的向量数据库分享报告.pdf %}
+
+# 参考资料
+1. MALKOV Y A, YASHUNIN D A. Efficient and Robust Approximate Nearest Neighbor
+Search Using Hierarchical Navigable Small World Graphs[J]. IEEE Transactions on Pat-
+tern Analysis and Machine Intelligence, 2018, 42(4): 824-836.
 
 {% pdf Efficient_and_robust_approximate_nearest_neighbor_search_using_Hierarchical_Navigable_Small_World_graphs.pdf %}
