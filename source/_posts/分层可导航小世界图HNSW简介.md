@@ -5,7 +5,7 @@ date: 2025-11-08 11:39:11
 updated:
 tags:
     - HNSW
-    - 近邻搜索
+    - 数据库
 categories:
     - Misc
 excerpt: HNSW（Hierarchical Navigable Small World graph）是一种高效的近似最近邻搜索算法，结合了概率跳表和可导航小世界图的优点，通过分层结构实现对数级复杂度的近邻搜索，广泛应用于大规模数据处理和机器学习领域。
