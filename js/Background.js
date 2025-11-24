@@ -4,8 +4,8 @@ document
 
 document
     .querySelector("#banner")
-    .style.opacity = '0';
+    .style.background = 'url()'
 
 document
     .querySelector("#banner .mask")
-    .style.opacity = '0';
+    .style.backgroundColor = 'rgba(0,0,0,0)'

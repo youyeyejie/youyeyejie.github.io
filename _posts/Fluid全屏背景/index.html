@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/_posts/Fluid%E5%85%A8%E5%B1%8F%E8%83%8C%E6%99%AF/image.webp">
 <meta property="article:published_time" content="2025-08-27T13:30:29.000Z">
-<meta property="article:modified_time" content="2025-11-24T15:00:59.350Z">
+<meta property="article:modified_time" content="2025-11-24T15:43:09.864Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Fluid">
@@ -454,7 +454,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          840 字
+          767 字
         
       </span>
     
@@ -466,7 +466,7 @@
         
         
           <!-- compatible with older versions-->
-          8 分钟
+          7 分钟
         
       </span>
     
@@ -666,18 +666,8 @@
 <p>接着，我们需要为这个全屏背景容器添加相应的样式。为此，我们在博客的
 <code>source/css</code> 目录下创建一个名为 <code>Background.css</code>
 的 CSS 文件，代码如下：</p>
-<figure class="shiki css"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #56B6C2">:root</span><span style="color: #ABB2BF"> {</span></span>
-<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E06C75">--background-brightness</span><span style="color: #ABB2BF">: </span><span style="color: #56B6C2">brightness</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">0.7</span><span style="color: #ABB2BF">);</span></span>
-<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E06C75">--board-bg-color</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">#ffffff95</span><span style="color: #ABB2BF">;</span></span>
-<span class="line"><span style="color: #ABB2BF">}</span></span>
-<span class="line"><span style="color: #C678DD">[</span><span style="color: #D19A66">data-user-color-scheme</span><span style="color: #ABB2BF">=</span><span style="color: #98C379">"dark"</span><span style="color: #C678DD">]</span><span style="color: #ABB2BF"> {</span></span>
-<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E06C75">--background-brightness</span><span style="color: #ABB2BF">: </span><span style="color: #56B6C2">brightness</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">0.5</span><span style="color: #ABB2BF">);</span></span>
-<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E06C75">--board-bg-color</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">#15172295</span><span style="color: #ABB2BF">;</span></span>
-<span class="line"><span style="color: #ABB2BF">}</span></span>
-<span class="line"></span>
-<span class="line"></span>
-<span class="line"><span style="color: #61AFEF">#web_bg</span><span style="color: #ABB2BF"> {</span></span>
-<span class="line"><span style="color: #ABB2BF">    filter: </span><span style="color: #56B6C2">var</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">--background-brightness</span><span style="color: #ABB2BF">);</span></span>
+<figure class="shiki css"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">#web_bg</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">    filter: </span><span style="color: #56B6C2">brightness</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">0.5</span><span style="color: #ABB2BF">);</span></span>
 <span class="line"><span style="color: #ABB2BF">    position: </span><span style="color: #D19A66">fixed</span><span style="color: #ABB2BF">;</span></span>
 <span class="line"><span style="color: #ABB2BF">    width: </span><span style="color: #D19A66">100</span><span style="color: #E06C75">%</span><span style="color: #ABB2BF">;</span></span>
 <span class="line"><span style="color: #ABB2BF">    height: </span><span style="color: #D19A66">100</span><span style="color: #E06C75">%</span><span style="color: #ABB2BF">;</span></span>
@@ -689,12 +679,10 @@
 <span class="line"><span style="color: #ABB2BF">    background-repeat: </span><span style="color: #D19A66">no-repeat</span><span style="color: #ABB2BF">;</span></span>
 <span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure>
 <ul>
-<li>在上面的代码中，我们首先定义了一个 CSS 变量
-<code>--background-brightness</code>，用于控制背景的亮度。在浅色模式下，亮度设置为
-<code>0.7</code>，而在深色模式下，亮度设置为
-<code>0.5</code>。这样可以确保背景在不同的主题模式下都能有良好的视觉效果。</li>
-<li>接着，我们为 <code>#web_bg</code>
-容器设置了一些基本的样式，包括固定定位、全屏覆盖、背景图片的大小和位置等。</li>
+<li>在上面的样式中，我们为 <code>web_bg</code>
+容器设置了全屏覆盖的样式，并通过 <code>filter: brightness(0.5);</code>
+调整了背景的亮度，以确保内容的可读性。<code>z-index: -1;</code>
+确保背景容器位于其他内容的下方。</li>
 </ul>
 <p>最后，在博客的 <code>source/js</code> 目录下创建一个名为
 <code>Background.js</code> 的 JavaScript 文件，代码如下：</p>
@@ -704,11 +692,11 @@
 <span class="line"></span>
 <span class="line"><span style="color: #E06C75">document</span></span>
 <span class="line"><span style="color: #ABB2BF">    .</span><span style="color: #61AFEF">querySelector</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"#banner"</span><span style="color: #ABB2BF">)</span></span>
-<span class="line"><span style="color: #ABB2BF">    .</span><span style="color: #E5C07B">style</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">opacity</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'0'</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    .</span><span style="color: #E5C07B">style</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">background</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'url()'</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #E06C75">document</span></span>
 <span class="line"><span style="color: #ABB2BF">    .</span><span style="color: #61AFEF">querySelector</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"#banner .mask"</span><span style="color: #ABB2BF">)</span></span>
-<span class="line"><span style="color: #ABB2BF">    .</span><span style="color: #E5C07B">style</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">opacity</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'0'</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure>
+<span class="line"><span style="color: #ABB2BF">    .</span><span style="color: #E5C07B">style</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">backgroundColor</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'rgba(0,0,0,0)'</span></span></code></pre></div></div></figure>
 <ul>
 <li>在上面的代码中，我们首先通过
 <code>document.querySelector('#web_bg')</code>
@@ -716,8 +704,8 @@
 <code>web_bg</code>，并将其背景图片设置为当前文章页的
 <code>banner</code> 背景图片。这样，无论文章页的 <code>banner</code>
 背景图片如何变化，全屏背景都会与之保持一致。</li>
-<li>接着，我们将 <code>banner</code> 元素及其遮罩的透明度设置为
-<code>0</code>，以确保它们不会干扰全屏背景的显示效果。</li>
+<li>接着，我们将 <code>banner</code>
+的背景图片清空，并将其遮罩层的背景颜色设置为透明，以确保全屏背景能够完整显示。</li>
 </ul>
 <p>在实现了上述代码后，我们需要确保它在页面加载时被执行。为此，我们需要在博客的
 <code>_config.fluid.yml</code> 文件中添加以下配置：</p>

@@ -258,16 +258,17 @@ function toggleDynamicLine() {
 // 切换全屏背景功能
 function toggleBackgroundScript() {
     const webBg = document.querySelector('#web_bg');
-    if (webBg.style.display === 'none') {
-        webBg.style.display = 'block'
-        document.querySelector("#banner").style.opacity = '0';
-        document.querySelector("#banner .mask").style.opacity = '0';
+    if (webBg.style.display === 'none') { // 当前非全屏背景，切换为全屏背景
+        webBg.style.display = 'block';
+        document.querySelector("#banner").style.background = 'url()';
+        document.querySelector("#banner .mask").style.backgroundColor = 'rgba(0,0,0,0)';
         document.getElementById('toggle-background-script-icon').className = "fa-solid fa-toggle-on";
     }
-    else {
+    else { // 当前为全屏背景，切换为非全屏背景
         webBg.style.display = 'none';
-        document.querySelector("#banner").style.removeProperty('opacity');
-        document.querySelector("#banner .mask").style.removeProperty('opacity');
+        document.querySelector("#banner").style.background = document.querySelector('#web_bg').style.backgroundImage + " center center / cover no-repeat";
+        document.querySelector("#banner .mask").style.backgroundColor = 'rgba(0,0,0,0.5)';
+        document.querySelector('#banner .mask').style.filter = 'brightness(1)';
         document.getElementById('toggle-background-script-icon').className = "fa-solid fa-toggle-off";
     }
 }
