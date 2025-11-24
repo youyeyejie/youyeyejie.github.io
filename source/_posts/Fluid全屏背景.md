@@ -67,16 +67,15 @@ document
 
 document
     .querySelector("#banner")
-    .style.backgroundImage = 'url()'
+    .style.opacity = '0';
 
 document
     .querySelector("#banner .mask")
-    .style.backgroundColor = 'rgba(0,0,0,0)'
+    .style.opacity = '0';
 ```
 
 - 在上面的代码中，我们首先通过 `document.querySelector('#web_bg')` 选择了我们在注入器中添加的全屏背景容器 `web_bg`，并将其背景图片设置为当前文章页的 `banner` 背景图片。这样，无论文章页的 `banner` 背景图片如何变化，全屏背景都会与之保持一致。
-- 接着，我们将 `banner` 元素的背景图片设置为空，以避免与全屏背景产生冲突。
-- 最后，我们将 `banner` 元素的遮罩层的背景颜色设置为透明，以确保全屏背景能够完全显示出来。
+- 接着，我们将 `banner` 元素及其遮罩的透明度设置为 `0`，以确保它们不会干扰全屏背景的显示效果。
 
 在实现了上述代码后，我们需要确保它在页面加载时被执行。为此，我们需要在博客的 `_config.fluid.yml` 文件中添加以下配置：
 
@@ -90,6 +89,10 @@ custom_css:
 需要注意的是，如果在此前的随机背景美化中已经添加了 `RandomBanner.js`，则在 `_config.fluid.yml` 中的 `custom_js` 配置项中需要注意顺序，确保 `Background.js` 在 `RandomBanner.js` 之后加载，以便全屏背景能够正确获取到更新后的 `banner` 背景图片。
 
 <a href="/_posts/Fluid随机背景/" name="/_posts/Fluid随机背景/image.webp" class="LinkCard">Fluid主题随机背景美化</a>
+
+最后的最后，将打开/关闭全屏背景的代码添加到此前自定义的右键菜单中即可。具体方法已更新至往期文章。
+
+<a href="/_posts/Fluid自定义右键菜单/" name="/_posts/Fluid自定义右键菜单/image.webp" class="LinkCard">Fluid自定义右键菜单</a>
 
 # 总结
 

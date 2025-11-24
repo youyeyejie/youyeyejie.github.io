@@ -104,10 +104,26 @@
             </a>
         </li>
         <li class="menuLoad-Content" style="display: block;">
-            <a class="vlts-menu fix-cursor-default" target="_self" onclick="document.getElementById('color-toggle-btn').click();">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleDarkNightMode();">
             <span>
-                <i class="fa-solid fa-circle-half-stroke"></i>
+                <i id="toggle-dark-night-icon" class="fa-solid fa-moon"></i>
                 &nbsp;切换昼夜
+            </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleDynamicLine();">
+            <span>
+                <i id="toggle-dynamic-line-icon" class="fa-solid fa-toggle-off"></i>
+                &nbsp;线条动画
+            </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleBackgroundScript();">
+            <span>
+                <i id="toggle-background-script-icon" class="fa-solid fa-toggle-on"></i>
+                &nbsp;全屏背景
             </span>
             </a>
         </li>

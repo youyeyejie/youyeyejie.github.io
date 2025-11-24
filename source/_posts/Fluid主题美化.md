@@ -1108,7 +1108,7 @@ Hexo注入器的使用可以参考Fluid主题的用户手册。
 
     canvas.id = canvasId;
     canvas.style.cssText =
-        "position:fixed;top:0;left:0;z-index:" + config.z + ";opacity:" + config.o;
+        "position:fixed;top:0;left:0;display:none;z-index:" + config.z + ";opacity:" + config.o;
     getTags("body")[0].appendChild(canvas);
 
     setCanvasSize();

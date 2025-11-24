@@ -147,7 +147,7 @@ index_img: /_posts/Fluid自定义右键菜单/image.webp
 		        </span>
 		    </a>
 	    </li>
-        
+
 	    <hr class="menuLoad-Content" style="display: block;">
 
         <li class="menuLoad-Content" style="display: block;">
@@ -159,10 +159,26 @@ index_img: /_posts/Fluid自定义右键菜单/image.webp
             </a>
         </li>
         <li class="menuLoad-Content" style="display: block;">
-            <a class="vlts-menu fix-cursor-default" target="_self" onclick="document.getElementById('color-toggle-btn').click();">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleDarkNightMode();">
             <span>
-                <i class="fa-solid fa-circle-half-stroke"></i>
+                <i id="toggle-dark-night-icon" class="fa-solid fa-moon"></i>
                 &nbsp;切换昼夜
+            </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleDynamicLine();">
+            <span>
+                <i id="toggle-dynamic-line-icon" class="fa-solid fa-toggle-off"></i>
+                &nbsp;线条动画
+            </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleBackgroundScript();">
+            <span>
+                <i id="toggle-background-script-icon" class="fa-solid fa-toggle-on"></i>
+                &nbsp;全屏背景
             </span>
             </a>
         </li>
@@ -572,6 +588,49 @@ function copyLink() {
     setTimeout(() => {
         tooltip.classList.remove('show-tooltip');
     }, 1500);
+}
+
+// 切换昼夜模式功能
+function toggleDarkNightMode() {
+    document.getElementById('color-toggle-btn').click();
+    if (document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ||
+        (document.documentElement.getAttribute('data-user-color-scheme') === 'auto' &&
+         window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.getElementById('toggle-dark-night-icon').className = "fa-solid fa-sun";
+    }
+    else {
+        document.getElementById('toggle-dark-night-icon').className = "fa-solid fa-moon";
+    }
+}
+
+// 切换线条动画功能
+function toggleDynamicLine() {
+    const canvas = document.querySelector('canvas');
+    if (canvas.style.display === 'none') {
+        canvas.style.display = 'block';
+        document.getElementById('toggle-dynamic-line-icon').className = "fa-solid fa-toggle-on";
+    }
+    else {
+        canvas.style.display = 'none';
+        document.getElementById('toggle-dynamic-line-icon').className = "fa-solid fa-toggle-off";
+    }
+}
+
+// 切换全屏背景功能
+function toggleBackgroundScript() {
+    const webBg = document.querySelector('#web_bg');
+    if (webBg.style.display === 'none') {
+        webBg.style.display = 'block'
+        document.querySelector("#banner").style.opacity = '0';
+        document.querySelector("#banner .mask").style.opacity = '0';
+        document.getElementById('toggle-background-script-icon').className = "fa-solid fa-toggle-on";
+    }
+    else {
+        webBg.style.display = 'none';
+        document.querySelector("#banner").style.removeProperty('opacity');
+        document.querySelector("#banner .mask").style.removeProperty('opacity');
+        document.getElementById('toggle-background-script-icon').className = "fa-solid fa-toggle-off";
+    }
 }
 ```
 
