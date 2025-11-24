@@ -100,7 +100,7 @@
         const newColor = isDarkMode() ? "255,255,255" : "0,0,0";
         if (config.c !== newColor) {
             config.c = newColor;
-            console.log("主题已切换，线条颜色更新为:", newColor === "255,255,255" ? "白色" : "黑色");
+            // console.log("主题已切换，线条颜色更新为:", newColor === "255,255,255" ? "白色" : "黑色");
         }
     }
 
@@ -120,7 +120,7 @@
 
     canvas.id = canvasId;
     canvas.style.cssText =
-        "position:fixed;top:0;left:0;z-index:" + config.z + ";opacity:" + config.o;
+        "position:fixed;top:0;left:0;display:none;z-index:" + config.z + ";opacity:" + config.o;
     getTags("body")[0].appendChild(canvas);
 
     setCanvasSize();

@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/_posts/Fluid%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/image.webp">
 <meta property="article:published_time" content="2025-06-21T05:05:20.000Z">
-<meta property="article:modified_time" content="2025-08-24T18:28:56.775Z">
+<meta property="article:modified_time" content="2025-11-24T14:58:02.545Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Fluid">
@@ -249,10 +249,26 @@
             </a>
         </li>
         <li class="menuLoad-Content" style="display: block;">
-            <a class="vlts-menu fix-cursor-default" target="_self" onclick="document.getElementById('color-toggle-btn').click();">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleDarkNightMode();">
             <span>
-                <i class="fa-solid fa-circle-half-stroke"></i>
+                <i id="toggle-dark-night-icon" class="fa-solid fa-moon"></i>
                 &nbsp;切换昼夜
+            </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleDynamicLine();">
+            <span>
+                <i id="toggle-dynamic-line-icon" class="fa-solid fa-toggle-off"></i>
+                &nbsp;线条动画
+            </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleBackgroundScript();">
+            <span>
+                <i id="toggle-background-script-icon" class="fa-solid fa-toggle-on"></i>
+                &nbsp;全屏背景
             </span>
             </a>
         </li>
@@ -1636,7 +1652,7 @@ Blog的代码并进行一定修改。</p>
 <span class="line"></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E5C07B">canvas</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">id</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">canvasId</span><span style="color: #ABB2BF">;</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E5C07B">canvas</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">style</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">cssText</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span></span>
-<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #98C379">"position:fixed;top:0;left:0;z-index:"</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">config</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">z</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">";opacity:"</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">config</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">o</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #98C379">"position:fixed;top:0;left:0;display:none;z-index:"</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">config</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">z</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">";opacity:"</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">config</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">o</span><span style="color: #ABB2BF">;</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #61AFEF">getTags</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"body"</span><span style="color: #ABB2BF">)[</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">].</span><span style="color: #61AFEF">appendChild</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">canvas</span><span style="color: #ABB2BF">);</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #61AFEF">setCanvasSize</span><span style="color: #ABB2BF">();</span></span>
@@ -1821,7 +1837,7 @@ Blog的代码并进行一定修改。</p>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年8月25日</div>
+          <div>2025年11月24日</div>
         </div>
       
       
@@ -2191,6 +2207,7 @@ Blog的代码并进行一定修改。</p>
 
 
   
+<script src="/js/DynamicLine.js"></script>
 <script src="/js/LinkCard.js"></script>
 <script src="/js/RandomBanner.js"></script>
 <script src="/js/Background.js"></script>
@@ -2207,7 +2224,7 @@ Blog的代码并进行一定修改。</p>
 
 
   <script type="text/javascript">
-  document.getElementById("g-total-word-id").innerHTML = "491k";
+  document.getElementById("g-total-word-id").innerHTML = "492k";
   document.getElementById('g-total-posts-id').textContent ="52";
 </script>
 

@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/_posts/Fluid%E5%85%A8%E5%B1%8F%E8%83%8C%E6%99%AF/image.webp">
 <meta property="article:published_time" content="2025-08-27T13:30:29.000Z">
-<meta property="article:modified_time" content="2025-11-24T13:56:42.417Z">
+<meta property="article:modified_time" content="2025-11-24T15:00:59.350Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Fluid">
@@ -249,10 +249,26 @@
             </a>
         </li>
         <li class="menuLoad-Content" style="display: block;">
-            <a class="vlts-menu fix-cursor-default" target="_self" onclick="document.getElementById('color-toggle-btn').click();">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleDarkNightMode();">
             <span>
-                <i class="fa-solid fa-circle-half-stroke"></i>
+                <i id="toggle-dark-night-icon" class="fa-solid fa-moon"></i>
                 &nbsp;切换昼夜
+            </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleDynamicLine();">
+            <span>
+                <i id="toggle-dynamic-line-icon" class="fa-solid fa-toggle-off"></i>
+                &nbsp;线条动画
+            </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleBackgroundScript();">
+            <span>
+                <i id="toggle-background-script-icon" class="fa-solid fa-toggle-on"></i>
+                &nbsp;全屏背景
             </span>
             </a>
         </li>
@@ -438,7 +454,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          820 字
+          840 字
         
       </span>
     
@@ -450,7 +466,7 @@
         
         
           <!-- compatible with older versions-->
-          7 分钟
+          8 分钟
         
       </span>
     
@@ -688,11 +704,11 @@
 <span class="line"></span>
 <span class="line"><span style="color: #E06C75">document</span></span>
 <span class="line"><span style="color: #ABB2BF">    .</span><span style="color: #61AFEF">querySelector</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"#banner"</span><span style="color: #ABB2BF">)</span></span>
-<span class="line"><span style="color: #ABB2BF">    .</span><span style="color: #E5C07B">style</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">backgroundImage</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'url()'</span></span>
+<span class="line"><span style="color: #ABB2BF">    .</span><span style="color: #E5C07B">style</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">opacity</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'0'</span><span style="color: #ABB2BF">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #E06C75">document</span></span>
 <span class="line"><span style="color: #ABB2BF">    .</span><span style="color: #61AFEF">querySelector</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"#banner .mask"</span><span style="color: #ABB2BF">)</span></span>
-<span class="line"><span style="color: #ABB2BF">    .</span><span style="color: #E5C07B">style</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">backgroundColor</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'rgba(0,0,0,0)'</span></span></code></pre></div></div></figure>
+<span class="line"><span style="color: #ABB2BF">    .</span><span style="color: #E5C07B">style</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">opacity</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'0'</span><span style="color: #ABB2BF">;</span></span></code></pre></div></div></figure>
 <ul>
 <li>在上面的代码中，我们首先通过
 <code>document.querySelector('#web_bg')</code>
@@ -700,10 +716,8 @@
 <code>web_bg</code>，并将其背景图片设置为当前文章页的
 <code>banner</code> 背景图片。这样，无论文章页的 <code>banner</code>
 背景图片如何变化，全屏背景都会与之保持一致。</li>
-<li>接着，我们将 <code>banner</code>
-元素的背景图片设置为空，以避免与全屏背景产生冲突。</li>
-<li>最后，我们将 <code>banner</code>
-元素的遮罩层的背景颜色设置为透明，以确保全屏背景能够完全显示出来。</li>
+<li>接着，我们将 <code>banner</code> 元素及其遮罩的透明度设置为
+<code>0</code>，以确保它们不会干扰全屏背景的显示效果。</li>
 </ul>
 <p>在实现了上述代码后，我们需要确保它在页面加载时被执行。为此，我们需要在博客的
 <code>_config.fluid.yml</code> 文件中添加以下配置：</p>
@@ -718,6 +732,8 @@
 之后加载，以便全屏背景能够正确获取到更新后的 <code>banner</code>
 背景图片。</p>
 <p><a href="/_posts/Fluid随机背景/" name="/_posts/Fluid随机背景/image.webp" class="LinkCard">Fluid主题随机背景美化</a></p>
+<p>最后的最后，将打开/关闭全屏背景的代码添加到此前自定义的右键菜单中即可。具体方法已更新至往期文章。</p>
+<p><a href="/_posts/Fluid自定义右键菜单/" name="/_posts/Fluid自定义右键菜单/image.webp" class="LinkCard">Fluid自定义右键菜单</a></p>
 <h1 id="总结">总结</h1>
 <p>通过以上步骤，我们成功为 Fluid
 主题实现了全屏背景的功能。无论是在文章页还是其他页面，全屏背景都能与当前的
@@ -1159,6 +1175,7 @@
 
 
   
+<script src="/js/DynamicLine.js"></script>
 <script src="/js/LinkCard.js"></script>
 <script src="/js/RandomBanner.js"></script>
 <script src="/js/Background.js"></script>
@@ -1175,7 +1192,7 @@
 
 
   <script type="text/javascript">
-  document.getElementById("g-total-word-id").innerHTML = "491k";
+  document.getElementById("g-total-word-id").innerHTML = "492k";
   document.getElementById('g-total-posts-id').textContent ="52";
 </script>
 

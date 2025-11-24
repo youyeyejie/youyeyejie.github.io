@@ -228,3 +228,46 @@ function copyLink() {
         tooltip.classList.remove('show-tooltip');
     }, 1500);
 }
+
+// 切换昼夜模式功能
+function toggleDarkNightMode() {
+    document.getElementById('color-toggle-btn').click();
+    if (document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ||
+        (document.documentElement.getAttribute('data-user-color-scheme') === 'auto' &&
+         window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.getElementById('toggle-dark-night-icon').className = "fa-solid fa-sun";
+    }
+    else {
+        document.getElementById('toggle-dark-night-icon').className = "fa-solid fa-moon";
+    }
+}
+
+// 切换线条动画功能
+function toggleDynamicLine() {
+    const canvas = document.querySelector('canvas');
+    if (canvas.style.display === 'none') {
+        canvas.style.display = 'block';
+        document.getElementById('toggle-dynamic-line-icon').className = "fa-solid fa-toggle-on";
+    }
+    else {
+        canvas.style.display = 'none';
+        document.getElementById('toggle-dynamic-line-icon').className = "fa-solid fa-toggle-off";
+    }
+}
+
+// 切换全屏背景功能
+function toggleBackgroundScript() {
+    const webBg = document.querySelector('#web_bg');
+    if (webBg.style.display === 'none') {
+        webBg.style.display = 'block'
+        document.querySelector("#banner").style.opacity = '0';
+        document.querySelector("#banner .mask").style.opacity = '0';
+        document.getElementById('toggle-background-script-icon').className = "fa-solid fa-toggle-on";
+    }
+    else {
+        webBg.style.display = 'none';
+        document.querySelector("#banner").style.removeProperty('opacity');
+        document.querySelector("#banner .mask").style.removeProperty('opacity');
+        document.getElementById('toggle-background-script-icon').className = "fa-solid fa-toggle-off";
+    }
+}
