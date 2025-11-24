@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://youyeyejie.github.io/_posts/Fluid%E5%85%A8%E5%B1%8F%E8%83%8C%E6%99%AF/</loc>
+    
+    <lastmod>2025-11-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://youyeyejie.github.io/_posts/%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8/</loc>
     
     <lastmod>2025-11-24</lastmod>
@@ -568,13 +577,6 @@
   </url>
   
   <url>
-    <loc>https://youyeyejie.github.io/tags/Photography/</loc>
-    <lastmod>2025-11-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://youyeyejie.github.io/tags/SJTU/</loc>
     <lastmod>2025-11-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -583,6 +585,13 @@
   
   <url>
     <loc>https://youyeyejie.github.io/tags/%E8%BF%91%E7%BA%B2/</loc>
+    <lastmod>2025-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://youyeyejie.github.io/tags/Photography/</loc>
     <lastmod>2025-11-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -603,7 +612,14 @@
   </url>
   
   <url>
-    <loc>https://youyeyejie.github.io/tags/Web/</loc>
+    <loc>https://youyeyejie.github.io/tags/HNSW/</loc>
+    <lastmod>2025-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://youyeyejie.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
     <lastmod>2025-11-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -631,14 +647,14 @@
   </url>
   
   <url>
-    <loc>https://youyeyejie.github.io/tags/%E4%BF%A1%E6%81%AF%E8%AE%BA/</loc>
+    <loc>https://youyeyejie.github.io/tags/Web/</loc>
     <lastmod>2025-11-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://youyeyejie.github.io/tags/%E6%95%B0%E5%AD%A6%E5%8F%B2/</loc>
+    <loc>https://youyeyejie.github.io/tags/%E4%BF%A1%E6%81%AF%E8%AE%BA/</loc>
     <lastmod>2025-11-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -652,7 +668,7 @@
   </url>
   
   <url>
-    <loc>https://youyeyejie.github.io/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</loc>
+    <loc>https://youyeyejie.github.io/tags/%E6%95%B0%E5%AD%A6%E5%8F%B2/</loc>
     <lastmod>2025-11-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -660,6 +676,20 @@
   
   <url>
     <loc>https://youyeyejie.github.io/tags/%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1/</loc>
+    <lastmod>2025-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://youyeyejie.github.io/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</loc>
+    <lastmod>2025-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://youyeyejie.github.io/tags/%E7%8E%B0%E4%BB%A3%E5%AF%86%E7%A0%81%E5%AD%A6/</loc>
     <lastmod>2025-11-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -694,6 +724,13 @@
   </url>
   
   <url>
+    <loc>https://youyeyejie.github.io/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8/</loc>
+    <lastmod>2025-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://youyeyejie.github.io/tags/%E9%A9%AC%E5%8E%9F/</loc>
     <lastmod>2025-11-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -702,34 +739,6 @@
   
   <url>
     <loc>https://youyeyejie.github.io/tags/%E7%BD%91%E5%AE%89%E6%B3%95/</loc>
-    <lastmod>2025-11-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://youyeyejie.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
-    <lastmod>2025-11-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://youyeyejie.github.io/tags/%E7%8E%B0%E4%BB%A3%E5%AF%86%E7%A0%81%E5%AD%A6/</loc>
-    <lastmod>2025-11-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://youyeyejie.github.io/tags/HNSW/</loc>
-    <lastmod>2025-11-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://youyeyejie.github.io/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8/</loc>
     <lastmod>2025-11-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -759,13 +768,6 @@
   </url>
   
   <url>
-    <loc>https://youyeyejie.github.io/categories/DayDream-Gallery/</loc>
-    <lastmod>2025-11-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://youyeyejie.github.io/categories/SJTU-Notes/</loc>
     <lastmod>2025-11-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -773,7 +775,7 @@
   </url>
   
   <url>
-    <loc>https://youyeyejie.github.io/categories/SJTU-Notes/%E5%85%B6%E4%BB%96/</loc>
+    <loc>https://youyeyejie.github.io/categories/DayDream-Gallery/</loc>
     <lastmod>2025-11-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -787,7 +789,7 @@
   </url>
   
   <url>
-    <loc>https://youyeyejie.github.io/categories/SJTU-Notes/%E8%AE%A1%E7%A7%91/</loc>
+    <loc>https://youyeyejie.github.io/categories/SJTU-Notes/%E5%85%B6%E4%BB%96/</loc>
     <lastmod>2025-11-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -795,6 +797,13 @@
   
   <url>
     <loc>https://youyeyejie.github.io/categories/SJTU-Notes/%E6%95%B0%E5%AD%A6/</loc>
+    <lastmod>2025-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://youyeyejie.github.io/categories/SJTU-Notes/%E8%AE%A1%E7%A7%91/</loc>
     <lastmod>2025-11-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
