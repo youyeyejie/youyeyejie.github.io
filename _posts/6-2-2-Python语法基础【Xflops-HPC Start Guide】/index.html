@@ -252,22 +252,43 @@
             <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleDarkNightMode();">
             <span>
                 <i id="toggle-dark-light-icon" class="fa-solid fa-circle-half-stroke"></i>
+                <script>
+                    if (localStorage.getItem('DarkNightMode') === 'true') {
+                        document.getElementById("toggle-dark-light-icon").className = "iconfont icon-light";
+                    } else {
+                        document.getElementById("toggle-dark-light-icon").className = "iconfont icon-dark";
+                    }
+                </script>
                 &nbsp;切换昼夜
             </span>
             </a>
         </li>
-        <li class="menuLoad-Content" style="display: block;">
+        <!-- <li class="menuLoad-Content" style="display: block;">
             <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleDynamicLine();">
             <span>
                 <i id="toggle-dynamic-line-icon" class="fa-solid fa-toggle-off"></i>
+                <script>
+                    if (localStorage.getItem('DynamicLine') === 'true') {
+                        document.getElementById("toggle-dynamic-line-icon").className = "fa-solid fa-toggle-on";
+                    } else {
+                        document.getElementById("toggle-dynamic-line-icon").className = "fa-solid fa-toggle-off";
+                    }
+                </script>
                 &nbsp;线条动画
             </span>
             </a>
-        </li>
+        </li> -->
         <li class="menuLoad-Content" style="display: block;">
             <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleBackgroundScript();">
             <span>
                 <i id="toggle-background-script-icon" class="fa-solid fa-toggle-on"></i>
+                <script>
+                    if (localStorage.getItem('BackgroundScript') === 'false') {
+                        document.getElementById("toggle-background-script-icon").className = "fa-solid fa-toggle-off";
+                    } else {
+                        document.getElementById("toggle-background-script-icon").className = "fa-solid fa-toggle-on";
+                    }
+                </script>
                 &nbsp;全屏背景
             </span>
             </a>
@@ -1224,7 +1245,6 @@ dx\)</span>的值。</li>
 
 
   
-<script src="/js/DynamicLine.js"></script>
 <script src="/js/LinkCard.js"></script>
 <script src="/js/RandomBanner.js"></script>
 <script src="/js/Background.js"></script>

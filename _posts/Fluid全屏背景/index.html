@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/_posts/Fluid%E5%85%A8%E5%B1%8F%E8%83%8C%E6%99%AF/image.webp">
 <meta property="article:published_time" content="2025-11-24T13:30:29.000Z">
-<meta property="article:modified_time" content="2025-11-24T15:53:36.236Z">
+<meta property="article:modified_time" content="2025-11-24T18:08:53.519Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Fluid">
@@ -252,22 +252,43 @@
             <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleDarkNightMode();">
             <span>
                 <i id="toggle-dark-light-icon" class="fa-solid fa-circle-half-stroke"></i>
+                <script>
+                    if (localStorage.getItem('DarkNightMode') === 'true') {
+                        document.getElementById("toggle-dark-light-icon").className = "iconfont icon-light";
+                    } else {
+                        document.getElementById("toggle-dark-light-icon").className = "iconfont icon-dark";
+                    }
+                </script>
                 &nbsp;切换昼夜
             </span>
             </a>
         </li>
-        <li class="menuLoad-Content" style="display: block;">
+        <!-- <li class="menuLoad-Content" style="display: block;">
             <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleDynamicLine();">
             <span>
                 <i id="toggle-dynamic-line-icon" class="fa-solid fa-toggle-off"></i>
+                <script>
+                    if (localStorage.getItem('DynamicLine') === 'true') {
+                        document.getElementById("toggle-dynamic-line-icon").className = "fa-solid fa-toggle-on";
+                    } else {
+                        document.getElementById("toggle-dynamic-line-icon").className = "fa-solid fa-toggle-off";
+                    }
+                </script>
                 &nbsp;线条动画
             </span>
             </a>
-        </li>
+        </li> -->
         <li class="menuLoad-Content" style="display: block;">
             <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleBackgroundScript();">
             <span>
                 <i id="toggle-background-script-icon" class="fa-solid fa-toggle-on"></i>
+                <script>
+                    if (localStorage.getItem('BackgroundScript') === 'false') {
+                        document.getElementById("toggle-background-script-icon").className = "fa-solid fa-toggle-off";
+                    } else {
+                        document.getElementById("toggle-background-script-icon").className = "fa-solid fa-toggle-on";
+                    }
+                </script>
                 &nbsp;全屏背景
             </span>
             </a>
@@ -454,7 +475,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          767 字
+          860 字
         
       </span>
     
@@ -466,7 +487,7 @@
         
         
           <!-- compatible with older versions-->
-          7 分钟
+          8 分钟
         
       </span>
     
@@ -666,46 +687,46 @@
 <p>接着，我们需要为这个全屏背景容器添加相应的样式。为此，我们在博客的
 <code>source/css</code> 目录下创建一个名为 <code>Background.css</code>
 的 CSS 文件，代码如下：</p>
-<figure class="shiki css"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">#web_bg</span><span style="color: #ABB2BF"> {</span></span>
-<span class="line"><span style="color: #ABB2BF">    filter: </span><span style="color: #56B6C2">brightness</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">0.5</span><span style="color: #ABB2BF">);</span></span>
+<figure class="shiki css"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">#web_bg</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">    filter: </span><span style="color: #56B6C2">brightness</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">0.7</span><span style="color: #ABB2BF">);</span></span>
 <span class="line"><span style="color: #ABB2BF">    position: </span><span style="color: #D19A66">fixed</span><span style="color: #ABB2BF">;</span></span>
 <span class="line"><span style="color: #ABB2BF">    width: </span><span style="color: #D19A66">100</span><span style="color: #E06C75">%</span><span style="color: #ABB2BF">;</span></span>
 <span class="line"><span style="color: #ABB2BF">    height: </span><span style="color: #D19A66">100</span><span style="color: #E06C75">%</span><span style="color: #ABB2BF">;</span></span>
 <span class="line"><span style="color: #ABB2BF">    z-index: </span><span style="color: #D19A66">-1</span><span style="color: #ABB2BF">;</span></span>
-<span class="line"><span style="color: #ABB2BF">    background-size: </span><span style="color: #D19A66">cover</span><span style="color: #ABB2BF">;</span></span>
 <span class="line"><span style="color: #ABB2BF">    inset: </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">;</span></span>
 <span class="line"><span style="color: #ABB2BF">    background-size: </span><span style="color: #D19A66">cover</span><span style="color: #ABB2BF">;</span></span>
 <span class="line"><span style="color: #ABB2BF">    background-position: </span><span style="color: #D19A66">center</span><span style="color: #ABB2BF">;</span></span>
 <span class="line"><span style="color: #ABB2BF">    background-repeat: </span><span style="color: #D19A66">no-repeat</span><span style="color: #ABB2BF">;</span></span>
 <span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure>
 <ul>
-<li>在上面的样式中，我们为 <code>web_bg</code>
-容器设置了全屏覆盖的样式，并通过 <code>filter: brightness(0.5);</code>
-调整了背景的亮度，以确保内容的可读性。<code>z-index: -1;</code>
-确保背景容器位于其他内容的下方。</li>
+<li>在上面的样式中，我们为 <code>#web_bg</code>
+容器设置了固定定位，使其覆盖整个视口，并通过 <code>z-index: -1</code>
+将其置于其他内容的下方。我们还设置了背景图片的大小、位置和重复方式，以确保背景图片能够正确显示。</li>
 </ul>
 <p>最后，在博客的 <code>source/js</code> 目录下创建一个名为
 <code>Background.js</code> 的 JavaScript 文件，代码如下：</p>
-<figure class="shiki javascript"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #E06C75">document</span></span>
-<span class="line"><span style="color: #ABB2BF">    .</span><span style="color: #61AFEF">querySelector</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'#web_bg'</span><span style="color: #ABB2BF">)</span></span>
-<span class="line"><span style="color: #ABB2BF">    .</span><span style="color: #E5C07B">style</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">backgroundImage</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">`</span><span style="color: #C678DD">${</span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">querySelector</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'.banner'</span><span style="color: #ABB2BF">).</span><span style="color: #E5C07B">style</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">background</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">split</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">' '</span><span style="color: #ABB2BF">)[</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">]</span><span style="color: #C678DD">}</span><span style="color: #98C379">`</span><span style="color: #ABB2BF">;</span></span>
+<figure class="shiki javascript"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">querySelector</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'#web_bg'</span><span style="color: #ABB2BF">).</span><span style="color: #E5C07B">style</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">backgroundImage</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">`</span><span style="color: #C678DD">${</span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">querySelector</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'.banner'</span><span style="color: #ABB2BF">).</span><span style="color: #E5C07B">style</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">background</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">split</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">' '</span><span style="color: #ABB2BF">)[</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">]</span><span style="color: #C678DD">}</span><span style="color: #98C379">`</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">querySelector</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'#web_bg'</span><span style="color: #ABB2BF">).</span><span style="color: #E5C07B">style</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">display</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'block'</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">querySelector</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"#banner"</span><span style="color: #ABB2BF">).</span><span style="color: #E5C07B">style</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">background</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'url()'</span></span>
+<span class="line"><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">querySelector</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"#banner .mask"</span><span style="color: #ABB2BF">).</span><span style="color: #E5C07B">style</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">backgroundColor</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'rgba(0,0,0,0)'</span></span>
+<span class="line"><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getElementById</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'toggle-background-script-icon'</span><span style="color: #ABB2BF">).</span><span style="color: #E06C75">className</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"fa-solid fa-toggle-on"</span><span style="color: #ABB2BF">;</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #E06C75">document</span></span>
-<span class="line"><span style="color: #ABB2BF">    .</span><span style="color: #61AFEF">querySelector</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"#banner"</span><span style="color: #ABB2BF">)</span></span>
-<span class="line"><span style="color: #ABB2BF">    .</span><span style="color: #E5C07B">style</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">background</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'url()'</span></span>
-<span class="line"></span>
-<span class="line"><span style="color: #E06C75">document</span></span>
-<span class="line"><span style="color: #ABB2BF">    .</span><span style="color: #61AFEF">querySelector</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"#banner .mask"</span><span style="color: #ABB2BF">)</span></span>
-<span class="line"><span style="color: #ABB2BF">    .</span><span style="color: #E5C07B">style</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">backgroundColor</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'rgba(0,0,0,0)'</span></span></code></pre></div></div></figure>
+<span class="line"><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (</span><span style="color: #E5C07B">localStorage</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getItem</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'BackgroundScript'</span><span style="color: #ABB2BF">) </span><span style="color: #56B6C2">===</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'false'</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">||</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">!</span><span style="color: #E5C07B">localStorage</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getItem</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'BackgroundScript'</span><span style="color: #ABB2BF">)) {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">querySelector</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'#web_bg'</span><span style="color: #ABB2BF">).</span><span style="color: #E5C07B">style</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">display</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'none'</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">querySelector</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"#banner"</span><span style="color: #ABB2BF">).</span><span style="color: #E5C07B">style</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">background</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">querySelector</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'#web_bg'</span><span style="color: #ABB2BF">).</span><span style="color: #E5C07B">style</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">backgroundImage</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">" center center / cover no-repeat"</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">querySelector</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"#banner .mask"</span><span style="color: #ABB2BF">).</span><span style="color: #E5C07B">style</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">backgroundColor</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'rgba(0,0,0,0.3)'</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E5C07B">document</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">getElementById</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'toggle-background-script-icon'</span><span style="color: #ABB2BF">).</span><span style="color: #E06C75">className</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"fa-solid fa-toggle-off"</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure>
 <ul>
-<li>在上面的代码中，我们首先通过
-<code>document.querySelector('#web_bg')</code>
-选择了我们在注入器中添加的全屏背景容器
-<code>web_bg</code>，并将其背景图片设置为当前文章页的
-<code>banner</code> 背景图片。这样，无论文章页的 <code>banner</code>
-背景图片如何变化，全屏背景都会与之保持一致。</li>
-<li>接着，我们将 <code>banner</code>
-的背景图片清空，并将其遮罩层的背景颜色设置为透明，以确保全屏背景能够完整显示。</li>
+<li>在上面的代码中，我们首先获取当前页面的 <code>banner</code>
+背景图片，并将其设置为 <code>#web_bg</code>
+容器的背景图片。然后，我们清除 <code>banner</code>
+的背景图片，并将其遮罩层的背景颜色设置为透明，以确保全屏背景能够显示出来。</li>
+<li>接着，我们检查 <code>localStorage</code> 中是否存在
+<code>BackgroundScript</code> 键，并根据其值来决定是否显示全屏背景。如果
+<code>BackgroundScript</code> 的值为 <code>'false'</code>
+或不存在，我们将隐藏 <code>#web_bg</code> 容器，并恢复
+<code>banner</code> 的背景图片和遮罩层的背景颜色。</li>
 </ul>
 <p>在实现了上述代码后，我们需要确保它在页面加载时被执行。为此，我们需要在博客的
 <code>_config.fluid.yml</code> 文件中添加以下配置：</p>
@@ -793,7 +814,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年11月24日</div>
+          <div>2025年11月25日</div>
         </div>
       
       
@@ -1157,7 +1178,6 @@
 
 
   
-<script src="/js/DynamicLine.js"></script>
 <script src="/js/LinkCard.js"></script>
 <script src="/js/RandomBanner.js"></script>
 <script src="/js/Background.js"></script>

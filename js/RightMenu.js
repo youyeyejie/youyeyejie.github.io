@@ -242,33 +242,36 @@ function toggleDarkNightMode() {
     }
 }
 
-// 切换线条动画功能
-function toggleDynamicLine() {
-    const canvas = document.querySelector('canvas');
-    if (canvas.style.display === 'none') {
-        canvas.style.display = 'block';
-        document.getElementById('toggle-dynamic-line-icon').className = "fa-solid fa-toggle-on";
-    }
-    else {
-        canvas.style.display = 'none';
-        document.getElementById('toggle-dynamic-line-icon').className = "fa-solid fa-toggle-off";
-    }
-}
+// // 切换线条动画功能
+// function toggleDynamicLine() {
+//     const DynamicLine = localStorage.getItem('DynamicLine');
+//     if (DynamicLine === 'false' || !DynamicLine) {
+//         document.querySelector('canvas').style.display = 'block';
+//         document.getElementById('toggle-dynamic-line-icon').className = "fa-solid fa-toggle-on";
+//         localStorage.setItem('DynamicLine', 'true');
+//     }
+//     else {
+//         document.querySelector('canvas').style.display = 'none';
+//         document.getElementById('toggle-dynamic-line-icon').className = "fa-solid fa-toggle-off";
+//         localStorage.setItem('DynamicLine', 'false');
+//     }
+// }
 
 // 切换全屏背景功能
 function toggleBackgroundScript() {
-    const webBg = document.querySelector('#web_bg');
-    if (webBg.style.display === 'none') { // 当前非全屏背景，切换为全屏背景
-        webBg.style.display = 'block';
+    const background = localStorage.getItem('BackgroundScript');
+    if (background === 'false' || !background) { // 当前非全屏背景，切换为全屏背景
+        document.querySelector('#web_bg').style.display = 'block';
         document.querySelector("#banner").style.background = 'url()';
         document.querySelector("#banner .mask").style.backgroundColor = 'rgba(0,0,0,0)';
         document.getElementById('toggle-background-script-icon').className = "fa-solid fa-toggle-on";
+        localStorage.setItem('BackgroundScript', 'true');
     }
     else { // 当前为全屏背景，切换为非全屏背景
-        webBg.style.display = 'none';
+        document.querySelector('#web_bg').style.display = 'none';
         document.querySelector("#banner").style.background = document.querySelector('#web_bg').style.backgroundImage + " center center / cover no-repeat";
-        document.querySelector("#banner .mask").style.backgroundColor = 'rgba(0,0,0,0.5)';
-        document.querySelector('#banner .mask').style.filter = 'brightness(1)';
+        document.querySelector("#banner .mask").style.backgroundColor = 'rgba(0,0,0,0.3)';
         document.getElementById('toggle-background-script-icon').className = "fa-solid fa-toggle-off";
+        localStorage.setItem('BackgroundScript', 'false');
     }
 }
