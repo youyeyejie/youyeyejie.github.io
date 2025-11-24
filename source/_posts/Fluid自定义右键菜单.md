@@ -161,7 +161,7 @@ index_img: /_posts/Fluid自定义右键菜单/image.webp
         <li class="menuLoad-Content" style="display: block;">
             <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleDarkNightMode();">
             <span>
-                <i id="toggle-dark-night-icon" class="fa-solid fa-moon"></i>
+                <i id="toggle-dark-light-icon" class="fa-solid fa-circle-half-stroke"></i>
                 &nbsp;切换昼夜
             </span>
             </a>
@@ -596,10 +596,10 @@ function toggleDarkNightMode() {
     if (document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ||
         (document.documentElement.getAttribute('data-user-color-scheme') === 'auto' &&
          window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.getElementById('toggle-dark-night-icon').className = "fa-solid fa-sun";
+        document.getElementById('toggle-dark-light-icon').className = "iconfont icon-dark";
     }
     else {
-        document.getElementById('toggle-dark-night-icon').className = "fa-solid fa-moon";
+        document.getElementById('toggle-dark-light-icon').className = "iconfont icon-light";
     }
 }
 

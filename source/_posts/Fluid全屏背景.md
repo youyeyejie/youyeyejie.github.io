@@ -1,6 +1,6 @@
 ---
 title: Fluid全屏背景
-date: 2025-8-27 21:30:29
+date: 2025-11-24 21:30:29
 category_bar: true
 tags:
   - Hexo
