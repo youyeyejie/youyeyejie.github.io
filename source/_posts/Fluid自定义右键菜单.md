@@ -162,15 +162,14 @@ index_img: /_posts/Fluid自定义右键菜单/image.webp
             <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleDarkNightMode();">
             <span>
                 <i id="toggle-dark-light-icon" class="fa-solid fa-circle-half-stroke"></i>
+                <script>
+                    if (localStorage.getItem('DarkNightMode') === 'true') {
+                        document.getElementById("toggle-dark-light-icon").className = "fa-solid fa-sun";
+                    } else {
+                        document.getElementById("toggle-dark-light-icon").className = "fa-solid fa-moon";
+                    }
+                </script>
                 &nbsp;切换昼夜
-            </span>
-            </a>
-        </li>
-        <li class="menuLoad-Content" style="display: block;">
-            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleDynamicLine();">
-            <span>
-                <i id="toggle-dynamic-line-icon" class="fa-solid fa-toggle-off"></i>
-                &nbsp;线条动画
             </span>
             </a>
         </li>
@@ -178,6 +177,13 @@ index_img: /_posts/Fluid自定义右键菜单/image.webp
             <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleBackgroundScript();">
             <span>
                 <i id="toggle-background-script-icon" class="fa-solid fa-toggle-on"></i>
+                <script>
+                    if (localStorage.getItem('BackgroundScript') === 'false') {
+                        document.getElementById("toggle-background-script-icon").className = "fa-solid fa-toggle-off";
+                    } else {
+                        document.getElementById("toggle-background-script-icon").className = "fa-solid fa-toggle-on";
+                    }
+                </script>
                 &nbsp;全屏背景
             </span>
             </a>
@@ -603,34 +609,22 @@ function toggleDarkNightMode() {
     }
 }
 
-// 切换线条动画功能
-function toggleDynamicLine() {
-    const canvas = document.querySelector('canvas');
-    if (canvas.style.display === 'none') {
-        canvas.style.display = 'block';
-        document.getElementById('toggle-dynamic-line-icon').className = "fa-solid fa-toggle-on";
-    }
-    else {
-        canvas.style.display = 'none';
-        document.getElementById('toggle-dynamic-line-icon').className = "fa-solid fa-toggle-off";
-    }
-}
-
 // 切换全屏背景功能
 function toggleBackgroundScript() {
-    const webBg = document.querySelector('#web_bg');
-    if (webBg.style.display === 'none') { // 当前非全屏背景，切换为全屏背景
-        webBg.style.display = 'block';
+    const background = localStorage.getItem('BackgroundScript');
+    if (background === 'false' || !background) { // 当前非全屏背景，切换为全屏背景
+        document.querySelector('#web_bg').style.display = 'block';
         document.querySelector("#banner").style.background = 'url()';
         document.querySelector("#banner .mask").style.backgroundColor = 'rgba(0,0,0,0)';
         document.getElementById('toggle-background-script-icon').className = "fa-solid fa-toggle-on";
+        localStorage.setItem('BackgroundScript', 'true');
     }
     else { // 当前为全屏背景，切换为非全屏背景
-        webBg.style.display = 'none';
+        document.querySelector('#web_bg').style.display = 'none';
         document.querySelector("#banner").style.background = document.querySelector('#web_bg').style.backgroundImage + " center center / cover no-repeat";
-        document.querySelector("#banner .mask").style.backgroundColor = 'rgba(0,0,0,0.5)';
-        document.querySelector('#banner .mask').style.filter = 'brightness(1)';
+        document.querySelector("#banner .mask").style.backgroundColor = 'rgba(0,0,0,0.3)';
         document.getElementById('toggle-background-script-icon').className = "fa-solid fa-toggle-off";
+        localStorage.setItem('BackgroundScript', 'false');
     }
 }
 ```

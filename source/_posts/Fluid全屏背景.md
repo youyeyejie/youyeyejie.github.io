@@ -31,12 +31,11 @@ hexo.extend.injector.register("body_begin", `<div id="web_bg"></div>`);
 
 ```css
 #web_bg {
-    filter: brightness(0.5);
+    filter: brightness(0.7);
     position: fixed;
     width: 100%;
     height: 100%;
     z-index: -1;
-    background-size: cover;
     inset: 0;
     background-size: cover;
     background-position: center;
@@ -44,27 +43,27 @@ hexo.extend.injector.register("body_begin", `<div id="web_bg"></div>`);
 }
 ```
 
-- 在上面的样式中，我们为 `web_bg` 容器设置了全屏覆盖的样式，并通过 `filter: brightness(0.5);` 调整了背景的亮度，以确保内容的可读性。`z-index: -1;` 确保背景容器位于其他内容的下方。
+- 在上面的样式中，我们为 `#web_bg` 容器设置了固定定位，使其覆盖整个视口，并通过 `z-index: -1` 将其置于其他内容的下方。我们还设置了背景图片的大小、位置和重复方式，以确保背景图片能够正确显示。
 
 最后，在博客的 `source/js` 目录下创建一个名为 `Background.js` 的 JavaScript 文件，代码如下：
 
 ```javascript
-document
-    .querySelector('#web_bg')
-    .style.backgroundImage = `${document.querySelector('.banner').style.background.split(' ')[0]}`;
+document.querySelector('#web_bg').style.backgroundImage = `${document.querySelector('.banner').style.background.split(' ')[0]}`;
+document.querySelector('#web_bg').style.display = 'block';
+document.querySelector("#banner").style.background = 'url()'
+document.querySelector("#banner .mask").style.backgroundColor = 'rgba(0,0,0,0)'
+document.getElementById('toggle-background-script-icon').className = "fa-solid fa-toggle-on";
 
-document
-    .querySelector("#banner")
-    .style.background = 'url()'
-
-document
-    .querySelector("#banner .mask")
-    .style.backgroundColor = 'rgba(0,0,0,0)'
-
+if (localStorage.getItem('BackgroundScript') === 'false' || !localStorage.getItem('BackgroundScript')) {
+    document.querySelector('#web_bg').style.display = 'none';
+    document.querySelector("#banner").style.background = document.querySelector('#web_bg').style.backgroundImage + " center center / cover no-repeat";
+    document.querySelector("#banner .mask").style.backgroundColor = 'rgba(0,0,0,0.3)';
+    document.getElementById('toggle-background-script-icon').className = "fa-solid fa-toggle-off";
+}
 ```
 
-- 在上面的代码中，我们首先通过 `document.querySelector('#web_bg')` 选择了我们在注入器中添加的全屏背景容器 `web_bg`，并将其背景图片设置为当前文章页的 `banner` 背景图片。这样，无论文章页的 `banner` 背景图片如何变化，全屏背景都会与之保持一致。
-- 接着，我们将 `banner` 的背景图片清空，并将其遮罩层的背景颜色设置为透明，以确保全屏背景能够完整显示。
+- 在上面的代码中，我们首先获取当前页面的 `banner` 背景图片，并将其设置为 `#web_bg` 容器的背景图片。然后，我们清除 `banner` 的背景图片，并将其遮罩层的背景颜色设置为透明，以确保全屏背景能够显示出来。
+- 接着，我们检查 `localStorage` 中是否存在 `BackgroundScript` 键，并根据其值来决定是否显示全屏背景。如果 `BackgroundScript` 的值为 `'false'` 或不存在，我们将隐藏 `#web_bg` 容器，并恢复 `banner` 的背景图片和遮罩层的背景颜色。
 
 在实现了上述代码后，我们需要确保它在页面加载时被执行。为此，我们需要在博客的 `_config.fluid.yml` 文件中添加以下配置：
 
