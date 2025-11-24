@@ -235,10 +235,10 @@ function toggleDarkNightMode() {
     if (document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ||
         (document.documentElement.getAttribute('data-user-color-scheme') === 'auto' &&
          window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.getElementById('toggle-dark-night-icon').className = "fa-solid fa-sun";
+        document.getElementById('toggle-dark-light-icon').className = "iconfont icon-dark";
     }
     else {
-        document.getElementById('toggle-dark-night-icon').className = "fa-solid fa-moon";
+        document.getElementById('toggle-dark-light-icon').className = "iconfont icon-light";
     }
 }
 
