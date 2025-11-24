@@ -1,23 +1,23 @@
 (function() {
     // 检测深色模式的辅助函数 - 直接检查data-user-color-scheme属性
-    function isDarkMode() {
-        const htmlElement = document.documentElement;
-        const userScheme = htmlElement.getAttribute('data-user-color-scheme');
-        const defaultScheme = htmlElement.getAttribute('data-default-color-scheme');
+    // function isDarkMode() {
+    //     const htmlElement = document.documentElement;
+    //     const userScheme = htmlElement.getAttribute('data-user-color-scheme');
+    //     const defaultScheme = htmlElement.getAttribute('data-default-color-scheme');
         
-        // 如果用户手动设置了主题，优先使用用户设置
-        if (userScheme) {
-            return userScheme === 'dark';
-        }
+    //     // 如果用户手动设置了主题，优先使用用户设置
+    //     if (userScheme) {
+    //         return userScheme === 'dark';
+    //     }
         
-        // 否则使用默认主题设置
-        if (defaultScheme) {
-            return defaultScheme === 'dark';
-        }
+    //     // 否则使用默认主题设置
+    //     if (defaultScheme) {
+    //         return defaultScheme === 'dark';
+    //     }
         
-        // 如果都没有设置，检查系统偏好
-        return window.matchMedia('(prefers-color-scheme: dark)').matches;
-    }
+    //     // 如果都没有设置，检查系统偏好
+    //     return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    // }
 
     // 获取元素属性的辅助函数
     function getAttr(el, attr, defaultValue) {
@@ -35,7 +35,8 @@
         var lastScript = scripts[scripts.length - 1];
         
         // 根据深色模式状态设置线条颜色
-        const lineColor = isDarkMode() ? "255,255,255" : "0,0,0";
+        // const lineColor = isDarkMode() ? "255,255,255" : "0,0,0";
+        const lineColor = '255,255,255';
         
         return {
             l: scripts.length,
@@ -95,14 +96,14 @@
         animation(draw);
     }
 
-    // 主题变化时更新Canvas配置
-    function updateCanvasTheme() {
-        const newColor = isDarkMode() ? "255,255,255" : "0,0,0";
-        if (config.c !== newColor) {
-            config.c = newColor;
-            // console.log("主题已切换，线条颜色更新为:", newColor === "255,255,255" ? "白色" : "黑色");
-        }
-    }
+    // // 主题变化时更新Canvas配置
+    // function updateCanvasTheme() {
+    //     const newColor = isDarkMode() ? "255,255,255" : "0,0,0";
+    //     if (config.c !== newColor) {
+    //         config.c = newColor;
+    //         // console.log("主题已切换，线条颜色更新为:", newColor === "255,255,255" ? "白色" : "黑色");
+    //     }
+    // }
 
     var canvas = document.createElement("canvas"),
         config = getConfig(),
@@ -145,21 +146,21 @@
         points.push({ x: x, y: y, xa: xa, ya: ya, max: 6000 });
     }
 
-    // 初始设置线条颜色
-    updateCanvasTheme();
-    
-    // 监听data-user-color-scheme和data-default-color-scheme属性变化
-    if (window.MutationObserver) {
-        new MutationObserver(updateCanvasTheme).observe(document.documentElement, {
-            attributes: true,
-            attributeFilter: ['data-user-color-scheme', 'data-default-color-scheme']
-        });
-    }
-    
-    // 监听系统主题变化
-    if (window.matchMedia) {
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateCanvasTheme);
-    }
+        // // 初始设置线条颜色
+        // updateCanvasTheme();
+        
+        // // 监听data-user-color-scheme和data-default-color-scheme属性变化
+        // if (window.MutationObserver) {
+        //     new MutationObserver(updateCanvasTheme).observe(document.documentElement, {
+        //         attributes: true,
+        //         attributeFilter: ['data-user-color-scheme', 'data-default-color-scheme']
+        //     });
+        // }
+        
+        // // 监听系统主题变化
+        // if (window.matchMedia) {
+        //     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateCanvasTheme);
+        // }
 
     setTimeout(function() {
         draw();

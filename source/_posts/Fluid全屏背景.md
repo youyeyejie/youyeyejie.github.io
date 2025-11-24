@@ -30,18 +30,8 @@ hexo.extend.injector.register("body_begin", `<div id="web_bg"></div>`);
 接着，我们需要为这个全屏背景容器添加相应的样式。为此，我们在博客的 `source/css` 目录下创建一个名为 `Background.css` 的 CSS 文件，代码如下：
 
 ```css
-:root {
-    --background-brightness: brightness(0.7);
-    --board-bg-color: #ffffff95;
-}
-[data-user-color-scheme="dark"] {
-    --background-brightness: brightness(0.5);
-    --board-bg-color: #15172295;
-}
-
-
 #web_bg {
-    filter: var(--background-brightness);
+    filter: brightness(0.5);
     position: fixed;
     width: 100%;
     height: 100%;
@@ -54,9 +44,7 @@ hexo.extend.injector.register("body_begin", `<div id="web_bg"></div>`);
 }
 ```
 
-- 在上面的代码中，我们首先定义了一个 CSS 变量 `--background-brightness`，用于控制背景的亮度。在浅色模式下，亮度设置为 `0.7`，而在深色模式下，亮度设置为 `0.5`。这样可以确保背景在不同的主题模式下都能有良好的视觉效果。
-- 接着，我们为 `#web_bg` 容器设置了一些基本的样式，包括固定定位、全屏覆盖、背景图片的大小和位置等。
-
+- 在上面的样式中，我们为 `web_bg` 容器设置了全屏覆盖的样式，并通过 `filter: brightness(0.5);` 调整了背景的亮度，以确保内容的可读性。`z-index: -1;` 确保背景容器位于其他内容的下方。
 
 最后，在博客的 `source/js` 目录下创建一个名为 `Background.js` 的 JavaScript 文件，代码如下：
 
@@ -67,15 +55,16 @@ document
 
 document
     .querySelector("#banner")
-    .style.opacity = '0';
+    .style.background = 'url()'
 
 document
     .querySelector("#banner .mask")
-    .style.opacity = '0';
+    .style.backgroundColor = 'rgba(0,0,0,0)'
+
 ```
 
 - 在上面的代码中，我们首先通过 `document.querySelector('#web_bg')` 选择了我们在注入器中添加的全屏背景容器 `web_bg`，并将其背景图片设置为当前文章页的 `banner` 背景图片。这样，无论文章页的 `banner` 背景图片如何变化，全屏背景都会与之保持一致。
-- 接着，我们将 `banner` 元素及其遮罩的透明度设置为 `0`，以确保它们不会干扰全屏背景的显示效果。
+- 接着，我们将 `banner` 的背景图片清空，并将其遮罩层的背景颜色设置为透明，以确保全屏背景能够完整显示。
 
 在实现了上述代码后，我们需要确保它在页面加载时被执行。为此，我们需要在博客的 `_config.fluid.yml` 文件中添加以下配置：
 
