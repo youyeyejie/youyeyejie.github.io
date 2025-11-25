@@ -9,3 +9,9 @@
     background-position: center;
     background-repeat: no-repeat;
 }
+
+#toc, .category-list {
+    padding: 20px;
+    top: 4rem;
+    border-radius: 10px;
+}

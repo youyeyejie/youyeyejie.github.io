@@ -254,7 +254,6 @@ custom_css:
   - /css/CodeBlock.css # 代码折叠
   - /css/CodeInLine.css # 行内代码样式
   # - /css/Footer.css # 页脚样式
-  - /css/FrostedGlassBg.css # 文章界面毛玻璃
   - /css/Gallery.css # 相册文章图片
   - /css/IndexImgHover.css # 首页文章封面图片悬浮效果
   - /css/LinkCard.css # 链接卡片效果
@@ -684,7 +683,7 @@ post:
     # 文章的排序字段，前面带减号是倒序，不带减号是正序
     # Sort field for posts, with a minus sign is reverse order
     # Options: date | title | or other field of front-matter
-    post_order_by: "title"
+    post_order_by: "date"
 
     # 单个分类中折叠展示文章数的最大值，超过限制会显示 More，0 则不限制
     # The maximum number of posts in a single category. If the limit is exceeded, it will be displayed More. If 0 no limit
