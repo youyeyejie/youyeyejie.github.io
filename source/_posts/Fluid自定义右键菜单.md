@@ -159,31 +159,17 @@ index_img: /_posts/Fluid自定义右键菜单/image.webp
             </a>
         </li>
         <li class="menuLoad-Content" style="display: block;">
-            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleDarkNightMode();">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleColorMode();">
             <span>
-                <i id="toggle-dark-light-icon" class="fa-solid fa-circle-half-stroke"></i>
-                <script>
-                    if (localStorage.getItem('DarkNightMode') === 'true') {
-                        document.getElementById("toggle-dark-light-icon").className = "fa-solid fa-sun";
-                    } else {
-                        document.getElementById("toggle-dark-light-icon").className = "fa-solid fa-moon";
-                    }
-                </script>
+                <i id="toggle-color-mode-icon" class="fa-solid fa-circle-half-stroke"></i>
                 &nbsp;切换昼夜
             </span>
             </a>
         </li>
         <li class="menuLoad-Content" style="display: block;">
-            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleBackgroundScript();">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleBackgroundMode();">
             <span>
-                <i id="toggle-background-script-icon" class="fa-solid fa-toggle-on"></i>
-                <script>
-                    if (localStorage.getItem('BackgroundScript') === 'false') {
-                        document.getElementById("toggle-background-script-icon").className = "fa-solid fa-toggle-off";
-                    } else {
-                        document.getElementById("toggle-background-script-icon").className = "fa-solid fa-toggle-on";
-                    }
-                </script>
+                <i id="toggle-background-mode-icon" class="fa-solid fa-toggle-on"></i>
                 &nbsp;全屏背景
             </span>
             </a>
@@ -597,36 +583,49 @@ function copyLink() {
 }
 
 // 切换昼夜模式功能
-function toggleDarkNightMode() {
+function toggleColorMode() {
     document.getElementById('color-toggle-btn').click();
     if (document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ||
         (document.documentElement.getAttribute('data-user-color-scheme') === 'auto' &&
          window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.getElementById('toggle-dark-light-icon').className = "iconfont icon-dark";
+        document.getElementById('toggle-color-mode-icon').className = "iconfont icon-dark";
     }
     else {
-        document.getElementById('toggle-dark-light-icon').className = "iconfont icon-light";
+        document.getElementById('toggle-color-mode-icon').className = "iconfont icon-light";
     }
 }
 
 // 切换全屏背景功能
-function toggleBackgroundScript() {
-    const background = localStorage.getItem('BackgroundScript');
+function toggleBackgroundMode() {
+    const background = localStorage.getItem('BackgroundMode');
     if (background === 'false' || !background) { // 当前非全屏背景，切换为全屏背景
         document.querySelector('#web_bg').style.display = 'block';
         document.querySelector("#banner").style.background = 'url()';
         document.querySelector("#banner .mask").style.backgroundColor = 'rgba(0,0,0,0)';
-        document.getElementById('toggle-background-script-icon').className = "fa-solid fa-toggle-on";
-        localStorage.setItem('BackgroundScript', 'true');
+        document.getElementById('toggle-background-mode-icon').className = "fa-solid fa-toggle-on";
+        localStorage.setItem('BackgroundMode', 'true');
     }
     else { // 当前为全屏背景，切换为非全屏背景
         document.querySelector('#web_bg').style.display = 'none';
         document.querySelector("#banner").style.background = document.querySelector('#web_bg').style.backgroundImage + " center center / cover no-repeat";
         document.querySelector("#banner .mask").style.backgroundColor = 'rgba(0,0,0,0.3)';
-        document.getElementById('toggle-background-script-icon').className = "fa-solid fa-toggle-off";
-        localStorage.setItem('BackgroundScript', 'false');
+        document.getElementById('toggle-background-mode-icon').className = "fa-solid fa-toggle-off";
+        localStorage.setItem('BackgroundMode', 'false');
     }
 }
+
+// 初始化图标状态
+if (localStorage.getItem('DarkNightMode') === 'true') {
+    document.getElementById("toggle-color-mode-icon").className = "iconfont icon-light";
+} else {
+    document.getElementById("toggle-color-mode-icon").className = "iconfont icon-dark";
+}
+if (localStorage.getItem('BackgroundMode') === 'true') {
+    document.getElementById('toggle-background-mode-icon').className = "fa-solid fa-toggle-on";
+} else {
+    document.getElementById('toggle-background-mode-icon').className = "fa-solid fa-toggle-off";
+}
+
 ```
 
 这段代码实现了右键菜单的各项功能，包括复制选中文本、必应搜索、跳转到链接、下载图片、复制图片链接、随机跳转到文章以及复制当前页面链接。

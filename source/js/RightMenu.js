@@ -230,48 +230,45 @@ function copyLink() {
 }
 
 // 切换昼夜模式功能
-function toggleDarkNightMode() {
+function toggleColorMode() {
     document.getElementById('color-toggle-btn').click();
     if (document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ||
         (document.documentElement.getAttribute('data-user-color-scheme') === 'auto' &&
          window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.getElementById('toggle-dark-light-icon').className = "iconfont icon-dark";
+        document.getElementById('toggle-color-mode-icon').className = "iconfont icon-dark";
     }
     else {
-        document.getElementById('toggle-dark-light-icon').className = "iconfont icon-light";
+        document.getElementById('toggle-color-mode-icon').className = "iconfont icon-light";
     }
 }
 
-// // 切换线条动画功能
-// function toggleDynamicLine() {
-//     const DynamicLine = localStorage.getItem('DynamicLine');
-//     if (DynamicLine === 'false' || !DynamicLine) {
-//         document.querySelector('canvas').style.display = 'block';
-//         document.getElementById('toggle-dynamic-line-icon').className = "fa-solid fa-toggle-on";
-//         localStorage.setItem('DynamicLine', 'true');
-//     }
-//     else {
-//         document.querySelector('canvas').style.display = 'none';
-//         document.getElementById('toggle-dynamic-line-icon').className = "fa-solid fa-toggle-off";
-//         localStorage.setItem('DynamicLine', 'false');
-//     }
-// }
-
 // 切换全屏背景功能
-function toggleBackgroundScript() {
-    const background = localStorage.getItem('BackgroundScript');
+function toggleBackgroundMode() {
+    const background = localStorage.getItem('BackgroundMode');
     if (background === 'false' || !background) { // 当前非全屏背景，切换为全屏背景
         document.querySelector('#web_bg').style.display = 'block';
         document.querySelector("#banner").style.background = 'url()';
         document.querySelector("#banner .mask").style.backgroundColor = 'rgba(0,0,0,0)';
-        document.getElementById('toggle-background-script-icon').className = "fa-solid fa-toggle-on";
-        localStorage.setItem('BackgroundScript', 'true');
+        document.getElementById('toggle-background-mode-icon').className = "fa-solid fa-toggle-on";
+        localStorage.setItem('BackgroundMode', 'true');
     }
     else { // 当前为全屏背景，切换为非全屏背景
         document.querySelector('#web_bg').style.display = 'none';
         document.querySelector("#banner").style.background = document.querySelector('#web_bg').style.backgroundImage + " center center / cover no-repeat";
         document.querySelector("#banner .mask").style.backgroundColor = 'rgba(0,0,0,0.3)';
-        document.getElementById('toggle-background-script-icon').className = "fa-solid fa-toggle-off";
-        localStorage.setItem('BackgroundScript', 'false');
+        document.getElementById('toggle-background-mode-icon').className = "fa-solid fa-toggle-off";
+        localStorage.setItem('BackgroundMode', 'false');
     }
+}
+
+// 初始化图标状态
+if (localStorage.getItem('DarkNightMode') === 'true') {
+    document.getElementById("toggle-color-mode-icon").className = "iconfont icon-light";
+} else {
+    document.getElementById("toggle-color-mode-icon").className = "iconfont icon-dark";
+}
+if (localStorage.getItem('BackgroundMode') === 'true') {
+    document.getElementById('toggle-background-mode-icon').className = "fa-solid fa-toggle-on";
+} else {
+    document.getElementById('toggle-background-mode-icon').className = "fa-solid fa-toggle-off";
 }
