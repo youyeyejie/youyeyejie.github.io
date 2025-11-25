@@ -56,29 +56,32 @@ hexo.extend.injector.register("body_begin", `<div id="web_bg"></div>`);
 
 ```javascript
 document.querySelector('#web_bg').style.backgroundImage = `${document.querySelector('.banner').style.background.split(' ')[0]}`;
-document.querySelector('#web_bg').style.display = 'block';
 document.querySelector("#banner").style.background = 'url()'
 document.querySelector("#banner .mask").style.backgroundColor = 'rgba(0,0,0,0)'
 document.getElementById('toggle-background-mode-icon').className = "fa-solid fa-toggle-on";
 ['#toc', '.category-list'].forEach(selector => {
-    document.querySelector(selector).style.backgroundColor = "var(--board-bg-color)";
+    if (document.querySelector(selector)) {
+        document.querySelector(selector).style.backgroundColor = "var(--board-bg-color)";
+    }
 });
 
-if (localStorage.getItem('BackgroundMode') === 'false' || !localStorage.getItem('BackgroundMode') || window.innerWidth < 768) {
-    document.querySelector('#web_bg').style.display = 'none';
+if (localStorage.getItem('BackgroundMode') === 'false' || !localStorage.getItem('BackgroundMode') || window.innerWidth < window.innerHeight) {
     document.querySelector("#banner").style.background = document.querySelector('#web_bg').style.backgroundImage + " center center / cover no-repeat";
+    document.querySelector('#web_bg').style.backgroundImage = 'url()';
     document.querySelector("#banner .mask").style.backgroundColor = 'rgba(0,0,0,0.3)';
     document.getElementById('toggle-background-mode-icon').className = "fa-solid fa-toggle-off";
     ['#toc', '.category-list'].forEach(selector => {
-        document.querySelector(selector).style.removeProperty('background-color');
+        if (document.querySelector(selector)) {
+            document.querySelector(selector).style.removeProperty('background-color');
+        }
     });
     localStorage.setItem('BackgroundMode', 'false');
 }
 ```
 
 - 在上面的代码中，我们首先获取当前页面的 `banner` 背景图片，并将其设置为 `#web_bg` 容器的背景图片。然后，我们清除 `banner` 的背景图片，并将其遮罩层的背景颜色设置为透明，以确保全屏背景能够显示出来。
-- 接着，我们检查 `localStorage` 中是否存在 `BackgroundMode` 键，并根据其值来决定是否显示全屏背景。如果 `BackgroundMode` 的值为 `'false'` 或不存在，我们将隐藏 `#web_bg` 容器，并恢复 `banner` 的背景图片和遮罩层的背景颜色。
-- 同时，我们还为目录和分类列表动态添加或移除模糊效果，以确保其在不同背景模式下的可读性。
+- 接着，我们检查 `localStorage` 中是否存在 `BackgroundMode` 键，并根据窗口的宽高比来决定是否显示全屏背景。如果 `BackgroundMode` 的值为 `'false'` 或不存在，我们将 `banner` 的背景图片恢复为原来的图片，并将 `#web_bg` 的背景图片清除，同时将遮罩层的背景颜色设置为半透明黑色，以确保内容的可读性。
+- 同时，我们还为目录和分类列表动态添加或移除背景颜色，以确保其在不同背景模式下的可读性。
 
 在实现了上述代码后，我们需要确保它在页面加载时被执行。为此，我们需要在博客的 `_config.fluid.yml` 文件中添加以下配置：
 

@@ -172,8 +172,8 @@ color:
 
   # 主面板背景色
   # Color of main board
-  board_color:  "#ffffff95"
-  board_color_dark: "#15172295"
+  board_color:  "#ffffffaa"
+  board_color_dark: "#151722aa"
 
   # 文章正文字体色
   # Color of post text
