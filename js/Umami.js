@@ -67,8 +67,10 @@ function umamiTrackEvent() {
             item.dataset.umamiEvent = "Tags";
         } else if (item.onclick?.toString().includes('copyLink')) {
             item.dataset.umamiEvent = "Copy Link";
-        } else if (item.onclick?.toString().includes('color-toggle-btn')) {
+        } else if (item.onclick?.toString().includes('toggleColorMode')) {
             item.dataset.umamiEvent = "Color Toggle";
+        } else if (item.onclick?.toString().includes('toggleBackgroundMode')) {
+            item.dataset.umamiEvent = "Background Toggle";
         }
     });
 
