@@ -84,7 +84,9 @@ def main():
         for idx, fname in enumerate(md_files, 1):
             print(f"{idx}. {fname}")
         try:
-            choice = int(input("输入序号: "))
+            choice = input(f"请选择要处理的文件编号，回车选择{len(md_files)}: ")
+            if not choice:
+                choice = len(md_files)
             if 1 <= choice <= len(md_files):
                 md_file_path = os.path.join(posts_dir, md_files[choice - 1])
                 process_markdown_file(md_file_path)
