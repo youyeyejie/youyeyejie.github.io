@@ -1,5 +1,4 @@
 var url = 'https://v1.hitokoto.cn/?c=i';
-url = 'https://fan-hitokoto.mangofanfan.cn/?c=i';
 
 async function fetchSlogan() {
     try {
