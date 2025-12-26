@@ -44,6 +44,8 @@ def main():
     indices = input(f"请选择要处理的文件编号，回车选择{len(files)}: ")
     if not indices:
         indices = [len(files)]
+    else:
+        indices = [int(i) for i in re.findall(r'\d+', indices)]
 
     total_changes = 0
     for i in indices:

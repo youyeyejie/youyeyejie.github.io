@@ -6,6 +6,10 @@
     width: 70%; /* 强制宽度为页面的70% */
     height: auto; /* 保持图片比例 */
     display: block; 
-    margin: 10px auto; /* 居中对齐 */
+    margin: 1rem auto; /* 居中对齐 */
     border-radius: 0.5rem;
+}
+
+.image-caption {
+    margin: 1rem auto!important;
 }
