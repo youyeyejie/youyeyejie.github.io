@@ -1,0 +1,1112 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head><!-- hexo injector head_begin start --><meta name="msvalidate.01" content="DF9F232801BA9D0CABB002E4774A3228" />
+<meta name="google-site-verification" content="vOm5Zs9tuUlEh-wVBlpvs_spnOou-q2CoTiFQ1ZV1h4" />
+<script defer src="https://cloud.umami.is/script.js" data-website-id="0369421f-4354-4d7b-99c7-ae077c591b4f"></script>
+<!-- hexo injector head_begin end -->
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar/avatar2.webp">
+  <link rel="icon" href="/img/avatar/avatar2.webp">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="youyeyejie">
+  <meta name="keywords" content="yyyj,YYYJ,youyeyejie,有野野芥">
+  
+    <meta name="description" content="NIS2334 操作系统原理实践——OpenEuler内核编译与替换">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OpenEuler内核编译与替换实践">
+<meta property="og:url" content="https://youyeyejie.github.io/_posts/OpenEuler%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91%E4%B8%8E%E6%9B%BF%E6%8D%A2%E5%AE%9E%E8%B7%B5/index.html">
+<meta property="og:site_name" content="有野野芥的博客">
+<meta property="og:description" content="NIS2334 操作系统原理实践——OpenEuler内核编译与替换">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://youyeyejie.github.io/_posts/OpenEuler%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91%E4%B8%8E%E6%9B%BF%E6%8D%A2%E5%AE%9E%E8%B7%B5/image.webp">
+<meta property="og:image" content="https://youyeyejie.github.io/_posts/OpenEuler%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91%E4%B8%8E%E6%9B%BF%E6%8D%A2%E5%AE%9E%E8%B7%B5/image-1.webp">
+<meta property="og:image" content="https://youyeyejie.github.io/_posts/OpenEuler%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91%E4%B8%8E%E6%9B%BF%E6%8D%A2%E5%AE%9E%E8%B7%B5/image-2.webp">
+<meta property="og:image" content="https://youyeyejie.github.io/_posts/OpenEuler%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91%E4%B8%8E%E6%9B%BF%E6%8D%A2%E5%AE%9E%E8%B7%B5/image-3.webp">
+<meta property="og:image" content="https://youyeyejie.github.io/_posts/OpenEuler%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91%E4%B8%8E%E6%9B%BF%E6%8D%A2%E5%AE%9E%E8%B7%B5/image-4.webp">
+<meta property="og:image" content="https://youyeyejie.github.io/_posts/OpenEuler%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91%E4%B8%8E%E6%9B%BF%E6%8D%A2%E5%AE%9E%E8%B7%B5/image-5.webp">
+<meta property="og:image" content="https://youyeyejie.github.io/_posts/OpenEuler%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91%E4%B8%8E%E6%9B%BF%E6%8D%A2%E5%AE%9E%E8%B7%B5/image-6.webp">
+<meta property="og:image" content="https://youyeyejie.github.io/_posts/OpenEuler%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91%E4%B8%8E%E6%9B%BF%E6%8D%A2%E5%AE%9E%E8%B7%B5/image-7.webp">
+<meta property="og:image" content="https://youyeyejie.github.io/_posts/OpenEuler%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91%E4%B8%8E%E6%9B%BF%E6%8D%A2%E5%AE%9E%E8%B7%B5/image-8.webp">
+<meta property="og:image" content="https://youyeyejie.github.io/_posts/OpenEuler%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91%E4%B8%8E%E6%9B%BF%E6%8D%A2%E5%AE%9E%E8%B7%B5/image-9.webp">
+<meta property="og:image" content="https://youyeyejie.github.io/_posts/OpenEuler%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91%E4%B8%8E%E6%9B%BF%E6%8D%A2%E5%AE%9E%E8%B7%B5/image-10.webp">
+<meta property="og:image" content="https://youyeyejie.github.io/_posts/OpenEuler%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91%E4%B8%8E%E6%9B%BF%E6%8D%A2%E5%AE%9E%E8%B7%B5/image-11.webp">
+<meta property="og:image" content="https://youyeyejie.github.io/_posts/OpenEuler%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91%E4%B8%8E%E6%9B%BF%E6%8D%A2%E5%AE%9E%E8%B7%B5/image-12.webp">
+<meta property="og:image" content="https://youyeyejie.github.io/_posts/OpenEuler%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91%E4%B8%8E%E6%9B%BF%E6%8D%A2%E5%AE%9E%E8%B7%B5/image-13.webp">
+<meta property="article:published_time" content="2025-03-17T12:57:52.000Z">
+<meta property="article:modified_time" content="2025-12-26T13:38:56.716Z">
+<meta property="article:author" content="youyeyejie">
+<meta property="article:tag" content="操作系统原理">
+<meta property="article:tag" content="OpenEuler">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://youyeyejie.github.io/_posts/OpenEuler%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91%E4%B8%8E%E6%9B%BF%E6%8D%A2%E5%AE%9E%E8%B7%B5/image.webp">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>OpenEuler内核编译与替换实践 - 有野野芥的博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+<link rel="stylesheet" href="//lib.baomitu.com/font-awesome/6.1.2/css/all.min.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+
+
+  
+<link rel="stylesheet" href="/css/Background.css">
+<link rel="stylesheet" href="/css/CodeBlock.css">
+<link rel="stylesheet" href="/css/CodeInLine.css">
+<link rel="stylesheet" href="/css/Gallery.css">
+<link rel="stylesheet" href="/css/IndexImgHover.css">
+<link rel="stylesheet" href="/css/LinkCard.css">
+<link rel="stylesheet" href="/css/ScrollAnimation.css">
+<link rel="stylesheet" href="/css/ScrollBar.css">
+<link rel="stylesheet" href="/css/Sidebar.css">
+<link rel="stylesheet" href="/css/StrongInDark.css">
+<link rel="stylesheet" href="/css/TitleGradient.css">
+<link rel="stylesheet" href="/css/UnifyImgWidth.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"youyeyejie.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":false,"default":"TEXT"},"copy_btn":false,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading/loading3.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-shiki-plugin@latest/lib/codeblock.css">
+<style>:root{--hl-color:#abb2bf;--hl-bg:#282c34;--hltools-bg:#21252b;--hltools-color:#bbbbbc;--hlnumber-bg:#282c34;--hlnumber-color:#495162;--hlscrollbar-bg:#373c47;--hlexpand-bg:linear-gradient(180deg,rgba(40,44,52,0.1),rgba(40,44,52,0.9))}</style>
+    <style>
+    .code-expand-btn:not(.expand-done) ~ div.codeblock,
+    .code-expand-btn:not(.expand-done) ~ * div.codeblock {
+      overflow: hidden;
+      height: 360px;
+    }
+    </style>
+  <!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+  <div id="loader-container"> 
+    <div id="loader" class="loader"></div>
+    <div class="loader-inner">
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/RainbowLoading.js" type="text/javascript"></script>
+<link href="/css/RainbowLoading.css" type="text/css" rel="stylesheet"/><div id="tooltip-rightmenu" class="tooltip-rightmenu">如需原始右键菜单请按下 <strong>Ctrl+右键</strong></div>
+<div id="tooltip-rightmenu-return" class="tooltip-rightmenu"></div>
+
+<div id="rightmenu-wrapper">
+  <ul class="list-v rightmenu" id="rightmenu-content">
+	    <li class="navigation menuNavigation-Content">
+            <a class="nav icon-only fix-cursor-default" aria-label="back" onclick="history.back()"><i class="fa-solid fa-chevron-left"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="forward" onclick="history.forward()"><i class="fa-solid fa-chevron-right"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="reload" onclick="window.location.reload()"><i class="fa-solid fa-rotate-right"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="top" onclick="scrollToTopSmooth();"><i class="fa-solid fa-chevron-up"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="bottom" onclick="scrollToBottomSmooth();"><i class="fa-solid fa-chevron-down"></i></a>
+	    </li>
+
+        <hr class="menuLoad-Content" style="display: block;" id="top-line" hidden>
+
+        <li class="menuLoad-Content" style="display: block;" id="copy-selected-text" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copySelectedText();">
+                <span>
+                    <i class="fa-solid fa-copy"></i>
+                    &nbsp;复制选中
+                </span>
+            </a>
+        </li>
+
+        <li class="menuLoad-Content" style="display: block;" id="search-selected-text-BING" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_blank" onclick="searchSelectedTextBing();">
+                <span>
+                    <i class="fa-solid fa-magnifying-glass-arrow-right"></i>
+                    &nbsp;必应搜索
+                </span>
+            </a>
+        </li>
+
+        <li class="menuLoad-Content" style="display: block;" id="go-to-link" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_blank">
+                <span>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    &nbsp;转到链接
+                </span>
+            </a>
+        </li>
+
+        <li class="menuLoad-Content" style="display: block;" id="download-image" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="downloadImage();">
+                <span>
+                    <i class="fa-solid fa-image"></i>
+                    &nbsp;下载图片
+                </span>
+            </a>
+        </li>
+
+        <li class="menuLoad-Content" style="display: block;" id="copy-image-link" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copyImageLink();">
+                <span>
+                    <i class="fa-solid fa-link"></i>
+                    复制图片链接
+                </span>
+            </a>
+        </li>
+
+		<hr class="menuLoad-Content" style="display: block;">
+
+        <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" onclick="RandomGo()">
+		        <span>
+			        <i class="fa-solid fa-paper-plane"></i>
+                    &nbsp;随便看看
+		        </span>
+		    </a>
+	    </li>
+	    <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+		        <span>
+			        <i class="fa-solid fa-magnifying-glass"></i>
+                    &nbsp;站内搜索
+		        </span>
+		    </a>
+	    </li>
+        <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" href="/categories/">
+		        <span>
+			        <i class="iconfont icon-category-fill"></i>
+                    &nbsp;博客分类
+		        </span>
+		    </a>
+	    </li>
+        <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" href="/tags/">
+		        <span>
+			        <i class="fa-solid fa-tags"></i>
+                    &nbsp;文章标签
+		        </span>
+		    </a>
+	    </li>
+        
+	    <hr class="menuLoad-Content" style="display: block;">
+
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copyLink();">
+                <span>
+                    <i class="fa-solid fa-copy"></i>
+                    &nbsp;复制链接
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleColorMode();">
+            <span>
+                <i id="toggle-color-mode-icon" class="fa-solid fa-circle-half-stroke"></i>
+                &nbsp;切换昼夜
+            </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleBackgroundMode();">
+            <span>
+                <i id="toggle-background-mode-icon" class="fa-solid fa-toggle-on"></i>
+                &nbsp;全屏背景
+            </span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+<script src="/js/RightMenu.js" type="text/javascript"></script>
+<link href="/css/RightMenu.css" type="text/css" rel="stylesheet"/>
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <!-- <strong>YYYJ&#39;s Blog</strong> -->
+       <strong class="navbar-title">YYYJ&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.travellings.cn/go-by-clouds.html" target="_self">
+                <i class="fas fa-train-subway"></i>
+                <span>开往</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa-solid fa-folder-open"></i>
+                <span>更多</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/archives/" target="_self">
+                    <i class="iconfont icon-archive-fill"></i>
+                    <span>归档</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/" target="_self">
+                    <i class="fa-solid fa-tags"></i>
+                    <span>标签</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/links/" target="_self">
+                    <i class="iconfont icon-link-fill"></i>
+                    <span>友链</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/DayDream-Gallery/" target="_self">
+                    <i class="fas fa-images"></i>
+                    <span>图集</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/banner/random.webp') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="OpenEuler内核编译与替换实践"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        youyeyejie
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-03-17 20:57" pubdate>
+          2025年3月17日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          9 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">OpenEuler内核编译与替换实践</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>本文是 NIS2334 操作系统原理课程的实践实验报告，实验内容为在 Linux
+系统上下载 OpenEuler 内核源码并进行编译与替换。通过本次实验，熟悉 Linux
+的运行环境，掌握 Linux 内核编译的过程，了解 OpenEuler
+内核，为后续自行修改内核代码并编译替换铺垫。</p>
+<p>OpenEuler 是华为推动的一款开源操作系统。当前 OpenEuler 内核源于
+Linux，支持鲲鹏及其它多种处理器，能够充分释放计算芯片的潜能，是由全球开源贡献者构建的高效、稳定、安全的开源操作系统，适用于数据库、大数据、云计算、人工智能等应用场景。同时，
+OpenEuler是一个面向全球的操作系统开源社区，通过社区合作，打造创新平台，构建支持多处理器架构、统一和开放的操作系统，推动软硬件应用生态繁荣发展。
+更多信息可以参考其<a target="_blank" rel="noopener" href="https://www.OpenEuler.org/zh/">官方网站</a>。</p>
+<h1 id="实验目的">实验目的</h1>
+<ol type="1">
+<li>熟悉 Linux 的运行环境；</li>
+<li>掌握 Linux 内核编译的过程；</li>
+<li>了解 OpenEuler
+内核，能够编译替换不同版本的内核，为后续自行修改内核代码并编译替换铺垫。</li>
+</ol>
+<h1 id="实验要求">实验要求</h1>
+<ul>
+<li>在 Linux 系统上，下载 OpenEuler 内核进行编译与替换。</li>
+</ul>
+<h1 id="实验环境">实验环境</h1>
+<ul>
+<li>平台：Vmware Workstation 17 Pro</li>
+<li>系统：Ubuntu 20.04.6 LTS</li>
+</ul>
+<h1 id="实验过程">实验过程</h1>
+<ol start="0" type="1">
+<li>安装和配置 Ubuntu 20.04.6 LTS 系统
+<ul>
+<li>安装 VScode（推荐），配置好 make、 gcc 等编译工具</li>
+<li>用命令<code>uname -r</code>查看原始内核版本 <img src="image.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul></li>
+<li>下载 OpenEuler 内核源码:
+<ul>
+<li>到 <a target="_blank" rel="noopener" href="https://gitee.com/OpenEuler/kernel/releases">代码仓库</a> 下载
+OpenEuler 源码并解压</li>
+<li>查看仓库代码内核版本 <img src="image-1.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul></li>
+<li>清理源代码树:
+<ul>
+<li>进入解压好的源码文件夹清理过去内核编译产生的文件，第一次编译时可不执行此命令。
+<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">make</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">mrproper</span></span></code></pre></div></div></figure></li>
+</ul></li>
+<li>生成内核配置文件:
+<ul>
+<li><p>先将系统原配置文件复制到代码仓库文件夹下，原配置文件在/boot
+目录下，利用<code>uname -r</code>获取当前系统的内核版本。将配置在当前目录下保存为.config
+文件 </p><figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">cp</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-v</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">/boot/config-$(</span><span style="color: #61AFEF">uname</span><span style="color: #98C379"> </span><span style="color: #D19A66">-r</span><span style="color: #98C379">)</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">./.config</span></span></code></pre></div></div></figure><p></p></li>
+<li><p>编译 Linux 内核需要安装 ncurses， Ubuntu 下对应包为
+libncurses5-dev： </p><figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">sudo</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">apt</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">libncurses5-dev</span></span></code></pre></div></div></figure><p></p></li>
+<li><p>使用以下命令对配置进行需要的更改,根据提示需先安装相应的依赖，不同的包在不同
+Linux 发行版下名称不同。 </p><figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">make</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">menuconfig</span></span></code></pre></div></div></figure> 可以直接 Load 原始.config
+文件，也可以自行进行配置或者使用默认配置， Save-Exit。<p></p></li>
+<li><p>这一步遇到报错： <img src="image-2.webp" srcset="/img/loading/loading3.gif" lazyload></p></li>
+<li><p>分析得缺少依赖bison和flex，安装后问题解决 </p><figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">sudo</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">apt</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">bison</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">flex</span></span></code></pre></div></div></figure> <img src="image-3.webp" srcset="/img/loading/loading3.gif" lazyload><p></p></li>
+</ul></li>
+<li>内核编译与安装
+<ul>
+<li>首先安装执行编译所需的组件， 包括 libelf-dev,openssl,libssl-dev,bc
+<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">sudo</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">apt</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">libelf-dev</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">openssl</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">libssl-dev</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">bc</span></span></code></pre></div></div></figure></li>
+<li>开始编译内核，使用<code>make -j8</code>命令，其中-j8表示使用8个线程进行编译。
+<ul>
+<li>编译过程碰到关于 <code>canonical-certs.pem</code>
+的报错，将生成的配置文件.config的
+<code>CONFIG_SYSTEM_REVOCATION_KEYS="debian/canonical-revoked-certs.pem"</code>
+注释掉。</li>
+<li>进行下一步时发现安装模块失败 <img src="image-4.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+<li>查看编译日志，发现报错 <img src="image-5.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+<li>将.config文件中的<code>2CONFIG SYSTEM TRUSTED KEYS-"debian/canonical-certs.pem"</code>注释掉，重新编译。
+<img src="image-6.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul></li>
+<li>编译完成后安装模块和内核 <figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">sudo</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">make</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">modules_install</span></span>
+<span class="line"><span style="color: #61AFEF">sudo</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">make</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span></span></code></pre></div></div></figure> <img src="image-7.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+<li>完成安装，在 /boot 下看到新安装的内核 <img src="image-8.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul></li>
+<li>更新引导文件
+<ul>
+<li>根据/etc/default/grub 目录下的内核文件自动更新启动引导文件
+<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">sudo</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">update-grub</span></span></code></pre></div></div></figure> <img src="image-9.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+<li>修改/boot/grub/grub.cfg 中 <code>menuentry</code>
+后面的字符串，在安装的 OpenEuler
+版本号后增加姓名学号，自定义启动菜单时的选项名称 <img src="image-10.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+<li>使用<code>reboot</code>命令重启系统，按住<code>shift</code>键进入引导菜单，选择<code>Ubuntu 的高级选项</code>，选择新安装的内核版本启动系统。
+<img src="image-11.webp" srcset="/img/loading/loading3.gif" lazyload> <img src="image-12.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+<li>查看当前内核版本，为 4.19.90，说明成功安装 OpenEuler 内核！ <img src="image-13.webp" srcset="/img/loading/loading3.gif" lazyload>
+erts.pem<code>问题，解决方法是注释掉</code>.config<code>文件中的</code>CONFIG_SYSTEM_REVOCATION_KEYS=“debian/canonical-revoked-certs.pem”`
+。</li>
+</ul></li>
+</ol>
+<ul>
+<li>编译内核时遇到 <code>debian/canonical-certs.pem</code>
+问题，解决方法是注释掉 <code>.config</code> 文件中的
+<code>CONFIG SYSTEM TRUSTED KEYS-"debian/canonical-certs.pem"</code>。</li>
+</ul>
+<h1 id="参考资料">参考资料</h1>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.OpenEuler.org/zh/">OpenEuler 官方网站</a></li>
+<li><a target="_blank" rel="noopener" href="https://gitee.com/OpenEuler/kernel/releases">OpenEuler
+内核源码下载</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_56602092/article/details/118604262">OpenEuler
+内核编译及替换</a></li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Misc/" class="category-chain-item">Misc</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" class="print-no-link">#操作系统原理</a>
+      
+        <a href="/tags/OpenEuler/" class="print-no-link">#OpenEuler</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>OpenEuler内核编译与替换实践</div>
+      <div>https://youyeyejie.github.io/_posts/OpenEuler内核编译与替换实践/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>youyeyejie</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年3月17日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2025年12月26日</div>
+        </div>
+      
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/_posts/%E4%BF%A1%E6%81%AF%E8%AE%BA%E5%9F%BA%E7%A1%80/" title="信息论基础">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">信息论基础</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/_posts/%E5%8E%9D%E8%A7%92%E5%90%AC%E6%B6%9B/" title="厝角听涛">
+                        <span class="hidden-mobile">厝角听涛</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments">
+      
+    <div id="giscus" class="giscus"></div>
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#giscus', function() {
+        var options = {"repo":"youyeyejie/youyeyejie.github.io","repo-id":"R_kgDOO-Uo1g","category":"General","category-id":"DIC_kwDOO-Uo1s4Crz5J","theme-light":"light","theme-dark":"dark","mapping":"pathname","reactions-enabled":1,"emit-metadata":0,"input-position":"top","lang":"zh-CN"};
+        var attributes = {};
+        for (let option in options) {
+          if (!option.startsWith('theme-')) {
+            var key = option.startsWith('data-') ? option : 'data-' + option;
+            attributes[key] = options[option];
+          }
+        }
+        var light = 'light';
+        var dark = 'dark';
+        window.GiscusThemeLight = light;
+        window.GiscusThemeDark = dark;
+        attributes['data-theme'] = document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ? dark : light;
+        for (let attribute in attributes) {
+          var value = attributes[attribute];
+          if (value === undefined || value === null || value === '') {
+            delete attributes[attribute];
+          }
+        }
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://giscus.app/client.js');
+        s.setAttribute('crossorigin', 'anonymous');
+        for (let attribute in attributes) {
+          s.setAttribute(attribute, attributes[attribute]);
+        }
+        var ss = document.getElementsByTagName('script');
+        var e = ss.length > 0 ? ss[ss.length - 1] : document.head || document.documentElement;
+        e.parentNode.insertBefore(s, e.nextSibling);
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+  
+  
+</div>
+<div class="footer-inner">
+    <div class="powered-by">
+        <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+        <i class="iconfont icon-love"></i>
+        <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+        <i class="iconfont icon-love"></i>
+        <a href="https://cloud.umami.is/share/1fs3cnD9TAP8JzML" target="_blank" rel="nofollow noopener"><span>Umami</span></a>
+    </div>
+    <div class="hitokoto">
+        <i class="fas fa-quote-left"></i>
+        <a target="_blank" rel="noopener" href="https://developer.hitokoto.cn/" id="hitokoto_text"><span id="hitokoto">且以群词 注解我这座荒山</span></a>
+        <script src="/js/Hitokoto.js" defer></script>
+    </div>
+    <div class="data">
+        <span class="total-word-container">
+            <i class="fas fa-chart-bar"></i>
+            <span id="g-total-word-id"></span>
+            字汇长河
+        </span>
+        &nbsp;
+        <span id="total-posts-container">
+            <i class="fas fa-file-alt"></i>
+            <span id="g-total-posts-id"></span>
+            文舟靠岸
+        </span>
+        &nbsp;
+        <span id="busuanzi_container_site_pv">
+            <i class="fas fa-eye"></i>
+            <span id="busuanzi_value_site_pv">1314</span>
+            目光所及
+        </span>
+        &nbsp;
+        <span id="busuanzi_container_site_uv">
+            <i class="fas fa-user-friends"></i>
+            <span id="busuanzi_value_site_uv">520</span>
+            访客驻足
+        </span>
+    </div>
+    <div class="duration">
+        <i class="fas fa-calendar"></i>
+        <span id="duration-container">人生缓缓&nbsp;自有答案</span>
+        <script src="/js/Duration.js"></script>
+    </div>
+</div>
+
+<link href="/css/Footer.css" type="text/css" rel="stylesheet"/>
+<script>
+    document.querySelectorAll("[id^='busuanzi_value_']").forEach(element => {
+        element.id = element.id.replace("busuanzi_value_", "vercount_value_");
+    });
+</script>
+<script defer src="https://events.vercount.one/js"></script>
+<!-- <script src="https://npm.elemecdn.com/penndu@1.0.0/bsz.js" defer></script> -->
+<!-- <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script> -->
+<!-- <script async src="https://busuanzi.icodeq.com/busuanzi.pure.mini.js"></script> -->
+<!-- <script async src="https://busuanzi.sukap.cn/busuanzi.pure.mini.js"></script> -->
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    
+      <script  src="/js/img-lazyload.js" ></script>
+    
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="/js/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="/js/LinkCard.js"></script>
+<script src="/js/RandomBanner.js"></script>
+<script src="/js/Background.js"></script>
+<script src="/js/ScrollAnimation.js"></script>
+<script src="/js/Sidebar.js"></script>
+<script src="/js/TabDisplay.js"></script>
+<script src="/js/Umami.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  <script type="text/javascript">
+  document.getElementById("g-total-word-id").innerHTML = "506k";
+  document.getElementById('g-total-posts-id').textContent ="57";
+</script>
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start -->
+<script src="https://cdn.jsdelivr.net/npm/hexo-shiki-plugin@latest/lib/codeblock.js"></script>
+
+  <script>
+  const CODE_CONFIG = {
+    beautify: true,
+    highlightCopy: true,
+    highlightLang: true,
+    highlightHeightLimit: 360,
+    isHighlightShrink: false,
+    copy: {
+      success: 'Copy Success',
+      error: 'Copy Error',
+      noSupport: 'Browser Not Support',
+    }
+  };
+  console.log(
+    `%c hexo-shiki-plugin %c v1.0.27 %c https://github.com/nova1751/hexo-shiki-plugin`,
+    "color: #fff; background: #5f5f5f",
+    "color: #fff; background: #80c8f8",
+    ""
+  );
+  </script>
+  <!-- hexo injector body_end end --></body>
+</html>

@@ -1,0 +1,1840 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head><!-- hexo injector head_begin start --><meta name="msvalidate.01" content="DF9F232801BA9D0CABB002E4774A3228" />
+<meta name="google-site-verification" content="vOm5Zs9tuUlEh-wVBlpvs_spnOou-q2CoTiFQ1ZV1h4" />
+<script defer src="https://cloud.umami.is/script.js" data-website-id="0369421f-4354-4d7b-99c7-ae077c591b4f"></script>
+<!-- hexo injector head_begin end -->
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar/avatar2.webp">
+  <link rel="icon" href="/img/avatar/avatar2.webp">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="youyeyejie">
+  <meta name="keywords" content="yyyj,YYYJ,youyeyejie,有野野芥">
+  
+    <meta name="description" content="NIS2336 编译原理编程实践——简易词法与语法分析器的设计与实现">
+<meta property="og:type" content="article">
+<meta property="og:title" content="编译原理编程实践">
+<meta property="og:url" content="https://youyeyejie.github.io/_posts/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B5/index.html">
+<meta property="og:site_name" content="有野野芥的博客">
+<meta property="og:description" content="NIS2336 编译原理编程实践——简易词法与语法分析器的设计与实现">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://youyeyejie.github.io/_posts/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B5/image.webp">
+<meta property="og:image" content="https://youyeyejie.github.io/_posts/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B5/image-1.webp">
+<meta property="og:image" content="https://youyeyejie.github.io/_posts/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B5/image-2.webp">
+<meta property="article:published_time" content="2025-05-23T02:28:27.000Z">
+<meta property="article:modified_time" content="2025-12-26T13:01:34.476Z">
+<meta property="article:author" content="youyeyejie">
+<meta property="article:tag" content="编译原理">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://youyeyejie.github.io/_posts/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B5/image.webp">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>编译原理编程实践 - 有野野芥的博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+<link rel="stylesheet" href="//lib.baomitu.com/font-awesome/6.1.2/css/all.min.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+
+
+  
+<link rel="stylesheet" href="/css/Background.css">
+<link rel="stylesheet" href="/css/CodeBlock.css">
+<link rel="stylesheet" href="/css/CodeInLine.css">
+<link rel="stylesheet" href="/css/Gallery.css">
+<link rel="stylesheet" href="/css/IndexImgHover.css">
+<link rel="stylesheet" href="/css/LinkCard.css">
+<link rel="stylesheet" href="/css/ScrollAnimation.css">
+<link rel="stylesheet" href="/css/ScrollBar.css">
+<link rel="stylesheet" href="/css/Sidebar.css">
+<link rel="stylesheet" href="/css/StrongInDark.css">
+<link rel="stylesheet" href="/css/TitleGradient.css">
+<link rel="stylesheet" href="/css/UnifyImgWidth.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"youyeyejie.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":false,"default":"TEXT"},"copy_btn":false,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading/loading3.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-shiki-plugin@latest/lib/codeblock.css">
+<style>:root{--hl-color:#abb2bf;--hl-bg:#282c34;--hltools-bg:#21252b;--hltools-color:#bbbbbc;--hlnumber-bg:#282c34;--hlnumber-color:#495162;--hlscrollbar-bg:#373c47;--hlexpand-bg:linear-gradient(180deg,rgba(40,44,52,0.1),rgba(40,44,52,0.9))}</style>
+    <style>
+    .code-expand-btn:not(.expand-done) ~ div.codeblock,
+    .code-expand-btn:not(.expand-done) ~ * div.codeblock {
+      overflow: hidden;
+      height: 360px;
+    }
+    </style>
+  <!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+  <div id="loader-container"> 
+    <div id="loader" class="loader"></div>
+    <div class="loader-inner">
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/RainbowLoading.js" type="text/javascript"></script>
+<link href="/css/RainbowLoading.css" type="text/css" rel="stylesheet"/><div id="tooltip-rightmenu" class="tooltip-rightmenu">如需原始右键菜单请按下 <strong>Ctrl+右键</strong></div>
+<div id="tooltip-rightmenu-return" class="tooltip-rightmenu"></div>
+
+<div id="rightmenu-wrapper">
+  <ul class="list-v rightmenu" id="rightmenu-content">
+	    <li class="navigation menuNavigation-Content">
+            <a class="nav icon-only fix-cursor-default" aria-label="back" onclick="history.back()"><i class="fa-solid fa-chevron-left"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="forward" onclick="history.forward()"><i class="fa-solid fa-chevron-right"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="reload" onclick="window.location.reload()"><i class="fa-solid fa-rotate-right"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="top" onclick="scrollToTopSmooth();"><i class="fa-solid fa-chevron-up"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="bottom" onclick="scrollToBottomSmooth();"><i class="fa-solid fa-chevron-down"></i></a>
+	    </li>
+
+        <hr class="menuLoad-Content" style="display: block;" id="top-line" hidden>
+
+        <li class="menuLoad-Content" style="display: block;" id="copy-selected-text" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copySelectedText();">
+                <span>
+                    <i class="fa-solid fa-copy"></i>
+                    &nbsp;复制选中
+                </span>
+            </a>
+        </li>
+
+        <li class="menuLoad-Content" style="display: block;" id="search-selected-text-BING" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_blank" onclick="searchSelectedTextBing();">
+                <span>
+                    <i class="fa-solid fa-magnifying-glass-arrow-right"></i>
+                    &nbsp;必应搜索
+                </span>
+            </a>
+        </li>
+
+        <li class="menuLoad-Content" style="display: block;" id="go-to-link" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_blank">
+                <span>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    &nbsp;转到链接
+                </span>
+            </a>
+        </li>
+
+        <li class="menuLoad-Content" style="display: block;" id="download-image" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="downloadImage();">
+                <span>
+                    <i class="fa-solid fa-image"></i>
+                    &nbsp;下载图片
+                </span>
+            </a>
+        </li>
+
+        <li class="menuLoad-Content" style="display: block;" id="copy-image-link" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copyImageLink();">
+                <span>
+                    <i class="fa-solid fa-link"></i>
+                    复制图片链接
+                </span>
+            </a>
+        </li>
+
+		<hr class="menuLoad-Content" style="display: block;">
+
+        <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" onclick="RandomGo()">
+		        <span>
+			        <i class="fa-solid fa-paper-plane"></i>
+                    &nbsp;随便看看
+		        </span>
+		    </a>
+	    </li>
+	    <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+		        <span>
+			        <i class="fa-solid fa-magnifying-glass"></i>
+                    &nbsp;站内搜索
+		        </span>
+		    </a>
+	    </li>
+        <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" href="/categories/">
+		        <span>
+			        <i class="iconfont icon-category-fill"></i>
+                    &nbsp;博客分类
+		        </span>
+		    </a>
+	    </li>
+        <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" href="/tags/">
+		        <span>
+			        <i class="fa-solid fa-tags"></i>
+                    &nbsp;文章标签
+		        </span>
+		    </a>
+	    </li>
+        
+	    <hr class="menuLoad-Content" style="display: block;">
+
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copyLink();">
+                <span>
+                    <i class="fa-solid fa-copy"></i>
+                    &nbsp;复制链接
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleColorMode();">
+            <span>
+                <i id="toggle-color-mode-icon" class="fa-solid fa-circle-half-stroke"></i>
+                &nbsp;切换昼夜
+            </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleBackgroundMode();">
+            <span>
+                <i id="toggle-background-mode-icon" class="fa-solid fa-toggle-on"></i>
+                &nbsp;全屏背景
+            </span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+<script src="/js/RightMenu.js" type="text/javascript"></script>
+<link href="/css/RightMenu.css" type="text/css" rel="stylesheet"/>
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <!-- <strong>YYYJ&#39;s Blog</strong> -->
+       <strong class="navbar-title">YYYJ&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.travellings.cn/go-by-clouds.html" target="_self">
+                <i class="fas fa-train-subway"></i>
+                <span>开往</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa-solid fa-folder-open"></i>
+                <span>更多</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/archives/" target="_self">
+                    <i class="iconfont icon-archive-fill"></i>
+                    <span>归档</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/" target="_self">
+                    <i class="fa-solid fa-tags"></i>
+                    <span>标签</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/links/" target="_self">
+                    <i class="iconfont icon-link-fill"></i>
+                    <span>友链</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/DayDream-Gallery/" target="_self">
+                    <i class="fas fa-images"></i>
+                    <span>图集</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/banner/random.webp') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="编译原理编程实践"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        youyeyejie
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-05-23 10:28" pubdate>
+          2025年5月23日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          3.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          29 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">编译原理编程实践</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>本文是 NIS2336
+编译原理课程的编程实践实验报告，实验内容为设计并实现一个简易的词法分析器和语法分析器，能够对
+TINY language 语言的源代码进行词法分析和语法分析，生成相应的 token
+序列和语法树。</p>
+<h1 id="实验目的">实验目的</h1>
+<p>本次实验旨在让同学综合课堂所学的理论知识，在了解 TINY language
+语言的基础上，使用 C/C++
+语言编程实现词法分析，对词法分析形成一个感性认识。在此基础上，完成由代码生成语法树的过程，使同学在编程的过程中对语法分析的步骤方法有进一步认识。</p>
+<h1 id="实验要求">实验要求</h1>
+<h2 id="前期准备">前期准备</h2>
+<ul>
+<li>了解 TINY language 语言，并能用 TINY language 写较简单的程序</li>
+<li>掌握词法分析的步骤方法，能根据程序段模拟自动机的分析过程生成 token
+序列</li>
+<li>熟练掌握语法分析的过程，理解由词法分析输出的 token
+生成语法树的原理</li>
+<li>掌握数据结构用链表的方式建立树的方法</li>
+</ul>
+<h2 id="功能说明">功能说明</h2>
+<h3 id="词法分析功能说明">词法分析功能说明</h3>
+<ul>
+<li><p>TINY language 语言的词法单元：</p>
+<table>
+<thead>
+<tr>
+<th>词法单元类型</th>
+<th>词法单元</th>
+<th>词素（举例）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>关键字</td>
+<td><code>IF</code></td>
+<td><code>if</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>THEN</code></td>
+<td><code>then</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>ELSE</code></td>
+<td><code>else</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>END</code></td>
+<td><code>end</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>REPEAT</code></td>
+<td><code>repeat</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>UNTIL</code></td>
+<td><code>until</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>READ</code></td>
+<td><code>read</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>WRITE</code></td>
+<td><code>write</code></td>
+</tr>
+<tr>
+<td>变量名</td>
+<td><code>ID</code></td>
+<td><code>myName</code></td>
+</tr>
+<tr>
+<td>数字</td>
+<td><code>NUM</code></td>
+<td><code>123</code></td>
+</tr>
+<tr>
+<td>运算符</td>
+<td><code>ASSIGN</code></td>
+<td><code>:=</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>EQ</code></td>
+<td><code>=</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>LT</code></td>
+<td><code>&lt;</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>PLUS</code></td>
+<td><code>+</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>MINUS</code></td>
+<td><code>-</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>TIMES</code></td>
+<td><code>*</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>OVER</code></td>
+<td><code>/</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>LPAREN</code></td>
+<td><code>(</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>RPAREN</code></td>
+<td><code>)</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>SEMI</code></td>
+<td><code>;</code></td>
+</tr>
+<tr>
+<td>错误</td>
+<td><code>ERROR</code></td>
+<td><code>&gt;=</code></td>
+</tr>
+</tbody>
+</table></li>
+<li><p>文件 <code>globals.h</code> 中定义了所有的词法单元类型
+<code>TokenType</code> ，并在 <code>scan.h</code>
+中声明。本次实验要求在读懂 <code>scanner.c</code>
+中已有代码的基础上完善补全 <code>scanner.c</code> 中的主函数
+<code>getToken(void)</code>，该函数通过判断当前状态并根据当前读入的词法单元来输出当前读入词法单元的
+<code>token</code>，并更新状态和词法单元，根据给出代码中的示例补全
+<code>switch</code> 语句中 <code>case</code>
+为其他状态时的情况。</p></li>
+</ul>
+<h3 id="语法分析功能说明">语法分析功能说明</h3>
+<ul>
+<li><p>TINY Language 的语法：</p>
+<table>
+
+<thead>
+<tr>
+<th>非终结符</th>
+<th>含义</th>
+<th>展开</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>program</td>
+<td>程序</td>
+<td><code>stmt_seq</code></td>
+</tr>
+<tr>
+<td>stmt_seq</td>
+<td>若干条语句</td>
+<td><code>stmt_seq stmt \| stmt</code></td>
+</tr>
+<tr>
+<td>stmt</td>
+<td>单条语句</td>
+<td><code>if_stmt \| repeat_stmt \| assign_stmt \| read_stmt \| write_stmt \| error</code></td>
+</tr>
+<tr>
+<td>if_stmt</td>
+<td>判断语句</td>
+<td><code>IF judge_exp THEN stmt_seq END \| IF judge_exp THEN stmt_seq ELSE stmt_seq END</code></td>
+</tr>
+<tr>
+<td>repeat_stmt</td>
+<td>循环语句</td>
+<td><code>REPEAT stmt_seq UNTIL judge_exp</code></td>
+</tr>
+<tr>
+<td>assign_stmt</td>
+<td>赋值语句</td>
+<td><code>ID ASSIGN judge_exp</code></td>
+</tr>
+<tr>
+<td>read_stmt</td>
+<td>输入语句</td>
+<td><code>READ ID</code></td>
+</tr>
+<tr>
+<td>write_stmt</td>
+<td>输出语句</td>
+<td><code>WRITE judge_exp</code></td>
+</tr>
+<tr>
+<td>judge_exp</td>
+<td>判断表达式</td>
+<td><code>simple_exp LT simple_exp \| simple_exp EQ simple_exp \| simple_exp</code></td>
+</tr>
+<tr>
+<td>simple_exp</td>
+<td>加减表达式</td>
+<td><code>simple_exp PLUS term \| simple_exp MINUS term \| term</code></td>
+</tr>
+<tr>
+<td>term</td>
+<td>乘除表达式</td>
+<td><code>term TIMES factor \| term OVER factor \| factor</code></td>
+</tr>
+<tr>
+<td>factor</td>
+<td>基本表达式</td>
+<td><code>LPAREN judge_exp RPAREN \| NUM \| ID \| error</code></td>
+</tr>
+</tbody>
+</table></li>
+<li><p>文件 <code>parse.c</code>
+中定义了对应每个非终结符分析过程的函数。本次实验要求在读懂
+<code>parse.c</code> 的基础上，参照函数 <code>stmt_sequence()</code>
+补全其他非终结符对应的函数，每个函数表示将某个非终结符作为节点加入语法树的过程。将非终结符作为一个新的节点，它的子节点可以是对其进行展开后的更简单的非终结符，这时需要递归调用对应该非终结符的函数，将返回值赋给子节点；也可以是终结符，这时需要将非终结符的值赋给子节点。</p></li>
+</ul>
+<h2 id="处理结果要求">处理结果要求</h2>
+<p>给定一段符合 TINY language
+语法的代码，写成<code>.tny</code>文件，放在 <code>test</code>
+文件夹内。词法分析器要求程序能够输出这段代码的每一行，在每一行的后面输出这一行所有词法单元的
+token；语法分析器要求程序能够输出调用词法分析程序生成的 token
+序列以及根据 token 序列生成的语法树。</p>
+<ul>
+<li>示例输入： <figure class="shiki c"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">read x;</span></span>
+<span class="line"><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">&lt;</span><span style="color: #ABB2BF"> x then</span></span>
+<span class="line"><span style="color: #ABB2BF">fac :</span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">repeat</span></span>
+<span class="line"><span style="color: #ABB2BF">    fact :</span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> fact </span><span style="color: #C678DD">*</span><span style="color: #ABB2BF"> x;</span></span>
+<span class="line"><span style="color: #ABB2BF">    x :</span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> x – </span><span style="color: #D19A66">1</span><span style="color: #ABB2BF"> until x </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">write fac;</span></span>
+<span class="line"><span style="color: #ABB2BF">end</span></span></code></pre></div></div></figure></li>
+</ul>
+<h1 id="实验过程">实验过程</h1>
+<h2 id="整理项目结构">整理项目结构</h2>
+<p>由于个人强迫症，我首先整理了一下项目结构，将测试文件夹<code>test</code>和<code>Makefile</code>文件移出<code>build</code>文件夹，放在根目录下，并在<code>tests</code>文件夹中创建了<code>output</code>子文件夹用于存放输出。整理后的项目结构如下：
+</p><figure class="shiki plaintext"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #abb2bf">Code/</span></span>
+<span class="line"><span style="color: #abb2bf">├── build/              # 编译文件夹</span></span>
+<span class="line"><span style="color: #abb2bf">│&nbsp;&nbsp; └── bin/            # 可执行文件夹</span></span>
+<span class="line"><span style="color: #abb2bf">├── tests/              # 测试文件夹</span></span>
+<span class="line"><span style="color: #abb2bf">│&nbsp;&nbsp; ├── sample.tny      # 测试文件</span></span>
+<span class="line"><span style="color: #abb2bf">│&nbsp;&nbsp; └── output/         # 输出文件夹</span></span>
+<span class="line"><span style="color: #abb2bf">│&nbsp;&nbsp;     └── sample.out  # 输出文件</span></span>
+<span class="line"><span style="color: #abb2bf">├── Makefile            # Makefile文件</span></span>
+<span class="line"><span style="color: #abb2bf">├── globals.h</span></span>
+<span class="line"><span style="color: #abb2bf">├── main.c</span></span>
+<span class="line"><span style="color: #abb2bf">├── scan.h</span></span>
+<span class="line"><span style="color: #abb2bf">├── scanner.c</span></span>
+<span class="line"><span style="color: #abb2bf">├── parse.h</span></span>
+<span class="line"><span style="color: #abb2bf">├── parser.c            # 语法分析器实现</span></span>
+<span class="line"><span style="color: #abb2bf">├── util.h</span></span>
+<span class="line"><span style="color: #abb2bf">└── util.c</span></span></code></pre></div></div></figure><p></p>
+<p>由于项目结构调整，因此需要修改<code>Makefile</code>文件。修改后的<code>Makefile</code>文件如下：
+</p><figure class="shiki makefile"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #E06C75">CC</span><span style="color: #E5C07B"> </span><span style="color: #ABB2BF">=</span><span style="color: #E5C07B"> gcc</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E06C75">CFLAGS</span><span style="color: #E5C07B"> </span><span style="color: #ABB2BF">=</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E06C75">SRC_DIR</span><span style="color: #E5C07B"> </span><span style="color: #ABB2BF">=</span><span style="color: #E5C07B"> .</span></span>
+<span class="line"><span style="color: #E06C75">BUILD_DIR</span><span style="color: #E5C07B"> </span><span style="color: #ABB2BF">=</span><span style="color: #E5C07B"> </span><span style="color: #98C379">${</span><span style="color: #E06C75">SRC_DIR</span><span style="color: #98C379">}</span><span style="color: #E5C07B">/build</span></span>
+<span class="line"><span style="color: #E06C75">BIN_DIR</span><span style="color: #E5C07B"> </span><span style="color: #ABB2BF">=</span><span style="color: #E5C07B"> </span><span style="color: #98C379">${</span><span style="color: #E06C75">BUILD_DIR</span><span style="color: #98C379">}</span><span style="color: #E5C07B">/bin</span></span>
+<span class="line"><span style="color: #E06C75">TEST_DIR</span><span style="color: #E5C07B"> </span><span style="color: #ABB2BF">=</span><span style="color: #E5C07B"> </span><span style="color: #98C379">${</span><span style="color: #E06C75">SRC_DIR</span><span style="color: #98C379">}</span><span style="color: #E5C07B">/tests</span></span>
+<span class="line"><span style="color: #E06C75">OUTPUT_DIR</span><span style="color: #E5C07B"> </span><span style="color: #ABB2BF">=</span><span style="color: #E5C07B"> </span><span style="color: #98C379">${</span><span style="color: #E06C75">TEST_DIR</span><span style="color: #98C379">}</span><span style="color: #E5C07B">/output</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E06C75">TARGET</span><span style="color: #E5C07B"> </span><span style="color: #ABB2BF">=</span><span style="color: #E5C07B"> </span><span style="color: #98C379">${</span><span style="color: #E06C75">BIN_DIR</span><span style="color: #98C379">}</span><span style="color: #E5C07B">/scanner</span></span>
+<span class="line"><span style="color: #E06C75">OBJS</span><span style="color: #E5C07B"> </span><span style="color: #ABB2BF">=</span><span style="color: #E5C07B"> </span><span style="color: #98C379">${</span><span style="color: #E06C75">BUILD_DIR</span><span style="color: #98C379">}</span><span style="color: #E5C07B">/main.o </span><span style="color: #98C379">${</span><span style="color: #E06C75">BUILD_DIR</span><span style="color: #98C379">}</span><span style="color: #E5C07B">/util.o </span><span style="color: #98C379">${</span><span style="color: #E06C75">BUILD_DIR</span><span style="color: #98C379">}</span><span style="color: #E5C07B">/scanner.o</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic"># Ensure directories exist</span></span>
+<span class="line"><span style="color: #56B6C2">.PHONY</span><span style="color: #ABB2BF">:</span><span style="color: #E06C75"> prepare</span></span>
+<span class="line"><span style="color: #61AFEF">prepare</span><span style="color: #ABB2BF">:</span></span>
+<span class="line"><span style="color: #E5C07B">	mkdir -p </span><span style="color: #98C379">${</span><span style="color: #E06C75">BUILD_DIR</span><span style="color: #98C379">}</span><span style="color: #E5C07B"> </span><span style="color: #98C379">${</span><span style="color: #E06C75">BIN_DIR</span><span style="color: #98C379">}</span><span style="color: #E5C07B"> </span><span style="color: #98C379">${</span><span style="color: #E06C75">OUTPUT_DIR</span><span style="color: #98C379">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #98C379">${</span><span style="color: #E06C75">BUILD_DIR</span><span style="color: #98C379">}</span><span style="color: #E5C07B">/%.o: </span><span style="color: #98C379">${</span><span style="color: #E06C75">SRC_DIR</span><span style="color: #98C379">}</span><span style="color: #E5C07B">/%.c </span><span style="color: #98C379">${</span><span style="color: #E06C75">SRC_DIR</span><span style="color: #98C379">}</span><span style="color: #E5C07B">/globals.h | prepare</span></span>
+<span class="line"><span style="color: #E5C07B">	</span><span style="color: #98C379">$(</span><span style="color: #E06C75">CC</span><span style="color: #98C379">)</span><span style="color: #E5C07B"> </span><span style="color: #98C379">$(</span><span style="color: #E06C75">CFLAGS</span><span style="color: #98C379">)</span><span style="color: #E5C07B"> -c $&lt; -o $@</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #61AFEF">clean</span><span style="color: #ABB2BF">:</span></span>
+<span class="line"><span style="color: #E5C07B">	rm -f </span><span style="color: #98C379">${</span><span style="color: #E06C75">BUILD_DIR</span><span style="color: #98C379">}</span><span style="color: #E5C07B">/*.o</span></span>
+<span class="line"><span style="color: #E5C07B">	rm -f </span><span style="color: #98C379">${</span><span style="color: #E06C75">BIN_DIR</span><span style="color: #98C379">}</span><span style="color: #E5C07B">/*.exe</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color: #61AFEF">scanner</span><span style="color: #ABB2BF">:</span><span style="color: #E06C75"> </span><span style="color: #98C379">$(</span><span style="color: #E06C75">OBJS</span><span style="color: #98C379">)</span><span style="color: #E06C75"> | prepare</span></span>
+<span class="line"><span style="color: #E5C07B">	</span><span style="color: #98C379">$(</span><span style="color: #E06C75">CC</span><span style="color: #98C379">)</span><span style="color: #E5C07B"> </span><span style="color: #98C379">$(</span><span style="color: #E06C75">CFLAGS</span><span style="color: #98C379">)</span><span style="color: #E5C07B"> -o </span><span style="color: #98C379">${</span><span style="color: #E06C75">TARGET</span><span style="color: #98C379">}</span><span style="color: #E5C07B"> </span><span style="color: #98C379">$(</span><span style="color: #E06C75">OBJS</span><span style="color: #98C379">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #61AFEF">test</span><span style="color: #ABB2BF">:</span><span style="color: #E5C07B"> </span></span>
+<span class="line"><span style="color: #E5C07B">	</span><span style="color: #C678DD">@</span><span style="color: #E5C07B">for file in </span><span style="color: #98C379">${</span><span style="color: #E06C75">TEST_DIR</span><span style="color: #98C379">}</span><span style="color: #E5C07B">/*.tny; do </span><span style="color: #56B6C2">\</span></span>
+<span class="line"><span style="color: #E5C07B">		</span><span style="color: #98C379">${</span><span style="color: #E06C75">TARGET</span><span style="color: #98C379">}</span><span style="color: #E5C07B"> $$file &gt; </span><span style="color: #98C379">${</span><span style="color: #E06C75">OUTPUT_DIR</span><span style="color: #98C379">}</span><span style="color: #E5C07B">/$$(basename $$file .tny).out; </span><span style="color: #56B6C2">\</span></span>
+<span class="line"><span style="color: #E5C07B">	done</span></span>
+<span class="line"><span style="color: #E5C07B">	</span><span style="color: #C678DD">@</span><span style="color: #E5C07B">echo "All test files processed."</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #61AFEF">all</span><span style="color: #ABB2BF">:</span><span style="color: #E06C75"> clean scanner test</span></span></code></pre></div></div></figure> 但由于 <code>Makefile</code> 文件中使用的部分命令在
+Windows 系统下无法使用，在 Windows
+系统下编译时可能会出现问题，有以下两个解决方案： 1. 在 Windows
+系统下使用 WSL 编译； 2. 修改 <code>Makefile</code> 文件，使用 Windows
+系统下的命令。（此处由于篇幅较长省略修改后的 <code>Makefile</code>
+文件）<p></p>
+<h2 id="词法分析器实现">词法分析器实现</h2>
+<p>在 <code>scanner.c</code> 中实现词法分析器的主要逻辑。由 DFA
+自动机的状态转移图可以非常清晰地看出每个状态的转移条件和对应的操作。
+<img src="image.webp" srcset="/img/loading/loading3.gif" lazyload></p>
+<p>根据给定的代码框架，补全 <code>getToken()</code> 函数中的
+<code>switch</code>
+语句，处理不同状态下的词法单元。以下是补全后的代码片段： </p><figure class="shiki c"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">switch</span><span style="color: #ABB2BF"> (state)</span></span>
+<span class="line"><span style="color: #ABB2BF">{</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">case</span><span style="color: #ABB2BF"> INID:</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (</span><span style="color: #56B6C2">!</span><span style="color: #61AFEF">isalpha</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">c</span><span style="color: #ABB2BF">))</span></span>
+<span class="line"><span style="color: #ABB2BF">        {</span><span style="color: #7F848E; font-style: italic"> /* backup in the input */</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #61AFEF">ungetNextChar</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">            save </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">FALSE</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">            state </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> DONE;</span></span>
+<span class="line"><span style="color: #ABB2BF">            currentToken </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> ID;</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">break</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">case</span><span style="color: #ABB2BF"> INCOMMENT:</span></span>
+<span class="line"><span style="color: #ABB2BF">        save </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">FALSE</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (c </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> EOF)</span></span>
+<span class="line"><span style="color: #ABB2BF">        {</span></span>
+<span class="line"><span style="color: #ABB2BF">            state </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> DONE;</span></span>
+<span class="line"><span style="color: #ABB2BF">            currentToken </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> ENDFILE;</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">else</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (c </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'}'</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">        {</span></span>
+<span class="line"><span style="color: #ABB2BF">            state </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> START;</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">break</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">case</span><span style="color: #ABB2BF"> INNUM:</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (</span><span style="color: #56B6C2">!</span><span style="color: #61AFEF">isdigit</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">c</span><span style="color: #ABB2BF">))</span></span>
+<span class="line"><span style="color: #ABB2BF">        {</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #61AFEF">ungetNextChar</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">            save </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">FALSE</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">            state </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> DONE;</span></span>
+<span class="line"><span style="color: #ABB2BF">            currentToken </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> NUM;</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">break</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">case</span><span style="color: #ABB2BF"> INASSIGN:</span></span>
+<span class="line"><span style="color: #ABB2BF">        state </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> DONE;</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (c </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'='</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">        {</span></span>
+<span class="line"><span style="color: #ABB2BF">            currentToken </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> ASSIGN;</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">else</span></span>
+<span class="line"><span style="color: #ABB2BF">        {</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #61AFEF">ungetNextChar</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">            save </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">FALSE</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">            currentToken </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> ERROR;</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">break</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">case</span><span style="color: #ABB2BF"> START:</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> ((c </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">' '</span><span style="color: #ABB2BF">) </span><span style="color: #56B6C2">||</span><span style="color: #ABB2BF"> (c </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'</span><span style="color: #56B6C2">\t</span><span style="color: #98C379">'</span><span style="color: #ABB2BF">) </span><span style="color: #56B6C2">||</span><span style="color: #ABB2BF"> (c </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'</span><span style="color: #56B6C2">\n</span><span style="color: #98C379">'</span><span style="color: #ABB2BF">) </span><span style="color: #56B6C2">||</span><span style="color: #ABB2BF"> (c </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'</span><span style="color: #56B6C2">\r</span><span style="color: #98C379">'</span><span style="color: #ABB2BF">) </span><span style="color: #56B6C2">||</span><span style="color: #ABB2BF"> (c </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'</span><span style="color: #56B6C2">\f</span><span style="color: #98C379">'</span><span style="color: #ABB2BF">) </span><span style="color: #56B6C2">||</span><span style="color: #ABB2BF"> (c </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'</span><span style="color: #56B6C2">\v</span><span style="color: #98C379">'</span><span style="color: #ABB2BF">))</span></span>
+<span class="line"><span style="color: #ABB2BF">        {</span></span>
+<span class="line"><span style="color: #ABB2BF">            state </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> START;</span></span>
+<span class="line"><span style="color: #ABB2BF">            save </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">FALSE</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">else</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (c </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'{'</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">        {</span></span>
+<span class="line"><span style="color: #ABB2BF">            save </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">FALSE</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">            state </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> INCOMMENT;</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">else</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (</span><span style="color: #61AFEF">isdigit</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">c</span><span style="color: #ABB2BF">))</span></span>
+<span class="line"><span style="color: #ABB2BF">        {</span></span>
+<span class="line"><span style="color: #ABB2BF">            save </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">TRUE</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">            state </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> INNUM;</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">else</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (</span><span style="color: #61AFEF">isalpha</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">c</span><span style="color: #ABB2BF">))</span></span>
+<span class="line"><span style="color: #ABB2BF">        {</span></span>
+<span class="line"><span style="color: #ABB2BF">            save </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">TRUE</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">            state </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> INID;</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">else</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (c </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">':'</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">        {</span></span>
+<span class="line"><span style="color: #ABB2BF">            state </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> INASSIGN;</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">else</span></span>
+<span class="line"><span style="color: #ABB2BF">        {</span></span>
+<span class="line"><span style="color: #ABB2BF">            state </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> DONE;</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (c </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> EOF)</span></span>
+<span class="line"><span style="color: #ABB2BF">            {</span></span>
+<span class="line"><span style="color: #ABB2BF">                save </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">FALSE</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">                currentToken </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> ENDFILE;</span></span>
+<span class="line"><span style="color: #ABB2BF">            }</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #C678DD">else</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (c </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'+'</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">                currentToken </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> PLUS;</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #C678DD">else</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (c </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'-'</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">                currentToken </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> MINUS;</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #C678DD">else</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (c </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'*'</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">                currentToken </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> TIMES;</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #C678DD">else</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (c </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'/'</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">                currentToken </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> OVER;</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #C678DD">else</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (c </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">';'</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">                currentToken </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> SEMI;</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #C678DD">else</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (c </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'('</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">                currentToken </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> LPAREN;</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #C678DD">else</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (c </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">')'</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">                currentToken </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> RPAREN;</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #C678DD">else</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (c </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'&lt;'</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">                currentToken </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> LT;</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #C678DD">else</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (c </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'='</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">                currentToken </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> EQ;</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #C678DD">else</span></span>
+<span class="line"><span style="color: #ABB2BF">                currentToken </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> ERROR;</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">break</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">case</span><span style="color: #ABB2BF"> DONE:</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">break</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure>
+代码的思路非常简单，这里不多赘述。（甚至没有我重写 <code>Makefile</code>
+时重新熟悉语法花费的时间多）<p></p>
+<p>不过在实现过程中，我遇到了一个问题：实验手册中将词素
+<code>&gt;=</code> 记为 <code>ERROR</code>，但是在遇到 <code>&gt;</code>
+时，语法单元就已经被识别为 <code>ERROR</code> 了，无法再继续判断是否为
+<code>&gt;=</code>。起初我采取的解决方法是增加一个
+<code>TokenType</code>，但很快反应过来由于 <code>TokenType</code> 定义在
+<code>globals.h</code>
+中，无法修改，因此我采取了一个新的方法：在状态机中增加对
+<code>&gt;</code> 的后续判断，以便能够正确识别
+<code>&gt;=</code>。增加的代码片段如下：</p>
+<figure class="shiki c"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">else</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (c </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'&gt;'</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">    {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (</span><span style="color: #61AFEF">getNextChar</span><span style="color: #ABB2BF">() </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'='</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">        {</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #E06C75">tokenString</span><span style="color: #ABB2BF">[tokenStringIndex</span><span style="color: #C678DD">++</span><span style="color: #ABB2BF">] </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> (</span><span style="color: #C678DD">char</span><span style="color: #ABB2BF">)c;</span></span>
+<span class="line"><span style="color: #ABB2BF">            c </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">'='</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">            currentToken </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> ERROR;</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">else</span></span>
+<span class="line"><span style="color: #ABB2BF">        {</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #61AFEF">ungetNextChar</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">            currentToken </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> ERROR;</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span></code></pre></div></div></figure>
+<p>不过在询问助教具体判断情况时，助教告诉我参考实现是逐字判断的，因此最后采用的是第一种方法。</p>
+<h2 id="语法分析器实现">语法分析器实现</h2>
+<p>在阅读了 <code>parse.c</code>
+文件后，我发现语法分析器的实现主要是通过递归下降的方法来实现的。每个非终结符对应一个函数，函数内部通过判断当前
+token 的类型来决定如何展开语法树。而 <code>statement()</code>
+函数则是一个分支函数，根据当前 token
+的类型来调用不同的函数进行解析。</p>
+<p>与实验一相比，本次实验的难度显著提高，需要阅读 <code>globals.h</code>
+和 <code>util.h</code>
+文件中定义的一些函数和数据结构，以便更好地理解语法分析器的实现细节。以下是部分函数和数据结构的调用说明：</p>
+<ul>
+<li><code>syntaxError(char *message)</code>：语法错误处理函数，输出错误信息。</li>
+<li><code>match(TokenType expected)</code>：匹配当前 token
+是否为预期的类型，如果是，则将当前 token 继续向后读取。</li>
+<li><code>parse()</code>：语法分析器的主函数，主程序调用入口。</li>
+<li><code>TreeNode</code>：语法树节点的结构体，包含以下信息：
+<ul>
+<li><code>*child</code>：指向子节点的指针;</li>
+<li><code>*sibling</code>：指向兄弟节点的指针;</li>
+<li><code>lineno</code>：行号;</li>
+<li><code>nodekind</code>：节点类型，包括
+<code>StmtK</code>（语句节点）、<code>ExpK</code>（表达式节点）等;</li>
+<li><code>kind</code>：节点的具体类型，包括 <code>IfK</code>（if
+语句）、<code>RepeatK</code>（repeat
+语句）、<code>AssignK</code>（赋值语句）、<code>ReadK</code>（读入语句）、<code>WriteK</code>（输出语句）等;</li>
+<li><code>attr</code>：节点的属性，包括
+<code>op</code>（操作符）、<code>val</code>（值）、<code>name</code>（名称）等;</li>
+<li><code>type</code>：节点的类型，包括
+<code>Integer</code>（整数）、<code>Void</code>（空）、<code>Boolean</code>（布尔值）</li>
+</ul></li>
+<li><code>NewStmtNode(StmtKind kind)</code>：创建一个新的语法树节点，返回节点指针。</li>
+<li><code>NewExpNode(ExpKind kind)</code>：创建一个新的表达式节点，返回节点指针。</li>
+<li><code>copyString(char *s)</code>：复制字符串，返回指向新字符串的指针。</li>
+</ul>
+<p>此外，由于编译时发现 <code>exp()</code> 函数与 <code>math.h</code>
+中的函数重名，会产生警告，因此我将其重命名为
+<code>judge_exp()</code>。</p>
+<p><code>parse.c</code> 文件中已经实现了 <code>stmt_sequence()</code>
+函数，该函数用于解析语句序列，构建语法树。接下来，只需根据
+<code>stmt_sequence()</code> 函数的实现，补全其他非终结符对应的函数以及
+<code>statement()</code> 函数即可。以下是我补全的函数：
+</p><figure class="shiki c"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #7F848E; font-style: italic">// if_stmt | repeat_stmt | assign_stmt | read_stmt | write_stmt | error</span></span>
+<span class="line"><span style="color: #ABB2BF">TreeNode </span><span style="color: #C678DD">*</span><span style="color: #61AFEF">statement</span><span style="color: #ABB2BF">(</span><span style="color: #C678DD">void</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">{</span></span>
+<span class="line"><span style="color: #ABB2BF">    TreeNode </span><span style="color: #C678DD">*</span><span style="color: #ABB2BF">t </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">NULL</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">switch</span><span style="color: #ABB2BF"> (token)</span></span>
+<span class="line"><span style="color: #ABB2BF">    {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">case</span><span style="color: #ABB2BF"> IF:</span></span>
+<span class="line"><span style="color: #ABB2BF">        t </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">if_stmt</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">break</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">case</span><span style="color: #ABB2BF"> REPEAT:</span></span>
+<span class="line"><span style="color: #ABB2BF">        t </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">repeat_stmt</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">break</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">case</span><span style="color: #ABB2BF"> ID:</span></span>
+<span class="line"><span style="color: #ABB2BF">        t </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">assign_stmt</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">break</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">case</span><span style="color: #ABB2BF"> READ:</span></span>
+<span class="line"><span style="color: #ABB2BF">        t </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">read_stmt</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">break</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">case</span><span style="color: #ABB2BF"> WRITE:</span></span>
+<span class="line"><span style="color: #ABB2BF">        t </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">write_stmt</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">break</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">default</span><span style="color: #ABB2BF">:</span></span>
+<span class="line"><span style="color: #ABB2BF">        token </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">getToken</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">break</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span><span style="color: #7F848E; font-style: italic"> /* end case */</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">return</span><span style="color: #ABB2BF"> t;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">// IF judge_exp THEN stmt_seq END | IF judge_exp THEN stmt_seq ELSE stmt_seq END</span></span>
+<span class="line"><span style="color: #ABB2BF">TreeNode </span><span style="color: #C678DD">*</span><span style="color: #61AFEF">if_stmt</span><span style="color: #ABB2BF">(</span><span style="color: #C678DD">void</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">{</span></span>
+<span class="line"><span style="color: #ABB2BF">    TreeNode </span><span style="color: #C678DD">*</span><span style="color: #ABB2BF">t </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">newStmtNode</span><span style="color: #ABB2BF">(IfK);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #61AFEF">match</span><span style="color: #ABB2BF">(IF);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (t </span><span style="color: #C678DD">!=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">NULL</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">    {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">t</span><span style="color: #ABB2BF">-&gt;</span><span style="color: #E06C75">child</span><span style="color: #ABB2BF">[</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">] </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">judge_exp</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #61AFEF">match</span><span style="color: #ABB2BF">(THEN);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (t </span><span style="color: #C678DD">!=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">NULL</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">    {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">t</span><span style="color: #ABB2BF">-&gt;</span><span style="color: #E06C75">child</span><span style="color: #ABB2BF">[</span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">] </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">stmt_sequence</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (token </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> ELSE)</span></span>
+<span class="line"><span style="color: #ABB2BF">    {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">match</span><span style="color: #ABB2BF">(ELSE);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (t </span><span style="color: #C678DD">!=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">NULL</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">        {</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #E5C07B">t</span><span style="color: #ABB2BF">-&gt;</span><span style="color: #E06C75">child</span><span style="color: #ABB2BF">[</span><span style="color: #D19A66">2</span><span style="color: #ABB2BF">] </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">stmt_sequence</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #61AFEF">match</span><span style="color: #ABB2BF">(END);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">return</span><span style="color: #ABB2BF"> t;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">// REPEAT stmt_seq UNTIL judge_exp</span></span>
+<span class="line"><span style="color: #ABB2BF">TreeNode </span><span style="color: #C678DD">*</span><span style="color: #61AFEF">repeat_stmt</span><span style="color: #ABB2BF">(</span><span style="color: #C678DD">void</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">{</span></span>
+<span class="line"><span style="color: #ABB2BF">    TreeNode </span><span style="color: #C678DD">*</span><span style="color: #ABB2BF">t </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">newStmtNode</span><span style="color: #ABB2BF">(RepeatK);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #61AFEF">match</span><span style="color: #ABB2BF">(REPEAT);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (t </span><span style="color: #C678DD">!=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">NULL</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">    {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">t</span><span style="color: #ABB2BF">-&gt;</span><span style="color: #E06C75">child</span><span style="color: #ABB2BF">[</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">] </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">stmt_sequence</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #61AFEF">match</span><span style="color: #ABB2BF">(UNTIL);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (t </span><span style="color: #C678DD">!=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">NULL</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">    {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">t</span><span style="color: #ABB2BF">-&gt;</span><span style="color: #E06C75">child</span><span style="color: #ABB2BF">[</span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">] </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">judge_exp</span><span style="color: #ABB2BF">(); </span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">return</span><span style="color: #ABB2BF"> t;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">// ID ASSIGN judge_exp</span></span>
+<span class="line"><span style="color: #ABB2BF">TreeNode </span><span style="color: #C678DD">*</span><span style="color: #61AFEF">assign_stmt</span><span style="color: #ABB2BF">(</span><span style="color: #C678DD">void</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">{</span></span>
+<span class="line"><span style="color: #ABB2BF">    TreeNode </span><span style="color: #C678DD">*</span><span style="color: #ABB2BF">t </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">newStmtNode</span><span style="color: #ABB2BF">(AssignK);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (t </span><span style="color: #C678DD">!=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">NULL</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">    {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">t</span><span style="color: #ABB2BF">-&gt;</span><span style="color: #E5C07B">attr</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">name</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">copyString</span><span style="color: #ABB2BF">(tokenString);</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #61AFEF">match</span><span style="color: #ABB2BF">(ID);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #61AFEF">match</span><span style="color: #ABB2BF">(ASSIGN);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (t </span><span style="color: #C678DD">!=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">NULL</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">    {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">t</span><span style="color: #ABB2BF">-&gt;</span><span style="color: #E06C75">child</span><span style="color: #ABB2BF">[</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">] </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">judge_exp</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">return</span><span style="color: #ABB2BF"> t;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">// READ ID</span></span>
+<span class="line"><span style="color: #ABB2BF">TreeNode </span><span style="color: #C678DD">*</span><span style="color: #61AFEF">read_stmt</span><span style="color: #ABB2BF">(</span><span style="color: #C678DD">void</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">{</span></span>
+<span class="line"><span style="color: #ABB2BF">    TreeNode </span><span style="color: #C678DD">*</span><span style="color: #ABB2BF">t </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">newStmtNode</span><span style="color: #ABB2BF">(ReadK);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #61AFEF">match</span><span style="color: #ABB2BF">(READ);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> ((t </span><span style="color: #C678DD">!=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">NULL</span><span style="color: #ABB2BF">) </span><span style="color: #56B6C2">&amp;&amp;</span><span style="color: #ABB2BF"> (token </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> ID))</span></span>
+<span class="line"><span style="color: #ABB2BF">    {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">t</span><span style="color: #ABB2BF">-&gt;</span><span style="color: #E5C07B">attr</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">name</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">copyString</span><span style="color: #ABB2BF">(tokenString);</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #61AFEF">match</span><span style="color: #ABB2BF">(ID);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">return</span><span style="color: #ABB2BF"> t;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">// WRITE judge_exp</span></span>
+<span class="line"><span style="color: #ABB2BF">TreeNode </span><span style="color: #C678DD">*</span><span style="color: #61AFEF">write_stmt</span><span style="color: #ABB2BF">(</span><span style="color: #C678DD">void</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">{</span></span>
+<span class="line"><span style="color: #ABB2BF">    TreeNode </span><span style="color: #C678DD">*</span><span style="color: #ABB2BF">t </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">newStmtNode</span><span style="color: #ABB2BF">(WriteK);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #61AFEF">match</span><span style="color: #ABB2BF">(WRITE);</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (t </span><span style="color: #C678DD">!=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">NULL</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">    {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">t</span><span style="color: #ABB2BF">-&gt;</span><span style="color: #E06C75">child</span><span style="color: #ABB2BF">[</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">] </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">judge_exp</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">return</span><span style="color: #ABB2BF"> t;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">// simple_exp LT simple_exp | simple_exp EQ simple_exp | simple_exp</span></span>
+<span class="line"><span style="color: #ABB2BF">TreeNode </span><span style="color: #C678DD">*</span><span style="color: #61AFEF">judge_exp</span><span style="color: #ABB2BF">(</span><span style="color: #C678DD">void</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">{</span></span>
+<span class="line"><span style="color: #ABB2BF">    TreeNode </span><span style="color: #C678DD">*</span><span style="color: #ABB2BF">t </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">simple_exp</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> ((token </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> LT) </span><span style="color: #56B6C2">||</span><span style="color: #ABB2BF"> (token </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> EQ))</span></span>
+<span class="line"><span style="color: #ABB2BF">    {</span></span>
+<span class="line"><span style="color: #ABB2BF">        TreeNode </span><span style="color: #C678DD">*</span><span style="color: #ABB2BF">p </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">newExpNode</span><span style="color: #ABB2BF">(OpK);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (p </span><span style="color: #C678DD">!=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">NULL</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">        {</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #E5C07B">p</span><span style="color: #ABB2BF">-&gt;</span><span style="color: #E06C75">child</span><span style="color: #ABB2BF">[</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">] </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> t;</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #E5C07B">p</span><span style="color: #ABB2BF">-&gt;</span><span style="color: #E5C07B">attr</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">op</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> token;</span></span>
+<span class="line"><span style="color: #ABB2BF">            t </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> p;</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">match</span><span style="color: #ABB2BF">(token);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (t </span><span style="color: #C678DD">!=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">NULL</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">        {</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #E5C07B">t</span><span style="color: #ABB2BF">-&gt;</span><span style="color: #E06C75">child</span><span style="color: #ABB2BF">[</span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">] </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">simple_exp</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">return</span><span style="color: #ABB2BF"> t;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">// simple_exp PLUS term | simple_exp MINUS term | term</span></span>
+<span class="line"><span style="color: #ABB2BF">TreeNode </span><span style="color: #C678DD">*</span><span style="color: #61AFEF">simple_exp</span><span style="color: #ABB2BF">(</span><span style="color: #C678DD">void</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">{</span></span>
+<span class="line"><span style="color: #ABB2BF">    TreeNode </span><span style="color: #C678DD">*</span><span style="color: #ABB2BF">t </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">term</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">while</span><span style="color: #ABB2BF"> ((token </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> PLUS) </span><span style="color: #56B6C2">||</span><span style="color: #ABB2BF"> (token </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> MINUS))</span></span>
+<span class="line"><span style="color: #ABB2BF">    {</span></span>
+<span class="line"><span style="color: #ABB2BF">        TreeNode </span><span style="color: #C678DD">*</span><span style="color: #ABB2BF">p </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">newExpNode</span><span style="color: #ABB2BF">(OpK);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (p </span><span style="color: #C678DD">!=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">NULL</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">        {</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #E5C07B">p</span><span style="color: #ABB2BF">-&gt;</span><span style="color: #E06C75">child</span><span style="color: #ABB2BF">[</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">] </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> t;</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #E5C07B">p</span><span style="color: #ABB2BF">-&gt;</span><span style="color: #E5C07B">attr</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">op</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> token;</span></span>
+<span class="line"><span style="color: #ABB2BF">            t </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> p;</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #61AFEF">match</span><span style="color: #ABB2BF">(token);</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #E5C07B">t</span><span style="color: #ABB2BF">-&gt;</span><span style="color: #E06C75">child</span><span style="color: #ABB2BF">[</span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">] </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">term</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">return</span><span style="color: #ABB2BF"> t;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">// term TIMES factor | term OVER factor | factor</span></span>
+<span class="line"><span style="color: #ABB2BF">TreeNode </span><span style="color: #C678DD">*</span><span style="color: #61AFEF">term</span><span style="color: #ABB2BF">(</span><span style="color: #C678DD">void</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">{</span></span>
+<span class="line"><span style="color: #ABB2BF">    TreeNode </span><span style="color: #C678DD">*</span><span style="color: #ABB2BF">t </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">factor</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">while</span><span style="color: #ABB2BF"> ((token </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> TIMES) </span><span style="color: #56B6C2">||</span><span style="color: #ABB2BF"> (token </span><span style="color: #C678DD">==</span><span style="color: #ABB2BF"> OVER))</span></span>
+<span class="line"><span style="color: #ABB2BF">    {</span></span>
+<span class="line"><span style="color: #ABB2BF">        TreeNode </span><span style="color: #C678DD">*</span><span style="color: #ABB2BF">p </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">newExpNode</span><span style="color: #ABB2BF">(OpK);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (p </span><span style="color: #C678DD">!=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">NULL</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">        {</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #E5C07B">p</span><span style="color: #ABB2BF">-&gt;</span><span style="color: #E06C75">child</span><span style="color: #ABB2BF">[</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">] </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> t;</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #E5C07B">p</span><span style="color: #ABB2BF">-&gt;</span><span style="color: #E5C07B">attr</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">op</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> token;</span></span>
+<span class="line"><span style="color: #ABB2BF">            t </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> p;</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #61AFEF">match</span><span style="color: #ABB2BF">(token);</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #E5C07B">p</span><span style="color: #ABB2BF">-&gt;</span><span style="color: #E06C75">child</span><span style="color: #ABB2BF">[</span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">] </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">factor</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">return</span><span style="color: #ABB2BF"> t;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">// LPAREN judge_exp RPAREN | NUM | ID | error</span></span>
+<span class="line"><span style="color: #ABB2BF">TreeNode </span><span style="color: #C678DD">*</span><span style="color: #61AFEF">factor</span><span style="color: #ABB2BF">(</span><span style="color: #C678DD">void</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">{</span></span>
+<span class="line"><span style="color: #ABB2BF">    TreeNode </span><span style="color: #C678DD">*</span><span style="color: #ABB2BF">t </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">NULL</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">switch</span><span style="color: #ABB2BF"> (token)</span></span>
+<span class="line"><span style="color: #ABB2BF">    {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">case</span><span style="color: #ABB2BF"> NUM:</span></span>
+<span class="line"><span style="color: #ABB2BF">        t </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">newExpNode</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">ConstK</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (t </span><span style="color: #C678DD">!=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">NULL</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">        {</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #E5C07B">t</span><span style="color: #ABB2BF">-&gt;</span><span style="color: #E5C07B">attr</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">val</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">atoi</span><span style="color: #ABB2BF">(tokenString);</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">match</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">NUM</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">break</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">case</span><span style="color: #ABB2BF"> ID:</span></span>
+<span class="line"><span style="color: #ABB2BF">        t </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">newExpNode</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">IdK</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> (t </span><span style="color: #C678DD">!=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">NULL</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">        {</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #E5C07B">t</span><span style="color: #ABB2BF">-&gt;</span><span style="color: #E5C07B">attr</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">name</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">copyString</span><span style="color: #ABB2BF">(tokenString);</span></span>
+<span class="line"><span style="color: #ABB2BF">        }</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">match</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">ID</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">break</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">case</span><span style="color: #ABB2BF"> LPAREN:</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">match</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">LPAREN</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        t </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">judge_exp</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">match</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">RPAREN</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">break</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">default</span><span style="color: #ABB2BF">:</span></span>
+<span class="line"><span style="color: #ABB2BF">        token </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">getToken</span><span style="color: #ABB2BF">();</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">break</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">return</span><span style="color: #ABB2BF"> t;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure><p></p>
+<p>这里对实现起来不那么直观的
+<code>statement()</code>、<code>simple_exp()</code>、<code>term()</code>、<code>factor()</code>
+函数进行详细说明：</p>
+<ul>
+<li><code>statement()</code>
+函数：该函数用于解析<strong>单条语句</strong>。首先判断当前 token 是否为
+<code>IF</code>、<code>REPEAT</code>、<code>ID</code>、<code>READ</code>
+或 <code>WRITE</code>，如果是，则根据 token
+的类型调用相应的函数进行解析。如果不是，则调用
+<code>syntaxError()</code>
+函数输出错误信息。但在测试中我发现此时会输出两次报错，排查后发现在
+<code>match()</code> 函数中已经输出错误信息，因此此处只需要调用
+<code>getToken()</code> 函数获取下一个 token 即可。</li>
+<li><code>simple_exp()</code>
+函数：该函数用于解析<strong>加减表达式</strong>。这里我一开始想得比较复杂，认为需要递归调用来实现加减法的结合性，但实际上由于加减法的左结合性，只需要用
+<code>while</code> 循环来实现即可。首先调用 <code>term()</code>
+函数解析第一个项并设为当前节点，然后进入 <code>while</code>
+循环，判断当前 token 是否为 <code>PLUS</code> 或
+<code>MINUS</code>，如果是则创建一个新的表达式节点，将当前节点作为其子节点，并将操作符赋值给该节点的属性。然后调用
+<code>match()</code> 函数匹配当前 token，并调用 <code>term()</code>
+函数解析下一个项，如此循环直到当前 token 不是 <code>PLUS</code> 或
+<code>MINUS</code>，即可完成加减表达式的解析。</li>
+<li><code>term()</code>
+函数：该函数用于解析<strong>乘除表达式</strong>。与
+<code>simple_exp()</code>
+函数基本一致，但需注意解析下一个项时需要调用的是 <code>factor()</code>
+函数。</li>
+<li><code>factor()</code>
+函数：该函数用于解析<strong>因子</strong>，即<code>(judge_exp())</code>、<code>NUM</code>
+或 <code>ID</code>。因此，只需要判断当前 token
+的类型并进行相应的处理即可，default 分支处理与 <code>statement()</code>
+函数相同。</li>
+</ul>
+<h1 id="测试与结果">测试与结果</h1>
+<h2 id="词法分析器测试">词法分析器测试</h2>
+<p>在完成词法分析器的实现后，我在 <code>sample.tny</code>
+的基础上修改，另外生成了几个测试文件，其中一个内容如下：
+</p><figure class="shiki txt"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #abb2bf">read x;</span></span>
+<span class="line"><span style="color: #abb2bf">if 0 &gt;= x then { &gt;= must be error }</span></span>
+<span class="line"><span style="color: #abb2bf">     { there is a space and a tab and a newline }</span></span>
+<span class="line"><span style="color: #abb2bf">    fac := 1;</span></span>
+<span class="line"><span style="color: #abb2bf">    repeat</span></span>
+<span class="line"><span style="color: #abb2bf">        fac @:= fac * x; {@ should be error }</span></span>
+<span class="line"><span style="color: #abb2bf">        x := x - 1 until x = 0;</span></span>
+<span class="line"><span style="color: #abb2bf">    write fac {@output factorial of x }{@ should not be error in comments }</span></span>
+<span class="line"><span style="color: #abb2bf">end</span></span></code></pre></div></div></figure><p></p>
+<p>测试输出结果如下： </p><figure class="shiki plaintext"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #abb2bf"></span></span>
+<span class="line"><span style="color: #abb2bf">COMPILATION: .\tests\Test1.tny</span></span>
+<span class="line"><span style="color: #abb2bf">   1: read x;</span></span>
+<span class="line"><span style="color: #abb2bf">	1: reserved word: read</span></span>
+<span class="line"><span style="color: #abb2bf">	1: ID, name= x</span></span>
+<span class="line"><span style="color: #abb2bf">	1: ;</span></span>
+<span class="line"><span style="color: #abb2bf">   2: if 0 &gt;= x then { &gt;= must be error }</span></span>
+<span class="line"><span style="color: #abb2bf">	2: reserved word: if</span></span>
+<span class="line"><span style="color: #abb2bf">	2: NUM, val= 0</span></span>
+<span class="line"><span style="color: #abb2bf">	2: ERROR: &gt;</span></span>
+<span class="line"><span style="color: #abb2bf">	2: =</span></span>
+<span class="line"><span style="color: #abb2bf">	2: ID, name= x</span></span>
+<span class="line"><span style="color: #abb2bf">	2: reserved word: then</span></span>
+<span class="line"><span style="color: #abb2bf">   3:      { there is a space and a tab and a newline }</span></span>
+<span class="line"><span style="color: #abb2bf">   4:     fac := 1;</span></span>
+<span class="line"><span style="color: #abb2bf">	4: ID, name= fac</span></span>
+<span class="line"><span style="color: #abb2bf">	4: :=</span></span>
+<span class="line"><span style="color: #abb2bf">	4: NUM, val= 1</span></span>
+<span class="line"><span style="color: #abb2bf">	4: ;</span></span>
+<span class="line"><span style="color: #abb2bf">   5:     repeat</span></span>
+<span class="line"><span style="color: #abb2bf">	5: reserved word: repeat</span></span>
+<span class="line"><span style="color: #abb2bf">   6:         fac @:= fac * x; {@ should be error }</span></span>
+<span class="line"><span style="color: #abb2bf">	6: ID, name= fac</span></span>
+<span class="line"><span style="color: #abb2bf">	6: ERROR: @</span></span>
+<span class="line"><span style="color: #abb2bf">	6: :=</span></span>
+<span class="line"><span style="color: #abb2bf">	6: ID, name= fac</span></span>
+<span class="line"><span style="color: #abb2bf">	6: *</span></span>
+<span class="line"><span style="color: #abb2bf">	6: ID, name= x</span></span>
+<span class="line"><span style="color: #abb2bf">	6: ;</span></span>
+<span class="line"><span style="color: #abb2bf">   7:         x := x - 1 until x = 0;</span></span>
+<span class="line"><span style="color: #abb2bf">	7: ID, name= x</span></span>
+<span class="line"><span style="color: #abb2bf">	7: :=</span></span>
+<span class="line"><span style="color: #abb2bf">	7: ID, name= x</span></span>
+<span class="line"><span style="color: #abb2bf">	7: -</span></span>
+<span class="line"><span style="color: #abb2bf">	7: NUM, val= 1</span></span>
+<span class="line"><span style="color: #abb2bf">	7: reserved word: until</span></span>
+<span class="line"><span style="color: #abb2bf">	7: ID, name= x</span></span>
+<span class="line"><span style="color: #abb2bf">	7: =</span></span>
+<span class="line"><span style="color: #abb2bf">	7: NUM, val= 0</span></span>
+<span class="line"><span style="color: #abb2bf">	7: ;</span></span>
+<span class="line"><span style="color: #abb2bf">   8:     write fac {@output factorial of x }{@ should not be error in comments }</span></span>
+<span class="line"><span style="color: #abb2bf">	8: reserved word: write</span></span>
+<span class="line"><span style="color: #abb2bf">	8: ID, name= fac</span></span>
+<span class="line"><span style="color: #abb2bf">   9: end</span></span>
+<span class="line"><span style="color: #abb2bf">	9: reserved word: end</span></span>
+<span class="line"><span style="color: #abb2bf">	10: EOF</span></span></code></pre></div></div></figure><p></p>
+<p>可以看到，输出结果符合预期，能够正确识别出每一行的词法单元，并且在注释中不会输出错误。</p>
+<h2 id="语法分析器测试">语法分析器测试</h2>
+<p>在完成语法分析器的实现后，我首先用<code>sample.tny</code>进行测试，输出结果如图：</p>
+<p><img src="image-1.webp" srcset="/img/loading/loading3.gif" lazyload></p>
+<p>可以看到，输出结果符合预期，能够正确地生成语法树。</p>
+<p>在此测试文件的基础上修改，另外生成了几个测试文件，其中一个内容如下：
+</p><figure class="shiki txt"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #abb2bf">{This program contains some comments but is still syntactically correct}</span></span>
+<span class="line"><span style="color: #abb2bf"></span></span>
+<span class="line"><span style="color: #abb2bf">read x;</span></span>
+<span class="line"><span style="color: #abb2bf">if 0 &lt; x then { if judge_exp then stmt_exp (else stmt_exp) end }</span></span>
+<span class="line"><span style="color: #abb2bf">    fac := 1;</span></span>
+<span class="line"><span style="color: #abb2bf">    repeat</span></span>
+<span class="line"><span style="color: #abb2bf">        fac := fac * x / 1; { multiplication and division should be left associative }</span></span>
+<span class="line"><span style="color: #abb2bf">        x := x - 1 + 1; { addition and subtraction should be left associative }</span></span>
+<span class="line"><span style="color: #abb2bf">        x := x + 1 * 1; { multiplication's precedence should be higher than addition }</span></span>
+<span class="line"><span style="color: #abb2bf">        x := (x + 1) * 1; { parentheses should regard as a factor }</span></span>
+<span class="line"><span style="color: #abb2bf">        x := 0 until x = 0;</span></span>
+<span class="line"><span style="color: #abb2bf">    write fac { @ should not be error in comments }</span></span>
+<span class="line"><span style="color: #abb2bf">else</span></span>
+<span class="line"><span style="color: #abb2bf">    write 0 { a NUM can be reduced by judge_exp -&gt; simple_exp -&gt; term -&gt; factor }</span></span>
+<span class="line"><span style="color: #abb2bf">end</span></span></code></pre></div></div></figure> 测试输出结果如下： <figure class="shiki plaintext"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #abb2bf">COMPILATION: .\tests\Test.tny</span></span>
+<span class="line"><span style="color: #abb2bf">// 省略scanner输出</span></span>
+<span class="line"><span style="color: #abb2bf">Syntax tree:</span></span>
+<span class="line"><span style="color: #abb2bf">  Read: x</span></span>
+<span class="line"><span style="color: #abb2bf">  If</span></span>
+<span class="line"><span style="color: #abb2bf">    Op: &lt;</span></span>
+<span class="line"><span style="color: #abb2bf">      Const: 0</span></span>
+<span class="line"><span style="color: #abb2bf">      Id: x</span></span>
+<span class="line"><span style="color: #abb2bf">    Assign to: fac</span></span>
+<span class="line"><span style="color: #abb2bf">      Const: 1</span></span>
+<span class="line"><span style="color: #abb2bf">    Repeat</span></span>
+<span class="line"><span style="color: #abb2bf">      Assign to: fac</span></span>
+<span class="line"><span style="color: #abb2bf">        Op: /</span></span>
+<span class="line"><span style="color: #abb2bf">          Op: *</span></span>
+<span class="line"><span style="color: #abb2bf">            Id: fac</span></span>
+<span class="line"><span style="color: #abb2bf">            Id: x</span></span>
+<span class="line"><span style="color: #abb2bf">          Const: 1</span></span>
+<span class="line"><span style="color: #abb2bf">      Assign to: x</span></span>
+<span class="line"><span style="color: #abb2bf">        Op: +</span></span>
+<span class="line"><span style="color: #abb2bf">          Op: -</span></span>
+<span class="line"><span style="color: #abb2bf">            Id: x</span></span>
+<span class="line"><span style="color: #abb2bf">            Const: 1</span></span>
+<span class="line"><span style="color: #abb2bf">          Const: 1</span></span>
+<span class="line"><span style="color: #abb2bf">      Assign to: x</span></span>
+<span class="line"><span style="color: #abb2bf">        Op: +</span></span>
+<span class="line"><span style="color: #abb2bf">          Id: x</span></span>
+<span class="line"><span style="color: #abb2bf">          Op: *</span></span>
+<span class="line"><span style="color: #abb2bf">            Const: 1</span></span>
+<span class="line"><span style="color: #abb2bf">            Const: 1</span></span>
+<span class="line"><span style="color: #abb2bf">      Assign to: x</span></span>
+<span class="line"><span style="color: #abb2bf">        Op: *</span></span>
+<span class="line"><span style="color: #abb2bf">          Op: +</span></span>
+<span class="line"><span style="color: #abb2bf">            Id: x</span></span>
+<span class="line"><span style="color: #abb2bf">            Const: 1</span></span>
+<span class="line"><span style="color: #abb2bf">          Const: 1</span></span>
+<span class="line"><span style="color: #abb2bf">      Assign to: x</span></span>
+<span class="line"><span style="color: #abb2bf">        Const: 0</span></span>
+<span class="line"><span style="color: #abb2bf">      Op: =</span></span>
+<span class="line"><span style="color: #abb2bf">        Id: x</span></span>
+<span class="line"><span style="color: #abb2bf">        Const: 0</span></span>
+<span class="line"><span style="color: #abb2bf">    Write</span></span>
+<span class="line"><span style="color: #abb2bf">      Id: fac</span></span>
+<span class="line"><span style="color: #abb2bf">    Write</span></span>
+<span class="line"><span style="color: #abb2bf">      Const: 0</span></span></code></pre></div></div></figure>
+若将其转换为语法树，则如下所示： <img src="image-2.webp" srcset="/img/loading/loading3.gif" lazyload><p></p>
+<p>可以看到，输出结果符合预期，能够正确地生成语法树。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Misc/" class="category-chain-item">Misc</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" class="print-no-link">#编译原理</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>编译原理编程实践</div>
+      <div>https://youyeyejie.github.io/_posts/编译原理编程实践/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>youyeyejie</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年5月23日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2025年12月26日</div>
+        </div>
+      
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/_posts/%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6/" title="量子力学">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">量子力学</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/_posts/OpenEuler%E9%A1%B5%E9%9D%A2%E6%B7%98%E6%B1%B0%E7%AE%97%E6%B3%95%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B5/" title="OpenEuler页面淘汰算法编程实践">
+                        <span class="hidden-mobile">OpenEuler页面淘汰算法编程实践</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments">
+      
+    <div id="giscus" class="giscus"></div>
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#giscus', function() {
+        var options = {"repo":"youyeyejie/youyeyejie.github.io","repo-id":"R_kgDOO-Uo1g","category":"General","category-id":"DIC_kwDOO-Uo1s4Crz5J","theme-light":"light","theme-dark":"dark","mapping":"pathname","reactions-enabled":1,"emit-metadata":0,"input-position":"top","lang":"zh-CN"};
+        var attributes = {};
+        for (let option in options) {
+          if (!option.startsWith('theme-')) {
+            var key = option.startsWith('data-') ? option : 'data-' + option;
+            attributes[key] = options[option];
+          }
+        }
+        var light = 'light';
+        var dark = 'dark';
+        window.GiscusThemeLight = light;
+        window.GiscusThemeDark = dark;
+        attributes['data-theme'] = document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ? dark : light;
+        for (let attribute in attributes) {
+          var value = attributes[attribute];
+          if (value === undefined || value === null || value === '') {
+            delete attributes[attribute];
+          }
+        }
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://giscus.app/client.js');
+        s.setAttribute('crossorigin', 'anonymous');
+        for (let attribute in attributes) {
+          s.setAttribute(attribute, attributes[attribute]);
+        }
+        var ss = document.getElementsByTagName('script');
+        var e = ss.length > 0 ? ss[ss.length - 1] : document.head || document.documentElement;
+        e.parentNode.insertBefore(s, e.nextSibling);
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+  
+  
+</div>
+<div class="footer-inner">
+    <div class="powered-by">
+        <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+        <i class="iconfont icon-love"></i>
+        <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+        <i class="iconfont icon-love"></i>
+        <a href="https://cloud.umami.is/share/1fs3cnD9TAP8JzML" target="_blank" rel="nofollow noopener"><span>Umami</span></a>
+    </div>
+    <div class="hitokoto">
+        <i class="fas fa-quote-left"></i>
+        <a target="_blank" rel="noopener" href="https://developer.hitokoto.cn/" id="hitokoto_text"><span id="hitokoto">且以群词 注解我这座荒山</span></a>
+        <script src="/js/Hitokoto.js" defer></script>
+    </div>
+    <div class="data">
+        <span class="total-word-container">
+            <i class="fas fa-chart-bar"></i>
+            <span id="g-total-word-id"></span>
+            字汇长河
+        </span>
+        &nbsp;
+        <span id="total-posts-container">
+            <i class="fas fa-file-alt"></i>
+            <span id="g-total-posts-id"></span>
+            文舟靠岸
+        </span>
+        &nbsp;
+        <span id="busuanzi_container_site_pv">
+            <i class="fas fa-eye"></i>
+            <span id="busuanzi_value_site_pv">1314</span>
+            目光所及
+        </span>
+        &nbsp;
+        <span id="busuanzi_container_site_uv">
+            <i class="fas fa-user-friends"></i>
+            <span id="busuanzi_value_site_uv">520</span>
+            访客驻足
+        </span>
+    </div>
+    <div class="duration">
+        <i class="fas fa-calendar"></i>
+        <span id="duration-container">人生缓缓&nbsp;自有答案</span>
+        <script src="/js/Duration.js"></script>
+    </div>
+</div>
+
+<link href="/css/Footer.css" type="text/css" rel="stylesheet"/>
+<script>
+    document.querySelectorAll("[id^='busuanzi_value_']").forEach(element => {
+        element.id = element.id.replace("busuanzi_value_", "vercount_value_");
+    });
+</script>
+<script defer src="https://events.vercount.one/js"></script>
+<!-- <script src="https://npm.elemecdn.com/penndu@1.0.0/bsz.js" defer></script> -->
+<!-- <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script> -->
+<!-- <script async src="https://busuanzi.icodeq.com/busuanzi.pure.mini.js"></script> -->
+<!-- <script async src="https://busuanzi.sukap.cn/busuanzi.pure.mini.js"></script> -->
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    
+      <script  src="/js/img-lazyload.js" ></script>
+    
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="/js/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="/js/LinkCard.js"></script>
+<script src="/js/RandomBanner.js"></script>
+<script src="/js/Background.js"></script>
+<script src="/js/ScrollAnimation.js"></script>
+<script src="/js/Sidebar.js"></script>
+<script src="/js/TabDisplay.js"></script>
+<script src="/js/Umami.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  <script type="text/javascript">
+  document.getElementById("g-total-word-id").innerHTML = "506k";
+  document.getElementById('g-total-posts-id').textContent ="57";
+</script>
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start -->
+<script src="https://cdn.jsdelivr.net/npm/hexo-shiki-plugin@latest/lib/codeblock.js"></script>
+
+  <script>
+  const CODE_CONFIG = {
+    beautify: true,
+    highlightCopy: true,
+    highlightLang: true,
+    highlightHeightLimit: 360,
+    isHighlightShrink: false,
+    copy: {
+      success: 'Copy Success',
+      error: 'Copy Error',
+      noSupport: 'Browser Not Support',
+    }
+  };
+  console.log(
+    `%c hexo-shiki-plugin %c v1.0.27 %c https://github.com/nova1751/hexo-shiki-plugin`,
+    "color: #fff; background: #5f5f5f",
+    "color: #fff; background: #80c8f8",
+    ""
+  );
+  </script>
+  <!-- hexo injector body_end end --></body>
+</html>
