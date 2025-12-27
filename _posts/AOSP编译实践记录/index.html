@@ -44,7 +44,7 @@
 <meta property="og:image" content="https://youyeyejie.github.io/_posts/AOSP%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5%E8%AE%B0%E5%BD%95/image-15.webp">
 <meta property="og:image" content="https://youyeyejie.github.io/_posts/AOSP%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5%E8%AE%B0%E5%BD%95/image-16.webp">
 <meta property="article:published_time" content="2025-12-26T14:28:33.000Z">
-<meta property="article:modified_time" content="2025-12-26T14:48:13.161Z">
+<meta property="article:modified_time" content="2025-12-27T12:25:14.997Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="AOSP">
 <meta name="twitter:card" content="summary_large_image">
@@ -560,6 +560,8 @@ aosp_x86_64，最终成功编译通过。</p>
 <h1 id="下载-aosp-源代码">下载 AOSP 源代码</h1>
 <p>参考 <a target="_blank" rel="noopener" href="https://source.android.com/setup/build/downloading">Android Google
 文档</a>、<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/AOSP/">清华镜像站指引</a>、<a target="_blank" rel="noopener" href="https://mirrors.ustc.edu.cn/help/aosp.html">科大镜像站指引</a></p>
+<p><a href="https://source.android.google.cn/setup/build/downloading" target="_blank" name="https://source.android.com/_pwa/androidsource/icons/icon-144x144.png" class="LinkCard">Android
+Open Source Project</a></p>
 <p>在所有工作开始前，需要安装一些依赖包： </p><figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">sudo</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">apt-get</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">git-core</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">gnupg</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">flex</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">bison</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">build-essential</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">zip</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">curl</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">zlib1g-dev</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">libc6-dev-i386</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">x11proto-core-dev</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">libx11-dev</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">lib32z1-dev</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">libgl1-mesa-dev</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">libxml2-utils</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">xsltproc</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">unzip</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">fontconfig</span></span></code></pre></div></div></figure><p></p>
 <p>AOSP 代码使用 repo 工具管理，因此首先安装 repo 工具：
 </p><figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">mkdir</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">~/aosp</span></span>
@@ -579,8 +581,8 @@ Numbers 列表</a>）： </p><figure class="shiki bash"><div class="codeblock"><
 <figcaption aria-hidden="true">disk usage</figcaption>
 </figure>
 <h1 id="编译-aosp">编译 AOSP</h1>
-<p>参考 <a target="_blank" rel="noopener" href="https://source.android.google.cn/docs/setup/build/building">Android
-Google 文档</a></p>
+<p><a href="https://source.android.google.cn/docs/setup/build/building" target="_blank" name="https://source.android.com/_pwa/androidsource/icons/icon-144x144.png" class="LinkCard">Building
+AOSP</a></p>
 <p>进入工作目录，加载环境初始化脚本，然后选择构建目标： </p><figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #56B6C2">cd</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">aosp/</span></span>
 <span class="line"><span style="color: #56B6C2">source</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">build/envsetup.sh</span></span>
 <span class="line"><span style="color: #61AFEF">lunch</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">aosp_x86_64-eng</span></span></code></pre></div></div></figure>
@@ -826,7 +828,7 @@ android-13.0.0_r1 分支代码。 <figure class="shiki bash"><div class="codeblo
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年12月26日</div>
+          <div>2025年12月27日</div>
         </div>
       
       
@@ -840,6 +842,12 @@ android-13.0.0_r1 分支代码。 <figure class="shiki bash"><div class="codeblo
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/_posts/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="计算机网络">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">计算机网络</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
@@ -1206,8 +1214,8 @@ android-13.0.0_r1 分支代码。 <figure class="shiki bash"><div class="codeblo
 
 
   <script type="text/javascript">
-  document.getElementById("g-total-word-id").innerHTML = "508k";
-  document.getElementById('g-total-posts-id').textContent ="58";
+  document.getElementById("g-total-word-id").innerHTML = "596k";
+  document.getElementById('g-total-posts-id').textContent ="59";
 </script>
 
   <noscript>
