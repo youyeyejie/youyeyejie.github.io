@@ -27,7 +27,20 @@ def process_file(md_path: Path):
         if not bak.exists():
             bak.write_text(text, encoding="utf-8")
         md_path.write_text(new_text, encoding="utf-8")
-    return n
+
+    # 将 {basename} 文件夹中未被引用的 webp 文件删除
+    m = 0
+    dir_path = md_path.parent / basename
+    if dir_path.exists() and dir_path.is_dir():
+        referenced_webps = set(re.findall(rf'{basename}/(image(?:-\d+)?)\.webp', new_text))
+        for webp_file in dir_path.glob("image*.webp"):
+            webp_name = webp_file.stem  # 不带扩展名
+            if webp_name not in referenced_webps:
+                webp_file.unlink()
+                m += 1
+
+    return n, m
+
 
 def main():
     script_dir = Path(__file__).resolve().parent
@@ -47,14 +60,14 @@ def main():
     else:
         indices = [int(i) for i in re.findall(r'\d+', indices)]
 
-    total_changes = 0
+    total_changes = (0, 0)
     for i in indices:
         p = files[i-1]
-        n = process_file(p)
-        print(f"{p.name}: 替换 {n} 处")
-        total_changes += n
+        n, m = process_file(p)
+        print(f"{p.name}: 替换 {n} 处，删除未引用的 webp 文件 {m} 个。")
+        total_changes = (total_changes[0] + n, total_changes[1] + m)
 
-    print(f"完成。总共替换 {total_changes} 处。")
+    print(f"完成。总共替换 {total_changes[0]} 处，删除未引用的 webp 文件 {total_changes[1]} 个。")
 
 if __name__ == "__main__":
     try:

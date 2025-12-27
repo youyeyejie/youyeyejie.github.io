@@ -64,7 +64,7 @@
     width: 60px !important;
     height: auto !important;
     border-radius: inherit;
-    margin-bottom: 0 !important;
+    margin: 0 !important;
 }
 .LinkCard:hover {
     transform: translate3d(0, -2px, 0);
