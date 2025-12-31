@@ -15,7 +15,7 @@ index_img: /_posts/Fluid全屏背景/image.webp
 
 本期美化同样贯彻了前几期美化的原则：**无侵入式美化**，即不修改主题的源代码，只通过修改配置文件、自定义样式以及Hexo注入器来实现美化。前几期的美化可以点击下方的链接卡片查看。
 
-<a href="/tags/Fluid/" name="/img/avatar/avatar.webp" class="LinkCard">Fluid主题美化</a>
+<a href="/tags/Fluid/" logourl="/img/avatar/avatar.webp" class="LinkCard">Fluid主题美化</a>
 
 在本期中，我们将为Fluid主题实现全屏背景功能，提升博客的视觉效果。
 
@@ -94,11 +94,11 @@ custom_css:
 
 需要注意的是，如果在此前的随机背景美化中已经添加了 `RandomBanner.js`，则在 `_config.fluid.yml` 中的 `custom_js` 配置项中需要注意顺序，确保 `Background.js` 在 `RandomBanner.js` 之后加载，以便全屏背景能够正确获取到更新后的 `banner` 背景图片。
 
-<a href="/_posts/Fluid随机背景/" name="/_posts/Fluid随机背景/image.webp" class="LinkCard">Fluid主题随机背景美化</a>
+<a href="/_posts/Fluid随机背景/" logourl="/_posts/Fluid随机背景/image.webp" class="LinkCard">Fluid主题随机背景美化</a>
 
 最后的最后，将打开/关闭全屏背景的代码添加到此前自定义的右键菜单中即可。具体方法已更新至往期文章。
 
-<a href="/_posts/Fluid自定义右键菜单/" name="/_posts/Fluid自定义右键菜单/image.webp" class="LinkCard">Fluid自定义右键菜单</a>
+<a href="/_posts/Fluid自定义右键菜单/" logourl="/_posts/Fluid自定义右键菜单/image.webp" class="LinkCard">Fluid自定义右键菜单</a>
 
 # 总结
 

@@ -1,17 +1,11 @@
 window.onload = function () {
     var LinkCards = document.getElementsByClassName('LinkCard');
     for (var i = 0; i < LinkCards.length; i++) {
-        // 截断链接
-        var truncateLink = function(url, maxLength) {
-            if (url.length <= maxLength) return url;
-            return url.slice(0, maxLength) + '...';
-        };
-
         var LinkCard = LinkCards[i];
         var link = LinkCard.href;
         var title = LinkCard.innerText;
-        var logourl = LinkCard.name ? LinkCard.name : '/img/loading/loading5.gif';
-        var displayLink = truncateLink(link, 32);
+        var logourl = LinkCard.getAttribute('logourl');
+        var displayLink = link;
 
         LinkCard.innerHTML =
             `<span class="LinkCard-content">
@@ -30,5 +24,10 @@ window.onload = function () {
                     <img class="LinkCard-image" alt="logo" src="${logourl}" onerror="this.src='/img/loading/loading6.gif'">
                 </span>
             </span>`;
+
+        if (!logourl) {
+            var img = LinkCard.getElementsByClassName('LinkCard-image')[0];
+            img.style.display = 'none';
+        }
     }
 }

@@ -12,7 +12,7 @@ excerpt: 害我抓狂十分钟的问题竟然是……
 
 半小时前，我修改完博客上的《Fluid主题美化》的文章，熟练地执行了Hexo三连后，期待满满地打开浏览器准备查看效果，结果却发现页面的某些组件没有正确显示，然而执行 `Hexo s` 命令打开的本地预览页面却一切正常。这是怎么一回事？
 
-<a href="/_posts/Fluid主题美化1-0/" name="/img/avatar/avatar.webp" class="LinkCard">Fluid主题美化1.0</a>
+<a href="/_posts/Fluid主题美化1-0/" logourl="/img/avatar/avatar.webp" class="LinkCard">Fluid主题美化1.0</a>
 
 # 问题的排查
 

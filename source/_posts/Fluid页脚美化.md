@@ -32,13 +32,13 @@ date: 2025-06-29 01:47:43
 - 标签页根据焦点切换显示
 {% endnote %}
 
-<a href="/_posts/Fluid主题美化1-0/" name="/img/avatar/avatar.webp" class="LinkCard">Fluid主题美化1.0</a>
+<a href="/_posts/Fluid主题美化1-0/" logourl="/img/avatar/avatar.webp" class="LinkCard">Fluid主题美化1.0</a>
 
 # 关于页添加 Github 热力图
 
 这个功能的实现比较简单，可以直接调用Github Chart API来实现。项目地址见下方。
 
-<a href="https://github.com/2016rshah/githubchart-api" name="https://avatars.githubusercontent.com/u/6821244?v=4" class="LinkCard">Github Chart API</a>
+<a href="https://github.com/2016rshah/githubchart-api" logourl="https://avatars.githubusercontent.com/u/6821244?v=4" class="LinkCard">Github Chart API</a>
 
 只需要在 `source/about/index.md` 文件中添加一行代码即可在关于页添加Github热力图：   
 
@@ -52,7 +52,7 @@ date: 2025-06-29 01:47:43
 
 Fluid主题多种评论区的支持，我选择了其中基于GitHub Discussion的评论系统的Giscus插件，
 
-<a href="https://giscus.app/" name="https://avatars.githubusercontent.com/in/106117" class="LinkCard">Giscus</a>
+<a href="https://giscus.app/" logourl="https://avatars.githubusercontent.com/in/106117" class="LinkCard">Giscus</a>
 
 具体配置步骤如下：
 
@@ -87,7 +87,7 @@ giscus:
 
 这个功能比较常见，能在许多博客都搜索到相关的教程，这里我参考官方博客Hexo Theme Fluid的实现方式，并进行了一定修改。
 
-<a href="https://hexo.fluid-dev.com/posts/fluid-footer-custom/" name="https://hexo.fluid-dev.com/img/avatar.png" class="LinkCard">Fluid 页脚增加网站运行时长</a>
+<a href="https://hexo.fluid-dev.com/posts/fluid-footer-custom/" logourl="https://hexo.fluid-dev.com/img/avatar.png" class="LinkCard">Fluid 页脚增加网站运行时长</a>
 
 首先在 `source/js/` 目录下新建一个 `Duration.js` 文件（如果不存在该目录则需要先创建），代码如下：
 
@@ -155,7 +155,7 @@ footer:
 
 在Fluid主题中，内置了hexo-wordcount插件，可以通过配置 `_config.fluid.yml` 在文章的副标题下方显示该文章的字数统计。因此，要实现全站字数统计，我们只需要在页脚处添加一个显示全站字数的元素，这同样可以通过修改 `_config.fluid.yml` 文件中 `footer` 的 `content` 字段以及Hexo注入器来实现。这部分实现参考了呈呈的小站。
 
-<a href="https://blog.fengcl.com/2022/08/21/fluid-theme/#%E5%85%A8%E7%AB%99%E5%AD%97%E6%95%B0%E7%BB%9F%E8%AE%A1" name="https://blog.fengcl.com/uploads/ef1d0cfcf9284c00f4afb7a7d38dc6c0.png" class="LinkCard">切换到fluid主题的记录</a>
+<a href="https://blog.fengcl.com/2022/08/21/fluid-theme/#%E5%85%A8%E7%AB%99%E5%AD%97%E6%95%B0%E7%BB%9F%E8%AE%A1" logourl="https://blog.fengcl.com/uploads/ef1d0cfcf9284c00f4afb7a7d38dc6c0.png" class="LinkCard">切换到fluid主题的记录</a>
 
 修改 `_config.fluid.yml` 文件如下：
 
@@ -266,7 +266,7 @@ footer:
 
 一言是一个提供一句话服务的网站，Fluid主题内置了对一言的支持，但只能在首页作为副标题显示。而我希望保留首页的副标题，因此决定将一言添加到页脚处。具体的调用可以参考一言开发者中心的文档。
 
-<a href="https://developer.hitokoto.cn/sentence/" name="https://developer.hitokoto.cn/logo.png" class="LinkCard">一言开发者中心</a>
+<a href="https://developer.hitokoto.cn/sentence/" logourl="https://developer.hitokoto.cn/logo.png" class="LinkCard">一言开发者中心</a>
 
 首先在 `source/js/` 目录下新建一个 `Hitokoto.js` 文件（如果不存在该目录则需要先创建），代码如下：
 

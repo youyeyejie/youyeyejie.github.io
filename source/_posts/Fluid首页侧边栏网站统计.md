@@ -15,7 +15,7 @@ index_img: /_posts/Fluid首页侧边栏网站统计/image.webp
 
 本期美化同样贯彻了前几期美化的原则：**无侵入式美化**，即不修改主题的源代码，只通过修改配置文件、自定义样式以及Hexo注入器来实现美化。前几期的美化可以点击下方的链接卡片查看。
 
-<a href="/tags/Fluid/" name="/img/avatar/avatar.webp" class="LinkCard">Fluid主题美化</a>
+<a href="/tags/Fluid/" logourl="/img/avatar/avatar.webp" class="LinkCard">Fluid主题美化</a>
 
 在浏览其他人的博客时，我发现许多主题在首页都会有一个侧边栏，展示一些网站的统计数据，比如文章总数、全站字数、总访问量、总访客数、建站时长和上次更新等信息，而 Fluid 主题却不具备这样的功能。因此，在本期中，我们将在 Fluid 主题的首页实现一个侧边栏，在其中展示网站的统计数据。
 

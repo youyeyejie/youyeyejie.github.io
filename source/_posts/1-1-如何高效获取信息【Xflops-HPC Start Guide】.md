@@ -16,7 +16,7 @@ index_img: /img/cover/xflops.webp
 新学期即将来临，Xflops超算队招新以及HelloHPC超算校内赛正在火热筹备中。作为Xflops超算队的一员，我与其他成员将共同负责[HPC入门指南](https://xflops.sjtu.edu.cn/hpc-start-guide)的修订与编写。Xflops超算队的HPC入门指南系列文章旨在帮助新成员快速入门和了解HPC知识，为校内赛的参赛者提供必要的知识储备和技能指导。本文是该系列的第一篇，对往年版本进行了更新与修订，主要介绍信息素养的重要性以及如何有效获取和使用信息。
 {% endnote %}
 
-<a href="https://xflops.sjtu.edu.cn/hpc-start-guide" name="/img/cover/xflops.webp" target="_blank" class="LinkCard">HPC入门指南</a>
+<a href="https://xflops.sjtu.edu.cn/hpc-start-guide" logourl="/img/cover/xflops.webp" target="_blank" class="LinkCard">HPC入门指南</a>
 
 # 如何高效获取信息
 

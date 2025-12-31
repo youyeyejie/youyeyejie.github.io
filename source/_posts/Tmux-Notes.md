@@ -10,7 +10,7 @@ date: 2025-12-26 16:38:51
 
 # Tmux 简介
 
-<a href="https://github.com/tmux/tmux/wiki" name="https://raw.githubusercontent.com/tmux/tmux/refs/heads/master/logo/icons/128x128/tmux.png" class="LinkCard">Tmux 官方 Wiki</a>
+<a href="https://github.com/tmux/tmux/wiki" logourl="https://raw.githubusercontent.com/tmux/tmux/refs/heads/master/logo/icons/128x128/tmux.png" class="LinkCard">Tmux 官方 Wiki</a>
 
 Tmux 是一个终端复用器（terminal multiplexer），可以让你在一个终端窗口中运行多个会话，并且可以在这些会话之间切换、分割窗口等。
 

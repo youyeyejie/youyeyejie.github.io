@@ -15,7 +15,7 @@ index_img: /_posts/Hexo博客添加旅行足迹地图/image.webp
 
 旧年的光阴里，总有些脚步轻轻落在了别处的晨昏里，在某次旅途中，我萌生了一个想法：将这些足迹记录下来，形成一张属于自己的旅行地图。对此，在我自己的 Hexo 博客中添加一张旅行足迹地图再合适不过了。为了实现这一功能，我浏览了许多大佬的博客，也查询了许多资料，最终决定使用 ECharts 来实现这张地图。鉴于我在冲浪过程并没有找到一个针对 Hexo 博客的现成解决方案，因此我决定将我的实现过程记录下来，供后来的朋友们参考。
 
-<a href="https://echarts.apache.org/zh/index.html" name="https://echarts.apache.org/zh/images/favicon.png?_v_=20240226" class="LinkCard">ECharts 官网首页</a>
+<a href="https://echarts.apache.org/zh/index.html" logourl="https://echarts.apache.org/zh/images/favicon.png?_v_=20240226" class="LinkCard">ECharts 官网首页</a>
 
 # 实现
 

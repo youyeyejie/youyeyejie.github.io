@@ -15,7 +15,7 @@ date: 2025-07-20 12:19:01
 
 在我使用的 fluid 主题中，支持 Busuanzi、Leancloud 和 Umami 三种访问统计方式的配置，其中后两者需要额外的配置和部署，比较麻烦，因此我起初选用了 Busuanzi 用以统计访问数据。然而，Busuanzi 在访问量较大时会出现数据不准确的情况，加之前些天服务不稳定，于是我便决定更换为 Vercount 进行访问统计。
 
-<a href="https://vercount.one" name="./image.webp" class="LinkCard">Vercount 官网</a>
+<a href="https://vercount.one" logourl="./image.webp" class="LinkCard">Vercount 官网</a>
 
 Vercount 初始化自动同步所有不蒜子的数据，兼容不蒜子的 span 标签，理论上可以无痛切换；且使用 POST 请求进行统计，页面浏览量每访问一次加一，独立访客量通过用户的 UserAgent 和 IP 地址判断，因此数据更加准确。而在我更换到 Vercount 后，Vercount 又新增了自定义访客数据的功能，因此我决定写一篇文章来记录一下切换到 Vercount 的过程以及如何使用它来统计访问数据。
 
@@ -36,7 +36,7 @@ Vercount 初始化自动同步所有不蒜子的数据，兼容不蒜子的 span
 + <script defer src="https://events.vercount.one/js"></script>
 ```
 
-<a href="/_posts/fluid页脚美化" name="/img/avatar/avatar.webp" class="LinkCard">fluid页脚美化</a>
+<a href="/_posts/fluid页脚美化" logourl="/img/avatar/avatar.webp" class="LinkCard">fluid页脚美化</a>
 
 由于 Vercount 兼容 `vercount_value_` 和 `busuanzi_value_` 的 span 标签，因此无需修改 HTML 模板中的相关标签。
 

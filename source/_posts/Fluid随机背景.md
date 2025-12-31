@@ -15,7 +15,7 @@ index_img: /_posts/Fluid随机背景/image.webp
 
 本期美化同样贯彻了前几期美化的原则：**无侵入式美化**，即不修改主题的源代码，只通过修改配置文件、自定义样式以及Hexo注入器来实现美化。前几期的美化可以点击下方的链接卡片查看。
 
-<a href="/tags/Fluid/" name="/img/avatar/avatar.webp" class="LinkCard">Fluid主题美化</a>
+<a href="/tags/Fluid/" logourl="/img/avatar/avatar.webp" class="LinkCard">Fluid主题美化</a>
 
 在本期中，我们将为Fluid主题的文章页添加一个随机背景功能，使每次访问文章时都能看到不同的背景图片。顺带一提，目前我使用的背景图都出自B站的UP主 [Lyasmind](https://space.bilibili.com/33716779) 哦！
 

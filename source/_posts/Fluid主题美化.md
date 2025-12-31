@@ -110,7 +110,7 @@ custom_css:
 
 标题的霓虹灯效果是参考KEVIN'S BLOG的实现并进行修改。
 
-<a href="https://blog.kevinchu.top/2023/07/17/hexo-theme-fluid-modify/" name="https://static.kevinchu.top/blog/assets/img/avatar_03.jpg" class="LinkCard">Hexo博客Fluid主题魔改记录</a>
+<a href="https://blog.kevinchu.top/2023/07/17/hexo-theme-fluid-modify/" logourl="https://static.kevinchu.top/blog/assets/img/avatar_03.jpg" class="LinkCard">Hexo博客Fluid主题魔改记录</a>
 
 首先在 `source/css/` 目录下新建一个 `TitleNeon.css` 文件（如果不存在该目录则需要先创建），代码如下：
 ```css
@@ -147,7 +147,7 @@ custom_css:
 
 实现标题颜色渐变效果的代码同样参考了的是EmoryHuang's Blog的实现并进行修改。
 
-<a href="https://emoryhuang.cn/blog/1729600336.html" name="https://emoryhuang.cn/img/friend_404.gif" class="LinkCard">EmoryHuang's Blog</a>
+<a href="https://emoryhuang.cn/blog/1729600336.html" logourl="https://emoryhuang.cn/img/friend_404.gif" class="LinkCard">EmoryHuang's Blog</a>
 
 在 `source/css/` 目录下新建一个 `TitleGradient.css` 文件（如果不存在该目录则需要先创建），代码如下：
 ```css
@@ -203,7 +203,7 @@ custom_css:
 {% fold info @此方式已被弃用，博主采用另一种方式实现 %}
 原本的代码块风格比较朴素，因此我参考KEVIN'S BLOG的代码块样式，修改为MAC风格。
 
-<a href="https://blog.kevinchu.top/2023/07/17/hexo-theme-fluid-modify/" name="https://static.kevinchu.top/blog/assets/img/avatar_03.jpg" class="LinkCard">Hexo博客Fluid主题魔改记录</a>
+<a href="https://blog.kevinchu.top/2023/07/17/hexo-theme-fluid-modify/" logourl="https://static.kevinchu.top/blog/assets/img/avatar_03.jpg" class="LinkCard">Hexo博客Fluid主题魔改记录</a>
 
 在 `source/css/` 目录下新建一个 `MacPanel.styl` 文件，内容如下：
 ```stylus
@@ -234,11 +234,11 @@ custom_css:
 
 起初我使用的是上面被折叠的方式，但是在写这篇文章时发现存在一个问题：代码块不具备折叠功能！这导致了一旦插入长代码，就会占用大量页面空间，既不美观也不方便阅读。因此，我参考了4rozeN的实现方法，将渲染器更换为 Hexo Shiki Plugin。此处感谢4rozeN的答疑解惑。
 
-<a href="https://4rozen.github.io/archives/Hexo/41513.html" name="https://4rozen.github.io/img/avatar/avatar.jpg" class="LinkCard">Hexo 博客 Fluid 主题实现代码折叠和文字遮盖效果</a>
+<a href="https://4rozen.github.io/archives/Hexo/41513.html" logourl="https://4rozen.github.io/img/avatar/avatar.jpg" class="LinkCard">Hexo 博客 Fluid 主题实现代码折叠和文字遮盖效果</a>
 
 Hexo Shiki Plugin是一个Hexo插件，仓库地址见下方。
 
-<a href="https://github.com/nova1751/hexo-shiki-plugin/" name="https://avatars.githubusercontent.com/u/97817985?v=4" class="LinkCard">Hexo Shiki Plugin</a>
+<a href="https://github.com/nova1751/hexo-shiki-plugin/" logourl="https://avatars.githubusercontent.com/u/97817985?v=4" class="LinkCard">Hexo Shiki Plugin</a>
 
 具体安装额和使用方法如下：
 
@@ -332,7 +332,7 @@ custom_css:
 
 谁知道我到底有多喜欢毛玻璃！因此我又为文章界面添加了毛玻璃样式，这部分参考的是4rozeN的博客，并进行了部分修改。
 
-<a href="https://4rozen.github.io/archives/Hexo/60191.html" name="https://4rozen.github.io/img/avatar/avatar.jpg" class="LinkCard">Hexo fluid 全屏背景图随日夜模式切换以及正文底页毛玻璃效果</a>
+<a href="https://4rozen.github.io/archives/Hexo/60191.html" logourl="https://4rozen.github.io/img/avatar/avatar.jpg" class="LinkCard">Hexo fluid 全屏背景图随日夜模式切换以及正文底页毛玻璃效果</a>
 
 首先在 `source/css/` 目录下新建一个 `FrostedGlassBg.css` 文件（如果不存在该目录则需要先创建），代码如下：
 ```css
@@ -362,7 +362,7 @@ custom_css:
 
 在Fluid主题中，没有内置的链接卡片样式，因此参照丁丁の店的处理方式，并进行了一些修改和优化，为链接添加了卡片样式，使其背景颜色能跟随主题的日夜模式切换，且鼠标悬停时有放大效果。
 
-<a href="https://blog.butanediol.me/2020/06/03/Hexo%20改良版知乎外链卡片/" name="https://blog.butanediol.me/media/avatar.png" class="LinkCard">Hexo 改良版知乎“外链卡片”</a>
+<a href="https://blog.butanediol.me/2020/06/03/Hexo%20改良版知乎外链卡片/" logourl="https://blog.butanediol.me/media/avatar.png" class="LinkCard">Hexo 改良版知乎“外链卡片”</a>
 
 {% fold info @此方式已被弃用，改用样式与功能分离的方法实现 %}
 在 `source/js/` 目录下新建一个 `LinkCard.js` 文件（如果不存在该目录则需要先创建），代码如下：
@@ -556,7 +556,13 @@ custom_js:
     border-radius: inherit;
     background-color: var(--linkcard-bg-color);
 }
-.LinkCard-text { overflow: hidden; }
+.LinkCard-text {
+    overflow: hidden;
+    flex: 1;
+    max-width: calc(100% - 80px); 
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
 .LinkCard-title {
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -568,6 +574,8 @@ custom_js:
     font-weight: 500;
     line-height: 1.25;
     color: inherit;
+    white-space: normal;
+    margin-left: 5px;
 }
 .LinkCard-meta {
     display: flex;
@@ -576,17 +584,25 @@ custom_js:
     line-height: 20px;
     color: #999;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .LinkCard-imageCell {
-    margin-left: 8px;
+    margin-left: 10px;
     border-radius: 6px;
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0; 
+    overflow: hidden;
 }
 .LinkCard-image {
     display: block;
-    width: 60px !important;
-    height: auto !important;
+    width: 100% !important;
+    height: 100% !important;
     border-radius: inherit;
-    margin-bottom: 0 !important;
+    margin: 0 !important;
+    object-fit: cover;
+    object-position: center center;
 }
 .LinkCard:hover {
     transform: translate3d(0, -2px, 0);
@@ -599,18 +615,11 @@ custom_js:
 window.onload = function () {
     var LinkCards = document.getElementsByClassName('LinkCard');
     for (var i = 0; i < LinkCards.length; i++) {
-        // 截断链接
-        var truncateLink = function(url, maxLength) {
-            if (url.length <= maxLength) return url;
-            return url.slice(0, maxLength) + '...';
-        };
-
         var LinkCard = LinkCards[i];
         var link = LinkCard.href;
         var title = LinkCard.innerText;
-        // 如果没有指定logo地址，则使用默认的loading图片
-        var logourl = LinkCard.name ? LinkCard.name : '/img/loading/loading1.gif';
-        var displayLink = truncateLink(link, 32);
+        var logourl = LinkCard.name;
+        var displayLink = link;
 
         LinkCard.innerHTML =
             `<span class="LinkCard-content">
@@ -626,9 +635,14 @@ window.onload = function () {
                     </span>
                 </span>
                 <span class="LinkCard-imageCell">
-                    <img class="LinkCard-image" alt="logo" src="${logourl}" onerror="this.src='/img/loading/loading1.gif'">
+                    <img class="LinkCard-image" alt="logo" src="${logourl}" onerror="this.src='/img/loading/loading6.gif'">
                 </span>
-            </span>`; // 如果获取指定logo地址失败，则使用默认的loading图片
+            </span>`;
+
+        if (!logourl) {
+            var img = LinkCard.getElementsByClassName('LinkCard-image')[0];
+            img.style.display = 'none';
+        }
     }
 }
 ```
@@ -643,13 +657,13 @@ custom_js:
 
 使用时只需在文章中添加以下内容即可：
 ```markdown
-<a href="" name="" class="LinkCard">标题</a>
+<a href="" logourl="" class="LinkCard">标题</a>
 ```
 
 其中:
 
 - `href` 是链接地址，不填就只会收获一张空卡片哦
-- `name` 是链接的logo地址，若不指定或留空，则使用脚本中指定的默认logo地址（记得手动调整哦）
+- `logourl` 是链接的logo地址，不填则不显示图片
 - `class` 处为链接卡片的样式类名，必须为 `LinkCard`，否则无法应用样式。
 - `标题` 处为连接卡片显示的标题。
 
@@ -683,7 +697,7 @@ custom_css:
 
 在Fluid主题中，首页文章列表的文章卡片是静态显示的，没有任何动效。为了让首页看起来更有活力，我参考QingShang的博客为文章卡片添加了滑入动效。
 
-<a href="https://qingshaner.com/Hexo%20fluid主题首页添加文章滑入动画/" name="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202205021359396.jpg" class="LinkCard">Hexo fluid主题首页添加文章滑入动画</a>
+<a href="https://qingshaner.com/Hexo%20fluid主题首页添加文章滑入动画/" logourl="https://qingshaner.oss-cn-hangzhou.aliyuncs.com/images/202205021359396.jpg" class="LinkCard">Hexo fluid主题首页添加文章滑入动画</a>
 
 在 `source/js/` 目录下新建一个 `ScrollAnimation.js` 文件（如果不存在该目录则需要先创建），代码如下：
 ```javascript
@@ -743,7 +757,7 @@ custom_css:
 
 在实现首页文章滑入动效后，我又参照Hugo@kkl's的博客为首页文章图片添加了鼠标悬停动效
 
-<a href="https://zhangkeliang0627.github.io/2024/07/31/关于Fluid主题拓展的N种配置/README/" name="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/sys/avatar.png" class="LinkCard">关于Fluid主题拓展的N种配置</a>
+<a href="https://zhangkeliang0627.github.io/2024/07/31/关于Fluid主题拓展的N种配置/README/" logourl="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/sys/avatar.png" class="LinkCard">关于Fluid主题拓展的N种配置</a>
 
 在 `source/css/` 目录下新建一个 `IndexImgHover.css` 文件（如果不存在该目录则需要先创建），代码如下：
 ```css
@@ -786,7 +800,7 @@ custom_css:
 
 由于我的博客使用Github Pages托管，因此在加载时偶尔会花费较长时间，这时页面各种效果加载的速度往往并不一致，大大影响了观感。因此，我参考Emberffの小破站，为博客添加了彩虹加载动效。
 
-<a href="https://blog.emb42.com/2024/10/04/Hexo-Fluid%E8%83%8C%E6%99%AF%E5%9B%BA%E5%AE%9A%E4%BB%A5%E5%8F%8A%E6%B7%BB%E5%8A%A0%E5%8A%A0%E8%BD%BD%E5%8A%A8%E7%94%BB/" name="https://blog.emb42.com/img/avatar.png" class="LinkCard">Hexo Fluid背景固定以及添加加载动画</a>
+<a href="https://blog.emb42.com/2024/10/04/Hexo-Fluid%E8%83%8C%E6%99%AF%E5%9B%BA%E5%AE%9A%E4%BB%A5%E5%8F%8A%E6%B7%BB%E5%8A%A0%E5%8A%A0%E8%BD%BD%E5%8A%A8%E7%94%BB/" logourl="https://blog.emb42.com/img/avatar.png" class="LinkCard">Hexo Fluid背景固定以及添加加载动画</a>
 
 在 `source/js/` 目录下新建一个 `RainbowLoading.js` 文件（如果不存在该目录则需要先创建），代码如下：
 ```javascript
@@ -975,7 +989,7 @@ hexo.extend.filter.register('theme_inject', function(injects) {
 
 Hexo注入器的使用可以参考Fluid主题的用户手册。
 
-<a href="https://hexo.fluid-dev.com/docs/advance/#hexo-%E6%B3%A8%E5%85%A5%E4%BB%A3%E7%A0%81" name="https://hexo.fluid-dev.com/docs/fluid_hexo.png" class="LinkCard">Hexo 注入代码</a>
+<a href="https://hexo.fluid-dev.com/docs/advance/#hexo-%E6%B3%A8%E5%85%A5%E4%BB%A3%E7%A0%81" logourl="https://hexo.fluid-dev.com/docs/fluid_hexo.png" class="LinkCard">Hexo 注入代码</a>
 
 # 背景动态线条动效
 
@@ -1235,4 +1249,4 @@ custom_css:
 
 具体的代码可以参考我的博客仓库中的 `js` 和 `css` 目录。
 
-<a href="https://github.com/youyeyejie/youyeyejie.github.io" name="/img/avatar/avatar.webp" class="LinkCard">GitHub 仓库</a>
+<a href="https://github.com/youyeyejie/youyeyejie.github.io" logourl="/img/avatar/avatar.webp" class="LinkCard">GitHub 仓库</a>

@@ -29,7 +29,7 @@ excerpt: NIS4335 信息安全综合实践——AOSP编译实践记录
 # 下载 AOSP 源代码
 参考 [Android Google 文档](https://source.android.com/setup/build/downloading)、[清华镜像站指引](https://mirrors.tuna.tsinghua.edu.cn/help/AOSP/)、[科大镜像站指引](https://mirrors.ustc.edu.cn/help/aosp.html)
 
-<a href="https://source.android.google.cn/setup/build/downloading" target="_blank" name="https://source.android.com/_pwa/androidsource/icons/icon-144x144.png" class="LinkCard">Android Open Source Project</a>
+<a href="https://source.android.google.cn/setup/build/downloading" target="_blank" logourl="https://source.android.com/_pwa/androidsource/icons/icon-144x144.png" class="LinkCard">Android Open Source Project</a>
 
 在所有工作开始前，需要安装一些依赖包：
 ```bash
@@ -61,7 +61,7 @@ repo sync -c -j$(nproc)    # -c 仅同步当前分支
 ![disk usage](AOSP编译实践记录/image-4.webp)
 
 # 编译 AOSP
-<a href="https://source.android.google.cn/docs/setup/build/building" target="_blank" name="https://source.android.com/_pwa/androidsource/icons/icon-144x144.png" class="LinkCard">Building AOSP</a>
+<a href="https://source.android.google.cn/docs/setup/build/building" target="_blank" logourl="https://source.android.com/_pwa/androidsource/icons/icon-144x144.png" class="LinkCard">Building AOSP</a>
 
 进入工作目录，加载环境初始化脚本，然后选择构建目标：
 ```bash
