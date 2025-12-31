@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>https://youyeyejie.github.io/_posts/1-2-%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%84%8F%E8%AF%86%E3%80%90Xflops-HPC%20Start%20Guide%E3%80%91/</loc>
+    <loc>https://youyeyejie.github.io/_posts/1-1-%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E8%8E%B7%E5%8F%96%E4%BF%A1%E6%81%AF%E3%80%90Xflops-HPC%20Start%20Guide%E3%80%91/</loc>
     
     <lastmod>2025-12-31</lastmod>
     
@@ -56,7 +56,7 @@
   </url>
   
   <url>
-    <loc>https://youyeyejie.github.io/_posts/1-1-%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E8%8E%B7%E5%8F%96%E4%BF%A1%E6%81%AF%E3%80%90Xflops-HPC%20Start%20Guide%E3%80%91/</loc>
+    <loc>https://youyeyejie.github.io/_posts/1-2-%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%84%8F%E8%AF%86%E3%80%90Xflops-HPC%20Start%20Guide%E3%80%91/</loc>
     
     <lastmod>2025-12-31</lastmod>
     
@@ -101,7 +101,7 @@
   </url>
   
   <url>
-    <loc>https://youyeyejie.github.io/_posts/Fluid%E9%9A%8F%E6%9C%BA%E8%83%8C%E6%99%AF/</loc>
+    <loc>https://youyeyejie.github.io/_posts/Fluid%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/</loc>
     
     <lastmod>2025-12-31</lastmod>
     
@@ -110,7 +110,7 @@
   </url>
   
   <url>
-    <loc>https://youyeyejie.github.io/_posts/Fluid%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/</loc>
+    <loc>https://youyeyejie.github.io/_posts/Fluid%E9%9A%8F%E6%9C%BA%E8%83%8C%E6%99%AF/</loc>
     
     <lastmod>2025-12-31</lastmod>
     
@@ -173,7 +173,7 @@
   </url>
   
   <url>
-    <loc>https://youyeyejie.github.io/_posts/5-4-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%A6%82%E8%BF%B0%E3%80%90Xflops-HPC%20Start%20Guide%E3%80%91/</loc>
+    <loc>https://youyeyejie.github.io/_posts/6-2-2-Python%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80%E3%80%90Xflops-HPC%20Start%20Guide%E3%80%91/</loc>
     
     <lastmod>2025-12-31</lastmod>
     
@@ -182,7 +182,7 @@
   </url>
   
   <url>
-    <loc>https://youyeyejie.github.io/_posts/6-2-2-Python%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80%E3%80%90Xflops-HPC%20Start%20Guide%E3%80%91/</loc>
+    <loc>https://youyeyejie.github.io/_posts/5-4-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%A6%82%E8%BF%B0%E3%80%90Xflops-HPC%20Start%20Guide%E3%80%91/</loc>
     
     <lastmod>2025-12-31</lastmod>
     
@@ -560,6 +560,15 @@
   </url>
   
   <url>
+    <loc>https://youyeyejie.github.io/_posts/%E4%BF%A1%E6%81%AF%E8%AE%BA%E5%9F%BA%E7%A1%80/</loc>
+    
+    <lastmod>2025-06-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://youyeyejie.github.io/_posts/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0/</loc>
     
     <lastmod>2025-06-20</lastmod>
@@ -569,7 +578,7 @@
   </url>
   
   <url>
-    <loc>https://youyeyejie.github.io/_posts/%E4%BF%A1%E6%81%AF%E8%AE%BA%E5%9F%BA%E7%A1%80/</loc>
+    <loc>https://youyeyejie.github.io/_posts/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/</loc>
     
     <lastmod>2025-06-20</lastmod>
     
@@ -587,7 +596,7 @@
   </url>
   
   <url>
-    <loc>https://youyeyejie.github.io/_posts/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/</loc>
+    <loc>https://youyeyejie.github.io/_posts/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA/</loc>
     
     <lastmod>2025-06-20</lastmod>
     
@@ -606,15 +615,6 @@
   
   <url>
     <loc>https://youyeyejie.github.io/_posts/%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/</loc>
-    
-    <lastmod>2025-06-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://youyeyejie.github.io/_posts/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E5%AE%89%E5%85%A8%E5%AF%BC%E8%AE%BA/</loc>
     
     <lastmod>2025-06-20</lastmod>
     
@@ -744,6 +744,13 @@
   </url>
   
   <url>
+    <loc>https://youyeyejie.github.io/tags/%E6%80%9D%E4%BF%AE/</loc>
+    <lastmod>2025-12-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://youyeyejie.github.io/tags/Web/</loc>
     <lastmod>2025-12-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -751,7 +758,7 @@
   </url>
   
   <url>
-    <loc>https://youyeyejie.github.io/tags/%E6%80%9D%E4%BF%AE/</loc>
+    <loc>https://youyeyejie.github.io/tags/%E4%BF%A1%E6%81%AF%E8%AE%BA/</loc>
     <lastmod>2025-12-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -772,14 +779,7 @@
   </url>
   
   <url>
-    <loc>https://youyeyejie.github.io/tags/%E4%BF%A1%E6%81%AF%E8%AE%BA/</loc>
-    <lastmod>2025-12-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://youyeyejie.github.io/tags/%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1/</loc>
+    <loc>https://youyeyejie.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
     <lastmod>2025-12-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -793,28 +793,7 @@
   </url>
   
   <url>
-    <loc>https://youyeyejie.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
-    <lastmod>2025-12-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://youyeyejie.github.io/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</loc>
-    <lastmod>2025-12-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://youyeyejie.github.io/tags/%E7%8E%B0%E4%BB%A3%E5%AF%86%E7%A0%81%E5%AD%A6/</loc>
-    <lastmod>2025-12-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://youyeyejie.github.io/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8/</loc>
+    <loc>https://youyeyejie.github.io/tags/%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1/</loc>
     <lastmod>2025-12-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -828,14 +807,28 @@
   </url>
   
   <url>
-    <loc>https://youyeyejie.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/</loc>
+    <loc>https://youyeyejie.github.io/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8/</loc>
     <lastmod>2025-12-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://youyeyejie.github.io/tags/%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6/</loc>
+    <loc>https://youyeyejie.github.io/tags/%E7%8E%B0%E4%BB%A3%E5%AF%86%E7%A0%81%E5%AD%A6/</loc>
+    <lastmod>2025-12-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://youyeyejie.github.io/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</loc>
+    <lastmod>2025-12-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://youyeyejie.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/</loc>
     <lastmod>2025-12-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -849,14 +842,21 @@
   </url>
   
   <url>
-    <loc>https://youyeyejie.github.io/tags/%E9%A9%AC%E5%8E%9F/</loc>
+    <loc>https://youyeyejie.github.io/tags/%E7%BD%91%E5%AE%89%E6%B3%95/</loc>
     <lastmod>2025-12-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://youyeyejie.github.io/tags/%E7%BD%91%E5%AE%89%E6%B3%95/</loc>
+    <loc>https://youyeyejie.github.io/tags/%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6/</loc>
+    <lastmod>2025-12-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://youyeyejie.github.io/tags/%E9%A9%AC%E5%8E%9F/</loc>
     <lastmod>2025-12-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
