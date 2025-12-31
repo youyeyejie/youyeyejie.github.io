@@ -67,6 +67,8 @@ wrong_pass_message: Sorry, the password seems incorrect, please try again.
 wrong_hash_message: Sorry, this article's content seems to be corrupted.
 ```
 
+而对于在上面全局配置中定义的加密标签，如果不希望加密，只需要在文章的 Front Matter 中添加 `password: ""` 即可。
+
 # 适配 Fluid 主题
 在安装并配置好 hexo-blog-encrypt 插件后，我发现其自带的样式与 Fluid 主题不太匹配。并且在输入错误密码时，使用的是浏览器的默认 alert 弹窗，显得比较突兀。因此，我决定对其进行适配和美化。
 
