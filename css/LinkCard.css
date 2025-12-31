@@ -38,6 +38,10 @@
     overflow: hidden;
     flex: 1;
     max-width: calc(100% - 80px); 
+    min-height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     white-space: nowrap;
     text-overflow: ellipsis;
 }

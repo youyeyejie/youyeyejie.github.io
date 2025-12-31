@@ -1,0 +1,83 @@
+/* 信息提示框 */
+:root {
+    /* 默认info类型（基础样式） */
+    --tooltip-info-bg: #181c27a4;
+    --tooltip-info-text: #fff;
+    --tooltip-info-border: 1px solid #2d3446;
+
+    /* warning类型（警告样式：黄色系） */
+    --tooltip-warning-bg: #f5a623a4;
+    --tooltip-warning-text: #fff;
+    --tooltip-warning-border: 1px solid #f7c04a;
+
+    /* error类型（错误样式：红色系，额外扩展，增强实用性） */
+    --tooltip-error-bg: #e53e3ea4;
+    --tooltip-error-text: #fff;
+    --tooltip-error-border: 1px solid #f56565;
+
+    /* success类型（成功样式：绿色系，额外扩展，增强实用性） */
+    --tooltip-success-bg: #305f46a4;
+    --tooltip-success-text: #fff;
+    --tooltip-success-border: 1px solid #305f46;
+}
+
+/* 暗黑模式适配（反转各类型样式对比度） */
+[data-user-color-scheme="dark"] {
+    --tooltip-info-bg: #eeeeeec0;
+    --tooltip-info-text: #181c27;
+    --tooltip-info-border: 1px solid #dcdcdc;
+
+    --tooltip-warning-bg: #f5a623c0;
+    --tooltip-warning-text: #fff;
+    --tooltip-warning-border: 1px solid #f7c04a;
+
+    --tooltip-error-bg: #e53e3ec0;
+    --tooltip-error-text: #fff;
+    --tooltip-error-border: 1px solid #f56565;
+
+    --tooltip-success-bg: #3b7154a4;
+    --tooltip-success-text: #fff;
+    --tooltip-success-border: 1px solid #305f46;
+}
+
+
+.tooltip {
+    position: fixed;
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 25px;
+    border-radius: 5px;
+    opacity: 0;
+    z-index: 99;
+    transition: opacity 1s ease-in-out;
+    pointer-events: none;
+}
+
+.show-tooltip {
+    opacity: 0.9;
+}
+
+.info {
+    background: var(--tooltip-info-bg);
+    color: var(--tooltip-info-text);
+    border: var(--tooltip-info-border);
+}
+
+.warning {
+    background: var(--tooltip-warning-bg);
+    color: var(--tooltip-warning-text);
+    border: var(--tooltip-warning-border);
+}
+
+.error {
+    background: var(--tooltip-error-bg);
+    color: var(--tooltip-error-text);
+    border: var(--tooltip-error-border);
+}
+
+.success {
+    background: var(--tooltip-success-bg);
+    color: var(--tooltip-success-text);
+    border: var(--tooltip-success-border);
+}

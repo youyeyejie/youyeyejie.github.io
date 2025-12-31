@@ -79,6 +79,7 @@
 <link rel="stylesheet" href="/css/Background.css">
 <link rel="stylesheet" href="/css/CodeBlock.css">
 <link rel="stylesheet" href="/css/CodeInLine.css">
+<link rel="stylesheet" href="/css/Crypto.css">
 <link rel="stylesheet" href="/css/Gallery.css">
 <link rel="stylesheet" href="/css/IndexImgHover.css">
 <link rel="stylesheet" href="/css/LinkCard.css">
@@ -87,6 +88,7 @@
 <link rel="stylesheet" href="/css/Sidebar.css">
 <link rel="stylesheet" href="/css/StrongInDark.css">
 <link rel="stylesheet" href="/css/TitleGradient.css">
+<link rel="stylesheet" href="/css/Tooltip.css">
 <link rel="stylesheet" href="/css/UnifyImgWidth.css">
 
 
@@ -122,7 +124,7 @@
 </head>
 
 
-<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><div id="tooltip" class="tooltip"></div><!-- hexo injector body_begin end -->
   <div id="loader-container"> 
     <div id="loader" class="loader"></div>
     <div class="loader-inner">
@@ -145,10 +147,7 @@
 </div>
 
 <script src="/js/RainbowLoading.js" type="text/javascript"></script>
-<link href="/css/RainbowLoading.css" type="text/css" rel="stylesheet"/><div id="tooltip-rightmenu" class="tooltip-rightmenu">如需原始右键菜单请按下 <strong>Ctrl+右键</strong></div>
-<div id="tooltip-rightmenu-return" class="tooltip-rightmenu"></div>
-
-<div id="rightmenu-wrapper">
+<link href="/css/RainbowLoading.css" type="text/css" rel="stylesheet"/><div id="rightmenu-wrapper">
   <ul class="list-v rightmenu" id="rightmenu-content">
 	    <li class="navigation menuNavigation-Content">
             <a class="nav icon-only fix-cursor-default" aria-label="back" onclick="history.back()"><i class="fa-solid fa-chevron-left"></i></a>
@@ -523,7 +522,7 @@
         aria-expanded="true"
       >
         Hexo Blog Building
-        <span class="list-group-count">(10)</span>
+        <span class="list-group-count">(12)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -622,6 +621,24 @@
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">Fluid全屏背景</span>
+        </a>
+      
+    
+      
+      
+        <a href="/_posts/Fluid%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8F%90%E7%A4%BA%E6%B0%94%E6%B3%A1/" title="Fluid自定义提示气泡"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Fluid自定义提示气泡</span>
+        </a>
+      
+    
+      
+      
+        <a href="/_posts/Hexo%E6%96%87%E7%AB%A0%E5%8A%A0%E5%AF%86/" title="Hexo文章加密"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Hexo文章加密</span>
         </a>
       
     
@@ -1160,12 +1177,14 @@ HTML 文件中注入自定义内容。</p>
 
 
   
+<script src="/js/Crypto.js"></script>
 <script src="/js/LinkCard.js"></script>
 <script src="/js/RandomBanner.js"></script>
 <script src="/js/Background.js"></script>
 <script src="/js/ScrollAnimation.js"></script>
 <script src="/js/Sidebar.js"></script>
 <script src="/js/TabDisplay.js"></script>
+<script src="/js/Tooltip.js"></script>
 <script src="/js/Umami.js"></script>
 
 
@@ -1176,8 +1195,8 @@ HTML 文件中注入自定义内容。</p>
 
 
   <script type="text/javascript">
-  document.getElementById("g-total-word-id").innerHTML = "613k";
-  document.getElementById('g-total-posts-id').textContent ="60";
+  document.getElementById("g-total-word-id").innerHTML = "618k";
+  document.getElementById('g-total-posts-id').textContent ="62";
 </script>
 
   <noscript>
