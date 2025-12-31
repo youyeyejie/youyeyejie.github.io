@@ -34,7 +34,13 @@
     border-radius: inherit;
     background-color: var(--linkcard-bg-color);
 }
-.LinkCard-text { overflow: hidden; }
+.LinkCard-text {
+    overflow: hidden;
+    flex: 1;
+    max-width: calc(100% - 80px); 
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
 .LinkCard-title {
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -46,6 +52,8 @@
     font-weight: 500;
     line-height: 1.25;
     color: inherit;
+    white-space: normal;
+    margin-left: 5px;
 }
 .LinkCard-meta {
     display: flex;
@@ -54,17 +62,25 @@
     line-height: 20px;
     color: #999;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .LinkCard-imageCell {
-    margin-left: 8px;
+    margin-left: 10px;
     border-radius: 6px;
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0; 
+    overflow: hidden;
 }
 .LinkCard-image {
     display: block;
-    width: 60px !important;
-    height: auto !important;
+    width: 100% !important;
+    height: 100% !important;
     border-radius: inherit;
     margin: 0 !important;
+    object-fit: cover;
+    object-position: center center;
 }
 .LinkCard:hover {
     transform: translate3d(0, -2px, 0);
