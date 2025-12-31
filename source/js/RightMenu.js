@@ -32,13 +32,10 @@ window.oncontextmenu = function(e){
 	right_click_num = right_click_num + 1; //右键点击次数加1
 
 	if(right_click_num == 1){
-        const tooltip = document.getElementById('tooltip-rightmenu');
-        tooltip.classList.add('show-tooltip');
-
-        // 3秒后隐藏提示框
-        setTimeout(() => {
-		    tooltip.classList.remove('show-tooltip');
-        }, 3000);
+        showTooltip({
+            type: 'info',
+            message: '如需原始右键菜单请按下 <strong>Ctrl+右键</strong>'
+        });
 	}
 }
 
@@ -128,12 +125,10 @@ function copySelectedText() {
     const selectedText = window.getSelection().toString();
     if (selectedText) {
         navigator.clipboard.writeText(selectedText);
-        const tooltip = document.getElementById('tooltip-rightmenu-return');
-        tooltip.textContent = '选中文本已复制到剪贴板';
-        tooltip.classList.add('show-tooltip');
-        setTimeout(() => {
-            tooltip.classList.remove('show-tooltip');
-        }, 1500);
+        showTooltip({
+            type: 'success',
+            message: '选中文本已复制到剪贴板'
+        });
     }
 }
 
@@ -165,12 +160,10 @@ function downloadImage(imgsrc) {
             a.click();
             URL.revokeObjectURL(url);
             document.body.removeChild(a);
-            const tooltip = document.getElementById('tooltip-rightmenu-return');
-            tooltip.textContent = '图片已下载';
-            tooltip.classList.add('show-tooltip');
-            setTimeout(() => {
-                tooltip.classList.remove('show-tooltip');
-            }, 1500);
+            showTooltip({
+                type: 'success',
+                message: '图片已下载'
+            });
         })
         .catch(error => console.error('Error downloading image:', error));
 }
@@ -179,12 +172,10 @@ function downloadImage(imgsrc) {
 function copyImageLink(imgsrc) {
     if (imgsrc) {
         navigator.clipboard.writeText(imgsrc);
-        const tooltip = document.getElementById('tooltip-rightmenu-return');
-        tooltip.textContent = '链接已复制到剪贴板';
-        tooltip.classList.add('show-tooltip');
-        setTimeout(() => {
-            tooltip.classList.remove('show-tooltip');
-        }, 1500);
+        showTooltip({
+            type: 'success',
+            message: '链接已复制到剪贴板'
+        });
     }
 }
 
@@ -219,14 +210,10 @@ function RandomGo() {
 function copyLink() {
     const link = window.location.href;
     navigator.clipboard.writeText(link);
-    const tooltip = document.getElementById('tooltip-rightmenu-return');
-    tooltip.textContent = '链接已复制到剪贴板';
-    tooltip.classList.add('show-tooltip');
-
-    // 3秒后隐藏提示框
-    setTimeout(() => {
-        tooltip.classList.remove('show-tooltip');
-    }, 1500);
+    showTooltip({
+        type: 'success',
+        message: '链接已复制到剪贴板'
+    });
 }
 
 // 切换昼夜模式功能
@@ -271,14 +258,22 @@ function toggleBackgroundMode() {
     }
 }
 
-// 初始化图标状态
-if (localStorage.getItem('DarkNightMode') === 'true') {
-    document.getElementById("toggle-color-mode-icon").className = "iconfont icon-light";
-} else {
-    document.getElementById("toggle-color-mode-icon").className = "iconfont icon-dark";
-}
-if (localStorage.getItem('BackgroundMode') === 'true') {
-    document.getElementById('toggle-background-mode-icon').className = "fa-solid fa-toggle-on";
-} else {
-    document.getElementById('toggle-background-mode-icon').className = "fa-solid fa-toggle-off";
-}
+// 页面加载完毕后初始化图标状态和提示
+window.addEventListener('DOMContentLoaded', function() {
+    if (localStorage.getItem('DarkNightMode') === 'true') {
+        document.getElementById("toggle-color-mode-icon").className = "iconfont icon-light";
+    } else {
+        document.getElementById("toggle-color-mode-icon").className = "iconfont icon-dark";
+    }
+    if (localStorage.getItem('BackgroundMode') === 'true') {
+        document.getElementById('toggle-background-mode-icon').className = "fa-solid fa-toggle-on";
+    } else {
+        document.getElementById('toggle-background-mode-icon').className = "fa-solid fa-toggle-off";
+    }
+
+    // 显示提示气泡
+    showTooltip({
+        type: 'info',
+        message: '如需原始右键菜单请按下 <strong>Ctrl+右键</strong>'
+    });
+});

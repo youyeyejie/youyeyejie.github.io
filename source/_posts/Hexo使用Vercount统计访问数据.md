@@ -5,7 +5,7 @@ tags:
   - Fluid
 categories:
   - Hexo Blog Building
-excerpt: 使用Vercount代替Busuanzi统计Hexo博客访问数据，提供更稳定准确的访问统计信息。
+excerpt: 使用 Vercount 代替 Busuanzi 统计 Hexo 博客访问数据，提供更稳定准确的访问统计信息。
 category_bar: true
 index_img: /_posts/Hexo使用Vercount统计访问数据/image.webp
 date: 2025-07-20 12:19:01

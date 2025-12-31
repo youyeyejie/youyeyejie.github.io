@@ -140,3 +140,15 @@ shiki:
 pandoc:
   args:
     --mathjax
+
+# hexo-blog-encrypt
+encrypt:
+  enable: true
+  abstract: "本文已加密，请输入密码查看完整内容"
+  message: "请输入密码"
+  tags:
+    - [name: "Encrypted", password: "youyeyejie050218"]
+  wrong_pass_message: "密码错误，请重试！"
+  wrong_hash_message: "内容损坏"
+  silent: true
+  theme: shrink
