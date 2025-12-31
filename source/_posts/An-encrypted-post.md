@@ -2,12 +2,12 @@
 title: An encrypted post
 hide: true
 date: 2025-12-31 15:36:26
-password: y0uy3y3j!3
-message: The password? It's "y0uy3y3j!3"!
+password: youyeyejie
+message: I guess the password is "y0uy3y3j!3"?
 ---
 
 # This is an encrypted post
-y0uy3y3j!3 is the password to view this post. Congratulations on finding it!
+Youyeyejie is the password to view this post. Congratulations on finding it!
 
 ## Test Codeblock
 ```python
