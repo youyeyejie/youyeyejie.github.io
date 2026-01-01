@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis3364.webp">
 <meta property="article:published_time" content="2025-12-27T11:44:35.000Z">
-<meta property="article:modified_time" content="2026-01-01T08:33:51.296Z">
+<meta property="article:modified_time" content="2026-01-01T09:31:34.644Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU">
 <meta property="article:tag" content="计算机网络">
@@ -456,7 +456,7 @@
         
         
           <!-- compatible with older versions-->
-          730 分钟
+          729 分钟
         
       </span>
     
@@ -1463,7 +1463,7 @@ SDU：同一系统内，层与层之间交换的数据包称为服务数据单�
 <figcaption aria-hidden="true">TCP/IP 的体系结构</figcaption>
 </figure>
 <ul>
-<li>些应用程序可以直接使用 IP
+<li>有些应用程序可以直接使用 IP
 层，或甚至直接使用最下面的网络接口层。</li>
 </ul>
 <h1 id="物理层-1">物理层</h1>
@@ -1503,7 +1503,7 @@ SDU：同一系统内，层与层之间交换的数据包称为服务数据单�
 <li>模拟信号（analogous signal）：消息参数取值连续。</li>
 <li>数字信号（digital signal）：消息参数取值离散。</li>
 </ul></li>
-<li>码元：在使用时间域(简称为时域)的波形表示数字信号时，代表不同离散数值的基本波形。
+<li>码元：在使用时间域（简称为时域）的波形表示数字信号时，代表不同离散数值的基本波形。
 <ul>
 <li>使用二进制编码时，只有两种不同的码元：0 状态，1 状态。</li>
 </ul></li>
@@ -1523,17 +1523,17 @@ SDU：同一系统内，层与层之间交换的数据包称为服务数据单�
 </ul></li>
 <li><strong>调制</strong>
 <ul>
-<li><strong>基带调制</strong>：仅对基带信号的波形进行变换，把数字信号转换为另一种形式的数字信号。把这种过程称为编码（coding）。</li>
-<li><strong>带通调制</strong>：使用载波（carrier）进行调制，把基带信号的频率范围搬移到较高的频段，并转换为模拟信号。经过载波调制后的信号称为带通信号（即仅在一段频率范围内能够通过信道的信号）。</li>
-<li><strong>常用编码方式</strong>：
+<li><strong>基带调制</strong>：仅对基带信号的波形进行变换，把数字信号转换为另一种形式的数字信号。把这种过程称为编码（coding）。
 <ul>
-<li>不归零制：正电平代表 1，负电平代表 0。</li>
-<li>归零制：正电平代表 1，负电平代表 0。</li>
-<li>曼彻斯特编码：位周期中心的向上跳变代表 0，位周期中心的向下跳变代表 1
-。但也可反过来定义。</li>
-<li>差分曼彻斯特编码：在每一位的中心处始终都有跳变。位开始边界有跳变代表
+<li><strong>常用编码方式</strong>：
+<ol type="1">
+<li><strong>不归零制编码</strong>：正电平代表 1，负电平代表 0。</li>
+<li><strong>归零制编码</strong>：正电平代表 1，负电平代表 0。</li>
+<li><strong>曼彻斯特编码</strong>：位周期中心的向上跳变代表
+0，位周期中心的向下跳变代表 1 。但也可反过来定义。</li>
+<li><strong>差分曼彻斯特编码</strong>：在每一位的中心处始终都有跳变。位开始边界有跳变代表
 0，而位开始边界没有跳变代表 1。</li>
-</ul>
+</ol>
 <figure>
 <img src="image-16.webp" srcset="/img/loading/loading3.gif" lazyload alt="常用编码方式">
 <figcaption aria-hidden="true">常用编码方式</figcaption>
@@ -1544,31 +1544,24 @@ SDU：同一系统内，层与层之间交换的数据包称为服务数据单�
 <li>不归零制和归零制没有自同步能力。</li>
 <li><strong>曼彻斯特编码和差分曼彻斯特编码具有自同步能力</strong>。</li>
 </ul></li>
-<li><strong>基本的带通调制方法</strong>：基带信号往往包含有较多的低频成分，甚至有直流成分，而许多信道并不能传输这种低频分量或直流分量。必须对基带信号进行调制（modulation）。
+</ul></li>
+<li><strong>带通调制</strong>：使用载波（carrier）进行调制（modulation），把基带信号的频率范围搬移到较高的频段，并转换为模拟信号。经过载波调制后的信号称为带通信号（即仅在一段频率范围内能够通过信道的信号）。
 <ol type="1">
 <li><strong>调幅</strong> AM：载波的振幅随基带数字信号而变化。</li>
 <li><strong>调频</strong> FM：载波的频率随基带数字信号而变化。</li>
-<li><strong>调相</strong> PM：载波的初始相位随基带数字信号而变化。</li>
-</ol>
-<figure>
-<img src="image-17.webp" srcset="/img/loading/loading3.gif" lazyload alt="基本带通调制方式">
-<figcaption aria-hidden="true">基本带通调制方式</figcaption>
-</figure></li>
-<li>正交振幅调制 QAM（Quadrature Amplitude Modulation）
+<li><strong>调相</strong> PM：载波的初始相位随基带数字信号而变化。 <img src="image-17.webp" srcset="/img/loading/loading3.gif" lazyload alt="基本带通调制方式"></li>
+<li><strong>正交振幅调制</strong> QAM（Quadrature Amplitude
+Modulation）：多元制的振幅相位混合调制方法，能达到更高的信息传输速率。
 <ul>
-<li>一种多元制的振幅相位混合调制方法，以达到更高的信息传输速率。</li>
-<li>例如：
+<li>示例：
 <ul>
 <li>可供选择的相位有 12 种，而对于每一种相位有 1 或 2
 种振幅可供选择。总共有 16 种组合，即 16 个码元。</li>
 <li>由于 4 bit 编码共有 16 种不同的组合，因此这 16
-个点中的每个点可对应于一种 4 bit 的编码。数据传输率可提高 4 倍。</li>
+个点中的每个点可对应于一种 4 bit 的编码。数据传输率可提高 4 倍。 <img src="image-18.webp" srcset="/img/loading/loading3.gif" lazyload alt="QAM"></li>
 </ul></li>
-<li><figure>
-<img src="image-18.webp" srcset="/img/loading/loading3.gif" lazyload alt="QAM">
-<figcaption aria-hidden="true">QAM</figcaption>
-</figure></li>
 </ul></li>
+</ol></li>
 </ul></li>
 </ul>
 <h4 id="信道的极限容量">信道的极限容量</h4>
