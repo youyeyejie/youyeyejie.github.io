@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis3364.webp">
 <meta property="article:published_time" content="2025-12-27T11:44:35.000Z">
-<meta property="article:modified_time" content="2026-01-01T09:31:34.644Z">
+<meta property="article:modified_time" content="2026-01-01T11:42:43.005Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU">
 <meta property="article:tag" content="计算机网络">
@@ -1527,8 +1527,10 @@ SDU：同一系统内，层与层之间交换的数据包称为服务数据单�
 <ul>
 <li><strong>常用编码方式</strong>：
 <ol type="1">
-<li><strong>不归零制编码</strong>：正电平代表 1，负电平代表 0。</li>
-<li><strong>归零制编码</strong>：正电平代表 1，负电平代表 0。</li>
+<li><strong>不归零制编码</strong>：正电平代表 1，负电平代表
+0，无中间状态。</li>
+<li><strong>归零制编码</strong>：正电平代表 1，负电平代表
+0，中间有零电平状态。</li>
 <li><strong>曼彻斯特编码</strong>：位周期中心的向上跳变代表
 0，位周期中心的向下跳变代表 1 。但也可反过来定义。</li>
 <li><strong>差分曼彻斯特编码</strong>：在每一位的中心处始终都有跳变。位开始边界有跳变代表
@@ -1619,8 +1621,8 @@ Rate）是电子通信领域中的一个重要概念，它用于度量数据传�
 <li>传输媒体是数据传输系统中在发送器和接收器之间的物理通路。</li>
 <li>分类：
 <ul>
-<li>导引型传输媒体：电磁波被导引沿着固体媒体（铜线或光纤）传播。</li>
-<li>非导引型传输媒体：指自由空间。非导引型传输媒体中电磁波的传输常称为无线传输。</li>
+<li><strong>导引型传输媒体</strong>：电磁波被导引沿着固体媒体（铜线或光纤）传播。</li>
+<li><strong>非导引型传输媒体</strong>：指自由空间。非导引型传输媒体中电磁波的传输常称为无线传输。</li>
 </ul></li>
 <li>电信领域使用的电磁波的频谱： <img src="image-21.webp" srcset="/img/loading/loading3.gif" lazyload alt="电磁波频谱"></li>
 </ul>
@@ -1661,8 +1663,8 @@ Rate）是电子通信领域中的一个重要概念，它用于度量数据传�
 </ul>
 <h4 id="光缆">光缆</h4>
 <ul>
-<li>光纤是光纤通信的传输媒体。通过传递光脉冲来进行通信。其传输带宽远远大于目前其他各种传输媒体的带宽。</li>
-<li>光纤通信系统的基本组成
+<li><p>光纤是光纤通信的传输媒体。通过传递光脉冲来进行通信。其传输带宽远远大于目前其他各种传输媒体的带宽。</p></li>
+<li><p>光纤通信系统的基本组成</p>
 <ul>
 <li>发送端：要有光源，在电脉冲的作用下能产生出光脉冲。
 <ul>
@@ -1670,13 +1672,9 @@ Rate）是电子通信领域中的一个重要概念，它用于度量数据传�
 </ul></li>
 <li>接收端：要有光检测器，利用光电二极管做成，在检测到光脉冲时还原出电脉冲。</li>
 </ul></li>
-<li>光波在纤芯中的传播：不断进行全反射</li>
-<li>分类
+<li><p>光波在纤芯中的传播：不断进行全反射</p></li>
+<li><p>分类： <img src="image-25.webp" srcset="/img/loading/loading3.gif" lazyload alt="多模光纤与单模光纤"></p>
 <ul>
-<li><figure>
-<img src="image-25.webp" srcset="/img/loading/loading3.gif" lazyload alt="多模光纤与单模光纤">
-<figcaption aria-hidden="true">多模光纤与单模光纤</figcaption>
-</figure></li>
 <li>多模光纤
 <ul>
 <li>可以存在多条不同角度入射的光线在一条光纤中传输。</li>
@@ -1689,18 +1687,18 @@ Rate）是电子通信领域中的一个重要概念，它用于度量数据传�
 <li>光源要使用昂贵的半导体激光器，不能使用较便宜的发光二极管。</li>
 </ul></li>
 </ul></li>
-<li>光纤通信中使用的光波的波段
+<li><p>光纤通信中使用的光波的波段</p>
 <ul>
 <li>常用的三个波段的中心：
 <ul>
-<li><span class="math inline">\(850~nm\)</span> ，</li>
-<li><span class="math inline">\(1300~nm\)</span> ，</li>
-<li><span class="math inline">\(1550~nm\)</span> 。</li>
+<li><span class="math inline">\(850~nm\)</span></li>
+<li><span class="math inline">\(1300~nm\)</span></li>
+<li><span class="math inline">\(1550~nm\)</span></li>
 </ul></li>
 <li>所有这三个波段都具有 <span class="math inline">\(25000\sim 30000
 ~GHz\)</span> 的带宽，通信容量非常大。</li>
 </ul></li>
-<li>光缆：
+<li><p>光缆：</p>
 <ul>
 <li>光纤必须做成很结实的光缆。
 <ul>
@@ -1711,7 +1709,7 @@ Rate）是电子通信领域中的一个重要概念，它用于度量数据传�
 </ul></li>
 <li>使抗拉强度达到几公斤，完全可以满足工程施工</li>
 </ul></li>
-<li>光纤优点
+<li><p>光纤优点</p>
 <ul>
 <li>通信容量非常大</li>
 <li>传输损耗小，中继距离长，对远距离传输特别经济。</li>
@@ -1783,27 +1781,21 @@ Sight），不能有障碍物，存在多径效应。</li>
 <h2 id="信道复用技术">信道复用技术</h2>
 <ul>
 <li>复用（multiplexing）：允许用户使用一个共享信道进行通信。</li>
-</ul>
-<h3 id="频分复用时分复用和统计时分复用">频分复用、时分复用和统计时分复用</h3>
-<ul>
-<li><strong>频分多址与时分多址</strong>
-<ul>
-<li>频分多址接入 FDMA（Frequency Division Multiple Access）：可让 <span class="math inline">\(N\)</span>
-个用户各使用一个频带，或让更多的用户轮流使用这 <span class="math inline">\(N\)</span> 个频带。</li>
-<li>时分多址接入 TDMA（Time Division Multiple Access）：可让 <span class="math inline">\(N\)</span>
-个用户各使用一个时隙，或让更多的用户轮流使用这 <span class="math inline">\(N\)</span> 个时隙。</li>
-</ul></li>
 <li>复用器（multiplexer）和分用器（demultiplexer）成对使用。 <img src="image-30.webp" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul>
-<h4 id="频分复用-fdmfrequency-division-multiplexing">频分复用
-FDM（Frequency Division Multiplexing）</h4>
+<h3 id="频分复用-fdmfrequency-division-multiplexing">频分复用
+FDM（Frequency Division Multiplexing）</h3>
 <ul>
 <li>最基本的复用方式</li>
 <li>定义：将整个带宽分为多份，用户在分配到一定的频带后，在通信过程中自始至终都占用这个频带。</li>
 <li>特点：所有用户在同样的时间占用不同的带宽（即频带）资源。</li>
+<li><strong>频分多址接入</strong> FDMA（Frequency Division Multiple
+Access）：让 <span class="math inline">\(N\)</span> 个用户各使用一个 FDM
+的频带，或让更多的用户轮流使用这 <span class="math inline">\(N\)</span>
+个频带。</li>
 </ul>
-<h4 id="时分复用-tdmtime-division-multiplexing">时分复用 TDM（Time
-Division Multiplexing）</h4>
+<h3 id="时分复用-tdmtime-division-multiplexing">时分复用 TDM（Time
+Division Multiplexing）</h3>
 <ul>
 <li>定义：将时间划分为一段段<strong>等长的</strong>时分复用帧（TDM
 帧），每一个 TDM 帧又划分为若干个时隙（time
@@ -1814,11 +1806,15 @@ slot），每一个时分复用的用户在每一个 TDM 帧中占用固定序�
 帧的长度）。</li>
 <li>所有用户在不同的时间占用同样的频带宽度。</li>
 </ul></li>
+<li><strong>时分多址接入</strong> TDMA（Time Division Multiple
+Access）：让 <span class="math inline">\(N\)</span> 个用户各使用一个 TDM
+的时隙，或让更多的用户轮流使用这 <span class="math inline">\(N\)</span>
+个时隙。</li>
 <li>TDM 信号也称为等时（isochronous）信号。</li>
 <li>时分复用会导致信道利用率不高 <img src="image-31.webp" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul>
-<h4 id="统计时分复用-stdmstatistical-time-division-multiplexing">统计时分复用
-STDM（Statistical Time Division Multiplexing）</h4>
+<h3 id="统计时分复用-stdmstatistical-time-division-multiplexing">统计时分复用
+STDM（Statistical Time Division Multiplexing）</h3>
 <ul>
 <li>定义：根据各个用户的实际需要动态地分配时隙，而不是像时分复用 TDM
 那样为每一个用户分配固定的时隙。</li>
@@ -1844,11 +1840,13 @@ Division Multiplexing）</h3>
 <li>每一个用户可以在同样的时间使用同样的频带进行通信。</li>
 <li>各用户使用经过特殊挑选的不同码型，因此不会造成干扰。</li>
 </ul></li>
-<li>当码分复用 CDM（Code Division
-Multiplexing）信道为多个不同地址的用户所共享时，就称为码分多址
-CDMA（Code Division Multiple Access）。
+<li><strong>码分多址接入</strong> CDMA（Code Division Multiple
+Access）：
 <ul>
-<li><p>CDMA 工作原理 <img src="image-34.webp" srcset="/img/loading/loading3.gif" lazyload alt="CDMA工作原理"></p>
+<li><p>让 <span class="math inline">\(N\)</span>
+个用户各使用一个独特的<strong>码片序列</strong>在 CDM
+信道上进行通信，或让更多的用户轮流使用这些码片序列。</p></li>
+<li><p>CDMA 工作原理 <img src="image-34.webp" srcset="/img/loading/loading3.gif" lazyload alt="CDMA 工作原理"></p>
 <ol type="1">
 <li>编码：让两人信息分别乘以彼此正交的正交编码，如哈达码、沃尔什码等。</li>
 <li>混合：将编码后的信息混合，送入信道传输。</li>
@@ -1863,12 +1861,10 @@ CDMA（Code Division Multiple Access）。
 </ul></li>
 <li>分散码技术：为每个用户分配一个唯一的码序列，通过这个码序列将用户的信号进行扩散，使得不同用户的信号可以混合在一起传输。在接收端，通过特定的解码技术，可以将信号重新聚合，从而恢复出原始信号。</li>
 </ol></li>
-<li><p>CDMA 的重要特点</p>
+<li><p>CDMA 的重要特点：</p>
 <ul>
-<li>每个站分配的码片序列：各不相同，且必须互相正交（orthogonal）。</li>
-<li><strong>正交</strong>向量 <span class="math inline">\(S\)</span> 和
-<span class="math inline">\(T\)</span> 的规格化内积（inner product）等于
-<span class="math inline">\(0\)</span> <span class="math display">\[
+<li>每个站分配的码片序列：各不相同，且必须互相<strong>正交</strong>（orthogonal）。</li>
+<li>正交向量 <span class="math inline">\(S\)</span> 和 <span class="math inline">\(T\)</span> 的规格化内积（inner product）等于 <span class="math inline">\(0\)</span> <span class="math display">\[
   S \cdot  T \equiv  \frac{1}{m}\sum_{i=1}^{m}{S}_{i}{T}_{i} = 0
   \]</span></li>
 <li>任何一个码片向量和该码片向量自己的规格化内积都是 <span class="math inline">\(1\)</span> <span class="math display">\[
@@ -1960,12 +1956,8 @@ ADSL（Asymmetric Digital Subscriber Line）</h3>
 <ul>
 <li>采用离散多音调 DMT（Discrete Multi-Tone）调制技术。
 <ul>
-<li>DMT 调制技术采用频分复用 FDM 方法。</li>
+<li>DMT 调制技术采用频分复用 FDM 方法。 <img src="image-35.webp" srcset="/img/loading/loading3.gif" lazyload alt="DMT的频谱分布"></li>
 <li>相当于在一对用户线上使用许多小的调制解调器并行地传送数据。</li>
-<li><figure>
-<img src="image-35.webp" srcset="/img/loading/loading3.gif" lazyload alt="DMT的频谱分布">
-<figcaption aria-hidden="true">DMT的频谱分布</figcaption>
-</figure></li>
 </ul></li>
 <li>ADSL 不能保证固定的数据率。</li>
 </ul></li>
@@ -2063,7 +2055,8 @@ WDM，上行和下行分别使用不同的波长。</li>
 <li>吉比特无源光网络 GPON（Gigabit PON）
 <ul>
 <li>采用通用封装方法 GEM（Generic Encapsulation
-Method），可承载多业务，且对各种业务类型都能够提供服务质量保证，总体性能比EPON好。</li>
+Method），可承载多业务，且对各种业务类型都能够提供服务质量保证，总体性能比
+EPON 好。</li>
 <li>成本稍高。</li>
 </ul></li>
 </ul></li>
