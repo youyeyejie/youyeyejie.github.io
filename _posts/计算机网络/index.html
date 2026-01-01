@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis3364.webp">
 <meta property="article:published_time" content="2025-12-27T11:44:35.000Z">
-<meta property="article:modified_time" content="2026-01-01T11:42:43.005Z">
+<meta property="article:modified_time" content="2026-01-01T16:21:58.491Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU">
 <meta property="article:tag" content="计算机网络">
@@ -444,7 +444,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          87k 字
+          88k 字
         
       </span>
     
@@ -456,7 +456,7 @@
         
         
           <!-- compatible with older versions-->
-          729 分钟
+          731 分钟
         
       </span>
     
@@ -1786,43 +1786,62 @@ Sight），不能有障碍物，存在多径效应。</li>
 <h3 id="频分复用-fdmfrequency-division-multiplexing">频分复用
 FDM（Frequency Division Multiplexing）</h3>
 <ul>
+<li><strong>频分复用</strong> FDM（Frequency Division Multiplexing）
+<ul>
 <li>最基本的复用方式</li>
-<li>定义：将整个带宽分为多份，用户在分配到一定的频带后，在通信过程中自始至终都占用这个频带。</li>
-<li>特点：所有用户在同样的时间占用不同的带宽（即频带）资源。</li>
+<li>定义：给每个信号分配唯一的载波频率，并通过单一媒体来传输多个独立信号的方法。</li>
+<li>特点
+<ul>
+<li>整个带宽分为多份，每个信号在分配到一定的频带后，在通信过程中自始至终都占用这个频带。</li>
+<li>所有信号在同样的时间占用不同的带宽（即频带）资源。</li>
+<li>只强调了复用的方式，而并不关心复用的这些信道是来自多个用户还是来自一个用户。</li>
+</ul></li>
+</ul></li>
 <li><strong>频分多址接入</strong> FDMA（Frequency Division Multiple
-Access）：让 <span class="math inline">\(N\)</span> 个用户各使用一个 FDM
+Access）
+<ul>
+<li>定义：使用 FDM 技术让多个用户在同一信道上进行通信的方法。</li>
+<li>特点：让 <span class="math inline">\(N\)</span> 个用户各使用一个 FDM
 的频带，或让更多的用户轮流使用这 <span class="math inline">\(N\)</span>
-个频带。</li>
+个频带。强调了复用的这些信道是来自多个用户。</li>
+</ul></li>
 </ul>
 <h3 id="时分复用-tdmtime-division-multiplexing">时分复用 TDM（Time
 Division Multiplexing）</h3>
 <ul>
+<li><strong>时分复用</strong> TDM（Time Division Multiplexing）
+<ul>
 <li>定义：将时间划分为一段段<strong>等长的</strong>时分复用帧（TDM
-帧），每一个 TDM 帧又划分为若干个时隙（time
-slot），每一个时分复用的用户在每一个 TDM 帧中占用固定序号的时隙。 <img src="image-29.webp" srcset="/img/loading/loading3.gif" lazyload alt="TDM"></li>
+帧），每一个 TDM 帧又划分为若干个时隙（time slot），每一个信号在每一个
+TDM 帧中占用固定序号的时隙。 <img src="image-29.webp" srcset="/img/loading/loading3.gif" lazyload alt="TDM"></li>
 <li>特点：
 <ul>
-<li>每一个用户所占用的时隙是周期性地出现（其周期就是 TDM
+<li>每一个信号所占用的时隙是周期性地出现（其周期就是 TDM
 帧的长度）。</li>
-<li>所有用户在不同的时间占用同样的频带宽度。</li>
+<li>所有信号在不同的时间占用同样的频带宽度。</li>
+<li>只强调了复用的方式，而并不关心复用的每个时隙的信号是来自多个用户还是来自一个用户。</li>
 </ul></li>
-<li><strong>时分多址接入</strong> TDMA（Time Division Multiple
-Access）：让 <span class="math inline">\(N\)</span> 个用户各使用一个 TDM
-的时隙，或让更多的用户轮流使用这 <span class="math inline">\(N\)</span>
-个时隙。</li>
 <li>TDM 信号也称为等时（isochronous）信号。</li>
 <li>时分复用会导致信道利用率不高 <img src="image-31.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul></li>
+<li><strong>时分多址接入</strong> TDMA（Time Division Multiple Access）
+<ul>
+<li>定义：使用 TDM 技术让多个用户在同一信道上进行通信的方法。</li>
+<li>特点：让 <span class="math inline">\(N\)</span> 个用户各使用一个 TDM
+的时隙，或让更多的用户轮流使用这 <span class="math inline">\(N\)</span>
+个时隙。强调了复用的这些信道是来自多个用户。</li>
+</ul></li>
 </ul>
 <h3 id="统计时分复用-stdmstatistical-time-division-multiplexing">统计时分复用
 STDM（Statistical Time Division Multiplexing）</h3>
 <ul>
-<li>定义：根据各个用户的实际需要动态地分配时隙，而不是像时分复用 TDM
-那样为每一个用户分配固定的时隙。</li>
+<li>定义：根据各个信号的实际需要动态地分配时隙，而不是像时分复用 TDM
+那样为每一个信号分配固定的时隙。又称为<strong>异步时分复用</strong>。</li>
 <li>特点：
 <ul>
-<li>用户只有在有数据发送时才占用信道资源。</li>
+<li>信号只有在有数据发送时才占用信道资源。</li>
 <li>信道利用率高。</li>
-<li>需要在复用器和分用器中增加地址信息，以便识别不同用户的数据。</li>
+<li>需要在复用器和分用器中增加地址信息，以便识别不同信号的数据。</li>
 </ul></li>
 <li>示例： <img src="image-32.webp" srcset="/img/loading/loading3.gif" lazyload alt="STDM"></li>
 </ul>
@@ -1830,23 +1849,32 @@ STDM（Statistical Time Division Multiplexing）</h3>
 WDM（Wavelength Division Multiplexing）</h3>
 <ul>
 <li>定义：光的频分复用。使用一根光纤来同时传输多个光载波信号。 <img src="image-33.webp" srcset="/img/loading/loading3.gif" lazyload alt="WDM"></li>
+<li>分类：
+<ul>
+<li>密集波分复用 DWDM（Dense Wavelength Division Multiplexing）</li>
+<li>稀疏波分复用 CWDM（Coarse Wavelength Division Multiplexing）</li>
+</ul></li>
 </ul>
 <h3 id="码分复用-cdmcode-division-multiplexing">码分复用 CDM（Code
 Division Multiplexing）</h3>
 <ul>
-<li>定义：通过给每一个用户分配一个独特的码片序列，使得多个用户可以在同一频带、同一时间内进行通信，而互不干扰。</li>
+<li><strong>码分复用</strong> CDM（Code Division Multiplexing）
+<ul>
+<li>定义：通过给每一个信号分配一个独特的码片序列，使得多个信号可以在同一频带、同一时间内进行传输而互不干扰的方法。</li>
 <li>特点：
 <ul>
-<li>每一个用户可以在同样的时间使用同样的频带进行通信。</li>
-<li>各用户使用经过特殊挑选的不同码型，因此不会造成干扰。</li>
+<li>每一个信号可以在同样的时间使用同样的频带进行通信。</li>
+<li>各信号使用经过特殊挑选的不同码型，因此不会造成干扰。</li>
 </ul></li>
-<li><strong>码分多址接入</strong> CDMA（Code Division Multiple
-Access）：
+</ul></li>
+<li><strong>码分多址接入</strong> CDMA（Code Division Multiple Access）
 <ul>
-<li><p>让 <span class="math inline">\(N\)</span>
+<li><p>定义：使用 CDM
+技术让多个用户在同一信道上进行通信的方法。</p></li>
+<li><p>特点：让 <span class="math inline">\(N\)</span>
 个用户各使用一个独特的<strong>码片序列</strong>在 CDM
-信道上进行通信，或让更多的用户轮流使用这些码片序列。</p></li>
-<li><p>CDMA 工作原理 <img src="image-34.webp" srcset="/img/loading/loading3.gif" lazyload alt="CDMA 工作原理"></p>
+信道上进行通信，或让更多的用户轮流使用这些码片序列。强调了复用的这些信道是来自多个用户。</p></li>
+<li><p>工作原理 <img src="image-34.webp" srcset="/img/loading/loading3.gif" lazyload alt="CDMA 工作原理"></p>
 <ol type="1">
 <li>编码：让两人信息分别乘以彼此正交的正交编码，如哈达码、沃尔什码等。</li>
 <li>混合：将编码后的信息混合，送入信道传输。</li>
@@ -1861,7 +1889,7 @@ Access）：
 </ul></li>
 <li>分散码技术：为每个用户分配一个唯一的码序列，通过这个码序列将用户的信号进行扩散，使得不同用户的信号可以混合在一起传输。在接收端，通过特定的解码技术，可以将信号重新聚合，从而恢复出原始信号。</li>
 </ol></li>
-<li><p>CDMA 的重要特点：</p>
+<li><p><strong>正交特性</strong>：</p>
 <ul>
 <li>每个站分配的码片序列：各不相同，且必须互相<strong>正交</strong>（orthogonal）。</li>
 <li>正交向量 <span class="math inline">\(S\)</span> 和 <span class="math inline">\(T\)</span> 的规格化内积（inner product）等于 <span class="math inline">\(0\)</span> <span class="math display">\[
@@ -10988,7 +11016,7 @@ Subsystem）。</li>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2026年1月1日</div>
+          <div>2026年1月2日</div>
         </div>
       
       
