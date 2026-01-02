@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis3364.webp">
 <meta property="article:published_time" content="2025-12-27T11:44:35.000Z">
-<meta property="article:modified_time" content="2026-01-02T08:28:06.611Z">
+<meta property="article:modified_time" content="2026-01-02T08:48:59.551Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU">
 <meta property="article:tag" content="计算机网络">
@@ -3011,7 +3011,7 @@ Protocol），不改变网络的实际拓扑，但在逻辑上则切断某些链
 </ul></li>
 <li>现在
 <ul>
-<li>以太网交换机为中心的星形结构</li>
+<li>以太网交换机为中心的星形结构。</li>
 <li>不使用共享总线，没有碰撞问题，不使用 CSMA/CD
 协议，以全双工方式工作。</li>
 <li>但仍然采用以太网的帧结构。</li>
@@ -3024,11 +3024,11 @@ Protocol），不改变网络的实际拓扑，但在逻辑上则切断某些链
 <ul>
 <li>一个以太网是一个广播域（broadcast
 domain）：其中任何一台设备发出的广播通信都能被该部分网络中的所有其他设备所接收。</li>
-<li>交换机之间的冗余链路形成广播风暴</li>
+<li>交换机之间的冗余链路形成广播风暴。</li>
 </ul></li>
 <li>安全问题
 <ul>
-<li>交换机每个接口都处于一个独立的碰撞域（或冲突域）中，但所有计算机都处于同一个广播域中。</li>
+<li><strong>交换机每个接口都处于一个独立的碰撞域（或冲突域）中，但所有计算机都处于同一个广播域中</strong>。</li>
 <li>任何一台计算机发出的广播帧都能被该局域网内的所有计算机接收。</li>
 </ul></li>
 <li>管理困难</li>
@@ -3129,7 +3129,7 @@ IP 分组属于哪一个虚拟局域网。</li>
 </ul></li>
 </ul>
 <h2 id="高速以太网">高速以太网</h2>
-<h3 id="base-t以太网">100BASE-T以太网</h3>
+<h3 id="base-t-以太网">100BASE-T 以太网</h3>
 <ul>
 <li><p>定义：在双绞线上以星形拓扑结构传输 100 Mbit/s
 的基带信号的以太网，又称为快速以太网（Fast Ethernet）。</p>
@@ -3245,8 +3245,8 @@ IP 分组属于哪一个虚拟局域网。</li>
 <img src="image-99.webp" srcset="/img/loading/loading3.gif" lazyload alt="载波延伸"></li>
 <li><strong>分组突发</strong>（packet bursting）：当很多短帧要发送时，第
 1
-个短帧采用载波延伸方法进行填充，随后的一些短帧则可一个接一个地发送，只需留有必要的帧间最小间隔即可。这样就形成可一串分组的突发，直到达到
-1500 字节或稍多一些为止。 <img src="image-100.webp" srcset="/img/loading/loading3.gif" lazyload alt="分组突发"></li>
+个短帧采用载波延伸方法进行填充，随后的一些短帧则可一个接一个地发送，只需留有必要的帧间最小间隔即可。这样就形成了一串分组的突发，直到达到
+1500 字节或稍多一些为止，从而提高了信道利用率。 <img src="image-100.webp" srcset="/img/loading/loading3.gif" lazyload alt="分组突发"></li>
 </ol></li>
 </ul></li>
 </ul>
@@ -3350,9 +3350,9 @@ IP 分组属于哪一个虚拟局域网。</li>
 <li>以太网的工作范围已经扩大到城域网和广域网，实现了端到端的以太网传输。</li>
 <li>优点：
 <ol type="1">
-<li>技术成熟；</li>
-<li>互操作性很好;</li>
-<li>在广域网中使用以太网时价格便宜；</li>
+<li>技术成熟。</li>
+<li>互操作性很好。</li>
+<li>在广域网中使用以太网时价格便宜。</li>
 <li>采用统一的以太网帧格式，简化了操作和管理。</li>
 </ol></li>
 </ul></li>
@@ -3372,7 +3372,7 @@ IP 分组属于哪一个虚拟局域网。</li>
 <ul>
 <li>PPPoE（PPP over Ethernet）：在以太网上运行 PPP。</li>
 <li>将 PPP 帧封装到以太网中来传输。</li>
-<li>现在的光纤宽带接入FTTx都要使用PPPoE的方式进行接入。</li>
+<li>现在的光纤宽带接入 FTTx 都要使用 PPPoE 的方式进行接入。</li>
 <li>利用 ADSL 进行宽带上网时，从用户个人电脑到家中的 ADSL
 调制解调器之间的连接也使用 RJ-45 和 5 类线，也使用 PPPoE。</li>
 </ul></li>
@@ -6262,10 +6262,10 @@ Network）：是一种新型的网络体系结构，通过将网络的控制层�
 </ul></li>
 <li>优点：
 <ul>
-<li>提高网络带宽利用率;</li>
-<li>网络运行更加稳定；</li>
-<li>管理更加高效简化；</li>
-<li>运行费用明显降低。</li>
+<li>提高网络带宽利用率</li>
+<li>网络运行更加稳定</li>
+<li>管理更加高效简化</li>
+<li>运行费用明显降低</li>
 </ul></li>
 </ul>
 <h3 id="sdn-与-openflow-协议">SDN 与 OpenFlow 协议</h3>
@@ -9580,7 +9580,7 @@ Base）：<strong>被管对象</strong>维持的可供管理程序读写的若�
 </ul></li>
 <li>过滤的好处：
 <ol type="1">
-<li>仅在严重事件发生时才发送陷阱;</li>
+<li>仅在严重事件发生时才发送陷阱。</li>
 <li>陷阱信息很简单且所需字节数很少。</li>
 </ol></li>
 </ul></li>
@@ -10772,7 +10772,7 @@ Service），俗称 2.5G</li>
 for GSM Evolution）系统，俗称 2.75G</li>
 </ul></li>
 <li><strong>空口调制方式</strong>：由高斯最小频移键控 GMSK（Gaussian
-Minimum Shift Keying）提高到 8PSK;</li>
+Minimum Shift Keying）提高到 8PSK。</li>
 <li><strong>网元</strong>：引入了分组控制单元 PCU（Packet Control
 Unit）。
 <ul>
