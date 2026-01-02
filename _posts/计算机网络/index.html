@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis3364.webp">
 <meta property="article:published_time" content="2025-12-27T11:44:35.000Z">
-<meta property="article:modified_time" content="2026-01-01T16:21:58.491Z">
+<meta property="article:modified_time" content="2026-01-02T07:06:24.502Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU">
 <meta property="article:tag" content="计算机网络">
@@ -456,7 +456,7 @@
         
         
           <!-- compatible with older versions-->
-          731 分钟
+          732 分钟
         
       </span>
     
@@ -2157,21 +2157,31 @@ Transmission）放在一帧的末尾，表示帧的结束。</li>
 <li>“在数据链路层透明传送数据”表示：无论发送什么样的比特组合的数据，这些数据都能够按照原样没有差错地通过这个数据链路层。</li>
 </ul></li>
 </ul>
-<h4 id="差错检测">差错检测</h4>
+<h4 id="差错控制">差错控制</h4>
 <ul>
 <li>问题：在传输过程中可能会产生比特差错：<span class="math inline">\(1
 \rightarrow 0\)</span>，<span class="math inline">\(0 \rightarrow
 1\)</span>。 <img src="image-46.webp" srcset="/img/loading/loading3.gif" lazyload alt="比特差错"></li>
 <li><strong>误码率</strong> BER（Bit Error
 Rate）：在一段时间内，传输错误的比特占所传输比特总数的比率。</li>
-<li><strong>帧检验序列</strong> FCS（Frame Check
-Sequence）：在数据后面添加上的<strong>冗余码</strong>。</li>
-<li>循环冗余检验 CRC 和帧检验序列 FCS 并不等同。
+<li>差错控制的两种基本方法
 <ol type="1">
-<li>CRC 是一种常用的检错方法，而 FCS 是添加在数据后面的冗余码。</li>
-<li>FCS 可以用 CRC 这种方法得出，但 CRC 并非用来获得 FCS
-的唯一方法。</li>
+<li><strong>检错</strong>（error
+detection）：检测出传输过程中产生的差错。</li>
+<li><strong>纠错</strong>（error
+correction）：不仅能检测出差错，而且还能自动纠正这些差错。</li>
 </ol></li>
+<li><strong>帧检验序列</strong> FCS（Frame Check
+Sequence）：在数据后面添加上的<strong>冗余码</strong>，用于差错检测或纠错。</li>
+<li>差错控制的两种基本策略
+<ul>
+<li><strong>差错检测-重传</strong>：当检测到差错时，丢弃该帧并请求重传该帧。
+<ul>
+<li><strong>自动重传请求</strong> ARQ（Automatic Repeat
+reQuest）：当检测到差错时，请求重传该帧。</li>
+</ul></li>
+<li><strong>差错检测-纠错</strong>：不仅能检测出差错，而且还能自动纠正这些差错。</li>
+</ul></li>
 </ul>
 <h5 id="检错-奇偶校验">检错-奇偶校验</h5>
 <ul>
@@ -2232,7 +2242,7 @@ X ^ {4} + X ^ {2} + X + 1 \\
 </ul></li>
 </ul></li>
 </ul>
-<h5 id="汉明码">汉明码</h5>
+<h5 id="纠错-汉明码hamming-code">纠错-汉明码（Hamming Code）</h5>
 <ul>
 <li>定义：编号为 2 的幂的位作为校验位（只有 1 位是 1） <img src="image-50.webp" srcset="/img/loading/loading3.gif" lazyload> <span class="math display">\[
   \begin{aligned}
@@ -2260,7 +2270,8 @@ X ^ {4} + X ^ {2} + X + 1 \\
 </ul>
 <h4 id="流量控制">流量控制</h4>
 <ul>
-<li>流量控制是对控制链路上的帧的发送速率，使接收方有足够的缓冲空间来接收帧，主要方法有
+<li>流量控制是对控制链路上的帧的发送速率进行控制，使接收方有足够的缓冲空间来接收帧。</li>
+<li>主要方法：
 <ul>
 <li>停止-等待协议</li>
 <li>滑动窗口协议
@@ -2292,11 +2303,11 @@ reQuest）：在接收站接收到一个包含出错数据的信息（帧）时�
 个分组后，接收方<strong>按照帧编号顺序</strong>接收分组，并依次发送确认分组，移动接收窗口。</li>
 <li>若某个分组传送失败，接收方将丢弃该分组及其后的所有分组，并不发送确认分组。发送方在超时后，重新发送该分组及其后的所有分组。</li>
 </ul></li>
-<li>示例：发送方发送了 0，1，2，3，4 帧，但只收到 0 和 1
-号帧的确认，经过超时后，重新发送 1 号帧之后的所有帧，即 2，3，4 帧。
+<li>示例：发送方发送了 0、1、2、3、4 帧，但只收到 0 和 1
+号帧的确认，等待超时之后需要重新发送 1 号帧之后的所有帧，即 2、3、4 帧。
 <img src="image-52.webp" srcset="/img/loading/loading3.gif" lazyload alt="GBN"></li>
 <li>优点：相比停止等待协议，后退 N 帧协议的信道利用率得到提高。</li>
-<li>缺点：若当前窗口的最早的分组传送失败了，后面的分组即使传送失败了也需要重传，如果信道的误码率比较高的话，信道传输效率就会变的非常低。</li>
+<li>缺点：若当前窗口的最早的分组传送失败了，后面的分组即使传送成功了也需要重传，如果信道的误码率比较高的话，信道传输效率就会变的非常低。</li>
 </ul>
 <h5 id="选择重传协议sr">选择重传协议（SR）</h5>
 <ul>
@@ -2311,7 +2322,7 @@ reQuest）：在接收站接收到一个包含出错数据的信息（帧）时�
 <li>GBN 与 SR 的比较
 <ul>
 <li>选择重传协议需要对每一个分区都给发送方反馈 ACK
-确认消息，更适合用在误码率比较高的信道上</li>
+确认消息，更适合用在误码率比较高的信道上。</li>
 <li>回退 N 帧协议比较适合用在误码率比较低的信道上。</li>
 </ul></li>
 </ul>
