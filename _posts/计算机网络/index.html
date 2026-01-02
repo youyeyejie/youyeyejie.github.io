@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis3364.webp">
 <meta property="article:published_time" content="2025-12-27T11:44:35.000Z">
-<meta property="article:modified_time" content="2026-01-02T07:06:24.502Z">
+<meta property="article:modified_time" content="2026-01-02T07:32:53.051Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU">
 <meta property="article:tag" content="计算机网络">
@@ -2365,7 +2365,7 @@ Relay）等数据链路层协议仅支持同步传输，SLIP 仅支持异步传�
 个字节，并且需要采用额外的起始位和停止位来标记每个字节的开始和结束。缺点是开始和停止位占据发送数据的相当大的比例，每个字节的发送都需要额外的开销。</li>
 <li><strong>同步传输</strong>：是以<strong>帧</strong>为单位来传输数据，在通信时需要使用时钟来同步本端和对端的设备通信。接收设备获取数据，直到识别出特殊的结束字符。</li>
 </ul></li>
-<li>PPP 协议具有很好的扩展性，例如，当需要在以太网链路上承载PPP
+<li>PPP 协议具有很好的扩展性，例如，当需要在以太网链路上承载 PPP
 协议时，PPP 可以扩展为 PPPoE。</li>
 <li>PPP 提供了 LCP（Link Control
 Protocol）协议，用于各种链路层参数的协商，用来建立、拆除和监控 PPP
@@ -2515,7 +2515,7 @@ Control）：与传输媒体有关。
 子层后，它检查该地址是否与自己的地址相匹配，如果帧中的地址与自己的地址不匹配，就将这一帧抛弃；如果相匹配，就将它发送到上一层中。</li>
 </ul></li>
 </ul></li>
-<li>适配器
+<li><strong>适配器</strong>
 <ul>
 <li>适配器作用：计算机通过适配器和局域网进行通信 <img src="image-61.webp" srcset="/img/loading/loading3.gif" lazyload></li>
 <li>适配器的主要功能：
@@ -2583,7 +2583,7 @@ Control）：与传输媒体有关。
 <li>因为信号传播时延对载波监听产生了影响</li>
 <li>示意图 <img src="image-68.webp" srcset="/img/loading/loading3.gif" lazyload></li>
 <li>可见：每一个站在自己发送数据之后的一小段时间内，存在着遭遇碰撞的可能性。</li>
-<li><strong>A 需要单程传播时延的 2 倍的时间，才能检测到与 B
+<li><strong>A 需要单程传播时延的 2 倍的时间，才能确定是否与 B
 的发送产生了冲突</strong>。</li>
 </ul></li>
 </ul>
@@ -2596,7 +2596,7 @@ Control）：与传输媒体有关。
 <li>经过争用期这段时间还没有检测到碰撞，才能肯定这次发送不会发生碰撞。</li>
 </ul></li>
 <li>10 Mbit/s 以太网争用期的长度 <span class="math inline">\(2 \tau =
-51.2 ~\mu s\)</span> 。</li>
+51.2 ~\mu s = 512\)</span> 比特时间。</li>
 </ul></li>
 <li><strong>最短帧长</strong>
 <ul>
