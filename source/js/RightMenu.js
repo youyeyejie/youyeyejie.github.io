@@ -92,13 +92,13 @@ document.addEventListener('contextmenu', function(event) {
         copyImageItem.hidden = true;
     }
 
-    // 根据前三者判断第一栏是否有元素，需要分割线
-    const topLineItem = document.getElementById('top-line');
-    if (copySelectedTextItem.hidden && !link && !img) {
-        topLineItem.hidden = true;
-    } else {
-        topLineItem.hidden = false;
-    }
+    // // 根据前三者判断第一栏是否有元素，需要分割线
+    // const topLineItem = document.getElementById('top-line');
+    // if (copySelectedTextItem.hidden && !link && !img) {
+    //     topLineItem.hidden = true;
+    // } else {
+    //     topLineItem.hidden = false;
+    // }
     
     // 更新尺寸相关参数
     rect = document.getElementById("rightmenu-content").getBoundingClientRect();
@@ -258,6 +258,44 @@ function toggleBackgroundMode() {
     }
 }
 
+// 切换自定义标签显示功能
+function toggleTabDisplay() {
+    const TabDisplayMode = localStorage.getItem('TabDisplayMode');
+    if (TabDisplayMode === 'false' || !TabDisplayMode) {
+        TabDisplay(true);
+        document.getElementById('toggle-tab-display-icon').className = "fa-solid fa-toggle-on";
+        localStorage.setItem('TabDisplayMode', 'true');
+        showTooltip({
+            type: 'info',
+            message: '已启用标签页标题切换功能'
+        });
+    } else {
+        TabDisplay(false);
+        document.getElementById('toggle-tab-display-icon').className = "fa-solid fa-toggle-off";
+        localStorage.setItem('TabDisplayMode', 'false');
+        showTooltip({
+            type: 'info',
+            message: '已禁用标签页标题切换功能'
+        });
+    }
+}
+
+// 随机切换背景功能
+function randomChangeBackground() {
+    const random_banner = imgs[Math.floor(Math.random() * imgs.length)];
+    const banner = document.getElementById('banner');
+    const web_bg = document.getElementById('web_bg');
+    const BackgroundMode = localStorage.getItem('BackgroundMode');
+    if (banner && web_bg) {
+        if (BackgroundMode === 'true') {
+            web_bg.style.backgroundImage = `url(${random_banner})`;
+        }
+        else {
+            banner.style.background = `url(${random_banner}) center center / cover no-repeat`;
+        }
+    }
+}
+
 // 页面加载完毕后初始化图标状态和提示
 window.addEventListener('DOMContentLoaded', function() {
     if (localStorage.getItem('DarkNightMode') === 'true') {
@@ -269,6 +307,11 @@ window.addEventListener('DOMContentLoaded', function() {
         document.getElementById('toggle-background-mode-icon').className = "fa-solid fa-toggle-on";
     } else {
         document.getElementById('toggle-background-mode-icon').className = "fa-solid fa-toggle-off";
+    }
+    if (localStorage.getItem('TabDisplayMode') === 'true') {
+        document.getElementById('toggle-tab-display-icon').className = "fa-solid fa-toggle-on";
+    } else {
+        document.getElementById('toggle-tab-display-icon').className = "fa-solid fa-toggle-off";
     }
 
     // 显示提示气泡

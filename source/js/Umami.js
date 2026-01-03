@@ -71,6 +71,10 @@ function umamiTrackEvent() {
             item.dataset.umamiEvent = "Color Toggle";
         } else if (item.onclick?.toString().includes('toggleBackgroundMode')) {
             item.dataset.umamiEvent = "Background Toggle";
+        } else if (item.onclick?.toString().includes('randomChangeBackground')) {
+            item.dataset.umamiEvent = "Random Background";
+        } else if (item.onclick?.toString().includes('toggleTabDisplay')) {
+            item.dataset.umamiEvent = "Tab Display Toggle";
         }
     });
 

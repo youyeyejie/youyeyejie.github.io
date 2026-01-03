@@ -32,7 +32,7 @@ date: 2025-06-29 01:47:43
 - 标签页根据焦点切换显示
 {% endnote %}
 
-<a href="/_posts/Fluid主题美化1-0/" logourl="/img/avatar/avatar.webp" class="LinkCard">Fluid主题美化1.0</a>
+<a href="/_posts/Fluid主题美化/" logourl="/img/avatar/avatar.webp" class="LinkCard">Fluid主题美化</a>
 
 # 关于页添加 Github 热力图
 

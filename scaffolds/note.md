@@ -7,7 +7,7 @@ tags:
     - 
 categories:
     - [SJTU Notes, ]
-excerpt:
+excerpt:  {{ title }} 笔记
 math: false
 mermaid: false
 category_bar: true

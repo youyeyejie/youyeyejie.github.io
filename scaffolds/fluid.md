@@ -8,6 +8,6 @@ tags:
 categories:
     - Hexo Blog Building
 excerpt: Fluid 主题美化记录
-index_img: /_posts/ /image.webp
+index_img: /_posts/{{ title }}/image.webp
 category_bar: true
 ---
