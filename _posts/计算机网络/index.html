@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis3364.webp">
 <meta property="article:published_time" content="2025-12-27T11:44:35.000Z">
-<meta property="article:modified_time" content="2026-01-03T14:21:51.418Z">
+<meta property="article:modified_time" content="2026-01-03T17:24:37.509Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU">
 <meta property="article:tag" content="计算机网络">
@@ -456,7 +456,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          90k 字
+          91k 字
         
       </span>
     
@@ -468,7 +468,7 @@
         
         
           <!-- compatible with older versions-->
-          754 分钟
+          759 分钟
         
       </span>
     
@@ -961,10 +961,10 @@
     </div>
 
     <div class="fold">
-      <div class="fold-title fold-default collapsed" data-toggle="collapse" href="#collapse-72d7e03f" role="button" aria-expanded="false" aria-controls="collapse-72d7e03f">
+      <div class="fold-title fold-default collapsed" data-toggle="collapse" href="#collapse-a225bb14" role="button" aria-expanded="false" aria-controls="collapse-a225bb14">
         <div class="fold-arrow">▶</div>本文协议一览
       </div>
-      <div class="fold-collapse collapse" id="collapse-72d7e03f">
+      <div class="fold-collapse collapse" id="collapse-a225bb14">
         <div class="fold-content">
           <ul>
 <li>数据链路层
@@ -1013,11 +1013,11 @@ TCP，有连接，<strong>路径矢量型外部网关协议</strong>，基于 TC
 <ul>
 <li><a href="#传输控制协议-tcp">TCP</a>（传输控制协议）：有连接，<strong>面向连接的可靠传输协议</strong>，通过三次握手建立连接，提供确认、重传、排序、流量控制等机制，保证数据的完整、有序传输。</li>
 <li><a href="#用户数据报协议-udp">UDP</a>（用户数据报协议）：无连接，<strong>无连接的不可靠传输协议</strong>，仅对应用层数据做简单封装，开销小、传输效率高，适用于实时性要求高的场景。</li>
-<li><a href="#停止-等待协议sw">SW</a>（停止-等待 ARQ
+<li><a href="#停止等待-arq-协议">SW-ARQ</a>（停止等待 ARQ
 协议）：<strong>基本的可靠数据传输协议</strong>，通过发送方发送一个数据包后等待确认的方式实现可靠传输，适用于低速率、低延迟的通信场景。</li>
-<li><a href="#后退-n-帧协议gbn">GBN</a>（后退 N 帧 ARQ
+<li><a href="#后退-n-帧-arq-协议">GBN-ARQ</a>（后退 N 帧 ARQ
 协议）：<strong>滑动窗口型可靠数据传输协议</strong>，允许发送方连续发送多个数据包，接收方按序确认，适用于中等延迟和误码率的通信环境。</li>
-<li><a href="#选择重传协议sr">SR</a>（选择重传 ARQ
+<li><a href="#选择重传-arq-协议">SR-ARQ</a>（选择重传 ARQ
 协议）：<strong>高效的滑动窗口型可靠数据传输协议</strong>，发送方只重传出错的数据包，接收方可乱序接收并缓存数据，适用于高延迟、高误码率的通信场景。</li>
 </ul></li>
 <li>应用层
@@ -2415,7 +2415,7 @@ reQuest）：在接收站接收到一个包含出错数据的信息（帧）时�
 </ul>
 <h5 id="停止-等待协议sw">停止-等待协议（SW）</h5>
 <blockquote>
-<p>详见<a href="#停止等待协议">下文</a></p>
+<p>详见<a href="#停止等待-arq-协议">下文</a></p>
 </blockquote>
 <ul>
 <li>定义：发送方每发送一帧，都要等待接收方的应答信号才能发送下一帧，接收方每接收一帧都需要反馈一个应答信号来表示可接收下一帧。</li>
@@ -2446,6 +2446,9 @@ reQuest）：在接收站接收到一个包含出错数据的信息（帧）时�
 <li>缺点：若当前窗口的最早的分组传送失败了，后面的分组即使传送成功了也需要重传，如果信道的误码率比较高的话，信道传输效率就会变的非常低。</li>
 </ul>
 <h5 id="选择重传协议sr">选择重传协议（SR）</h5>
+<blockquote>
+<p>详见<a href="#选择重传-arq-协议">下文</a></p>
+</blockquote>
 <ul>
 <li>定义：
 <ul>
@@ -6832,130 +6835,6 @@ ICMP 发送“端口不可达”差错报文给发送方。</li>
 <li>示例： <img src="image-234.webp" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul></li>
 </ul>
-<h2 id="可靠传输的工作原理">可靠传输的工作原理</h2>
-<ul>
-<li>IP 网络提供的是不可靠的传输 <img src="image-238.webp" srcset="/img/loading/loading3.gif" lazyload></li>
-<li>理想传输条件
-<ul>
-<li>特点
-<ol type="1">
-<li>传输信道不产生差错。</li>
-<li>不管发送方以多快的速度发送数据，接收方总是来得及处理收到的数据。</li>
-</ol></li>
-<li>在理想传输条件下，不需要采取任何措施就能够实现可靠传输。</li>
-<li>但实际网络都不具备理想传输条件。必须使用一些可靠传输协议，在不可靠的传输信道实现可靠传输。</li>
-</ul></li>
-</ul>
-<h3 id="停止等待协议">停止等待协议</h3>
-<h4 id="基本思想">基本思想</h4>
-<ul>
-<li>每发送完一个分组就<strong>停止</strong>发送，<strong>等待</strong>对方的确认。在收到确认后再发送下一个分组。</li>
-<li>全双工通信的双方既是发送方也是接收方，假设仅考虑 A 发送数据，而 B
-接收数据并发送确认。因此 A 叫做发送方，而 B 叫做接收方。</li>
-</ul>
-<h4 id="停止等待协议的要点">停止等待协议的要点</h4>
-<ul>
-<li><strong>停止等待</strong>：发送方每次只发送一个分组。在收到确认后再发送下一个分组。</li>
-<li><strong>暂存</strong>：在发送完一个分组后，发送方必须暂存已发送的分组的副本，以备重发。</li>
-<li><strong>编号</strong>：对发送的每个分组和确认都进行编号。</li>
-<li><strong>超时重传</strong>：发送方为发送的每个分组设置一个超时计时器。若超时计时器超时未收到确认，发送方会自动超时重传分组。
-<ul>
-<li>超时计时器的重传时间应当比数据在分组传输的平均往返时间更长一些，防止不必要的重传。</li>
-</ul></li>
-</ul>
-<h5 id="无差错情况">无差错情况</h5>
-<figure>
-<img src="image-239.webp" srcset="/img/loading/loading3.gif" lazyload alt="无差错情况">
-<figcaption aria-hidden="true">无差错情况</figcaption>
-</figure>
-<ul>
-<li>A 发送完分组 <span class="math inline">\(M_{1}\)</span>
-后就暂停发送，等待 B 的确认 <span class="math inline">\(ACK\)</span>。</li>
-<li>B 收到 <span class="math inline">\(M_{1}\)</span> 向 A 发送 <span class="math inline">\(ACK\)</span>。</li>
-<li>A 在收到了对 <span class="math inline">\(M_{1}\)</span>
-的确认后，就再发送下一个分组 <span class="math inline">\(M_{2}\)</span>。</li>
-</ul>
-<h5 id="出现差错">出现差错</h5>
-<p><img src="image-240.webp" srcset="/img/loading/loading3.gif" lazyload></p>
-<ul>
-<li>两种情况：在这两种情况下，B 都不会发送任何信息
-<ol type="1">
-<li>B 接收 <span class="math inline">\(M_{1}\)</span>
-时，检测出<strong>差错</strong>并丢弃 <span class="math inline">\(M_{1}\)</span>，其他什么也不做（不通知 A
-收到有差错的分组）。</li>
-<li><span class="math inline">\(M_{1}\)</span>
-在传输过程中<strong>丢失</strong>，这时 <span class="math inline">\(B\)</span> 什么都不知道，也什么都不做。</li>
-</ol></li>
-<li><strong>超时重传</strong>：
-<ol type="1">
-<li>A 为每一个已发送的分组设置一个超时计时器。</li>
-<li>A
-只要在超时计时器到期之前收到了相应的确认，就撤销该超时计时器，继续发送下一个分组
-<span class="math inline">\(M_{2}\)</span> 。</li>
-<li>若 A 在超时计时器规定时间内没有收到 B
-的确认，就认为分组错误或丢失，就<strong>重发</strong>该分组。</li>
-</ol></li>
-</ul>
-<h5 id="确认丢失和确认迟到">确认丢失和确认迟到</h5>
-<p><img src="image-241.webp" srcset="/img/loading/loading3.gif" lazyload></p>
-<ul>
-<li><strong>确认丢失</strong>
-<ol type="1">
-<li>若 B 所发送的对 <span class="math inline">\(M_{1}\)</span>
-的确认丢失了，那么 A 在设定的超时重传时间内将不会收到确认，因此 A
-在超时计时器到期后将重传 <span class="math inline">\(M_{1}\)</span>。</li>
-<li>假定 B 正确收到了 A 重传的分组 <span class="math inline">\(M_{1}\)</span>，则 B <strong>丢弃</strong>重复的
-<span class="math inline">\(M_{1}\)</span>，不向上层交付，并向 A
-<strong>重传确认</strong>分组。</li>
-<li>A 收到确认后，继续发送下一个分组 <span class="math inline">\(M_{2}\)</span>。</li>
-</ol></li>
-<li><strong>确认迟到</strong>
-<ol type="1">
-<li>若 B 所发送的对 <span class="math inline">\(M_{1}\)</span>
-的确认迟到了，那么 A 在超时计时器到期后重传 <span class="math inline">\(M_{1}\)</span>。</li>
-<li>B 会收到重复的 <span class="math inline">\(M_{1}\)</span>，则<strong>丢弃</strong>重复的
-<span class="math inline">\(M_{1}\)</span>
-并<strong>重传确认</strong>分组。</li>
-<li>由于第一个确认只是迟到而非丢失，A 会收到对 <span class="math inline">\(M_{1}\)</span>
-的重复确认，则<strong>丢弃</strong>该重复确认即可。</li>
-</ol></li>
-</ul>
-<h4 id="停止等待协议的优缺点">停止等待协议的优缺点</h4>
-<ul>
-<li>优点：简单。</li>
-<li>缺点：信道利用率太低。
-<ul>
-<li><strong>信道利用率</strong>：<span class="math inline">\(U =
-\frac{T_{D}}{T_{D} + RTT + T_{A}}\)</span> <img src="image-242.webp" srcset="/img/loading/loading3.gif" lazyload></li>
-<li>当往返时间 <span class="math inline">\(RTT \gg T_{D}\)</span>
-时，信道的利用率非常低。</li>
-</ul></li>
-</ul>
-<h3 id="回退-n-的连续-arq-协议">回退 N 的连续 ARQ 协议</h3>
-<h4 id="基本思想-1">基本思想</h4>
-<ul>
-<li><p><strong>流水线传输</strong>：在收到确认之前，发送方连续发出多个分组。
-<img src="image-243.webp" srcset="/img/loading/loading3.gif" lazyload alt="流水线传输"></p>
-<ul>
-<li>发送方允许在等待确认的同时，继续发送后续的分组，从而提高信道利用率。</li>
-<li>接收方只对按序到达的分组进行确认，对乱序到达的分组不予确认，并丢弃这些乱序到达的分组。</li>
-</ul></li>
-<li><p><strong>回退
-N</strong>（Go-back-N）的重传方式：发送方一旦发现某个分组出错或丢失，就<strong>重传该分组及其后面所有的分组</strong>。</p></li>
-</ul>
-<h4 id="连续-arq-协议的要点">连续 ARQ 协议的要点</h4>
-<ul>
-<li><strong>发送窗口</strong>：发送方维持一个发送窗口，位于发送窗口内的分组都可被连续发送出去，而不需要等待对方的确认。</li>
-<li><strong>发送窗口滑动</strong>：发送方每收到一个确认，就把发送窗口向前滑动一个分组的位置。
-<img src="image-244.webp" srcset="/img/loading/loading3.gif" lazyload alt="发送窗口与窗口滑动"></li>
-<li><strong>累积确认</strong>：接收方对<strong>按序到达的最后一个分组</strong>发送确认，表示到这个分组为止的所有分组都已正确收到了。
-<img src="image-245.webp" srcset="/img/loading/loading3.gif" lazyload alt="累积确认"></li>
-</ul>
-<h4 id="连续-arq-协议的优缺点">连续 ARQ 协议的优缺点</h4>
-<ul>
-<li>优点：容易实现，即使确认丢失也不必重传。</li>
-<li>缺点：能向发送方反映出接收方已经正确收到的所有分组的信息。</li>
-</ul>
 <h2 id="传输控制协议-tcp">传输控制协议 TCP</h2>
 <h3 id="tcp-概述">TCP 概述</h3>
 <h4 id="tcp-的主要特点">TCP 的主要特点</h4>
@@ -7196,37 +7075,43 @@ Acknowledgment）：长度可变，一般为 10 或 18 字节。</li>
 <blockquote>
 <p>详见<a href="#选择确认-sack">下文</a></p>
 </blockquote>
-<h2 id="tcp-的可靠传输">TCP 的可靠传输</h2>
-<h3 id="以字节为单位的滑动窗口">以字节为单位的滑动窗口</h3>
+<h2 id="tcp-的滑动窗口协议">TCP 的滑动窗口协议</h2>
 <ul>
-<li>TCP 使用流水线传输和滑动窗口协议实现高效、可靠的传输。
-<ul>
-<li><strong>流水线传输</strong>：发送方在等待确认的同时，继续发送后续的报文段。</li>
 <li><strong>滑动窗口协议</strong>：发送方 A 和接收方 B
 分别维持一个发送窗口和一个接收窗口。
 <ul>
 <li><strong>发送窗口</strong>：在没有收到确认的情况下，发送方可以连续把窗口内的数据全部发送出去。凡是已经发送过的数据，在未收到确认之前都必须暂时保留，以便在超时重传时使用。</li>
 <li><strong>接收窗口</strong>：只允许接收落入窗口内的数据。</li>
 </ul></li>
-</ul></li>
 <li>TCP 的滑动窗口是<strong>以字节为单位</strong>的。</li>
 </ul>
-<h4 id="发送缓存与发送窗口">发送缓存与发送窗口</h4>
+<h3 id="发送缓存与发送窗口">发送缓存与发送窗口</h3>
 <ul>
-<li><p>发送缓存： <img src="image-254.webp" srcset="/img/loading/loading3.gif" lazyload></p>
+<li><p><strong>发送缓存</strong>： <img src="image-254.webp" srcset="/img/loading/loading3.gif" lazyload></p>
 <ul>
-<li>发送方的应用进程把字节流写入 TCP 发送缓存。
+<li>发送缓存：
+<ul>
+<li>发送方的应用进程把字节流写入 TCP 发送缓存中。
 <ul>
 <li>不能发送太快，否则发送缓存会溢出。</li>
 </ul></li>
-<li>发送缓存内暂时存放：
-<ul>
-<li>发送方的应用程序传送给 TCP 准备发送的数据</li>
-<li>TCP 已发送但尚未收到确认的数据</li>
-</ul></li>
-<li>发送窗口的大小受发送缓存大小的限制，即发送窗口的只是发送缓存的一部分。</li>
-<li>缓存中的字节数 = 发送应用程序最后写入缓存的字节 -
+<li>发送缓存中的数据通常分为四类：
+<ol type="1">
+<li>已发送且已收到确认的数据（可释放）</li>
+<li>已发送但未收到确认的数据（在发送窗口中等待确认）</li>
+<li>未发送但可发送（在发送窗口内等待发送）</li>
+<li>未发送且不可发送（超出发送窗口，等待窗口滑动）</li>
+</ol></li>
+<li>发送缓存中的字节数 = 发送应用程序最后写入缓存的字节 -
 最后被确认的字节</li>
+</ul></li>
+<li>发送窗口：
+<ul>
+<li>发送窗口定义了允许发送的字节范围。</li>
+<li>发送窗口的大小受发送缓存大小的限制，即发送窗口的只是发送缓存的一部分。</li>
+<li>TCP 从发送缓存中取出位于发送窗口内的数据，组装成 TCP
+报文段发送出去。</li>
+</ul></li>
 </ul></li>
 <li><p><strong>发送窗口</strong> swnd： <img src="image-250.webp" srcset="/img/loading/loading3.gif" lazyload></p>
 <ul>
@@ -7248,8 +7133,8 @@ Acknowledgment）：长度可变，一般为 10 或 18 字节。</li>
 <li>后沿之后：已发送并收到确认的字节序号。</li>
 <li>窗口内部：允许发送的字节序号。
 <ul>
-<li><strong>通知窗口</strong>：已发送但尚未收到确认的字节序号。</li>
-<li><strong>可用窗口</strong>：允许发送但尚未发送的字节序号。</li>
+<li>当前位置之前：已发送但尚未收到确认的字节序号。</li>
+<li><strong>可用窗口</strong>（当前位置之后）：允许发送但尚未发送的字节序号。</li>
 </ul></li>
 <li>前沿之前：尚未允许发送的字节序号。</li>
 </ol></li>
@@ -7264,20 +7149,21 @@ Acknowledgment）：长度可变，一般为 10 或 18 字节。</li>
 允许发送但尚未发送的字节数（又称为可用窗口）</li>
 </ul></li>
 </ul>
-<h4 id="接收缓存与接收窗口">接收缓存与接收窗口</h4>
+<h3 id="接收缓存与接收窗口">接收缓存与接收窗口</h3>
 <ul>
-<li><p>接收缓存： <img src="image-255.webp" srcset="/img/loading/loading3.gif" lazyload></p>
+<li><p><strong>接收缓存</strong>： <img src="image-255.webp" srcset="/img/loading/loading3.gif" lazyload></p>
 <ul>
 <li>接收方的应用进程从 TCP 接收缓存中读取尚未被读取的字节。
 <ul>
 <li>若读取不及时，缓存会被填满，导致接收窗口变为 0</li>
 <li>若及时读取，接收窗口就可以增大，但最大也不能超过接收缓存的大小。</li>
 </ul></li>
-<li>接收缓存内暂时存放：
-<ul>
-<li>按序到达的、但尚未被接收应用程序读取的数据</li>
-<li>未按序到达的数据</li>
-</ul></li>
+<li>接收缓存中的数据通常分为三类：
+<ol type="1">
+<li>已被应用进程读取的数据（可释放）</li>
+<li>按序到达但尚未被接收应用进程读取的数据（在接收缓存中等待读取）</li>
+<li>未按序到达的数据（暂时存放在接收缓存中，等待按序交付）</li>
+</ol></li>
 </ul></li>
 <li><p><strong>接收窗口</strong> rwnd：</p>
 <ul>
@@ -7306,33 +7192,248 @@ A。</li>
 <li>因此，因此发送的确认报文段中的确认号是 31（即期望收到的序号）。</li>
 </ul></li>
 </ul>
-<h4 id="窗口的滑动">窗口的滑动</h4>
+<h3 id="窗口的滑动">窗口的滑动</h3>
 <ul>
-<li><p>发送窗口和接收窗口都可以向前滑动。</p>
+<li>发送窗口和接收窗口都可以向前滑动。
 <ul>
-<li>发送窗口：每当发送方收到对某些字节的确认时，发送窗口就向前滑动到相应的字节。</li>
+<li>发送窗口：每当发送方收到对某些字节的确认，且前序字节都已被确认时，发送窗口就向前滑动到相应的字节。</li>
 <li>接收窗口：每当接收方按序收到某些字节，交付给应用程序并发送确认后，接收窗口就向前滑动到相应的字节。</li>
+</ul></li>
+</ul>
+<h2 id="tcp-的可靠传输">TCP 的可靠传输</h2>
+<ul>
+<li>IP 网络提供的是不可靠的传输 <img src="image-238.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+<li>理想传输条件
+<ul>
+<li>特点
+<ol type="1">
+<li>传输信道不产生差错。</li>
+<li>不管发送方以多快的速度发送数据，接收方总是来得及处理收到的数据。</li>
+</ol></li>
+<li>在理想传输条件下，不需要采取任何措施就能够实现可靠传输。</li>
+<li>但实际网络都不具备理想传输条件。必须使用一些可靠传输协议，在不可靠的传输信道实现可靠传输。</li>
+</ul></li>
+</ul>
+<h3 id="自动重传请求协议-arq">自动重传请求协议 ARQ</h3>
+<ul>
+<li><strong>自动重传请求</strong>（Automatic Repeat
+reQuest，ARQ）协议：发送方在发送数据后，自动等待接收方的确认；若在规定时间内没有收到确认，就自动重传数据。</li>
+<li>ARQ 协议的基本思想：<strong>差错检测</strong> +
+<strong>确认应答</strong> + <strong>超时重传</strong>
+<ol type="1">
+<li>差错检测：接收方对收到的数据进行差错检测，若数据无差错则发送确认，否则丢弃数据。</li>
+<li>确认应答：接收方对正确收到的数据发送确认报文段。</li>
+<li>超时重传：发送方为每个发送的数据设置一个超时计时器，若在规定时间内没有收到确认，就自动重传数据。</li>
+</ol></li>
+</ul>
+<h4 id="停止等待-arq-协议">停止等待 ARQ 协议</h4>
+<h5 id="基本思想">基本思想</h5>
+<ul>
+<li>每发送完一个分组就<strong>停止</strong>发送，<strong>等待</strong>对方的确认。在收到确认后再发送下一个分组。</li>
+<li>全双工通信的双方既是发送方也是接收方，假设仅考虑 A 发送数据，而 B
+接收数据并发送确认。因此 A 叫做发送方，而 B 叫做接收方。</li>
+</ul>
+<h5 id="要点">要点</h5>
+<ul>
+<li><strong>停止等待</strong>：发送方每次只发送一个分组。在收到确认后再发送下一个分组。</li>
+<li><strong>暂存</strong>：在发送完一个分组后，发送方必须暂存已发送的分组的副本，以备重发。</li>
+<li><strong>编号</strong>：对发送的每个分组和确认都进行编号。</li>
+<li><strong>超时重传</strong>：发送方为发送的每个分组设置一个超时计时器。若超时计时器超时未收到确认，发送方会自动超时重传分组。
+<ul>
+<li>超时计时器的重传时间应当比数据在分组传输的平均往返时间更长一些，防止不必要的重传。</li>
+</ul></li>
+</ul>
+<h5 id="工作原理">工作原理</h5>
+<ul>
+<li><p>无差错情况 <img src="image-239.webp" srcset="/img/loading/loading3.gif" lazyload alt="无差错情况"></p>
+<ul>
+<li>A 发送完分组 <span class="math inline">\(M_{1}\)</span>
+后就暂停发送，等待 B 的确认 <span class="math inline">\(ACK\)</span>。</li>
+<li>B 收到 <span class="math inline">\(M_{1}\)</span> 向 A 发送 <span class="math inline">\(ACK\)</span>。</li>
+<li>A 在收到了对 <span class="math inline">\(M_{1}\)</span>
+的确认后，就再发送下一个分组 <span class="math inline">\(M_{2}\)</span>。</li>
+</ul></li>
+<li><p>出现差错 <img src="image-240.webp" srcset="/img/loading/loading3.gif" lazyload></p>
+<ul>
+<li>两种情况：在这两种情况下，B 都不会发送任何信息
+<ol type="1">
+<li>B 接收 <span class="math inline">\(M_{1}\)</span>
+时，检测出<strong>差错</strong>并丢弃 <span class="math inline">\(M_{1}\)</span>，其他什么也不做（不通知 A
+收到有差错的分组）。</li>
+<li><span class="math inline">\(M_{1}\)</span>
+在传输过程中<strong>丢失</strong>，这时 <span class="math inline">\(B\)</span> 什么都不知道，也什么都不做。</li>
+</ol></li>
+<li><strong>超时重传</strong>：
+<ol type="1">
+<li>A 为每一个已发送的分组设置一个超时计时器。</li>
+<li>A
+只要在超时计时器到期之前收到了相应的确认，就撤销该超时计时器，继续发送下一个分组
+<span class="math inline">\(M_{2}\)</span> 。</li>
+<li>若 A 在超时计时器规定时间内没有收到 B
+的确认，就认为分组错误或丢失，就<strong>重发</strong>该分组。</li>
+</ol></li>
+</ul></li>
+<li><p>确认丢失和确认迟到 <img src="image-241.webp" srcset="/img/loading/loading3.gif" lazyload></p>
+<ul>
+<li><strong>确认丢失</strong>
+<ol type="1">
+<li>若 B 所发送的对 <span class="math inline">\(M_{1}\)</span>
+的确认丢失了，那么 A 在设定的超时重传时间内将不会收到确认，因此 A
+在超时计时器到期后将重传 <span class="math inline">\(M_{1}\)</span>。</li>
+<li>假定 B 正确收到了 A 重传的分组 <span class="math inline">\(M_{1}\)</span>，则 B <strong>丢弃</strong>重复的
+<span class="math inline">\(M_{1}\)</span>，不向上层交付，并向 A
+<strong>重传确认</strong>分组。</li>
+<li>A 收到确认后，继续发送下一个分组 <span class="math inline">\(M_{2}\)</span>。</li>
+</ol></li>
+<li><strong>确认迟到</strong>
+<ol type="1">
+<li>若 B 所发送的对 <span class="math inline">\(M_{1}\)</span>
+的确认迟到了，那么 A 在超时计时器到期后重传 <span class="math inline">\(M_{1}\)</span>。</li>
+<li>B 会收到重复的 <span class="math inline">\(M_{1}\)</span>，则<strong>丢弃</strong>重复的
+<span class="math inline">\(M_{1}\)</span>
+并<strong>重传确认</strong>分组。</li>
+<li>由于第一个确认只是迟到而非丢失，A 会收到对 <span class="math inline">\(M_{1}\)</span>
+的重复确认，则<strong>丢弃</strong>该重复确认即可。</li>
+</ol></li>
+</ul></li>
+</ul>
+<h5 id="优缺点">优缺点</h5>
+<ul>
+<li>优点：简单。</li>
+<li>缺点：信道利用率太低。
+<ul>
+<li><strong>信道利用率</strong>：<span class="math inline">\(U =
+\frac{T_{D}}{T_{D} + RTT + T_{A}}\)</span> <img src="image-242.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+<li>当往返时间 <span class="math inline">\(RTT \gg T_{D}\)</span>
+时，信道的利用率非常低。</li>
+</ul></li>
+</ul>
+<h4 id="回退-n-帧-arq-协议">回退 N 帧 ARQ 协议</h4>
+<h5 id="基本思想-1">基本思想</h5>
+<ul>
+<li><p><strong>流水线传输</strong>：在收到确认之前，发送方连续发出多个分组。
+<img src="image-243.webp" srcset="/img/loading/loading3.gif" lazyload alt="流水线传输"></p>
+<ul>
+<li>发送方允许在等待确认的同时，继续发送后续的分组，从而提高信道利用率。</li>
+<li>接收方只对按序到达的分组进行确认，对乱序到达的分组不予确认，并丢弃这些乱序到达的分组。</li>
+</ul></li>
+<li><p><strong>回退 N
+帧</strong>（Go-back-N）的重传方式：发送方一旦发现某个分组出错或丢失，就<strong>重传该分组及其后面所有的分组</strong>。</p></li>
+</ul>
+<h5 id="要点-1">要点</h5>
+<ul>
+<li><strong>发送窗口</strong>：发送方维持一个发送窗口，位于发送窗口内的分组都可被连续发送出去，而不需要等待对方的确认。</li>
+<li><strong>发送窗口滑动</strong>：发送方每收到一个确认，就把发送窗口向前滑动一个分组的位置。
+<img src="image-244.webp" srcset="/img/loading/loading3.gif" lazyload alt="发送窗口与窗口滑动"></li>
+<li><strong>累积确认</strong>：接收方对<strong>按序到达的最后一个分组</strong>发送确认，表示到这个分组为止的所有分组都已正确收到了。
+<img src="image-245.webp" srcset="/img/loading/loading3.gif" lazyload alt="累积确认"></li>
+</ul>
+<h5 id="优缺点-1">优缺点</h5>
+<ul>
+<li>优点：容易实现，即使确认丢失也不必重传。</li>
+<li>缺点：不能向发送方反映出接收方已经正确收到的所有分组的信息。</li>
+</ul>
+<h4 id="选择重传-arq-协议">选择重传 ARQ 协议</h4>
+<h5 id="基本思想-2">基本思想</h5>
+<ul>
+<li><strong>流水线传输</strong>：在收到确认之前，发送方连续发出多个分组。</li>
+<li><strong>选择重传</strong>（Selective
+Repeat）的重传方式：发送方只重传那些被接收方判定为出错或丢失的分组，而不是像回退
+N 那样重传所有未被确认的分组。
+<ul>
+<li>接收方使用<strong>选择确认</strong>（Selective
+Acknowledgment，SACK）机制，向发送方报告哪些分组已经正确收到。</li>
+</ul></li>
+</ul>
+<h5 id="选择确认-sack">选择确认 SACK</h5>
+<ul>
+<li>定义：选择确认 SACK（Selective
+ACK）允许接收方告诉发送方哪些数据已经正确收到，从而使发送方只重传那些丢失的数据，而不是像累积确认那样重传所有未被确认的数据。</li>
+<li>RFC 2018 对 SACK 的规定
+<ul>
+<li>如在建立 TCP 连接时，要在 TCP 首部的选项中加上<strong>允许 SACK
+选项</strong>，且双方必须事先商定好。
+<ul>
+<li>允许 SACK 选项：长度 2 字节
+<ul>
+<li>第 1 字节：选项类型，值为 4</li>
+<li>第 2 字节：选项长度，值为 2</li>
+</ul></li>
+</ul></li>
+<li>原来首部中的确认号的用法不变（累积确认）。</li>
+<li>双方在 TCP 首部中增加 <strong>SACK
+选项</strong>，以便报告收到的不连续的字节块的边界。
+<ul>
+<li>SACK 选项：长度可变，一般为 10/18/26/34 字节。
+<ul>
+<li>第 1 字节：选项类型，值为 5</li>
+<li>第 2 字节：选项长度</li>
+<li>后面每 8 字节表示一个已正确收到的数据块的边界，<strong>最多 4
+个数据块</strong>。
+<ul>
+<li>前 4 字节：左边界，即已确认的数据块第一个字节的序号</li>
+<li>后 4 字节：右边界，即已确认的数据块最后一个字节的序号 + 1</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>示例：假设最大报文段长度 MSS = 5000 字节，起始序号为
+1，接收方收到连续字节流 1 ~ 1000 和不连续的两个字节块 1501 ~ 3000、3501
+~ 4500，则：
+<ul>
+<li>确认号：1001</li>
+<li>SACK 选项：
+<ul>
+<li>选项类型：5</li>
+<li>选项长度：18</li>
+<li>第 1 个数据块边界：1501（左边界），3001（右边界）</li>
+<li>第 2 个数据块边界：3501（左边界），4501（右边界）</li>
+</ul></li>
+<li>示意图： <img src="image-261.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul></li>
+<li>D-SACK（Duplicate SACK）：
+<ul>
+<li>用于通知发送方它所重传的报文段实际上是重复的。</li>
+<li>D-SACK 选项与 SACK 选项格式相同，但选项类型字段值为 6。</li>
+<li>接收方在收到重复报文段时，发送 D-SACK 选项通知发送方。</li>
+<li>示例： <img src="image-262.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+</ul></li>
+</ul>
+<h5 id="优缺点-2">优缺点</h5>
+<ul>
+<li>优点：提高了传输效率，减少了不必要的重传。</li>
+<li>缺点：实现较复杂，开销较大。</li>
+</ul>
+<h3 id="利用滑动窗口实现可靠传输">利用滑动窗口实现可靠传输</h3>
+<ul>
+<li><p>TCP 使用流水线传输和滑动窗口协议实现高效、可靠的传输。</p>
+<ul>
+<li><strong>流水线传输</strong>：发送方在等待确认的同时，继续发送后续的报文段。</li>
+<li><strong>滑动窗口协议</strong>：发送方 A 和接收方 B
+分别维持一个发送窗口和一个接收窗口。|
+<ul>
+<li>使用<strong>累积确认</strong>机制（类似 GBN）</li>
+<li>支持<strong>选择确认</strong>机制（类似 SR）</li>
+</ul></li>
 </ul></li>
 <li><p>示例： <img src="image-253.webp" srcset="/img/loading/loading3.gif" lazyload></p>
 <ol type="1">
 <li>发送方 A 发送字节 31~41 ，B 只收到字节 32 和 33，于是发送确认号 31
 给 A。</li>
-<li>A 收到确认号 31 后，窗口不变，等待超时后重发字节 31。</li>
+<li>A 收到确认号 31 后，窗口不变，重发字节 31。</li>
 <li>B 收到字节 31 后，窗口滑动至 34~53，此时又收到 37、38 和
 40，于是发送确认号 34 给 A。</li>
 <li>A 收到确认号 34 后，窗口滑动至 34~53。</li>
 </ol></li>
-</ul>
-<blockquote>
-<p>说明：</p>
+<li><p>说明：</p>
 <ul>
 <li>发送窗口是根据接收窗口设置的，但在同一时刻，发送窗口并不总是和接收窗口一样大（因为有一定的时间滞后）。</li>
 <li>TCP
 标准没有规定对不按序到达的数据应如何处理。通常是先临时存放在接收窗口中，等到字节流中所缺少的字节收到后，再按序交付上层的应用进程。</li>
 <li>TCP
 要求接收方必须有累积确认的功能，以减小传输开销。接收方可以在合适的时候发送确认，也可以在自己有数据要发送时把确认信息顺便捎带上。但接收方不应过分推迟发送确认，否则会导致发送方不必要的重传，捎带确认实际上并不经常发生。</li>
+</ul></li>
 </ul>
-</blockquote>
 <h3 id="超时重传时间的选择">超时重传时间的选择</h3>
 <ul>
 <li>TCP 发送方在规定的时间内没有收到确认就要重传已发送的报文段。</li>
@@ -7410,64 +7511,6 @@ Time-Out）内没有收到确认，就重传报文段，应略大于加权平均
 </ul></li>
 <li>示意图： <img src="image-258.webp" srcset="/img/loading/loading3.gif" lazyload alt="快速重传"></li>
 </ul>
-<h3 id="选择确认-sack">选择确认 SACK</h3>
-<ul>
-<li>问题：若收到的报文段无差错，只是未按序号收到，中间还缺少一些序号的数据，那么能否设法只传送缺少的数据而不重传已经正确到达接收方的数据？
-<ul>
-<li>解决方法：选择确认 SACK（Selective ACK）</li>
-</ul></li>
-<li>定义：选择确认 SACK
-允许接收方告诉发送方哪些数据已经正确收到，从而使发送方只重传那些丢失的数据，而不是像累积确认那样重传所有未被确认的数据。</li>
-<li>RFC 2018 对 SACK 的规定
-<ul>
-<li>如在建立 TCP 连接时，要在 TCP 首部的选项中加上<strong>允许 SACK
-选项</strong>，且双方必须事先商定好。
-<ul>
-<li>允许 SACK 选项：长度 2 字节
-<ul>
-<li>第 1 字节：选项类型，值为 4</li>
-<li>第 2 字节：选项长度，值为 2</li>
-</ul></li>
-</ul></li>
-<li>原来首部中的确认号的用法不变（累积确认）。</li>
-<li>双方在 TCP 首部中增加 <strong>SACK
-选项</strong>，以便报告收到的不连续的字节块的边界。
-<ul>
-<li>SACK 选项：长度可变，一般为 10/18/26/34 字节。
-<ul>
-<li>第 1 字节：选项类型，值为 5</li>
-<li>第 2 字节：选项长度</li>
-<li>后面每 8 字节表示一个已正确收到的数据块的边界，<strong>最多 4
-个数据块</strong>。
-<ul>
-<li>前 4 字节：左边界，即已确认的数据块第一个字节的序号</li>
-<li>后 4 字节：右边界，即已确认的数据块最后一个字节的序号 + 1</li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li>示例：假设最大报文段长度 MSS = 5000 字节，起始序号为
-1，接收方收到连续字节流 1 ~ 1000 和不连续的两个字节块 1501 ~ 3000、3501
-~ 4500，则：
-<ul>
-<li>确认号：1001</li>
-<li>SACK 选项：
-<ul>
-<li>选项类型：5</li>
-<li>选项长度：18</li>
-<li>第 1 个数据块边界：1501（左边界），3001（右边界）</li>
-<li>第 2 个数据块边界：3501（左边界），4501（右边界）</li>
-</ul></li>
-<li>示意图： <img src="image-261.webp" srcset="/img/loading/loading3.gif" lazyload></li>
-</ul></li>
-<li>D-SACK（Duplicate SACK）：
-<ul>
-<li>用于通知发送方它所重传的报文段实际上是重复的。</li>
-<li>D-SACK 选项与 SACK 选项格式相同，但选项类型字段值为 6。</li>
-<li>接收方在收到重复报文段时，发送 D-SACK 选项通知发送方。</li>
-<li>示例： <img src="image-262.webp" srcset="/img/loading/loading3.gif" lazyload></li>
-</ul></li>
-</ul>
 <h2 id="tcp-的流量控制">TCP 的流量控制</h2>
 <h3 id="利用滑动窗口实现流量控制">利用滑动窗口实现流量控制</h3>
 <ul>
@@ -7477,10 +7520,21 @@ control）：让发送方的发送速率不要太快，使接收方来得及接�
 <li>利用滑动窗口机制可以很方便地在 TCP
 连接上实现对发送方的流量控制。</li>
 </ul></li>
-<li>问题：一旦接收方的接收缓存满了，接收方就不得不把窗口值设置为零，从而使发送方停止发送数据，若后续接收方更新窗口值的报文段丢失，就会导致<strong>死锁</strong>。
+<li>TCP 的流量控制机制
+<ul>
+<li>接收方 B
+根据自己的接收缓存的使用情况，动态地调整自己的接收窗口（rwnd）大小，并把该窗口值通过窗口字段通知给发送方
+A。</li>
+<li>发送方 A 根据接收方 B
+给出的窗口值和确认号，构造出自己的发送窗口（swnd），从而控制自己的发送速率。</li>
+</ul></li>
+</ul>
+<h3 id="零窗口与死锁的解决">零窗口与死锁的解决</h3>
+<ul>
+<li><strong>死锁</strong>（deadlock）：一旦接收方的接收缓存满了，接收方就不得不把窗口值设置为零，从而使发送方停止发送数据，若后续接收方更新窗口值的报文段丢失，就会导致死锁。
 <ul>
 <li>示例： <img src="image-263.webp" srcset="/img/loading/loading3.gif" lazyload></li>
-<li>解决方法：持续计时器机制</li>
+<li>解决方法：持续计时器机制 + 零窗口探测报文段。</li>
 </ul></li>
 <li><strong>持续计时器</strong>（persistence timer）：只要 TCP
 连接的一方收到对方的零窗口通知，就启动该持续计时器。
@@ -7497,11 +7551,11 @@ control）：让发送方的发送速率不要太快，使接收方来得及接�
 <ol type="1">
 <li>TCP 维持一个变量，它等于<strong>最大报文段长度</strong>
 MSS。只要缓存中存放的数据达到 MSS 字节时，就组装成一个 TCP
-报文段发送出去。</li>
+报文段发送出去。（攒够了）</li>
 <li>由发送方的应用进程指明要求发送报文段，即 TCP
-支持的<strong>推送</strong>（push）操作。</li>
+支持的<strong>推送</strong>（push）操作。（被催了）</li>
 <li>发送方设置一个<strong>计时器</strong>，一旦期限到了就把当前已有的缓存数据装入报文段（但长度不能超过
-MSS）发送出去。</li>
+MSS）发送出去。（等久了）</li>
 </ol></li>
 <li><strong>糊涂窗口综合症</strong>
 <ul>
@@ -7610,7 +7664,7 @@ MSS）发送出去。</li>
 </ul></li>
 </ul></li>
 </ul>
-<h3 id="tcp-的拥塞控制方法">TCP 的拥塞控制方法</h3>
+<h3 id="利用滑动窗口实现拥塞控制">利用滑动窗口实现拥塞控制</h3>
 <ul>
 <li>TCP
 采用<strong>基于滑动窗口</strong>的方法进行拥塞控制，属于<strong>闭环控制</strong>方法。</li>
@@ -11233,7 +11287,7 @@ Subsystem）。</li>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2026年1月3日</div>
+          <div>2026年1月4日</div>
         </div>
       
       
