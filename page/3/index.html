@@ -146,8 +146,16 @@
             <a class="nav icon-only fix-cursor-default" aria-label="bottom" onclick="scrollToBottomSmooth();"><i class="fa-solid fa-chevron-down"></i></a>
 	    </li>
 
-        <hr class="menuLoad-Content" style="display: block;" id="top-line" hidden>
+        <hr class="menuLoad-Content" style="display: block;" id="top-line">
 
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copyLink();">
+                <span>
+                    <i class="fa-solid fa-copy"></i>
+                    &nbsp;复制链接
+                </span>
+            </a>
+        </li>
         <li class="menuLoad-Content" style="display: block;" id="copy-selected-text" hidden>
             <a class="vlts-menu fix-cursor-default" target="_self" onclick="copySelectedText();">
                 <span>
@@ -156,7 +164,6 @@
                 </span>
             </a>
         </li>
-
         <li class="menuLoad-Content" style="display: block;" id="search-selected-text-BING" hidden>
             <a class="vlts-menu fix-cursor-default" target="_blank" onclick="searchSelectedTextBing();">
                 <span>
@@ -165,16 +172,14 @@
                 </span>
             </a>
         </li>
-
         <li class="menuLoad-Content" style="display: block;" id="go-to-link" hidden>
             <a class="vlts-menu fix-cursor-default" target="_blank">
                 <span>
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    &nbsp;转到链接
+                    &nbsp;打开链接
                 </span>
             </a>
         </li>
-
         <li class="menuLoad-Content" style="display: block;" id="download-image" hidden>
             <a class="vlts-menu fix-cursor-default" target="_self" onclick="downloadImage();">
                 <span>
@@ -183,7 +188,6 @@
                 </span>
             </a>
         </li>
-
         <li class="menuLoad-Content" style="display: block;" id="copy-image-link" hidden>
             <a class="vlts-menu fix-cursor-default" target="_self" onclick="copyImageLink();">
                 <span>
@@ -231,27 +235,35 @@
 	    <hr class="menuLoad-Content" style="display: block;">
 
         <li class="menuLoad-Content" style="display: block;">
-            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copyLink();">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleColorMode();">
                 <span>
-                    <i class="fa-solid fa-copy"></i>
-                    &nbsp;复制链接
+                    <i id="toggle-color-mode-icon" class="fa-solid fa-circle-half-stroke"></i>
+                    &nbsp;切换昼夜
                 </span>
             </a>
         </li>
         <li class="menuLoad-Content" style="display: block;">
-            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleColorMode();">
-            <span>
-                <i id="toggle-color-mode-icon" class="fa-solid fa-circle-half-stroke"></i>
-                &nbsp;切换昼夜
-            </span>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleBackgroundMode();">
+                <span>
+                    <i id="toggle-background-mode-icon" class="fa-solid fa-toggle-on" style="margin-right: -1px;"></i>
+                    &nbsp;全屏背景
+                </span>
             </a>
         </li>
         <li class="menuLoad-Content" style="display: block;">
-            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleBackgroundMode();">
-            <span>
-                <i id="toggle-background-mode-icon" class="fa-solid fa-toggle-on"></i>
-                &nbsp;全屏背景
-            </span>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="randomChangeBackground();">
+                <span style="margin-left: 1px;">
+                    <i id="random-change-background" class="fa-solid fa-image"></i>
+                    &nbsp;切换背景
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleTabDisplay();">
+                <span>
+                    <i id="toggle-tab-display-icon" class="fa-solid fa-toggle-on" style="margin-right: -1px;"></i>
+                    &nbsp;自定义标签
+                </span>
             </a>
         </li>
     </ul>
@@ -438,6 +450,73 @@
               <div class="col-12 col-md-10 m-auto">
                 
 
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/_posts/%E5%8D%8A%E5%9F%8E%E7%83%9F%E7%81%AB%E5%8D%8A%E5%9F%8E%E4%BB%99/" target="_self">
+          <img src="/_posts/%E5%8D%8A%E5%9F%8E%E7%83%9F%E7%81%AB%E5%8D%8A%E5%9F%8E%E4%BB%99/%E5%B0%81%E9%9D%A2.webp" alt="半城烟火半城仙">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/_posts/%E5%8D%8A%E5%9F%8E%E7%83%9F%E7%81%AB%E5%8D%8A%E5%9F%8E%E4%BB%99/" target="_self">
+          半城烟火半城仙
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/_posts/%E5%8D%8A%E5%9F%8E%E7%83%9F%E7%81%AB%E5%8D%8A%E5%9F%8E%E4%BB%99/" target="_self">
+        <div>
+          半城烟火半城仙 千古风华千古情
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-08-13 22:30" pubdate>
+              2025-08-13
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/DayDream-Gallery/" class="category-chain-item">DayDream Gallery</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Photography/">#Photography</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
 
   <div class="row mx-auto index-card">
     
@@ -912,72 +991,11 @@
     </article>
   </div>
 
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/_posts/%E8%AE%A9%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E6%94%B6%E5%BD%95%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2/" target="_self">
-          让搜索引擎收录你的博客
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/_posts/%E8%AE%A9%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E6%94%B6%E5%BD%95%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2/" target="_self">
-        <div>
-          搜索引擎搜不到你的博客，那么你的文字还有人能看到吗？本文将介绍如何让搜索引擎收录你的博客。
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2025-06-24 22:05" pubdate>
-              2025-06-24
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/Hexo-Blog-Building/" class="category-chain-item">Hexo Blog Building</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Hexo/">#Hexo</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
 
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/page/2/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#board">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/#board">4</a><a class="page-number" href="/page/5/#board">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/#board">7</a><a class="extend next" rel="next" href="/page/4/#board"><i class="iconfont icon-arrowright"></i></a>
+      <a class="extend prev" rel="prev" href="/page/2/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#board">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/#board">4</a><a class="page-number" href="/page/5/#board">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/#board">8</a><a class="extend next" rel="next" href="/page/4/#board"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
 
@@ -1156,8 +1174,8 @@
 
 
   <script type="text/javascript">
-  document.getElementById("g-total-word-id").innerHTML = "620k";
-  document.getElementById('g-total-posts-id').textContent ="62";
+  document.getElementById("g-total-word-id").innerHTML = "621k";
+  document.getElementById('g-total-posts-id').textContent ="63";
 </script>
 
   <noscript>

@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/_posts/Fluid%E9%A1%B5%E8%84%9A%E7%BE%8E%E5%8C%96/image.webp">
 <meta property="article:published_time" content="2025-06-28T17:47:43.000Z">
-<meta property="article:modified_time" content="2025-12-31T01:04:00.776Z">
+<meta property="article:modified_time" content="2026-01-03T06:54:41.238Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Fluid">
@@ -154,8 +154,16 @@
             <a class="nav icon-only fix-cursor-default" aria-label="bottom" onclick="scrollToBottomSmooth();"><i class="fa-solid fa-chevron-down"></i></a>
 	    </li>
 
-        <hr class="menuLoad-Content" style="display: block;" id="top-line" hidden>
+        <hr class="menuLoad-Content" style="display: block;" id="top-line">
 
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copyLink();">
+                <span>
+                    <i class="fa-solid fa-copy"></i>
+                    &nbsp;复制链接
+                </span>
+            </a>
+        </li>
         <li class="menuLoad-Content" style="display: block;" id="copy-selected-text" hidden>
             <a class="vlts-menu fix-cursor-default" target="_self" onclick="copySelectedText();">
                 <span>
@@ -164,7 +172,6 @@
                 </span>
             </a>
         </li>
-
         <li class="menuLoad-Content" style="display: block;" id="search-selected-text-BING" hidden>
             <a class="vlts-menu fix-cursor-default" target="_blank" onclick="searchSelectedTextBing();">
                 <span>
@@ -173,16 +180,14 @@
                 </span>
             </a>
         </li>
-
         <li class="menuLoad-Content" style="display: block;" id="go-to-link" hidden>
             <a class="vlts-menu fix-cursor-default" target="_blank">
                 <span>
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    &nbsp;转到链接
+                    &nbsp;打开链接
                 </span>
             </a>
         </li>
-
         <li class="menuLoad-Content" style="display: block;" id="download-image" hidden>
             <a class="vlts-menu fix-cursor-default" target="_self" onclick="downloadImage();">
                 <span>
@@ -191,7 +196,6 @@
                 </span>
             </a>
         </li>
-
         <li class="menuLoad-Content" style="display: block;" id="copy-image-link" hidden>
             <a class="vlts-menu fix-cursor-default" target="_self" onclick="copyImageLink();">
                 <span>
@@ -239,27 +243,35 @@
 	    <hr class="menuLoad-Content" style="display: block;">
 
         <li class="menuLoad-Content" style="display: block;">
-            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copyLink();">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleColorMode();">
                 <span>
-                    <i class="fa-solid fa-copy"></i>
-                    &nbsp;复制链接
+                    <i id="toggle-color-mode-icon" class="fa-solid fa-circle-half-stroke"></i>
+                    &nbsp;切换昼夜
                 </span>
             </a>
         </li>
         <li class="menuLoad-Content" style="display: block;">
-            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleColorMode();">
-            <span>
-                <i id="toggle-color-mode-icon" class="fa-solid fa-circle-half-stroke"></i>
-                &nbsp;切换昼夜
-            </span>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleBackgroundMode();">
+                <span>
+                    <i id="toggle-background-mode-icon" class="fa-solid fa-toggle-on" style="margin-right: -1px;"></i>
+                    &nbsp;全屏背景
+                </span>
             </a>
         </li>
         <li class="menuLoad-Content" style="display: block;">
-            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleBackgroundMode();">
-            <span>
-                <i id="toggle-background-mode-icon" class="fa-solid fa-toggle-on"></i>
-                &nbsp;全屏背景
-            </span>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="randomChangeBackground();">
+                <span style="margin-left: 1px;">
+                    <i id="random-change-background" class="fa-solid fa-image"></i>
+                    &nbsp;切换背景
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleTabDisplay();">
+                <span>
+                    <i id="toggle-tab-display-icon" class="fa-solid fa-toggle-on" style="margin-right: -1px;"></i>
+                    &nbsp;自定义标签
+                </span>
             </a>
         </li>
     </ul>
@@ -519,7 +531,7 @@
         aria-expanded="true"
       >
         Hexo Blog Building
-        <span class="list-group-count">(12)</span>
+        <span class="list-group-count">(13)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -639,6 +651,15 @@
         </a>
       
     
+      
+      
+        <a href="/_posts/Fluid%E6%96%B0%E5%A2%9E%E5%8F%B3%E9%94%AE%E5%8A%9F%E8%83%BD/" title="Fluid新增右键功能"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Fluid新增右键功能</span>
+        </a>
+      
+    
   </div>
 
         
@@ -682,7 +703,7 @@
 <li>标签页根据焦点切换显示</li>
 </ul>
           </div>
-<p><a href="/_posts/Fluid主题美化1-0/" logourl="/img/avatar/avatar.webp" class="LinkCard">Fluid主题美化1.0</a></p>
+<p><a href="/_posts/Fluid主题美化/" logourl="/img/avatar/avatar.webp" class="LinkCard">Fluid主题美化</a></p>
 <h1 id="关于页添加-github-热力图">关于页添加 Github 热力图</h1>
 <p>这个功能的实现比较简单，可以直接调用Github Chart
 API来实现。项目地址见下方。</p>
@@ -1190,7 +1211,7 @@ Awesome官网</a>上根据版本搜索你想要的图标，并获取其类名。
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年12月31日</div>
+          <div>2026年1月3日</div>
         </div>
       
       
@@ -1578,8 +1599,8 @@ Awesome官网</a>上根据版本搜索你想要的图标，并获取其类名。
 
 
   <script type="text/javascript">
-  document.getElementById("g-total-word-id").innerHTML = "620k";
-  document.getElementById('g-total-posts-id').textContent ="62";
+  document.getElementById("g-total-word-id").innerHTML = "621k";
+  document.getElementById('g-total-posts-id').textContent ="63";
 </script>
 
   <noscript>

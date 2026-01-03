@@ -146,8 +146,16 @@
             <a class="nav icon-only fix-cursor-default" aria-label="bottom" onclick="scrollToBottomSmooth();"><i class="fa-solid fa-chevron-down"></i></a>
 	    </li>
 
-        <hr class="menuLoad-Content" style="display: block;" id="top-line" hidden>
+        <hr class="menuLoad-Content" style="display: block;" id="top-line">
 
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copyLink();">
+                <span>
+                    <i class="fa-solid fa-copy"></i>
+                    &nbsp;复制链接
+                </span>
+            </a>
+        </li>
         <li class="menuLoad-Content" style="display: block;" id="copy-selected-text" hidden>
             <a class="vlts-menu fix-cursor-default" target="_self" onclick="copySelectedText();">
                 <span>
@@ -156,7 +164,6 @@
                 </span>
             </a>
         </li>
-
         <li class="menuLoad-Content" style="display: block;" id="search-selected-text-BING" hidden>
             <a class="vlts-menu fix-cursor-default" target="_blank" onclick="searchSelectedTextBing();">
                 <span>
@@ -165,16 +172,14 @@
                 </span>
             </a>
         </li>
-
         <li class="menuLoad-Content" style="display: block;" id="go-to-link" hidden>
             <a class="vlts-menu fix-cursor-default" target="_blank">
                 <span>
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    &nbsp;转到链接
+                    &nbsp;打开链接
                 </span>
             </a>
         </li>
-
         <li class="menuLoad-Content" style="display: block;" id="download-image" hidden>
             <a class="vlts-menu fix-cursor-default" target="_self" onclick="downloadImage();">
                 <span>
@@ -183,7 +188,6 @@
                 </span>
             </a>
         </li>
-
         <li class="menuLoad-Content" style="display: block;" id="copy-image-link" hidden>
             <a class="vlts-menu fix-cursor-default" target="_self" onclick="copyImageLink();">
                 <span>
@@ -231,27 +235,35 @@
 	    <hr class="menuLoad-Content" style="display: block;">
 
         <li class="menuLoad-Content" style="display: block;">
-            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copyLink();">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleColorMode();">
                 <span>
-                    <i class="fa-solid fa-copy"></i>
-                    &nbsp;复制链接
+                    <i id="toggle-color-mode-icon" class="fa-solid fa-circle-half-stroke"></i>
+                    &nbsp;切换昼夜
                 </span>
             </a>
         </li>
         <li class="menuLoad-Content" style="display: block;">
-            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleColorMode();">
-            <span>
-                <i id="toggle-color-mode-icon" class="fa-solid fa-circle-half-stroke"></i>
-                &nbsp;切换昼夜
-            </span>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleBackgroundMode();">
+                <span>
+                    <i id="toggle-background-mode-icon" class="fa-solid fa-toggle-on" style="margin-right: -1px;"></i>
+                    &nbsp;全屏背景
+                </span>
             </a>
         </li>
         <li class="menuLoad-Content" style="display: block;">
-            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleBackgroundMode();">
-            <span>
-                <i id="toggle-background-mode-icon" class="fa-solid fa-toggle-on"></i>
-                &nbsp;全屏背景
-            </span>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="randomChangeBackground();">
+                <span style="margin-left: 1px;">
+                    <i id="random-change-background" class="fa-solid fa-image"></i>
+                    &nbsp;切换背景
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleTabDisplay();">
+                <span>
+                    <i id="toggle-tab-display-icon" class="fa-solid fa-toggle-on" style="margin-right: -1px;"></i>
+                    &nbsp;自定义标签
+                </span>
             </a>
         </li>
     </ul>
@@ -438,6 +450,75 @@
               <div class="col-12 col-md-10 m-auto">
                 
 
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/_posts/Fluid%E6%96%B0%E5%A2%9E%E5%8F%B3%E9%94%AE%E5%8A%9F%E8%83%BD/" target="_self">
+          <img src="/_posts/Fluid%E6%96%B0%E5%A2%9E%E5%8F%B3%E9%94%AE%E5%8A%9F%E8%83%BD/image.webp" alt="Fluid新增右键功能">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/_posts/Fluid%E6%96%B0%E5%A2%9E%E5%8F%B3%E9%94%AE%E5%8A%9F%E8%83%BD/" target="_self">
+          Fluid新增右键功能
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/_posts/Fluid%E6%96%B0%E5%A2%9E%E5%8F%B3%E9%94%AE%E5%8A%9F%E8%83%BD/" target="_self">
+        <div>
+          Fluid 主题美化记录8.0——新增右键菜单功能，支持随机切换背景图功能和关闭标签页显示功能。
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2026-01-03 14:33" pubdate>
+              2026-01-03
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Hexo-Blog-Building/" class="category-chain-item">Hexo Blog Building</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Hexo/">#Hexo</a>
+            
+              <a href="/tags/Fluid/">#Fluid</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
 
   <div class="row mx-auto index-card">
     
@@ -918,80 +999,11 @@
     </article>
   </div>
 
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/_posts/Fluid%E5%85%A8%E5%B1%8F%E8%83%8C%E6%99%AF/" target="_self">
-          <img src="/_posts/Fluid%E5%85%A8%E5%B1%8F%E8%83%8C%E6%99%AF/image.webp" alt="Fluid全屏背景">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/_posts/Fluid%E5%85%A8%E5%B1%8F%E8%83%8C%E6%99%AF/" target="_self">
-          Fluid全屏背景
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt " href="/_posts/Fluid%E5%85%A8%E5%B1%8F%E8%83%8C%E6%99%AF/" target="_self">
-        <div>
-          Fluid 主题美化记录6.0——无侵入实现全屏背景
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2025-11-24 21:30" pubdate>
-              2025-11-24
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/Hexo-Blog-Building/" class="category-chain-item">Hexo Blog Building</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Hexo/">#Hexo</a>
-            
-              <a href="/tags/Fluid/">#Fluid</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
 
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="page-number" href="/page/3/#board">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/#board">7</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="page-number" href="/page/3/#board">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/#board">8</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
 
@@ -1170,8 +1182,8 @@
 
 
   <script type="text/javascript">
-  document.getElementById("g-total-word-id").innerHTML = "620k";
-  document.getElementById('g-total-posts-id').textContent ="62";
+  document.getElementById("g-total-word-id").innerHTML = "621k";
+  document.getElementById('g-total-posts-id').textContent ="63";
 </script>
 
   <noscript>
