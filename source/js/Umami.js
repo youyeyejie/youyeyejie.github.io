@@ -47,7 +47,9 @@ function umamiTrackEvent() {
 
     const menuItems = document.querySelectorAll('.vlts-menu.fix-cursor-default');
     menuItems.forEach(item => {
-        if (item.onclick?.toString().includes('copySelectedText')) {
+        if (item.onclick?.toString().includes('copyLink')) {
+            item.dataset.umamiEvent = "Copy Link";
+        } else if (item.onclick?.toString().includes('copySelectedText')) {
             item.dataset.umamiEvent = "Copy Selected Text";
         } else if (item.onclick?.toString().includes('searchSelectedTextBING')) {
             item.dataset.umamiEvent = "Search Selected in BING";
@@ -65,15 +67,13 @@ function umamiTrackEvent() {
             item.dataset.umamiEvent = "Categories";
         } else if (item.pathname === '/tags/') {
             item.dataset.umamiEvent = "Tags";
-        } else if (item.onclick?.toString().includes('copyLink')) {
-            item.dataset.umamiEvent = "Copy Link";
-        } else if (item.onclick?.toString().includes('toggleColorMode')) {
+        } else if (item.id === 'toggle-color-mode') {
             item.dataset.umamiEvent = "Color Toggle";
-        } else if (item.onclick?.toString().includes('toggleBackgroundMode')) {
-            item.dataset.umamiEvent = "Background Toggle";
-        } else if (item.onclick?.toString().includes('randomChangeBackground')) {
+        } else if (item.id === 'random-change-background') {
             item.dataset.umamiEvent = "Random Background";
-        } else if (item.onclick?.toString().includes('toggleTabDisplay')) {
+        } else if (item.id === 'toggle-background-mode') {
+            item.dataset.umamiEvent = "Background Toggle";
+        } else if (item.id === 'toggle-tab-display') {
             item.dataset.umamiEvent = "Tab Display Toggle";
         }
     });

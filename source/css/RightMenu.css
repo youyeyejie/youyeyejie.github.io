@@ -73,6 +73,7 @@ ul.list-v.rightmenu a.vlts-menu {
 }
 ul.list-v.rightmenu a.vlts-menu:hover {
     padding-left: 30px;
+    color: var(--link-hover-color);
 }
 .rightmenu-icon{
 	margin: 0 110px 0 8px;
@@ -95,9 +96,6 @@ ul.list-v >li>a {
     text-overflow: ellipsis;
     border-radius: 4px;
     -webkit-border-radius: 4px;
-}
-ul.list-v >li>a :hover{
-    color: var(--link-hover-color)
 }
 ul.list-v.rightmenu a {
     cursor: default;

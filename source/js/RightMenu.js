@@ -221,11 +221,27 @@ function toggleColorMode() {
     document.getElementById('color-toggle-btn').click();
     if (document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ||
         (document.documentElement.getAttribute('data-user-color-scheme') === 'auto' &&
-         window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         document.getElementById('toggle-color-mode-icon').className = "iconfont icon-dark";
     }
     else {
         document.getElementById('toggle-color-mode-icon').className = "iconfont icon-light";
+    }
+}
+
+// 随机切换背景功能
+function randomChangeBackground() {
+    const random_banner = imgs[Math.floor(Math.random() * imgs.length)];
+    const banner = document.getElementById('banner');
+    const web_bg = document.getElementById('web_bg');
+    const BackgroundMode = localStorage.getItem('BackgroundMode');
+    if (banner && web_bg) {
+        if (BackgroundMode === 'true') {
+            web_bg.style.backgroundImage = `url(${random_banner})`;
+        }
+        else {
+            banner.style.background = `url(${random_banner}) center center / cover no-repeat`;
+        }
     }
 }
 
@@ -277,22 +293,6 @@ function toggleTabDisplay() {
             type: 'info',
             message: '已禁用标签页标题切换功能'
         });
-    }
-}
-
-// 随机切换背景功能
-function randomChangeBackground() {
-    const random_banner = imgs[Math.floor(Math.random() * imgs.length)];
-    const banner = document.getElementById('banner');
-    const web_bg = document.getElementById('web_bg');
-    const BackgroundMode = localStorage.getItem('BackgroundMode');
-    if (banner && web_bg) {
-        if (BackgroundMode === 'true') {
-            web_bg.style.backgroundImage = `url(${random_banner})`;
-        }
-        else {
-            banner.style.background = `url(${random_banner}) center center / cover no-repeat`;
-        }
     }
 }
 
