@@ -11,6 +11,15 @@
   </url>
   
   <url>
+    <loc>https://youyeyejie.github.io/about/index.html</loc>
+    
+    <lastmod>2026-01-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://youyeyejie.github.io/html/RightMenu.html</loc>
     
     <lastmod>2026-01-03</lastmod>
@@ -338,15 +347,6 @@
     <loc>https://youyeyejie.github.io/html/Footer.html</loc>
     
     <lastmod>2025-10-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://youyeyejie.github.io/about/index.html</loc>
-    
-    <lastmod>2025-09-15</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

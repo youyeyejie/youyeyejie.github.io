@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis3364.webp">
 <meta property="article:published_time" content="2025-12-27T11:44:35.000Z">
-<meta property="article:modified_time" content="2026-01-03T09:29:59.083Z">
+<meta property="article:modified_time" content="2026-01-03T14:21:51.418Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU">
 <meta property="article:tag" content="计算机网络">
@@ -243,7 +243,7 @@
 	    <hr class="menuLoad-Content" style="display: block;">
 
         <li class="menuLoad-Content" style="display: block;">
-            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleColorMode();">
+            <a class="vlts-menu fix-cursor-default" id="toggle-color-mode" target="_self" onclick="toggleColorMode();">
                 <span>
                     <i id="toggle-color-mode-icon" class="fa-solid fa-circle-half-stroke"></i>
                     &nbsp;切换昼夜
@@ -251,7 +251,7 @@
             </a>
         </li>
         <li class="menuLoad-Content" style="display: block;">
-            <a class="vlts-menu fix-cursor-default" target="_self" onclick="randomChangeBackground();">
+            <a class="vlts-menu fix-cursor-default" id="random-change-background" target="_self" onclick="randomChangeBackground();">
                 <span style="margin-left: 1px;">
                     <i id="random-change-background-icon" class="fa-solid fa-image"></i>
                     &nbsp;切换背景
@@ -259,7 +259,7 @@
             </a>
         </li>
         <li class="menuLoad-Content" style="display: block;">
-            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleBackgroundMode();">
+            <a class="vlts-menu fix-cursor-default" id="toggle-background-mode" target="_self" onclick="toggleBackgroundMode();">
                 <span>
                     <i id="toggle-background-mode-icon" class="fa-solid fa-toggle-on" style="margin-right: -1px;"></i>
                     &nbsp;全屏背景
@@ -267,7 +267,7 @@
             </a>
         </li>
         <li class="menuLoad-Content" style="display: block;">
-            <a class="vlts-menu fix-cursor-default" target="_self" onclick="toggleTabDisplay();">
+            <a class="vlts-menu fix-cursor-default" id="toggle-tab-display" target="_self" onclick="toggleTabDisplay();">
                 <span>
                     <i id="toggle-tab-display-icon" class="fa-solid fa-toggle-on" style="margin-right: -1px;"></i>
                     &nbsp;自定义标签
@@ -468,7 +468,7 @@
         
         
           <!-- compatible with older versions-->
-          752 分钟
+          754 分钟
         
       </span>
     
@@ -940,6 +940,27 @@
 </blockquote>
 
     <div class="fold">
+      <div class="fold-title fold-default collapsed" data-toggle="collapse" href="#collapse-a6fbe2ac" role="button" aria-expanded="false" aria-controls="collapse-a6fbe2ac">
+        <div class="fold-arrow">▶</div>具有五层协议的体系结构
+      </div>
+      <div class="fold-collapse collapse" id="collapse-a6fbe2ac">
+        <div class="fold-content">
+          <ul>
+<li><a href="#具有五层协议的体系结构">具有五层协议的体系结构</a>
+<ul>
+<li><a href="#物理层">物理层</a>：实现物理介质上比特流（0 和
+1）的传输</li>
+<li><a href="#数据链路层">数据链路层</a>：实现同一局域网内的数据帧传输，实现相邻节点的可靠通信</li>
+<li><a href="#网络层">网络层</a>：实现不同网络之间的数据包传输，提供逻辑寻址和路由选择功能</li>
+<li><a href="#传输层">传输层</a>：实现进程到进程（端到端）的可靠或不可靠的数据传输服务</li>
+<li><a href="#应用层">应用层</a>：实现具体网络应用功能，为用户提供各种网络服务和应用接口</li>
+</ul></li>
+</ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="fold">
       <div class="fold-title fold-default collapsed" data-toggle="collapse" href="#collapse-72d7e03f" role="button" aria-expanded="false" aria-controls="collapse-72d7e03f">
         <div class="fold-arrow">▶</div>本文协议一览
       </div>
@@ -1268,7 +1289,7 @@ network）：按规定交纳费用的人都可以使用的网络，也可称为�
 <li>从覆盖的范围看，很多接入网还是属于局域网。</li>
 </ul></li>
 </ul>
-<h2 id="性能">性能</h2>
+<h2 id="计算机网络的性能">计算机网络的性能</h2>
 <h3 id="性能指标">性能指标</h3>
 <h4 id="速率">速率</h4>
 <ul>
@@ -2393,6 +2414,9 @@ X ^ {4} + X ^ {2} + X + 1 \\
 reQuest）：在接收站接收到一个包含出错数据的信息（帧）时，自动发出一个重传错帧的请求，也称循环自动请求协议。</li>
 </ul>
 <h5 id="停止-等待协议sw">停止-等待协议（SW）</h5>
+<blockquote>
+<p>详见<a href="#停止等待协议">下文</a></p>
+</blockquote>
 <ul>
 <li>定义：发送方每发送一帧，都要等待接收方的应答信号才能发送下一帧，接收方每接收一帧都需要反馈一个应答信号来表示可接收下一帧。</li>
 <li>特点：
@@ -2402,6 +2426,9 @@ reQuest）：在接收站接收到一个包含出错数据的信息（帧）时�
 </ul></li>
 </ul>
 <h5 id="后退-n-帧协议gbn">后退 N 帧协议（GBN）</h5>
+<blockquote>
+<p>详见<a href="#回退-n-的连续-arq-协议">下文</a></p>
+</blockquote>
 <ul>
 <li>定义：
 <ul>
@@ -6399,7 +6426,7 @@ MPLS 技术，由思科公司提出并推动成为互联网标准。
 List），即 MPLS 标签栈，它被封装在分组首部。</li>
 <li>网络中的其他节点就执行首部中的指令（即标签）进行转发。</li>
 </ul></li>
-<li>SDN 控制器（详见<a href="#sdn-控制器">下文</a>）：
+<li>SDN 控制器（Software Defined Network Controller）：
 <ul>
 <li>SR 通常和软件定义网络 SDN 结合使用，由 SDN
 控制器来完成路径计算和标签分配等任务。</li>
@@ -6409,7 +6436,10 @@ List），即 MPLS 标签栈，它被封装在分组首部。</li>
 <li>给分组<strong>分配</strong> SR
 标签，指明分组从源点到终点的路径。</li>
 </ul></li>
-</ul></li>
+</ul>
+<blockquote>
+<p>详见<a href="#sdn-控制器">下文</a></p>
+</blockquote></li>
 </ul></li>
 <li>SRv6（Segment Routing over IPv6）：SR 在 IPv6 网络中的实现方式。
 <ul>
@@ -6734,7 +6764,7 @@ number），或通常简称为<strong>端口</strong>（port）。<strong>把端
 <h4 id="udp-的主要特点">UDP 的主要特点</h4>
 <ol type="1">
 <li><strong>无连接</strong>：发送数据之前不需要建立连接。</li>
-<li><strong>使用尽最大努力交付</strong>：即不保证可靠交付。</li>
+<li><strong>尽最大努力交付</strong>：不保证可靠交付。</li>
 <li><strong>面向报文</strong>：UDP 一次传送和交付一个完整的报文。</li>
 <li><strong>没有拥塞控制</strong>：网络出现的拥塞不会使源主机的发送速率降低。很适合多媒体通信的要求。</li>
 <li>支持<strong>一对一、一对多、多对一、多对多</strong>等交互通信。</li>
@@ -6797,7 +6827,8 @@ ICMP 发送“端口不可达”差错报文给发送方。</li>
 <li>UDP 长度字段：2 字节，与 UDP 首部中的长度字段相同</li>
 </ol></li>
 <li>作用：在计算检验和时，临时把 12 字节的伪首部和 UDP
-用户数据报连接在一起进行计算。</li>
+用户数据报连接在一起进行计算，得到的结果填入 UDP 首部的检验和字段。</li>
+<li>计算方法：每 16 位为一组，按位取反加和，再对结果取反。</li>
 <li>示例： <img src="image-234.webp" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul></li>
 </ul>
@@ -6965,8 +6996,8 @@ TCP 报文段。</li>
 <li>TCP 连接的端点：套接字（socket）或插口。</li>
 <li><strong>套接字</strong>（socket）：是传输层与应用层之间的接口，是传输层对应用进程的标识。
 <ul>
-<li>组成：<span class="math inline">\(\text{socket}
-=（\text{IP}:\text{port})\)</span>
+<li>组成：<span class="math inline">\(\text{socket} =
+(\text{IP}:\text{port})\)</span>
 <ol type="1">
 <li>主机的 IP 地址</li>
 <li>主机上的端口号</li>
@@ -7022,8 +7053,8 @@ TCP 报文段。</li>
 <li>若确认号 = N，则表明到序号 N - 1 为止的所有数据都已正确收到。</li>
 </ul></li>
 <li><strong>数据偏移</strong>（即首部长度）：占 4 位，指出 TCP
-报文段的数据起始处距离 TCP 报文段的起始处有多远。单位是 32 位字（以 4
-字节为计算单位）。</li>
+报文段的数据起始处距离 TCP 报文段的起始处有多远。单位是 32 位字（以
+<strong>4 字节</strong>为计算单位）。</li>
 <li><strong>保留字段</strong>：占 6 位，保留为今后使用，但目前应置为
 0。</li>
 <li><strong>紧急</strong> URG：控制位，表示紧急指针字段是否有效。
@@ -7067,12 +7098,10 @@ PSH（PuSH）：控制位，用来提示接收方应用进程立即交付数据�
 <li>窗口值是动态变化的，随接收方缓存的使用情况而变化。</li>
 </ul></li>
 <li><strong>检验和</strong>：占 2
-字节。检验和字段检验的范围包括首部和数据这两部分。在计算检验和时，要在
-TCP 报文段的前面加上 12 字节的伪首部。
+字节。检验和字段检验的范围包括首部和数据两部分。
 <ul>
 <li>与 UDP 相同，在计算检验和时，临时把 12 字节的“伪首部”和 TCP
-报文段连接在一起。伪首部仅仅是为了计算检验和。</li>
-<li><img src="image-247.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+报文段连接在一起。伪首部仅仅是为了计算检验和。 <img src="image-247.webp" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul></li>
 <li><strong>紧急指针</strong>：占 2 字节。在 URG = 1
 时，指出本报文段中的紧急数据的字节数（紧急数据结束后就是普通数据），指出了紧急数据的末尾在报文段中的位置。</li>
@@ -7081,12 +7110,15 @@ TCP 报文段的前面加上 12 字节的伪首部。
 </ul>
 <h4 id="选项最大报文段长度-mss">选项：最大报文段长度 MSS</h4>
 <ul>
-<li><strong>最大报文段长度选项</strong> MSS（Maximum Segment Size）：占
-2 字节，表示每个 TCP 报文段中的数据字段的最大长度。 <img src="image-248.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+<li><p><strong>最大报文段长度选项</strong> MSS（Maximum Segment
+Size）：占 2 字节，表示每个 TCP 报文段中的数据字段的最大长度。 <img src="image-248.webp" srcset="/img/loading/loading3.gif" lazyload></p>
+<ul>
 <li>TCP 报文段长度 = 数据字段长度（MSS）+ TCP 首部长度</li>
 <li>IP 数据报长度（MTU） = TCP 报文段长度 + IP 首部长度</li>
-<li>MSS 与接收窗口值没有关系。</li>
-<li>取值要求
+<li>以太网帧长度 = MTU + 以太网首、尾部长度</li>
+</ul></li>
+<li><p>MSS 与接收窗口值没有关系。</p></li>
+<li><p>取值要求</p>
 <ul>
 <li>不能太小
 <ul>
@@ -7104,12 +7136,12 @@ TCP 报文段的前面加上 12 字节的伪首部。
 <li>只要在 IP 层传输时不再分片。</li>
 <li>默认值 = 536 字节。
 <ul>
-<li>报文段长度 = 536 + 20~60 = 556~576 字节。</li>
-<li>IP 数据报长度 = 556~576 + 20 = 576~596 字节。</li>
+<li>TCP 报文段长度 = 536 + 20~60 = 556~576 字节。</li>
+<li>IP 数据报长度 = 556~576 + 20~60 = 576~636 字节。</li>
 </ul></li>
 </ul></li>
 </ul></li>
-<li>TCP 连接建立时，双方交换 MSS 值。</li>
+<li><p>TCP 连接建立时，双方交换 MSS 值。</p></li>
 </ul>
 <h4 id="选项窗口扩大">选项：窗口扩大</h4>
 <ul>
@@ -7160,9 +7192,11 @@ B 在收到该报文段后，把该时间戳值原封不动地放入回送回答
 <li><strong>选择确认选项</strong> SACK（Selective
 Acknowledgment）：长度可变，一般为 10 或 18 字节。</li>
 <li>作用：允许接收方告诉发送方哪些数据已经正确收到，从而使发送方只重传那些丢失的数据，而不是像累积确认那样重传所有未被确认的数据。</li>
-<li>详见<a href="#选择确认-SACK">下文</a></li>
 </ul>
-<h2 id="tcp-可靠传输的实现">TCP 可靠传输的实现</h2>
+<blockquote>
+<p>详见<a href="#选择确认-sack">下文</a></p>
+</blockquote>
+<h2 id="tcp-的可靠传输">TCP 的可靠传输</h2>
 <h3 id="以字节为单位的滑动窗口">以字节为单位的滑动窗口</h3>
 <ul>
 <li>TCP 使用流水线传输和滑动窗口协议实现高效、可靠的传输。
@@ -11636,7 +11670,7 @@ Subsystem）。</li>
 
 
   <script type="text/javascript">
-  document.getElementById("g-total-word-id").innerHTML = "621k";
+  document.getElementById("g-total-word-id").innerHTML = "622k";
   document.getElementById('g-total-posts-id').textContent ="63";
 </script>
 
