@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis3364.webp">
 <meta property="article:published_time" content="2025-12-27T11:44:35.000Z">
-<meta property="article:modified_time" content="2026-01-04T12:24:34.905Z">
+<meta property="article:modified_time" content="2026-01-04T12:54:42.544Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU">
 <meta property="article:tag" content="计算机网络">
@@ -10127,8 +10127,8 @@ first），优先把文件块传送给<strong>传送数据率最高</strong>的�
 <li>下载文件分发的最少时间 <span class="math inline">\(T_{p2p} \geq
 F/d_{\min}\)</span></li>
 <li>上载文件分发的最少时间 <span class="math inline">\(T_{p2p} \geq
-NF/u_{T}\)</span> ，其中上传速率之和 <span class="math inline">\(u_{T} =
-\sum_{i=1}^{N}u_{i}\)</span></li>
+NF/u_{T}\)</span>，其中上传速率之和 <span class="math inline">\(u_{T} =
+\sum_{i=1}^{N}u_{i} + u_{s}\)</span></li>
 <li>所有主机都下载完文件 <span class="math inline">\(F\)</span>
 的最少时间的下限是： <span class="math display">\[
   T_{p2p} \geq \max(F/u_{s},F/d_{\min},NF/u_{T})
@@ -10141,8 +10141,11 @@ NF/u_{T}\)</span> ，其中上传速率之和 <span class="math inline">\(u_{T} 
 <span class="math inline">\(u_{s} = 10u\)</span>。</li>
 <li>当 <span class="math inline">\(N = 30\)</span> 时 <span class="math display">\[
   \begin{aligned}
-  T_{cs} &amp; \geq \max(3F/u,F/d_{\min}) \geq 3~h \\
-  T_{p2p} &amp; \geq \max(0.1F/u,F/d_{\min},F/u) \geq 1~h
+  T_{cs} &amp; \geq \max(\frac{30F}{10u},\frac{F}{d_{\min}}) =
+\max(\frac{3F}{u},\frac{F}{d_{\min}}) \geq 3~h \\
+  T_{p2p} &amp; \geq
+\max(\frac{F}{10u},\frac{F}{d_{\min}},\frac{30F}{40u}) =
+\max(\frac{F}{10u},\frac{F}{d_{\min}},\frac{3F}{4u}) \geq 0.75~h
   \end{aligned}
   \]</span></li>
 </ul></li>
