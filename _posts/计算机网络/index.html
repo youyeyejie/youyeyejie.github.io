@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis3364.webp">
 <meta property="article:published_time" content="2025-12-27T11:44:35.000Z">
-<meta property="article:modified_time" content="2026-01-04T12:54:42.544Z">
+<meta property="article:modified_time" content="2026-01-04T14:35:16.688Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU">
 <meta property="article:tag" content="计算机网络">
@@ -456,7 +456,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          91k 字
+          92k 字
         
       </span>
     
@@ -468,7 +468,7 @@
         
         
           <!-- compatible with older versions-->
-          762 分钟
+          765 分钟
         
       </span>
     
@@ -10183,15 +10183,14 @@ Table）
 环上可以增加一些<strong>指针表</strong>（finger
 table），又称为路由表或查找器表。</p>
 <ul>
-<li>指针表分为两列：第一列是<strong>起始位置结点标识符</strong>
-NID，第二列是<strong>后继活跃结点标识符</strong> NID。</li>
+<li>指针表分为两列：第一列是<strong>起始位置</strong>，第二列是<strong>直接后继的活跃结点标识符</strong>。</li>
 <li>每个结点 N 的指针表有 <span class="math inline">\(m\)</span> 行，第
 <span class="math inline">\(i\)</span> 行存放的起始位置是 <span class="math inline">\((N + 2^{i - 1})~mod~2^{m}\)</span>。</li>
 </ul></li>
 <li><p>示例：对于结点 N4，其指针表的第 2 列第 <span class="math inline">\(i\)</span> 行根据 <span class="math inline">\((N4
 + 2^{i - 1})\)</span> 计算得出其后继结点。 <img src="image-337.webp" srcset="/img/loading/loading3.gif" lazyload></p>
 <ul>
-<li>指针表
+<li>指针表：
 <ul>
 <li>N4+1=5，要找第一个大于等于 5 的节点：N7</li>
 <li>N4+2=6，要找第一个大于等于 6 的节点：N7</li>
@@ -10201,11 +10200,14 @@ NID，第二列是<strong>后继活跃结点标识符</strong> NID。</li>
 </ul></li>
 <li>加速查询：
 <ul>
-<li>若要从 N4 开始查找查找资源 R14，发现 R14 不在 N4 上。</li>
-<li>查找指针表，第一行的后继结点是 N7，但 R14 &gt; N7，不符合要求。</li>
-<li>直到第四行的后继结点 N20，R14 &lt; N20，符合要求。（共查询 4
-步，若不使用指针表需查询 16 步）</li>
-<li>于是向 N20 发送查询请求，N20 发现 R14 在自己上，返回结果。</li>
+<li>若要从节点 N4 查找资源 K12，因为 <span class="math inline">\(12
+\not\in [4,7]\)</span>，所以需要跳转</li>
+<li>从大步长到小步长遍历 N4 的指针表，找到第一个小于等于 12 的节点
+N10，跳转到 N10</li>
+<li>从 N10 查找资源 K12，因为 <span class="math inline">\(12 \in
+[10,20]\)</span>，所以 N20 是资源 K12 的提供节点</li>
+<li>使用指针表：N4 → N10 → N20，共跳转 2 次</li>
+<li>不使用指针表：N4 → N7 → N10 → N20，共跳转 3 次</li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -10256,7 +10258,6 @@ NID，第二列是<strong>后继活跃结点标识符</strong> NID。</li>
 </ul>
 <h5 id="服务集service-set">服务集（service set）</h5>
 <ul>
-<li>示意图 <img src="image-313.webp" srcset="/img/loading/loading3.gif" lazyload></li>
 <li><strong>基本服务集</strong> BSS
 <ul>
 <li>定义：基本服务集 BSS（Basic Service
@@ -10305,15 +10306,15 @@ DS（Distribution System）连接而成的更大的无线局域网。</li>
 <li>ESS 还可为无线用户提供到 802.x 局域网（非 802.11
 无线局域网）的接入：通过门户（Portal）设备实现，相当于一个网桥。</li>
 </ul></li>
+<li>示意图 <img src="image-313.webp" srcset="/img/loading/loading3.gif" lazyload></li>
 <li>移动站 <span class="math inline">\(A\)</span> 如果要和另一个 BSS
 中的移动站 <span class="math inline">\(B\)</span>
 通信，就必须经过两个接入点 <span class="math inline">\(AP_1\)</span> 和
 <span class="math inline">\(AP_2\)</span>，即 <span class="math inline">\(A \to AP_1 \to AP_2 \to B\)</span>。
 <ul>
-<li>移动站 <span class="math inline">\(A\)</span> 漫游到位置 <span class="math inline">\(A_{1}\)</span> 时，选择和信号较强的一个 AP
-联系。当漫游到位置 <span class="math inline">\(A_{2}\)</span>
-时，就只能和 <span class="math inline">\(AP_{2}\)</span> 联系了。</li>
-<li>移动站 <span class="math inline">\(A\)</span> 只要能够和其中一个 AP
+<li>移动站 <span class="math inline">\(A\)</span> 漫游到位置 <span class="math inline">\(A_{1}\)</span> 时，选择和信号较强的一个 <span class="math inline">\(AP\)</span> 联系。当漫游到位置 <span class="math inline">\(A_{2}\)</span> 时，就只能和 <span class="math inline">\(AP_{2}\)</span> 联系了。</li>
+<li>移动站 <span class="math inline">\(A\)</span> 只要能够和其中一个
+<span class="math inline">\(AP\)</span>
 联系上，就可以一直保持与另一个移动站 <span class="math inline">\(B\)</span> 的通信。</li>
 </ul></li>
 </ul>
@@ -10334,12 +10335,12 @@ DS（Distribution System）连接而成的更大的无线局域网。</li>
 <li>示意图： <img src="image-356.webp" srcset="/img/loading/loading3.gif" lazyload></li>
 <li>过程：
 <ol type="1">
-<li>AP 周期性发出<strong>信标帧</strong>（beacon frame），其中包含
+<li><span class="math inline">\(AP\)</span>
+周期性发出<strong>信标帧</strong>（beacon frame），其中包含
 SSID、速率等系统参数。</li>
 <li>移动站 <span class="math inline">\(A\)</span> 扫描 11
-个信道，选择加入到 <span class="math inline">\(AP_2\)</span>
-所在的基本服务集 <span class="math inline">\(BSS_2\)</span> ，向 <span class="math inline">\(AP_2\)</span>
-发送<strong>关联请求帧</strong>（Association Request frame）。</li>
+个信道，选择一个接入点，如 <span class="math inline">\(AP_2\)</span>，向其发送<strong>关联请求帧</strong>（Association
+Request frame）。</li>
 <li><span class="math inline">\(AP_2\)</span> 同意移动站 <span class="math inline">\(A\)</span> 发来的关联请求，向移动站 <span class="math inline">\(A\)</span>
 发送<strong>关联响应帧</strong>（Association Response frame），与移动站
 <span class="math inline">\(A\)</span> 建立关联。</li>
@@ -10353,17 +10354,18 @@ SSID、速率等系统参数。</li>
 <li>移动站 <span class="math inline">\(A\)</span>
 主动发出广播的<strong>探测请求帧</strong>（Probe Request
 frame），让所有能够收到此帧的接入点知道有移动站要求建立关联。</li>
-<li>两个 AP 都回答<strong>探测响应帧</strong>（Probe Response
-frame）。</li>
-<li>移动站 <span class="math inline">\(A\)</span> 向 <span class="math inline">\(AP_{2}\)</span>
-发出<strong>关联请求帧</strong>。</li>
+<li>两个 <span class="math inline">\(AP\)</span>
+都回答<strong>探测响应帧</strong>（Probe Response frame）。</li>
+<li>移动站 <span class="math inline">\(A\)</span> 选择一个接入点，如
+<span class="math inline">\(AP_{2}\)</span>
+，向其发出<strong>关联请求帧</strong>。</li>
 <li><span class="math inline">\(AP_{2}\)</span> 向移动站 <span class="math inline">\(A\)</span>
 发送<strong>关联响应帧</strong>，与移动站 <span class="math inline">\(A\)</span> 建立关联。</li>
 </ol></li>
 </ul></li>
 </ol>
 <ul>
-<li>一个移动站可以同时进行主动扫描和被动扫描。</li>
+<li>一个移动站可以<strong>同时</strong>进行主动扫描和被动扫描。</li>
 </ul></li>
 <li>重建关联（reassociation） 和分离（dissociation）
 <ul>
@@ -10523,6 +10525,7 @@ MHz）时速率可达 600 Mbit/s。</td>
 <li>红外线 IR（已很少用）</li>
 </ol></li>
 </ul>
+<h3 id="局域网的-mac-层协议">802.11 局域网的 MAC 层协议</h3>
 <h4 id="csmaca-协议">CSMA/CA 协议</h4>
 <ul>
 <li><p>背景</p>
@@ -10545,7 +10548,8 @@ MHz）时速率可达 600 Mbit/s。</td>
 </ul></li>
 </ol></li>
 </ul></li>
-<li><p><strong>CSMA/CA 协议</strong>：</p>
+<li><p><strong>CSMA/CA 协议</strong>（Carrier Sense Multiple Access with
+Collision Avoidance）：</p>
 <ul>
 <li><strong>载波监听</strong> CS（Carrier
 Sense）：终端发送数据前，通过两种方式检测信道是否空闲：
@@ -10562,22 +10566,33 @@ Vector）告知其他终端信道占用状态。发送方会在帧头部携带�
 </ul></li>
 <li><strong>碰撞避免</strong> CA（Collision
 Avoidance）：无线信道无法像有线信道那样检测冲突（冲突检测 CD
-不可行），因此 DCF 用 “随机退避” 替代 “冲突检测”，核心流程如下：
+不可行），因此用 “随机退避” 替代 “冲突检测”，核心流程如下：
 <ul>
 <li><strong>空闲信道检测</strong>：终端监听信道，若信道空闲且持续时间大于等于分布式帧间间隔（DIFS，Distributed
-Inter-Frame Space），则可尝试发送数据。</li>
-<li><strong>忙信道退避</strong>：若信道忙，终端记录信道忙的时间，待信道空闲后，不立即发送，而是启动
-“随机退避计时器”</li>
+Inter-Frame Space），则进入争用期，执行退避算法争用信道。</li>
+<li><strong>忙信道推迟接入</strong>：若信道忙，则终端推迟接入，等待信道空闲并经过
+DIFS 后再进入争用期，执行退避算法争用信道。</li>
+<li><strong>随机退避</strong>：退避计时器的初始值从竞争窗口
+CW（Contention
+Window）中随机选取；退避过程中若信道再次变忙，则冻结退避计时器，待信道空闲后继续倒计时；退避计时器倒计时结束，则终端立即发送数据。</li>
 </ul></li>
-<li><strong>退避机制</strong>：退避计时器的初始值从竞争窗口
-CW（Contention Window）中随机选取，CW 的初始最小值为 <span class="math inline">\(CW_{\min}\)</span>（802.11b/g 为 31，802.11n/ac/ax
-可动态调整）；退避过程中若信道再次变忙，退避计时器暂停，待信道空闲后继续倒计时；退避计时器倒计时结束，终端立即发送数据；</li>
-<li><strong>重传机制</strong>：若发送方未在规定时间内收到接收方的确认帧（ACK），则判定传输失败，启动重传流程：将
-CW 近似加倍（<span class="math inline">\(CW =\min(CW\times
-2+1,CW_{\max})\)</span>，<span class="math inline">\(CW_{\max}=1023\)</span>），然后重新执行退避与发送，直至重传次数达到上限（通常为
+<li><strong>信道预约</strong>（可选）：为减少碰撞概率，可选择使用
+RTS/CTS 机制借助 NAV 进行信道预约。
+<ul>
+<li><strong>请求发送</strong> RTS（Request to
+Send）：发送方在发送数据前，先发送 RTS 帧，请求接收方分配信道。</li>
+<li><strong>清除发送</strong> CTS（Clear to Send）：接收方收到 RTS
+帧后，若信道空闲，则回复 CTS 帧，允许发送方发送数据。</li>
+<li>其他终端收到 RTS 或 CTS 帧后，更新本地
+NAV，避免在信道被占用期间发送数据。</li>
+</ul></li>
+<li><strong>确认机制</strong>：接收方在成功接收数据帧后，间隔 SIFS
+时间发送确认帧 ACK，告知发送方数据已成功接收。
+<ul>
+<li><strong>重传机制</strong>：若发送方未在规定时间内收到
+ACK，则判定传输失败，启动重传流程：将 CW 近似加倍（<span class="math inline">\(CW =\min(CW\times 2+1,CW_{\max})\)</span>，<span class="math inline">\(CW_{\max}=1023\)</span>），然后重新执行退避与发送，直至重传次数达到上限（通常为
 7 次）</li>
-<li>使用 CSMA/CA
-的同时，使用<strong>停止等待协议</strong>：链路层确认，解决碰撞后重传。</li>
+</ul></li>
 </ul></li>
 <li><p>CSMA/CA 协议的要点 <img src="image-361.webp" srcset="/img/loading/loading3.gif" lazyload></p></li>
 <li><p>802.11 的 MAC 层通过<strong>协调功能</strong>来确定在基本服务集
@@ -10639,7 +10654,7 @@ Function）
 为止的这段时间（DATA+SIFS+ACK）内，必须不允许任何其他站发送数据，这样才不会发生碰撞。</li>
 </ul></li>
 </ul>
-<h4 id="争用信道的过程">争用信道的过程</h4>
+<h4 id="争用信道">争用信道</h4>
 <figure>
 <img src="image-363.webp" srcset="/img/loading/loading3.gif" lazyload alt="争用信道的过程">
 <figcaption aria-hidden="true">争用信道的过程</figcaption>
@@ -10671,12 +10686,13 @@ timer）。</li>
 </ol></li>
 <li>退避算法的使用场景
 <ol type="1">
-<li>要发送数据时检测到信道忙。</li>
-<li>已发出的数据帧未收到确认，重传数据帧。</li>
-<li>接着发送后续的数据帧（为了防止一个站长期垄断发送权）。</li>
+<li>要发送数据时检测到信道忙，推迟接入等待信道空闲后，进入争用期。</li>
+<li>已发出的数据帧未收到确认，需要重传数据帧。</li>
+<li>需要接着发送后续的数据帧（为了防止一个站长期垄断发送权）。</li>
 </ol></li>
-<li>当站点想发送数据，并检测信道连续空闲时间超过 DIFS
-时，即可立即发送数据，而不必经过争用期。</li>
+<li>若有新站点想发送数据，并检测信道<strong>连续空闲时间超过
+DIFS</strong>
+时，即可<strong>立即</strong>发送数据，而不必经过争用期。</li>
 </ul></li>
 <li>推迟接入与退避的区别
 <ul>
@@ -10724,7 +10740,7 @@ CW_{\max})\)</span>，其中 <span class="math inline">\(CW_{\max} =
 不再增大了。</li>
 </ul></li>
 </ul>
-<h4 id="对信道进行预约">对信道进行预约</h4>
+<h4 id="信道预约">信道预约</h4>
 <ul>
 <li>假设：B 站正好在 A 占用信道时要发送数据。B
 检测到信道忙，于是推迟到争用信道时与 A 一起争用信道。但正巧 A 和 B
@@ -10811,17 +10827,7 @@ RTS 帧或 CTS 帧发生碰撞。</li>
 2：发送地址（即<strong>实际发送</strong>数据帧的节点地址）。</li>
 <li>地址 3 和地址 4
 取决于数据帧中的“来自AP”和“去往AP”这两个字段的数值。</li>
-<li>示例：
-<ul>
-<li><figure>
-<img src="image-367.webp" srcset="/img/loading/loading3.gif" lazyload alt="例 1">
-<figcaption aria-hidden="true">例 1</figcaption>
-</figure></li>
-<li><figure>
-<img src="image-368.webp" srcset="/img/loading/loading3.gif" lazyload alt="例 2">
-<figcaption aria-hidden="true">例 2</figcaption>
-</figure></li>
-</ul></li>
+<li>示例： <img src="image-367.webp" srcset="/img/loading/loading3.gif" lazyload alt="例 1"> <img src="image-368.webp" srcset="/img/loading/loading3.gif" lazyload alt="例 2"></li>
 </ul></li>
 <li>序号控制字段：2 字节。
 <ul>
@@ -10988,6 +10994,61 @@ MHz</li>
 </ul></li>
 </ul>
 <h2 id="蜂窝移动通信网">蜂窝移动通信网</h2>
+<table>
+
+<thead>
+<tr>
+<th>蜂窝移动通信系统</th>
+<th>技术 ｜ 主要特点</th>
+<th>代表系统</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一代（1G）</td>
+<td>模拟技术、电路交换、FDMA</td>
+<td>模拟传输，频谱效率低</td>
+<td>AMPS、NMT</td>
+</tr>
+<tr>
+<td>第二代（2G）</td>
+<td>数字技术、电路交换、TDMA/FDMA</td>
+<td>引入数字传输，频谱效率提高</td>
+<td>GSM、IS-95</td>
+</tr>
+<tr>
+<td>2.5G</td>
+<td>数字技术、分组交换、TDMA/FDMA</td>
+<td>引入分组交换，支持数据业务</td>
+<td>GPRS、EDGE</td>
+</tr>
+<tr>
+<td>第三代（3G）</td>
+<td>数字技术、分组交换、DS-WCDMA、TD-SCDMA</td>
+<td>高速率数据传输，支持多媒体业务</td>
+<td>DS-WCDMA、TD-SCDMA、CDMA2000</td>
+</tr>
+<tr>
+<td>第四代（4G）</td>
+<td>全 IP 技术、OFDM</td>
+<td>取消电路交换、全网 IP 化</td>
+<td>LTE、WiMAX</td>
+</tr>
+<tr>
+<td>LTE</td>
+<td>OFDMA</td>
+<td>更高带宽、更高频谱效率、更高速率、更大容量</td>
+<td>LTE-A</td>
+</tr>
+<tr>
+<td>第五代（5G）</td>
+<td>新无线接入技术、网络切片、独立组网</td>
+<td>超高带宽、超低时延、大连接</td>
+<td>5G NR</td>
+</tr>
+</tbody>
+</table>
 <h3 id="蜂窝移动通信系统问世">蜂窝移动通信系统问世</h3>
 <ul>
 <li>第一代（1G）蜂窝移动通信系统
