@@ -79,6 +79,21 @@ wrong_hash_message: Sorry, this article's content seems to be corrupted.
 首先在 `source/js/` 目录下创建一个新的 JavaScript 文件 `Crypto.js`，并添加以下代码：
 
 ```javascript
+// 修改输入框显示逻辑
+const input = document.getElementById('hbePass');
+let value = '';
+
+if (input) {
+    input.addEventListener('focus', function () {
+        this.value = value;
+    });
+    input.addEventListener('blur', function () {
+        value = this.value; // 保存真实值
+        this.value = ''; 
+    });
+}
+
+// 修改 alert 提示为 tooltip 提示
 const hbeMainElement = document.getElementById("hexo-blog-encrypt");
 const wrongPassMessage = hbeMainElement?.dataset["wpm"];
 const wrongHashMessage = hbeMainElement?.dataset["whm"];
@@ -105,6 +120,7 @@ window.alert = function (message) {
     }
 };
 
+// 解密成功后移除 hbe-prefix 元素
 function removePrefixElement() {
     const hbePrefix = document.querySelector('hbe-prefix');
     if (hbePrefix && hbePrefix.parentNode) {
@@ -133,25 +149,30 @@ window.addEventListener('hexo-blog-decrypt', () => {
 
 ```css
 :root {
+    --hbe-input-field-color: #818181;
     --hbe-input-label-color: #818181;
     --hbe-btn-bg-color: #dbdddf;
     --hbe-btn-bb-color: #818181;
 }
 [data-user-color-scheme="dark"] {
+    --hbe-input-field-color: #a1a1a1;
     --hbe-input-label-color: #a1a1a1;
     --hbe-btn-bg-color: #353946;
     --hbe-btn-bb-color: #a1a1a1;
 }
 
 
-.hbe-input-label-content {
-    font-size: 24px;
-    color: var(--hbe-input-label-color) !important;
+.hbe-input-field-shrink {
+    color: var(--hbe-input-field-color) !important;
 }
 
 .hbe-input-label-shrink::after {
     height: 5px !important;
     background: var(--hbe-input-label-color) !important;
+}
+.hbe-input-label-content {
+    font-size: 24px;
+    color: var(--hbe-input-label-color) !important;
 }
 
 .hbe-button {
