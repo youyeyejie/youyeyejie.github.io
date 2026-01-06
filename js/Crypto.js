@@ -1,4 +1,19 @@
-const hbeMainElement = document.getElementById("hexo-blog-encrypt");
+// 修改输入框显示逻辑
+const input = document.getElementById('hbePass');
+let value = '';
+
+if (input) {
+    input.addEventListener('focus', function () {
+        this.value = value;
+    });
+    input.addEventListener('blur', function () {
+        value = this.value; // 保存真实值
+        this.value = ''; 
+    });
+}
+
+// 修改 alert 提示为 tooltip 提示
+const hbeMainElement = document.querySelector('hbe-main');
 const wrongPassMessage = hbeMainElement?.dataset["wpm"];
 const wrongHashMessage = hbeMainElement?.dataset["whm"];
 
@@ -24,6 +39,7 @@ window.alert = function (message) {
     }
 };
 
+// 解密成功后移除 hbe-prefix 元素
 function removePrefixElement() {
     const hbePrefix = document.querySelector('hbe-prefix');
     if (hbePrefix && hbePrefix.parentNode) {

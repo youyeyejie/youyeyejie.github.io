@@ -1,23 +1,28 @@
 :root {
+    --hbe-input-field-color: #818181;
     --hbe-input-label-color: #818181;
     --hbe-btn-bg-color: #dbdddf;
     --hbe-btn-bb-color: #818181;
 }
 [data-user-color-scheme="dark"] {
+    --hbe-input-field-color: #a1a1a1;
     --hbe-input-label-color: #a1a1a1;
     --hbe-btn-bg-color: #353946;
     --hbe-btn-bb-color: #a1a1a1;
 }
 
 
-.hbe-input-label-content {
-    font-size: 24px;
-    color: var(--hbe-input-label-color) !important;
+.hbe-input-field-shrink {
+    color: var(--hbe-input-field-color) !important;
 }
 
 .hbe-input-label-shrink::after {
     height: 5px !important;
     background: var(--hbe-input-label-color) !important;
+}
+.hbe-input-label-content {
+    font-size: 24px;
+    color: var(--hbe-input-label-color) !important;
 }
 
 .hbe-button {
