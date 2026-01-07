@@ -287,7 +287,7 @@ function readingMode(enable) {
         });
         if (boardCtn) {
             boardCtn.classList.remove('container');
-            boardCtn.style.padding = '0 8%';
+            boardCtn.style.padding = '0';
         }
         if (mainCol) {
             mainCol.className = "col-lg-12 nopadding-x-md";
