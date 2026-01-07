@@ -14,11 +14,11 @@ updated:
 
 # 前言
 
-在本次美化中，我在之前实现的自定义右键菜单功能基础上，新增了两个实用功能：随机切换背景图功能和关闭标签页显示功能。自定义右键的实现可以参考之前的文章：
+在本次美化中，我在之前实现的自定义右键菜单功能基础上，新增了三个实用功能：随机切换背景图、阅读模式和关闭标签页显示功能。自定义右键的实现可以参考之前的文章：
 
 <a href="/_posts/Fluid自定义右键菜单/" logourl="/_posts/Fluid自定义右键菜单/image.webp" class="LinkCard">Fluid自定义右键菜单</a>
 
-其中，随即切换背景图功能可以让用户通过右键菜单快速更换博客的背景图片，提升视觉体验。而关闭标签页显示功能则是因为有读者反馈博客的标签页标题切换功能会影响使用体验，如在历史记录中留下大量相同标题的记录，故新增该功能以供用户选择是否启用。
+其中，随机切换背景图功能可以让用户通过右键菜单快速更换博客的背景图片，提升视觉体验。阅读模式功能则可以隐藏侧边栏和评论区，将更大的空间用来显示文章主体内容，专注于正文的阅读，提升阅读体验。而关闭标签页显示功能则是因为有读者反馈博客的标签页标题切换功能会影响使用体验，如在历史记录中留下大量相同标题的记录，故新增该功能以供用户选择是否启用。
 
 # 实现过程
 ## 修改自定义右键菜单 HTML 结构
@@ -30,6 +30,14 @@ updated:
                 <span style="margin-left: 1px;">
                     <i id="random-change-background" class="fa-solid fa-image"></i>
                     &nbsp;切换背景
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" id="toggle-reading-mode" target="_self" onclick="toggleReadingMode();">
+                <span>
+                    <i id="toggle-reading-mode-icon" class="fa-solid fa-toggle-off" style="margin-right: -1px;"></i>
+                    &nbsp;阅读模式
                 </span>
             </a>
         </li>
@@ -69,6 +77,60 @@ function randomChangeBackground() {
 <a href="/_posts/Fluid随机背景/" logourl="/_posts/Fluid随机背景/image.webp" class="LinkCard">Fluid随机背景</a>
 
 <a href="/_posts/Fluid全屏背景/" logourl="/_posts/Fluid全屏背景/image.webp" class="LinkCard">Fluid全屏背景</a>
+
+## 实现阅读模式功能
+接着，在 `source/js/RightMenu.js` 文件中，添加切换阅读模式功能的实现代码：
+
+```javascript
+// 切换阅读模式功能
+function readingMode(enable) {
+    const boardCtn = document.getElementById('board-ctn');
+    const mainCol = boardCtn?.parentElement;
+    const comment = document.getElementById('comments');
+
+    if (enable) {
+        document.getElementById('toggle-reading-mode-icon').className = "fa-solid fa-toggle-on";
+        document.querySelectorAll('.side-col').forEach(el => {
+            el.style.setProperty('display', 'none', 'important');
+        });
+        if (boardCtn) {
+            boardCtn.classList.remove('container');
+            boardCtn.style.padding = '0';
+        }
+        if (mainCol) {
+            mainCol.className = "col-lg-12 nopadding-x-md";
+        }
+        if (comment) {
+            comment.style.display = 'none';
+        }
+    } else {
+        document.getElementById('toggle-reading-mode-icon').className = "fa-solid fa-toggle-off";
+        document.querySelectorAll('.side-col').forEach(el => {
+            el.style.display = '';
+        });
+        if (boardCtn) {
+            boardCtn.classList.add('container');
+            boardCtn.style.padding = '';
+        }
+        if (mainCol) {
+            mainCol.className = "col-lg-8 nopadding-x-md";
+        }
+        if (comment) {
+            comment.style.display = '';
+        }
+    }
+    localStorage.setItem('ReadingMode', enable ? 'true' : 'false');
+}
+function toggleReadingMode() {
+    const ReadingMode = localStorage.getItem('ReadingMode');
+    if (ReadingMode === 'false' || !ReadingMode) {
+        readingMode(true);
+    } else {
+        readingMode(false);
+    }
+}
+```
+
 
 ## 实现关闭标签页显示功能
 最后，在 `source/js/RightMenu.js` 文件中，添加切换标签页显示功能的实现代码：
@@ -127,9 +189,10 @@ function handleVisibilityChange() {
 
     // 根据页面可见性切换标题
     if (document[visibilityProp]) {
-        document.title = " 你去哪啦(๑•́ ₃ •̀๑) ";
+        document.title = " 你去哪啦(๑•́ ₃ •̀๑) " + originalTitle;
     } else {
-        document.title = " 你回来啦(*^▽^*) ";
+        document.title = " 你回来啦(*^▽^*) " + originalTitle;
+        // 设置定时器，2秒后恢复原标题
         welcomeTimer = setTimeout(() => {
             document.title = originalTitle;
         }, 2000);
@@ -175,5 +238,31 @@ jQuery(document).ready(function() {
 });
 ```
 
+## 初始化图标状态和提示
+最后，在 `source/js/RightMenu.js` 文件的末尾，添加初始化图标状态和提示的代码：
+
+```javascript
+// 页面加载完毕后初始化图标状态和提示
+window.addEventListener('DOMContentLoaded', function() {
+    // 省略其他初始化代码...
+    if (localStorage.getItem('TabDisplayMode') === 'true') {
+        document.getElementById('toggle-tab-display-icon').className = "fa-solid fa-toggle-on";
+    } else {
+        document.getElementById('toggle-tab-display-icon').className = "fa-solid fa-toggle-off";
+    }
+    if (localStorage.getItem('ReadingMode') === 'true') {
+        readingMode(true);
+    } else {
+        readingMode(false);
+    }
+
+    // 显示提示气泡
+    showTooltip({
+        type: 'info',
+        message: '如需原始右键菜单请按下 <strong>Ctrl+右键</strong>'
+    });
+});
+```
+
 # 总结
-至此，Fluid 主题的右键菜单功能得到了进一步增强，用户可以通过右键菜单快速切换背景图片，或根据个人喜好选择是否启用标签页标题切换功能。这些改进提升了博客的用户体验和个性化设置，使其更加符合读者的使用习惯。
+至此，Fluid 主题的右键菜单功能得到了进一步增强，用户可以通过右键菜单快速切换背景图片，启用或关闭阅读模式，或根据个人喜好选择是否启用标签页标题切换功能。这些改进提升了博客的用户体验和个性化设置，使其更加符合读者的使用习惯。

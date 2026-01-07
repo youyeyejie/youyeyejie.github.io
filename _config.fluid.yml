@@ -229,7 +229,7 @@ color:
 # Font
 font:
   font_size: 18px
-  font_family:  Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei";
+  font_family:  Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Noto Sans SC", "Microsoft YaHei", "WenQuanYi Micro Hei";
   letter_spacing: 0.02em
   code_font_size: 85%
 
