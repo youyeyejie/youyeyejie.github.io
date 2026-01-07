@@ -274,6 +274,54 @@ function toggleBackgroundMode() {
     }
 }
 
+// 切换阅读模式功能
+function readingMode(enable) {
+    const boardCtn = document.getElementById('board-ctn');
+    const mainCol = boardCtn?.parentElement;
+    const comment = document.getElementById('comments');
+
+    if (enable) {
+        document.getElementById('toggle-reading-mode-icon').className = "fa-solid fa-toggle-on";
+        document.querySelectorAll('.side-col').forEach(el => {
+            el.style.setProperty('display', 'none', 'important');
+        });
+        if (boardCtn) {
+            boardCtn.classList.remove('container');
+            boardCtn.style.padding = '0 8%';
+        }
+        if (mainCol) {
+            mainCol.className = "col-lg-12 nopadding-x-md";
+        }
+        if (comment) {
+            comment.style.display = 'none';
+        }
+    } else {
+        document.getElementById('toggle-reading-mode-icon').className = "fa-solid fa-toggle-off";
+        document.querySelectorAll('.side-col').forEach(el => {
+            el.style.display = '';
+        });
+        if (boardCtn) {
+            boardCtn.classList.add('container');
+            boardCtn.style.padding = '';
+        }
+        if (mainCol) {
+            mainCol.className = "col-lg-8 nopadding-x-md";
+        }
+        if (comment) {
+            comment.style.display = '';
+        }
+    }
+    localStorage.setItem('ReadingMode', enable ? 'true' : 'false');
+} 
+function toggleReadingMode() {
+    const ReadingMode = localStorage.getItem('ReadingMode');
+    if (ReadingMode === 'false' || !ReadingMode) {
+        readingMode(true);
+    } else {
+        readingMode(false);
+    }
+}
+
 // 切换自定义标签显示功能
 function toggleTabDisplay() {
     const TabDisplayMode = localStorage.getItem('TabDisplayMode');
@@ -312,6 +360,11 @@ window.addEventListener('DOMContentLoaded', function() {
         document.getElementById('toggle-tab-display-icon').className = "fa-solid fa-toggle-on";
     } else {
         document.getElementById('toggle-tab-display-icon').className = "fa-solid fa-toggle-off";
+    }
+    if (localStorage.getItem('ReadingMode') === 'true') {
+        readingMode(true);
+    } else {
+        readingMode(false);
     }
 
     // 显示提示气泡

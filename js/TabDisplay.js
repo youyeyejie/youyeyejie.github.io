@@ -23,9 +23,10 @@ function handleVisibilityChange() {
 
     // 根据页面可见性切换标题
     if (document[visibilityProp]) {
-        document.title = " 你去哪啦(๑•́ ₃ •̀๑) ";
+        document.title = " 你去哪啦(๑•́ ₃ •̀๑) " + originalTitle;
     } else {
-        document.title = " 你回来啦(*^▽^*) ";
+        document.title = " 你回来啦(*^▽^*) " + originalTitle;
+        // 2秒后恢复原标题
         welcomeTimer = setTimeout(() => {
             document.title = originalTitle;
         }, 2000);
