@@ -13,3 +13,9 @@
 .image-caption {
     margin: 1rem auto!important;
 }
+
+.markdown-body table {
+    display: table !important;
+    width: auto !important;
+    margin: 1rem auto !important;
+}
