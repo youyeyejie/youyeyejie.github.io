@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis3364.webp">
 <meta property="article:published_time" content="2025-12-27T11:44:35.000Z">
-<meta property="article:modified_time" content="2026-01-06T05:19:28.022Z">
+<meta property="article:modified_time" content="2026-01-08T09:24:58.978Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU">
 <meta property="article:tag" content="计算机通信网络">
@@ -969,20 +969,19 @@
     </div>
 
     <div class="fold">
-      <div class="fold-title fold-default collapsed" data-toggle="collapse" href="#collapse-32c49eed" role="button" aria-expanded="false" aria-controls="collapse-32c49eed">
+      <div class="fold-title fold-default collapsed" data-toggle="collapse" href="#collapse-a9cfabef" role="button" aria-expanded="false" aria-controls="collapse-a9cfabef">
         <div class="fold-arrow">▶</div>本文协议一览
       </div>
-      <div class="fold-collapse collapse" id="collapse-32c49eed">
+      <div class="fold-collapse collapse" id="collapse-a9cfabef">
         <div class="fold-content">
           <ul>
 <li>数据链路层
 <ul>
-<li><a href="#以太网的-mac-层">IEEE
-802.3</a>（以太网）：无连接，<strong>以太网的核心 MAC
-层协议</strong>，采用 CSMA/CD
-机制实现有线局域网的多设备共享信道，是目前应用最广泛的有线局域网标准。</li>
 <li><a href="#点对点协议-ppp">PPP</a>（点对点协议）：有连接，<strong>面向点到点链路的数据链路层协议</strong>，通过
 LCP 建立连接、NCP 协商网络参数，常用于拨号上网、路由器专线等场景。</li>
+<li><a href="#以太网的-mac-层">Ethernet</a>（以太网协议）：无连接，<strong>局域网中最常用的数据链路层协议</strong>，定义了
+MAC 地址、帧格式和介质访问控制方法，支持多种传输速率（如
+10Mbps、100Mbps、1Gbps 等）。</li>
 <li><a href="#载波侦听多路访问冲突检测技术csmacd-协议">CSMA/CD</a>（载波监听多路访问/碰撞检测）：<strong>以太网的介质访问控制机制</strong>，通过“先听后发、边发边听、冲突停发、随机重传”解决有线网络的信道冲突问题。</li>
 <li><a href="#csmaca-协议">CSMA/CA</a>（载波监听多路访问/碰撞避免）：<strong>无线局域网的核心介质访问控制机制</strong>，通过“预约信道、ACK
 确认”等方式避免无线环境的冲突，适配 Wi-Fi（IEEE 802.11）协议。</li>
@@ -1312,14 +1311,14 @@ rate）或<strong>比特率</strong>（bit rate），最重要的一个性能指
 <li>网络：
 <ul>
 <li>千 <span class="math inline">\(= K = 10^3 = 1000\)</span></li>
-<li>兆 <span class="math inline">\(= M = 10^6 = 1000 K\)</span></li>
-<li>吉 <span class="math inline">\(= G = 10^9 = 1000 M\)</span></li>
+<li>兆 <span class="math inline">\(= M = 10^6 = 1000~K\)</span></li>
+<li>吉 <span class="math inline">\(= G = 10^9 = 1000~M\)</span></li>
 </ul></li>
 <li>容量：
 <ul>
 <li>千 <span class="math inline">\(= K = 2^{10} = 1024\)</span></li>
-<li>兆 <span class="math inline">\(= M = 2^{20} = 1024 K\)</span></li>
-<li>吉 <span class="math inline">\(= G = 2^{30} = 1024 M\)</span></li>
+<li>兆 <span class="math inline">\(= M = 2^{20} = 1024~K\)</span></li>
+<li>吉 <span class="math inline">\(= G = 2^{30} = 1024~M\)</span></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -2349,7 +2348,7 @@ CRC（Cyclic Redundancy Check）</h5>
 <span class="math inline">\(M\)</span> 后面，一起发送出去。</li>
 </ol></li>
 <li><p>示例： <img src="image-49.webp" srcset="/img/loading/loading3.gif" lazyload alt="示例"></p></li>
-<li><p>广泛使用的生成多项式P(X) <span class="math display">\[
+<li><p>广泛使用的除数生成多项式 <span class="math inline">\(P(X)\)</span> <span class="math display">\[
   \begin{aligned}
   &amp;\mathrm {CRC-16} = X ^ {16} + X ^ {15} + X ^ {2} + 1 \\
   &amp;\mathrm {CRC-CCITT} = X ^ {16} + X ^ {12} + X ^ {5} + 1 \\
@@ -2832,9 +2831,9 @@ exponential backoff）</li>
 <li>若等待时间结束后信道仍然空闲，则开始发送数据帧，并在发送过程中继续监听信道。
 <ul>
 <li>若在发送过程中检测到碰撞，则立即停止发送，并发送人为干扰信号</li>
-</ul></li>
 <li>人为干扰信号发送完毕后，站点 A 立即进行退避。</li>
 <li>退避时间结束后，重新开始监听信道等待空闲、等待帧间最小间隔、发送数据帧的过程。</li>
+</ul></li>
 </ol>
 <h3 id="使用集线器的星形拓扑">使用集线器的星形拓扑</h3>
 <ul>
@@ -3649,7 +3648,10 @@ plane）
 <ul>
 <li>远程控制器：计算出最佳的路由，在每一个路由器中生成其正确的转发表。</li>
 <li>路由器：查找转发表，转发分组。</li>
-</ul></li>
+</ul>
+<blockquote>
+<p>详见<a href="#软件定义网络-sdn-简介">下文</a></p>
+</blockquote></li>
 </ul>
 <h2 id="网际协议-ip">网际协议 IP</h2>
 <figure>
@@ -3842,6 +3844,12 @@ Assigned Names and Numbers）进行分配
 </tr>
 </tbody>
 </table></li>
+<li><p>划分子网</p>
+<ul>
+<li>目的：更有效地利用 IP 地址资源</li>
+<li>方法：将原来的<strong>主机号</strong>进一步划分为<strong>子网号</strong>（subnet-id）和<strong>主机号</strong>（host-id）</li>
+<li><strong>子网 IP 地址 = {&lt;网络号&gt;，&lt;子网号&gt;，&lt;主机号&gt;}</strong></li>
+</ul></li>
 <li><p>分类的 IP 地址的优缺点</p>
 <ul>
 <li>优点：
@@ -3922,7 +3930,7 @@ mask）</p>
 <li>点分十进制记法：<code>255.255.240.0</code></li>
 <li>CIDR 记法：<code>255.255.240.0/20</code>。</li>
 </ul></li>
-<li><p>默认地址掩码：分类的 IP 地址的可以视为 CIDR 地址块</p>
+<li><p>默认地址掩码：分类的 IP 地址也可以视为 CIDR 地址块</p>
 <table>
 <thead>
 <tr>
@@ -11382,7 +11390,7 @@ Subsystem）。</li>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2026年1月6日</div>
+          <div>2026年1月8日</div>
         </div>
       
       
@@ -11819,7 +11827,7 @@ Subsystem）。</li>
 
 
   <script type="text/javascript">
-  document.getElementById("g-total-word-id").innerHTML = "625k";
+  document.getElementById("g-total-word-id").innerHTML = "626k";
   document.getElementById('g-total-posts-id').textContent ="62";
 </script>
 
