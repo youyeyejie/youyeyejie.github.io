@@ -1,15 +1,14 @@
 ---
 title: {{ title }}
 date: {{ date }}
-updated: {{ updated }}
 tags:
     - SJTU Notes
-    - 
+    - {{ title }}
 categories:
-    - [SJTU Notes, ]
-excerpt:  {{ title }} 笔记
+    - [SJTU Notes, 计科]
+excerpt: 课号 {{ title }} 笔记
 math: false
 mermaid: false
 category_bar: true
-index_img: /img/cover/
+index_img: /img/cover/课号.webp
 ---
