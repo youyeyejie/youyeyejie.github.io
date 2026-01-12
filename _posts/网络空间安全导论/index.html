@@ -539,7 +539,7 @@
         aria-expanded="true"
       >
         SJTU Notes
-        <span class="list-group-count">(22)</span>
+        <span class="list-group-count">(23)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -822,7 +822,7 @@
         aria-expanded="false"
       >
         计科
-        <span class="list-group-count">(9)</span>
+        <span class="list-group-count">(10)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -912,6 +912,15 @@
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">计算机通信网络</span>
+        </a>
+      
+    
+      
+      
+        <a href="/_posts/%E7%AE%97%E6%B3%95%E8%AE%A1%E7%AE%97%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90/" title="算法计算复杂度分析"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">算法计算复杂度分析</span>
         </a>
       
     
@@ -5040,7 +5049,7 @@ Token)，如果有效，则为请求提供服务。</li>
 <li><strong>K-匿名性</strong>
 <ul>
 <li>仅在数据集中去掉名字不能起到匿名效果。数据集中存在一些准标识符，当与其他数据集中的信息组合在一起的时候可以重新标识身份。</li>
-<li>1998年Sweeney 提出K-匿名。</li>
+<li>1998 年 Sweeney 提出 K-匿名。</li>
 </ul></li>
 <li><strong>L-多样性</strong>
 <ul>
@@ -5058,17 +5067,19 @@ Token)，如果有效，则为请求提供服务。</li>
 <li>定义：
 <ul>
 <li>一个数据集进行统计查询计算时，<strong>不能通过多次不同的查询方式推断出数据集中是否包含一个特定个体的数据</strong>。</li>
-<li>称一个算法A满足ϵ-差分隐私<span class="math inline">\((ϵ-DP)\)</span>，其中<span class="math inline">\(ϵ&gt;0\)</span>，当且仅当对于任意的两个只相差一个元素的数据集D和D’，有以下条件满足：$
-∀𝑇 ⊆ Range(𝐴): Pr[𝐴(𝐷)∈𝑇] ≤ 𝑒^𝜀 Pr[𝐴(𝐷^′)∈𝑇] $</li>
+<li>称一个算法 A 满足 ϵ-差分隐私 <span class="math inline">\((ϵ-DP)\)</span>，其中 <span class="math inline">\(ϵ&gt;0\)</span>，当且仅当对于任意的两个只相差一个元素的数据集
+D 和 D’，有以下条件满足：<span class="math inline">\(\forall T \subseteq
+Range(A): Pr[A(D)\in T] \leq e^\epsilon Pr[A(D^\prime)\in
+T]\)</span></li>
 </ul></li>
 <li>实现方式：
 <ul>
-<li>$ 𝑀(𝑓(𝐷)) = 𝑓(𝐷) + 𝑥 $，
+<li><span class="math inline">\(M(f(D)) = f(D) + x\)</span>，
 <ul>
-<li>𝑓:查询函数</li>
-<li>x:随机噪声</li>
+<li><span class="math inline">\(f\)</span>: 查询函数</li>
+<li><span class="math inline">\(x\)</span>: 随机噪声</li>
 </ul></li>
-<li>拉普拉斯机制 $ Lap(𝑥│𝜇，𝑏) = e^{(−)} $</li>
+<li>拉普拉斯机制 $Lap(x│，b) = e^{(−)} $</li>
 </ul></li>
 <li><figure>
 <img src="image-114.webp" srcset="/img/loading/loading3.gif" lazyload alt="DP">
@@ -5607,6 +5618,12 @@ Classic就受到了51%攻击</li>
   
 
 
+  
+  
+
+
+
+
 
 
 
@@ -5846,6 +5863,49 @@ Classic就受到了51%攻击</li>
 
   <script>Fluid.plugins.imageCaption();</script>
 
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
   <script  src="/js/local-search.js" ></script>
 
   <script defer src="/js/busuanzi.pure.mini.js" ></script>
@@ -5872,8 +5932,8 @@ Classic就受到了51%攻击</li>
 
 
   <script type="text/javascript">
-  document.getElementById("g-total-word-id").innerHTML = "626k";
-  document.getElementById('g-total-posts-id').textContent ="62";
+  document.getElementById("g-total-word-id").innerHTML = "651k";
+  document.getElementById('g-total-posts-id').textContent ="63";
 </script>
 
   <noscript>
