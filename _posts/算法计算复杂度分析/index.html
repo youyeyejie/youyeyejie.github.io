@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis3355.webp">
 <meta property="article:published_time" content="2026-01-11T05:41:02.000Z">
-<meta property="article:modified_time" content="2026-01-12T07:59:50.646Z">
+<meta property="article:modified_time" content="2026-01-12T11:39:13.820Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU Notes">
 <meta property="article:tag" content="算法">
@@ -1118,7 +1118,7 @@ term</li>
   \forall n \geq n_{0}, ~0 \leq c_{1}g(n) \leq f(n) \leq c_{2}g(n)
   \]</span></li>
 <li>For any two functions <span class="math inline">\(f(n)\)</span> and
-<span class="math inline">\(g(n)\)</span> , we have <span class="math display">\[
+<span class="math inline">\(g(n)\)</span>, we have <span class="math display">\[
   f (n) = \Theta (g (n)) \Leftrightarrow
   \begin{cases}
   f (n) = O (g (n))\\
@@ -1189,7 +1189,7 @@ NP\)</span>（大多数理论计算机科学家相信的关系：<span class="ma
 time（转换需要多项式时间）</li>
 <li>The answers are the <strong>same</strong>（答案是相同的）</li>
 </ul></li>
-<li>If such a reduction exists, we say that <span class="math inline">\(A\)</span> is polynomial-time reducible to <span class="math inline">\(B\)</span> , denoted by <span class="math inline">\(A \leq_{\mathrm{P}}
+<li>If such a reduction exists, we say that <span class="math inline">\(A\)</span> is polynomial-time reducible to <span class="math inline">\(B\)</span>, denoted by <span class="math inline">\(A \leq_{\mathrm{P}}
 B\)</span>（如果存在这样的归约，我们说 <span class="math inline">\(A\)</span> 在多项式时间内可归约为 <span class="math inline">\(B\)</span>，记为 <span class="math inline">\(A
 \leq_{\mathrm{P}} B\)</span>）
 <ul>
@@ -1199,14 +1199,14 @@ B\)</span>（如果存在这样的归约，我们说 <span class="math inline">\
 <li>Using reductions to solve problems（使用归约来解决问题）
 <ol type="1">
 <li>Given an instance <span class="math inline">\(\alpha\)</span> of
-problem <span class="math inline">\(A\)</span> , use a polynomial-time
+problem <span class="math inline">\(A\)</span>, use a polynomial-time
 reduction algorithm to transform it to an instance <span class="math inline">\(\beta\)</span> of problem <span class="math inline">\(B\)</span>（给定问题 <span class="math inline">\(A\)</span> 的实例 <span class="math inline">\(\alpha\)</span>，使用多项式时间归约算法将其转换为问题
 <span class="math inline">\(B\)</span> 的实例 <span class="math inline">\(\beta\)</span>）</li>
 <li>Run the polynomial-time decision algorithm for <span class="math inline">\(B\)</span> on the instance <span class="math inline">\(\beta\)</span>（在实例 <span class="math inline">\(\beta\)</span> 上运行问题 <span class="math inline">\(B\)</span> 的多项式时间决策算法）</li>
 <li>Use the answer for <span class="math inline">\(\beta\)</span> as the
 answer for <span class="math inline">\(\alpha\)</span>（将 <span class="math inline">\(\beta\)</span> 的答案用作 <span class="math inline">\(\alpha\)</span> 的答案）
 <ul>
-<li>if we have a polynomial-time algorithm for <span class="math inline">\(B\)</span> , we can solve <span class="math inline">\(A\)</span> in polynomial time
+<li>if we have a polynomial-time algorithm for <span class="math inline">\(B\)</span>, we can solve <span class="math inline">\(A\)</span> in polynomial time
 too（如果我们有一个多项式时间算法用于 <span class="math inline">\(B\)</span>，我们也可以在多项式时间内解决 <span class="math inline">\(A\)</span>）</li>
 </ul></li>
 </ol>
@@ -1255,7 +1255,7 @@ NP-complete（得出结论 <span class="math inline">\(B\)</span> 是 NPC
 <ul>
 <li>A hamiltonian cycle of an undirected graph <span class="math inline">\(G = (V, E)\)</span> is a cycle that visits each
 vertex exactly
-once（一个无向图的哈密顿回路是一个恰好访问每个顶点一次的回路） <span class="math display">\[\langle v_{1},v_{2},\ldots ,v_{|V|}\rangle \quad
+once（一个无向图的哈密顿回路是一个恰好访问每个顶点一次的回路） <span class="math display">\[\langle v_{1},v_{2},\ldots,v_{|V|}\rangle \quad
 \forall i, (v_{i},v_{i+1})\in E, (v_{|V|},v_{1})\in E\]</span></li>
 <li>Decision problem: whether a hamiltonian cycle exists in a given
 graph（决策问题：给定图中是否存在哈密顿回路）</li>
@@ -1307,14 +1307,11 @@ to see whether it forms a clique（暴力解法：列出 <span class="math inlin
 <li>A vertex cover of an undirected graph <span class="math inline">\(G
 = (V, E)\)</span> is a subset <span class="math inline">\(V^\prime
 \subseteq V\)</span> such that if <span class="math inline">\((u,v)\in
-E\)</span> , then <span class="math inline">\(u\in V^{\prime}\)</span>
-or <span class="math inline">\(v\in V^{\prime}\)</span> (or
-both)（无向图 <span class="math inline">\(G = (V, E)\)</span>
-的顶点覆盖是一个满足如果 <span class="math inline">\((u,v)\in
-E\)</span>，则 <span class="math inline">\(u\in V^{\prime}\)</span> 或
-<span class="math inline">\(v\in V^{\prime}\)</span>
-或两者皆是的顶点子集 <span class="math inline">\(V^\prime \subseteq
-V\)</span>）</li>
+E\)</span>, then <span class="math inline">\(u\in V^{\prime}\)</span> or
+<span class="math inline">\(v\in V^{\prime}\)</span> (or both)（无向图
+<span class="math inline">\(G = (V, E)\)</span> 的顶点覆盖是一个满足如果
+<span class="math inline">\((u,v)\in E\)</span>，则 <span class="math inline">\(u\in V^{\prime}\)</span> 或 <span class="math inline">\(v\in V^{\prime}\)</span> 或两者皆是的顶点子集
+<span class="math inline">\(V^\prime \subseteq V\)</span>）</li>
 <li>Optimization problem: find a vertex cover of minimum
 size（优化问题：找到最小规模的顶点覆盖）</li>
 <li>Decision problem: whether a graph has a vertex cover of a given size
@@ -1326,8 +1323,8 @@ VERTEX-COVER
 <ul>
 <li>Assume CLIQUE is an NP-hard problem</li>
 <li>Given an undirected graph <span class="math inline">\(G = (V,
-E)\)</span> , the complement of <span class="math inline">\(G\)</span>
-is a graph <span class="math inline">\(\bar{G} = (V, \bar{E})\)</span> ,
+E)\)</span>, the complement of <span class="math inline">\(G\)</span> is
+a graph <span class="math inline">\(\bar{G} = (V, \bar{E})\)</span>,
 where（给定无向图 <span class="math inline">\(G = (V, E)\)</span>，<span class="math inline">\(G\)</span> 的补图是图 <span class="math inline">\(\bar{G} = (V, \bar{E})\)</span>，其中） <span class="math display">\[
   \bar {E} = \{(u, v) \colon u, v \in V, u \neq v, (u, v) \notin E \}
   \]</span> <img src="image-86.webp" srcset="/img/loading/loading3.gif" lazyload></li>
@@ -1399,7 +1396,7 @@ subarrays, each of half the size（将要排序的子数组 <span class="math in
 </ul></li>
 <li><strong>Conquer</strong> by sorting each of the two subarrays <span class="math inline">\(A[p, q]\)</span> and <span class="math inline">\(A[q + 1, r]\)</span> recursively using merge
 sort（通过使用归并排序递归地排序两个子数组 <span class="math inline">\(A[p, q]\)</span> 和 <span class="math inline">\(A[q + 1, r]\)</span> 来解决）</li>
-<li><strong>Combine</strong> by merging the two sorted subarrays <span class="math inline">\(A[p, q]\)</span> and <span class="math inline">\(A[q + 1, r]\)</span> back into <span class="math inline">\(A[p, q]\)</span> , producing the sorted
+<li><strong>Combine</strong> by merging the two sorted subarrays <span class="math inline">\(A[p, q]\)</span> and <span class="math inline">\(A[q + 1, r]\)</span> back into <span class="math inline">\(A[p, q]\)</span>, producing the sorted
 answer（通过将两个已排序的子数组 <span class="math inline">\(A[p,
 q]\)</span> 和 <span class="math inline">\(A[q + 1, r]\)</span> 合并回
 <span class="math inline">\(A[p, q]\)</span>
@@ -1408,7 +1405,7 @@ q]\)</span> 和 <span class="math inline">\(A[q + 1, r]\)</span> 合并回
 <h4 id="算法伪代码">算法伪代码</h4>
 <figure class="shiki"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #abb2bf">MERGE-SORT(A, p, r)</span></span>
 <span class="line"><span style="color: #abb2bf">    if p &lt; r then                   // 当前子数组至少有两个元素时</span></span>
-<span class="line"><span style="color: #abb2bf">        q = ⌊(p + r) / 2⌋           // 中点</span></span>
+<span class="line"><span style="color: #abb2bf">        q = ⌊(p + r) / 2⌋            // 中点</span></span>
 <span class="line"><span style="color: #abb2bf">        MERGE-SORT(A, p, q)         // 递归排序左半部分</span></span>
 <span class="line"><span style="color: #abb2bf">        MERGE-SORT(A, q + 1, r)     // 递归排序右半部分</span></span>
 <span class="line"><span style="color: #abb2bf">        MERGE(A, p, q, r)           // 合并两个已排序的子数组</span></span>
@@ -1491,11 +1488,11 @@ constants（使用数学归纳法证明解决方案有效，并找到常数）</
 <li>Avoiding pitfalls（避免陷阱）
 <ul>
 <li>We must prove <span class="math inline">\(T(n) \leq f(n)\)</span>
-for some <span class="math inline">\(f(n)\)</span> , but not <span class="math inline">\(T(n) \leq O(n)\)</span> .（我们必须证明 <span class="math inline">\(T(n) \leq f(n)\)</span> 对于某些 <span class="math inline">\(f(n)\)</span> ，而不是 <span class="math inline">\(T(n) \leq O(n)\)</span> ）</li>
+for some <span class="math inline">\(f(n)\)</span>, but not <span class="math inline">\(T(n) \leq O(n)\)</span>,（我们必须证明 <span class="math inline">\(T(n) \leq f(n)\)</span> 对于某些 <span class="math inline">\(f(n)\)</span> ，而不是 <span class="math inline">\(T(n) \leq O(n)\)</span> ）</li>
 <li>E.g., if we intend to prove <span class="math inline">\(T(n) \leq
-O(n)\)</span> , then we must assume <span class="math inline">\(T(n)
-\leq cn\)</span> for some <span class="math inline">\(c\)</span> and all
-<span class="math inline">\(n \geq n_0\)</span> , and prove it by
+O(n)\)</span>, then we must assume <span class="math inline">\(T(n) \leq
+cn\)</span> for some <span class="math inline">\(c\)</span> and all
+<span class="math inline">\(n \geq n_0\)</span>, and prove it by
 induction（例如，如果我们打算证明 <span class="math inline">\(T(n) \leq
 O(n)\)</span> ，那么我们必须假设 <span class="math inline">\(T(n) \leq
 cn\)</span> 对于某些 <span class="math inline">\(c\)</span> 和所有 <span class="math inline">\(n \geq n_0\)</span> ，并通过归纳法证明它）</li>
@@ -1729,20 +1726,20 @@ solutions（保存子问题解决方案是有代价的：存储解决方案所�
 <p><img src="image-11.webp" srcset="/img/loading/loading3.gif" lazyload></p>
 <ul>
 <li>Given a rod of length <span class="math inline">\(n\)</span> and a
-table of prices <span class="math inline">\(p_{i}\)</span> for <span class="math inline">\(i = 1, 2, \ldots, n\)</span> , determine the
+table of prices <span class="math inline">\(p_{i}\)</span> for <span class="math inline">\(i = 1, 2, \ldots, n\)</span>, determine the
 maximum revenue <span class="math inline">\(r_{n}\)</span> obtainable by
 cutting up the rod and selling the pieces（给定长度为 <span class="math inline">\(n\)</span> 的杆和价格表 <span class="math inline">\(p_{i}\)</span> ，其中 <span class="math inline">\(i = 1, 2, \ldots, n\)</span>
 ，确定通过切割杆并出售零件可以获得的最大收入 <span class="math inline">\(r_{n}\)</span>）</li>
-<li>An optimal solution cuts the rod into <span class="math inline">\(k\)</span> pieces: <span class="math inline">\(i_1, i_2, \ldots, i_k\)</span> , where <span class="math inline">\(1 \leq k \leq n\)</span> and <span class="math inline">\(\sum_{j=1}^{k} i_j = n\)</span>, obtaining revenue
+<li>An optimal solution cuts the rod into <span class="math inline">\(k\)</span> pieces: <span class="math inline">\(i_1, i_2, \ldots, i_k\)</span>, where <span class="math inline">\(1 \leq k \leq n\)</span> and <span class="math inline">\(\sum_{j=1}^{k} i_j = n\)</span>, obtaining revenue
 <span class="math inline">\(r_n = \sum_{j=1}^{k} p_{i_j}\)</span>
 （最优解将杆切成 <span class="math inline">\(k\)</span> 个部分： <span class="math inline">\(i_1, i_2, \ldots, i_k\)</span> ，其中 <span class="math inline">\(1 \leq k \leq n\)</span> 且 <span class="math inline">\(\sum_{j=1}^{k} i_j = n\)</span> ，获得收入 <span class="math inline">\(r_n = \sum_{j=1}^{k} p_{i_j}\)</span>）</li>
 </ul>
 <h4 id="最优子结构">最优子结构</h4>
 <ul>
 <li>Let <span class="math inline">\(r_n\)</span> be the optimal revenue
-for a rod of length <span class="math inline">\(n\)</span> . Suppose
-that in an optimal solution the first piece cut from the rod has length
-<span class="math inline">\(i\)</span> , where <span class="math inline">\(1 \leq i \leq n\)</span> . Then the revenue <span class="math inline">\(r_n\)</span> is given by（设 <span class="math inline">\(r_n\)</span> 为长度为 <span class="math inline">\(n\)</span>
+for a rod of length <span class="math inline">\(n\)</span>. Suppose that
+in an optimal solution the first piece cut from the rod has length <span class="math inline">\(i\)</span>, where <span class="math inline">\(1
+\leq i \leq n\)</span>. Then the revenue <span class="math inline">\(r_n\)</span> is given by（设 <span class="math inline">\(r_n\)</span> 为长度为 <span class="math inline">\(n\)</span>
 的杆的最佳收入。假设在最优解中，从杆上切下的第一块的长度为 <span class="math inline">\(i\)</span> ，其中 <span class="math inline">\(1
 \leq i \leq n\)</span> 。则收入 <span class="math inline">\(r_n\)</span>
 由下式给出） <span class="math display">\[
@@ -1925,7 +1922,7 @@ T(n) = \Theta (n^{2})
 <ul>
 <li>Given two sequences <span class="math inline">\(X =\langle x_{1},
 x_{2}, \ldots, x_{m}\rangle\)</span> and <span class="math inline">\(Y =
-\langle y_{1}, y_{2}, \ldots, y_{n} \rangle\)</span> , find a longest
+\langle y_{1}, y_{2}, \ldots, y_{n} \rangle\)</span>, find a longest
 common subsequence of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>（给定两个序列 <span class="math inline">\(X\)</span> 和 <span class="math inline">\(Y\)</span>，找到他们的最长公共子序列）</li>
 <li>A subsequence of a sequence is a new sequence formed from the
 original sequence by deleting some (can be none) of the elements without
@@ -1940,9 +1937,9 @@ y_{2}, \ldots, y_{n} \rangle\)</span> be sequences, and let <span class="math in
 \rangle\)</span> be any LCS of <span class="math inline">\(X\)</span>
 and <span class="math inline">\(Y\)</span>
 <ol type="1">
-<li>If <span class="math inline">\(x_{m} = y_{n}\)</span> , then <span class="math inline">\(z_{k} = x_{m} = y_{n}\)</span> and <span class="math inline">\(Z_{k-1}\)</span> is an LCS of <span class="math inline">\(X_{m-1}\)</span> and <span class="math inline">\(Y_{n-1}\)</span></li>
-<li>If <span class="math inline">\(x_{m} \neq y_{n}\)</span> and <span class="math inline">\(z_{k} \neq x_{m}\)</span> , then <span class="math inline">\(Z\)</span> is an LCS of <span class="math inline">\(X_{m-1}\)</span> and <span class="math inline">\(Y\)</span></li>
-<li>If <span class="math inline">\(x_{m} \neq y_{n}\)</span> and <span class="math inline">\(z_{k} \neq y_{n}\)</span> , then <span class="math inline">\(Z\)</span> is an LCS of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y_{n-1}\)</span></li>
+<li>If <span class="math inline">\(x_{m} = y_{n}\)</span>, then <span class="math inline">\(z_{k} = x_{m} = y_{n}\)</span> and <span class="math inline">\(Z_{k-1}\)</span> is an LCS of <span class="math inline">\(X_{m-1}\)</span> and <span class="math inline">\(Y_{n-1}\)</span></li>
+<li>If <span class="math inline">\(x_{m} \neq y_{n}\)</span> and <span class="math inline">\(z_{k} \neq x_{m}\)</span>, then <span class="math inline">\(Z\)</span> is an LCS of <span class="math inline">\(X_{m-1}\)</span> and <span class="math inline">\(Y\)</span></li>
+<li>If <span class="math inline">\(x_{m} \neq y_{n}\)</span> and <span class="math inline">\(z_{k} \neq y_{n}\)</span>, then <span class="math inline">\(Z\)</span> is an LCS of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y_{n-1}\)</span></li>
 </ol></li>
 <li>recursive formula of LCS length <span class="math inline">\(c[i,
 j]\)</span> <span class="math display">\[
@@ -1998,14 +1995,16 @@ T (m, n) = \Theta (m + n)
 <ul>
 <li><p>Given a sequence of <span class="math inline">\(n\)</span> keys
 <span class="math inline">\(k_{1} &lt; k_{2} &lt; \ldots &lt;
-k_{n}\)</span> , with associated search probabilities <span class="math inline">\(p_{1}, p_{2}, \ldots, p_{n}\)</span> , build a
+k_{n}\)</span>, with associated search probabilities <span class="math inline">\(p_{1}, p_{2}, \ldots, p_{n}\)</span>, build a
 binary search tree of all <span class="math inline">\(n\)</span> keys
 that minimizes the expected search cost（给定一系列 <span class="math inline">\(n\)</span> 个键 <span class="math inline">\(k_i\)</span> 以及相关的搜索概率 <span class="math inline">\(p_i\)</span>，构建包含所有 <span class="math inline">\(n\)</span>
 个键的二叉搜索树，以最小化预期搜索成本）</p></li>
 <li><p>Additionally, there are <span class="math inline">\(n +
 1\)</span> dummy keys <span class="math inline">\(d_{0}, d_{1}, \ldots,
-d_{n}\)</span> , with associated search probabilities <span class="math inline">\(q_{0}, q_{1}, \ldots, q_{n}\)</span> ,
-representing values not in the tree（此外，还有 <span class="math inline">\(n + 1\)</span> 个虚拟键 <span class="math inline">\(d_i\)</span> ，表示树中不存在的值）</p>
+d_{n}\)</span>, with associated search probabilities <span class="math inline">\(q_{0}, q_{1}, \ldots, q_{n}\)</span>, representing
+values not in the tree（此外，还有 <span class="math inline">\(n +
+1\)</span> 个虚拟键 <span class="math inline">\(d_i\)</span>
+，表示树中不存在的值）</p>
 <ul>
 <li>each dummy key <span class="math inline">\(d_{i}\)</span>
 corresponds to the interval <span class="math inline">\((k_{i-1},
@@ -2025,7 +2024,7 @@ k_{i})\)</span> （每个虚拟键 <span class="math inline">\(d_{i}\)</span>
 <ul>
 <li>Let <span class="math inline">\(e(i,j)\)</span> denote the expected
 cost of searching an optimal binary search tree containing the keys
-<span class="math inline">\(k_{i},\ldots ,k_{j}\)</span>（令 <span class="math inline">\(e(i,j)\)</span> 表示包含键 <span class="math inline">\(k_{i},\ldots ,k_{j}\)</span>
+<span class="math inline">\(k_{i},\ldots,k_{j}\)</span>（令 <span class="math inline">\(e(i,j)\)</span> 表示包含键 <span class="math inline">\(k_{i},\ldots,k_{j}\)</span>
 的最优二叉搜索树的预期搜索成本）</li>
 <li>Let <span class="math inline">\(w(i, j)\)</span> denote the sum of
 the probabilities between <span class="math inline">\(k_{i}\)</span> and
@@ -2040,7 +2039,7 @@ the probabilities between <span class="math inline">\(k_{i}\)</span> and
 <li>示例 <img src="image-19.webp" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul></li>
 <li>Let <span class="math inline">\(k_{r}\)</span> be the root of an
-optimal binary search tree containing the keys <span class="math inline">\(k_{i}, \ldots, k_{j}\)</span> , where <span class="math inline">\(i \leq r \leq j\)</span>（令 <span class="math inline">\(k_{r}\)</span> 为包含键 <span class="math inline">\(k_{i}, \ldots, k_{j}\)</span>
+optimal binary search tree containing the keys <span class="math inline">\(k_{i}, \ldots, k_{j}\)</span>, where <span class="math inline">\(i \leq r \leq j\)</span>（令 <span class="math inline">\(k_{r}\)</span> 为包含键 <span class="math inline">\(k_{i}, \ldots, k_{j}\)</span>
 的最优二叉搜索树的根，其中 <span class="math inline">\(i \leq r \leq
 j\)</span>） <span class="math display">\[
   e(i, j) = e(i, r - 1) + e(r + 1, j) + w(i, j)
@@ -2056,7 +2055,7 @@ j\)</span>） <span class="math display">\[
 </ul>
 <h4 id="算法伪代码-2">算法伪代码</h4>
 <figure class="shiki"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #abb2bf">OPTIMAL_BST(p, q, n)</span></span>
-<span class="line"><span style="color: #abb2bf">    let e[1:n+1, 0:n] , w[1:n+1, 0:n] , root[1:n, 1:n] be new tables                // e: 期望搜索成本表, w: 概率和表, root: 根表</span></span>
+<span class="line"><span style="color: #abb2bf">    let e[1:n+1, 0:n], w[1:n+1, 0:n], root[1:n, 1:n] be new tables                // e: 期望搜索成本表, w: 概率和表, root: 根表</span></span>
 <span class="line"><span style="color: #abb2bf">    for i = 1 to n + 1</span></span>
 <span class="line"><span style="color: #abb2bf">        e[i][i - 1] = q[i - 1]</span></span>
 <span class="line"><span style="color: #abb2bf">        w[i][i - 1] = q[i - 1]</span></span>
@@ -2300,14 +2299,14 @@ solve（一旦你做出了贪心选择，你就只有一个剩下的子问题要
 f_{k}\}\)</span> be the set of activities that start after activity
 <span class="math inline">\(a_{k}\)</span> finishes（让 <span class="math inline">\(S_{k}\)</span> 是在活动 <span class="math inline">\(a_{k}\)</span> 结束后开始的活动集合）
 <ul>
-<li>If we select <span class="math inline">\(a_1\)</span> , then <span class="math inline">\(S_1\)</span> remains as the only subproblem to
+<li>If we select <span class="math inline">\(a_1\)</span>, then <span class="math inline">\(S_1\)</span> remains as the only subproblem to
 solve（如果我们选择 <span class="math inline">\(a_1\)</span> ，那么
 <span class="math inline">\(S_1\)</span> 就是唯一需要解决的子问题）</li>
 </ul></li>
 </ul></li>
-<li>Consider any nonempty subproblem <span class="math inline">\(S_{k}\)</span> , and let <span class="math inline">\(a_{m}\)</span> be an activity in <span class="math inline">\(S_{k}\)</span> with the earliest finish time. Then
+<li>Consider any nonempty subproblem <span class="math inline">\(S_{k}\)</span>, and let <span class="math inline">\(a_{m}\)</span> be an activity in <span class="math inline">\(S_{k}\)</span> with the earliest finish time. Then
 <span class="math inline">\(a_{m}\)</span> is included in some
-maximum-size subset of mutually compatible activities of <span class="math inline">\(S_{k}\)</span> .（考虑任何非空子问题 <span class="math inline">\(S_{k}\)</span> ，并让 <span class="math inline">\(a_{m}\)</span> 是 <span class="math inline">\(S_{k}\)</span> 中具有最早完成时间的活动。然后
+maximum-size subset of mutually compatible activities of <span class="math inline">\(S_{k}\)</span>,（考虑任何非空子问题 <span class="math inline">\(S_{k}\)</span> ，并让 <span class="math inline">\(a_{m}\)</span> 是 <span class="math inline">\(S_{k}\)</span> 中具有最早完成时间的活动。然后
 <span class="math inline">\(a_{m}\)</span> 被包含在 <span class="math inline">\(S_{k}\)</span>
 的某个最大规模的相互兼容活动子集中。）</li>
 <li>A top-down approach</li>
@@ -2467,17 +2466,17 @@ Trees)</h2>
 </ul>
 <h4 id="基本定义">基本定义</h4>
 <ul>
-<li>A connected, undirected graph <span class="math inline">\(G(V,E)\)</span> , where <span class="math inline">\(V\)</span> is the set of nodes and <span class="math inline">\(E\)</span> is the set of possible interconnections
-between pairs of nodes（一个连通的无向图 <span class="math inline">\(G(V,E)\)</span> , <span class="math inline">\(V\)</span> 是节点集合， <span class="math inline">\(E\)</span> 是节点对之间可能的连接集合）
+<li>A connected, undirected graph <span class="math inline">\(G(V,E)\)</span>, where <span class="math inline">\(V\)</span> is the set of nodes and <span class="math inline">\(E\)</span> is the set of possible interconnections
+between pairs of nodes（一个连通的无向图 <span class="math inline">\(G(V,E)\)</span>, <span class="math inline">\(V\)</span> 是节点集合， <span class="math inline">\(E\)</span> 是节点对之间可能的连接集合）
 <ul>
 <li><span class="math inline">\(E\)</span> can be an adjacency list or
 an adjacency matrix（ <span class="math inline">\(E\)</span>
 可以是邻接表或邻接矩阵）</li>
 </ul></li>
-<li>For each edge <span class="math inline">\((u, v) \in E\)</span> , a
+<li>For each edge <span class="math inline">\((u, v) \in E\)</span>, a
 weight <span class="math inline">\(w(u, v)\)</span> specifies the cost
 to connect <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> (distance, amount of wires,
-etc.)（对于每条边 <span class="math inline">\((u, v) \in E\)</span> ,
+etc.)（对于每条边 <span class="math inline">\((u, v) \in E\)</span>,
 权重 <span class="math inline">\(w(u, v)\)</span> 指定连接 <span class="math inline">\(u\)</span> 和 <span class="math inline">\(v\)</span> 的成本）</li>
 <li>Goal: Find an acyclic subset <span class="math inline">\(T \subseteq
 E\)</span> that connects all of the vertices and whose total weight
@@ -2553,13 +2552,13 @@ spanning tree for <span class="math inline">\(G\)</span> ;（设 <span class="ma
 <span class="math inline">\(G\)</span> that respects <span class="math inline">\(A\)</span> ;（设 <span class="math inline">\((S,V
 - S)\)</span> 是 <span class="math inline">\(G\)</span> 的任意尊重 <span class="math inline">\(A\)</span> 的割；）</li>
 <li>let <span class="math inline">\((u, v)\)</span> be a light edge
-crossing <span class="math inline">\((S, V - S)\)</span> .（设 <span class="math inline">\((u, v)\)</span> 是跨越 <span class="math inline">\((S, V - S)\)</span> 的轻边。）</li>
+crossing <span class="math inline">\((S, V - S)\)</span>,（设 <span class="math inline">\((u, v)\)</span> 是跨越 <span class="math inline">\((S, V - S)\)</span> 的轻边。）</li>
 </ol></li>
 <li>证明：
 <ul>
 <li>Assume <span class="math inline">\(T\)</span> is a minimum spanning
 tree (MST) that includes <span class="math inline">\(A\)</span> and
-<span class="math inline">\((u, v) \notin T\)</span> .（假设 <span class="math inline">\(T\)</span> 是包含 <span class="math inline">\(A\)</span> 的最小生成树，且 <span class="math inline">\((u, v) \notin T\)</span> 。）</li>
+<span class="math inline">\((u, v) \notin T\)</span>,（假设 <span class="math inline">\(T\)</span> 是包含 <span class="math inline">\(A\)</span> 的最小生成树，且 <span class="math inline">\((u, v) \notin T\)</span> 。）</li>
 <li>We now construct another MST <span class="math inline">\(T'\)</span> that includes <span class="math inline">\(A \cup (u, v)\)</span>（我们现在构造另一个包含
 <span class="math inline">\(A \cup (u, v)\)</span> 的最小生成树 <span class="math inline">\(T'\)</span> 。）</li>
 <li>At least one edge <span class="math inline">\((x, y)\)</span> in
@@ -2871,7 +2870,7 @@ problem</strong>（单源最短路径问题）</li>
 <h4 id="基本定义-1">基本定义</h4>
 <ul>
 <li>A weighted, directed graph <span class="math inline">\(G(V,E)\)</span>（加权有向图）</li>
-<li>For each edge <span class="math inline">\((u, v) \in E\)</span> , a
+<li>For each edge <span class="math inline">\((u, v) \in E\)</span>, a
 weight <span class="math inline">\(w(u, v)\)</span> specifies the cost
 to connect <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span>
 <ul>
@@ -2922,14 +2921,14 @@ weights（解决具有非负边权的图的单源最短路径问题）</li>
 <h4 id="最优子结构-4">最优子结构</h4>
 <ul>
 <li>Let <span class="math inline">\(p = \langle v_0, v_1, \dots, v_k
-\rangle\)</span> be a shortest path from vertex <span class="math inline">\(v_0\)</span> to vertex <span class="math inline">\(v_k\)</span> .（设 <span class="math inline">\(p\)</span> 是从顶点 <span class="math inline">\(v_0\)</span> 到顶点 <span class="math inline">\(v_k\)</span> 的最短路径）</li>
+\rangle\)</span> be a shortest path from vertex <span class="math inline">\(v_0\)</span> to vertex <span class="math inline">\(v_k\)</span>,（设 <span class="math inline">\(p\)</span> 是从顶点 <span class="math inline">\(v_0\)</span> 到顶点 <span class="math inline">\(v_k\)</span> 的最短路径）</li>
 <li>For any <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> such that <span class="math inline">\(0
-\leq i \leq j \leq k\)</span> , let <span class="math inline">\(p_{ij} =
+\leq i \leq j \leq k\)</span>, let <span class="math inline">\(p_{ij} =
 \left\langle v_i, v_{i+1}, \ldots, v_j \right\rangle\)</span> be the
 subpath of <span class="math inline">\(p\)</span> from vertex <span class="math inline">\(v_i\)</span> to vertex <span class="math inline">\(v_j\)</span>（对于 <span class="math inline">\(0
 \leq i \leq j \leq k\)</span> 的任何 <span class="math inline">\(i\)</span> 和 <span class="math inline">\(j\)</span> ，设 <span class="math inline">\(p_{ij}\)</span> 是从顶点 <span class="math inline">\(v_i\)</span> 到顶点 <span class="math inline">\(v_j\)</span> 的子路径）</li>
 <li>Then <span class="math inline">\(p_{ij}\)</span> is a shortest path
-from <span class="math inline">\(v_i\)</span> to <span class="math inline">\(v_j\)</span> .（则 <span class="math inline">\(p_{ij}\)</span> 是从 <span class="math inline">\(v_i\)</span> 到 <span class="math inline">\(v_j\)</span> 的最短路径）</li>
+from <span class="math inline">\(v_i\)</span> to <span class="math inline">\(v_j\)</span>,（则 <span class="math inline">\(p_{ij}\)</span> 是从 <span class="math inline">\(v_i\)</span> 到 <span class="math inline">\(v_j\)</span> 的最短路径）</li>
 </ul>
 <h4 id="松弛-relaxation">松弛 (Relaxation)</h4>
 <ul>
@@ -2970,8 +2969,8 @@ v)\)</span> consists of testing whether going through vertex <span class="math i
   \]</span></li>
 <li>Generalizing breadth-first search (<strong>BFS</strong>) to weighted
 graphs（将 BFS 泛化为加权图）</li>
-<li>The algorithm maintains a set of vertices <span class="math inline">\(S\)</span> , whose final shortest-path weights
-have already been determined（该算法维护一个顶点集 <span class="math inline">\(S\)</span> ，其最终最短路径权重已确定）</li>
+<li>The algorithm maintains a set of vertices <span class="math inline">\(S\)</span>, whose final shortest-path weights have
+already been determined（该算法维护一个顶点集 <span class="math inline">\(S\)</span> ，其最终最短路径权重已确定）</li>
 <li>主要步骤
 <ol type="1">
 <li>Selects the vertex <span class="math inline">\(u \in V - S\)</span>
@@ -3012,8 +3011,8 @@ times（重复上述过程 <span class="math inline">\(|V|\)</span> 次）</li>
 <h5 id="收敛性质">收敛性质</h5>
 <ul>
 <li>Convergence property: if <span class="math inline">\(s
-\xrightarrow{p} x \to y\)</span> is a shortest path for some <span class="math inline">\(x, y \in V\)</span> , and if <span class="math inline">\(x.d = \delta(s, x)\)</span> at any time prior to
-relaxing edge <span class="math inline">\((x, y)\)</span> , then <span class="math inline">\(y.d = \delta(s, y)\)</span> at all times
+\xrightarrow{p} x \to y\)</span> is a shortest path for some <span class="math inline">\(x, y \in V\)</span>, and if <span class="math inline">\(x.d = \delta(s, x)\)</span> at any time prior to
+relaxing edge <span class="math inline">\((x, y)\)</span>, then <span class="math inline">\(y.d = \delta(s, y)\)</span> at all times
 afterward（收敛性质：如果 <span class="math inline">\(s \xrightarrow{p}
 x \to y\)</span> 是某些 <span class="math inline">\(x, y \in V\)</span>
 的最短路径，并且如果在松弛边 <span class="math inline">\((x, y)\)</span>
@@ -3093,8 +3092,8 @@ u.d\leq y.d\)</span></li>
 <li>Edge <span class="math inline">\((x, y)\)</span> was relaxed when
 <span class="math inline">\(x\)</span> was added（当 <span class="math inline">\(x\)</span> 被添加时，边 <span class="math inline">\((x, y)\)</span> 被松弛）</li>
 <li>Convergence property: if <span class="math inline">\(s
-\xrightarrow{p} x \to y\)</span> is a shortest path for some <span class="math inline">\(x, y \in V\)</span> , and if <span class="math inline">\(x.d = \delta(s, x)\)</span> at any time prior to
-relaxing edge <span class="math inline">\((x, y)\)</span> , then <span class="math inline">\(y.d = \delta(s, y)\)</span> at all times afterward
+\xrightarrow{p} x \to y\)</span> is a shortest path for some <span class="math inline">\(x, y \in V\)</span>, and if <span class="math inline">\(x.d = \delta(s, x)\)</span> at any time prior to
+relaxing edge <span class="math inline">\((x, y)\)</span>, then <span class="math inline">\(y.d = \delta(s, y)\)</span> at all times afterward
 <ul>
 <li>Proof: <span class="math inline">\(y.d \leq x.d + w(x,y) =
 \delta(s,x) + w(x,y) = \delta(s,y)\)</span></li>
@@ -3286,7 +3285,7 @@ processes（将集群、物理/虚拟机、处理器、内核、线程等抽象�
 <ul>
 <li>Finite set of processes（有限的进程集）
 <ul>
-<li>the set of processes in the system is denoted by <span class="math inline">\(\Pi\)</span> , where <span class="math inline">\(N
+<li>the set of processes in the system is denoted by <span class="math inline">\(\Pi\)</span>, where <span class="math inline">\(N
 = |\Pi|\)</span>（系统中的进程集表示为 <span class="math inline">\(\Pi\)</span> ，其中 <span class="math inline">\(N
 = |\Pi|\)</span> ）</li>
 <li>each process is modeled as a state
@@ -3315,7 +3314,7 @@ messages（进程对通过链接（或通道）连接，通过该链接（或通
 proceeds in steps（进程 <span class="math inline">\(p_i\)</span>
 的计算按步骤进行）
 <ol type="1">
-<li>Send event: put a message in <span class="math inline">\(\mathrm{outbuf}_i[j]\)</span> , for every neighbor
+<li>Send event: put a message in <span class="math inline">\(\mathrm{outbuf}_i[j]\)</span>, for every neighbor
 <span class="math inline">\(p_j\)</span>（发送事件：将消息放入 <span class="math inline">\(\mathrm{outbuf}_i[j]\)</span>，对于每个邻居 <span class="math inline">\(p_j\)</span> ）</li>
 <li>Receive event: get messages m from <span class="math inline">\(\mathrm{inbuf}_i[*]\)</span>（接收事件：从 <span class="math inline">\(\mathrm{inbuf}_i[*]\)</span> 中获取消息 m）</li>
 <li>Computation event: Perform local computation <span class="math inline">\(\rightarrow\)</span> Change
@@ -3501,16 +3500,14 @@ message <span class="math inline">\(m\)</span> to process <span class="math inli
 message <span class="math inline">\(m\)</span> sent by process <span class="math inline">\(p\)</span>.（交付由进程 <span class="math inline">\(p\)</span> 发送的消息 <span class="math inline">\(m\)</span>）</li>
 <li>Properties:
 <ul>
-<li>FLL1. <strong>Fair-loss</strong>: If a correct process <span class="math inline">\(p\)</span> infinitely often sends a message <span class="math inline">\(m\)</span> to a correct process <span class="math inline">\(q\)</span> , then <span class="math inline">\(q\)</span> delivers <span class="math inline">\(m\)</span> an infinite number of
+<li>FLL1. <strong>Fair-loss</strong>: If a correct process <span class="math inline">\(p\)</span> infinitely often sends a message <span class="math inline">\(m\)</span> to a correct process <span class="math inline">\(q\)</span>, then <span class="math inline">\(q\)</span> delivers <span class="math inline">\(m\)</span> an infinite number of
 times.（公平丢弃：如果正确进程 <span class="math inline">\(p\)</span>
 无限次地将消息 <span class="math inline">\(m\)</span> 发送到正确进程
 <span class="math inline">\(q\)</span> ，则 <span class="math inline">\(q\)</span> 无限次地交付 <span class="math inline">\(m\)</span> 。）</li>
 <li>FLL2. <strong>Finite duplication</strong>: If a correct process
 <span class="math inline">\(p\)</span> sends a message <span class="math inline">\(m\)</span> a finite number of times to process
-<span class="math inline">\(q\)</span> , then <span class="math inline">\(m\)</span> cannot be delivered an infinite number
-of times by <span class="math inline">\(q\)</span>
-.（有限重复：如果正确进程 <span class="math inline">\(p\)</span> 将消息
-<span class="math inline">\(m\)</span> 有限次地发送到进程 <span class="math inline">\(q\)</span> ，则 <span class="math inline">\(m\)</span> 不能被 <span class="math inline">\(q\)</span> 无限次地交付。）</li>
+<span class="math inline">\(q\)</span>, then <span class="math inline">\(m\)</span> cannot be delivered an infinite number
+of times by <span class="math inline">\(q\)</span>,（有限重复：如果正确进程 <span class="math inline">\(p\)</span> 将消息 <span class="math inline">\(m\)</span> 有限次地发送到进程 <span class="math inline">\(q\)</span> ，则 <span class="math inline">\(m\)</span> 不能被 <span class="math inline">\(q\)</span> 无限次地交付。）</li>
 <li>FLL3. <strong>No creation</strong>: If some process <span class="math inline">\(q\)</span> delivers a message <span class="math inline">\(m\)</span> with sender <span class="math inline">\(p\)</span> then <span class="math inline">\(m\)</span> was previously sent to <span class="math inline">\(q\)</span> by process <span class="math inline">\(p\)</span>.（无创建：如果某个进程 <span class="math inline">\(q\)</span> 交付了带有发送者 <span class="math inline">\(p\)</span> 的消息 <span class="math inline">\(m\)</span> ，则该消息 <span class="math inline">\(m\)</span> 先前已由进程 <span class="math inline">\(p\)</span> 发送给 <span class="math inline">\(q\)</span> 。）</li>
 </ul></li>
 <li>Correspond to <strong>UDP</strong>（对应于 UDP）</li>
@@ -3799,7 +3796,7 @@ Timeout)</h4>
 (Eventually perfect failure detector)</h3>
 <h4 id="规范-5">规范</h4>
 <ul>
-<li>Name: Eventually Perfect Failure Detector, instance <span class="math inline">\(\diamondsuit P\)</span> .</li>
+<li>Name: Eventually Perfect Failure Detector, instance <span class="math inline">\(\diamondsuit P\)</span>,</li>
 <li>Indication:
 <ul>
 <li><code>&lt;◇P, Suspect | p&gt;</code> : Notifies that process <span class="math inline">\(p\)</span> is suspected to have crashed.（通知进程
@@ -3958,7 +3955,7 @@ processes.（最终一致性：在某个时间之后，没有两个正确进程�
 <h4 id="算法君主制最终领导者检测-monarchical-eventual-leader-detection">算法：君主制最终领导者检测
 (Monarchical Eventual Leader Detection)</h4>
 <ul>
-<li>Implemented: EventualLeaderDetector, instance <span class="math inline">\(\Omega\)</span> .</li>
+<li>Implemented: EventualLeaderDetector, instance <span class="math inline">\(\Omega\)</span>,</li>
 <li>Uses: Eventually Perfect Failure Detector, instance <span class="math inline">\(\diamondsuit P\)</span>.</li>
 </ul>
 <figure class="shiki"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #abb2bf">// 初始化 Ω，suspected 保存被怀疑崩溃的进程集合，leader 保存当前领导者</span></span>
@@ -3989,7 +3986,7 @@ processes.（最终一致性：在某个时间之后，没有两个正确进程�
 manner（当两个以上的进程需要协调工作时）</li>
 <li>E.g., shared register, consensus, multi-party computation</li>
 </ul></li>
-<li>A process sends a message within a group of processes <span class="math inline">\(\Pi\)</span> , such that processes in <span class="math inline">\(\Pi\)</span> agree on the messages they
+<li>A process sends a message within a group of processes <span class="math inline">\(\Pi\)</span>, such that processes in <span class="math inline">\(\Pi\)</span> agree on the messages they
 deliver（一个进程在一组进程 <span class="math inline">\(\Pi\)</span>
 中发送消息，使得 <span class="math inline">\(\Pi\)</span>
 中的进程对它们交付的消息达成一致） <img src="image-53.webp" srcset="/img/loading/loading3.gif" lazyload></li>
@@ -4506,8 +4503,8 @@ i.e.,（为了简单起见，我们只考虑对称情况，即） <span class="m
 <ul>
 <li>Asymmetric case: Google Megastore*, write-all, read-one</li>
 </ul></li>
-<li>E.g., when <span class="math inline">\(N = 3\)</span> and <span class="math inline">\(\Pi = \{p_1, p_2, p_3\}\)</span> , <span class="math inline">\(QS = \{\{p_1, p_2\}, \{p_1, p_3\}, \{p_2,
-p_3\}\}\)</span> .
+<li>E.g., when <span class="math inline">\(N = 3\)</span> and <span class="math inline">\(\Pi = \{p_1, p_2, p_3\}\)</span>, <span class="math inline">\(QS = \{\{p_1, p_2\}, \{p_1, p_3\}, \{p_2,
+p_3\}\}\)</span>,
 <ul>
 <li><span class="math inline">\(\{p_2,p_3\} \cap \{p_1,p_2\} =
 \{p_2\}\)</span></li>
@@ -4878,7 +4875,7 @@ round</strong> <span class="math inline">\(N\)</span>（进程在第 <span class
 i\)</span>）都接收到了 <span class="math inline">\(p_i\)</span>
 的提案并采用了它）</li>
 <li>Hence, every process which sends a message after round <span class="math inline">\(i\)</span> has the same proposal at the end of
-round <span class="math inline">\(i\)</span> .（因此，在第 <span class="math inline">\(i\)</span> 轮结束时，在第 <span class="math inline">\(i\)</span>
+round <span class="math inline">\(i\)</span>,（因此，在第 <span class="math inline">\(i\)</span> 轮结束时，在第 <span class="math inline">\(i\)</span>
 轮之后发送消息的每个进程都有相同的提案。）</li>
 </ul>
 <h4 id="算法基于-p-和法定人数的统一共识-p-quorum-based-uniform-consensus">算法：基于
@@ -4927,7 +4924,7 @@ break（<span class="math inline">\(\diamondsuit P\)</span>
 <h5 id="基本思想-4">基本思想</h5>
 <ul>
 <li><p>The processes go through rounds incrementally: in each round
-<span class="math inline">\(k\)</span>, such that <span class="math inline">\(k \bmod N = i\)</span> , <span class="math inline">\(p_i\)</span> is the
+<span class="math inline">\(k\)</span>, such that <span class="math inline">\(k \bmod N = i\)</span>, <span class="math inline">\(p_i\)</span> is the
 leader（进程按顺序经历轮次：在每一轮 <span class="math inline">\(k\)</span> 中，如果 <span class="math inline">\(k
 \bmod N = i\)</span>，则 <span class="math inline">\(p_i\)</span>
 是领导者）</p></li>
@@ -5127,7 +5124,7 @@ is not suspected（在某一轮，某个正确的进程 p 成为领导者且不�
 which some process <span class="math inline">\(p_i\)</span> decides some
 value <span class="math inline">\(v\)</span>, <span class="math inline">\(p_i\)</span> is the leader of round <span class="math inline">\(k\)</span> and <span class="math inline">\(p_i\)</span> decides <span class="math inline">\(v\)</span> in <span class="math inline">\(k\)</span>（设 <span class="math inline">\(k\)</span> 是某个进程 <span class="math inline">\(p_i\)</span> 决定某个值 <span class="math inline">\(v\)</span> 的第一轮，即 <span class="math inline">\(p_i\)</span> 是第 <span class="math inline">\(k\)</span> 轮的领导者并且 <span class="math inline">\(p_i\)</span> 在第 <span class="math inline">\(k\)</span> 轮中决定了 <span class="math inline">\(v\)</span>）
 <ul>
-<li>This means that, in round <span class="math inline">\(k\)</span> , a
+<li>This means that, in round <span class="math inline">\(k\)</span>, a
 majority of processes adopt <span class="math inline">\(v\)</span>（这意味着，在第 <span class="math inline">\(k\)</span> 轮中，大多数进程采用了 <span class="math inline">\(v\)</span>）</li>
 <li>The algorithm guarantees that no value other than <span class="math inline">\(v\)</span> will be imposed (and hence decided) by
 any process in a round higher than <span class="math inline">\(k\)</span> (Quorum)（该算法保证，在高于 <span class="math inline">\(k\)</span>
@@ -5299,16 +5296,16 @@ views（进程安装相同的视图序列）</li>
 <ul>
 <li>Name: GroupMembership, instance <span class="math inline">\(gm\)</span>.</li>
 <li>Indication: <code>&lt;gm, View | V&gt;</code>: Installs a new view V
-= (id, M) with view identifier id (0, 1, 2, …) and membership
+= (id, M) with view identifier id (0, 1, 2,,..) and membership
 M.（安装一个新的视图 V = (id, M)，其中视图标识符为 id，成员资格为
 M）</li>
 <li>Properties:
 <ul>
 <li>GM1. <strong>Monotonicity</strong>: If a process <span class="math inline">\(p\)</span> installs a view <span class="math inline">\(V = (id, M)\)</span> and subsequently installs
 another view <span class="math inline">\(V^\prime= (id^\prime,
-M^\prime)\)</span> , then <span class="math inline">\(id &lt;
+M^\prime)\)</span>, then <span class="math inline">\(id &lt;
 id^\prime\)</span> and <span class="math inline">\(M^\prime \subsetneq
-M\)</span> .（单调性：如果进程 <span class="math inline">\(p\)</span>
+M\)</span>,（单调性：如果进程 <span class="math inline">\(p\)</span>
 安装视图 <span class="math inline">\(V = (id,
 M)\)</span>，然后安装另一个视图 <span class="math inline">\(V^\prime =
 (id^\prime, M^\prime)\)</span>，则 <span class="math inline">\(id &lt;
@@ -5318,14 +5315,14 @@ M\)</span>。）</li>
 view <span class="math inline">\(V = (id, M)\)</span> and another
 process installs some view <span class="math inline">\(V^\prime = (id,
 M^\prime)\)</span>, then <span class="math inline">\(M =
-M^\prime\)</span> .（一致性：如果某个进程安装视图 <span class="math inline">\(V = (id, M)\)</span>，另一个进程安装某个视图 <span class="math inline">\(V^\prime = (id, M^\prime)\)</span>，则 <span class="math inline">\(M = M^\prime\)</span>。）</li>
+M^\prime\)</span>,（一致性：如果某个进程安装视图 <span class="math inline">\(V = (id, M)\)</span>，另一个进程安装某个视图 <span class="math inline">\(V^\prime = (id, M^\prime)\)</span>，则 <span class="math inline">\(M = M^\prime\)</span>。）</li>
 <li>GM3. <strong>Completeness</strong>: If a process <span class="math inline">\(p\)</span> crashes, then eventually every correct
 process installs a view (id, M) such that <span class="math inline">\(p
-\notin M\)</span> .（完整性：如果进程 <span class="math inline">\(p\)</span> 崩溃，则最终每个正确的进程都会安装视图
+\notin M\)</span>,（完整性：如果进程 <span class="math inline">\(p\)</span> 崩溃，则最终每个正确的进程都会安装视图
 (id, M)，使得 <span class="math inline">\(p \notin M\)</span>。）</li>
 <li>GM4. <strong>Accuracy</strong>: If some process installs a view (id,
 M) with <span class="math inline">\(q \notin M\)</span> for some process
-<span class="math inline">\(q \in \Pi\)</span> , then <span class="math inline">\(q\)</span> has
+<span class="math inline">\(q \in \Pi\)</span>, then <span class="math inline">\(q\)</span> has
 crashed.（准确性：如果某个进程安装视图 (id, M)，其中对于某个进程 <span class="math inline">\(q \in \Pi\)</span> 有 <span class="math inline">\(q \notin M\)</span>，则 <span class="math inline">\(q\)</span> 已崩溃。）</li>
 </ul></li>
 </ul>
@@ -5396,7 +5393,7 @@ flag)（不可能，因为进程不会在所有较低编号的实例决定之前
 correct processes suspect <span class="math inline">\(p\)</span>
 eventually（通过 <span class="math inline">\(P\)</span>
 的强完整性，所有正确的进程最终都会怀疑 <span class="math inline">\(p\)</span>）</li>
-<li>Once all correct processes suspect <span class="math inline">\(p\)</span> , a member set without <span class="math inline">\(p\)</span> will be proposed by
+<li>Once all correct processes suspect <span class="math inline">\(p\)</span>, a member set without <span class="math inline">\(p\)</span> will be proposed by
 all（一旦所有正确的进程怀疑 <span class="math inline">\(p\)</span>，所有进程都会提出一个不包含 <span class="math inline">\(p\)</span> 的成员集）</li>
 <li>By uniform consensus Validity，a view without <span class="math inline">\(p\)</span> is
 installed（通过统一共识有效性安装了没有 <span class="math inline">\(p\)</span> 的视图）</li>
@@ -5414,12 +5411,12 @@ Algorithms vs.&nbsp;Distributed Algorithms）</h3>
 <h3 id="分布式存储系统distributed-storage-systems">分布式存储系统（Distributed
 storage systems）</h3>
 <ul>
-<li>Google File System, Apache HDFS, Ceph, … <img src="image-91.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+<li>Google File System, Apache HDFS, Ceph,,.. <img src="image-91.webp" srcset="/img/loading/loading3.gif" lazyload></li>
 <li>Configuration management module（配置管理模块）
 <ul>
 <li>Full-fledged SMR (group membership, consensus)（完善的
 SMR（组成员资格，共识））</li>
-<li><span class="math inline">\(N = 5\)</span> , typically</li>
+<li><span class="math inline">\(N = 5\)</span>, typically</li>
 </ul></li>
 <li>Metadata store（元数据存储）
 <ul>
@@ -5428,7 +5425,7 @@ SMR（组成员资格，共识））</li>
 </ul></li>
 <li>Data store（数据存储）
 <ul>
-<li>3-way replication, <span class="math inline">\(N = 3\)</span> ,
+<li>3-way replication, <span class="math inline">\(N = 3\)</span>,
 usually a single writer（3 路复制，通常是单个写入器）</li>
 <li>Rack Awareness（机架感知）</li>
 </ul></li>
@@ -5968,8 +5965,8 @@ Durability（原子性，一致性，隔离性和持久性）</li>
 
 
   <script type="text/javascript">
-  document.getElementById("g-total-word-id").innerHTML = "651k";
-  document.getElementById('g-total-posts-id').textContent ="63";
+  document.getElementById("g-total-word-id").innerHTML = "653k";
+  document.getElementById('g-total-posts-id').textContent ="64";
 </script>
 
   <noscript>
