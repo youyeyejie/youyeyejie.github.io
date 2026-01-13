@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis3355.webp">
 <meta property="article:published_time" content="2026-01-11T05:41:02.000Z">
-<meta property="article:modified_time" content="2026-01-12T11:39:13.820Z">
+<meta property="article:modified_time" content="2026-01-13T13:30:25.758Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU Notes">
 <meta property="article:tag" content="算法">
@@ -476,7 +476,7 @@
         
         
           <!-- compatible with older versions-->
-          216 分钟
+          217 分钟
         
       </span>
     
@@ -1082,8 +1082,9 @@ rate（函数的增长速度不超过某个速率）</li>
 <li>符号表示: <span class="math display">\[
   f (n) = O (g (n))
   \]</span></li>
-<li>定义：There exist positive constants <span class="math inline">\(c\)</span> and <span class="math inline">\(n_0\)</span> such that <span class="math display">\[
-  \forall n \geq n_0,~ 0 \leq f(n) \leq cg(n)
+<li>定义： <span class="math display">\[
+  \exists c &gt; 0, n_0 &gt; 0, \forall n \geq n_0,~ 0 \leq f(n) \leq
+cg(n)
   \]</span></li>
 </ul>
 <h4 id="下界-lower-bound">下界 (Lower Bound)</h4>
@@ -1098,8 +1099,9 @@ rate（函数的增长速度至少与某个速率一样快）</li>
 <li>符号表示: <span class="math display">\[
   f(n) = \Omega (g(n))
   \]</span></li>
-<li>定义：There exist positive constants <span class="math inline">\(c\)</span> and <span class="math inline">\(n_0\)</span> such that <span class="math display">\[
-  \forall n \geq n_{0}, ~0 \leq cg(n) \leq f(n)
+<li>定义： <span class="math display">\[
+  \exists c &gt; 0, n_0 &gt; 0, \forall n \geq n_{0}, ~0 \leq cg(n) \leq
+f(n)
   \]</span></li>
 </ul>
 <h4 id="紧确界-tight-bound">紧确界 (Tight Bound)</h4>
@@ -1109,13 +1111,14 @@ a <strong>tight bound</strong> on the asymptotic behavior of a
 function（描述函数渐近行为的紧确界）
 <ul>
 <li>a function grows precisely at a certain rate on the highest-order
-term</li>
+term（函数在最高阶项上以某个速率精确增长）</li>
 </ul></li>
 <li>符号表示: <span class="math display">\[
   f(n) = \Theta (g(n))
   \]</span></li>
-<li>定义：There exist positive constants <span class="math inline">\(c_{1}, c_{2}\)</span> and <span class="math inline">\(n_{0}\)</span> such that <span class="math display">\[
-  \forall n \geq n_{0}, ~0 \leq c_{1}g(n) \leq f(n) \leq c_{2}g(n)
+<li>定义： <span class="math display">\[
+  \exists c_{1} &gt; 0, c_{2} &gt; 0, n_0 &gt; 0, \forall n \geq n_{0},
+~0 \leq c_{1}g(n) \leq f(n) \leq c_{2}g(n)
   \]</span></li>
 <li>For any two functions <span class="math inline">\(f(n)\)</span> and
 <span class="math inline">\(g(n)\)</span>, we have <span class="math display">\[
@@ -2397,11 +2400,12 @@ the number of cache misses（最优解使得缓存未命中的次数最少）</l
 to subproblem <span class="math inline">\((C, i)\)</span>（考虑子问题
 <span class="math inline">\((C, i)\)</span> 的最优解 <span class="math inline">\(S\)</span> ）
 <ul>
-<li>let <span class="math inline">\(C'\)</span> be the contents of
-the cache after processing the request for block <span class="math inline">\(b_i\)</span>（让 <span class="math inline">\(C'\)</span> 是处理块 <span class="math inline">\(b_i\)</span> 请求后的缓存内容）</li>
-<li>Let <span class="math inline">\(S'\)</span> be the sub-solution
-of <span class="math inline">\(S\)</span> for the resulting subproblem
-<span class="math inline">\((C', i + 1)\)</span>（让 <span class="math inline">\(S'\)</span> 是子问题 <span class="math inline">\((C', i + 1)\)</span> 的 <span class="math inline">\(S\)</span> 的子解）</li>
+<li>let <span class="math inline">\(C^\prime\)</span> be the contents of
+the cache after processing the request for block <span class="math inline">\(b_i\)</span>（让 <span class="math inline">\(C^\prime\)</span> 是处理块 <span class="math inline">\(b_i\)</span> 请求后的缓存内容）</li>
+<li>Let <span class="math inline">\(S^\prime\)</span> be the
+sub-solution of <span class="math inline">\(S\)</span> for the resulting
+subproblem <span class="math inline">\((C^\prime, i + 1)\)</span>（让
+<span class="math inline">\(S^\prime\)</span> 是子问题 <span class="math inline">\((C^\prime, i + 1)\)</span> 的 <span class="math inline">\(S\)</span> 的子解）</li>
 </ul></li>
 <li>分情况讨论
 <ul>
@@ -2413,8 +2417,9 @@ C^{\prime}\)</span></li>
 <li>Case II: cache miss
 <ul>
 <li><span class="math inline">\(C \neq C^{\prime}\)</span></li>
-<li><span class="math inline">\(S'\)</span> is an optimal solution
-to subproblem <span class="math inline">\((C', i + 1)\)</span></li>
+<li><span class="math inline">\(S^\prime\)</span> is an optimal solution
+to subproblem <span class="math inline">\((C^\prime, i +
+1)\)</span></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -2467,7 +2472,7 @@ Trees)</h2>
 <h4 id="基本定义">基本定义</h4>
 <ul>
 <li>A connected, undirected graph <span class="math inline">\(G(V,E)\)</span>, where <span class="math inline">\(V\)</span> is the set of nodes and <span class="math inline">\(E\)</span> is the set of possible interconnections
-between pairs of nodes（一个连通的无向图 <span class="math inline">\(G(V,E)\)</span>, <span class="math inline">\(V\)</span> 是节点集合， <span class="math inline">\(E\)</span> 是节点对之间可能的连接集合）
+between pairs of nodes（一个连通的无向图 <span class="math inline">\(G(V,E)\)</span>，<span class="math inline">\(V\)</span> 是节点集合，<span class="math inline">\(E\)</span> 是节点对之间可能的连接集合）
 <ul>
 <li><span class="math inline">\(E\)</span> can be an adjacency list or
 an adjacency matrix（ <span class="math inline">\(E\)</span>
@@ -2486,13 +2491,13 @@ E\)</span> that connects all of the vertices and whose total weight
   w (T) = \sum_ {(u, v) \in T} w (u, v)
   \]</span></li>
 <li><span class="math inline">\(T\)</span> is acyclic and connects all
-of the vertices（ <span class="math inline">\(T\)</span>
+of the vertices（<span class="math inline">\(T\)</span>
 无环且连接所有顶点）
 <ul>
 <li><span class="math inline">\(T\)</span> must form a tree (a spanning
-tree)（ <span class="math inline">\(T\)</span>
+tree)（<span class="math inline">\(T\)</span>
 必须形成一棵树（生成树））</li>
-<li><span class="math inline">\(T\)</span> has <span class="math inline">\(|V|-1\)</span> edges（ <span class="math inline">\(T\)</span> 有 <span class="math inline">\(|V|-1\)</span> 条边）</li>
+<li><span class="math inline">\(T\)</span> has <span class="math inline">\(|V|-1\)</span> edges（<span class="math inline">\(T\)</span> 有 <span class="math inline">\(|V|-1\)</span> 条边）</li>
 </ul></li>
 <li>示例： <img src="image-26.webp" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul>
@@ -2502,9 +2507,9 @@ Generic Method)</h4>
 <li><strong>Greedy</strong>
 <ul>
 <li>Intuition: grows the minimum spanning tree one edge at a
-time（直觉：每次增长一条边的最小生成树）</li>
+time（直觉：每次增长最小生成树的一条边）</li>
 <li>select edges based on their weights and handle
-cycles（根据权重选择边并处理循环）</li>
+cycles（根据权重选择边并处理环）</li>
 </ul></li>
 <li>通用算法： <figure class="shiki"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #abb2bf">GENERIC-MST(G, w)</span></span>
 <span class="line"><span style="color: #abb2bf">    A = ∅  # 初始化边集A为空</span></span>
@@ -2545,24 +2550,25 @@ cut（如果一条边的权重是跨越该割的任何边的最小值，则该�
 <ol type="1">
 <li>Let <span class="math inline">\(G(V, E)\)</span> be a connected,
 undirected graph with a real-valued weight function <span class="math inline">\(w\)</span> defined on <span class="math inline">\(E\)</span> ;（设 <span class="math inline">\(G(V,
-E)\)</span> 是一个连通的无向图，实值权重函数 <span class="math inline">\(w\)</span> 定义在 <span class="math inline">\(E\)</span> 上；）</li>
+E)\)</span> 是一个连通的无向图，实值权重函数 <span class="math inline">\(w\)</span> 定义在 <span class="math inline">\(E\)</span> 上）</li>
 <li>let <span class="math inline">\(A\)</span> be a subset of <span class="math inline">\(E\)</span> that is included in some minimum
-spanning tree for <span class="math inline">\(G\)</span> ;（设 <span class="math inline">\(A\)</span> 是 <span class="math inline">\(E\)</span> 的一个子集，包含在 <span class="math inline">\(G\)</span> 的某个最小生成树中；）</li>
+spanning tree for <span class="math inline">\(G\)</span> ;（设 <span class="math inline">\(A\)</span> 是 <span class="math inline">\(E\)</span> 的一个子集，包含在 <span class="math inline">\(G\)</span> 的某个最小生成树中）</li>
 <li>let <span class="math inline">\((S,V - S)\)</span> be any cut of
 <span class="math inline">\(G\)</span> that respects <span class="math inline">\(A\)</span> ;（设 <span class="math inline">\((S,V
-- S)\)</span> 是 <span class="math inline">\(G\)</span> 的任意尊重 <span class="math inline">\(A\)</span> 的割；）</li>
+- S)\)</span> 是 <span class="math inline">\(G\)</span> 的任意尊重 <span class="math inline">\(A\)</span> 的割）</li>
 <li>let <span class="math inline">\((u, v)\)</span> be a light edge
-crossing <span class="math inline">\((S, V - S)\)</span>,（设 <span class="math inline">\((u, v)\)</span> 是跨越 <span class="math inline">\((S, V - S)\)</span> 的轻边。）</li>
+crossing <span class="math inline">\((S, V - S)\)</span>,（令 <span class="math inline">\((u, v)\)</span> 是跨越 <span class="math inline">\((S, V - S)\)</span> 的轻边）</li>
 </ol></li>
 <li>证明：
 <ul>
 <li>Assume <span class="math inline">\(T\)</span> is a minimum spanning
 tree (MST) that includes <span class="math inline">\(A\)</span> and
-<span class="math inline">\((u, v) \notin T\)</span>,（假设 <span class="math inline">\(T\)</span> 是包含 <span class="math inline">\(A\)</span> 的最小生成树，且 <span class="math inline">\((u, v) \notin T\)</span> 。）</li>
-<li>We now construct another MST <span class="math inline">\(T'\)</span> that includes <span class="math inline">\(A \cup (u, v)\)</span>（我们现在构造另一个包含
-<span class="math inline">\(A \cup (u, v)\)</span> 的最小生成树 <span class="math inline">\(T'\)</span> 。）</li>
+<span class="math inline">\((u, v) \notin T\)</span>,（假设 <span class="math inline">\(T\)</span> 是包含 <span class="math inline">\(A\)</span> 的最小生成树，且 <span class="math inline">\((u, v) \notin T\)</span>。）</li>
+<li>We now construct another MST <span class="math inline">\(T^\prime\)</span> that includes <span class="math inline">\(A \cup \{(u, v)\}\)</span>（我们现在构造另一个包含
+<span class="math inline">\(A \cup \{(u, v)\}\)</span> 的最小生成树
+<span class="math inline">\(T^\prime\)</span>。）</li>
 <li>At least one edge <span class="math inline">\((x, y)\)</span> in
-<span class="math inline">\(T\)</span> in the path <span class="math inline">\(p\)</span> crosses the cut <span class="math inline">\((S, V - S)\)</span>（在路径 <span class="math inline">\(p\)</span> 中， <span class="math inline">\(T\)</span> 中至少有一条边 <span class="math inline">\((x, y)\)</span> 跨越割 <span class="math inline">\((S, V - S)\)</span> ）</li>
+<span class="math inline">\(T\)</span> in the path <span class="math inline">\(p\)</span> crosses the cut <span class="math inline">\((S, V - S)\)</span>（在路径 <span class="math inline">\(p\)</span> 中，<span class="math inline">\(T\)</span> 中至少有一条边 <span class="math inline">\((x, y)\)</span> 跨越割 <span class="math inline">\((S, V - S)\)</span>）</li>
 <li><span class="math inline">\(T^{\prime} = (T - \{(x,y)\})\cup
 \{(u,v)\}\)</span>
 <ul>
@@ -2575,8 +2581,8 @@ w(T)\)</span>（由于 <span class="math inline">\(T\)</span>
 是最小生成树，我们有 <span class="math inline">\(w(T^{\prime}) =
 w(T)\)</span> ）</li>
 <li>Thus, <span class="math inline">\(T^{\prime}\)</span> is also a
-minimum spanning tree that includes <span class="math inline">\(A \cup
-\{(u,v)\}\)</span>（因此， <span class="math inline">\(T^{\prime}\)</span> 也是一个包含 <span class="math inline">\(A \cup \{(u,v)\}\)</span> 的最小生成树）</li>
+minimum spanning tree that contains <span class="math inline">\(A \cup
+\{(u, v)\}\)</span>（因此，<span class="math inline">\(T^{\prime}\)</span> 也是最小生成树，且包含 <span class="math inline">\(A \cup \{(u, v)\}\)</span>）</li>
 </ul></li>
 </ul>
 <img src="image-32.webp" srcset="/img/loading/loading3.gif" lazyload></li>
@@ -2707,9 +2713,9 @@ T(n) = O(\log n)
 <li>Initially, <span class="math inline">\(|V|\)</span> trees in the
 forest（最初，森林中有 <span class="math inline">\(|V|\)</span>
 棵树）</li>
-<li>Find a safe edge to add by finding, of all the edges that connect
-any two trees in the forest, an edge <span class="math inline">\((u,
-v)\)</span> with the minimum
+<li>Find a <strong>safe</strong> edge to add by finding, of all the
+edges that <strong>connect any two trees</strong> in the forest, an edge
+<span class="math inline">\((u, v)\)</span> with the minimum
 weight（通过在森林中连接任意两棵树的所有边中找到权重最小的边 <span class="math inline">\((u, v)\)</span> 来找到一条安全边进行添加）</li>
 <li>Repeat until there is only one tree（重复直到只有一棵树）</li>
 </ol></li>
@@ -2718,13 +2724,13 @@ weight（通过在森林中连接任意两棵树的所有边中找到权重最�
 </ul>
 <h4 id="算法伪代码-6">算法伪代码</h4>
 <figure class="shiki"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #abb2bf">MST_KRUSKAL(G, w)                               // Kruskal 最小生成树算法</span></span>
-<span class="line"><span style="color: #abb2bf">    A = ∅                                       // 初始化边集 A 为空</span></span>
+<span class="line"><span style="color: #abb2bf">    A = ∅                                      // 初始化边集 A 为空</span></span>
 <span class="line"><span style="color: #abb2bf">    for each vertex v in G.V                    // 初始化每个顶点为单独的集合</span></span>
 <span class="line"><span style="color: #abb2bf">        MAKE-SET(v)</span></span>
 <span class="line"><span style="color: #abb2bf">    edges = all edges in G.E sorted by weight   // 按权重排序所有边</span></span>
 <span class="line"><span style="color: #abb2bf">    for each edge (u, v) in edges               // 遍历排序后的边</span></span>
 <span class="line"><span style="color: #abb2bf">        if FIND-SET(u) ≠ FIND-SET(v)            // 如果边 (u, v) 的两个端点属于不同集合</span></span>
-<span class="line"><span style="color: #abb2bf">            A = A ∪ {(u, v)}                    // 将边 (u, v) 添加到边集 A 中</span></span>
+<span class="line"><span style="color: #abb2bf">            A = A ∪ {(u, v)}                   // 将边 (u, v) 添加到边集 A 中</span></span>
 <span class="line"><span style="color: #abb2bf">            UNION(u, v)                         // 合并两个集合</span></span>
 <span class="line"><span style="color: #abb2bf">    return A                                    // 返回最小生成树的边集 A</span></span></code></pre></div></div></figure>
 <h4 id="不相交集数据结构-disjoint-set-data-structure">不相交集数据结构
@@ -2861,9 +2867,14 @@ V)\)</span></li>
 problem</strong>（单源最短路径问题）</li>
 <li>Single-destination shortest-paths problem（单目的地最短路径问题）
 <ul>
-<li>通过反转图中每条边的方向来实现</li>
+<li>reversing the direction of each edge in the
+graph（通过反转图中每条边的方向，将其转换为单源最短路径问题）</li>
 </ul></li>
-<li>Single-pair shortest-path problem（单对最短路径问题）</li>
+<li>Single-pair shortest-path problem（单对最短路径问题）
+<ul>
+<li>a part of the single-source shortest-paths
+problem（单源最短路径问题的一部分）</li>
+</ul></li>
 <li>All-pairs shortest-paths problem（全源最短路径问题）</li>
 </ul></li>
 </ul>
@@ -3055,8 +3066,7 @@ w(x,y) = \delta(s,y)\)</span></li>
 <li>此前当 <span class="math inline">\(x\)</span> 被添加时，边 <span class="math inline">\((x, y)\)</span> 被松弛，根据收敛性质， <span class="math inline">\(y.d = \delta (s,y)\)</span></li>
 </ol></li>
 <li>综上，<span class="math inline">\(\delta (s,y) &lt; \delta (s,u)
-\leq u.d \leq y.d = \delta (s,y)\)</span>，矛盾，故 <span class="math inline">\(y = u\)</span>，即 <span class="math inline">\(u.d
-= \delta (s,u)\)</span></li>
+&lt; u.d \leq y.d = \delta (s,y)\)</span>，矛盾，故 <span class="math inline">\(u.d = \delta (s,u)\)</span></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -3265,9 +3275,9 @@ Floyd-Warshall 算法） </p><figure class="shiki"><div class="codeblock"><div c
 <span class="line"><span style="color: #abb2bf">    return D^(n), Π^(n)                 // 返回最终结果</span></span>
 <span class="line"><span style="color: #abb2bf"></span></span>
 <span class="line"><span style="color: #abb2bf">PRINT-PATH(Π, i, j)                     // 打印从 i 到 j 的最短路径</span></span>
-<span class="line"><span style="color: #abb2bf">    if i = j</span></span>
+<span class="line"><span style="color: #abb2bf">    if i == j</span></span>
 <span class="line"><span style="color: #abb2bf">        print i</span></span>
-<span class="line"><span style="color: #abb2bf">    else if π_ij = NIL</span></span>
+<span class="line"><span style="color: #abb2bf">    else if π_ij == NIL</span></span>
 <span class="line"><span style="color: #abb2bf">        print "no path from" i "to" j "exists"</span></span>
 <span class="line"><span style="color: #abb2bf">    else</span></span>
 <span class="line"><span style="color: #abb2bf">        PRINT-PATH(Π, i, π_ij)</span></span>
@@ -3862,7 +3872,8 @@ priori! Eventually, delay <span class="math inline">\(&gt;2\Delta\)</span>.</p><
 <li>在第二轮中，<span class="math inline">\(p_2\)</span>
 成功回复了心跳请求，<span class="math inline">\(p_1\)</span> 和 <span class="math inline">\(p_3\)</span> 将其加入 alive 集合。</li>
 <li>在第二轮结束时，<span class="math inline">\(p_1\)</span> 和 <span class="math inline">\(p_3\)</span> 发现 <span class="math inline">\(p_2\)</span> 既在 alive 集合中又在 suspected
-集合中，因此将延迟增加了 <span class="math inline">\(2\Delta'\)</span>（从第三轮开始，延迟为 <span class="math inline">\(4\Delta'\)</span>）；然后 <span class="math inline">\(p_2\)</span> 被从怀疑集合中移除。</li>
+集合中，因此将延迟增加了 <span class="math inline">\(2\Delta^\prime\)</span>（从第三轮开始，延迟为
+<span class="math inline">\(4\Delta^\prime\)</span>）；然后 <span class="math inline">\(p_2\)</span> 被从怀疑集合中移除。</li>
 </ul></li>
 </ul>
 <h2 id="领导者-leaders">领导者 (Leaders)</h2>
@@ -5534,7 +5545,7 @@ Durability（原子性，一致性，隔离性和持久性）</li>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2026年1月12日</div>
+          <div>2026年1月13日</div>
         </div>
       
       
