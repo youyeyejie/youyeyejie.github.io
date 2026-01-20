@@ -1,15 +1,15 @@
 ---
 title: 分层可导航小世界图HNSW简介
-math: true
 date: 2025-11-08 11:39:11
-updated:
 tags:
     - HNSW
     - 数据库
 categories:
-    - Misc
+    - Paper Reading
+math: true
+category_bar: true
 excerpt: HNSW（Hierarchical Navigable Small World graph）是一种高效的近似最近邻搜索算法，结合了概率跳表和可导航小世界图的优点，通过分层结构实现对数级复杂度的近邻搜索，广泛应用于大规模数据处理和机器学习领域。
-index_img: https://notes.sjtu.edu.cn/uploads/upload_52554988be29ed3f5a8521eaf3017f58.png
+index_img: /_posts/分层可导航小世界图HNSW简介/image-2.webp
 ---
 
 > 本文是博主在 NIS3351 数据库原理及安全课程上的分享，主题是 LLM 时代的向量数据库。博主负责其中向量数据库索引算法——HNSW 部分的讲解，并基于课程准备的讲义整理学习笔记，发布于此存档，也供大家参考交流。
@@ -18,7 +18,7 @@ index_img: https://notes.sjtu.edu.cn/uploads/upload_52554988be29ed3f5a8521eaf301
 ## Probability Skip List（概率跳表）
 - 改进版的链表数据结构，用于提高查找效率
 
-![](https://notes.sjtu.edu.cn/uploads/upload_5073d3291a193970a72b7d69696a64dd.png)
+![](分层可导航小世界图HNSW简介/image.webp)
 
 - 结构特点：它通过**引入多个层级来加速查找过程**。最顶层的索引连接跨度更大的节点，可以快速跳跃，减少搜索路径长度；随着层级下降，索引的跨度逐渐变短，提供更精确的访问路径；最底层是完整的原始链表，包含所有元素。
 - 插入和查找过程：插入过程是概率性的，先确定该元素首次出现在哪一层，每一层的元素出现在更高层的概率是固定的。查找时从最上层开始，每次选择下一个节点，直到遇到比目标值大的节点，然后回退到上一个节点，并进入下一层继续搜索，直到到达最底层找到目标元素。这种设计可以将查找时间复杂度从普通链表的 $O(n)$ 降低到 $O(\log n)$，代价是增加了一些存储开销。
@@ -26,7 +26,7 @@ index_img: https://notes.sjtu.edu.cn/uploads/upload_52554988be29ed3f5a8521eaf301
 ## Navigable Small World Graphs（可导航小世界图）
 - 用于构建高效搜索结构的图模型，常用于快速近似最近邻搜索任务。
 
-![](https://notes.sjtu.edu.cn/uploads/upload_d6195fb686a6d4ba9b70d9228601454b.png)
+![](分层可导航小世界图HNSW简介/image-1.webp)
 
 - 结构特点：这种图结合了小世界图的短路径和高聚集性特性，图中节点之间通常有较高的连接度，邻居节点之间往往彼此相连，形成聚集或团簇，同时任意两个节点之间的平均路径长度较短。此外，图中还包含长距离连接，这些连接对于维持小世界特性至关重要，能使在大规模数据中可以快速查找与查询点接近的节点。
 - 搜索过程：可导航小世界图通常通过**启发式搜索算法**进行搜索，从一个初始节点开始，根据距离向与目标节点最近的节点跳转，从而逐渐逼近目标。这种搜索方式效率较高，避免了穷举搜索的时间开销。
@@ -36,7 +36,7 @@ index_img: https://notes.sjtu.edu.cn/uploads/upload_52554988be29ed3f5a8521eaf301
 # Hierarchical Navigable Small World（分层可导航小世界图）
 - 顾名思义：HNSW 是在 NSW 基础上引入了分层结构的改进版本。是概率跳表和可导航小世界图的结合。
 
-![](https://notes.sjtu.edu.cn/uploads/upload_52554988be29ed3f5a8521eaf3017f58.png)
+![](分层可导航小世界图HNSW简介/image-2.webp)
 
 - 可类比地图导航：从 “全国地图”（顶层）先定位到 “省地图”（中层），再缩小到 “市地图”（底层），每层只关注对应尺度的 “关键路线”（长链接 / 短链接），最终快速找到目标。
 - **核心思想**：用 “指数衰减概率” 构建 “多层近邻图”，从顶层 “粗定位” 到低层 “精搜索”，通过 “启发式邻居选择” 保证全局连通性，最终用 “对数级复杂度” 实现高效的近似近邻搜索。
@@ -60,7 +60,7 @@ index_img: https://notes.sjtu.edu.cn/uploads/upload_52554988be29ed3f5a8521eaf301
     - 简单规则（Algorithm 3）：直接选离插入元素**最近**的 $M$ 个候选者（$M$ 是每层最大连接数），适合数据分布均匀的场景。
     - 启发式规则（Algorithm 4）：不仅看 “候选者与插入元素的距离”，还看 “候选者与已选邻居的距离”—— **只有当候选者比 “已选邻居” 更接近插入元素时，才将其选为邻居**。这种规则能强制建立 “跨聚类链接”，比如在两个孤立聚类的边界插入元素时，会主动连接另一个聚类的元素，保证全局连通性。
 
-    ![](https://notes.sjtu.edu.cn/uploads/upload_61e80b805192f34216152eff65c1659a.png)
+    ![](分层可导航小世界图HNSW简介/image-3.webp)
 
 ## 核心流程
 ### 图构建（插入元素）：如何把元素 “放进” 分层图？
@@ -120,9 +120,7 @@ index_img: https://notes.sjtu.edu.cn/uploads/upload_52554988be29ed3f5a8521eaf301
 # 分享报告
 {% pdf LLM_时代的向量数据库分享报告.pdf %}
 
-# 参考资料
-1. MALKOV Y A, YASHUNIN D A. Efficient and Robust Approximate Nearest Neighbor
-Search Using Hierarchical Navigable Small World Graphs[J]. IEEE Transactions on Pat-
-tern Analysis and Machine Intelligence, 2018, 42(4): 824-836.
+# 参考文献
+1. MALKOV Y A, YASHUNIN D A. Efficient and Robust Approximate Nearest Neighbor Search Using Hierarchical Navigable Small World Graphs[J]. IEEE Transactions on Pattern Analysis and Machine Intelligence, 2018, 42(4): 824-836.
 
 {% pdf Efficient_and_robust_approximate_nearest_neighbor_search_using_Hierarchical_Navigable_Small_World_graphs.pdf %}
