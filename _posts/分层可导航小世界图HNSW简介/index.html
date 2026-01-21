@@ -29,14 +29,14 @@
 <meta property="og:site_name" content="有野野芥的博客">
 <meta property="og:description" content="HNSW（Hierarchical Navigable Small World graph）是一种高效的近似最近邻搜索算法，结合了概率跳表和可导航小世界图的优点，通过分层结构实现对数级复杂度的近邻搜索，广泛应用于大规模数据处理和机器学习领域。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_52554988be29ed3f5a8521eaf3017f58.png">
+<meta property="og:image" content="https://youyeyejie.github.io/_posts/%E5%88%86%E5%B1%82%E5%8F%AF%E5%AF%BC%E8%88%AA%E5%B0%8F%E4%B8%96%E7%95%8C%E5%9B%BEHNSW%E7%AE%80%E4%BB%8B/image-2.webp">
 <meta property="article:published_time" content="2025-11-08T03:39:11.000Z">
-<meta property="article:modified_time" content="2025-11-20T06:53:50.592Z">
+<meta property="article:modified_time" content="2026-01-20T09:44:53.974Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="HNSW">
 <meta property="article:tag" content="数据库">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://notes.sjtu.edu.cn/uploads/upload_52554988be29ed3f5a8521eaf3017f58.png">
+<meta name="twitter:image" content="https://youyeyejie.github.io/_posts/%E5%88%86%E5%B1%82%E5%8F%AF%E5%AF%BC%E8%88%AA%E5%B0%8F%E4%B8%96%E7%95%8C%E5%9B%BEHNSW%E7%AE%80%E4%BB%8B/image-2.webp">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -519,6 +519,76 @@
   <div class="row nomargin-x">
     <div class="side-col d-none d-lg-block col-lg-2">
       
+  <aside class="sidebar category-bar" style="margin-right: -1rem">
+    
+
+
+
+
+
+<div class="category-list">
+  
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Paper Reading"
+        id="heading-717502770b97d51394e7c55fa4354d40" role="tab" data-toggle="collapse" href="#collapse-717502770b97d51394e7c55fa4354d40"
+        aria-expanded="true"
+      >
+        Paper Reading
+        <span class="list-group-count">(3)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-717502770b97d51394e7c55fa4354d40"
+           role="tabpanel" aria-labelledby="heading-717502770b97d51394e7c55fa4354d40">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/_posts/%E9%BD%BF%E8%BD%AE%E6%8D%9F%E4%BC%A4%E5%8E%9F%E7%90%86%E5%88%9D%E6%8E%A2/" title="齿轮损伤原理初探"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">齿轮损伤原理初探</span>
+        </a>
+      
+    
+      
+      
+        <a href="/_posts/%E5%88%86%E5%B1%82%E5%8F%AF%E5%AF%BC%E8%88%AA%E5%B0%8F%E4%B8%96%E7%95%8C%E5%9B%BEHNSW%E7%AE%80%E4%BB%8B/" title="分层可导航小世界图HNSW简介"
+           class="list-group-item list-group-item-action
+           active">
+          <span class="category-post">分层可导航小世界图HNSW简介</span>
+        </a>
+      
+    
+      
+      
+        <a href="/_posts/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9A%90%E7%A7%81%E6%94%BB%E5%87%BB%E4%B9%8B%E6%88%90%E5%91%98%E6%8E%A8%E7%90%86%E6%94%BB%E5%87%BB%E5%88%9D%E6%8E%A2/" title="大模型隐私攻击之成员推理攻击初探"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">大模型隐私攻击之成员推理攻击初探</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+</div>
+
+
+  </aside>
+
 
     </div>
 
@@ -542,7 +612,7 @@ List（概率跳表）</h2>
 <ul>
 <li>改进版的链表数据结构，用于提高查找效率</li>
 </ul>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_5073d3291a193970a72b7d69696a64dd.png" srcset="/img/loading/loading3.gif" lazyload></p>
+<p><img src="image.webp" srcset="/img/loading/loading3.gif" lazyload></p>
 <ul>
 <li>结构特点：它通过<strong>引入多个层级来加速查找过程</strong>。最顶层的索引连接跨度更大的节点，可以快速跳跃，减少搜索路径长度；随着层级下降，索引的跨度逐渐变短，提供更精确的访问路径；最底层是完整的原始链表，包含所有元素。</li>
 <li>插入和查找过程：插入过程是概率性的，先确定该元素首次出现在哪一层，每一层的元素出现在更高层的概率是固定的。查找时从最上层开始，每次选择下一个节点，直到遇到比目标值大的节点，然后回退到上一个节点，并进入下一层继续搜索，直到到达最底层找到目标元素。这种设计可以将查找时间复杂度从普通链表的
@@ -554,7 +624,7 @@ World Graphs（可导航小世界图）</h2>
 <ul>
 <li>用于构建高效搜索结构的图模型，常用于快速近似最近邻搜索任务。</li>
 </ul>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_d6195fb686a6d4ba9b70d9228601454b.png" srcset="/img/loading/loading3.gif" lazyload></p>
+<p><img src="image-1.webp" srcset="/img/loading/loading3.gif" lazyload></p>
 <ul>
 <li>结构特点：这种图结合了小世界图的短路径和高聚集性特性，图中节点之间通常有较高的连接度，邻居节点之间往往彼此相连，形成聚集或团簇，同时任意两个节点之间的平均路径长度较短。此外，图中还包含长距离连接，这些连接对于维持小世界特性至关重要，能使在大规模数据中可以快速查找与查询点接近的节点。</li>
 <li>搜索过程：可导航小世界图通常通过<strong>启发式搜索算法</strong>进行搜索，从一个初始节点开始，根据距离向与目标节点最近的节点跳转，从而逐渐逼近目标。这种搜索方式效率较高，避免了穷举搜索的时间开销。</li>
@@ -571,7 +641,7 @@ Navigable Small World（分层可导航小世界图）</h1>
 <li>顾名思义：HNSW 是在 NSW
 基础上引入了分层结构的改进版本。是概率跳表和可导航小世界图的结合。</li>
 </ul>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_52554988be29ed3f5a8521eaf3017f58.png" srcset="/img/loading/loading3.gif" lazyload></p>
+<p><img src="image-2.webp" srcset="/img/loading/loading3.gif" lazyload></p>
 <ul>
 <li>可类比地图导航：从 “全国地图”（顶层）先定位到
 “省地图”（中层），再缩小到 “市地图”（底层），每层只关注对应尺度的
@@ -626,7 +696,7 @@ Point）：从哪里开始搜索？</h3>
 更接近插入元素时，才将其选为邻居</strong>。这种规则能强制建立
 “跨聚类链接”，比如在两个孤立聚类的边界插入元素时，会主动连接另一个聚类的元素，保证全局连通性。</li>
 </ul>
-<img src="https://notes.sjtu.edu.cn/uploads/upload_61e80b805192f34216152eff65c1659a.png" srcset="/img/loading/loading3.gif" lazyload></li>
+<img src="image-3.webp" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul>
 <h2 id="核心流程">核心流程</h2>
 <h3 id="图构建插入元素如何把元素-放进-分层图">图构建（插入元素）：如何把元素
@@ -750,12 +820,12 @@ LSH、k-d 树）在高维数据中会 “维度灾难”，NSW 在低维数据�
 
 
 
-<h1 id="参考资料">参考资料</h1>
+<h1 id="参考文献">参考文献</h1>
 <ol type="1">
 <li>MALKOV Y A, YASHUNIN D A. Efficient and Robust Approximate Nearest
 Neighbor Search Using Hierarchical Navigable Small World Graphs[J]. IEEE
-Transactions on Pat- tern Analysis and Machine Intelligence, 2018,
-42(4): 824-836.</li>
+Transactions on Pattern Analysis and Machine Intelligence, 2018, 42(4):
+824-836.</li>
 </ol>
 
 
@@ -783,7 +853,7 @@ Transactions on Pat- tern Analysis and Machine Intelligence, 2018,
     
       <span class="category-chain">
         
-  <a href="/categories/Misc/" class="category-chain-item">Misc</a>
+  <a href="/categories/Paper-Reading/" class="category-chain-item">Paper Reading</a>
   
   
 
@@ -831,7 +901,7 @@ Transactions on Pat- tern Analysis and Machine Intelligence, 2018,
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年11月20日</div>
+          <div>2026年1月20日</div>
         </div>
       
       
@@ -1268,8 +1338,8 @@ Transactions on Pat- tern Analysis and Machine Intelligence, 2018,
 
 
   <script type="text/javascript">
-  document.getElementById("g-total-word-id").innerHTML = "653k";
-  document.getElementById('g-total-posts-id').textContent ="64";
+  document.getElementById("g-total-word-id").innerHTML = "657k";
+  document.getElementById('g-total-posts-id').textContent ="65";
 </script>
 
   <noscript>
