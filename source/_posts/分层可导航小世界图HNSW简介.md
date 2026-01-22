@@ -121,6 +121,4 @@ index_img: /_posts/分层可导航小世界图HNSW简介/image-2.webp
 {% pdf LLM_时代的向量数据库分享报告.pdf %}
 
 # 参考文献
-1. MALKOV Y A, YASHUNIN D A. Efficient and Robust Approximate Nearest Neighbor Search Using Hierarchical Navigable Small World Graphs[J]. IEEE Transactions on Pattern Analysis and Machine Intelligence, 2018, 42(4): 824-836.
-
-{% pdf Efficient_and_robust_approximate_nearest_neighbor_search_using_Hierarchical_Navigable_Small_World_graphs.pdf %}
+1. MALKOV Y A, YASHUNIN D A. Efficient and Robust Approximate Nearest Neighbor Search Using Hierarchical Navigable Small World Graphs[J]. IEEE Transactions on Pattern Analysis and Machine Intelligence, 2018, [42(4): 824-836](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8594636).
