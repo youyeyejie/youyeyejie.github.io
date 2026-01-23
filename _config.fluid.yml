@@ -239,12 +239,9 @@ custom_js:
   - /js/Crypto.js # 文章加密
   # - /js/DynamicLine.js # 动态线条
   - /js/LinkCard.js # 链接卡片效果
-  # - /js/RainbowLoading.js # 彩虹加载动画
   - /js/RandomBanner.js # 文章页随机 Banner
   - /js/Background.js # 全屏背景
-  # - /js/RightMenu.js # 右键菜单
   - /js/ScrollAnimation.js # 首页文章滑入动画
-  - /js/Sidebar.js # 侧边栏
   - /js/TabDisplay.js # 标签页根据焦点切换显示
   - /js/Tooltip.js # 提示气泡
   - /js/Umami.js # Umami 统计
@@ -256,15 +253,11 @@ custom_css:
   - /css/CodeBlock.css # 代码折叠
   - /css/CodeInLine.css # 行内代码样式
   - /css/Crypto.css # 文章加密样式
-  # - /css/Footer.css # 页脚样式
   - /css/Gallery.css # 相册文章图片
   - /css/IndexImgHover.css # 首页文章封面图片悬浮效果
   - /css/LinkCard.css # 链接卡片效果
-  # - /css/RainbowLoading.css # 彩虹加载动画
-  # - /css/RightMenu.css # 右键菜单样式 
   - /css/ScrollAnimation.css # 首页文章滑入动画
   - /css/ScrollBar.css # 滚动条颜色
-  - /css/Sidebar.css # 侧边栏样式
   - /css/StrongInDark.css # 强化暗色模式加粗字体
   - /css/TitleGradient.css # 文章标题颜色渐变效果
   - /css/Tooltip.css # 提示气泡样式
