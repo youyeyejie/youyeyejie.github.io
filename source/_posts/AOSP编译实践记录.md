@@ -8,7 +8,7 @@ categories:
 excerpt: NIS4335 信息安全综合实践——AOSP编译实践记录
 ---
 
-本文是 NIS4335 信息安全综合实践课程的实践实验报告，实验内容为下载 AOSP（Android Open Source Project）源代码并进行编译。
+> 本文是 NIS4335 信息安全综合实践课程的实践实验报告，实验内容为下载 AOSP（Android Open Source Project）源代码并进行编译。
 
 由于个人电脑硬盘空间有限，因此我使用了老师申请的 [jCould 云主机](https://home.jcloud.sjtu.edu.cn)，配置：CPU 8 核，内存 16 GB，硬盘 500 GB，千兆校园网，系统 Ubuntu22.04。
 
