@@ -3,7 +3,7 @@ title: OpenEuler页面淘汰算法编程实践
 date: 2025-05-13 10:57:52
 tags:
     - OpenEuler
-    - 操作系统原理
+    - 操作系统
 categories:
     - Misc
 excerpt: NIS2334 操作系统原理实践——OpenEuler页面淘汰算法

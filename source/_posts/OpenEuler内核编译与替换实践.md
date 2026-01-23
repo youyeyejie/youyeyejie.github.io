@@ -3,7 +3,7 @@ title: OpenEuler内核编译与替换实践
 date: 2025-03-17 20:57:52
 tags:
     - OpenEuler
-    - 操作系统原理
+    - 操作系统
 categories:
     - Misc
 excerpt: NIS2334 操作系统原理实践——OpenEuler内核编译与替换
