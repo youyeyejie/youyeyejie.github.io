@@ -6,6 +6,7 @@ tags:
 categories:
     - Paper Reading
 excerpt:
+archive: true
 math: false
 mermaid: false
 category_bar: true
