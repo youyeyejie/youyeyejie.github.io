@@ -2,7 +2,7 @@
 title: {{ title }}
 date: {{ date }}
 tags:
-    - SJTU Notes
+    - SJTU
     - {{ title }}
 categories:
     - [SJTU Notes, 计科]
