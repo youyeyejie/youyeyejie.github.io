@@ -1,0 +1,1435 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head><!-- hexo injector head_begin start --><meta name="msvalidate.01" content="DF9F232801BA9D0CABB002E4774A3228"/><meta name="google-site-verification" content="vOm5Zs9tuUlEh-wVBlpvs_spnOou-q2CoTiFQ1ZV1h4"/><script defer src="https://cloud.umami.is/script.js" data-website-id="0369421f-4354-4d7b-99c7-ae077c591b4f"></script><!-- hexo injector head_begin end -->
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar/avatar2.webp">
+  <link rel="icon" href="/img/avatar/avatar2.webp">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="youyeyejie">
+  <meta name="keywords" content="yyyj,YYYJ,youyeyejie,有野野芥">
+  
+    <meta name="description" content="大创项目论文阅读笔记与复现记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="论文阅读与复现：MIA against DLMs">
+<meta property="og:url" content="https://youyeyejie.github.io/_posts/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E4%B8%8E%E5%A4%8D%E7%8E%B0%EF%BC%9AMIA-against-DLMs/index.html">
+<meta property="og:site_name" content="有野野芥的博客">
+<meta property="og:description" content="大创项目论文阅读笔记与复现记录">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://youyeyejie.github.io/_posts/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E4%B8%8E%E5%A4%8D%E7%8E%B0%EF%BC%9AMIA-against-DLMs/image.webp">
+<meta property="og:image" content="https://youyeyejie.github.io/_posts/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E4%B8%8E%E5%A4%8D%E7%8E%B0%EF%BC%9AMIA-against-DLMs/image-1.webp">
+<meta property="og:image" content="https://youyeyejie.github.io/_posts/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E4%B8%8E%E5%A4%8D%E7%8E%B0%EF%BC%9AMIA-against-DLMs/image-3.webp">
+<meta property="og:image" content="https://youyeyejie.github.io/_posts/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E4%B8%8E%E5%A4%8D%E7%8E%B0%EF%BC%9AMIA-against-DLMs/image-2.webp">
+<meta property="og:image" content="https://youyeyejie.github.io/_posts/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E4%B8%8E%E5%A4%8D%E7%8E%B0%EF%BC%9AMIA-against-DLMs/image-4.webp">
+<meta property="article:published_time" content="2026-02-20T11:51:08.000Z">
+<meta property="article:modified_time" content="2026-02-21T05:34:18.033Z">
+<meta property="article:author" content="youyeyejie">
+<meta property="article:tag" content="人工智能安全">
+<meta property="article:tag" content="MIA">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://youyeyejie.github.io/_posts/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E4%B8%8E%E5%A4%8D%E7%8E%B0%EF%BC%9AMIA-against-DLMs/image.webp">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>论文阅读与复现：MIA against DLMs - 有野野芥的博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+<link rel="stylesheet" href="//lib.baomitu.com/font-awesome/6.1.2/css/all.min.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+
+
+  
+<link rel="stylesheet" href="/css/Background.css">
+<link rel="stylesheet" href="/css/CodeBlock.css">
+<link rel="stylesheet" href="/css/CodeInLine.css">
+<link rel="stylesheet" href="/css/Crypto.css">
+<link rel="stylesheet" href="/css/Gallery.css">
+<link rel="stylesheet" href="/css/IndexImgHover.css">
+<link rel="stylesheet" href="/css/LinkCard.css">
+<link rel="stylesheet" href="/css/ScrollAnimation.css">
+<link rel="stylesheet" href="/css/ScrollBar.css">
+<link rel="stylesheet" href="/css/StrongInDark.css">
+<link rel="stylesheet" href="/css/TitleGradient.css">
+<link rel="stylesheet" href="/css/Tooltip.css">
+<link rel="stylesheet" href="/css/UnifyImgWidth.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"youyeyejie.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":false,"default":"TEXT"},"copy_btn":false,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading/loading3.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-shiki-plugin@latest/lib/codeblock.css">
+<style>:root{--hl-color:#abb2bf;--hl-bg:#282c34;--hltools-bg:#21252b;--hltools-color:#bbbbbc;--hlnumber-bg:#282c34;--hlnumber-color:#495162;--hlscrollbar-bg:#373c47;--hlexpand-bg:linear-gradient(180deg,rgba(40,44,52,0.1),rgba(40,44,52,0.9))}</style>
+    <style>
+    .code-expand-btn:not(.expand-done) ~ div.codeblock,
+    .code-expand-btn:not(.expand-done) ~ * div.codeblock {
+      overflow: hidden;
+      height: 360px;
+    }
+    </style>
+  <!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><div id="tooltip" class="tooltip"></div><!-- hexo injector body_begin end -->
+  <div id="loader-container"> 
+    <div id="loader" class="loader"></div>
+    <div class="loader-inner">
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/RainbowLoading.js" type="text/javascript"></script>
+<link href="/css/RainbowLoading.css" type="text/css" rel="stylesheet"/><div id="rightmenu-wrapper">
+  <ul class="list-v rightmenu" id="rightmenu-content">
+	    <li class="navigation menuNavigation-Content">
+            <a class="nav icon-only fix-cursor-default" aria-label="back" onclick="history.back()"><i class="fa-solid fa-chevron-left"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="forward" onclick="history.forward()"><i class="fa-solid fa-chevron-right"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="reload" onclick="window.location.reload()"><i class="fa-solid fa-rotate-right"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="top" onclick="scrollToTopSmooth();"><i class="fa-solid fa-chevron-up"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="bottom" onclick="scrollToBottomSmooth();"><i class="fa-solid fa-chevron-down"></i></a>
+	    </li>
+
+        <hr class="menuLoad-Content" style="display: block;" id="top-line">
+
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copyLink();">
+                <span>
+                    <i class="fa-solid fa-link"></i>
+                    复制链接
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;" id="copy-selected-text" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copySelectedText();">
+                <span>
+                    <i class="fa-solid fa-copy"></i>
+                    &nbsp;复制选中
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;" id="search-selected-text-BING" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_blank" onclick="searchSelectedTextBing();">
+                <span>
+                    <i class="fa-solid fa-magnifying-glass-arrow-right"></i>
+                    &nbsp;必应搜索
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;" id="go-to-link" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_blank">
+                <span>
+                    <i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 1px;"></i>
+                    &nbsp;打开链接
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;" id="download-image" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="downloadImage();">
+                <span>
+                    <i class="fa-solid fa-image"></i>
+                    &nbsp;下载图片
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;" id="copy-image-link" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copyImageLink();">
+                <span>
+                    <i class="fa-solid fa-link"></i>
+                    复制图片链接
+                </span>
+            </a>
+        </li>
+
+		<hr class="menuLoad-Content" style="display: block;">
+
+        <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" onclick="RandomGo()">
+		        <span>
+			        <i class="fa-solid fa-paper-plane"></i>
+                    &nbsp;随便看看
+		        </span>
+		    </a>
+	    </li>
+	    <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+		        <span>
+			        <i class="fa-solid fa-magnifying-glass"></i>
+                    &nbsp;站内搜索
+		        </span>
+		    </a>
+	    </li>
+        <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" href="/categories/">
+		        <span>
+			        <i class="iconfont icon-category-fill"></i>
+                    &nbsp;博客分类
+		        </span>
+		    </a>
+	    </li>
+        <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" href="/tags/">
+		        <span>
+			        <i class="fa-solid fa-tags"></i>
+                    &nbsp;文章标签
+		        </span>
+		    </a>
+	    </li>
+        
+	    <hr class="menuLoad-Content" style="display: block;">
+
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" id="toggle-color-mode" target="_self" onclick="toggleColorMode();">
+                <span>
+                    <i id="toggle-color-mode-icon" class="fa-solid fa-circle-half-stroke"></i>
+                    &nbsp;切换昼夜
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" id="random-change-background" target="_self" onclick="randomChangeBackground();">
+                <span style="margin-left: 1px;">
+                    <i id="random-change-background-icon" class="fa-solid fa-image"></i>
+                    &nbsp;切换背景
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" id="toggle-background-mode" target="_self" onclick="toggleBackgroundMode();">
+                <span>
+                    <i id="toggle-background-mode-icon" class="fa-solid fa-toggle-on" style="margin-right: -1px;"></i>
+                    &nbsp;全屏背景
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" id="toggle-reading-mode" target="_self" onclick="toggleReadingMode();">
+                <span>
+                    <i id="toggle-reading-mode-icon" class="fa-solid fa-toggle-off" style="margin-right: -1px;"></i>
+                    &nbsp;阅读模式
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" id="toggle-tab-display" target="_self" onclick="toggleTabDisplay();">
+                <span>
+                    <i id="toggle-tab-display-icon" class="fa-solid fa-toggle-on" style="margin-right: -1px;"></i>
+                    &nbsp;自定义标签
+                </span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+<script src="/js/RightMenu.js" type="text/javascript"></script>
+<link href="/css/RightMenu.css" type="text/css" rel="stylesheet"/>
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <!-- <strong>YYYJ&#39;s Blog</strong> -->
+       <strong class="navbar-title">YYYJ&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.travellings.cn/go-by-clouds.html" target="_self">
+                <i class="fas fa-train-subway"></i>
+                <span>开往</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa-solid fa-folder-open"></i>
+                <span>更多</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/archives/" target="_self">
+                    <i class="iconfont icon-archive-fill"></i>
+                    <span>归档</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/" target="_self">
+                    <i class="fa-solid fa-tags"></i>
+                    <span>标签</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/links/" target="_self">
+                    <i class="iconfont icon-link-fill"></i>
+                    <span>友链</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/DayDream-Gallery/" target="_self">
+                    <i class="fas fa-images"></i>
+                    <span>图集</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/banner/random.webp') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="论文阅读与复现：MIA against DLMs"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        youyeyejie
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-02-20 19:51" pubdate>
+          2026年2月20日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          3.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          30 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar category-bar" style="margin-right: -1rem">
+    
+
+
+
+
+
+<div class="category-list">
+  
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Paper Reading"
+        id="heading-717502770b97d51394e7c55fa4354d40" role="tab" data-toggle="collapse" href="#collapse-717502770b97d51394e7c55fa4354d40"
+        aria-expanded="true"
+      >
+        Paper Reading
+        <span class="list-group-count">(6)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-717502770b97d51394e7c55fa4354d40"
+           role="tabpanel" aria-labelledby="heading-717502770b97d51394e7c55fa4354d40">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/_posts/%E9%BD%BF%E8%BD%AE%E6%8D%9F%E4%BC%A4%E5%8E%9F%E7%90%86%E5%88%9D%E6%8E%A2/" title="齿轮损伤原理初探"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">齿轮损伤原理初探</span>
+        </a>
+      
+    
+      
+      
+        <a href="/_posts/%E5%88%86%E5%B1%82%E5%8F%AF%E5%AF%BC%E8%88%AA%E5%B0%8F%E4%B8%96%E7%95%8C%E5%9B%BEHNSW%E7%AE%80%E4%BB%8B/" title="分层可导航小世界图HNSW简介"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">分层可导航小世界图HNSW简介</span>
+        </a>
+      
+    
+      
+      
+        <a href="/_posts/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9A%90%E7%A7%81%E6%94%BB%E5%87%BB%E4%B9%8B%E6%88%90%E5%91%98%E6%8E%A8%E7%90%86%E6%94%BB%E5%87%BB%E5%88%9D%E6%8E%A2/" title="大模型隐私攻击之成员推理攻击初探"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">大模型隐私攻击之成员推理攻击初探</span>
+        </a>
+      
+    
+      
+      
+        <a href="/_posts/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E4%B8%8E%E5%A4%8D%E7%8E%B0%EF%BC%9ATab-MIA/" title="论文阅读与复现：Tab-MIA"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">论文阅读与复现：Tab-MIA</span>
+        </a>
+      
+    
+      
+      
+        <a href="/_posts/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9ARMIA%E4%B8%8EInfoRMIA/" title="论文阅读：RMIA与InfoRMIA"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">论文阅读：RMIA与InfoRMIA</span>
+        </a>
+      
+    
+      
+      
+        <a href="/_posts/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E4%B8%8E%E5%A4%8D%E7%8E%B0%EF%BC%9AMIA-against-DLMs/" title="论文阅读与复现：MIA against DLMs"
+           class="list-group-item list-group-item-action
+           active">
+          <span class="category-post">论文阅读与复现：MIA against DLMs</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+</div>
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">论文阅读与复现：MIA against DLMs</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <blockquote>
+<p>ICLR 2026：<a target="_blank" rel="noopener" href="https://arxiv.org/html/2601.20125?_immersive_translate_auto_translate=1">Membership
+Inference Attacks Against Fine-tuned Diffusion Language Models</a></p>
+</blockquote>
+<h1 id="论文简介">论文简介</h1>
+<p>论文首次系统性研究了扩散语言模型（DLMs）的隐私泄露风险，提出了 DLMs
+的“掩码-预测”机制导致信号稀疏和长尾噪声问题会使传统攻击失效的观点，并基于此设计了基于子集聚合的成员攻击
+SAMA（Subset-Aggregated Membership
+Attack）攻击框架，利用渐进式掩码和基于符号的统计方法，显著提升了针对
+DLMs 的成员推理攻击效果，属于灰盒、参考模型、微调阶段 MIA。</p>
+<h2 id="背景知识">背景知识</h2>
+<h3 id="概念arms-与-dlms">概念：ARMs 与 DLMs</h3>
+<ul>
+<li><strong>自回归模型</strong> ARMs（Autoregressive
+Models）：基于单向（通常是从左到右）的语言建模，逐词预测下一个 Token。
+<ul>
+<li><p><strong>代表模型</strong>：GPT 系列</p></li>
+<li><p><strong>成员信号</strong>： <span class="math display">\[
+  \Delta_{AR}(x)=\ell_{AR}\left(x,\mathcal{M}_{AR}^{R}\right)-\ell_{AR}\left(x,\mathcal{M}_{AR}^{T}\right)=\frac{1}{L}
+\sum_{i=1}^{L}\left[\ell_{i}^{R}(x)-\ell_{i}^{T}(x)\right]
+  \]</span></p>
+<p>其中 <span class="math inline">\(\mathcal{M}_{AR}^{R}\)</span>
+是参考预训练模型，<span class="math inline">\(\mathcal{M}_{AR}^{T}\)</span>
+是微调后的目标模型，<span class="math inline">\(L\)</span>
+是序列长度，<span class="math inline">\(\ell_{i}=-\log p(x_{i} |
+x_{&lt;i})\)</span> 表示仅给定前面的上下文时，在位置 <span class="math inline">\(i\)</span> 处的损失。</p></li>
+</ul></li>
+<li><strong>扩散语言模型</strong> DLMs（Diffusion Language
+Models）：基于掩码-预测机制（Mask-and-Predict），输入部分遮盖的文本，利用双向上下文迭代填补空白生成完整文本。
+<ul>
+<li><p><strong>代表模型</strong>：LLaDA，Dream</p></li>
+<li><p><strong>优势</strong>：生成速度快（可并行）、可控性强、解决了反转诅咒问题。</p></li>
+<li><p><strong>成员信号</strong>： <span class="math display">\[
+  \Delta_{DF}(x,\mathcal{S})=\ell_{DF}\left(x,\mathcal{S},
+\mathcal{M}_{DF}^{R}\right)-\ell_{DF}\left(x,\mathcal{S},
+\mathcal{M}_{DF}^{T}\right)=\frac{1}{|\mathcal{S}|} \sum_{i \in
+\mathcal{S}}\left[\ell_{i}^{R}(x, \mathcal{S})-\ell_{i}^{T}(x,
+\mathcal{S})\right]
+  \]</span></p>
+<p>其中 <span class="math inline">\(\mathcal{S}\subseteq[L]\)</span>
+是掩码标记的集合，<span class="math inline">\(\ell_{i}(x,\mathcal{S})=-\log p(x_{i} |
+x_{-\mathcal{S}})\)</span> 表示在给定序列 <span class="math inline">\(x\)</span> 中所有未掩码标记 <span class="math inline">\(x_{-\mathcal{S}}\)</span> 的上下文下，在位置 <span class="math inline">\(i\)</span> 处的损失。</p></li>
+</ul></li>
+</ul>
+<h3 id="挑战传统攻击对-dlms-的局限性">挑战：传统攻击对 DLMs
+的局限性</h3>
+<p>论文发现，直接将传统 MIA 应用于 DLMs
+会面临<strong>信号稀疏</strong>与<strong>长尾噪声</strong>的双重挑战：</p>
+<ul>
+<li><strong>信号稀疏</strong>（Sparsity）：DLMs 的记忆并不均匀分布在所有
+Token 上，而是集中在特定的 Token 依赖关系上（如特定上下文关系）。因为
+DLM
+是通过随机打掩码来测试的，只有当掩码恰好盖住了这些被记忆的词，且保留了触发记忆的上下文时，才会暴露出真正的记忆信号。在成千上万种掩码组合中，能命中这种特定关系的概率很低，所以真正的信号是<strong>稀疏</strong>的。</li>
+<li><strong>长尾噪声</strong>（Heavy-tailed
+Noise）：模型在微调时，不仅会记住某些具体的句子（实例记忆），还会学到整个数据集的通用风格或高频词，称之为模型的领域适应（Domain
+Adaptation）。当攻击者测试一句话时，模型对这些“领域高频词”的预测损失（Loss）会非常低。这种极低的损失会产生巨大损失下降幅度（Magnitude），且呈长尾分布，并且对训练集内外的数据都会出现（只要它们属于同一领域）。</li>
+</ul>
+<p>由于信号稀疏与长尾噪声的存在，加之传统方法通常计算所有掩码 Token
+损失的<strong>平均值</strong>，那么则会出现一个问题：真正代表隐私泄露的“死记硬背”信号稀疏且数值微小，而那些代表领域适应的“高频词噪声”数值巨大，直接求平均会导致隐私信号被噪声彻底淹没。</p>
+<h3 id="机遇dlms-为-mia-带来新的攻击面">机遇：DLMs 为 MIA
+带来新的攻击面</h3>
+<p>虽然 DLMs 的掩码机制带来了挑战，但也提供了一个新的攻击面：</p>
+<ol type="1">
+<li>攻击者可获得多个独立的探测机会，不必提取单一的固定信号 <span class="math inline">\(\Delta_{AR}(x)\)</span>，而是能收集一系列依赖于配置
+<span class="math inline">\(\mathcal{S}_i\)</span> 的信号 <span class="math inline">\(\{\Delta_{DF}(x, \mathcal{S}_1), \Delta_{DF}(x,
+\mathcal{S}_2),
+\cdots\}\)</span>，若采样足够多的多样化掩码，有望获得比自回归模型更强的成员信号。</li>
+<li>双向上下文使攻击者能探测自回归模型中无法获取的令牌关系。例如，若令牌
+<span class="math inline">\(x_i\)</span> 和 <span class="math inline">\(x_j\)</span> 在微调中被记忆为强语义关联：
+<ul>
+<li>在自回归模型中，若 <span class="math inline">\(j&gt;i\)</span>，<span class="math inline">\(x_j\)</span> 始终被掩码，其与 <span class="math inline">\(x_i\)</span> 的关系无法影响 <span class="math inline">\(x_i\)</span> 的预测；</li>
+<li>而在扩散语言模型中，可通过多种掩码配置探测该关系，如：仅掩码 <span class="math inline">\(x_i\)</span> 观察 <span class="math inline">\(x_j\)</span> 对其预测的影响、仅掩码 <span class="math inline">\(x_j\)</span> 进行反向探测，或同时掩码 <span class="math inline">\(x_i\)</span> 和 <span class="math inline">\(x_j\)</span>
+测试其联合重构效果。每种配置都可能揭示单向模型无法获取的独特记忆模式。</li>
+</ul></li>
+</ol>
+<h2 id="核心内容sama-攻击框架">核心内容：SAMA 攻击框架</h2>
+<p>论文提出了<strong>基于子集聚合的成员攻击</strong>
+SAMA（Subset-Aggregated Membership Attack），核心思想是利用 DLMs
+的多样化掩码配置来收集多个独立的成员信号，并通过基于符号的统计方法过滤掉长尾噪声，最终形成一个鲁棒的成员推理攻击。</p>
+<h3 id="方法概览">方法概览</h3>
+<p><img src="image.webp" srcset="/img/loading/loading3.gif" lazyload></p>
+<ul>
+<li><ol type="a">
+<li>输入序列“The doctor prescribed the medication after reviewing the
+patient’s symptoms.”，在 <span class="math inline">\(T\)</span>
+个步骤中进行渐进式掩码，累积掩码位置。（论文这里写的是 <span class="math inline">\(\mathcal{S}\)</span>
+个步骤，我认为可能是笔误，应该是 <span class="math inline">\(T\)</span>
+个步骤）。每个步骤中，掩码位置数量逐渐增加，从而形成多个不同的掩码配置
+<span class="math inline">\(\{S_{t}\}_{t=1}^{T}\)</span>，每个配置都提供了一个独立的成员信号
+<span class="math inline">\(\{\Delta_{DF}(x,
+S_{t})\}_{t=1}^{T}\)</span>。</li>
+</ol></li>
+<li><ol start="2" type="a">
+<li>在每个步骤中，按位置跟踪目标和参考模型对掩码标记 [MASK] 的重建误差
+<span class="math inline">\(\{\ell^{s}\}_{s=1}^{\mathcal{S}}\)</span>。基于符号的测试统计量检测特定掩码配置何时激活记忆，计算参考损失超过目标损失的配置比例。这种基于符号的比较与逆加权相结合，形成成员分数，以区分训练成员和非成员。</li>
+</ol></li>
+</ul>
+<h3 id="核心组件">核心组件</h3>
+<h4 id="渐进式掩码-progressive-masking">渐进式掩码 (Progressive
+Masking)</h4>
+<ul>
+<li><p><strong>方法</strong>：不是固定一个掩码密度，而是采用多尺度方法，将掩码密度从稀疏逐步增加到密集。具体来说，在每个步骤
+<span class="math inline">\(t \in \{1, \cdots, T\}\)</span>
+中，将掩码密度设置为： <span class="math display">\[
+  \alpha_{t}=\alpha_{\min}+\frac{t-1}{T-1}\left(\alpha_{\max}-\alpha_{\min}\right)
+  \]</span></p>
+<p>其中 <span class="math inline">\(\alpha_{\min}\)</span> 和 <span class="math inline">\(\alpha_{\max}\)</span>（通常为 5% 至
+50%）定义了掩码密度的范围。这会在步骤 <span class="math inline">\(t\)</span> 产生 <span class="math inline">\(k_{t}=\left\lceil L \cdot
+\alpha_{t}\right\rceil\)</span> 个被掩码的位置。</p></li>
+<li><p><strong>意义</strong>：</p>
+<ul>
+<li><strong>稀疏阶段</strong>：保留大量上下文，信号最纯净，容易探测到强依赖关系。</li>
+<li><strong>密集阶段</strong>：虽然单点信号弱，但提供了更多的聚合数据点。</li>
+</ul></li>
+<li><p><strong>目的</strong>：利用多尺度探测，全方位捕捉模型在不同上下文密度下的记忆模式。</p></li>
+</ul>
+<h4 id="鲁棒子集聚合-robust-subset-aggregation">鲁棒子集聚合 (Robust
+Subset Aggregation)</h4>
+<ul>
+<li><strong>方法</strong>：在每个渐进式掩码步骤 <span class="math inline">\(t \in{1,\cdots,T}\)</span> 中，使用包含 <span class="math inline">\(k_{t}\)</span> 个掩码位置的掩码配置 <span class="math inline">\(\mathcal{S}_{t}
+\subseteq[L]\)</span>，我们通过单次前向传播获得所有掩码标记的损失，采用两部分稳健聚合策略：<strong>局部子集采样</strong>与<strong>基于符号的聚合</strong>。
+<ol type="1">
+<li><p><strong>局部子集采样</strong>（Local Subset
+Sampling）：在每一步掩码操作中，不计算全局平均，而是从 <span class="math inline">\(\mathcal{S}_{t}\)</span> 中随机采样 <span class="math inline">\(N\)</span> 个子集位置，对每个子集 <span class="math inline">\(U^{n}\)</span> 计算局部损失差异： <span class="math display">\[
+\Delta_{DF}^{n}\left(x,\mathcal{S}_{t}\right)=\frac{1}{m} \sum_{i \in
+H^{n}}\left[\ell_{i}^{R}\left(x,
+\mathcal{S}_{t}\right)-\ell_{i}^{T}\left(x,
+\mathcal{S}_{t}\right)\right]
+\]</span></p>
+<p>其中每个子集 <span class="math inline">\(U^{n}\subset\mathcal{S}_{t},n=1,\cdots,N\)</span>
+包含 <span class="math inline">\(m\)</span> 个位置，<span class="math inline">\(m \ll k_{t}\)</span>。这样得到 <span class="math inline">\(N\)</span>
+个不同的局部测量结果，受单个异常值标记的影响更小。</p></li>
+<li><p><strong>基于符号的聚合</strong>（Sign-Based
+Aggregation）：不使用每个局部损失差异的大小，而是将每个 <span class="math inline">\(\Delta_{DF}^{n}\)</span> 转换为一个二元指示器：
+<span class="math display">\[B^{n}(x)=\boldsymbol{1}\left[\Delta_{DF}^{n}(x,S_{t})&gt;0\right]=\begin{cases}
+1 &amp; \Delta_{DF}^{n}(x,S_{t})&gt;0 \\
+0 &amp; \text{otherwise}
+\end{cases}\]</span></p>
+<p>这种转换丢弃了大小信息，只记录参考模型对于该特定子集 <span class="math inline">\(U^{n}\)</span>
+是否比目标模型有更高的损失。虽然这看起来像是在丢弃信息，但实际上它对重尾噪声分布具有鲁棒性。通过在此前的
+<span class="math inline">\(N\)</span>
+个采样子集上聚合这些二元指标，计算出第 <span class="math inline">\(t\)</span> 步的成员分数： <span class="math display">\[
+     \hat{\beta}_{t}(x)=\frac{1}{N} \sum_{n=1}^{N} B^{n}(x)
+     \]</span></p></li>
+</ol></li>
+<li><strong>原理</strong>：
+<ul>
+<li><strong>过滤噪声</strong>：该方法只看<strong>方向</strong>（微调后是否变好了），不看<strong>大小</strong>（变好了多少）。</li>
+<li><strong>数学依据</strong>：对于非成员数据，两模型表现差异是随机的，得分为
+1 的概率严格趋近
+0.5，完美屏蔽了那些数值极大、导致方差极大的长尾噪声；而对于成员数据，微调模型通常会表现更好，得分显著高于
+0.5，从而形成清晰的区分度。</li>
+</ul></li>
+</ul>
+<h4 id="自适应权重-adaptive-weighting">自适应权重 (Adaptive
+Weighting)</h4>
+<ul>
+<li><p><strong>方法</strong>：基于局部采样和基于符号的聚合得到逐步分数
+<span class="math inline">\({\hat{\beta}_{t}(x)}_{t=1}^{T}\)</span>
+后，采用<strong>逆步骤权重</strong>汇总不同掩码密度下的得分。由于信号质量会随着掩蔽密度的增加而下降——使用稀疏掩蔽的早期步骤比使用密集掩蔽的后期步骤提供的信号更清晰，因此采用自适应加权方案：
+<span class="math display">\[
+  \text{SAMA}(x) = \sum_{t=1}^{T} w_{t} \hat{\beta}_{t}(x) =
+\sum_{t=1}^{T} w_{t} \cdot \frac{1}{N} \sum_{n=1}^{N}
+\boldsymbol{1}\left[\Delta_{DF}^{n}\left(x,\mathcal{S}_{t}\right)&gt;0\right]\]</span></p>
+<p>其中逆步骤权重 <span class="math inline">\(w_{t}=\frac{1/t}{\sum_{i=1}^{T} 1/i}\)</span>
+。</p></li>
+<li><p><strong>意义</strong>：给予早期（稀疏掩码）阶段更高的权重，因为经验表明稀疏掩码下的信号受噪声污染最少，可信度最高。</p></li>
+</ul>
+<h3 id="算法说明">算法说明</h3>
+<p><img src="image-1.webp" srcset="/img/loading/loading3.gif" lazyload></p>
+<ol type="1">
+<li><strong>第一阶段</strong>（算法 1）：实施渐进式掩码策略，在 <span class="math inline">\(T\)</span> 个步骤中将掩码密度从 <span class="math inline">\(\alpha_{\min}\)</span> 逐步增加到 <span class="math inline">\(\alpha_{\max}\)</span>。在每个步骤 <span class="math inline">\(t\)</span> 确定目标掩码位置数量 <span class="math inline">\(k_{t}\)</span>，并通过不放回的均匀子集抽样收集
+<span class="math inline">\(N\)</span> 个独立测量值。</li>
+<li><strong>第二阶段</strong>（算法
+2）：基于符号进行聚合与加权，将原始损失差异转换为稳健的成员身份分数。将每个差异
+<span class="math inline">\(\Delta\)</span> 转换为一个二进制指标 <span class="math inline">\(B=\boldsymbol{1}[\Delta&gt;0]\)</span>，再对每个步骤
+<span class="math inline">\(t\)</span> 计算该密度水平下所有 <span class="math inline">\(N\)</span> 个样本的平均二进制指标 <span class="math inline">\(\hat{\beta}_{t}\)</span>。</li>
+</ol>
+<h2 id="关键结论">关键结论</h2>
+<h3 id="实验设置">实验设置</h3>
+<ul>
+<li><strong>数据集</strong>：共 9 个不同领域的数据集。
+<ul>
+<li>MIMIR
+基准测试集：涵盖科学（ArXiv）、代码（GitHub）、论坛（HackerNews）、医疗（PubMed
+Central）、百科（Wikipedia）、网页（Pile CC）</li>
+<li>标准 NLP 基准数据集：WikiText-103、AG News、XSum</li>
+</ul></li>
+<li><strong>模型</strong>：LLaDA-8B-Base、Dream-v0-Base-7B（使用各自预训练版本作为参考模型）</li>
+<li><strong>对比方法</strong>：共 12 种基线方法：
+<ul>
+<li>改编
+ARMs-MIA：Loss、ZLIB、Lowercase、Neighbor、Min-K%、Min-K%++、ReCall、CON-ReCall、BoWs、Ratio（表现最好的基线）</li>
+<li>从图像领域改编的 DLMs-MIA：SecMI、PIA</li>
+</ul></li>
+<li><strong>实验参数</strong>：微调采用 AdamW 优化器，学习率 <span class="math inline">\(5\times10^{-5}\)</span>，权重衰减为 0.1，批大小为
+48，训练 4 个 epoch 并采用早停策略（耐心值为 3）。SAMA 渐进式掩码步骤
+<span class="math inline">\(T=16\)</span>，范围 <span class="math inline">\(\alpha_{\min}=5\%,~\alpha_{\max}=50\%\)</span>，每一步采样大小
+<span class="math inline">\(m=10\)</span>，子集数量 <span class="math inline">\(N=128\)</span>。 <img src="image-3.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+<li><strong>评估指标</strong>：AUC（ROC 曲线下面积）、TPR@Low
+FPR（低假阳性率下的真阳性率）</li>
+</ul>
+<h3 id="实验结论">实验结论</h3>
+<ol type="1">
+<li><p><strong>SAMA 取得压倒性优势</strong>：在所有 9 个数据集和 2
+个模型上，SAMA 的表现均显著优于所有 12 种基线方法。 <img src="image-2.webp" srcset="/img/loading/loading3.gif" lazyload></p>
+<ul>
+<li><strong>SAMA 性能显著提升</strong>：相比于最佳基线（Ratio），SAMA
+的平均 AUC 相对提升了 30%；而在低假阳性率下，SAMA
+的性能比现有最好方法提升了高达 4 到 8 倍。</li>
+<li><strong>现有方法在 DLM 上几乎失效</strong>：传统的攻击方法在 DLMs
+上的 AUC 大多在 0.50-0.55 之间，接近随机猜测，证实了 DLMs
+独特的“掩码-预测”机制产生的信号与自回归模型完全不同，且容易被领域适应带来的长尾噪声淹没。</li>
+<li><strong>代码数据最脆弱</strong>：在 GitHub 数据集上，SAMA 的 AUC
+高达 0.88，表明代码类数据在微调中最容易被记忆和泄露。</li>
+</ul></li>
+<li><p><strong>基于符号的子集聚合是关键</strong>：在<strong>消融实验</strong>（Ablation
+Study）中，逐步移除 SAMA 的核心组件，评估其对性能的贡献： <img src="image-4.webp" srcset="/img/loading/loading3.gif" lazyload></p>
+<ul>
+<li><strong>基于符号的子集聚合</strong>（Sign-based
+Aggregation）：贡献了约 20-30% 的 AUC，是 SAMA
+性能提升的最大来源。实验证明，DLMs
+的损失分布呈现极端的“长尾特征”（Kurtosis &gt;
+80），直接求平均会被噪声主导，而符号投票机制能有效过滤这些噪声。</li>
+<li><strong>渐进式掩码</strong>：贡献了约 2-3%
+的提升，证明了多尺度探测（从稀疏到密集）能捕捉不同层级的记忆。</li>
+</ul></li>
+<li><p><strong>潜在防御机制的有效性</strong>：论文评估了四种潜在防御手段：</p>
+<table>
+
+<thead>
+<tr>
+<th style="text-align: left;">防御方法</th>
+<th style="text-align: left;">原理</th>
+<th style="text-align: left;">对 SAMA 的有效性</th>
+<th style="text-align: left;">代价 (Utility Cost)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>温度缩放</strong></td>
+<td style="text-align: left;">推理时增加输出熵，试图掩盖真实置信度。</td>
+<td style="text-align: left;"><strong>无效</strong>。SAMA
+依赖相对排序（符号），不受绝对数值变化影响。</td>
+<td style="text-align: left;">严重降低生成质量，导致内容不连贯和重复。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>低秩适配 LoRA</strong></td>
+<td style="text-align: left;">减少可训练参数量，限制模型记忆容量。</td>
+<td style="text-align: left;"><strong>中等</strong>。低 Rank 时有效，高
+Rank 时失效。</td>
+<td style="text-align: left;">Rank 过低会影响模型性能。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>差分隐私 DP-LoRA</strong></td>
+<td style="text-align: left;">在梯度中加入噪声并进行裁剪，从数学上切断对单样本的依赖。</td>
+<td style="text-align: left;"><strong>高</strong>。能将攻击成功率降至随机猜测水平
+（AUC~0.5）。</td>
+<td style="text-align: left;">模型困惑度（PPL）上升，生成质量下降明显。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>选择性混淆 SOFT</strong></td>
+<td style="text-align: left;">识别敏感样本并进行句法复述（Paraphrasing），破坏特定的
+Token 排列，直接破坏了 SAMA 依赖的 Token 级记忆模式。</td>
+<td style="text-align: left;"><strong>高</strong>。能将攻击成功率降至随机猜测水平</td>
+<td style="text-align: left;">基本保持了语义和模型通用能力。</td>
+</tr>
+</tbody>
+</table></li>
+</ol>
+<!-- # 实验复现 -->
+<h1 id="参考内容">参考内容</h1>
+<ol type="1">
+<li>Chen Y, Zhang K, Du Y, et al.&nbsp;Membership Inference Attacks Against
+Fine-tuned Diffusion Language Models[J]. <a target="_blank" rel="noopener" href="https://arxiv.org/html/2601.20125?_immersive_translate_auto_translate=1">arXiv
+preprint arXiv:2601.20125</a>, 2026.</li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Paper-Reading/" class="category-chain-item">Paper Reading</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AE%89%E5%85%A8/" class="print-no-link">#人工智能安全</a>
+      
+        <a href="/tags/MIA/" class="print-no-link">#MIA</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>论文阅读与复现：MIA against DLMs</div>
+      <div>https://youyeyejie.github.io/_posts/论文阅读与复现：MIA-against-DLMs/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>youyeyejie</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2026年2月20日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2026年2月21日</div>
+        </div>
+      
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/_posts/%E4%BA%8C%E4%BA%94%E5%AD%98%E6%A1%A3/" title="二五存档">
+                        <span class="hidden-mobile">二五存档</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments">
+      
+    <div id="giscus" class="giscus"></div>
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#giscus', function() {
+        var options = {"repo":"youyeyejie/youyeyejie.github.io","repo-id":"R_kgDOO-Uo1g","category":"General","category-id":"DIC_kwDOO-Uo1s4Crz5J","theme-light":"light","theme-dark":"dark","mapping":"pathname","reactions-enabled":1,"emit-metadata":0,"input-position":"top","lang":"zh-CN"};
+        var attributes = {};
+        for (let option in options) {
+          if (!option.startsWith('theme-')) {
+            var key = option.startsWith('data-') ? option : 'data-' + option;
+            attributes[key] = options[option];
+          }
+        }
+        var light = 'light';
+        var dark = 'dark';
+        window.GiscusThemeLight = light;
+        window.GiscusThemeDark = dark;
+        attributes['data-theme'] = document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ? dark : light;
+        for (let attribute in attributes) {
+          var value = attributes[attribute];
+          if (value === undefined || value === null || value === '') {
+            delete attributes[attribute];
+          }
+        }
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://giscus.app/client.js');
+        s.setAttribute('crossorigin', 'anonymous');
+        for (let attribute in attributes) {
+          s.setAttribute(attribute, attributes[attribute]);
+        }
+        var ss = document.getElementsByTagName('script');
+        var e = ss.length > 0 ? ss[ss.length - 1] : document.head || document.documentElement;
+        e.parentNode.insertBefore(s, e.nextSibling);
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+  
+  
+</div>
+<div class="footer-inner">
+    <div class="powered-by">
+        <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+        <i class="iconfont icon-love"></i>
+        <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+        <i class="iconfont icon-love"></i>
+        <a href="https://cloud.umami.is/share/1fs3cnD9TAP8JzML" target="_blank" rel="nofollow noopener"><span>Umami</span></a>
+    </div>
+    <div class="hitokoto">
+        <i class="fas fa-quote-left"></i>
+        <a target="_blank" rel="noopener" href="https://developer.hitokoto.cn/" id="hitokoto_text"><span id="hitokoto">且以群词 注解我这座荒山</span></a>
+        <script src="/js/Hitokoto.js" defer></script>
+    </div>
+    <div class="data">
+        <span class="total-word-container">
+            <i class="fas fa-chart-bar"></i>
+            <span id="g-total-word-id"></span>
+            字汇长河
+        </span>
+        &nbsp;
+        <span id="total-posts-container">
+            <i class="fas fa-file-alt"></i>
+            <span id="g-total-posts-id"></span>
+            文舟靠岸
+        </span>
+        &nbsp;
+        <span id="busuanzi_container_site_pv">
+            <i class="fas fa-eye"></i>
+            <span id="busuanzi_value_site_pv">1314</span>
+            目光所及
+        </span>
+        &nbsp;
+        <span id="busuanzi_container_site_uv">
+            <i class="fas fa-user-friends"></i>
+            <span id="busuanzi_value_site_uv">520</span>
+            访客驻足
+        </span>
+    </div>
+    <div class="duration">
+        <i class="fas fa-calendar"></i>
+        <span id="duration-container">人生缓缓&nbsp;自有答案</span>
+        <script src="/js/Duration.js"></script>
+    </div>
+</div>
+
+<link href="/css/Footer.css" type="text/css" rel="stylesheet"/>
+<script>
+    document.querySelectorAll("[id^='busuanzi_value_']").forEach(element => {
+        element.id = element.id.replace("busuanzi_value_", "vercount_value_");
+    });
+</script>
+<script defer src="https://events.vercount.one/js"></script>
+<!-- <script src="https://npm.elemecdn.com/penndu@1.0.0/bsz.js" defer></script> -->
+<!-- <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script> -->
+<!-- <script async src="https://busuanzi.icodeq.com/busuanzi.pure.mini.js"></script> -->
+<!-- <script async src="https://busuanzi.sukap.cn/busuanzi.pure.mini.js"></script> -->
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    
+      <script  src="/js/img-lazyload.js" ></script>
+    
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="/js/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="/js/Crypto.js"></script>
+<script src="/js/LinkCard.js"></script>
+<script src="/js/RandomBanner.js"></script>
+<script src="/js/Background.js"></script>
+<script src="/js/ScrollAnimation.js"></script>
+<script src="/js/TabDisplay.js"></script>
+<script src="/js/Tooltip.js"></script>
+<script src="/js/Umami.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  <script type="text/javascript">
+  document.getElementById("g-total-word-id").innerHTML = "696k";
+  document.getElementById('g-total-posts-id').textContent ="72";
+</script>
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start -->
+<script src="https://cdn.jsdelivr.net/npm/hexo-shiki-plugin@latest/lib/codeblock.js"></script>
+
+  <script>
+  const CODE_CONFIG = {
+    beautify: true,
+    highlightCopy: true,
+    highlightLang: true,
+    highlightHeightLimit: 360,
+    isHighlightShrink: false,
+    copy: {
+      success: 'Copy Success',
+      error: 'Copy Error',
+      noSupport: 'Browser Not Support',
+    }
+  };
+  console.log(
+    `%c hexo-shiki-plugin %c v1.0.27 %c https://github.com/nova1751/hexo-shiki-plugin`,
+    "color: #fff; background: #5f5f5f",
+    "color: #fff; background: #80c8f8",
+    ""
+  );
+  </script>
+  <!-- hexo injector body_end end --></body>
+</html>
