@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://youyeyejie.github.io/_posts/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9ARMIA%E4%B8%8EInfoRMIA/image-5.webp">
 <meta property="og:image" content="https://youyeyejie.github.io/_posts/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9ARMIA%E4%B8%8EInfoRMIA/image-4.webp">
 <meta property="article:published_time" content="2026-02-01T08:05:03.000Z">
-<meta property="article:modified_time" content="2026-02-01T08:17:27.731Z">
+<meta property="article:modified_time" content="2026-02-24T09:23:12.968Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="人工智能安全">
 <meta property="article:tag" content="MIA">
@@ -476,7 +476,7 @@
         
         
           <!-- compatible with older versions-->
-          24 分钟
+          25 分钟
         
       </span>
     
@@ -778,6 +778,8 @@ p(x)}\right) \\
 \theta)}\right)\right] \\
 &amp; =\log \left(\frac{p(x | \theta)}{p(x)}\right)+\sum_{z} p(z) \log
 \left(\frac{p(z)}{p(z | \theta)}\right) \\
+&amp; =\log \left(\frac{p(x | \theta)}{p(x)}\right)-\mathbb{E}_{z}
+\left[ \log\left( \frac{p(z | \theta)}{p(z)} \right) \right] \\
 &amp; =\log \left(\frac{p(x | \theta)}{p(x)}\right)+D_{KL}(p(z) \| p(z |
 \theta))
 \end{aligned}
@@ -786,11 +788,12 @@ p(x)}\right) \\
 <li><strong>记忆项</strong>：<span class="math inline">\(\log\left(
 \frac{p(x | \theta)}{p(x)} \right)\)</span>，量化 <span class="math inline">\(\theta\)</span> 对 <span class="math inline">\(x\)</span> 的记忆程度，比值越大，记忆越深；</li>
 <li><strong>校准项</strong>：<span class="math inline">\(D_{KL}(p(z)
-\parallel p(z | \theta))\)</span>，量化种群 <span class="math inline">\(z\)</span> 的先验分布与 <span class="math inline">\(\theta\)</span>
+\parallel p(z | \theta))=-\mathbb{E}_{z} \left[ \log\left( \frac{p(z |
+\theta)}{p(z)} \right) \right]\)</span>，量化种群 <span class="math inline">\(z\)</span> 的先验分布与 <span class="math inline">\(\theta\)</span>
 条件下分布的差异，校准“记忆项”的偏差，避免因 <span class="math inline">\(x\)</span>
-是易分类样本（即使非成员也有高预测概率）导致的误判，其数值越大，说明
-<span class="math inline">\(\theta\)</span>
-对种群数据的泛化性越差，模型可能过拟合，成员推理更容易成功。</li>
+是易分类样本（即使非成员也有高预测概率）导致的误判。<span class="math inline">\(D_{KL}\)</span> 越小，即 <span class="math inline">\(\mathbb{E}_{z}\)</span>
+越大，说明模型对所有数据都很自信，<span class="math inline">\(x\)</span>
+的记忆信号就越不可靠。</li>
 </ul></li>
 <li><p>LLM token 级适配：</p>
 <ul>
@@ -1001,7 +1004,7 @@ preprint arXiv:2510.05582</a>, 2025.</li>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2026年2月1日</div>
+          <div>2026年2月24日</div>
         </div>
       
       
