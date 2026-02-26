@@ -146,7 +146,26 @@ excerpt: 大创项目论文阅读笔记与复现记录
     | **差分隐私 DP-LoRA** | 在梯度中加入噪声并进行裁剪，从数学上切断对单样本的依赖。 | **高**。能将攻击成功率降至随机猜测水平 （AUC~0.5）。 | 模型困惑度（PPL）上升，生成质量下降明显。 |
     | **选择性混淆 SOFT** | 识别敏感样本并进行句法复述（Paraphrasing），破坏特定的 Token 排列，直接破坏了 SAMA 依赖的 Token 级记忆模式。 | **高**。能将攻击成功率降至随机猜测水平 | 基本保持了语义和模型通用能力。 |
 
-<!-- # 实验复现 -->
+# 实验复现
+## 仓库简介
+<a href="https://github.com/Stry233/SAMA" logourl="https://github.githubassets.com/assets/apple-touch-icon-144x144-b882e354c005.png" class="LinkCard">SAMA-MIA GitHub Repository</a>
+
+- 项目结构
+    ![](论文阅读与复现：SAMA-MIA/image-5.webp)
+- SAMA 攻击流程
+    ![](论文阅读与复现：SAMA-MIA/image-6.webp)
+
+## 复现记录
+- **训练**：选择模型 LLaDA-8B-Base，使用 DeepSpeed 多卡训练，Zero_stage 3 优化，训练 10 个 epoch。训练集和参考集分别从 Mimir-arxiv 和 Mimir-github 数据集中抽取。
+    - Mimir-arxiv-subset: 10 Epoches, train_subset_size 10000, ref_subset_size 1000（实际上 train_subset 只有 1000 条数据）
+    - Mimir-github-subset: 10 Epoches, train_subset_size 1000, ref_subset_size 100
+
+    ![](论文阅读与复现：SAMA-MIA/image-7.webp)
+- **攻击**：
+    - LLaDA-8B-Base-arxiv：因为显存不足，目标模型和参考模型均使用 8-bit 量化，效果较差
+        ![LLaDA-8B-Base-arxiv](论文阅读与复现：SAMA-MIA/image-8.webp)
+    - LLaDA-8B-Base-github：因为显存不足，目标模型和参考模型均使用 4-bit 量化，但比 8-bit 量化的 arxiv 数据集效果稍微好一些，但是依旧没有达到论文中的数据，怀疑可能是因为量化原因。并且 Ratio（即 loss-calibratgion）方法的效果极差，与论文数据差距较大，怀疑可能是因为量化导致 loss 计算不准确。
+        ![LLaDA-8B-Base-github](论文阅读与复现：SAMA-MIA/image-9.webp)
 
 # 参考内容
 1. Chen Y, Zhang K, Du Y, et al. Membership Inference Attacks Against Fine-tuned Diffusion Language Models[J]. [arXiv preprint arXiv:2601.20125](https://arxiv.org/html/2601.20125?_immersive_translate_auto_translate=1), 2026.
