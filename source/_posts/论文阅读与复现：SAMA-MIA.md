@@ -17,7 +17,11 @@ excerpt: 大创项目论文阅读笔记与复现记录
 # 论文简介
 论文首次系统性研究了扩散语言模型（DLMs）的隐私泄露风险，提出了 DLMs 的“掩码-预测”机制导致信号稀疏和长尾噪声问题会使传统攻击失效的观点，并基于此设计了基于子集聚合的成员攻击 SAMA（Subset-Aggregated Membership Attack）攻击框架，利用渐进式掩码和基于符号的统计方法，显著提升了针对 DLMs 的成员推理攻击效果，属于灰盒、参考模型、微调阶段 MIA。
 
-> 同个作者还有一篇发在 USENIX 2026 的 [Window-based Membership Inference Attacks Against Fine-tuned Large Language Models](https://arxiv.org/html/2601.02751?_immersive_translate_auto_translate=1)，也可以看作者[博客](https://yuetian.me/blog/2026/wbc/)。大概读了一下感觉和这篇的原理很相似，只不过没有特别针对 DLMs，应该是这篇的前期研究。具体来说，可以和这一篇如下类比：
+---
+> 同个作者还有一篇发在 USENIX 2026 的 [Window-based Membership Inference Attacks Against Fine-tuned Large Language Models](https://arxiv.org/html/2601.02751?_immersive_translate_auto_translate=1)，详细介绍也可以看作者[博客](https://yuetian.me/blog/2026/wbc/)。
+> 
+> 大概读了一下感觉和这篇的原理很相似，只不过没有特别针对 DLMs，应该是这篇的前期研究。具体来说，可以和这一篇如下类比：
+> 
 > 1. 滑动窗口比较（WBC）：与局部子集采样类似，使用一个长度可变的滑动窗口，对窗口内的 tokens 测量成员信号
 > 2. 基于符号的聚合：与本文可以说是完全一致
 > 3. 几何级数集成：与渐进式掩码有点类似，即滑动窗口大小按照几何级数排列，最后将不同尺寸窗口的结果取平均得到最终的攻击分数
