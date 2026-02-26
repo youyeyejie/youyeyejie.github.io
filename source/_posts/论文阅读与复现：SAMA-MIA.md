@@ -17,6 +17,11 @@ excerpt: 大创项目论文阅读笔记与复现记录
 # 论文简介
 论文首次系统性研究了扩散语言模型（DLMs）的隐私泄露风险，提出了 DLMs 的“掩码-预测”机制导致信号稀疏和长尾噪声问题会使传统攻击失效的观点，并基于此设计了基于子集聚合的成员攻击 SAMA（Subset-Aggregated Membership Attack）攻击框架，利用渐进式掩码和基于符号的统计方法，显著提升了针对 DLMs 的成员推理攻击效果，属于灰盒、参考模型、微调阶段 MIA。
 
+> 同个作者还有一篇发在 USENIX 2026 的 [Window-based Membership Inference Attacks Against Fine-tuned Large Language Models](https://arxiv.org/html/2601.02751?_immersive_translate_auto_translate=1)，也可以看作者[博客](https://yuetian.me/blog/2026/wbc/)。大概读了一下感觉和这篇的原理很相似，只不过没有特别针对 DLMs，应该是这篇的前期研究。具体来说，可以和这一篇如下类比：
+> 1. 滑动窗口比较（WBC）：与局部子集采样类似，使用一个长度可变的滑动窗口，对窗口内的 tokens 测量成员信号
+> 2. 基于符号的聚合：与本文可以说是完全一致
+> 3. 几何级数集成：与渐进式掩码有点类似，即滑动窗口大小按照几何级数排列，最后将不同尺寸窗口的结果取平均得到最终的攻击分数
+
 ## 背景知识
 ### 概念：ARMs 与 DLMs
 - **自回归模型** ARMs（Autoregressive Models）：基于单向（通常是从左到右）的语言建模，逐词预测下一个 Token。
@@ -164,8 +169,9 @@ excerpt: 大创项目论文阅读笔记与复现记录
 - **攻击**：
     - LLaDA-8B-Base-arxiv：因为显存不足，目标模型和参考模型均使用 8-bit 量化，效果较差
         ![LLaDA-8B-Base-arxiv](论文阅读与复现：SAMA-MIA/image-8.webp)
-    - LLaDA-8B-Base-github：因为显存不足，目标模型和参考模型均使用 4-bit 量化，但比 8-bit 量化的 arxiv 数据集效果稍微好一些，但是依旧没有达到论文中的数据，怀疑可能是因为量化原因。并且 Ratio（即 loss-calibratgion）方法的效果极差，与论文数据差距较大，怀疑可能是因为量化导致 loss 计算不准确。
+    - LLaDA-8B-Base-github：因为显存不足，目标模型和参考模型均使用 4-bit 量化，虽然比 8-bit 量化的 arxiv 数据集效果稍微好一些，但是依旧没有达到论文中的数据，怀疑可能是因为量化原因。并且 Ratio（即 loss-calibratgion）方法的效果极差，与论文数据差距较大，怀疑可能是因为量化导致 loss 计算不准确。
         ![LLaDA-8B-Base-github](论文阅读与复现：SAMA-MIA/image-9.webp)
 
 # 参考内容
 1. Chen Y, Zhang K, Du Y, et al. Membership Inference Attacks Against Fine-tuned Diffusion Language Models[J]. [arXiv preprint arXiv:2601.20125](https://arxiv.org/html/2601.20125?_immersive_translate_auto_translate=1), 2026.
+2. Chen Y, Du Y, Zhang K, et al. Window-based Membership Inference Attacks Against Fine-tuned Large Language Models[J]. [arXiv preprint arXiv:2601.02751](https://arxiv.org/html/2601.02751?_immersive_translate_auto_translate=1), 2026.
