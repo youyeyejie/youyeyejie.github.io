@@ -1,11 +1,16 @@
 ---
 title: {{ title }}
 date: {{ date }}
+updated: {{ updated }}
 tags:
-    - Photography
 categories:
-    - DayDream Gallery
-category_bar: true
 excerpt:
+math: false
+mermaid: false
+category_bar: false
+sticky: false
+hide: false
+archive: false
 index_img:
+banner_img:
 ---
