@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/_posts/VSCode-Snippets-%E8%AE%BE%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8/image-1.webp">
 <meta property="article:published_time" content="2026-03-05T14:54:58.000Z">
-<meta property="article:modified_time" content="2026-03-05T15:29:23.055Z">
+<meta property="article:modified_time" content="2026-03-05T15:49:44.352Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="VSCode">
 <meta property="article:tag" content="Snippets">
@@ -460,7 +460,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          943 字
+          1.1k 字
         
       </span>
     
@@ -472,7 +472,7 @@
         
         
           <!-- compatible with older versions-->
-          8 分钟
+          10 分钟
         
       </span>
     
@@ -534,25 +534,32 @@
 插件也需要频繁输入 <code>{% tag %}</code>
 来标记标签。为了提高效率，我查阅相关资料，发现在 VSCode
 中，可以使用自定义<strong>代码片段（Snippets）</strong>快速插入常用代码模板，从而极大地提升了我的写作效率。</p>
+<p><a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/editing/userdefinedsnippets" logourl="
+https://code.visualstudio.com/assets/favicon.ico" class="LinkCard">Snippets
+in Visual Studio Code</a></p>
 <h1 id="snippets-的设置">Snippets 的设置</h1>
 <p>VSCode 的 Snippets
 功能允许用户为特定的编程语言或文件类型创建自定义代码片段。以下是设置
 Snippets 的步骤：</p>
 <ol type="1">
-<li><p>打开 VSCode，点击左侧的齿轮图标打开命令面板（或在 Windows/Linux
-上按 <code>Ctrl + Shift + P</code>，在 macOS 上按
-<code>Cmd + Shift + P</code>）。</p></li>
-<li><p>输入 Snippets: Configure
-Snippets，接着可以选择为<strong>全局</strong>、<strong>当前文件夹</strong>或某一特定语言创建
+<li><p>在 VSCode 中按 <code>Ctrl + Shift + P</code>（Windows/Linux）或
+<code>Cmd + Shift + P</code>（Mac）打开命令面板，输入
+<code>Snippets: Configure Snippets</code>
+并选择该命令；或者直接点击左下角的齿轮图标，选择<strong>代码片段</strong>。</p></li>
+<li><p>接着可以选择为<strong>全局</strong>、<strong>当前文件夹</strong>或<strong>某一特定语言</strong>创建
 Snippets 设置。 </p><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="image.webp" srcset="/img/loading/loading3.gif" lazyload></div><div class="group-image-wrap"><img src="image-2.webp" srcset="/img/loading/loading3.gif" lazyload></div></div></div><p></p></li>
 <li><p>以 Markdown 语言为例，选中对应选项后会创建并打开一个
 <code>markdown.json</code> 的文件，在其中可以定义
 Snippets，可以参考文件中自带的注释。具体而言，Snippets
-的定义参考以下格式： </p><figure class="shiki json"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">{</span></span>
+的定义参考以下格式： </p><figure class="shiki json"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">{</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E06C75">"Snippet Name"</span><span style="color: #ABB2BF">: {</span></span>
 <span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">"prefix"</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">"trigger"</span><span style="color: #ABB2BF">,</span></span>
 <span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">"body"</span><span style="color: #ABB2BF">: [</span></span>
-<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #98C379">"code to insert"</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #98C379">"code to insert"</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #98C379">"${1:placeholder}"</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #98C379">"${2|option1,option2|}"</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #98C379">"${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}"</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #98C379">"$0"</span></span>
 <span class="line"><span style="color: #ABB2BF">        ],</span></span>
 <span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">"description"</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">"Description of the snippet"</span><span style="color: #ABB2BF">,</span></span>
 <span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">"scope"</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">"markdown"</span><span style="color: #ABB2BF">,</span></span>
@@ -570,11 +577,23 @@ Snippets，可以参考文件中自带的注释。具体而言，Snippets
 文件中触发，而修改为 <code>/lp</code> 后就可以正常使用了。</li>
 <li><code>body</code>
 是代码片段的内容，可以是多行代码，使用数组的形式表示。代码支持正则表达式，并可以使用占位符（如
-<code>$0</code>、<code>${1:default}</code>）来定义可编辑的部分。其中，<code>$0</code>
-表示光标最终停留的位置，<code>${1:default}</code>
-表示第一个占位符，默认值为 <code>default</code>，其余同理，可以使用
-<code>Tab</code> 键在占位符之间切换。</li>
-<li>以及下面几个可选项
+<code>$0</code>、<code>${1:default}</code>）来定义可编辑的部分。其中：
+<ul>
+<li><code>$0</code>
+表示光标最终停留的位置，<code>$1</code>、<code>$2</code>
+等表示第一个、第二个占位符，其余同理</li>
+<li><code>${1:placeholder}</code> 表示第一个占位符默认值为
+<code>placeholder</code>，可以使用 <code>Tab</code>
+键在占位符之间切换</li>
+<li><code>${2|option1,option2|}</code>
+表示第二个占位符提供多个选项供选择，使用 <code>Tab</code>
+键切换选项</li>
+<li>还可以使用一些内置变量，如
+<code>${CURRENT_YEAR}</code>、<code>${CURRENT_MONTH}</code>、<code>${CURRENT_DATE}</code>
+等，来动态生成代码片段内容。具体可食用的变量可以参考 <a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/editor/userdefinedsnippets#_variables">VSCode
+官方文档</a>。</li>
+</ul></li>
+<li>以及下面几个可选项：
 <ul>
 <li><code>description</code>
 是对代码片段的简要描述，方便在提示时识别。</li>
@@ -596,7 +615,9 @@ Snippets，可以参考文件中自带的注释。具体而言，Snippets
 键在占位符之间切换，快速编辑代码片段中的内容。</p>
 <p><img src="image-1.webp" srcset="/img/loading/loading3.gif" lazyload></p>
 <h1 id="我的-snippets-配置">我的 Snippets 配置</h1>
-<p>以下是我在 Markdown 文件中使用的 Snippets 配置示例：</p>
+<p>以下是我根据自己的使用习惯以及参考 <a target="_blank" rel="noopener" href="https://fluid-dev.github.io/hexo-fluid-docs/guide/#tag-%E6%8F%92%E4%BB%B6">Fluid
+配置指南相关内容</a> 编写的在 Markdown 文件中使用的 Snippets
+配置示例：</p>
 <figure class="shiki json"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">{</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E06C75">"Resizable parentheses"</span><span style="color: #ABB2BF">: {</span></span>
 <span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">"prefix"</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">"/lp"</span><span style="color: #ABB2BF">,</span></span>
@@ -650,16 +671,23 @@ Snippets，可以参考文件中自带的注释。具体而言，Snippets
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E06C75">"Hexo fold"</span><span style="color: #ABB2BF">:{</span></span>
 <span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">"prefix"</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">"/fold"</span><span style="color: #ABB2BF">,</span></span>
 <span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">"body"</span><span style="color: #ABB2BF">: [</span></span>
-<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #98C379">"{% fold info @${1:title} %}</span><span style="color: #56B6C2">\n</span><span style="color: #98C379">$2</span><span style="color: #56B6C2">\n</span><span style="color: #98C379">{% endfold %}"</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #98C379">"{% fold ${1|primary,secondary,success,danger,warning,info,light|} @${2:title} %}</span><span style="color: #56B6C2">\n</span><span style="color: #98C379">$3</span><span style="color: #56B6C2">\n</span><span style="color: #98C379">{% endfold %}"</span></span>
 <span class="line"><span style="color: #ABB2BF">        ],</span></span>
 <span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">"description"</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">"Hexo blog fold block"</span></span>
 <span class="line"><span style="color: #ABB2BF">    },</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E06C75">"Hexo note"</span><span style="color: #ABB2BF">:{</span></span>
 <span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">"prefix"</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">"/note"</span><span style="color: #ABB2BF">,</span></span>
 <span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">"body"</span><span style="color: #ABB2BF">: [</span></span>
-<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #98C379">"{% note info %}</span><span style="color: #56B6C2">\n</span><span style="color: #98C379">$1</span><span style="color: #56B6C2">\n</span><span style="color: #98C379">{% endnote %}"</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #98C379">"{% note ${1|primary,secondary,success,danger,warning,info,light|} %}</span><span style="color: #56B6C2">\n</span><span style="color: #98C379">$2</span><span style="color: #56B6C2">\n</span><span style="color: #98C379">{% endnote %}"</span></span>
 <span class="line"><span style="color: #ABB2BF">        ],</span></span>
 <span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">"description"</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">"Hexo blog note block"</span></span>
+<span class="line"><span style="color: #ABB2BF">    },</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E06C75">"Hexo tag"</span><span style="color: #ABB2BF">:{</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">"prefix"</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">"/tg"</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">"body"</span><span style="color: #ABB2BF">: [</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #98C379">"{% label ${1|primary,secondary,success,danger,warning,info,light|} @${2:text} %}"</span></span>
+<span class="line"><span style="color: #ABB2BF">        ],</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">"description"</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">"Hexo blog tag block"</span></span>
 <span class="line"><span style="color: #ABB2BF">    },</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E06C75">"Hexo group image"</span><span style="color: #ABB2BF">:{</span></span>
 <span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">"prefix"</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">"/gi"</span><span style="color: #ABB2BF">,</span></span>
@@ -669,24 +697,20 @@ Snippets，可以参考文件中自带的注释。具体而言，Snippets
 <span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">"description"</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">"Hexo blog group image block"</span></span>
 <span class="line"><span style="color: #ABB2BF">    },</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E06C75">"Hexo linkcard"</span><span style="color: #ABB2BF">:{</span></span>
-<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">"prefix"</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">"/lc"</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">"prefix"</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">"/lk"</span><span style="color: #ABB2BF">,</span></span>
 <span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">"body"</span><span style="color: #ABB2BF">: [</span></span>
-<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #98C379">"&lt;a href=</span><span style="color: #56B6C2">\"</span><span style="color: #98C379">$1</span><span style="color: #56B6C2">\"</span><span style="color: #98C379"> logourl=</span><span style="color: #56B6C2">\"</span><span style="color: #98C379">$2</span><span style="color: #56B6C2">\"</span><span style="color: #98C379"> class=</span><span style="color: #56B6C2">\"</span><span style="color: #98C379">LinCard</span><span style="color: #56B6C2">\"</span><span style="color: #98C379">&gt;$3&lt;/a&gt;"</span></span>
+<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #98C379">"&lt;a href=</span><span style="color: #56B6C2">\"</span><span style="color: #98C379">$1</span><span style="color: #56B6C2">\"</span><span style="color: #98C379"> logourl=</span><span style="color: #56B6C2">\"</span><span style="color: #98C379">$2</span><span style="color: #56B6C2">\"</span><span style="color: #98C379"> class=</span><span style="color: #56B6C2">\"</span><span style="color: #98C379">LinkCard</span><span style="color: #56B6C2">\"</span><span style="color: #98C379">&gt;$3&lt;/a&gt;"</span></span>
 <span class="line"><span style="color: #ABB2BF">        ],</span></span>
 <span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">"description"</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">"Hexo blog linkcard block"</span></span>
-<span class="line"><span style="color: #ABB2BF">    },</span></span>
-<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E06C75">"Hexo tag"</span><span style="color: #ABB2BF">:{</span></span>
-<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">"prefix"</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">"/tg"</span><span style="color: #ABB2BF">,</span></span>
-<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">"body"</span><span style="color: #ABB2BF">: [</span></span>
-<span class="line"><span style="color: #ABB2BF">            </span><span style="color: #98C379">"{% label primary @${1:text} %}"</span></span>
-<span class="line"><span style="color: #ABB2BF">        ],</span></span>
-<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">"description"</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">"Hexo blog tag block"</span></span>
 <span class="line"><span style="color: #ABB2BF">    }</span></span>
 <span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure>
 <h1 id="结语">结语</h1>
 <p>以上是我在 VSCode 中设置和使用 Snippets 的经验分享。通过自定义
 Snippets，终于不用回忆 Fluid
-主题中各种标签的写法啦！（<del>笑</del>）</p>
+主题中各种标签的写法啦！<del>（笑）</del></p>
+<p>当然，如果希望了解更准确的 Snippets 定义语法和更多功能，建议直接参考
+<a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/editor/userdefinedsnippets">VSCode
+官方文档</a>，里面有非常详细的说明和示例。</p>
 
                 
               </div>
