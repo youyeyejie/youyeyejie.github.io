@@ -10,6 +10,12 @@
     border-radius: 0.5rem;
 }
 
+.group-image-wrap > a > img {
+    height: 75% !important; /* 保持图片比例 */
+    width: auto !important; /* 强制宽度为父元素的100% */
+}
+
+
 .image-caption {
     margin: 1rem auto!important;
 }
