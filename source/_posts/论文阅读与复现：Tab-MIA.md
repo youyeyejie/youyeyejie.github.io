@@ -44,23 +44,41 @@ excerpt: 大创项目论文阅读笔记与复现记录
 
 <a href="https://huggingface.co/datasets/germane/Tab-MIA/viewer/WTQ/markdown" logourl="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" class="LinkCard">Tab-MIA HuggingFace Dataset</a>
 
-- 项目结构
-    ![](论文阅读与复现：Tab-MIA/image-3.webp)
+- 项目结构与数据流向
+    {% gi 2 2 %}
+    ![项目结构](论文阅读与复现：Tab-MIA/image-3.webp)
+    ![数据流向](论文阅读与复现：Tab-MIA/image-5.webp)
+    {% endgi %}
 - 处理流程
-    ![](论文阅读与复现：Tab-MIA/image-4.webp)
-- 数据流向
-    ![](论文阅读与复现：Tab-MIA/image-5.webp)
+    ![处理流程](论文阅读与复现：Tab-MIA/image-4.webp)
 
 ## 复现记录
-- 在实验室机器上进行复现，测试了以下几种组合，结果大致符合论文所述，部分数值偏低一些（10% 左右）
-    - 数据集 WTQ，编码格式 line-sep，模型 Mistral 7B，微调轮数 epochs 1/2/3
-        ![](论文阅读与复现：Tab-MIA/image-6.webp)
-    - 数据集 WTQ，编码格式 json，模型 Mistral 7B，微调轮数 epochs 1/2/3
-        ![](论文阅读与复现：Tab-MIA/image-7.webp)
-    - 数据集 adult，编码格式 json，模型 Mistral 7B，微调轮数 epochs 1/2/3
-        ![](论文阅读与复现：Tab-MIA/image-9.webp)
-    - 数据集 WTQ，编码格式 line-sep，模型 Gemma 2b，微调轮数 epochs 1/2/3
-        ![](论文阅读与复现：Tab-MIA/image-8.webp)
+在实验室机器上进行复现，测试了以下几种组合，结果大致符合论文所述，部分数值偏低一些（10% 左右）
+
+- 数据集 WTQ，编码格式 line-sep，模型 Mistral 7B，微调轮数 epochs 1/2/3
+    {% gi 3 3 %}
+    ![](论文阅读与复现：Tab-MIA/image-6.webp)
+    ![](论文阅读与复现：Tab-MIA/image-7.webp)
+    ![](论文阅读与复现：Tab-MIA/image-8.webp)
+    {% endgi %}
+- 数据集 WTQ，编码格式 json，模型 Mistral 7B，微调轮数 epochs 1/2/3
+    {% gi 3 3 %}
+    ![](论文阅读与复现：Tab-MIA/image-9.webp)
+    ![](论文阅读与复现：Tab-MIA/image-10.webp)
+    ![](论文阅读与复现：Tab-MIA/image-11.webp)
+    {% endgi %}
+- 数据集 adult，编码格式 json，模型 Mistral 7B，微调轮数 epochs 1/2/3
+    {% gi 3 3 %}
+    ![](论文阅读与复现：Tab-MIA/image-12.webp)
+    ![](论文阅读与复现：Tab-MIA/image-13.webp)
+    ![](论文阅读与复现：Tab-MIA/image-14.webp)
+    {% endgi %}
+- 数据集 WTQ，编码格式 line-sep，模型 Gemma 2b，微调轮数 epochs 1/2/3
+    {% gi 3 3 %}
+    ![](论文阅读与复现：Tab-MIA/image-15.webp)
+    ![](论文阅读与复现：Tab-MIA/image-16.webp)
+    ![](论文阅读与复现：Tab-MIA/image-17.webp)
+    {% endgi %}
 
 # 参考文献
 1. German E, Antebi S, Samira D, et al. Tab-MIA: A Benchmark Dataset for Membership Inference Attacks on Tabular Data in LLMs[J]. [arXiv preprint arXiv:2507.17259](https://arxiv.org/html/2507.17259?_immersive_translate_auto_translate=1), 2025.

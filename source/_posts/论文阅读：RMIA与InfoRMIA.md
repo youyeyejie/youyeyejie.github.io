@@ -67,10 +67,13 @@ RMIA 将成员推理转化为假设检验问题，通过细粒度建模零假设
 1. 低成本高性能：仅用 1 个参考模型时，CIFAR-100 上 AUC 达 87.18%，较 LiRA（68.95%）提升 26%，0% FPR 下 TPR 达 0.77%（LiRA 仅 0.27%）；
     ![](论文阅读：RMIA与InfoRMIA/image-1.webp)
 2. 低误报率高性能：在极低 FPR（甚至0）下仍保持高 TPR，低 FPR 区域 TPR 较现有方法提升 2-4 倍；
+    {% gi 3 3 %}
     ![](论文阅读：RMIA与InfoRMIA/image.webp)
+    ![](论文阅读：RMIA与InfoRMIA/image-2.webp)
+    ![](论文阅读：RMIA与InfoRMIA/image-3.webp)
+    {% endgi %}
 3. 强鲁棒性：
     - 面对分布外（OOD）数据，RMIA AUC 达 0.768，远超 LiRA（0.509）和 Attack-R（0.632）；
-        ![](论文阅读：RMIA与InfoRMIA/image-2.webp)
     - 目标模型与参考模型数据集/架构不同时，AUC 仍领先最多 25%；
 4. 通用性：适用于神经网络、梯度提升决策树（GBDT）等算法，支持多类型数据集；
 5. 离线模式高效：仅用 OUT 模型（无需为每个 $x$ 训练 IN 模型）即可实现接近在线模式的性能，大幅降低计算成本。

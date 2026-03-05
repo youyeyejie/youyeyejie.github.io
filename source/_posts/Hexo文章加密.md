@@ -14,7 +14,7 @@ index_img: /_posts/Hexo文章加密/image.webp
 # 前言
 hexo-blog-encrypt 是一款应用于 Hexo 博客框架的加密插件，可用于加密单独某篇文章或某个 Tag 下的所有文章。但是在使用过程中，我发现网上的一些信息已经比较过时了，因此决定亲自尝试并记录下整个过程，以便为其他用户提供参考。
 
-<a href="https://github.com/D0n9X1n/hexo-blog-encrypt" target="_blank" class="LinkCard">hexo-blog-encrypt GitHub 仓库</a>
+<a href="https://github.com/D0n9X1n/hexo-blog-encrypt" target="_blank" logourl="https://github.githubassets.com/assets/apple-touch-icon-144x144-b882e354c005.png" class="LinkCard">hexo-blog-encrypt GitHub 仓库</a>
 
 在本文中，我将介绍如何在 Hexo 博客中使用 hexo-blog-encrypt 插件实现文章加密功能，并对 Fluid 主题进行适配和美化。
 

@@ -160,9 +160,9 @@ excerpt: 大创项目论文阅读笔记与复现记录
 <a href="https://github.com/Stry233/SAMA" logourl="https://github.githubassets.com/assets/apple-touch-icon-144x144-b882e354c005.png" class="LinkCard">SAMA-MIA GitHub Repository</a>
 
 - 项目结构
-    ![](论文阅读与复现：SAMA-MIA/image-5.webp)
+    ![项目结构](论文阅读与复现：SAMA-MIA/image-5.webp)
 - SAMA 攻击流程
-    ![](论文阅读与复现：SAMA-MIA/image-6.webp)
+    ![SAMA 攻击流程](论文阅读与复现：SAMA-MIA/image-6.webp)
 
 ## 复现记录
 - **训练**：选择模型 LLaDA-8B-Base，使用 DeepSpeed 多卡训练，Zero_stage 3 优化，训练 10 个 epoch。训练集和参考集分别从 Mimir-arxiv 和 Mimir-github 数据集中抽取。
