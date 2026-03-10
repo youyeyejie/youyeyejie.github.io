@@ -36,8 +36,10 @@
 <meta property="og:image" content="https://youyeyejie.github.io/_posts/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E4%B8%8E%E5%A4%8D%E7%8E%B0%EF%BC%9ASAMA-MIA/image-7.webp">
 <meta property="og:image" content="https://youyeyejie.github.io/_posts/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E4%B8%8E%E5%A4%8D%E7%8E%B0%EF%BC%9ASAMA-MIA/image-8.webp">
 <meta property="og:image" content="https://youyeyejie.github.io/_posts/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E4%B8%8E%E5%A4%8D%E7%8E%B0%EF%BC%9ASAMA-MIA/image-9.webp">
+<meta property="og:image" content="https://youyeyejie.github.io/_posts/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E4%B8%8E%E5%A4%8D%E7%8E%B0%EF%BC%9ASAMA-MIA/image-10.webp">
+<meta property="og:image" content="https://youyeyejie.github.io/_posts/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E4%B8%8E%E5%A4%8D%E7%8E%B0%EF%BC%9ASAMA-MIA/image-11.webp">
 <meta property="article:published_time" content="2026-02-20T11:51:08.000Z">
-<meta property="article:modified_time" content="2026-03-05T08:30:04.808Z">
+<meta property="article:modified_time" content="2026-03-10T02:46:32.628Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="人工智能安全">
 <meta property="article:tag" content="MIA">
@@ -469,7 +471,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          4k 字
+          4.1k 字
         
       </span>
     
@@ -939,14 +941,19 @@ ref_subset_size 100</li>
 <img src="image-7.webp" srcset="/img/loading/loading3.gif" lazyload></li>
 <li><strong>攻击</strong>：
 <ul>
-<li>LLaDA-8B-Base-arxiv：因为显存不足，目标模型和参考模型均使用 8-bit
-量化，效果较差 <img src="image-8.webp" srcset="/img/loading/loading3.gif" lazyload alt="LLaDA-8B-Base-arxiv"></li>
-<li>LLaDA-8B-Base-github：因为显存不足，目标模型和参考模型均使用 4-bit
-量化，虽然比 8-bit 量化的 arxiv
+<li><p>LLaDA-8B-Base-MIMIR_arxiv：因为显存不足，目标模型和参考模型均使用
+8-bit 量化，效果较差 <img src="image-8.webp" srcset="/img/loading/loading3.gif" lazyload alt="LLaDA-8B-Base-MIMIR_arxiv"></p></li>
+<li><p>LLaDA-8B-Base-MIMIR_github：因为显存不足，目标模型和参考模型均使用
+4-bit 量化，虽然比 8-bit 量化的 arxiv
 数据集效果稍微好一些，但是依旧没有达到论文中的数据，怀疑可能是因为量化原因。并且
 Ratio（即
 loss-calibratgion）方法的效果极差，与论文数据差距较大，怀疑可能是因为量化导致
-loss 计算不准确。 <img src="image-9.webp" srcset="/img/loading/loading3.gif" lazyload alt="LLaDA-8B-Base-github"></li>
+loss 计算不准确。 <img src="image-9.webp" srcset="/img/loading/loading3.gif" lazyload alt="LLaDA-8B-Base-MIMIR_github"></p>
+<p>后来又用 8-bit 量化，稍微缩小分词器长度重新跑了一遍，结果也差不多
+<img src="image-10.webp" srcset="/img/loading/loading3.gif" lazyload alt="LLaDA-8B-Base-MIMIR_github_8bit"></p></li>
+<li><p>LLaDA-8B-Base-wikitext：因为显存不足，目标模型和参考模型均使用
+8-bit 量化。相比于 MIMIR 数据集，WikiText-103
+数据集较大，故训练集和测试集规模均为前两者的 10 倍 <img src="image-11.webp" srcset="/img/loading/loading3.gif" lazyload alt="LLaDA-8B-Base-wikitext"></p></li>
 </ul></li>
 </ul>
 <h1 id="参考内容">参考内容</h1>
@@ -1024,7 +1031,7 @@ preprint arXiv:2601.02751</a>, 2026.</li>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2026年3月5日</div>
+          <div>2026年3月10日</div>
         </div>
       
       
