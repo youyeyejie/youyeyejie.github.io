@@ -171,10 +171,15 @@ excerpt: 大创项目论文阅读笔记与复现记录
 
     ![](论文阅读与复现：SAMA-MIA/image-7.webp)
 - **攻击**：
-    - LLaDA-8B-Base-arxiv：因为显存不足，目标模型和参考模型均使用 8-bit 量化，效果较差
-        ![LLaDA-8B-Base-arxiv](论文阅读与复现：SAMA-MIA/image-8.webp)
-    - LLaDA-8B-Base-github：因为显存不足，目标模型和参考模型均使用 4-bit 量化，虽然比 8-bit 量化的 arxiv 数据集效果稍微好一些，但是依旧没有达到论文中的数据，怀疑可能是因为量化原因。并且 Ratio（即 loss-calibratgion）方法的效果极差，与论文数据差距较大，怀疑可能是因为量化导致 loss 计算不准确。
-        ![LLaDA-8B-Base-github](论文阅读与复现：SAMA-MIA/image-9.webp)
+    - LLaDA-8B-Base-MIMIR_arxiv：因为显存不足，目标模型和参考模型均使用 8-bit 量化，效果较差
+        ![LLaDA-8B-Base-MIMIR_arxiv](论文阅读与复现：SAMA-MIA/image-8.webp)
+    - LLaDA-8B-Base-MIMIR_github：因为显存不足，目标模型和参考模型均使用 4-bit 量化，虽然比 8-bit 量化的 arxiv 数据集效果稍微好一些，但是依旧没有达到论文中的数据，怀疑可能是因为量化原因。并且 Ratio（即 loss-calibratgion）方法的效果极差，与论文数据差距较大，怀疑可能是因为量化导致 loss 计算不准确。
+        ![LLaDA-8B-Base-MIMIR_github](论文阅读与复现：SAMA-MIA/image-9.webp)
+
+        后来又用 8-bit 量化，稍微缩小分词器长度重新跑了一遍，结果也差不多
+        ![LLaDA-8B-Base-MIMIR_github_8bit](论文阅读与复现：SAMA-MIA/image-10.webp)
+    - LLaDA-8B-Base-wikitext：因为显存不足，目标模型和参考模型均使用 8-bit 量化。相比于 MIMIR 数据集，WikiText-103 数据集较大，故训练集和测试集规模均为前两者的 10 倍
+        ![LLaDA-8B-Base-wikitext](论文阅读与复现：SAMA-MIA/image-11.webp)
 
 # 参考内容
 1. Chen Y, Zhang K, Du Y, et al. Membership Inference Attacks Against Fine-tuned Diffusion Language Models[J]. [arXiv preprint arXiv:2601.20125](https://arxiv.org/html/2601.20125?_immersive_translate_auto_translate=1), 2026.
