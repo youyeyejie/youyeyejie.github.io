@@ -89,15 +89,17 @@ excerpt: 大创项目论文阅读笔记与复现记录
 - **方法**：在每个渐进式掩码步骤 $t \in{1,\cdots,T}$ 中，使用包含 $k_{t}$ 个掩码位置的掩码配置 $\mathcal{S}_{t} \subseteq[L]$，我们通过单次前向传播获得所有掩码标记的损失，采用两部分稳健聚合策略：**局部子集采样**与**基于符号的聚合**。
     1. **局部子集采样**（Local Subset Sampling）：在每一步掩码操作中，不计算全局平均，而是从 $\mathcal{S}_{t}$ 中随机采样 $N$ 个子集位置，对每个子集 $U^{n}$ 计算局部损失差异：
         $$
-        \Delta_{DF}^{n}\left(x,\mathcal{S}_{t}\right)=\frac{1}{m} \sum_{i \in H^{n}}\left[\ell_{i}^{R}\left(x, \mathcal{S}_{t}\right)-\ell_{i}^{T}\left(x, \mathcal{S}_{t}\right)\right]
+        \Delta_{DF}^{n}\left(x,\mathcal{S}_{t}\right)=\frac{1}{m} \sum_{i \in U^{n}}\left[\ell_{i}^{R}\left(x, \mathcal{S}_{t}\right)-\ell_{i}^{T}\left(x, \mathcal{S}_{t}\right)\right]
         $$
 
         其中每个子集 $U^{n}\subset\mathcal{S}_{t},n=1,\cdots,N$ 包含 $m$ 个位置，$m \ll k_{t}$。这样得到 $N$ 个不同的局部测量结果，受单个异常值标记的影响更小。
     2. **基于符号的聚合**（Sign-Based Aggregation）：不使用每个局部损失差异的大小，而是将每个 $\Delta_{DF}^{n}$ 转换为一个二元指示器：
-        $$B^{n}(x)=\boldsymbol{1}\left[\Delta_{DF}^{n}(x,S_{t})>0\right]=\begin{cases}
+        $$
+        B^{n}(x)=\boldsymbol{1}\left[\Delta_{DF}^{n}(x,S_{t})>0\right]=\begin{cases}
         1 & \Delta_{DF}^{n}(x,S_{t})>0 \\
         0 & \text{otherwise}
-        \end{cases}$$
+        \end{cases}
+        $$
 
         这种转换丢弃了大小信息，只记录参考模型对于该特定子集 $U^{n}$ 是否比目标模型有更高的损失。虽然这看起来像是在丢弃信息，但实际上它对重尾噪声分布具有鲁棒性。通过在此前的 $N$ 个采样子集上聚合这些二元指标，计算出第 $t$ 步的成员分数：
             $$
