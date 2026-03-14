@@ -39,7 +39,7 @@
 <meta property="og:image" content="https://youyeyejie.github.io/_posts/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E4%B8%8E%E5%A4%8D%E7%8E%B0%EF%BC%9ASAMA-MIA/image-10.webp">
 <meta property="og:image" content="https://youyeyejie.github.io/_posts/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E4%B8%8E%E5%A4%8D%E7%8E%B0%EF%BC%9ASAMA-MIA/image-11.webp">
 <meta property="article:published_time" content="2026-02-20T11:51:08.000Z">
-<meta property="article:modified_time" content="2026-03-10T02:46:32.628Z">
+<meta property="article:modified_time" content="2026-03-14T15:03:24.507Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="人工智能安全">
 <meta property="article:tag" content="MIA">
@@ -774,7 +774,7 @@ Subset Aggregation)</h4>
 <li><p><strong>局部子集采样</strong>（Local Subset
 Sampling）：在每一步掩码操作中，不计算全局平均，而是从 <span class="math inline">\(\mathcal{S}_{t}\)</span> 中随机采样 <span class="math inline">\(N\)</span> 个子集位置，对每个子集 <span class="math inline">\(U^{n}\)</span> 计算局部损失差异： <span class="math display">\[
 \Delta_{DF}^{n}\left(x,\mathcal{S}_{t}\right)=\frac{1}{m} \sum_{i \in
-H^{n}}\left[\ell_{i}^{R}\left(x,
+U^{n}}\left[\ell_{i}^{R}\left(x,
 \mathcal{S}_{t}\right)-\ell_{i}^{T}\left(x,
 \mathcal{S}_{t}\right)\right]
 \]</span></p>
@@ -783,10 +783,12 @@ H^{n}}\left[\ell_{i}^{R}\left(x,
 个不同的局部测量结果，受单个异常值标记的影响更小。</p></li>
 <li><p><strong>基于符号的聚合</strong>（Sign-Based
 Aggregation）：不使用每个局部损失差异的大小，而是将每个 <span class="math inline">\(\Delta_{DF}^{n}\)</span> 转换为一个二元指示器：
-<span class="math display">\[B^{n}(x)=\boldsymbol{1}\left[\Delta_{DF}^{n}(x,S_{t})&gt;0\right]=\begin{cases}
+<span class="math display">\[
+B^{n}(x)=\boldsymbol{1}\left[\Delta_{DF}^{n}(x,S_{t})&gt;0\right]=\begin{cases}
 1 &amp; \Delta_{DF}^{n}(x,S_{t})&gt;0 \\
 0 &amp; \text{otherwise}
-\end{cases}\]</span></p>
+\end{cases}
+\]</span></p>
 <p>这种转换丢弃了大小信息，只记录参考模型对于该特定子集 <span class="math inline">\(U^{n}\)</span>
 是否比目标模型有更高的损失。虽然这看起来像是在丢弃信息，但实际上它对重尾噪声分布具有鲁棒性。通过在此前的
 <span class="math inline">\(N\)</span>
@@ -1031,7 +1033,7 @@ preprint arXiv:2601.02751</a>, 2026.</li>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2026年3月10日</div>
+          <div>2026年3月14日</div>
         </div>
       
       
