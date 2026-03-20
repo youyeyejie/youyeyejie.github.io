@@ -3,11 +3,14 @@ import sys
 from pathlib import Path
 from datetime import datetime
 
-def find_md_files(posts_dir: Path):
-    if not posts_dir.exists() or not posts_dir.is_dir():
-        print(f"目录不存在: {posts_dir}")
-        return []
-    files = [p for p in posts_dir.glob("*.md") if p.is_file()]
+def find_md_files(dirs):
+    """查找指定目录列表下的所有 md 文件"""
+    files = []
+    for d in dirs:
+        if not d.exists() or not d.is_dir():
+            print(f"目录不存在: {d}")
+            continue
+        files.extend([p for p in d.glob("*.md") if p.is_file()])
     files.sort(key=lambda p: p.stat().st_mtime)  # 按最后修改时间升序
     return files
 
@@ -45,7 +48,8 @@ def process_file(md_path: Path):
 def main():
     script_dir = Path(__file__).resolve().parent
     posts_dir = script_dir / "source" / "_posts"
-    files = find_md_files(posts_dir)
+    drafts_dir = script_dir / "source" / "_drafts"
+    files = find_md_files([posts_dir, drafts_dir])
     if not files:
         print("未找到任何 md 文件。")
         return
