@@ -1,15 +1,17 @@
 import sys
 import re
-
+from pathlib import Path
 
 def process_md_file(input_file, output_file=None):
     """
     处理md文件，将!!! 折叠块转换为{% %} 格式
     """
+    
     if output_file is None:
         output_file = input_file
     
-    with open(input_file, 'r', encoding='utf-8') as f:
+    md_path = Path(input_file)
+    with open(md_path, 'r', encoding='utf-8') as f:
         content = f.read()
     
     lines = content.split('\n')
@@ -77,11 +79,17 @@ def process_md_file(input_file, output_file=None):
             result_lines.append(line)
             i += 1
     
-    # 写入输出文件
-    with open(output_file, 'w', encoding='utf-8') as f:
-        f.write('\n'.join(result_lines))
+    new_content = '\n'.join(result_lines)
     
-    print(f"处理完成: {input_file} -> {output_file}")
+    # 只有当内容发生变化时才写入并备份
+    if new_content != content:
+        # 备份原文件（如果不存在）
+        bak = md_path.with_suffix(md_path.suffix + ".bak")
+        if not bak.exists():
+            bak.write_text(content, encoding="utf-8")
+        md_path.write_text(new_content, encoding="utf-8")
+        return True
+    return False
 
 
 def find_md_files(dirs):
@@ -96,7 +104,6 @@ def find_md_files(dirs):
     return files
 
 def main():
-    import sys
     from pathlib import Path
     
     script_dir = Path(__file__).resolve().parent
@@ -120,8 +127,12 @@ def main():
     total_changes = 0
     for i in indices:
         p = files[i-1]
-        process_md_file(str(p))
-        total_changes += 1
+        changed = process_md_file(str(p))
+        if changed:
+            print(f"{p.name}: 已处理")
+            total_changes += 1
+        else:
+            print(f"{p.name}: 无需处理（无 !!! 折叠块）")
 
     print(f"完成。总共处理了 {total_changes} 个文件。")
 
