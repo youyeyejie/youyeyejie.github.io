@@ -409,7 +409,8 @@ navbar:
         { key: "archive", link: "/archives/", icon: "iconfont icon-archive-fill" },
         { key: "tag", link: "/tags/", icon: "fa-solid fa-tags" },
         { key: "links", link: "/links/", icon: "iconfont icon-link-fill" },
-        { key: "gallery", link: "/categories/DayDream-Gallery/", icon: "fas fa-images", name: "图集" }
+        { key: "gallery", link: "/categories/DayDream-Gallery/", icon: "fas fa-images", name: "图集" },
+        { key: "Immersive Clock", link: "/original/clock/", icon: "fas fa-clock", name: "专注" }
       ]
     }
 
