@@ -6,7 +6,7 @@
     --sitestat-bg-color: #242a38a4;
 }
 
-#site-stats {
+#site-stats, #sidebar-clock {
     margin: 4rem auto 0 auto;
     padding: 15px 20px;
     top: 4rem;
@@ -16,6 +16,71 @@
     backdrop-filter: blur(15px);
     display: block;
     width: 240px;
+}
+
+#sidebar-clock {
+    margin-top: 1.2rem;
+}
+
+/* 悬浮不变色 */
+.sidebar-clock-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+.sidebar-clock-link:hover {
+    color: inherit;
+}
+
+.sidebar-analog-clock {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border: 2px solid rgba(128, 128, 128, 0.3);
+    border-radius: 50%;
+    position: relative;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.06);
+}
+
+.sidebar-clock-hand {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform-origin: bottom;
+    border-radius: 10px;
+    background: currentColor;
+}
+
+.sidebar-hour-hand {
+    width: 4px;
+    height: 28%;
+    z-index: 3;
+}
+
+.sidebar-minute-hand {
+    width: 3px;
+    height: 38%;
+    z-index: 2;
+    opacity: 0.75;
+}
+
+.sidebar-second-hand {
+    width: 2px;
+    height: 44%;
+    z-index: 4;
+    background: #e74c3c;
+}
+
+.sidebar-center-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: currentColor;
+    z-index: 5;
 }
 
 .sidebar-element {

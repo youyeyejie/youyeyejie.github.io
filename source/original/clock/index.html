@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immersive Clock</title>
+    <link rel="icon" href="/img/avatar/avatar2.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="clock.css">
+    <script src="clock.js" defer></script>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="0369421f-4354-4d7b-99c7-ae077c591b4f"></script>
+</head>
+<body>
+    <header class="top-actions" aria-label="Page actions">
+        <button class="theme-switch" onclick="toggleTheme()" id="themeBtn" type="button" aria-label="切换深浅色主题">
+            <span class="toggle-circle" aria-hidden="true">
+                <i id="themeIcon" class="fas fa-moon"></i>
+            </span>
+        </button>
+    </header>
+
+    <main class="clock-page" aria-live="polite">
+        <section class="code-clock" id="codeClock" aria-label="代码时钟">
+            <div class="code-section" id="codeClockDisplay">
+                <span class="comment" id="greeting">// Checking current time...</span>
+                <span class="comment">// Double click to toggle theme...</span>
+                <div><span class="keyword">const</span> <span class="key">currentTime</span> <span class="punc">= {</span></div>
+                <div class="indent"><span class="key">year</span><span class="punc">:</span> <span class="number" id="year">2005</span><span class="punc">,</span></div>
+                <div class="indent"><span class="key">month</span><span class="punc">:</span> <span class="number" id="month">02</span><span class="punc">,</span></div>
+                <div class="indent"><span class="key">day</span><span class="punc">:</span> <span class="number" id="day">18</span><span class="punc">,</span></div>
+                <div class="indent"><span class="key">dayOfWeek</span><span class="punc">:</span> <span class="string">"<span id="dow">Monday</span>"</span><span class="punc">,</span></div>
+                <div class="indent"><span class="key">hour</span><span class="punc">:</span> <span class="number" id="hour">13</span><span class="punc">,</span></div>
+                <div class="indent"><span class="key">minute</span><span class="punc">:</span> <span class="number" id="min">14</span><span class="punc">,</span></div>
+                <div class="indent"><span class="key">second</span><span class="punc">:</span> <span class="number" id="sec">52</span><span class="punc">,</span></div>
+                <div class="indent"><span class="key">dayProgress</span><span class="punc">:</span> <span class="number"><span id="dayprogress">0</span>%</span></div>
+                <div class="indent"><span class="key">weekProgress</span><span class="punc">:</span> <span class="number"><span id="weekprogress">0</span>%</span></div>
+                <div class="indent"><span class="key">monthProgress</span><span class="punc">:</span> <span class="number"><span id="monthprogress">0</span>%</span></div>
+                <div class="indent"><span class="key">yearProgress</span><span class="punc">:</span> <span class="number"><span id="yearprogress">0</span>%</span></div>
+                <div><span class="punc">};</span></div>
+            </div>
+
+            <div class="clock-section" id="codeClockDial">
+                <div class="analog-clock" role="img" aria-label="模拟时钟">
+                    <div class="center-dot"></div>
+                    <div class="hand hour-hand" id="hour-hand"></div>
+                    <div class="hand minute-hand" id="min-hand"></div>
+                    <div class="hand second-hand" id="sec-hand"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="digital-clock" id="digitalClock" aria-label="数字时钟">
+            <div class="digital-time" id="digitalTime"   >15:22:22</div> 
+            <div class="digital-date" id="digitalDate">2026年4月6日星期一，第15周</div>
+            <div class="digital-hint" id="digitalHint">双击返回</div>
+        </section>
+    </main>
+</body>
+</html>
