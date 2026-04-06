@@ -128,18 +128,17 @@ function createSidebar() {
 }
 
 function judgeSidebarHidden() {
-    const board = document.getElementById('board');
-    const sideCol = document.querySelector('.side-col.d-none.d-lg-block.col-lg-2');
-    if (!board || !sideCol) {
-        return;
-    }
-
-    const boardRect = board.getBoundingClientRect();
-    const sideColRect = sideCol.getBoundingClientRect();
+    const boardRect = document.getElementById('board').getBoundingClientRect();
+    const sideColRect = document.querySelector('.side-col.d-none.d-lg-block.col-lg-2').getBoundingClientRect();
+    const sideBar = document.getElementById('site-stats');
+    const clockBar = document.getElementById('sidebar-clock');
+    // console.log(boardRect.right, sideColRect.left);
     if (boardRect.right - 10 > sideColRect.left) {
-        sideCol.style.display = 'none';
+        sideBar.style.display = 'none';
+        clockBar.style.display = 'none';
     } else {
-        sideCol.style.display = 'block';
+        sideBar.style.display = 'block';
+        clockBar.style.display = 'block';
     }
 }
 
