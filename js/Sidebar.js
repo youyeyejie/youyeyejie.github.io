@@ -16,6 +16,41 @@ function lastUpdate() {
     })
 }
 
+let sidebarClockTimer = null;
+
+function updateSidebarClock() {
+    const now = new Date();
+    const hour = now.getHours();
+    const minute = now.getMinutes();
+    const second = now.getSeconds();
+
+    const secondDeg = (second / 60) * 360;
+    const minuteDeg = ((minute + second / 60) / 60) * 360;
+    const hourDeg = (((hour % 12) + minute / 60) / 12) * 360;
+
+    const hourHand = document.getElementById('sidebar-hour-hand');
+    const minuteHand = document.getElementById('sidebar-minute-hand');
+    const secondHand = document.getElementById('sidebar-second-hand');
+
+    if (hourHand) {
+        hourHand.style.transform = `translateX(-50%) rotate(${hourDeg}deg)`;
+    }
+    if (minuteHand) {
+        minuteHand.style.transform = `translateX(-50%) rotate(${minuteDeg}deg)`;
+    }
+    if (secondHand) {
+        secondHand.style.transform = `translateX(-50%) rotate(${secondDeg}deg)`;
+    }
+}
+
+function startSidebarClock() {
+    updateSidebarClock();
+    if (sidebarClockTimer) {
+        clearInterval(sidebarClockTimer);
+    }
+    sidebarClockTimer = setInterval(updateSidebarClock, 1000);
+}
+
 function updateSidebar() {
     document.getElementById('sidebar-word-count').innerHTML = document.getElementById('g-total-word-id').innerText;
     document.getElementById('sidebar-post-count').innerHTML = document.getElementById('g-total-posts-id').innerText;
@@ -62,10 +97,21 @@ function createSidebar() {
                 <span id="sidebar-site-update"></span>
             </div>
         </aside>
+        <a class="sidebar-clock-link" href="/original/clock/" id="immersive-clock-link">
+            <aside class="sidebar" id="sidebar-clock">
+                <div class="sidebar-analog-clock">
+                    <div class="sidebar-center-dot"></div>
+                    <div class="sidebar-clock-hand sidebar-hour-hand" id="sidebar-hour-hand"></div>
+                    <div class="sidebar-clock-hand sidebar-minute-hand" id="sidebar-minute-hand"></div>
+                    <div class="sidebar-clock-hand sidebar-second-hand" id="sidebar-second-hand"></div>
+                </div>
+            </aside>
+        </a>
     `;
     sideCol.innerHTML = sideBar;
     main.insertBefore(sideCol, main.firstChild);
     updateSidebar();
+    startSidebarClock();
     judgeSidebarHidden();
 
     const sidebar_pv = document.getElementById('sidebar-site-pv').innerHTML;
@@ -82,14 +128,18 @@ function createSidebar() {
 }
 
 function judgeSidebarHidden() {
-    const boardRect = document.getElementById('board').getBoundingClientRect();
-    const sideColRect = document.querySelector('.side-col.d-none.d-lg-block.col-lg-2').getBoundingClientRect();
-    const sideBar = document.getElementById('site-stats');
-    // console.log(boardRect.right, sideColRect.left);
+    const board = document.getElementById('board');
+    const sideCol = document.querySelector('.side-col.d-none.d-lg-block.col-lg-2');
+    if (!board || !sideCol) {
+        return;
+    }
+
+    const boardRect = board.getBoundingClientRect();
+    const sideColRect = sideCol.getBoundingClientRect();
     if (boardRect.right - 10 > sideColRect.left) {
-        sideBar.style.display = 'none';
+        sideCol.style.display = 'none';
     } else {
-        sideBar.style.display = 'block';
+        sideCol.style.display = 'block';
     }
 }
 

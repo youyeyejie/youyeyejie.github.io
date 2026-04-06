@@ -89,6 +89,11 @@ function umamiTrackEvent() {
         } 
     });
 
+    const immersive_clock_link = document.getElementById('immersive-clock-link');
+    if (immersive_clock_link) {
+        immersive_clock_link.dataset.umamiEvent = "Immersive Clock Page";
+    }
+
     const hitokoto_text = document.getElementById('hitokoto_text');
     if (hitokoto_text) {
         hitokoto_text.dataset.umamiEvent = "Hitokoto";

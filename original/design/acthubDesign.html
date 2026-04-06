@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HarmonyOS 效率App 原型 v3 (动态FAB版)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* 全局样式与手机壳模拟 */
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        body { background-color: #e0e5ec; display: flex; justify-content: center; align-items: center; height: 100vh; overflow: hidden; }
+        .phone-mockup { width: 375px; height: 812px; background: #f4f6f9; border-radius: 40px; border: 12px solid #333; position: relative; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.2); display: flex; flex-direction: column; }
+        
+        .status-bar { height: 44px; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; font-size: 14px; font-weight: bold; background: transparent; z-index: 10; }
+        .dynamic-island { width: 100px; height: 25px; background: #000; border-radius: 20px; position: absolute; left: 50%; transform: translateX(-50%); top: 10px; }
+
+        .tab-content { flex: 1; overflow-y: auto; display: none; padding-bottom: 80px; animation: fadeIn 0.3s ease; }
+        .tab-content.active { display: block; }
+        .page-header { padding: 16px 20px; font-size: 24px; font-weight: 800; background: #fff; position: sticky; top: 0; z-index: 5; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
+        .header-row { display: flex; align-items: center; justify-content: space-between; min-height: 40px; }
+        .header-title { font-size: 24px; font-weight: 800; }
+        .header-search-btn { width: 36px; height: 36px; border-radius: 50%; border: none; background: #eef2f7; color: #333; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+
+        /* ================= 页面专属样式 ================= */
+        /* Tab 1: 规划 */
+        .calendar-week-scroller { background: #fff; margin-bottom: 10px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; display: flex; }
+        .calendar-week-scroller::-webkit-scrollbar { display: none; }
+        .calendar-week { width: 100%; padding: 15px 20px; display: flex; justify-content: space-between; flex: 0 0 100%; scroll-snap-align: start; }
+        .cal-day { display: flex; flex-direction: column; align-items: center; color: #888; font-size: 12px; }
+        .cal-day.active { color: #007aff; font-weight: bold; }
+        .cal-day.active .date { background: #007aff; color: #fff; border-radius: 50%; width: 30px; height: 30px; display: flex; justify-content: center; align-items: center; margin-top: 5px; }
+        .timeline { padding: 0 20px; }
+        .time-block { display: flex; margin-bottom: 20px; }
+        .time-label { width: 50px; font-size: 14px; color: #666; font-weight: 500; }
+        .event-card { flex: 1; background: #fff; padding: 15px; border-radius: 12px; border-left: 4px solid #007aff; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .event-card.course { border-left-color: #ff9500; background: #fffaf0; }
+
+        /* Tab 2: 待办 */
+        .filters-bar { padding: 10px 20px; display: flex; align-items: center; gap: 10px; background: #fff; }
+        .filters { display: flex; gap: 10px; overflow-x: auto; flex: 1; }
+        .filters::-webkit-scrollbar { display: none; }
+        .filter-chip { padding: 6px 16px; background: #f0f0f0; border-radius: 20px; font-size: 14px; color: #555; white-space: nowrap; cursor: pointer; }
+        .filter-chip.active { background: #007aff; color: white; }
+        .category-manage-btn { width: 34px; height: 34px; border: none; border-radius: 50%; background: #eef2f7; color: #333; display: flex; align-items: center; justify-content: center; cursor: pointer; flex: 0 0 auto; }
+        .todo-list { padding: 15px 20px; }
+        .todo-item { background: #fff; padding: 15px; border-radius: 12px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 8px rgba(0,0,0,0.02); }
+        .todo-left { display: flex; align-items: center; gap: 12px; }
+        .checkbox { width: 22px; height: 22px; border: 2px solid #ccc; border-radius: 50%; }
+        .todo-text { font-size: 16px; color: #333; }
+        .todo-tag { font-size: 11px; padding: 2px 6px; border-radius: 4px; background: #e8f0fe; color: #1a73e8; margin-top: 4px; display: inline-block;}
+        .swipe-hint { color: #ccc; font-size: 12px; display: flex; align-items: center; gap: 5px; }
+
+        /* Tab 4: 闪记 */
+        .hitokoto-card { margin: 20px; padding: 20px 20px 40px 20px; background: linear-gradient(135deg, #6e8efb, #a777e3); border-radius: 16px; color: white; font-style: italic; box-shadow: 0 4px 15px rgba(110,142,251,0.3); }
+        .note-list { padding: 0 20px; display: flex; flex-direction: column; gap: 15px; }
+        .note-card { background: #fff; padding: 15px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); font-size: 14px; color: #444; line-height: 1.5; }
+
+        /* Tab 5: 我的 (已恢复至 V1 版本) */
+        .stats-section { padding: 20px; background: #fff; margin-bottom: 10px; }
+        .section-title { font-size: 16px; font-weight: bold; margin-bottom: 15px; color: #333; display: flex; align-items: center; gap: 8px; }
+        .heatmap { display: grid; grid-template-columns: repeat(14, 1fr); gap: 4px; margin-top: 10px; }
+        .heat-cell { aspect-ratio: 1; background: #ebedf0; border-radius: 2px; }
+        .settings-list { padding: 0 20px; background: #fff; }
+        .setting-item { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid #eee; color: #333; font-size: 15px; }
+
+        /* ================= 底部导航栏 ================= */
+        .bottom-nav { position: absolute; bottom: 0; width: 100%; height: 85px; background: #fff; display: flex; justify-content: space-around; padding-top: 10px; border-radius: 30px 30px 0 0; box-shadow: 0 -5px 20px rgba(0,0,0,0.05); z-index: 20; }
+        .nav-item { display: flex; flex-direction: column; align-items: center; color: #999; font-size: 11px; gap: 4px; cursor: pointer; flex: 1; }
+        .nav-item.active { color: #000; }
+        .nav-item i { font-size: 20px; }
+        .nav-center-wrapper { flex: 1; display: flex; justify-content: center; }
+        .nav-tomato { width: 56px; height: 56px; background: #ff4757; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-size: 24px; transform: translateY(-20px); box-shadow: 0 8px 16px rgba(255,71,87,0.4); border: 4px solid #f4f6f9; cursor: pointer; transition: transform 0.2s; }
+        .nav-tomato:active { transform: translateY(-18px) scale(0.95); }
+
+        /* ================= 全局统一悬浮添加按钮 (动态切换行为) ================= */
+        .global-fab-container { position: absolute; bottom: 100px; right: 20px; z-index: 30; display: flex; flex-direction: column; align-items: flex-end; gap: 15px; transition: opacity 0.3s; }
+        
+        /* 日程页专属：展开菜单 (Speed Dial) */
+        .fab-menu { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; opacity: 0; pointer-events: none; transform: translateY(20px) scale(0.9); transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+        .fab-menu.active { opacity: 1; pointer-events: auto; transform: translateY(0) scale(1); }
+        .fab-item { display: flex; align-items: center; gap: 12px; cursor: pointer; }
+        .fab-label { background: rgba(255,255,255,0.95); padding: 6px 12px; border-radius: 8px; font-size: 14px; font-weight: bold; color: #333; box-shadow: 0 4px 12px rgba(0,0,0,0.1); backdrop-filter: blur(5px); }
+        .fab-btn { width: 44px; height: 44px; border-radius: 50%; background: #fff; color: #007aff; display: flex; justify-content: center; align-items: center; font-size: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        
+        /* 主入口按钮 */
+        .main-fab { width: 56px; height: 56px; background: #007aff; color: white; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 24px; box-shadow: 0 4px 12px rgba(0,122,255,0.4); cursor: pointer; transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s; }
+        .main-fab.active { transform: rotate(135deg); background: #ff3b30; box-shadow: 0 4px 12px rgba(255,59,48,0.4); }
+        .today-fab { width: 44px; height: 44px; border-radius: 50%; background: #fff; color: #007aff; box-shadow: 0 4px 12px rgba(0,0,0,0.16); display: none; align-items: center; justify-content: center; cursor: pointer; border: none; }
+        .today-fab.show { display: flex; }
+
+        /* ================= 半屏弹窗 (Bottom Sheets) ================= */
+        .fab-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 25; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+        .fab-overlay.active { opacity: 1; pointer-events: auto; }
+
+        .bottom-sheet { position: absolute; bottom: 0; left: 0; width: 100%; background: #fff; border-radius: 24px 24px 0 0; padding: 25px 20px 40px 20px; transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); z-index: 40; box-shadow: 0 -10px 25px rgba(0,0,0,0.1); }
+        .bottom-sheet.active { transform: translateY(0); }
+        .sheet-header { display: flex; justify-content: space-between; align-items: center; font-size: 18px; font-weight: bold; margin-bottom: 20px; }
+        .sheet-close { color: #999; font-size: 20px; cursor: pointer; }
+        
+        .sheet-input { width: 100%; padding: 15px; border: none; background: #f4f6f9; border-radius: 12px; font-size: 16px; margin-bottom: 15px; outline: none; }
+        .sheet-textarea { width: 100%; padding: 15px; border: none; background: #f4f6f9; border-radius: 12px; font-size: 15px; margin-bottom: 15px; outline: none; height: 120px; resize: none; font-family: monospace; }
+        .sheet-submit-btn { width: 100%; padding: 15px; background: #007aff; color: white; text-align: center; border-radius: 12px; font-size: 16px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 12px rgba(0,122,255,0.3); }
+        .category-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+        .category-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; border-radius: 10px; background: #f4f6f9; font-size: 14px; }
+        .category-delete-btn { border: none; color: #ff3b30; background: transparent; cursor: pointer; font-size: 13px; }
+
+        /* ================= 搜索页与详情弹层 ================= */
+        .search-view { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #f4f6f9; z-index: 60; transform: translateY(100%); transition: transform 0.32s ease; }
+        .search-view.active { transform: translateY(0); }
+        .search-top { margin-top: 44px; padding: 16px 14px; display: flex; gap: 10px; align-items: center; background: #fff; }
+        .search-input-wrap { flex: 1; display: flex; align-items: center; gap: 8px; background: #f1f3f6; border-radius: 10px; padding: 10px 12px; color: #999; }
+        .search-input { border: none; outline: none; background: transparent; width: 100%; font-size: 15px; }
+        .search-cancel-btn { border: none; background: transparent; color: #007aff; font-size: 16px; cursor: pointer; }
+        .search-hint { padding: 20px; color: #888; font-size: 14px; }
+        .detail-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.35); backdrop-filter: blur(2px); z-index: 55; opacity: 0; pointer-events: none; transition: opacity 0.25s; }
+        .detail-overlay.active { opacity: 1; pointer-events: auto; }
+        .detail-modal { position: absolute; top: 50%; left: 50%; width: calc(100% - 52px); transform: translate(-50%, -46%) scale(0.95); opacity: 0; background: #fff; border-radius: 16px; padding: 18px; z-index: 56; box-shadow: 0 20px 35px rgba(0,0,0,0.18); pointer-events: none; transition: all 0.25s; }
+        .detail-modal.active { transform: translate(-50%, -50%) scale(1); opacity: 1; pointer-events: auto; }
+        .detail-title { font-size: 18px; font-weight: 700; margin-bottom: 10px; color: #1c1d21; }
+        .detail-desc { color: #5a5d66; line-height: 1.6; font-size: 14px; }
+        .detail-input { width: 100%; border: none; border-radius: 10px; background: #f4f6f9; padding: 10px 12px; font-size: 16px; font-weight: 600; margin-bottom: 10px; outline: none; }
+        .detail-textarea { width: 100%; min-height: 120px; border: none; border-radius: 10px; background: #f4f6f9; padding: 12px; resize: none; outline: none; color: #4a4d55; line-height: 1.6; margin-bottom: 12px; }
+        .detail-actions { display: flex; gap: 10px; }
+        .detail-action-btn { flex: 1; border: none; border-radius: 10px; padding: 10px 0; cursor: pointer; font-size: 14px; font-weight: 600; }
+        .detail-action-btn.save { background: #007aff; color: #fff; }
+        .detail-action-btn.delete { background: #ffe9e8; color: #d93025; }
+
+        .todo-item.swiping { transition: none; }
+        .todo-item.swipe-delete { background: #ffe7e6; }
+        .todo-item.swipe-focus { background: #e6f0ff; }
+
+        .theme-toggle-btn { width: 34px; height: 34px; border: none; border-radius: 50%; background: #eef2f7; color: #333; display: flex; align-items: center; justify-content: center; cursor: pointer; margin-left: auto; }
+
+        .phone-mockup.dark-mode { background: #171b23; color: #edf1f9; }
+        .phone-mockup.dark-mode .page-header,
+        .phone-mockup.dark-mode .calendar-week-scroller,
+        .phone-mockup.dark-mode .filters-bar,
+        .phone-mockup.dark-mode .stats-section,
+        .phone-mockup.dark-mode .settings-list,
+        .phone-mockup.dark-mode .bottom-nav { background: #202633; color: #edf1f9; }
+        .phone-mockup.dark-mode .event-card,
+        .phone-mockup.dark-mode .todo-item,
+        .phone-mockup.dark-mode .note-card,
+        .phone-mockup.dark-mode .bottom-sheet,
+        .phone-mockup.dark-mode .detail-modal { background: #293142; color: #edf1f9; box-shadow: 0 8px 20px rgba(0,0,0,0.24); }
+        .phone-mockup.dark-mode .todo-text,
+        .phone-mockup.dark-mode .setting-item,
+        .phone-mockup.dark-mode .section-title,
+        .phone-mockup.dark-mode .header-title,
+        .phone-mockup.dark-mode .detail-title,
+        .phone-mockup.dark-mode .detail-desc { color: #edf1f9; }
+        .phone-mockup.dark-mode .sheet-input,
+        .phone-mockup.dark-mode .sheet-textarea,
+        .phone-mockup.dark-mode .detail-input,
+        .phone-mockup.dark-mode .detail-textarea,
+        .phone-mockup.dark-mode .search-input-wrap,
+        .phone-mockup.dark-mode .category-item,
+        .phone-mockup.dark-mode .filter-chip,
+        .phone-mockup.dark-mode .header-search-btn,
+        .phone-mockup.dark-mode .theme-toggle-btn,
+        .phone-mockup.dark-mode .category-manage-btn { background: #374258; color: #edf1f9; }
+        .phone-mockup.dark-mode .filter-chip.active { background: #4a8dff; color: #fff; }
+        .phone-mockup.dark-mode .search-view { background: #171b23; }
+        .phone-mockup.dark-mode .search-top { background: #202633; }
+
+        /* ================= 沉浸式番茄钟 ================= */
+        .pomodoro-fullscreen { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #2f3542; z-index: 30; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .pomodoro-fullscreen.active { transform: translateY(0); }
+        .pomo-close { position: absolute; top: 50px; left: 20px; font-size: 24px; color: rgba(255,255,255,0.6); cursor: pointer; }
+        .pomo-task { background: rgba(255,255,255,0.1); padding: 8px 20px; border-radius: 20px; margin-bottom: 40px; font-size: 14px; }
+        .pomo-progress-wrap { width: 238px; height: 238px; position: relative; margin-bottom: 55px; display: flex; align-items: center; justify-content: center; }
+        .pomo-progress-ring { position: absolute; inset: 0; transform: rotate(-90deg); }
+        .pomo-track { fill: none; stroke: rgba(255,255,255,0.16); stroke-width: 8; }
+        .pomo-progress { fill: none; stroke: #ff6b81; stroke-width: 8; stroke-linecap: round; transition: stroke-dashoffset 0.3s linear; }
+        .pomo-timer { font-size: 72px; font-weight: 200; font-variant-numeric: tabular-nums; }
+        .pomo-controls { display: flex; gap: 30px; align-items: center; }
+        .pomo-btn { width: 70px; height: 70px; border-radius: 50%; background: #ff4757; display: flex; justify-content: center; align-items: center; font-size: 24px; box-shadow: 0 10px 20px rgba(255,71,87,0.3); cursor: pointer; }
+        .pomo-noise { width: 50px; height: 50px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; justify-content: center; align-items: center; font-size: 20px; cursor: pointer; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body>
+
+<div class="phone-mockup">
+    <!-- 模拟状态栏 -->
+    <div class="status-bar">
+        <span>09:41</span>
+        <div class="dynamic-island"></div>
+        <div class="status-icons"><i class="fa-solid fa-signal"></i> <i class="fa-solid fa-wifi"></i> <i class="fa-solid fa-battery-full"></i></div>
+    </div>
+
+    <!-- 全局遮罩层 (用于菜单和弹窗) -->
+    <div class="fab-overlay" id="fab-overlay" onclick="closeAll()"></div>
+    <div class="detail-overlay" id="detail-overlay" onclick="closeDetail()"></div>
+    <div class="detail-modal" id="detail-modal">
+        <div class="detail-title">详情编辑</div>
+        <input id="detail-title-input" class="detail-input" type="text" placeholder="标题">
+        <textarea id="detail-desc-input" class="detail-textarea" placeholder="详情描述"></textarea>
+        <div class="detail-actions">
+            <button class="detail-action-btn save" onclick="saveDetailEdit()">保存</button>
+            <button class="detail-action-btn delete" onclick="deleteCurrentDetail()"><i class="fa-regular fa-trash-can"></i> 删除</button>
+        </div>
+    </div>
+
+    <div class="search-view" id="search-view">
+        <div class="search-top">
+            <div class="search-input-wrap">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input id="search-input" class="search-input" type="text" placeholder="搜索日程、待办或闪记">
+            </div>
+            <button class="search-cancel-btn" onclick="closeSearch()">取消</button>
+        </div>
+        <div class="search-hint" id="search-hint">请输入关键词开始搜索</div>
+    </div>
+
+    <!-- ================= Tab 1: 规划 ================= -->
+    <div id="tab-plan" class="tab-content active">
+        <div class="page-header">
+            <div class="header-row">
+                <span class="header-title">日程规划</span>
+                <button class="header-search-btn" onclick="openSearch('plan')"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </div>
+        <div class="calendar-week-scroller" id="calendar-scroller">
+            <div class="calendar-week" data-week-index="-1">
+                <div class="cal-day"><span>一</span><span class="date">5</span></div>
+                <div class="cal-day"><span>二</span><span class="date">6</span></div>
+                <div class="cal-day"><span>三</span><span class="date">7</span></div>
+                <div class="cal-day"><span>四</span><span class="date">8</span></div>
+                <div class="cal-day"><span>五</span><span class="date">9</span></div>
+                <div class="cal-day"><span>六</span><span class="date">10</span></div>
+                <div class="cal-day"><span>日</span><span class="date">11</span></div>
+            </div>
+            <div class="calendar-week" data-week-index="0">
+                <div class="cal-day"><span>一</span><span class="date">12</span></div>
+                <div class="cal-day"><span>二</span><span class="date">13</span></div>
+                <div class="cal-day active"><span>三</span><span class="date">14</span></div>
+                <div class="cal-day"><span>四</span><span class="date">15</span></div>
+                <div class="cal-day"><span>五</span><span class="date">16</span></div>
+                <div class="cal-day"><span>六</span><span class="date">17</span></div>
+                <div class="cal-day"><span>日</span><span class="date">18</span></div>
+            </div>
+            <div class="calendar-week" data-week-index="1">
+                <div class="cal-day"><span>一</span><span class="date">19</span></div>
+                <div class="cal-day"><span>二</span><span class="date">20</span></div>
+                <div class="cal-day"><span>三</span><span class="date">21</span></div>
+                <div class="cal-day"><span>四</span><span class="date">22</span></div>
+                <div class="cal-day"><span>五</span><span class="date">23</span></div>
+                <div class="cal-day"><span>六</span><span class="date">24</span></div>
+                <div class="cal-day"><span>日</span><span class="date">25</span></div>
+            </div>
+        </div>
+        <div class="timeline">
+            <div class="time-block">
+                <div class="time-label">08:00</div>
+                <div class="event-card course" onclick="openDetail(this, 'plan', '高等数学（课程）', '时间：08:00 - 09:40\n地点：东下院 102\n备注：带上作业本并预习下一章内容。')">
+                    <div style="font-weight: bold; margin-bottom: 4px;">高等数学 (课程)</div>
+                    <div style="font-size: 12px; color: #888;"><i class="fa fa-location-dot"></i> 东下院 102</div>
+                </div>
+            </div>
+            <div class="time-block">
+                <div class="time-label">10:30</div>
+                <div class="event-card" onclick="openDetail(this, 'plan', '小组项目讨论会', '时间：10:30 - 11:30\n地点：图书馆研讨间\n议题：确定数据库设计与接口分工。')">
+                    <div style="font-weight: bold; margin-bottom: 4px;">小组项目讨论会</div>
+                    <div style="font-size: 12px; color: #888;"><i class="fa fa-clock"></i> 10:30 - 11:30</div>
+                </div>
+            </div>
+            <div class="time-block">
+                <div class="time-label">14:00</div>
+                <div class="event-card course" onclick="openDetail(this, 'plan', '操作系统原理', '时间：14:00 - 15:40\n地点：软件楼 201\n备注：课堂测验，提前 10 分钟到达。')">
+                    <div style="font-weight: bold; margin-bottom: 4px;">操作系统原理</div>
+                    <div style="font-size: 12px; color: #888;"><i class="fa fa-location-dot"></i> 软件楼 201</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= Tab 2: 待办 ================= -->
+    <div id="tab-todo" class="tab-content">
+        <div class="page-header">
+            <div class="header-row">
+                <span class="header-title">待办事项</span>
+                <button class="header-search-btn" onclick="openSearch('todo')"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </div>
+        <div class="filters-bar">
+            <div class="filters" id="todo-filters">
+                <div class="filter-chip active">全部</div>
+                <div class="filter-chip">今天</div>
+                <div class="filter-chip">学习</div>
+                <div class="filter-chip">生活</div>
+            </div>
+            <button class="category-manage-btn" onclick="openSheet('category-sheet')"><i class="fa-solid fa-sliders"></i></button>
+        </div>
+        <div class="todo-list">
+            <div class="todo-item" data-detail-desc="分类：学习&#10;截止：今天 21:00&#10;建议：先完成目录结构，再补充流程图。" onclick="openDetail(this, 'todo', '完成 ArkTS 需求文档', this.dataset.detailDesc)">
+                <div class="todo-left">
+                    <div class="checkbox"></div>
+                    <div>
+                        <div class="todo-text">完成 ArkTS 需求文档</div>
+                        <div class="todo-tag">学习</div>
+                    </div>
+                </div>
+                <div class="swipe-hint">右滑专注 <i class="fa-solid fa-chevron-right"></i></div>
+            </div>
+            <div class="todo-item" data-detail-desc="分类：生活&#10;截止：今天 18:00&#10;提醒：带好取件码。" onclick="openDetail(this, 'todo', '去菜鸟驿站拿快递', this.dataset.detailDesc)">
+                <div class="todo-left">
+                    <div class="checkbox"></div>
+                    <div>
+                        <div class="todo-text">去菜鸟驿站拿快递</div>
+                        <div class="todo-tag" style="background: #fce8e6; color: #d93025;">生活</div>
+                    </div>
+                </div>
+                <div class="swipe-hint">右滑专注 <i class="fa-solid fa-chevron-right"></i></div>
+            </div>
+            <div class="todo-item" style="opacity: 0.5;" data-detail-desc="状态：已完成&#10;完成时间：昨天 22:30" onclick="openDetail(this, 'todo', '阅读论文引用部分', this.dataset.detailDesc)">
+                <div class="todo-left">
+                    <div class="checkbox" style="background:#ccc; border-color:#ccc;"></div>
+                    <div>
+                        <div class="todo-text" style="text-decoration: line-through;">阅读论文引用部分</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= Tab 4: 闪记 ================= -->
+    <div id="tab-ideas" class="tab-content">
+        <div class="page-header">
+            <div class="header-row">
+                <span class="header-title">闪念笔记</span>
+                <button class="header-search-btn" onclick="openSearch('ideas')"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </div>
+        <div class="hitokoto-card">
+            "普通人改变结果，优秀的人改变原因，顶级优秀的人改变模型。" <br><span style="font-size: 12px; float: right; margin-top: 10px;">—— 刘润</span>
+        </div>
+        <div class="note-list">
+            <div class="note-card" onclick="openDetail(this, 'idea', '想法', '日程与待办分离后，可以把 todo 拖进时间轴，这样更符合时间块管理法。\n后续可加：拖拽手势与冲突检测。')">
+                <strong>💡 想法</strong><br>
+                日程与待办分离的想法很好，UI上把todo拖进时间轴里，这就是时间块管理法！
+            </div>
+            <div class="note-card" onclick="openDetail(this, 'idea', '会议记录', '本周先实现基础 CRUD，再补充提醒与统计模块。')">
+                <strong>📝 会议记录</strong><br>
+                本周先实现基础 CRUD，再补充提醒与统计模块。目标是周五前可演示。
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= Tab 5: 我的 ================= -->
+    <div id="tab-me" class="tab-content">
+        <div class="page-header" style="display: flex; align-items: center; gap: 15px;">
+            <img src="https://api.dicebear.com/7.x/notionists/svg?seed=Felix" alt="avatar" style="width:50px; height:50px; background:#eee; border-radius:50%;">
+            <div>
+                <div style="font-size: 20px;">开发者小明</div>
+                <div style="font-size: 12px; color: #888; font-weight: normal;">已专注 42 小时</div>
+            </div>
+            <button class="theme-toggle-btn" onclick="toggleTheme()"><i class="fa-solid fa-moon" id="theme-icon"></i></button>
+        </div>
+
+        <div class="stats-section">
+            <div class="section-title"><i class="fa-solid fa-fire" style="color:#ff9500;"></i> 活跃热力图</div>
+            <div class="heatmap" id="heatmap-container">
+                <!-- JS 动态生成 -->
+            </div>
+        </div>
+
+        <div class="stats-section">
+            <div class="section-title"><i class="fa-solid fa-chart-column" style="color:#007aff;"></i> 本周专注时长</div>
+            <canvas id="focusChart" height="150"></canvas>
+        </div>
+
+        <div class="settings-list">
+            <div class="setting-item">
+                <span><i class="fa-solid fa-bell" style="width:25px; color:#888;"></i> 课前提醒通知</span>
+                <i class="fa-solid fa-toggle-on" style="color:#34c759; font-size: 20px;"></i>
+            </div>
+            <div class="setting-item">
+                <span><i class="fa-solid fa-calendar-plus" style="width:25px; color:#888;"></i> 导入日程</span>
+                <i class="fa-solid fa-chevron-right" style="color:#ccc;"></i>
+            </div>
+            <div class="setting-item">
+                <span><i class="fa-solid fa-cloud-arrow-down" style="width:25px; color:#888;"></i> 导出本地数据</span>
+                <i class="fa-solid fa-chevron-right" style="color:#ccc;"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= 动态全局悬浮按钮 (Dynamic FAB) ================= -->
+    <div class="global-fab-container" id="global-fab">
+        <button class="today-fab" id="today-fab" onclick="scrollCalendarToToday()"><i class="fa-solid fa-location-crosshairs"></i></button>
+        <!-- 日程页专属展开菜单 -->
+        <!-- <div class="fab-menu" id="fab-menu">
+            <div class="fab-item" onclick="closeAll(); alert('触发：导入 csv');">
+                <div class="fab-label">导入 csv</div>
+                <div class="fab-btn" style="color: #ff9500;"><i class="fa-solid fa-file-csv"></i></div>
+            </div>
+            <div class="fab-item" onclick="closeAll(); alert('触发：导入 ics');">
+                <div class="fab-label">导入 ics</div>
+                <div class="fab-btn" style="color: #007aff;"><i class="fa-solid fa-calendar"></i></div>
+            </div>
+            <div class="fab-item" onclick="closeAll(); alert('触发：打开新建日程页');">
+                <div class="fab-label">添加日程</div>
+                <div class="fab-btn" style="color: #34c759;"><i class="fa-solid fa-calendar-plus"></i></div>
+            </div>
+        </div>
+         -->
+        <!-- 主入口按钮，根据 currentTab 改变行为 -->
+        <div class="main-fab" id="main-fab-btn" onclick="handleFabClick()">
+            <i class="fa-solid fa-plus"></i>
+        </div>
+    </div>
+
+    <!-- ================= 半屏弹窗: 新建日程 (Plan Sheet) ================= -->
+    <div class="bottom-sheet" id="plan-sheet">
+        <div class="sheet-header">
+            <span>新建日程</span>
+            <i class="fa-solid fa-xmark sheet-close" onclick="closeAll()"></i>
+        </div>
+        <input type="text" class="sheet-input" placeholder="日程标题">
+        <input type="text" class="sheet-input" placeholder="时间">
+        <input type="text" class="sheet-input" placeholder="地点">
+        <div class="sheet-submit-btn" style="background:#007aff;" onclick="closeAll()">保存日程</div>
+    </div>
+
+    <!-- ================= 半屏弹窗: 新建待办 (Todo Sheet) ================= -->
+    <div class="bottom-sheet" id="todo-sheet">
+        <div class="sheet-header">
+            <span>新建待办</span>
+            <i class="fa-solid fa-xmark sheet-close" onclick="closeAll()"></i>
+        </div>
+        <input type="text" class="sheet-input" placeholder="准备做什么？">
+        <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+            <div class="filter-chip active">学习</div>
+            <div class="filter-chip">生活</div>
+            <div class="filter-chip">工作</div>
+        </div>
+        <div class="sheet-submit-btn" style="background:#34c759;" onclick="closeAll()">保存待办</div>
+    </div>
+
+    <!-- ================= 半屏弹窗: 记录闪记 (Idea Sheet) ================= -->
+    <div class="bottom-sheet" id="idea-sheet">
+        <div class="sheet-header">
+            <span>记录闪记</span>
+            <i class="fa-solid fa-xmark sheet-close" onclick="closeAll()"></i>
+        </div>
+        <textarea class="sheet-textarea" placeholder="在这里输入思考，支持 Markdown 语法..."></textarea>
+        <div class="sheet-submit-btn" style="background:#af52de;" onclick="closeAll()">发布闪记</div>
+    </div>
+
+    <!-- ================= 半屏弹窗: 分类管理 ================= -->
+    <div class="bottom-sheet" id="category-sheet">
+        <div class="sheet-header">
+            <span>管理分类</span>
+            <i class="fa-solid fa-xmark sheet-close" onclick="closeAll()"></i>
+        </div>
+        <input id="category-input" type="text" class="sheet-input" placeholder="输入新分类名称">
+        <div class="category-list" id="category-list">
+            <div class="category-item"><span>学习</span><button class="category-delete-btn" onclick="removeCategory('学习')">删除</button></div>
+            <div class="category-item"><span>生活</span><button class="category-delete-btn" onclick="removeCategory('生活')">删除</button></div>
+            <div class="category-item"><span>工作</span><button class="category-delete-btn" onclick="removeCategory('工作')">删除</button></div>
+        </div>
+        <div class="sheet-submit-btn" style="background:#1f7ae0;" onclick="addCategory()">新增分类</div>
+    </div>
+
+    <!-- ================= 半屏弹窗: 选择专注待办 ================= -->
+    <div class="bottom-sheet" id="todo-picker-sheet">
+        <div class="sheet-header">
+            <span>选择专注待办</span>
+            <i class="fa-solid fa-xmark sheet-close" onclick="closeAll()"></i>
+        </div>
+        <div class="category-list" id="todo-picker-list"></div>
+    </div>
+
+    <!-- ================= 底部导航栏 ================= -->
+    <div class="bottom-nav">
+        <div class="nav-item active" onclick="switchTab('plan', this)"><i class="fa fa-calendar-days"></i>规划</div>
+        <div class="nav-item" onclick="switchTab('todo', this)"><i class="fa-solid fa-check-double"></i>待办</div>
+        
+        <div class="nav-center-wrapper">
+            <div class="nav-tomato" onclick="togglePomodoro()"><i class="fa-solid fa-leaf"></i></div>
+        </div>
+
+        <div class="nav-item" onclick="switchTab('ideas', this)"><i class="fa fa-lightbulb"></i>闪记</div>
+        <div class="nav-item" onclick="switchTab('me', this)"><i class="fa-solid fa-chart-pie"></i>我的</div>
+    </div>
+
+    <!-- ================= 沉浸式番茄钟 (Tab 3 全屏弹窗) ================= -->
+    <div id="pomodoro-view" class="pomodoro-fullscreen">
+        <i class="fa-solid fa-chevron-down pomo-close" onclick="togglePomodoro()"></i>
+        <div class="pomo-task" onclick="openTodoPicker()" style="cursor: pointer;"><i class="fa-solid fa-tag"></i> <span id="pomo-task-text">完成 ArkTS 需求文档</span></div>
+        <div class="pomo-progress-wrap">
+            <svg class="pomo-progress-ring" viewBox="0 0 238 238">
+                <circle class="pomo-track" cx="119" cy="119" r="104"></circle>
+                <circle class="pomo-progress" id="pomo-progress-circle" cx="119" cy="119" r="104"></circle>
+            </svg>
+            <div class="pomo-timer" id="timer-display">25:00</div>
+        </div>
+        <div class="pomo-controls">
+            <div class="pomo-noise"><i class="fa-solid fa-cloud-rain"></i></div>
+            <div class="pomo-btn" onclick="startTimer()"><i class="fa-solid fa-play" id="play-icon"></i></div>
+            <div class="pomo-noise"><i class="fa-solid fa-music"></i></div>
+        </div>
+        <div style="margin-top: 40px; color: rgba(255,255,255,0.5); font-size: 14px;">"保持专注，心无旁骛"</div>
+    </div>
+</div>
+
+<script>
+    let currentTab = 'plan'; // 记录当前所在的 Tab
+    let lastContentTab = 'plan';
+    let activeSearchScope = 'plan';
+    let currentWeekIndex = 0;
+    const totalPomodoroTime = 25 * 60;
+    let currentDetailTarget = null;
+    let currentDetailType = '';
+    let suppressDetailOpen = false;
+
+    // 初始化日历滑动容器，默认对齐本周
+    const calendarScroller = document.getElementById('calendar-scroller');
+    if (calendarScroller) {
+        requestAnimationFrame(() => {
+            calendarScroller.scrollLeft = calendarScroller.clientWidth;
+        });
+        calendarScroller.addEventListener('scroll', () => {
+            const weekWidth = calendarScroller.clientWidth || 1;
+            const index = Math.round(calendarScroller.scrollLeft / weekWidth) - 1;
+            if (index !== currentWeekIndex) {
+                currentWeekIndex = index;
+                updateTodayFab();
+            }
+        });
+    }
+
+    // Tab 切换逻辑
+    function switchTab(tabId, element) {
+        currentTab = tabId;
+        
+        // 切换视图内容
+        document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+        document.getElementById('tab-' + tabId).classList.add('active');
+        
+        // 切换导航栏高亮
+        document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+        element.classList.add('active');
+
+        // 切换 Tab 时必须关闭所有弹窗/菜单
+        closeAll();
+
+        // 根据 Tab 决定 FAB 的显示/隐藏及颜色
+        const fabContainer = document.getElementById('global-fab');
+        const mainFabBtn = document.getElementById('main-fab-btn');
+        
+        if (tabId === 'me') {
+            fabContainer.style.display = 'none'; // "我的" 页面彻底隐藏 FAB
+        } else {
+            fabContainer.style.display = 'flex';
+            // 顺便让按钮颜色贴合不同页面的主题色 (提升细节体验)
+            if (tabId === 'plan') mainFabBtn.style.background = '#007aff';
+            if (tabId === 'todo') mainFabBtn.style.background = '#34c759';
+            if (tabId === 'ideas') mainFabBtn.style.background = '#af52de';
+        }
+
+        if (tabId === 'plan' || tabId === 'todo' || tabId === 'ideas') {
+            lastContentTab = tabId;
+        }
+        updateTodayFab();
+    }
+
+    // 根据当前 Tab 决定 FAB 点击行为
+    function handleFabClick() {
+        if (currentTab === 'plan') {
+            openSheet('plan-sheet'); 
+            // toggleSpeedDial();
+        } else if (currentTab === 'todo') {
+            openSheet('todo-sheet');
+        } else if (currentTab === 'ideas') {
+            openSheet('idea-sheet');
+        }
+    }
+
+    // 展开/收起日程专属菜单
+    let isFabOpen = false;
+    function toggleSpeedDial() {
+        isFabOpen = !isFabOpen;
+        if (isFabOpen) {
+            document.getElementById('fab-menu').classList.add('active');
+            document.getElementById('main-fab-btn').classList.add('active');
+            document.getElementById('fab-overlay').classList.add('active');
+        } else {
+            closeAll();
+        }
+    }
+
+    // 打开半屏弹窗 (Bottom Sheet)
+    function openSheet(sheetId) {
+        document.getElementById('fab-overlay').classList.add('active');
+        document.getElementById(sheetId).classList.add('active');
+    }
+
+    function openSearch(scope) {
+        activeSearchScope = scope;
+        document.getElementById('search-view').classList.add('active');
+        document.getElementById('search-hint').innerText = `在${scope === 'plan' ? '日程' : scope === 'todo' ? '待办' : '闪记'}中搜索...`;
+        setTimeout(() => document.getElementById('search-input').focus(), 120);
+    }
+
+    function closeSearch() {
+        document.getElementById('search-view').classList.remove('active');
+    }
+
+    function openDetail(target, type, title, desc) {
+        if (suppressDetailOpen) {
+            suppressDetailOpen = false;
+            return;
+        }
+        currentDetailTarget = target;
+        currentDetailType = type;
+        document.getElementById('detail-title-input').value = title;
+        document.getElementById('detail-desc-input').value = desc;
+        document.getElementById('detail-overlay').classList.add('active');
+        document.getElementById('detail-modal').classList.add('active');
+    }
+
+    function closeDetail() {
+        document.getElementById('detail-overlay').classList.remove('active');
+        document.getElementById('detail-modal').classList.remove('active');
+    }
+
+    function saveDetailEdit() {
+        if (!currentDetailTarget) return;
+        const title = document.getElementById('detail-title-input').value.trim();
+        const desc = document.getElementById('detail-desc-input').value.trim();
+        if (currentDetailType === 'plan') {
+            const titleNode = currentDetailTarget.querySelector('div[style*="font-weight: bold"]');
+            if (titleNode && title) titleNode.innerText = title;
+        } else if (currentDetailType === 'todo') {
+            const titleNode = currentDetailTarget.querySelector('.todo-text');
+            if (titleNode && title) titleNode.innerText = title;
+            currentDetailTarget.dataset.detailDesc = desc;
+        } else if (currentDetailType === 'idea') {
+            currentDetailTarget.innerHTML = `<strong>💡 ${title || '未命名闪记'}</strong><br>${desc || '暂无内容'}`;
+        }
+        closeDetail();
+    }
+
+    function deleteCurrentDetail() {
+        if (!currentDetailTarget) return;
+        if (currentDetailType === 'plan') {
+            const block = currentDetailTarget.closest('.time-block');
+            if (block) block.remove();
+        } else if (currentDetailType === 'todo') {
+            currentDetailTarget.remove();
+        } else if (currentDetailType === 'idea') {
+            currentDetailTarget.remove();
+        }
+        closeDetail();
+    }
+
+    function updateTodayFab() {
+        const btn = document.getElementById('today-fab');
+        if (!btn) return;
+        const shouldShow = currentTab === 'plan' && currentWeekIndex !== 0;
+        btn.classList.toggle('show', shouldShow);
+    }
+
+    function scrollCalendarToToday() {
+        if (!calendarScroller) return;
+        calendarScroller.scrollTo({ left: calendarScroller.clientWidth, behavior: 'smooth' });
+        currentWeekIndex = 0;
+        updateTodayFab();
+    }
+
+    function renderCategoryList() {
+        const chips = Array.from(document.querySelectorAll('#todo-filters .filter-chip'))
+            .map(el => el.textContent.trim())
+            .filter(text => !['全部', '今天'].includes(text));
+        const list = document.getElementById('category-list');
+        list.innerHTML = '';
+        chips.forEach(name => {
+            const item = document.createElement('div');
+            item.className = 'category-item';
+            item.innerHTML = `<span>${name}</span><button class="category-delete-btn" onclick="removeCategory('${name}')">删除</button>`;
+            list.appendChild(item);
+        });
+    }
+
+    function addCategory() {
+        const input = document.getElementById('category-input');
+        const value = input.value.trim();
+        if (!value) return;
+        const filters = document.getElementById('todo-filters');
+        const exists = Array.from(filters.querySelectorAll('.filter-chip')).some(el => el.textContent.trim() === value);
+        if (exists) {
+            input.value = '';
+            return;
+        }
+        const chip = document.createElement('div');
+        chip.className = 'filter-chip';
+        chip.textContent = value;
+        filters.appendChild(chip);
+        input.value = '';
+        renderCategoryList();
+    }
+
+    function removeCategory(name) {
+        const filters = document.getElementById('todo-filters');
+        const target = Array.from(filters.querySelectorAll('.filter-chip')).find(el => el.textContent.trim() === name);
+        if (target) target.remove();
+        renderCategoryList();
+    }
+
+    function openTodoPicker() {
+        renderTodoPicker();
+        openSheet('todo-picker-sheet');
+    }
+
+    function renderTodoPicker() {
+        const list = document.getElementById('todo-picker-list');
+        list.innerHTML = '';
+        const todos = Array.from(document.querySelectorAll('#tab-todo .todo-item .todo-text'));
+        todos.forEach(node => {
+            const item = document.createElement('div');
+            item.className = 'category-item';
+            item.innerHTML = `<span>${node.innerText}</span><button class="category-delete-btn" style="color:#007aff">选择</button>`;
+            item.onclick = () => {
+                document.getElementById('pomo-task-text').innerText = node.innerText;
+                closeAll();
+            };
+            list.appendChild(item);
+        });
+    }
+
+    // 关闭所有菜单和弹窗
+    function closeAll() {
+        isFabOpen = false;
+        const fabMenu = document.getElementById('fab-menu');
+        if (fabMenu) fabMenu.classList.remove('active');
+        document.getElementById('main-fab-btn').classList.remove('active');
+        document.getElementById('fab-overlay').classList.remove('active');
+        document.querySelectorAll('.bottom-sheet').forEach(sheet => sheet.classList.remove('active'));
+        closeDetail();
+    }
+
+    // 番茄钟弹窗逻辑
+    function togglePomodoro() { document.getElementById('pomodoro-view').classList.toggle('active'); }
+
+    function openPomodoroWithTodo(todoText) {
+        document.getElementById('pomo-task-text').innerText = todoText;
+        document.getElementById('pomodoro-view').classList.add('active');
+    }
+
+    // 简单的番茄倒计时
+    let isPlaying = false, timerInterval, timeLeft = 25 * 60;
+    function updatePomoProgress() {
+        const circle = document.getElementById('pomo-progress-circle');
+        if (!circle) return;
+        const radius = 104;
+        const circumference = 2 * Math.PI * radius;
+        circle.style.strokeDasharray = `${circumference}`;
+        const progressRatio = Math.max(0, Math.min(1, timeLeft / totalPomodoroTime));
+        circle.style.strokeDashoffset = `${circumference * (1 - progressRatio)}`;
+    }
+
+    function startTimer() {
+        const icon = document.getElementById('play-icon');
+        const display = document.getElementById('timer-display');
+        if (isPlaying) {
+            clearInterval(timerInterval); icon.className = "fa-solid fa-play"; isPlaying = false;
+        } else {
+            icon.className = "fa-solid fa-pause"; isPlaying = true;
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                display.innerText = `${Math.floor(timeLeft/60).toString().padStart(2,'0')}:${(timeLeft%60).toString().padStart(2,'0')}`;
+                updatePomoProgress();
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    isPlaying = false;
+                    icon.className = "fa-solid fa-play";
+                }
+            }, 1000);
+        }
+    }
+
+    function initTodoSwipeInteractions() {
+        const threshold = 95;
+        document.querySelectorAll('#tab-todo .todo-item').forEach(item => {
+            let startX = 0;
+            let deltaX = 0;
+            let dragging = false;
+
+            const onPointerDown = (e) => {
+                if (e.pointerType === 'mouse' && e.button !== 0) return;
+                startX = e.clientX;
+                deltaX = 0;
+                dragging = true;
+                item.classList.add('swiping');
+                item.style.transition = 'none';
+            };
+
+            const onPointerMove = (e) => {
+                if (!dragging) return;
+                deltaX = e.clientX - startX;
+                if (Math.abs(deltaX) > 8) suppressDetailOpen = true;
+                item.style.transform = `translateX(${deltaX}px)`;
+                item.classList.toggle('swipe-focus', deltaX > 20);
+                item.classList.toggle('swipe-delete', deltaX < -20);
+            };
+
+            const onPointerUp = () => {
+                if (!dragging) return;
+                dragging = false;
+                item.classList.remove('swiping');
+                item.style.transition = 'transform 0.2s ease';
+
+                if (deltaX <= -threshold) {
+                    item.style.transform = 'translateX(-140px)';
+                    item.style.opacity = '0';
+                    setTimeout(() => item.remove(), 180);
+                } else if (deltaX >= threshold) {
+                    const todoTextEl = item.querySelector('.todo-text');
+                    const todoText = todoTextEl ? todoTextEl.innerText : '未命名待办';
+                    item.style.transform = 'translateX(120px)';
+                    setTimeout(() => {
+                        item.style.transform = 'translateX(0)';
+                        openPomodoroWithTodo(todoText);
+                    }, 180);
+                } else {
+                    item.style.transform = 'translateX(0)';
+                }
+
+                setTimeout(() => {
+                    item.classList.remove('swipe-focus', 'swipe-delete');
+                }, 220);
+            };
+
+            item.addEventListener('pointerdown', onPointerDown);
+            item.addEventListener('pointermove', onPointerMove);
+            item.addEventListener('pointerup', onPointerUp);
+            item.addEventListener('pointercancel', onPointerUp);
+            item.addEventListener('pointerleave', onPointerUp);
+        });
+    }
+
+    function toggleTheme() {
+        const phone = document.querySelector('.phone-mockup');
+        phone.classList.toggle('dark-mode');
+        const icon = document.getElementById('theme-icon');
+        if (phone.classList.contains('dark-mode')) {
+            icon.className = 'fa-solid fa-sun';
+        } else {
+            icon.className = 'fa-solid fa-moon';
+        }
+    }
+
+    // 生成假的热力图数据 (类似 Github)
+    const heatmapContainer = document.getElementById('heatmap-container');
+    const colors =['#ebedf0', '#9be9a8', '#40c463', '#30a14e', '#216e39'];
+    for(let i=0; i<56; i++) {
+        let cell = document.createElement('div');
+        cell.className = 'heat-cell';
+        // 随机分配颜色模拟热力图
+        let randomColor = colors[Math.floor(Math.random() * (i > 40 ? 5 : 3))]; // 越近的日期绿的概率越大
+        cell.style.backgroundColor = randomColor;
+        heatmapContainer.appendChild(cell);
+    }
+
+    // 初始化 Chart.js 柱状图
+    const ctx = document.getElementById('focusChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels:['一', '二', '三', '四', '五', '六', '日'],
+            datasets:[{
+                label: '专注时长 (小时)',
+                data:[2.5, 3.8, 1.2, 4.5, 3.0, 5.5, 1.0],
+                backgroundColor: '#007aff',
+                borderRadius: 4
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: { y: { beginAtZero: true, grid: { display: false } }, x: { grid: { display: false } } },
+            plugins: { legend: { display: false } }
+        }
+    });
+
+    renderCategoryList();
+    renderTodoPicker();
+    initTodoSwipeInteractions();
+    updateTodayFab();
+    updatePomoProgress();
+</script>
+
+</body>
+</html>
