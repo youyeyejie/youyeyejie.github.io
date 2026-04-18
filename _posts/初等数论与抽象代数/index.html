@@ -22,13 +22,13 @@
     <meta name="description" content="NIS3329 信息安全数学基础2 笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="初等数论与抽象代数">
-<meta property="og:url" content="https://youyeyejie.github.io/_posts/%E5%88%9D%E7%AD%89%E6%95%B0%E8%AE%BA/index.html">
+<meta property="og:url" content="https://youyeyejie.github.io/_posts/%E5%88%9D%E7%AD%89%E6%95%B0%E8%AE%BA%E4%B8%8E%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0/index.html">
 <meta property="og:site_name" content="有野野芥的博客">
 <meta property="og:description" content="NIS3329 信息安全数学基础2 笔记">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis3329.webp">
 <meta property="article:published_time" content="2026-04-16T05:50:03.000Z">
-<meta property="article:modified_time" content="2026-04-16T13:34:17.696Z">
+<meta property="article:modified_time" content="2026-04-18T08:14:41.805Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU">
 <meta property="article:tag" content="抽代">
@@ -481,7 +481,7 @@
         
         
           <!-- compatible with older versions-->
-          131 分钟
+          132 分钟
         
       </span>
     
@@ -621,7 +621,7 @@
     
       
       
-        <a href="/_posts/%E5%88%9D%E7%AD%89%E6%95%B0%E8%AE%BA/" title="初等数论与抽象代数"
+        <a href="/_posts/%E5%88%9D%E7%AD%89%E6%95%B0%E8%AE%BA%E4%B8%8E%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0/" title="初等数论与抽象代数"
            class="list-group-item list-group-item-action
            active">
           <span class="category-post">初等数论与抽象代数</span>
@@ -758,7 +758,7 @@
     
       
       
-        <a href="/_posts/%E5%88%9D%E7%AD%89%E6%95%B0%E8%AE%BA/" title="初等数论与抽象代数"
+        <a href="/_posts/%E5%88%9D%E7%AD%89%E6%95%B0%E8%AE%BA%E4%B8%8E%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0/" title="初等数论与抽象代数"
            class="list-group-item list-group-item-action
            active">
           <span class="category-post">初等数论与抽象代数</span>
@@ -3558,33 +3558,33 @@ Identity, <span class="math inline">\(\exists u,v\in F[x]\)</span> s.t.
 <h3 id="euler-function-and-chinese-remainder-theorem-1">Euler Function
 and Chinese Remainder Theorem</h3>
 <ul>
-<li><p><strong>Def 5.37 Euler Function</strong>: The Euler function
-<span class="math inline">\(\phi_p(m)\)</span> is defined to be the
-number of invertible elements in the ring <span class="math inline">\(\mathbb{Z}_p[x]/(m)\)</span> with <span class="math inline">\(\deg(m) \geq 1\)</span>, i.e. <span class="math display">\[
-  \phi_p(m) = |(\mathbb{Z}_p[x]/(m))^*| = \#\{\bar{r} \in
+<li><p><strong>Def 5.37 Cyclotomic Polynomial (Euler Function)</strong>:
+The Euler function <span class="math inline">\(\Phi_p(m)\)</span> is
+defined to be the number of invertible elements in the ring <span class="math inline">\(\mathbb{Z}_p[x]/(m)\)</span> with <span class="math inline">\(\deg(m) \geq 1\)</span>, i.e. <span class="math display">\[
+  \Phi_p(m) = |(\mathbb{Z}_p[x]/(m))^*| = \#\{\bar{r} \in
 \mathbb{Z}_p[x]/(m) : \gcd(r,m) = 1\}
   \]</span></p>
 <ul>
 <li>When <span class="math inline">\(\deg(\alpha) = 0\)</span>, we
 define <span class="math inline">\(\forall \alpha \in \mathbb{Z}_p^*,
-\phi_p(\alpha) \triangleq 1\)</span>.</li>
+\Phi_p(\alpha) \triangleq 1\)</span>.</li>
 </ul>
 <p>
     </p><div class="fold">
-      <div class="fold-title fold-primary collapsed" data-toggle="collapse" href="#collapse-cf2937b9" role="button" aria-expanded="false" aria-controls="collapse-cf2937b9">
+      <div class="fold-title fold-primary collapsed" data-toggle="collapse" href="#collapse-91654cc7" role="button" aria-expanded="false" aria-controls="collapse-91654cc7">
         <div class="fold-arrow">▶</div>Example
       </div>
-      <div class="fold-collapse collapse" id="collapse-cf2937b9">
+      <div class="fold-collapse collapse" id="collapse-91654cc7">
         <div class="fold-content">
           <ol type="1">
-<li>To compute <span class="math inline">\(\phi_2(x)\)</span>, consider
+<li>To compute <span class="math inline">\(\Phi_2(x)\)</span>, consider
 the ring <span class="math display">\[
 \mathbb{Z}_2[x]/(x) = \{\bar{r}: \deg(r) &lt; 1\} = \{\bar{a}: a \in
 \mathbb{Z}_2\} = \{\bar{0}, \bar{1}\}
 \]</span> Thus <span class="math display">\[
 (\mathbb{Z}_2[x]/(x))^* = \{\bar{1}\}
-\]</span> Thus <span class="math inline">\(\phi_2(x) = 1\)</span>.</li>
-<li>To compute <span class="math inline">\(\phi_2(x^3)\)</span>,
+\]</span> Thus <span class="math inline">\(\Phi_2(x) = 1\)</span>.</li>
+<li>To compute <span class="math inline">\(\Phi_2(x^3)\)</span>,
 consider the ring <span class="math display">\[
 \mathbb{Z}_2[x]/(x^3) = \{\bar{r}: \deg(r) &lt; 3\} = \{\overline{a + bx
 + cx^2}: a,b,c \in \mathbb{Z}_2\}
@@ -3594,7 +3594,7 @@ consider the ring <span class="math display">\[
 \gcd(r,x^3) = 1\} \\
 &amp;= \{\overline{1 + bx + cx^2}: b,c \in \mathbb{Z}_2\}
 \end{aligned}
-\]</span> Thus <span class="math inline">\(\phi_2(x^3) =
+\]</span> Thus <span class="math inline">\(\Phi_2(x^3) =
 4\)</span>.</li>
 </ol>
         </div>
@@ -3616,44 +3616,44 @@ m_i\)</span>.</p></li>
 <li><p><strong>Thm 5.39 Properties of Euler Function</strong>: Let <span class="math inline">\(m,n,d\in \mathbb{Z}_p[x]\)</span></p>
 <ol type="1">
 <li>If <span class="math inline">\(\gcd(m,n) = 1\)</span>, then <span class="math display">\[
-\phi_p(mn) = \phi_p(m) \cdot \phi_p(n)
+\Phi_p(mn) = \Phi_p(m) \cdot \Phi_p(n)
 \]</span></li>
 <li>If <span class="math inline">\(q(x)\)</span> is an irreducible
 polynomial, then <span class="math display">\[
 \begin{aligned}
-\phi_p(q^n) &amp;= p^{(n-1)\deg(q)} (p^{\deg(q)} - 1) \\
+\Phi_p(q^n) &amp;= p^{(n-1)\deg(q)} (p^{\deg(q)} - 1) \\
 &amp;= p^{n\deg(q)} \left(1 - \frac{1}{p^{\deg(q)}}\right)
 \end{aligned}
 \]</span>
 <ul>
 <li>In particular, <span class="math inline">\(q\)</span> irreducible
-<span class="math inline">\(\implies \phi_p(q) = p^{\deg(q)} -
+<span class="math inline">\(\implies \Phi_p(q) = p^{\deg(q)} -
 1\)</span>.</li>
 </ul></li>
 <li>For any polynomial <span class="math inline">\(m\)</span>, we have
 <span class="math display">\[
-\phi_p(m) = p^{\deg(m)} \prod_{q\mid m, \atop q \text{ monic
+\Phi_p(m) = p^{\deg(m)} \prod_{q\mid m, \atop q \text{ monic
 irreducible}} \left(1 - \frac{1}{p^{\deg(q)}}\right)
 \]</span>
 <ul>
 <li>In prticular, <span class="math inline">\(\deg(m) = 1 \implies
-\phi_p(m) = p - 1\)</span>.</li>
+\Phi_p(m) = p - 1\)</span>.</li>
 </ul></li>
 </ol>
 <p>
     </p><div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-a89765d0" role="button" aria-expanded="false" aria-controls="collapse-a89765d0">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-27675956" role="button" aria-expanded="false" aria-controls="collapse-27675956">
         <div class="fold-arrow">▶</div>Proof
       </div>
-      <div class="fold-collapse collapse" id="collapse-a89765d0">
+      <div class="fold-collapse collapse" id="collapse-27675956">
         <div class="fold-content">
           <ol type="1">
 <li>If <span class="math inline">\(m\in \mathbb{Z}_p^*\)</span>, then
-<span class="math inline">\(\phi_p(mn) = \phi_p(n) = \phi_p(m) \cdot
-\phi_p(n)\)</span>, thus we assume that <span class="math inline">\(\deg(m) \geq 1, \deg(n) \geq 1\)</span>.
+<span class="math inline">\(\Phi_p(mn) = \Phi_p(n) = \Phi_p(m) \cdot
+\Phi_p(n)\)</span>, thus we assume that <span class="math inline">\(\deg(m) \geq 1, \deg(n) \geq 1\)</span>.
 <ul>
-<li>Since <span class="math inline">\(\phi_p(mn) =
-|(\mathbb{Z}_p[x]/(mn))^*|\)</span> and <span class="math inline">\(\phi_p(m)\phi_p(n) = |(\mathbb{Z}_p[x]/(m))^*
+<li>Since <span class="math inline">\(\Phi_p(mn) =
+|(\mathbb{Z}_p[x]/(mn))^*|\)</span> and <span class="math inline">\(\Phi_p(m)\Phi_p(n) = |(\mathbb{Z}_p[x]/(m))^*
 \times (\mathbb{Z}_p[x]/(n))^*|\)</span>, it is sufficient to show that
 there is a bijection between <span class="math inline">\((\mathbb{Z}_p[x]/(mn))^*\)</span> and <span class="math inline">\((\mathbb{Z}_p[x]/(m))^* \times
 (\mathbb{Z}_p[x]/(n))^*\)</span>.</li>
@@ -3665,8 +3665,8 @@ there is a bijection between <span class="math inline">\((\mathbb{Z}_p[x]/(mn))^
   \end{aligned}
   \]</span> It is easy to prove that <span class="math inline">\(\varphi\)</span> is well-defined and is a ring
 isomorphism, thus <span class="math inline">\(\varphi\)</span> is a
-bijection, thus <span class="math inline">\(\phi_p(mn) = \phi_p(m) \cdot
-\phi_p(n)\)</span>.</li>
+bijection, thus <span class="math inline">\(\Phi_p(mn) = \Phi_p(m) \cdot
+\Phi_p(n)\)</span>.</li>
 </ul></li>
 <li>Consider the set <span class="math display">\[
 \begin{aligned}
@@ -3683,7 +3683,7 @@ S &amp;= (\mathbb{Z}_p[x]/(q^n)) \backslash (\mathbb{Z}_p[x]/(q^n))^* =
 \]</span> Thus <span class="math inline">\(|S| =
 p^{(n-1)\deg(q)}\)</span>, thus <span class="math display">\[
 \begin{aligned}
-\phi_p(q^n) &amp;= |\mathbb{Z}_p[x]/(q^n)| - |S| \\
+\Phi_p(q^n) &amp;= |\mathbb{Z}_p[x]/(q^n)| - |S| \\
 &amp;= p^{n\deg(q)} - p^{(n-1)\deg(q)} \\
 &amp;= p^{n\deg(q)} \left(1 - \frac{1}{p^{\deg(q)}}\right)
 \end{aligned}
@@ -3693,7 +3693,7 @@ q_i^{e_i}\)</span> be the standard factorization of <span class="math inline">\(
 \mathbb{Z}_p^*\)</span> is the leading coefficient of <span class="math inline">\(m\)</span>, <span class="math inline">\(q_i\)</span> are monic irreducible polynomials,
 then <span class="math display">\[
 \begin{aligned}
-\phi_p(m) &amp;= \prod_{i=1}^t \phi_p(q_i^{e_i}) \\
+\Phi_p(m) &amp;= \prod_{i=1}^t \Phi_p(q_i^{e_i}) \\
 &amp;= \prod_{i=1}^t p^{e_i \deg(q_i)} \left(1 -
 \frac{1}{p^{\deg(q_i)}}\right) \\
 &amp;= p^{\deg(m)} \prod_{i=1}^t \left(1 -
@@ -3704,14 +3704,14 @@ then <span class="math display">\[
         </div>
       </div>
     </div><p></p></li>
-<li><p><strong>Thm 5.40</strong>: <span class="math display">\[\sum_{d\mid m, \atop d \text{ monic}} \phi_p(d) =
+<li><p><strong>Thm 5.40</strong>: <span class="math display">\[\sum_{d\mid m, \atop d \text{ monic}} \Phi_p(d) =
 p^{\deg(m)}\]</span></p>
 <p>
     </p><div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-c4105b14" role="button" aria-expanded="false" aria-controls="collapse-c4105b14">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-3f41a9bd" role="button" aria-expanded="false" aria-controls="collapse-3f41a9bd">
         <div class="fold-arrow">▶</div>Proof
       </div>
-      <div class="fold-collapse collapse" id="collapse-c4105b14">
+      <div class="fold-collapse collapse" id="collapse-3f41a9bd">
         <div class="fold-content">
           <ul>
 <li>Let <span class="math inline">\(m = \alpha \cdot \prod_{i=1}^t
@@ -3720,10 +3720,10 @@ q_i^{e_i}\)</span> be the standard factorization of <span class="math inline">\(
 then <span class="math inline">\(d = \prod_{i=1}^t q_i^{k_i}, 0 \leq k_i
 \leq e_i\)</span> is a monic divisor of <span class="math inline">\(m\)</span>, thus <span class="math display">\[
   \begin{aligned}
-  \sum_{d\mid m, \atop d \text{ monic}} \phi_p(d) &amp;= \sum_{0\leq k_i
-\leq e_i} \phi_p\left(\prod_{i=1}^t q_i^{k_i}\right) \\
-  &amp;= \sum_{0\leq k_i \leq e_i} \prod_{i=1}^t \phi_p(q_i^{k_i}) \\
-  &amp;= \prod_{i=1}^t \left(\sum_{k_i=0}^{e_i} \phi_p(q_i^{k_i})\right)
+  \sum_{d\mid m, \atop d \text{ monic}} \Phi_p(d) &amp;= \sum_{0\leq k_i
+\leq e_i} \Phi_p\left(\prod_{i=1}^t q_i^{k_i}\right) \\
+  &amp;= \sum_{0\leq k_i \leq e_i} \prod_{i=1}^t \Phi_p(q_i^{k_i}) \\
+  &amp;= \prod_{i=1}^t \left(\sum_{k_i=0}^{e_i} \Phi_p(q_i^{k_i})\right)
 \\
   &amp;= \prod_{i=1}^t \left(\sum_{k_i=0}^{e_i} \left(p^{k_i \deg(q_i)}
 - p^{(k_i-1) \deg(q_i)}\right)\right) \\
@@ -3736,19 +3736,19 @@ then <span class="math inline">\(d = \prod_{i=1}^t q_i^{k_i}, 0 \leq k_i
       </div>
     </div><p></p></li>
 </ul>
-<h3 id="primitive-elements">Primitive Elements</h3>
+<h2 id="primitive-elements">Primitive Elements</h2>
 <ul>
 <li><p><strong>Thm 5.41</strong>: <span class="math inline">\(\gcd(a,m)
-= 1 \implies a^{\phi_p(m)} \equiv 1 \pmod m\)</span></p>
+= 1 \implies a^{\Phi_p(m)} \equiv 1 \pmod m\)</span></p>
 <p>
     </p><div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-c5ac0f6c" role="button" aria-expanded="false" aria-controls="collapse-c5ac0f6c">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-40344259" role="button" aria-expanded="false" aria-controls="collapse-40344259">
         <div class="fold-arrow">▶</div>Proof
       </div>
-      <div class="fold-collapse collapse" id="collapse-c5ac0f6c">
+      <div class="fold-collapse collapse" id="collapse-40344259">
         <div class="fold-content">
           <ul>
-<li>Let <span class="math inline">\(l = \phi_p(m)\)</span>, then we can
+<li>Let <span class="math inline">\(l = \Phi_p(m)\)</span>, then we can
 label the elements of <span class="math inline">\((\mathbb{Z}_p[x]/(m))^*\)</span> by <span class="math inline">\(\{\bar{r}_1, \bar{r}_2, \cdots,
 \bar{r}_l\}\)</span> with <span class="math inline">\(\bar{r}_1 =
 \bar{a}\)</span>. Consider the set <span class="math inline">\(S =
@@ -3756,7 +3756,7 @@ label the elements of <span class="math inline">\((\mathbb{Z}_p[x]/(m))^*\)</spa
 \cdot \bar{r}_l\}\)</span>, then <span class="math inline">\(S =
 (\mathbb{Z}_p[x]/(m))^*\)</span>, thus <span class="math inline">\(\prod_{i=1}^l \bar{r}_i = \prod_{i=1}^l (\bar{a}
 \cdot \bar{r}_i) = \bar{a}^l \cdot \prod_{i=1}^l \bar{r}_i\)</span>,
-thus <span class="math inline">\(\bar{a}^l = 1\)</span>, thus <span class="math inline">\(a^{\phi_p(m)} \equiv 1 \pmod m\)</span>.</li>
+thus <span class="math inline">\(\bar{a}^l = 1\)</span>, thus <span class="math inline">\(a^{\Phi_p(m)} \equiv 1 \pmod m\)</span>.</li>
 </ul>
         </div>
       </div>
@@ -3779,26 +3779,26 @@ integer <span class="math inline">\(k\)</span> s.t. <span class="math display">\
 </ol></li>
 <li><p><strong>Def 5.44 Primitive Element</strong>: An element <span class="math inline">\(g \in F[x]\)</span> with <span class="math inline">\(\gcd(g,m) = 1\)</span> is called a primitive
 element modulo <span class="math inline">\(m\)</span> if <span class="math display">\[
-  \mathrm{ord}_m(g) = \phi_p(m)
+  \mathrm{ord}_m(g) = \Phi_p(m)
   \]</span></p></li>
 <li><p><strong>Thm 5.45</strong>: Let <span class="math inline">\(m \in
 \mathbb{Z}_p[x]\)</span> with <span class="math inline">\(\deg(m) \geq
-1\)</span>, if there exists a primitive element modulo <span class="math inline">\(m\)</span>, then there are exactly <span class="math inline">\(\varphi(\phi_p(m))\)</span> primitive elements
+1\)</span>, if there exists a primitive element modulo <span class="math inline">\(m\)</span>, then there are exactly <span class="math inline">\(\varphi(\Phi_p(m))\)</span> primitive elements
 modulo <span class="math inline">\(m\)</span>.</p>
 <p>
     </p><div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-da8d5224" role="button" aria-expanded="false" aria-controls="collapse-da8d5224">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-ba814dac" role="button" aria-expanded="false" aria-controls="collapse-ba814dac">
         <div class="fold-arrow">▶</div>Proof
       </div>
-      <div class="fold-collapse collapse" id="collapse-da8d5224">
+      <div class="fold-collapse collapse" id="collapse-ba814dac">
         <div class="fold-content">
           <ul>
 <li>Let <span class="math inline">\(g\)</span> be a primitive element
 modulo <span class="math inline">\(m\)</span>, then <span class="math inline">\((\mathbb{Z}_p[x]/(m))^* = \{\bar{g}^0, \bar{g}^1,
-\cdots, \bar{g}^{\phi_p(m)-1}\}\)</span>, thus <span class="math inline">\(\bar{g}^k\)</span> is a primitive element modulo
+\cdots, \bar{g}^{\Phi_p(m)-1}\}\)</span>, thus <span class="math inline">\(\bar{g}^k\)</span> is a primitive element modulo
 <span class="math inline">\(m \iff \mathrm{ord}_m(\bar{g}^k) =
-\frac{\phi_p(m)}{\gcd(\phi_p(m), k)} = \phi_p(m) \iff \gcd(\phi_p(m), k)
-= 1\)</span>, thus there are exactly <span class="math inline">\(\varphi(\phi_p(m))\)</span> primitive elements
+\frac{\Phi_p(m)}{\gcd(\Phi_p(m), k)} = \Phi_p(m) \iff \gcd(\Phi_p(m), k)
+= 1\)</span>, thus there are exactly <span class="math inline">\(\varphi(\Phi_p(m))\)</span> primitive elements
 modulo <span class="math inline">\(m\)</span>.</li>
 </ul>
         </div>
@@ -3835,13 +3835,13 @@ contradiction.</li>
 primitive element modulo <span class="math inline">\(q\)</span>.</p>
 <p>
     </p><div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-6ffd6517" role="button" aria-expanded="false" aria-controls="collapse-6ffd6517">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-31f2c7c4" role="button" aria-expanded="false" aria-controls="collapse-31f2c7c4">
         <div class="fold-arrow">▶</div>Proof structure
       </div>
-      <div class="fold-collapse collapse" id="collapse-6ffd6517">
+      <div class="fold-collapse collapse" id="collapse-31f2c7c4">
         <div class="fold-content">
           <ol type="1">
-<li>Factorize <span class="math inline">\(\phi_p(q) = p^{\deg(q)} - 1 =
+<li>Factorize <span class="math inline">\(\Phi_p(q) = p^{\deg(q)} - 1 =
 \prod_{i=1}^t p_i^{e_i}\)</span></li>
 <li>Find <span class="math inline">\(g_i\)</span> s.t. <span class="math inline">\(\mathrm{ord}_q(g_i) = p_i^{e_i}\)</span> for each
 <span class="math inline">\(i\)</span>.</li>
@@ -3860,22 +3860,22 @@ element modulo <span class="math inline">\(q^k \iff\)</span></p>
 </ol>
 <p>
     </p><div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-8b0a8ab6" role="button" aria-expanded="false" aria-controls="collapse-8b0a8ab6">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-714793c6" role="button" aria-expanded="false" aria-controls="collapse-714793c6">
         <div class="fold-arrow">▶</div>Proof
       </div>
-      <div class="fold-collapse collapse" id="collapse-8b0a8ab6">
+      <div class="fold-collapse collapse" id="collapse-714793c6">
         <div class="fold-content">
           <ul>
 <li><span class="math inline">\(\impliedby\)</span>:
 <ol type="1">
 <li><span class="math inline">\(k=2\)</span>: Let <span class="math inline">\(g\in \mathbb{Z}_p[x]\)</span> be a primitive
-element modulo <span class="math inline">\(q\)</span>, then <span class="math inline">\(\mathrm{ord}_q(g) = \phi_p(q) = p^{\deg(q)} - 1 =
+element modulo <span class="math inline">\(q\)</span>, then <span class="math inline">\(\mathrm{ord}_q(g) = \Phi_p(q) = p^{\deg(q)} - 1 =
 p - 1\)</span>. Then we have: <span class="math display">\[
 \begin{aligned}
 &amp; g^{\mathrm{ord}_{q^2}(g)} \equiv 1 \pmod{q^2} \\
 \implies &amp; g^{\mathrm{ord}_{q^2}(g)} \equiv 1 \pmod{q} \\
-\implies &amp; p - 1 = \phi_p(q) \mid \mathrm{ord}_{q^2}(g) \mid
-\phi_p(q^2) = p(p - 1) \\
+\implies &amp; p - 1 = \Phi_p(q) \mid \mathrm{ord}_{q^2}(g) \mid
+\Phi_p(q^2) = p(p - 1) \\
 \end{aligned}
 \]</span>
 <ul>
@@ -3902,7 +3902,7 @@ modulo <span class="math inline">\(q^2\)</span>.</li>
 element modulo <span class="math inline">\(q^2\)</span>, then <span class="math display">\[
 \begin{aligned}
 2 = p(p-1) = \mathrm{ord}_{q^2}(g) \mid \mathrm{ord}_{q^3}(g) \mid
-\phi_2(q^3) = p^2(p-1) = 4
+\Phi_2(q^3) = p^2(p-1) = 4
 \end{aligned}
 \]</span> Thus <span class="math inline">\(\mathrm{ord}_{q^3}(g) =
 2\)</span> or <span class="math inline">\(4\)</span>. Suppose <span class="math inline">\(\mathrm{ord}_{q^3}(g) = 2\)</span>, thus <span class="math display">\[
@@ -3914,19 +3914,19 @@ element modulo <span class="math inline">\(q^2\)</span>, then <span class="math 
 \]</span> Thus <span class="math inline">\(\mathrm{ord}_{q^2}(g) =
 1\)</span>, contradiction, thus <span class="math inline">\(\mathrm{ord}_{q^3}(g) = 4\)</span>, thus <span class="math inline">\(g\)</span> is a primitive element modulo <span class="math inline">\(q^3\)</span>.</li>
 </ol></li>
-<li><span class="math inline">\(\implies\)</span>: We have <span class="math inline">\(\phi_p(q^k) = (p^d - 1) \cdot p^{(k-1)d}\)</span>
-with <span class="math inline">\(d = \deg(q)\)</span>. Let <span class="math inline">\(g\)</span> be a primitive element modulo <span class="math inline">\(q^k\)</span>, then <span class="math inline">\(\mathrm{ord}_{q^k}(g) = \phi_p(q^k)\)</span>. Let
+<li><span class="math inline">\(\implies\)</span>: We have <span class="math inline">\(\Phi_p(q^k) = (p^d - 1) \cdot p^{(k-1)d}\)</span>
+with <span class="math inline">\(d = \deg(q)\)</span>. Let <span class="math inline">\(g\)</span> be a primitive element modulo <span class="math inline">\(q^k\)</span>, then <span class="math inline">\(\mathrm{ord}_{q^k}(g) = \Phi_p(q^k)\)</span>. Let
 <span class="math inline">\(t = \lceil \log_p(k)\rceil\)</span>, then
 <span class="math inline">\(p^t \geq k\)</span>. Since <span class="math inline">\(\gcd(g, q^k) = 1 \implies \gcd(g, q) = 1\)</span>,
 we have <span class="math display">\[
   \begin{aligned}
-  &amp; g^{\phi_p(q)} \equiv 1 \pmod q \\
-  \implies &amp; q \mid g^{\phi_p(q)} - 1 \\
-  \implies &amp; q^k \mid q^{p^t} \mid (g^{\phi_p(q)} - 1)^{p^t} =
-g^{\phi_p(q) \cdot p^t} - 1 \\
-  \implies &amp; g^{\phi_p(q) \cdot p^t} \equiv 1 \pmod{q^k} \\
-  \implies &amp; (p^d - 1)p^{(k-1)d} = \phi_p(q^k) =
-\mathrm{ord}_{q^k}(g) \mid \phi_p(q)p^t = (p^d - 1)p^t \\
+  &amp; g^{\Phi_p(q)} \equiv 1 \pmod q \\
+  \implies &amp; q \mid g^{\Phi_p(q)} - 1 \\
+  \implies &amp; q^k \mid q^{p^t} \mid (g^{\Phi_p(q)} - 1)^{p^t} =
+g^{\Phi_p(q) \cdot p^t} - 1 \\
+  \implies &amp; g^{\Phi_p(q) \cdot p^t} \equiv 1 \pmod{q^k} \\
+  \implies &amp; (p^d - 1)p^{(k-1)d} = \Phi_p(q^k) =
+\mathrm{ord}_{q^k}(g) \mid \Phi_p(q)p^t = (p^d - 1)p^t \\
   \implies &amp; p^{(k-1)d} \mid p^t \\
   \implies &amp; (k-1)d \leq t
   \end{aligned}
@@ -3954,14 +3954,32 @@ contradiction, thus <span class="math inline">\(k \leq 3\)</span>.</li>
         </div>
       </div>
     </div><p></p></li>
+<li><p><strong>Thm 5.49</strong>: Let <span class="math inline">\(m(x)
+\in \mathbb{Z}_p[x]\)</span> have the standard factorization <span class="math inline">\(m(x) = \alpha \prod_{i=1}^n q_i^{e_i}(x)\)</span>.
+There is a primitive element modulo <span class="math inline">\(m(x)\)</span> only if <span class="math inline">\(\prod_{i=1}^n \Phi_p(q_i^{e_i}) =
+\mathrm{lcm}\{\Phi_p(q_1^{e_i}), \dots, \Phi_p(q_n^{e_n})\}\)</span>,
+i.e.&nbsp;<span class="math inline">\(\forall 1 \leq i \neq j \leq
+n\)</span>, <span class="math inline">\(\gcd(\Phi_p(q_i^{e_i}),
+\Phi_p(q_j^{e_j})) = 1\)</span>.</p></li>
+<li><p><strong>Thm 5.50</strong>: There is a primitive element modulo
+<span class="math inline">\(m(x) \iff\)</span></p>
+<ul>
+<li><span class="math inline">\(p \neq 2\)</span>, <span class="math inline">\(m(x)\)</span> is irreducible or <span class="math inline">\(m(x) = \alpha(x-\beta)^2\)</span> for some <span class="math inline">\(\alpha\in \mathbb{Z}_p^*\)</span>, <span class="math inline">\(\beta \in \mathbb{Z}_p\)</span>; or</li>
+<li><span class="math inline">\(p = 2\)</span>, <span class="math inline">\(m(x) = \alpha(x-\beta)^e \prod q_i(x)\)</span>
+with <span class="math inline">\(\forall 1 \leq i &lt; j \leq
+n\)</span>, <span class="math inline">\(\gcd(\deg(q_i), \deg(q_j)) =
+1\)</span>, where <span class="math inline">\(0 \leq e \leq 3\)</span>,
+<span class="math inline">\(\alpha \in \mathbb{Z}_2^*\)</span>, <span class="math inline">\(\beta \in \mathbb{Z}_2\)</span>, and <span class="math inline">\(x-\beta, q_i\)</span> are distinct monic
+irreducible polynomials.</li>
+</ul></li>
 </ul>
 <h2 id="lagrange-interpolation">Lagrange interpolation</h2>
 <h3 id="roots">Roots</h3>
 <ul>
-<li><p><strong>Def 5.48 Root</strong>: An element <span class="math inline">\(r \in F\)</span> is called a root of <span class="math inline">\(f \in F[x]\)</span> if <span class="math display">\[
+<li><p><strong>Def 5.51 Root</strong>: An element <span class="math inline">\(r \in F\)</span> is called a root of <span class="math inline">\(f \in F[x]\)</span> if <span class="math display">\[
   f(r) = 0
   \]</span></p></li>
-<li><p><strong>Lemma 5.49</strong>: An element <span class="math inline">\(r \in F\)</span> is a root of <span class="math inline">\(f \in F[x] \iff (x-r) | f(x)\)</span></p>
+<li><p><strong>Lemma 5.52</strong>: An element <span class="math inline">\(r \in F\)</span> is a root of <span class="math inline">\(f \in F[x] \iff (x-r) | f(x)\)</span></p>
 <p>
     </p><div class="fold">
       <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-0651a1f1" role="button" aria-expanded="false" aria-controls="collapse-0651a1f1">
@@ -3976,20 +3994,20 @@ contradiction, thus <span class="math inline">\(k \leq 3\)</span>.</li>
         </div>
       </div>
     </div><p></p></li>
-<li><p><strong>Def 5.50 Derivative</strong>: If <span class="math inline">\(f(x) = a_0 + a_1x + \cdots + a_nx^n\)</span>, then
+<li><p><strong>Def 5.53 Derivative</strong>: If <span class="math inline">\(f(x) = a_0 + a_1x + \cdots + a_nx^n\)</span>, then
 the derivative <span class="math inline">\(f'\)</span> of <span class="math inline">\(f\)</span> is defined by <span class="math display">\[
   f' = a_1 + 2a_2x + \cdots + na_nx^{n-1}
   \]</span></p></li>
-<li><p><strong>Def 5.51 Multiplicity of Root</strong>: Let <span class="math inline">\(r \in F\)</span> be a root of <span class="math inline">\(f \in F[x]\)</span>. If <span class="math inline">\(k\)</span> is a positive integer s.t. <span class="math inline">\((x-r)^k | f\)</span> but <span class="math inline">\((x-r)^{k+1} \nmid f\)</span>, then <span class="math inline">\(k\)</span> is called the multiplicity of root
+<li><p><strong>Def 5.54 Multiplicity of Root</strong>: Let <span class="math inline">\(r \in F\)</span> be a root of <span class="math inline">\(f \in F[x]\)</span>. If <span class="math inline">\(k\)</span> is a positive integer s.t. <span class="math inline">\((x-r)^k | f\)</span> but <span class="math inline">\((x-r)^{k+1} \nmid f\)</span>, then <span class="math inline">\(k\)</span> is called the multiplicity of root
 <span class="math inline">\(r\)</span>.</p>
 <ul>
 <li>If <span class="math inline">\(k \ge 2\)</span>, the <span class="math inline">\(r\)</span> is called a multiple root. Otherwise,
 it is called a simple root.</li>
 </ul></li>
-<li><p><strong>Thm 5.52 Property of Multiple Roots</strong>: An element
+<li><p><strong>Thm 5.55 Property of Multiple Roots</strong>: An element
 <span class="math inline">\(r \in F\)</span> is a multiple root of <span class="math inline">\(f \in F[x] \iff r\)</span> is a common root of
 <span class="math inline">\(f\)</span> and <span class="math inline">\(f'\)</span>.</p></li>
-<li><p><strong>Thm 5.53</strong>: Let <span class="math inline">\(F\)</span> be a field and <span class="math inline">\(f \in F[x]\)</span> with <span class="math inline">\(n := \deg(f) \ge 1\)</span>. Then <span class="math inline">\(F\)</span> contains at most <span class="math inline">\(n\)</span> distinct roots of <span class="math inline">\(f\)</span>.</p>
+<li><p><strong>Thm 5.56</strong>: Let <span class="math inline">\(F\)</span> be a field and <span class="math inline">\(f \in F[x]\)</span> with <span class="math inline">\(n := \deg(f) \ge 1\)</span>. Then <span class="math inline">\(F\)</span> contains at most <span class="math inline">\(n\)</span> distinct roots of <span class="math inline">\(f\)</span>.</p>
 <p>
     </p><div class="fold">
       <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-3d302b82" role="button" aria-expanded="false" aria-controls="collapse-3d302b82">
@@ -4019,7 +4037,7 @@ holds.</li>
 </ul>
 <h3 id="lagrange-interpolation-1">Lagrange Interpolation</h3>
 <ul>
-<li><p><strong>Thm 5.46</strong>: The set <span class="math inline">\(F[x]_{&lt;n} = \{f \in F[x] : \deg(f) &lt;
+<li><p><strong>Thm 5.57</strong>: The set <span class="math inline">\(F[x]_{&lt;n} = \{f \in F[x] : \deg(f) &lt;
 n\}\)</span> forms a vector space over <span class="math inline">\(F\)</span> with <span class="math inline">\(\dim(F[x]_{&lt;n}) = n\)</span>. And It has a
 canonical basis <span class="math inline">\(\{1, x, \cdots,
 x^{n-1}\}\)</span> and a lagrange basis <span class="math inline">\(\{\prod_{j \ne i}(x-a_j)\}_{i=1}^n\)</span>, where
@@ -4045,7 +4063,7 @@ have <span class="math display">\[
         </div>
       </div>
     </div><p></p></li>
-<li><p><strong>Thm 5.47 Lagrange Interpolation</strong>: For <span class="math inline">\(n &gt; 0\)</span>, let <span class="math inline">\(a_1, \cdots, a_n\)</span> be <span class="math inline">\(n\)</span> distinct elements of <span class="math inline">\(F\)</span>, and let <span class="math inline">\(b_1, \cdots, b_n\)</span> be <span class="math inline">\(n\)</span> arbitrary elements of <span class="math inline">\(F\)</span>. Then there exists a unique polynomial
+<li><p><strong>Thm 5.58 Lagrange Interpolation</strong>: For <span class="math inline">\(n &gt; 0\)</span>, let <span class="math inline">\(a_1, \cdots, a_n\)</span> be <span class="math inline">\(n\)</span> distinct elements of <span class="math inline">\(F\)</span>, and let <span class="math inline">\(b_1, \cdots, b_n\)</span> be <span class="math inline">\(n\)</span> arbitrary elements of <span class="math inline">\(F\)</span>. Then there exists a unique polynomial
 <span class="math inline">\(f \in F[x]\)</span> with <span class="math inline">\(\deg(f) \le n-1\)</span> s.t. <span class="math display">\[
   f(a_i) = b_i, \quad i=1,2,\cdots,n
   \]</span></p>
@@ -4568,7 +4586,7 @@ have <span class="math inline">\(m(\theta^{2^n}) = 0\)</span> for all
   <div class="license-box my-3">
     <div class="license-title">
       <div>初等数论与抽象代数</div>
-      <div>https://youyeyejie.github.io/_posts/初等数论/</div>
+      <div>https://youyeyejie.github.io/_posts/初等数论与抽象代数/</div>
     </div>
     <div class="license-meta">
       
@@ -4586,7 +4604,7 @@ have <span class="math inline">\(m(\theta^{2^n}) = 0\)</span> for all
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2026年4月16日</div>
+          <div>2026年4月18日</div>
         </div>
       
       
