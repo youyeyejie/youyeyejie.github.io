@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis3329.webp">
 <meta property="article:published_time" content="2026-04-16T05:50:03.000Z">
-<meta property="article:modified_time" content="2026-04-20T01:40:09.211Z">
+<meta property="article:modified_time" content="2026-04-20T02:20:00.676Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU">
 <meta property="article:tag" content="抽代">
@@ -481,7 +481,7 @@
         
         
           <!-- compatible with older versions-->
-          133 分钟
+          134 分钟
         
       </span>
     
@@ -1546,7 +1546,7 @@ thus <span class="math inline">\(ac\equiv bd \pmod m\)</span>.</li>
 <li><p><strong>Def 2.3 Residue Class</strong>: Let <span class="math inline">\(r\in \mathbb{Z}\)</span> and <span class="math inline">\(m\in \mathbb{Z}^+\)</span>, the residue class of
 <span class="math inline">\(r\)</span> modulo <span class="math inline">\(m\)</span> is defined to be <span class="math display">\[
   \begin{aligned}
-  [r]_{m} &amp;=\{x\in \mathbb{Z}: x\equiv r \pmod m\} \\
+  {[r]}_{m} &amp;=\{x\in \mathbb{Z}: x\equiv r \pmod m\} \\
   &amp;=\{r+im: i\in \mathbb{Z}\} \\
   &amp; = r+m\mathbb{Z}
   \end{aligned}
@@ -4529,6 +4529,29 @@ have <span class="math inline">\(m(\theta^{2^n}) = 0\)</span> for all
         </div>
       </div>
     </div><p></p></li>
+<li><p><strong>Thm 6.24</strong>: Let <span class="math inline">\(F_q\)</span> be a finite field of <span class="math inline">\(q=p^k\)</span> elements, and let <span class="math inline">\(I_q(d)=\#\{g \in F_q[x] : \deg(g) = d,\text{ irr,
+monic}\}\)</span> be the number of monic irreducible polynomials with
+<span class="math inline">\(\deg(g) = d\)</span> over <span class="math inline">\(F_q\)</span>. Then</p>
+<ol type="1">
+<li>Let <span class="math inline">\(n \ge 1 \in \mathbb{Z}\)</span>,
+then <span class="math display">\[
+x^{q^n} - x = \prod_{d \mid n} \prod_{g \in F_q[x] \atop \deg(g) = d,
+\text{ irr}} g(x)
+\]</span></li>
+<li>We have the following identity, which can help us to compute <span class="math inline">\(I_q(d)\)</span>: <span class="math display">\[
+q^n = \sum_{d \mid n} d \cdot I_q(d)
+\]</span></li>
+<li>By the Möbius inversion formula, we have <span class="math display">\[
+I_q(n) = \frac{1}{n} \sum_{d \mid n} \mu(d) q^{\frac{n}{d}}
+\]</span> where <span class="math inline">\(\mu(d)\)</span> is the
+Möbius function defined by <span class="math display">\[
+\mu(d) = \begin{cases}
+1 &amp;  d = 1 \\
+(-1)^k &amp; d = \prod_{i=1}^k p_i \text{ for distinct primes } p_i \\
+0 &amp; \exists p \text{ s.t. } p^2 \mid d
+\end{cases}
+\]</span></li>
+</ol></li>
 </ul>
 
                 
