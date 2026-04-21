@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis3329.webp">
 <meta property="article:published_time" content="2026-04-16T05:50:03.000Z">
-<meta property="article:modified_time" content="2026-04-20T02:20:00.676Z">
+<meta property="article:modified_time" content="2026-04-21T14:51:37.656Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU">
 <meta property="article:tag" content="抽代">
@@ -481,7 +481,7 @@
         
         
           <!-- compatible with older versions-->
-          134 分钟
+          138 分钟
         
       </span>
     
@@ -544,7 +544,7 @@
         aria-expanded="true"
       >
         SJTU Notes
-        <span class="list-group-count">(25)</span>
+        <span class="list-group-count">(26)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -571,7 +571,7 @@
         aria-expanded="true"
       >
         信安
-        <span class="list-group-count">(5)</span>
+        <span class="list-group-count">(6)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -625,6 +625,15 @@
            class="list-group-item list-group-item-action
            active">
           <span class="category-post">初等数论与抽象代数</span>
+        </a>
+      
+    
+      
+      
+        <a href="/_posts/%E7%8E%B0%E4%BB%A3%E5%AF%86%E7%A0%81%E5%AD%A62/" title="现代密码学Ⅱ"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">现代密码学Ⅱ</span>
         </a>
       
     
@@ -1177,7 +1186,7 @@ d\)</span></li>
   \cdots \\
   r_{i-1}=q_ir_i+r_{i+1}, &amp; 0\le r_{i+1}&lt;r_i \\
   \cdots \\
-  r_{n-1}=q_{n+1}r_n, &amp; r_{n+1}=0
+  r_{n-1}=q_{n}r_n, &amp; r_{n+1}=0
   \end{cases}
   \]</span></p>
 <p>then <span class="math inline">\(\gcd(r_{i-1},r_i)=\gcd(r_i,
@@ -1325,10 +1334,10 @@ m_i\)</span></li>
 </ol>
 <p>
     </p><div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-5e7dbf0f" role="button" aria-expanded="false" aria-controls="collapse-5e7dbf0f">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-65fffb11" role="button" aria-expanded="false" aria-controls="collapse-65fffb11">
         <div class="fold-arrow">▶</div>Proof
       </div>
-      <div class="fold-collapse collapse" id="collapse-5e7dbf0f">
+      <div class="fold-collapse collapse" id="collapse-65fffb11">
         <div class="fold-content">
           <ol type="1">
 <li>Let <span class="math inline">\(D=\mathrm{lcm}(a,b),
@@ -1349,8 +1358,8 @@ have <span class="math inline">\(D\mid ab\)</span>.</li>
 </ul></li>
 <li>WLG, we assume <span class="math inline">\(a,b&gt;0\)</span>. Let
 <span class="math inline">\(d=\gcd(a,b)\)</span>, then <span class="math inline">\(\gcd(\frac{a}{d},\frac{b}{d})=1\)</span> by Thm
-1.8(2), thus <span class="math inline">\(d\cdot \mathrm{lcm}(a,b) =
-d\cdot \mathrm{lcm}(\frac{a}{d},\frac{b}{d})=d\cdot \frac{a}{d}\cdot
+1.8(2), thus <span class="math inline">\(\mathrm{lcm}(a,b) = d\cdot
+\mathrm{lcm}(\frac{a}{d},\frac{b}{d})=d\cdot \frac{a}{d}\cdot
 \frac{b}{d}=\frac{ab}{d}\)</span>, thus <span class="math inline">\(\gcd(a,b)\cdot
 \mathrm{lcm}(a,b)=|ab|\)</span>.</li>
 </ol>
@@ -1367,10 +1376,10 @@ composite.</p></li>
 a,b\in \mathbb{Z}, p\mid ab \implies p\mid a\)</span> or <span class="math inline">\(p\mid b\)</span>.</p>
 <p>
     </p><div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-9fc90271" role="button" aria-expanded="false" aria-controls="collapse-9fc90271">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-8d8e17c9" role="button" aria-expanded="false" aria-controls="collapse-8d8e17c9">
         <div class="fold-arrow">▶</div>Proof
       </div>
-      <div class="fold-collapse collapse" id="collapse-9fc90271">
+      <div class="fold-collapse collapse" id="collapse-8d8e17c9">
         <div class="fold-content">
           <ol type="1">
 <li>(<span class="math inline">\(\implies\)</span>)
@@ -1379,8 +1388,9 @@ a,b\in \mathbb{Z}, p\mid ab \implies p\mid a\)</span> or <span class="math inlin
 <li><strong>Case 2</strong>: <span class="math inline">\(\gcd(p,b)&gt;1\)</span>. Let <span class="math inline">\(d=\gcd(p,b)\)</span>, so <span class="math inline">\(d\mid p\)</span> and <span class="math inline">\(d\mid b\)</span>. Since <span class="math inline">\(p\)</span> is a prime, <span class="math inline">\(d\)</span> can only be <span class="math inline">\(1\)</span> or <span class="math inline">\(p\)</span>, thus <span class="math inline">\(d=p\)</span>, thus <span class="math inline">\(p\mid b\)</span>.</li>
 </ul></li>
 <li>(<span class="math inline">\(\impliedby\)</span>) Suppose <span class="math inline">\(p\)</span> were not a prime, then <span class="math inline">\(\exists 1&lt;u&lt;p\)</span> s.t. <span class="math inline">\(u\mid p\)</span>, thus <span class="math inline">\(p=\frac{p}{u}\cdot u \implies p\mid
-\frac{p}{u}\)</span> or <span class="math inline">\(p\mid u\)</span>,
-both of which are impossible since <span class="math inline">\(1&lt;u&lt;p\)</span>. Contradiction, thus <span class="math inline">\(p\)</span> is a prime.</li>
+\frac{p}{u}\cdot u \implies p\mid \frac{p}{u}\)</span> or <span class="math inline">\(p\mid u\)</span>, both of which are impossible
+since <span class="math inline">\(1&lt;u&lt;p\)</span>. Contradiction,
+thus <span class="math inline">\(p\)</span> is a prime.</li>
 </ol>
         </div>
       </div>
@@ -1428,10 +1438,10 @@ as <span class="math display">\[
 </ul>
 <p>
     </p><div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-1db54e91" role="button" aria-expanded="false" aria-controls="collapse-1db54e91">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-8cc6393b" role="button" aria-expanded="false" aria-controls="collapse-8cc6393b">
         <div class="fold-arrow">▶</div>Proof
       </div>
-      <div class="fold-collapse collapse" id="collapse-1db54e91">
+      <div class="fold-collapse collapse" id="collapse-8cc6393b">
         <div class="fold-content">
           <ul>
 <li><strong>Existence</strong>: By induction on <span class="math inline">\(n\)</span>.
@@ -1453,7 +1463,7 @@ factorized into a product of primes.</li>
 true.</li>
 <li>Induction step: <span class="math inline">\(n&gt;2\)</span>, let
 <span class="math inline">\(p_1\)</span> be the smallest prime divisor
-of <span class="math inline">\(n\)</span>, then <span class="math inline">\(\frac{n}{p_1}\in \mathbb{Z}\)</span> and <span class="math inline">\(1&lt;\frac{n}{p_1}&lt;n\)</span>. By induction
+of <span class="math inline">\(n\)</span>, then <span class="math inline">\(\frac{n}{p_1}\in \mathbb{Z}\)</span> and <span class="math inline">\(1\leq\frac{n}{p_1}&lt;n\)</span>. By induction
 hypothesis, <span class="math inline">\(\frac{n}{p_1}\)</span> has a
 unique factorization into a product of primes, thus <span class="math inline">\(n=p_1\cdot \frac{n}{p_1}\)</span> has a unique
 factorization into a product of primes.</li>
@@ -1474,10 +1484,10 @@ p^{\min\{v_p(m), v_p(n)\}}\]</span></li>
 the form <span class="math inline">\(4n+3\)</span>.</p>
 <p>
     </p><div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-2c1153fa" role="button" aria-expanded="false" aria-controls="collapse-2c1153fa">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-8de23d94" role="button" aria-expanded="false" aria-controls="collapse-8de23d94">
         <div class="fold-arrow">▶</div>Proof
       </div>
-      <div class="fold-collapse collapse" id="collapse-2c1153fa">
+      <div class="fold-collapse collapse" id="collapse-8de23d94">
         <div class="fold-content">
           <ul>
 <li>Suppose there are only finitely many primes of the form <span class="math inline">\(4n+3\)</span>, denoted by <span class="math inline">\(p_1=4n_1+3, p_2=4n_2+3, \cdots,
@@ -1486,17 +1496,11 @@ p_k=4n_k+3\)</span>,
 <li><strong>Case 1</strong>: <span class="math inline">\(k\)</span> is
 odd, then <span class="math inline">\(\prod_{i=1}^k p_i+4=\prod_{i=1}^k
 (4n_i+3)+4=4m+3\)</span> for some <span class="math inline">\(m\in
-\mathbb{Z}\)</span>, thus <span class="math inline">\(\exists
-p_i\)</span> s.t. <span class="math inline">\(p_i\mid (\prod_{i=1}^k
-p_i+4)\)</span>, thus <span class="math inline">\(p_i\mid 4\)</span>,
-contradiction since <span class="math inline">\(p_i&gt;3\)</span>.</li>
+\mathbb{Z}\)</span> and it is a composite number, thus <span class="math inline">\(\exists p_i\)</span> s.t. <span class="math inline">\(p_i\mid (\prod_{i=1}^k p_i+4)\)</span>, thus <span class="math inline">\(p_i\mid 4\)</span>, contradiction since <span class="math inline">\(p_i&gt;3\)</span>.</li>
 <li><strong>Case 2</strong>: <span class="math inline">\(k\)</span> is
 even, then <span class="math inline">\(\prod_{i=1}^k p_i+2=\prod_{i=1}^k
 (4n_i+3)+2=4m+3\)</span> for some <span class="math inline">\(m\in
-\mathbb{Z}\)</span>, thus <span class="math inline">\(\exists
-p_i\)</span> s.t. <span class="math inline">\(p_i\mid (\prod_{i=1}^k
-p_i+2)\)</span>, thus <span class="math inline">\(p_i\mid 2\)</span>,
-contradiction since <span class="math inline">\(p_i&gt;3\)</span>.</li>
+\mathbb{Z}\)</span> and it is a composite number, thus <span class="math inline">\(\exists p_i\)</span> s.t. <span class="math inline">\(p_i\mid (\prod_{i=1}^k p_i+2)\)</span>, thus <span class="math inline">\(p_i\mid 2\)</span>, contradiction since <span class="math inline">\(p_i&gt;3\)</span>.</li>
 </ul></li>
 <li>Thus, there are infinitely many primes of the form <span class="math inline">\(4n+3\)</span>.</li>
 </ul>
@@ -1656,9 +1660,8 @@ but not every element <span class="math inline">\(\bar{r}\in
 <li><p><strong>Thm 2.8</strong>: Let <span class="math inline">\(r\in
 \mathbb{Z}\)</span> and <span class="math inline">\(m\in
 \mathbb{Z}^+\)</span>, then <span class="math inline">\(\bar{r}\in
-\mathbb{Z}_m\)</span> is invertible <span class="math inline">\(\iff
-\gcd(r,m)=1\)</span>. In this case, the inverse is unique, denoted by
-<span class="math inline">\(\bar{r}^{-1}\)</span>.</p>
+\mathbb{Z}_m\)</span> is multiplicative invertible <span class="math inline">\(\iff \gcd(r,m)=1\)</span>. In this case, the
+inverse is unique, denoted by <span class="math inline">\(\bar{r}^{-1}\)</span>.</p>
 <p>
     </p><div class="fold">
       <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-402013cf" role="button" aria-expanded="false" aria-controls="collapse-402013cf">
@@ -1693,9 +1696,7 @@ cardinality of invertible elements of the set <span class="math display">\[\math
 <ul>
 <li>Remark: <span class="math inline">\(\mathbb{Z}_m^*\)</span> forms a
 multiplicative group with identity element <span class="math inline">\(\bar{1}\)</span>.</li>
-<li>Example: <span class="math inline">\(\varphi(1)=1, \varphi(2)=1,
-\varphi(3)=2, \varphi(4)=2, \varphi(5)=4, \varphi(6)=2, \varphi(7)=6,
-\varphi(8)=4, \varphi(9)=6, \varphi(10)=4\)</span>.</li>
+<li>Example: <span class="math inline">\(\varphi(1)=1\)</span>, <span class="math inline">\(\varphi(2)=1\)</span>, <span class="math inline">\(\varphi(3)=2\)</span>, <span class="math inline">\(\varphi(4)=2\)</span>, <span class="math inline">\(\varphi(5)=4\)</span>, <span class="math inline">\(\varphi(6)=2\)</span>, <span class="math inline">\(\varphi(7)=6\)</span>, <span class="math inline">\(\varphi(8)=4\)</span>, <span class="math inline">\(\varphi(9)=6\)</span>, <span class="math inline">\(\varphi(10)=4\)</span>.</li>
 </ul></li>
 <li><p><strong>Thm 2.10 Chinese Remainder Theorem</strong>: Let <span class="math inline">\(m_1,m_2,\cdots,m_r\in \mathbb{Z}^+\)</span> be
 pairwise coprime integers <span class="math inline">\(\geq 2\)</span>,
@@ -1715,10 +1716,10 @@ a_1,a_2,\cdots,a_r\in \mathbb{Z}\)</span>, the system of congruences
 <span class="math inline">\(M_i=\frac{M}{m_i}\)</span> and <span class="math inline">\(y_i\)</span> is the inverse of <span class="math inline">\(M_i\)</span> in <span class="math inline">\(\mathbb{Z}_{m_i}\)</span>.</p>
 <p>
     </p><div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-8b04c021" role="button" aria-expanded="false" aria-controls="collapse-8b04c021">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-7bd497a8" role="button" aria-expanded="false" aria-controls="collapse-7bd497a8">
         <div class="fold-arrow">▶</div>Proof
       </div>
-      <div class="fold-collapse collapse" id="collapse-8b04c021">
+      <div class="fold-collapse collapse" id="collapse-7bd497a8">
         <div class="fold-content">
           <ul>
 <li><strong>Uniqueness</strong>: If <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span> are two solutions, then <span class="math inline">\(\forall 1\leq i\leq r, x_1\equiv a_i \equiv x_2
@@ -1726,8 +1727,8 @@ a_1,a_2,\cdots,a_r\in \mathbb{Z}\)</span>, the system of congruences
 \pmod {m_i}\)</span>, since <span class="math inline">\(\gcd(m_i,m_j)=1\)</span> for <span class="math inline">\(i\neq j\)</span>, we have <span class="math inline">\(x_1\equiv x_2 \pmod M\)</span>.</li>
 <li><strong>Existence</strong>: Let <span class="math inline">\(M_i=\frac{M}{m_i}\)</span>, so <span class="math inline">\(\gcd(M_i,m_i)=1\)</span>, by Thm 2.8, there exists
 <span class="math inline">\(y_i\in \mathbb{Z}\)</span> s.t. <span class="math inline">\(\overline{M_i}\cdot
-\overline{y_i}=\bar{1}\)</span> in <span class="math inline">\(\mathbb{Z}_{m_i}\)</span>, thus <span class="math inline">\(M_i y_i\equiv 1 \pmod {m_i}\)</span> and <span class="math inline">\(\forall j\neq i, M_i y_j\equiv 0 \pmod
-{m_i}\)</span>. Let <span class="math inline">\(x=\sum_{i=1}^r a_i M_i
+\overline{y_i}=\bar{1}\)</span> in <span class="math inline">\(\mathbb{Z}_{m_i}\)</span>, thus <span class="math inline">\(M_i y_i\equiv 1 \pmod {m_i}\)</span> and <span class="math inline">\(\forall j\neq i, M_i y_i\equiv 0 \pmod
+{m_j}\)</span>. Let <span class="math inline">\(x=\sum_{i=1}^r a_i M_i
 y_i\)</span>, then <span class="math inline">\(\forall 1\leq i\leq r,
 x\equiv a_i M_i y_i \equiv a_i \cdot 1 \equiv a_i \pmod {m_i}\)</span>,
 thus <span class="math inline">\(x\)</span> is a solution.</li>
@@ -1739,18 +1740,20 @@ thus <span class="math inline">\(x\)</span> is a solution.</li>
 <ol type="1">
 <li><span class="math inline">\(m,n\geq 2, \gcd(m,n)=1 \implies
 \varphi(mn)=\varphi(m)\varphi(n)\)</span></li>
-<li><span class="math inline">\(\forall n\geq 2\)</span>, if <span class="math inline">\(n=\prod_{i=1}^k p_i^{r_i}\)</span> with <span class="math inline">\(r_i\in \mathbb{Z}^+\)</span> and <span class="math inline">\(p_i\)</span> are distinct primes, then <span class="math inline">\(\varphi(n)=\prod_{i=1}^k
-p_i^{r_i-1}(p_i-1)=n\prod_{p\mid n}(1-\frac{1}{p})\)</span>.</li>
+<li><span class="math inline">\(\forall n\geq 2\)</span>, if <span class="math inline">\(n=\prod_{i=1}^k p_i^{r_i}\)</span> with <span class="math inline">\(r_i\in \mathbb{Z}^+\)</span> and <span class="math inline">\(p_i\)</span> are distinct primes, then <span class="math display">\[
+\varphi(n)=\prod_{i=1}^k p_i^{r_i-1}(p_i-1)=n\prod_{p\mid
+n}(1-\frac{1}{p})
+\]</span></li>
 </ol>
 <p>
     </p><div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-5ce7dea6" role="button" aria-expanded="false" aria-controls="collapse-5ce7dea6">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-270c56bf" role="button" aria-expanded="false" aria-controls="collapse-270c56bf">
         <div class="fold-arrow">▶</div>Proof
       </div>
-      <div class="fold-collapse collapse" id="collapse-5ce7dea6">
+      <div class="fold-collapse collapse" id="collapse-270c56bf">
         <div class="fold-content">
           <ol type="1">
-<li><p>Claim that |<span class="math inline">\(\mathbb{Z}_{mn}^*|=|\mathbb{Z}_m^*||\mathbb{Z}_n^*|\)</span>.
+<li><p>Claim that <span class="math inline">\(|\mathbb{Z}_{mn}^*|=|\mathbb{Z}_m^*||\mathbb{Z}_n^*|\)</span>.
 Consider the map <span class="math display">\[
 \begin{aligned}
 \pi: \mathbb{Z}_{mn}^* &amp;\to \mathbb{Z}_m^* \times \mathbb{Z}_n^* \\
@@ -1772,16 +1775,18 @@ i.e.&nbsp;<span class="math inline">\(\varphi(mn)=\varphi(m)\varphi(n)\)</span>.
 <li><p>First consider <span class="math inline">\(n=p^r\)</span> where
 <span class="math inline">\(p\)</span> is a prime and <span class="math inline">\(r\in \mathbb{Z}^+\)</span>, consider <span class="math display">\[
 \mathbb{Z}_n \backslash \mathbb{Z}_n^*
-=\{\overline{0},\overline{p},\overline{2p},\cdots,\overline{(p^{r-1}-1)p}\}
+=\{\overline{0},\overline{1p},\overline{2p},\cdots,\overline{(p^{r-1}-1)p}\}
 \]</span></p>
 <p>then <span class="math inline">\(|\mathbb{Z}_n \backslash
-\mathbb{Z}_n^*|=p^{r-1}\)</span>, thus <span class="math inline">\(\varphi(n)=|\mathbb{Z}_n^*|=|\mathbb{Z}_n|-|\mathbb{Z}_n
-\backslash \mathbb{Z}_n^*|=p^r-p^{r-1}=p^r(1-\frac{1}{p})\)</span>.</p>
+\mathbb{Z}_n^*|=p^{r-1}\)</span>, thus <span class="math display">\[
+\varphi(n)=|\mathbb{Z}_n^*|=|\mathbb{Z}_n|-|\mathbb{Z}_n \backslash
+\mathbb{Z}_n^*|=p^r-p^{r-1}=p^r(1-\frac{1}{p})
+\]</span></p>
 <p>For general <span class="math inline">\(n\)</span>, let <span class="math inline">\(p_1,p_2,\cdots,p_k\)</span> be the distinct prime
-divisors of <span class="math inline">\(n\)</span>, then <span class="math inline">\(n=\prod_{i=1}^k p_i^{r_i}\)</span>, thus <span class="math inline">\(\varphi(n)=\prod_{i=1}^k
-\varphi(p_i^{r_i})=\prod_{i=1}^k
-p_i^{r_i}(1-\frac{1}{p_i})=n\prod_{p\mid
-n}(1-\frac{1}{p})\)</span>.</p></li>
+divisors of <span class="math inline">\(n\)</span>, then <span class="math inline">\(n=\prod_{i=1}^k p_i^{r_i}\)</span>, thus <span class="math display">\[
+\varphi(n)=\prod_{i=1}^k \varphi(p_i^{r_i})=\prod_{i=1}^k
+p_i^{r_i}(1-\frac{1}{p_i})=n\prod_{p\mid n}(1-\frac{1}{p})
+\]</span></p></li>
 </ol>
         </div>
       </div>
@@ -1793,16 +1798,16 @@ n}(1-\frac{1}{p})\)</span>.</p></li>
 prime.</p>
 <p>
     </p><div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-fde66ec0" role="button" aria-expanded="false" aria-controls="collapse-fde66ec0">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-a2725214" role="button" aria-expanded="false" aria-controls="collapse-a2725214">
         <div class="fold-arrow">▶</div>Proof
       </div>
-      <div class="fold-collapse collapse" id="collapse-fde66ec0">
+      <div class="fold-collapse collapse" id="collapse-a2725214">
         <div class="fold-content">
           <ul>
 <li>If <span class="math inline">\(n\)</span> is a prime, then <span class="math inline">\(\varphi(n)=n-1\)</span>.</li>
-<li>If <span class="math inline">\(n\)</span> is not a prime, then <span class="math inline">\(\exists 1&lt;p&lt;n\)</span> s.t. <span class="math inline">\(p\mid n\)</span>, thus <span class="math inline">\(\gcd(p,n)=p\neq 1\)</span>, thus <span class="math inline">\(\bar{p}\not\in \mathbb{Z}_n^*\)</span>, thus <span class="math inline">\(\mathbb{Z}_n^* \subsetneq \mathbb{Z}_n\backslash
-\{\bar{0},\bar{p}\}\)</span>, thus <span class="math inline">\(\varphi(n)=|\mathbb{Z}_n^*|&lt;|\mathbb{Z}_n\backslash
-\{\bar{0},\bar{p}\}|=n-2&lt;n-1\)</span>.</li>
+<li>If <span class="math inline">\(n\)</span> is not a prime, then <span class="math inline">\(\exists 1&lt;p&lt;n\)</span> s.t. <span class="math inline">\(p\mid n\)</span>, thus <span class="math inline">\(\gcd(p,n)=p\neq 1\)</span>, thus <span class="math inline">\(\bar{p}\not\in \mathbb{Z}_n^*\)</span>, thus <span class="math inline">\(\mathbb{Z}_n^* \subseteq \mathbb{Z}_n\backslash
+\{\bar{0},\bar{p}\}\)</span>, thus <span class="math inline">\(\varphi(n)=|\mathbb{Z}_n^*| \leq
+|\mathbb{Z}_n\backslash \{\bar{0},\bar{p}\}|=n-2&lt;n-1\)</span>.</li>
 </ul>
         </div>
       </div>
@@ -1844,17 +1849,17 @@ Primitive roots and discrete logarithm</h1>
 <li><p><strong>Thm 3.1 Euler’s Theorem</strong>: Let <span class="math inline">\(m\geq 2\)</span>, then <span class="math inline">\(\forall a\in \mathbb{Z}\)</span> with <span class="math inline">\(\gcd(a,m)=1\)</span>, we have <span class="math inline">\(a^{\varphi(m)}\equiv 1 \pmod m\)</span>.</p>
 <p>
     </p><div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-9f0c8313" role="button" aria-expanded="false" aria-controls="collapse-9f0c8313">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-581a3ca3" role="button" aria-expanded="false" aria-controls="collapse-581a3ca3">
         <div class="fold-arrow">▶</div>Proof
       </div>
-      <div class="fold-collapse collapse" id="collapse-9f0c8313">
+      <div class="fold-collapse collapse" id="collapse-581a3ca3">
         <div class="fold-content">
           <ul>
 <li>Since <span class="math inline">\(\gcd(a,m)=1\)</span>, then <span class="math inline">\(\bar{a}\in \mathbb{Z}_m^*\)</span>, <span class="math inline">\(\forall \bar{b}\in \mathbb{Z}_m^*\)</span>, we
-claim that <span class="math inline">\(\bar{a}\bar{b}\in
+claim that <span class="math inline">\(\overline{ab}\in
 \mathbb{Z}_m^*\)</span>:
 <ul>
-<li>Since <span class="math inline">\(\gcd(a,m)=1\)</span> and <span class="math inline">\(\gcd(b,m)=1\)</span>, thus <span class="math inline">\(\gcd(ab,m)=1\)</span>, so <span class="math inline">\(\bar{a}\bar{b}\in \mathbb{Z}_m^*\)</span>.</li>
+<li>Since <span class="math inline">\(\gcd(a,m)=1\)</span> and <span class="math inline">\(\gcd(b,m)=1\)</span>, thus <span class="math inline">\(\gcd(ab,m)=1\)</span>, so <span class="math inline">\(\overline{ab}\in \mathbb{Z}_m^*\)</span>.</li>
 </ul></li>
 <li>Label all elements of <span class="math inline">\(\mathbb{Z}_m^*\)</span> as <span class="math inline">\(\bar{a}_1,\bar{a}_2,\cdots,\bar{a}_{\varphi(m)}\)</span>,
 consider <span class="math inline">\(\mathbb{Z}'=\{\bar{a}\bar{a}_1,\bar{a}\bar{a}_2,\cdots,\bar{a}\bar{a}_{\varphi(m)}\}\subseteq
@@ -1940,10 +1945,10 @@ positive integer. By WOP, there exists a least positive integer <span class="mat
 </ol>
 <p>
     </p><div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-ade88051" role="button" aria-expanded="false" aria-controls="collapse-ade88051">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-b7617205" role="button" aria-expanded="false" aria-controls="collapse-b7617205">
         <div class="fold-arrow">▶</div>Proof
       </div>
-      <div class="fold-collapse collapse" id="collapse-ade88051">
+      <div class="fold-collapse collapse" id="collapse-b7617205">
         <div class="fold-content">
           <ol type="1">
 <li>Let <span class="math inline">\(k=\mathrm{ord}_m(a)\)</span>
@@ -1957,8 +1962,12 @@ m\)</span>, thus <span class="math inline">\(r=0\)</span>, so <span class="math 
 <li>Consider <span class="math inline">\((a^l)^\frac{k}{\gcd(k,l)}=(a^k)^\frac{l}{\gcd(k,l)}\equiv
 1 \pmod m\)</span>, thus <span class="math inline">\(\mathrm{ord}_m(a^l)\mid
 \frac{k}{\gcd(k,l)}\)</span>.</li>
-<li>Suppose <span class="math inline">\((a^{l})^r\equiv 1 \pmod
-m\)</span>, thus <span class="math inline">\(k\mid lr\)</span>, so <span class="math inline">\(\frac{k}{\gcd(k,l)}\mid r\)</span>, thus <span class="math inline">\(\frac{k}{\gcd(k,l)}\leq r\)</span>.</li>
+<li>Let <span class="math inline">\(r=\mathrm{ord}_m(a^l)\)</span>, then
+<span class="math inline">\((a^{l})^r\equiv 1 \pmod m\)</span>, thus
+<span class="math inline">\(k\mid lr\)</span>. Since <span class="math inline">\(\frac{k}{\gcd(k,l)} \mid
+\frac{l}{\gcd(k,l)}r\)</span> and <span class="math inline">\(\gcd(\frac{k}{\gcd(k,l)},
+\frac{l}{\gcd(k,l)})=1\)</span>, we have <span class="math inline">\(\frac{k}{\gcd(k,l)}\mid r =
+\mathrm{ord}_m(a^l)\)</span>.</li>
 <li>So <span class="math inline">\(\mathrm{ord}_m(a^l)=\frac{k}{\gcd(k,l)}\)</span>.</li>
 </ul></li>
 <li>Let <span class="math inline">\(u=\mathrm{ord}_m(a)\)</span>, <span class="math inline">\(v=\mathrm{ord}_m(b)\)</span>, <span class="math inline">\(w=\mathrm{ord}_m(ab)\)</span>
@@ -1966,12 +1975,12 @@ m\)</span>, thus <span class="math inline">\(k\mid lr\)</span>, so <span class="
 <li>Since <span class="math inline">\((ab)^{uv}=(a^u)^v(b^v)^u\equiv 1
 \pmod m\)</span>, thus <span class="math inline">\(w\mid
 uv\)</span>.</li>
-<li>Suppose <span class="math inline">\((ab)^r\equiv 1 \pmod m\)</span>,
-thus <span class="math inline">\(1\equiv (ab)^ru=(a^u)^r(b^r)^u\equiv
-b^ru \pmod m\)</span>, thus <span class="math inline">\(v\mid
-ru\)</span>, so <span class="math inline">\(v\mid r\)</span> since <span class="math inline">\(\gcd(u,v)=1\)</span>. Similarly, <span class="math inline">\(u\mid r\)</span>, so <span class="math inline">\(uv\leq r\)</span>.</li>
-<li>So <span class="math inline">\(\mathrm{ord}_m(ab)=uv=\mathrm{ord}_m(a)\cdot
-\mathrm{ord}_m(b)\)</span>.</li>
+<li>Since <span class="math inline">\((ab)^w\equiv 1 \pmod m\)</span>,
+thus <span class="math inline">\(1\equiv ((ab)^{wu}=(a^u)^w(b^w)^u\equiv
+b^{wu} \pmod m\)</span>, thus <span class="math inline">\(v\mid
+wu\)</span>, so <span class="math inline">\(v\mid w\)</span> since <span class="math inline">\(\gcd(u,v)=1\)</span>. Similarly, <span class="math inline">\(u\mid w\)</span>, so <span class="math inline">\(uv\mid w\)</span>.</li>
+<li>So <span class="math inline">\(\mathrm{ord}_m(ab) = w = uv =
+\mathrm{ord}_m(a)\cdot \mathrm{ord}_m(b)\)</span>.</li>
 </ul></li>
 </ol>
         </div>
@@ -1980,7 +1989,8 @@ ru\)</span>, so <span class="math inline">\(v\mid r\)</span> since <span class="
 </ul>
 <h2 id="primitive-root">Primitive root</h2>
 <ul>
-<li><p><strong>Def 3.5 Primitive root</strong>: Let <span class="math inline">\(m\geq 2\)</span>, <span class="math inline">\(g\)</span> is called a primitive root modulo <span class="math inline">\(m\)</span> if <span class="math display">\[\mathrm{ord}_m(g)=\varphi(m)\]</span> i.e.&nbsp;<span class="math inline">\(g\)</span> is a generator of the group <span class="math inline">\(\mathbb{Z}_m^*\)</span>.</p></li>
+<li><p><strong>Def 3.5 Primitive root</strong>: Let <span class="math inline">\(m\geq 2\)</span>, <span class="math inline">\(g\)</span> is called a primitive root modulo <span class="math inline">\(m\)</span> if <span class="math display">\[\mathrm{ord}_m(g)=\varphi(m)\]</span> I.e. <span class="math inline">\(g\)</span> is a generator of the multiplicative
+cyclic group <span class="math inline">\(\mathbb{Z}_m^*\)</span>.</p></li>
 <li><p><strong>Thm 3.6</strong>: Let <span class="math inline">\(g\)</span> be a primitive root modulo <span class="math inline">\(m\)</span>, then</p>
 <ol type="1">
 <li><span class="math inline">\(\mathbb{Z}_m^*=\langle\bar{g}\rangle=\{\bar{1},\bar{g},\bar{g}^2,\cdots,\bar{g}^{\varphi(m)-1}\}\)</span>
@@ -2135,134 +2145,7 @@ p-1\)</span>.</li>
         </div>
       </div>
     </div><p></p></li>
-<li><p><strong>Thm 3.8</strong>: There exists primitive root modulo
-<span class="math inline">\(p^k\)</span> for <strong>odd</strong> prime
-<span class="math inline">\(p\)</span> and <span class="math inline">\(k\geq 1\)</span>, and there exists primitive root
-modulo <span class="math inline">\(2^k\)</span> for <span class="math inline">\(k=1,2\)</span>.</p>
-<p>
-    </p><div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-bd47e7f0" role="button" aria-expanded="false" aria-controls="collapse-bd47e7f0">
-        <div class="fold-arrow">▶</div>Proof
-      </div>
-      <div class="fold-collapse collapse" id="collapse-bd47e7f0">
-        <div class="fold-content">
-          <p>Let <span class="math inline">\(g\)</span> be a primitive root modulo
-<span class="math inline">\(p\)</span>, then <span class="math inline">\(\mathrm{ord}_p(g)=\varphi(p)=p-1\)</span>.</p>
-<ul>
-<li>For <span class="math inline">\(k=1\)</span>, show in Thm 3.7,
-done.</li>
-<li>For <span class="math inline">\(k=2\)</span>:
-<ul>
-<li>If <span class="math inline">\(\mathrm{ord}_{p^2}(g)=\varphi(p^2)=p(p-1)\)</span>,
-done.</li>
-<li>If <span class="math inline">\(\mathrm{ord}_{p^2}(g)&lt;\varphi(p^2)\)</span>
-<ul>
-<li>Claim that <span class="math inline">\(\mathrm{ord}_{p}(g) \mid
-\mathrm{ord}_{p^2}(g) \mid \varphi(p^2)\)</span>, so <span class="math inline">\(p-1 \mid \mathrm{ord}_{p^2}(g) \mid p(p-1)
-\implies \mathrm{ord}_{p^2}(g)=p-1\)</span>:
-<ul>
-<li>Due to Thm 3.4(1), <span class="math inline">\(\mathrm{ord}_{p^2}(g)\mid
-\varphi(p^2)\)</span>.</li>
-<li>Since <span class="math inline">\(g^{\mathrm{ord}_{p^2}(g)}\equiv 1
-\pmod{p^2} \implies g^{\mathrm{ord}_{p^2}(g)}\equiv 1 \pmod p\)</span>,
-thus <span class="math inline">\(\mathrm{ord}_p(g)\mid
-\mathrm{ord}_{p^2}(g)\)</span>.</li>
-</ul></li>
-<li>Consider <span class="math inline">\(g+p\)</span>, we claim that
-<span class="math inline">\(\mathrm{ord}_{p^2}(g+p)=p(p-1)\)</span>:
-<ul>
-<li>Since <span class="math inline">\(g+p\equiv g \pmod p\)</span>, thus
-<span class="math inline">\(\mathrm{ord}_p(g+p)=\mathrm{ord}_p(g)=p-1\)</span>,
-thus similarly we have <span class="math inline">\(p-1 \mid
-\mathrm{ord}_{p^2}(g+p) \mid p(p-1)\)</span></li>
-<li>Thus we claim that <span class="math inline">\(\mathrm{ord}_{p^2}(g+p)=p(p-1)\)</span> by <span class="math inline">\(\mathrm{ord}_{p^2}(g+p) \neq p-1\)</span>: <span class="math display">\[
-  \begin{aligned}
-  (g+p)^{p-1} &amp;= \sum_{i=0}^{p-1} \binom{p-1}{i} g^i p^{p-1-i} \\
-  &amp;\equiv g^{p-1} + p(p-1)g^{p-2} \pmod{p^2} \\
-  &amp;\equiv 1 - p g^{p-2} \pmod{p^2} \\
-  &amp;\not\equiv 1 \pmod{p^2}
-  \end{aligned}
-  \]</span></li>
-<li>So <span class="math inline">\(\mathrm{ord}_{p^2}(g+p)=p(p-1)\)</span>, thus
-<span class="math inline">\(g+p\)</span> is a primitive root modulo
-<span class="math inline">\(p^2\)</span>.</li>
-</ul></li>
-<li>Thus, <span class="math inline">\(g_1=\begin{cases} g &amp;
-\mathrm{ord}_{p^2}(g)=p(p-1) \\ g+p &amp; \mathrm{ord}_{p^2}(g)=p-1
-\end{cases}\)</span> is a primitive root modulo <span class="math inline">\(p^2\)</span>.</li>
-</ul></li>
-</ul></li>
-<li>For <span class="math inline">\(k\geq 3\)</span>, let <span class="math inline">\(g_1\)</span> be a primitive root modulo <span class="math inline">\(p^2\)</span>, we claim that <span class="math inline">\(g_1\)</span> is a primitive root modulo <span class="math inline">\(p^k\)</span> for all <span class="math inline">\(k\geq 3\)</span>:
-<ul>
-<li>Since <span class="math inline">\(p(p-1) = \mathrm{ord}_{p^2}(g_1)
-\mid \mathrm{ord}_{p^k}(g_1) \mid \varphi(p^k)=p^{k-1}(p-1)\)</span>,
-thus <span class="math inline">\(\mathrm{ord}_{p^k}(g_1)=p^t(p-1)\)</span> for some
-<span class="math inline">\(1\leq t\leq k-1\)</span>.</li>
-<li>Suppose <span class="math inline">\(t \leq k-2\)</span>, then <span class="math inline">\(g_1^{p^{k-2}(p-1)}\equiv
-(g_1^{p^t(p-1)})^{p^{k-2-t}}\equiv 1 \pmod{p^k}\)</span>.
-<ul>
-<li>Since <span class="math inline">\(g_1^{p-1} \equiv g^{p-1} \equiv 1
-\pmod p\)</span>, thus <span class="math inline">\(\exists a \in
-\mathbb{Z}\)</span> s.t. <span class="math inline">\(g_1^{p-1} = 1 +
-ap\)</span> and <span class="math inline">\(\gcd(a,p)=1\)</span>
-<ul>
-<li>If <span class="math inline">\(\gcd(a,p)\neq 1\)</span>, then <span class="math inline">\(p\mid a\)</span>, thus <span class="math inline">\(g_1^{p-1} \equiv 1 \pmod{p^2}\)</span>, which is a
-contradiction since <span class="math inline">\(\mathrm{ord}_{p^2}(g_1)=p(p-1)\)</span>.</li>
-</ul></li>
-<li>Then we have: (Line 4 uses the fact that <span class="math inline">\(p\)</span> is <strong>odd</strong>, so <span class="math inline">\(p\mid \binom{p^{k-2}}{i}\)</span> for <span class="math inline">\(i\geq 2\)</span>) <span class="math display">\[
-  \begin{aligned}
-  g_1^{p^{k-2}(p-1)} &amp;= (1 + ap)^{p^{k-2}} = \sum_{i=0}^{p^{k-2}}
-\binom{p^{k-2}}{i} (ap)^i \\
-  &amp;= 1 + p^{k-2} ap + \binom{p^{k-2}}{2} (ap)^2 + \cdots \\
-  &amp;\equiv 1 + ap^{k-1} \pmod{p^k} \\
-  &amp;\not\equiv 1 \pmod{p^k}
-  \end{aligned}
-  \]</span></li>
-</ul></li>
-<li>So causes a contradiction, thus <span class="math inline">\(t=k-1\)</span>, so <span class="math inline">\(\mathrm{ord}_{p^k}(g_1)=p^{k-1}(p-1)\)</span>, so
-<span class="math inline">\(g_1\)</span> is a primitive root modulo
-<span class="math inline">\(p^k\)</span> for all <span class="math inline">\(k\geq 3\)</span>.</li>
-</ul></li>
-</ul>
-        </div>
-      </div>
-    </div><p></p></li>
-<li><p><strong>Cor 3.9</strong>: There exists primitive root modulo
-<span class="math inline">\(2\cdot p^k\)</span> for <strong>odd</strong>
-prime <span class="math inline">\(p\)</span> and <span class="math inline">\(k\geq 1\)</span>.</p>
-<p>
-    </p><div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-a83eb716" role="button" aria-expanded="false" aria-controls="collapse-a83eb716">
-        <div class="fold-arrow">▶</div>Proof
-      </div>
-      <div class="fold-collapse collapse" id="collapse-a83eb716">
-        <div class="fold-content">
-          <p>Let <span class="math inline">\(g\)</span> be a primitive root modulo
-<span class="math inline">\(p^k\)</span></p>
-<ul>
-<li><strong>Case 1</strong>: <span class="math inline">\(g\)</span> is
-odd, claim that <span class="math inline">\(\mathrm{ord}_{2p^k}(g)=\varphi(2p^k)\)</span>:
-<ul>
-<li>Since <span class="math inline">\(g^l\equiv 1 \pmod{2p^k} \implies
-g^l\equiv 1 \pmod{p^k}\)</span>, we have <span class="math inline">\(\mathrm{ord}_{p^k}(g) \mid
-\mathrm{ord}_{2p^k}(g)\)</span>.</li>
-<li>Since <span class="math inline">\(\gcd(g,2p^k)=1\)</span>, we have
-<span class="math inline">\(\mathrm{ord}_{2p^k}(g)\mid
-\varphi(2p^k)\)</span>.</li>
-<li>Since <span class="math inline">\(\varphi(2p^k)=\varphi(2)\cdot
-\varphi(p^k)=\varphi(p^k)\)</span> and <span class="math inline">\(\mathrm{ord}_{p^k}(g)=\varphi(p^k)\)</span>, thus
-<span class="math inline">\(\mathrm{ord}_{2p^k}(g)=\varphi(2p^k)\)</span>, so
-<span class="math inline">\(g\)</span> is a primitive root modulo <span class="math inline">\(2p^k\)</span>.</li>
-</ul></li>
-<li><strong>Case 2</strong>: <span class="math inline">\(g\)</span> is
-even, then <span class="math inline">\(g+p^k\)</span> is a primitive
-root modulo <span class="math inline">\(p^k\)</span> and is odd. By case
-1, <span class="math inline">\(\mathrm{ord}_{2p^k}(g+p^k)=\varphi(2p^k)\)</span>.</li>
-</ul>
-        </div>
-      </div>
-    </div><p></p></li>
-<li><p><strong>Algorithm 3.10</strong>: Find all primitive roots modulo
+<li><p><strong>Algorithm 3.8</strong>: Find all primitive roots modulo
 <span class="math inline">\(p\)</span> for odd prime <span class="math inline">\(p\in \mathbb{P}\)</span>.</p>
 <ol type="1">
 <li>Factor <span class="math inline">\(\varphi(p)=p-1\)</span> into its
@@ -2342,22 +2225,149 @@ primitive roots modulo <span class="math inline">\(p\)</span> are <span class="m
         </div>
       </div>
     </div><p></p></li>
-<li><p><strong>Thm 3.10</strong>: For <span class="math inline">\(m\geq
+<li><p><strong>Thm 3.9</strong>: There exists primitive root modulo
+<span class="math inline">\(p^k\)</span> for <strong>odd</strong> prime
+<span class="math inline">\(p\)</span> and <span class="math inline">\(k\geq 1\)</span>, and there exists primitive root
+modulo <span class="math inline">\(2^k\)</span> for <span class="math inline">\(k=1,2\)</span>.</p>
+<p>
+    </p><div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-6ad9f18a" role="button" aria-expanded="false" aria-controls="collapse-6ad9f18a">
+        <div class="fold-arrow">▶</div>Proof
+      </div>
+      <div class="fold-collapse collapse" id="collapse-6ad9f18a">
+        <div class="fold-content">
+          <p>Let <span class="math inline">\(g\)</span> be a primitive root modulo
+<span class="math inline">\(p\)</span>, then <span class="math inline">\(\mathrm{ord}_p(g)=\varphi(p)=p-1\)</span>.</p>
+<ul>
+<li>For <span class="math inline">\(k=1\)</span>, show in Thm 3.7,
+done.</li>
+<li>For <span class="math inline">\(k=2\)</span>:
+<ul>
+<li>If <span class="math inline">\(\mathrm{ord}_{p^2}(g)=\varphi(p^2)=p(p-1)\)</span>,
+done.</li>
+<li>If <span class="math inline">\(\mathrm{ord}_{p^2}(g)&lt;\varphi(p^2)\)</span>
+<ul>
+<li>Claim that <span class="math inline">\(\mathrm{ord}_{p}(g) \mid
+\mathrm{ord}_{p^2}(g) \mid \varphi(p^2)\)</span>, so <span class="math inline">\(p-1 \mid \mathrm{ord}_{p^2}(g) \mid p(p-1)
+\implies \mathrm{ord}_{p^2}(g)=p-1\)</span>:
+<ul>
+<li>Due to Thm 3.4(1), <span class="math inline">\(\mathrm{ord}_{p^2}(g)\mid
+\varphi(p^2)\)</span>.</li>
+<li>Since <span class="math inline">\(g^{\mathrm{ord}_{p^2}(g)}\equiv 1
+\pmod{p^2} \implies g^{\mathrm{ord}_{p^2}(g)}\equiv 1 \pmod p\)</span>,
+thus <span class="math inline">\(\mathrm{ord}_p(g)\mid
+\mathrm{ord}_{p^2}(g)\)</span>.</li>
+</ul></li>
+<li>Consider <span class="math inline">\(g+p\)</span>, we claim that
+<span class="math inline">\(\mathrm{ord}_{p^2}(g+p)=p(p-1)\)</span>:
+<ul>
+<li>Since <span class="math inline">\(g+p\equiv g \pmod p\)</span>, thus
+<span class="math inline">\(\mathrm{ord}_p(g+p)=\mathrm{ord}_p(g)=p-1\)</span>,
+thus similarly we have <span class="math inline">\(p-1 \mid
+\mathrm{ord}_{p^2}(g+p) \mid p(p-1)\)</span></li>
+<li>Thus we claim that <span class="math inline">\(\mathrm{ord}_{p^2}(g+p)=p(p-1)\)</span> by <span class="math inline">\(\mathrm{ord}_{p^2}(g+p) \neq p-1\)</span>: <span class="math display">\[
+  \begin{aligned}
+  (g+p)^{p-1} &amp;= \sum_{i=0}^{p-1} \binom{p-1}{i} g^i p^{p-1-i} \\
+  &amp;\equiv g^{p-1} + p(p-1)g^{p-2} \pmod{p^2} \\
+  &amp;\equiv 1 - p g^{p-2} \pmod{p^2} \\
+  &amp;\not\equiv 1 \pmod{p^2}
+  \end{aligned}
+  \]</span></li>
+<li>So <span class="math inline">\(\mathrm{ord}_{p^2}(g+p)=p(p-1)\)</span>, thus
+<span class="math inline">\(g+p\)</span> is a primitive root modulo
+<span class="math inline">\(p^2\)</span>.</li>
+</ul></li>
+<li>Thus, <span class="math inline">\(g_1=\begin{cases} g &amp;
+\mathrm{ord}_{p^2}(g)=p(p-1) \\ g+p &amp; \mathrm{ord}_{p^2}(g)=p-1
+\end{cases}\)</span> is a primitive root modulo <span class="math inline">\(p^2\)</span>.</li>
+</ul></li>
+</ul></li>
+<li>For <span class="math inline">\(k\geq 3\)</span>, let <span class="math inline">\(g_1\)</span> be a primitive root modulo <span class="math inline">\(p^2\)</span>, we claim that <span class="math inline">\(g_1\)</span> is a primitive root modulo <span class="math inline">\(p^k\)</span> for all <span class="math inline">\(k\geq 3\)</span>:
+<ul>
+<li>Since <span class="math inline">\(p(p-1) = \mathrm{ord}_{p^2}(g_1)
+\mid \mathrm{ord}_{p^k}(g_1) \mid \varphi(p^k)=p^{k-1}(p-1)\)</span>,
+thus <span class="math inline">\(\mathrm{ord}_{p^k}(g_1)=p^t(p-1)\)</span> for some
+<span class="math inline">\(1\leq t\leq k-1\)</span>.</li>
+<li>Suppose <span class="math inline">\(t \leq k-2\)</span>, then <span class="math inline">\(g_1^{p^{k-2}(p-1)}\equiv
+(g_1^{p^t(p-1)})^{p^{k-2-t}}\equiv 1 \pmod{p^k}\)</span>.
+<ul>
+<li>Since <span class="math inline">\(g_1^{p-1} \equiv g^{p-1} \equiv 1
+\pmod p\)</span>, thus <span class="math inline">\(\exists a \in
+\mathbb{Z}\)</span> s.t. <span class="math inline">\(g_1^{p-1} = 1 +
+ap\)</span> and <span class="math inline">\(\gcd(a,p)=1\)</span>
+<ul>
+<li>If <span class="math inline">\(\gcd(a,p)\neq 1\)</span>, then <span class="math inline">\(p\mid a\)</span>, thus <span class="math inline">\(g_1^{p-1} \equiv 1 \pmod{p^2}\)</span>, which is a
+contradiction since <span class="math inline">\(\mathrm{ord}_{p^2}(g_1)=p(p-1)\)</span>.</li>
+</ul></li>
+<li>Then we have: (Line 3 uses the fact that <span class="math inline">\(p\)</span> is <strong>odd prime</strong>, so for
+<span class="math inline">\(i\geq 2\)</span>, <span class="math inline">\(\binom{p^{k-2}}{i} (ap)^i \equiv 0 \pmod
+{p^k}\)</span>) <span class="math display">\[
+  \begin{aligned}
+  g_1^{p^{k-2}(p-1)} &amp;= (1 + ap)^{p^{k-2}} = \sum_{i=0}^{p^{k-2}}
+\binom{p^{k-2}}{i} (ap)^i \\
+  &amp;= 1 + p^{k-2} ap + \binom{p^{k-2}}{2} (ap)^2 + \cdots \\
+  &amp;\equiv 1 + ap^{k-1} \pmod{p^k} \\
+  &amp;\not\equiv 1 \pmod{p^k}
+  \end{aligned}
+  \]</span></li>
+</ul></li>
+<li>So causes a contradiction, thus <span class="math inline">\(t=k-1\)</span>, so <span class="math inline">\(\mathrm{ord}_{p^k}(g_1)=p^{k-1}(p-1)\)</span>, so
+<span class="math inline">\(g_1\)</span> is a primitive root modulo
+<span class="math inline">\(p^k\)</span> for all <span class="math inline">\(k\geq 3\)</span>.</li>
+</ul></li>
+</ul>
+        </div>
+      </div>
+    </div><p></p></li>
+<li><p><strong>Thm 3.10</strong>: There exists primitive root modulo
+<span class="math inline">\(2\cdot p^k\)</span> for <strong>odd</strong>
+prime <span class="math inline">\(p\)</span> and <span class="math inline">\(k\geq 1\)</span>.</p>
+<p>
+    </p><div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-554b61aa" role="button" aria-expanded="false" aria-controls="collapse-554b61aa">
+        <div class="fold-arrow">▶</div>Proof
+      </div>
+      <div class="fold-collapse collapse" id="collapse-554b61aa">
+        <div class="fold-content">
+          <p>Let <span class="math inline">\(g\)</span> be a primitive root modulo
+<span class="math inline">\(p^k\)</span></p>
+<ul>
+<li><strong>Case 1</strong>: <span class="math inline">\(g\)</span> is
+odd, claim that <span class="math inline">\(\mathrm{ord}_{2p^k}(g)=\varphi(2p^k)\)</span>:
+<ul>
+<li>Since <span class="math inline">\(g^l\equiv 1 \pmod{2p^k} \implies
+g^l\equiv 1 \pmod{p^k}\)</span>, we have <span class="math inline">\(\mathrm{ord}_{p^k}(g) \mid
+\mathrm{ord}_{2p^k}(g)\)</span>.</li>
+<li>Since <span class="math inline">\(\gcd(g,p^k)=1\)</span> and <span class="math inline">\(g\)</span> is odd, we have <span class="math inline">\(\gcd(g,2p^k)=1\)</span>, thus <span class="math inline">\(\mathrm{ord}_{2p^k}(g)\mid
+\varphi(2p^k)\)</span>.</li>
+<li>Since <span class="math inline">\(\varphi(2p^k)=\varphi(2)\cdot
+\varphi(p^k)=\varphi(p^k) = \mathrm{ord}_{p^k}(g)\)</span>, thus <span class="math inline">\(\mathrm{ord}_{2p^k}(g)=\varphi(2p^k)\)</span>, so
+<span class="math inline">\(g\)</span> is a primitive root modulo <span class="math inline">\(2p^k\)</span>.</li>
+</ul></li>
+<li><strong>Case 2</strong>: <span class="math inline">\(g\)</span> is
+even, then <span class="math inline">\(g+p^k\)</span> is a primitive
+root modulo <span class="math inline">\(p^k\)</span> and is odd. By case
+1, <span class="math inline">\(\mathrm{ord}_{2p^k}(g+p^k)=\varphi(2p^k)\)</span>.</li>
+</ul>
+        </div>
+      </div>
+    </div><p></p></li>
+<li><p><strong>Thm 3.11</strong>: For <span class="math inline">\(m\geq
 3\)</span>, there exists primitive root modulo <span class="math inline">\(m \iff m\)</span> is of the form <span class="math inline">\(2,4,p^k,2p^k\)</span> for odd prime <span class="math inline">\(p\)</span> and <span class="math inline">\(k\geq
 1\)</span>.</p>
 <p>
     </p><div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-d44f6e71" role="button" aria-expanded="false" aria-controls="collapse-d44f6e71">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-ea882eb9" role="button" aria-expanded="false" aria-controls="collapse-ea882eb9">
         <div class="fold-arrow">▶</div>Proof
       </div>
-      <div class="fold-collapse collapse" id="collapse-d44f6e71">
+      <div class="fold-collapse collapse" id="collapse-ea882eb9">
         <div class="fold-content">
           <ul>
 <li><span class="math inline">\(\implies\)</span>: Assume that <span class="math inline">\(m\)</span> has the standard factorization <span class="math inline">\(m=\prod_{i=1}^r p_i^{e_i}\)</span> with <span class="math inline">\(e_i\geq 1\)</span>, then <span class="math inline">\(\varphi(m) = \prod_{i=1}^r
-p_i^{e_i-1}(p_i-1)\)</span>
+p_i^{e_i-1}(p_i-1)\)</span>. Let <span class="math inline">\(g\)</span>
+be a primitive root modulo <span class="math inline">\(m\)</span>, then
+<span class="math inline">\(\mathrm{ord}_m(g)=\varphi(m)\)</span>
 <ul>
-<li>Let <span class="math inline">\(g\)</span> be a primitive root
-modulo <span class="math inline">\(m\)</span>, then <span class="math inline">\(\mathrm{ord}_m(g)=\varphi(m)\)</span></li>
 <li>Let <span class="math inline">\(t = \mathrm{lcm}(\varphi(p_1^{e_1}),
 \varphi(p_2^{e_2}), \cdots, \varphi(p_r^{e_r}))\)</span>, thus <span class="math inline">\(t\leq \varphi(m)\)</span> and <span class="math inline">\(\varphi(p_i^{e_i})\mid t\)</span> for <span class="math inline">\(1\leq i\leq r\)</span>, so we have <span class="math display">\[
   \begin{aligned}
@@ -2376,39 +2386,43 @@ modulo <span class="math inline">\(m\)</span>, then <span class="math inline">\(
 i&lt;j\leq r\)</span>, i.e.&nbsp;<span class="math inline">\(\gcd(p_i^{e_i-1}(p_i-1),
 p_j^{e_j-1}(p_j-1))=1\)</span>. Thus <span class="math inline">\(m=2^a
 p^b\)</span> for some <span class="math inline">\(a,b\geq 0\)</span> and
-<span class="math inline">\(p\in \mathbb{P}\)</span> is odd.</li>
-<li>Case 1: <span class="math inline">\(b\geq 1\)</span>, then <span class="math inline">\(\gcd(\varphi(2^a), \varphi(p^b))=\gcd(2^{a-1},
-p^{b-1}(p-1))=1\)</span>, thus <span class="math inline">\(a\leq
-1\)</span> since <span class="math inline">\(2\mid p-1\)</span>, so
-<span class="math inline">\(m=p^b\)</span> or <span class="math inline">\(2p^b\)</span>.</li>
-<li>Case 2: <span class="math inline">\(b=0\)</span>, <span class="math inline">\(m=2^a\)</span>, claim that <span class="math inline">\(a\leq 2\)</span>: Otherwise, <span class="math inline">\(a\geq 3\)</span>, <span class="math inline">\(\varphi(g)=2^{a-1}\)</span>, thus <span class="math inline">\(g\)</span> is odd. Let <span class="math inline">\(g=2k+1\)</span> for some <span class="math inline">\(k\in \mathbb{Z}\)</span>, consider <span class="math inline">\(g^{2^{a-2}} \not\equiv 1 \pmod{2^a}\)</span>:
-<span class="math display">\[
+<span class="math inline">\(p\in \mathbb{P}\)</span> is odd.
+<ul>
+<li><strong>Case</strong> 1: <span class="math inline">\(b\geq
+1\)</span>, then <span class="math inline">\(\gcd(\varphi(2^a),
+\varphi(p^b))=\gcd(2^{a-1}, p^{b-1}(p-1))=1\)</span>, thus <span class="math inline">\(a\leq 1\)</span> since <span class="math inline">\(2\mid p-1\)</span>, so <span class="math inline">\(m=p^b\)</span> or <span class="math inline">\(2p^b\)</span>.</li>
+<li><strong>Case</strong> 2: <span class="math inline">\(b=0\)</span>,
+<span class="math inline">\(m=2^a\)</span>, <span class="math inline">\(\mathrm{ord}_{m}(g)=\varphi(m)=2^{a-1}\)</span>,
+so <span class="math inline">\(g^{2^{a-2}} \not\equiv 1
+\pmod{2^a}\)</span>. Since <span class="math inline">\(\gcd(g,2^a)=1\)</span>, thus <span class="math inline">\(g\)</span> is odd. Let <span class="math inline">\(g=2k+1\)</span> for some <span class="math inline">\(k\in \mathbb{Z}\)</span>, claim that <span class="math inline">\(a\leq 2\)</span>: Suppose <span class="math inline">\(a\geq 3\)</span>, then: <span class="math display">\[
   \begin{aligned}
   g^{2^{a-2}} &amp;= (2k+1)^{2^{a-2}} = \sum_{i=0}^{2^{a-2}}
 \binom{2^{a-2}}{i} (2k)^i \\
-  &amp;\equiv 1 + 2^{a-1} k + \frac{2^{a-2} (2^{a-2}-1) (2k)^2}{2} +
-\frac{2^{a-2} (2^{a-2}-1) (2^{a-2}-2) (2k)^3}{6} + \cdots \pmod{2^a} \\
+  &amp;= 1 + 2^{a-1} k + \frac{2^{a-2} (2^{a-2}-1) (2k)^2}{2} +
+\frac{2^{a-2} (2^{a-2}-1) (2^{a-2}-2) (2k)^3}{6} + \cdots \\
   &amp;\equiv 1 + 2^{a-1} k + 2^{a-3} (2^{a-2}-1) (2k)^2 \pmod{2^a} \\
-  &amp;= 1 + 2^{a-1}(k + k^2(2^{a-2}-1)) \pmod{2^a} \\
-  &amp;\not\equiv 1 \pmod{2^a}
+  &amp;= 1 + 2^{a-1}(k + k^2(2^{a-2}-1)) \pmod{2^a}
   \end{aligned}
-  \]</span> Contradiction, so <span class="math inline">\(a\leq
-2\)</span>.</li>
+  \]</span> Since <span class="math inline">\(a\geq 3\)</span>, we have
+<span class="math inline">\((k+ k^2(2^{a-2}-1)) = k^2\cdot 2^{a-2} -
+k(k-1)\)</span> is even, thus <span class="math inline">\(g^{2^{a-2}}
+\equiv 1 \pmod{2^a}\)</span>, which is a contradiction, so <span class="math inline">\(a\leq 2\)</span>.</li>
+</ul></li>
 </ul></li>
 <li><span class="math inline">\(\impliedby\)</span>:
 <ul>
 <li><span class="math inline">\(m=2\)</span>: <span class="math inline">\(g=1\)</span> is a primitive root modulo <span class="math inline">\(2\)</span>.</li>
 <li><span class="math inline">\(m=4\)</span>: <span class="math inline">\(g=3\)</span> is a primitive root modulo <span class="math inline">\(4\)</span>.</li>
 <li><span class="math inline">\(m=p^k\)</span> for odd prime <span class="math inline">\(p\)</span> and <span class="math inline">\(k\geq
-1\)</span>: Show in Thm 3.8</li>
+1\)</span>: Show in Thm 3.9</li>
 <li><span class="math inline">\(m=2p^k\)</span> for odd prime <span class="math inline">\(p\)</span> and <span class="math inline">\(k\geq
-1\)</span>: Show in Cor 3.9</li>
+1\)</span>: Show in Thm 3.10</li>
 </ul></li>
 </ul>
         </div>
       </div>
     </div><p></p></li>
-<li><p><strong>Algorithm 3.11</strong>: Find all primitive roots modulo
+<li><p><strong>Algorithm 3.12</strong>: Find all primitive roots modulo
 <span class="math inline">\(n\)</span>.</p>
 <ol type="1">
 <li>If <span class="math inline">\(n\)</span> is not of the form <span class="math inline">\(2,4,p^k,2p^k\)</span> for odd prime <span class="math inline">\(p\)</span> and <span class="math inline">\(k\geq
@@ -2435,41 +2449,43 @@ primitive roots modulo <span class="math inline">\(2p^k\)</span>.</li>
 </ol>
 <p>
     </p><div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-d866d012" role="button" aria-expanded="false" aria-controls="collapse-d866d012">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-97e4b7d9" role="button" aria-expanded="false" aria-controls="collapse-97e4b7d9">
         <div class="fold-arrow">▶</div>Proof of 2
       </div>
-      <div class="fold-collapse collapse" id="collapse-d866d012">
+      <div class="fold-collapse collapse" id="collapse-97e4b7d9">
         <div class="fold-content">
           <ol type="1">
 <li><span class="math inline">\(G_1\)</span> is the set of all primitive
 roots modulo <span class="math inline">\(p^2\)</span>:
 <ul>
-<li><p>If <span class="math inline">\(g_1\)</span> is a primitive root
+<li>If <span class="math inline">\(g_1\)</span> is a primitive root
 modulo <span class="math inline">\(p^2\)</span>, then <span class="math inline">\(g_1\)</span> is a primitive root modulo <span class="math inline">\(p\)</span>, so <span class="math inline">\(g_1 = g
 + ap\)</span> for some <span class="math inline">\(g \in G\)</span> and
-<span class="math inline">\(a \in \mathbb{Z}_p\)</span>.</p>
+<span class="math inline">\(a \in \mathbb{Z}_p\)</span>.
 <ul>
 <li>If <span class="math inline">\(g_1\)</span> is not a primitive root
 modulo <span class="math inline">\(p\)</span>, then <span class="math inline">\(g_1^d\equiv 1 \pmod p\)</span> for some <span class="math inline">\(d\mid p-1\)</span> with <span class="math inline">\(d&lt;p-1\)</span>, thus <span class="math inline">\((g_1^d)^p = (1+kp)^p \equiv 1 \pmod{p^2}\)</span>
 with <span class="math inline">\(dp &lt; p(p-1)\)</span>, so <span class="math inline">\(g_1\)</span> is not a primitive root modulo <span class="math inline">\(p^2\)</span>, which is a contradiction.</li>
 </ul></li>
-<li><p>Suppose <span class="math inline">\(g_1=g+ap\)</span> is a
-primitive root modulo <span class="math inline">\(p\)</span>, then we
-have <span class="math display">\[
+<li>Suppose <span class="math inline">\(g_1=g+ap\)</span> is a primitive
+root modulo <span class="math inline">\(p^2\)</span>, then we have <span class="math display">\[
   \begin{aligned}
   g_1^{p-1} &amp;= (g+ap)^{p-1} = \sum_{i=0}^{p-1} \binom{p-1}{i} g^i
 (ap)^{p-1-i} \\
   &amp;\equiv g^{p-1} + ap(p-1)g^{p-2} \pmod{p^2} \\
   &amp;\equiv g^{p-1} - ap g^{p-2} \pmod{p^2} \\
   &amp;\not\equiv 1 \pmod{p^2} \\
-  \iff ap &amp;\equiv apg^{p-1} \not\equiv g^{p}-g \pmod{p^2} \\
-  \iff ap &amp;\not\equiv g^p - g \pmod {p^2} \\
-  \iff a &amp;\not\equiv \frac{g^p - g}{p} \pmod p
   \end{aligned}
-  \]</span></p>
-<p>i.e.&nbsp;there is a unique <span class="math inline">\(a\)</span> not
-satisfying the condition, so there are <span class="math inline">\(p-1\)</span> choices for <span class="math inline">\(a\)</span> for each <span class="math inline">\(g\in G\)</span>.</p></li>
-<li><p>So <span class="math inline">\(G_1\)</span> has totally <span class="math inline">\((p-1)\varphi(\varphi(p))\)</span> distinct
+  \]</span> Thus <span class="math display">\[
+  apg^{p-1} \not\equiv g^p-g \pmod{p^2}
+  \]</span> Since <span class="math inline">\(g\)</span> is a primitive
+root modulo <span class="math inline">\(p\)</span>, thus <span class="math inline">\(g^{p-1}\equiv 1 \pmod p\)</span>, so <span class="math inline">\(apg^{p-1} \equiv ap(1+kp) \equiv ap
+\pmod{p^2}\)</span>, thus <span class="math display">\[
+  ap \not\equiv g^p-g \pmod{p^2} \iff a \not\equiv \frac{g^p-g}{p} \pmod
+p
+  \]</span> I.e. there is a unique <span class="math inline">\(a\)</span> not satisfying the condition, so there
+are <span class="math inline">\(p-1\)</span> choices for <span class="math inline">\(a\)</span> for each <span class="math inline">\(g\in G\)</span>.</li>
+<li>So <span class="math inline">\(G_1\)</span> has totally <span class="math inline">\((p-1)\varphi(\varphi(p))\)</span> distinct
 elements, and they are all primitive roots modulo <span class="math inline">\(p^2\)</span>. <span class="math display">\[
   \begin{aligned}
   &amp;g+ap\equiv g'+a'p \pmod{p^2}\\
@@ -2480,21 +2496,21 @@ elements, and they are all primitive roots modulo <span class="math inline">\(p^
   \implies &amp;a\equiv a' \pmod p \\
   \implies &amp;a=a'
   \end{aligned}
-  \]</span></p></li>
-<li><p>Since <span class="math inline">\(\varphi(\varphi(p^2))=(p-1)\varphi(\varphi(p))=(p-1)|G|=|G_1|\)</span>,
+  \]</span></li>
+<li>Since <span class="math inline">\(\varphi(\varphi(p^2))=(p-1)\varphi(\varphi(p))=(p-1)|G|=|G_1|\)</span>,
 <span class="math inline">\(G_1\)</span> is the set of all primitive
-roots modulo <span class="math inline">\(p^2\)</span>.</p></li>
+roots modulo <span class="math inline">\(p^2\)</span>.</li>
 </ul></li>
 <li><span class="math inline">\(G_2\)</span> is the set of all primitive
 roots modulo <span class="math inline">\(p^k\)</span> for <span class="math inline">\(k\geq 3\)</span>:
 <ul>
-<li><p>If <span class="math inline">\(g_2\)</span> is a primitive root
+<li>If <span class="math inline">\(g_2\)</span> is a primitive root
 modulo <span class="math inline">\(p^k\)</span>, then <span class="math inline">\(g_2\)</span> is a primitive root modulo <span class="math inline">\(p^2\)</span>, so <span class="math inline">\(g_2 =
 g + ap^2\)</span> for some <span class="math inline">\(g \in
 G_1\)</span> and <span class="math inline">\(a \in
-\mathbb{Z}_{p^{k-2}}\)</span>.</p></li>
-<li><p>Suppose <span class="math inline">\(g_2=g+ap^2\)</span> is a
-primitive root modulo <span class="math inline">\(p^2\)</span>, then we
+\mathbb{Z}_{p^{k-2}}\)</span>.</li>
+<li>Suppose <span class="math inline">\(g_2=g+ap^2\)</span> is a
+primitive root modulo <span class="math inline">\(p^k\)</span>, then we
 have <span class="math display">\[
   \begin{aligned}
   g_2^{p^{k-2}(p-1)} &amp;= (g+ap^2)^{p^{k-2}(p-1)} \\
@@ -2503,15 +2519,14 @@ have <span class="math display">\[
   &amp;\equiv g^{p^{k-2}(p-1)} \pmod{p^k} \\
   &amp;\not\equiv 1 \pmod{p^k}
   \end{aligned}
-  \]</span></p>
-<p>Since <span class="math inline">\(g\)</span> is a primitive root
-modulo <span class="math inline">\(p^2\)</span>, we have <span class="math inline">\(g^{p-1} \not\equiv 1 \pmod{p^2}\)</span>, so <span class="math inline">\(g^{p^{k-2}(p-1)} \not\equiv 1 \pmod{p^k}\)</span>
+  \]</span> Since <span class="math inline">\(g\)</span> is a primitive
+root modulo <span class="math inline">\(p^2\)</span>, we have <span class="math inline">\(g^{p-1} \not\equiv 1 \pmod{p^2}\)</span>, so <span class="math inline">\(g^{p^{k-2}(p-1)} \not\equiv 1 \pmod{p^k}\)</span>
 for all <span class="math inline">\(k\geq 3\)</span>, thus the formula
-above always holds.</p></li>
-<li><p>So <span class="math inline">\(G_2\)</span> has totally <span class="math inline">\(|\mathbb{Z}_{p^{k-2}}||G_1|\)</span> distinct
+above always holds.</li>
+<li>So <span class="math inline">\(G_2\)</span> has totally <span class="math inline">\(|\mathbb{Z}_{p^{k-2}}||G_1|\)</span> distinct
 elements. Since <span class="math inline">\(\varphi(\varphi(p^k))=p^{k-2}\varphi(\varphi(p^2))=|G_2|\)</span>,
 <span class="math inline">\(G_2\)</span> is the set of all primitive
-roots modulo <span class="math inline">\(p^k\)</span> for all <span class="math inline">\(k\geq 3\)</span>.</p></li>
+roots modulo <span class="math inline">\(p^k\)</span> for all <span class="math inline">\(k\geq 3\)</span>.</li>
 </ul></li>
 <li><span class="math inline">\(G_3\)</span> is the set of all primitive
 roots modulo <span class="math inline">\(2p^k\)</span>:
@@ -2525,7 +2540,7 @@ roots modulo <span class="math inline">\(2p^k\)</span>.</li>
         </div>
       </div>
     </div><p></p></li>
-<li><p><strong>Cor 3.12</strong>: For odd prime <span class="math inline">\(p\)</span> and <span class="math inline">\(\forall
+<li><p><strong>Cor 3.13</strong>: For odd prime <span class="math inline">\(p\)</span> and <span class="math inline">\(\forall
 k \geq 2\)</span></p>
 <ol type="1">
 <li><span class="math inline">\(\mathrm{ord}_{p^k}(g)=\varphi(p^k)
@@ -2535,35 +2550,34 @@ k \geq 2\)</span></p>
 </ol>
 <p>
     </p><div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-a20bc4c2" role="button" aria-expanded="false" aria-controls="collapse-a20bc4c2">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-30af1564" role="button" aria-expanded="false" aria-controls="collapse-30af1564">
         <div class="fold-arrow">▶</div>Proof
       </div>
-      <div class="fold-collapse collapse" id="collapse-a20bc4c2">
+      <div class="fold-collapse collapse" id="collapse-30af1564">
         <div class="fold-content">
           <ol type="1">
-<li><p>Since <span class="math inline">\(\mathrm{ord}_{p^k}(g)=\varphi(p^k)\)</span>, thus
+<li>Since <span class="math inline">\(\mathrm{ord}_{p^k}(g)=\varphi(p^k)\)</span>, thus
 <span class="math inline">\(g^{\varphi(p^{k-1})}\not\equiv 1
 \pmod{p^k}\)</span> and <span class="math inline">\(g^{\varphi(p^{k-1})}\equiv 1
 \pmod{p^{k-1}}\)</span>, thus <span class="math inline">\(g^{\varphi(p^{k-1})}=1+ap^{k-1}\)</span> with
-<span class="math inline">\(\gcd(a,p)=1\)</span>. Since <span class="math inline">\(p^{k-1}(p-1) = \mathrm{ord}_{p^k}(g_1) \mid
-\mathrm{ord}_{p^{k+1}}(g_1) \mid \varphi(p^{k+1})=p^{k}(p-1)\)</span>,
-we have <span class="math inline">\(\mathrm{ord}_{p^{k+1}}(g)=p^t(p-1)\)</span> for
-some <span class="math inline">\(t\in \{k-1,k\}\)</span>. <span class="math display">\[
+<span class="math inline">\(\gcd(a,p)=1\)</span>. Since <span class="math inline">\(p^{k-1}(p-1) = \mathrm{ord}_{p^k}(g) \mid
+\mathrm{ord}_{p^{k+1}}(g) \mid \varphi(p^{k+1})=p^{k}(p-1)\)</span>, we
+have <span class="math inline">\(\mathrm{ord}_{p^{k+1}}(g)=p^{k-1}(p-1)\)</span> or
+<span class="math inline">\(p^{k}(p-1)\)</span>. Since <span class="math display">\[
 \begin{aligned}
 g^{p^{k-1}(p-1)} &amp;= g^{\varphi(p^{k-1})p} \\
 &amp;= (1+ap^{k-1})^{p} \\
 &amp;\equiv 1 + ap^{k} \pmod{p^{k+1}} \\
 &amp;\not\equiv 1 \pmod{p^{k+1}}
 \end{aligned}
-\]</span></p>
-<p>So <span class="math inline">\(\mathrm{ord}_{p^{k+1}}(g)\neq
-\varphi(p^{k})=p^{k-1}(p-1)\)</span>, thus <span class="math inline">\(\mathrm{ord}_{p^{k+1}}(g)=\varphi(p^{k+1})\)</span>.</p></li>
-<li><p>Suppose <span class="math inline">\(\mathrm{ord}_{p^{k-1}}(g)=d\)</span>, then <span class="math inline">\(d\mid \varphi(p^{k-1})\)</span> and <span class="math inline">\(g^d\equiv 1 \pmod{p^{k-1}}\)</span>, thus <span class="math inline">\(g^d=1+ap^{k-1}\)</span> for some <span class="math inline">\(a\in \mathbb{Z}\)</span>, then we have <span class="math display">\[
+\]</span> So <span class="math inline">\(\mathrm{ord}_{p^{k+1}}(g)\neq
+\varphi(p^{k})=p^{k-1}(p-1)\)</span>, thus <span class="math inline">\(\mathrm{ord}_{p^{k+1}}(g)=\varphi(p^{k+1})\)</span>.</li>
+<li>Suppose <span class="math inline">\(\mathrm{ord}_{p^{k-1}}(g)=d\)</span>, then <span class="math inline">\(d\mid \varphi(p^{k-1})\)</span> and <span class="math inline">\(g^d\equiv 1 \pmod{p^{k-1}}\)</span>, thus <span class="math inline">\(g^d=1+ap^{k-1}\)</span> for some <span class="math inline">\(a\in \mathbb{Z}\)</span>, then we have <span class="math display">\[
 (g^d)^p = (1+ap^{k-1})^p \equiv 1 \pmod{p^{k}}
-\]</span></p>
-<p>So <span class="math inline">\(\mathrm{ord}_{p^{k}} \mid pd\)</span>,
-thus <span class="math inline">\(\varphi(p^{k})\mid pd\)</span>, thus
-<span class="math inline">\(\varphi(p^{k-1})\mid d\)</span>, so <span class="math inline">\(d=\mathrm{ord}_{p^{k-1}}(g)=\varphi(p^{k-1})\)</span>.</p></li>
+\]</span> So <span class="math inline">\(\mathrm{ord}_{p^{k}}(g) \mid
+pd\)</span>, thus <span class="math inline">\(\varphi(p^{k})\mid
+pd\)</span>, thus <span class="math inline">\(\varphi(p^{k-1})\mid
+d\)</span>, so <span class="math inline">\(\mathrm{ord}_{p^{k-1}}(g)=d=\varphi(p^{k-1})\)</span>.</li>
 </ol>
         </div>
       </div>
@@ -2571,13 +2585,13 @@ thus <span class="math inline">\(\varphi(p^{k})\mid pd\)</span>, thus
 </ul>
 <h2 id="discrete-logarithm">Discrete Logarithm</h2>
 <ul>
-<li><p><strong>Def 3.13 Discrete Logarithm</strong>: Let <span class="math inline">\(g\)</span> be a primitive root modulo <span class="math inline">\(m\)</span>, then discrete logarithm of <span class="math inline">\(a\)</span> modulo <span class="math inline">\(m\)</span> with <span class="math inline">\(\gcd(a,m)=1\)</span> is defined to be an integer
+<li><p><strong>Def 3.14 Discrete Logarithm</strong>: Let <span class="math inline">\(g\)</span> be a primitive root modulo <span class="math inline">\(m\)</span>, then discrete logarithm of <span class="math inline">\(a\)</span> modulo <span class="math inline">\(m\)</span> with <span class="math inline">\(\gcd(a,m)=1\)</span> is defined to be an integer
 <span class="math inline">\(x\)</span> satisfying <span class="math display">\[
   g^x \equiv a \pmod m
   \]</span></p>
 <p>Denoted by <span class="math inline">\(x = \log_g a
 \pmod{\varphi(m)}\)</span>.</p></li>
-<li><p><strong>Thm 3.14 Properties of Discrete Logarithms</strong>: Let
+<li><p><strong>Thm 3.15 Properties of Discrete Logarithms</strong>: Let
 <span class="math inline">\(g\)</span> be a primitive root modulo <span class="math inline">\(m\)</span>, then for <span class="math inline">\(\gcd(a,m)=1\)</span> and <span class="math inline">\(\gcd(b,m)=1\)</span>, we have</p>
 <ol type="1">
 <li><span class="math inline">\(\log_g 1 \equiv 0
@@ -2631,10 +2645,10 @@ QNR\)</span>.</p></li>
 <li><p>The number of <span class="math inline">\(QR\)</span> / <span class="math inline">\(QNR\)</span> modulo <span class="math inline">\(p\)</span> is <span class="math inline">\(\frac{p-1}{2}\)</span>.</p>
 <p>
     </p><div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-ffbeaeb4" role="button" aria-expanded="false" aria-controls="collapse-ffbeaeb4">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-60ae4755" role="button" aria-expanded="false" aria-controls="collapse-60ae4755">
         <div class="fold-arrow">▶</div>Proof of 5
       </div>
-      <div class="fold-collapse collapse" id="collapse-ffbeaeb4">
+      <div class="fold-collapse collapse" id="collapse-60ae4755">
         <div class="fold-content">
           <ul>
 <li>Since there are <span class="math inline">\(p-1\)</span> non-zero
@@ -2647,12 +2661,12 @@ claim that <span class="math inline">\(\forall 1\leq x &lt; y \leq
 \frac{p-1}{2}, x^2 \not\equiv y^2 \pmod p\)</span>.
 <ul>
 <li>If <span class="math inline">\(x^2 \equiv y^2 \pmod p\)</span>, then
-<span class="math inline">\(x^2 - y^2 \equiv (x-y)(x+y) \equiv 0 \pmod
-p\)</span>, thus <span class="math inline">\(p \mid x-y\)</span> or
-<span class="math inline">\(p \mid x+y\)</span>.</li>
+<span class="math inline">\(y^2 - x^2 \equiv (y-x)(y+x) \equiv 0 \pmod
+p\)</span>, thus <span class="math inline">\(p \mid y-x\)</span> or
+<span class="math inline">\(p \mid y+x\)</span>.</li>
 <li>Since <span class="math inline">\(1\leq x &lt; y \leq
-\frac{p-1}{2}\)</span>, <span class="math inline">\(x+y \leq
-\frac{p-1}{2} + \frac{p-1}{2} = p-1 &lt; p\)</span> and <span class="math inline">\(x-y &lt; p\)</span>, thus <span class="math inline">\(p \nmid x+y\)</span> and <span class="math inline">\(p \nmid x-y\)</span>, contradiction.</li>
+\frac{p-1}{2}\)</span>, <span class="math inline">\(y+x &lt;
+\frac{p-1}{2} + \frac{p-1}{2} = p-1 &lt; p\)</span> and <span class="math inline">\(y-x &lt; p\)</span>, thus <span class="math inline">\(p \nmid x+y\)</span> and <span class="math inline">\(p \nmid x-y\)</span>, contradiction.</li>
 </ul></li>
 <li>Thus <span class="math inline">\(x^2\)</span> for <span class="math inline">\(x\in\{1, 2, \cdots, \frac{p-1}{2}\}\)</span> are
 <span class="math inline">\(\frac{p-1}{2}\)</span> distinct <span class="math inline">\(QR\)</span> modulo <span class="math inline">\(p\)</span>, and the remaining <span class="math inline">\(\frac{p-1}{2}\)</span> non-zero elements are <span class="math inline">\(QNR\)</span> modulo <span class="math inline">\(p\)</span>.</li>
@@ -2705,36 +2719,33 @@ Thus <span class="math inline">\(0 = 1 +
   \]</span></p>
 <p>
     </p><div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-3865bd79" role="button" aria-expanded="false" aria-controls="collapse-3865bd79">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-7791f3a0" role="button" aria-expanded="false" aria-controls="collapse-7791f3a0">
         <div class="fold-arrow">▶</div>Proof
       </div>
-      <div class="fold-collapse collapse" id="collapse-3865bd79">
+      <div class="fold-collapse collapse" id="collapse-7791f3a0">
         <div class="fold-content">
           <ol type="1">
-<li><p><strong>Case 1</strong>: <span class="math inline">\(p \mid
+<li><strong>Case 1</strong>: <span class="math inline">\(p \mid
 a\)</span>, then <span class="math inline">\(a=kp\)</span> for some
 <span class="math inline">\(k\in\mathbb{Z}\)</span>. Then <span class="math inline">\(\left(\frac{a}{p}\right) \equiv 0 \equiv
-(kp)^{\frac{p-1}{2}} \pmod p\)</span>, done.</p></li>
-<li><p><strong>Case 2</strong>: <span class="math inline">\(a\)</span>
-is a QR modulo <span class="math inline">\(p\)</span>, then <span class="math inline">\(a \equiv g^{2k} \pmod p\)</span> for some <span class="math inline">\(k\in\mathbb{Z}\)</span>. Then <span class="math inline">\(\left(\frac{a}{p}\right) \equiv 1 \equiv
-(g^{2k})^{\frac{p-1}{2}} \equiv g^{k(p-1)} \pmod p\)</span>,
-done.</p></li>
-<li><p><strong>Case 3</strong>: <span class="math inline">\(a\)</span>
-is a QNR modulo <span class="math inline">\(p\)</span>, then <span class="math inline">\((a^{\frac{p-1}{2}})^2 \equiv a^{p-1} \equiv 1
+(kp)^{\frac{p-1}{2}} \pmod p\)</span>, done.</li>
+<li><strong>Case 2</strong>: <span class="math inline">\(a\)</span> is a
+QR modulo <span class="math inline">\(p\)</span>, then <span class="math inline">\(a \equiv g^{2k} \pmod p\)</span> for some <span class="math inline">\(k\in\mathbb{Z}\)</span>. Then <span class="math inline">\(\left(\frac{a}{p}\right) \equiv 1 \equiv
+(g^{2k})^{\frac{p-1}{2}} \equiv g^{(p-1)k} \pmod p\)</span>, done.</li>
+<li><strong>Case 3</strong>: <span class="math inline">\(a\)</span> is a
+QNR modulo <span class="math inline">\(p\)</span>, then <span class="math inline">\((a^{\frac{p-1}{2}})^2 \equiv a^{p-1} \equiv 1
 \pmod p\)</span>, i.e.&nbsp;<span class="math inline">\(a^{\frac{p-1}{2}}\)</span> is a solution to <span class="math inline">\(x^2 \equiv 1 \pmod p\)</span>, thus <span class="math inline">\(a^{\frac{p-1}{2}} \equiv \pm 1 \pmod p\)</span>.
 Let <span class="math inline">\(a\equiv g^k \pmod p\)</span> with odd
 <span class="math inline">\(k\)</span>, then <span class="math display">\[
 \mathrm{ord}_p(a) = \mathrm{ord}_p(g^k) =
 \frac{\mathrm{ord}_p(g)}{\gcd(\mathrm{ord}_p(g), k)} =
 \frac{p-1}{\gcd(p-1, k)}
-\]</span></p>
-<p>Suppose <span class="math inline">\(a^{\frac{p-1}{2}} \equiv 1 \pmod
-p\)</span>, then <span class="math inline">\(\frac{p-1}{\gcd(p-1, k)}
-\mid \frac{p-1}{2}\)</span>, i.e.&nbsp;<span class="math inline">\(\exists
-t\in\mathbb{Z}\)</span> s.t. <span class="math inline">\(\frac{p-1}{\gcd(p-1, k)} \cdot t =
+\]</span> Suppose <span class="math inline">\(a^{\frac{p-1}{2}} \equiv 1
+\pmod p\)</span>, then <span class="math inline">\(\frac{p-1}{\gcd(p-1,
+k)} \mid \frac{p-1}{2}\)</span>, i.e.&nbsp;<span class="math inline">\(\exists t\in\mathbb{Z}\)</span> s.t. <span class="math inline">\(\frac{p-1}{\gcd(p-1, k)} \cdot t =
 \frac{p-1}{2}\)</span>, thus <span class="math inline">\(\gcd(p-1, k) =
 2t\)</span>, which contradicts the fact that <span class="math inline">\(k\)</span> is odd. Thus <span class="math inline">\(a^{\frac{p-1}{2}} \equiv -1 \pmod p\)</span>,
-done.</p></li>
+done.</li>
 </ol>
         </div>
       </div>
@@ -2754,10 +2765,10 @@ done.</p></li>
 </ol>
 <p>
     </p><div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-591a7f60" role="button" aria-expanded="false" aria-controls="collapse-591a7f60">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-64804395" role="button" aria-expanded="false" aria-controls="collapse-64804395">
         <div class="fold-arrow">▶</div>Proof
       </div>
-      <div class="fold-collapse collapse" id="collapse-591a7f60">
+      <div class="fold-collapse collapse" id="collapse-64804395">
         <div class="fold-content">
           <ol type="1">
 <li>By Euler’s Criterion, <span class="math inline">\(\left(\frac{mn}{p}\right) \equiv
@@ -2777,7 +2788,7 @@ done.</li>
 = 2^{\frac{p-1}{2}} \cdot 1\cdot 2\cdot 3\cdots \frac{p-1}{2} \equiv
 2^{\frac{p-1}{2}} \cdot \left(\frac{p-1}{2}\right)! \pmod p\)</span>.
 <ul>
-<li><p>Case 1: <span class="math inline">\(p \equiv 1 \pmod 4\)</span>:
+<li>Case 1: <span class="math inline">\(p \equiv 1 \pmod 4\)</span>:
 <span class="math display">\[
   \begin{aligned}
   S &amp;\equiv 2\cdot 4\cdot 6\cdots (p-1) \\
@@ -2789,13 +2800,11 @@ done.</li>
 (-\frac{p-7}{2}) \cdots (-1) \pmod p \\
   &amp;\equiv (-1)^{\frac{p-1}{4}} \cdot (\frac{p-1}{2})! \pmod p \\
   \end{aligned}
-  \]</span></p>
-<p>Thus <span class="math inline">\(2^{\frac{p-1}{2}} \equiv
+  \]</span> Thus <span class="math inline">\(2^{\frac{p-1}{2}} \equiv
 (-1)^{\frac{p-1}{4}} \pmod p\)</span>, i.e.&nbsp;<span class="math inline">\(\left(\frac{2}{p}\right) =
 (-1)^{\frac{p-1}{4}}\)</span>. If <span class="math inline">\(p \equiv 1
-\pmod 8\)</span>, then <span class="math inline">\(\frac{p-1}{4}\)</span> is even, thus <span class="math inline">\(\left(\frac{2}{p}\right) = 1\)</span>. If <span class="math inline">\(p \equiv 5 \pmod 8\)</span>, then <span class="math inline">\(\frac{p-1}{4}\)</span> is odd, thus <span class="math inline">\(\left(\frac{2}{p}\right) = -1\)</span>,
-done.</p></li>
-<li><p>Case 2: <span class="math inline">\(p \equiv 3 \pmod 4\)</span>:
+\pmod 8\)</span>, then <span class="math inline">\(\frac{p-1}{4}\)</span> is even, thus <span class="math inline">\(\left(\frac{2}{p}\right) = 1\)</span>. If <span class="math inline">\(p \equiv 5 \pmod 8\)</span>, then <span class="math inline">\(\frac{p-1}{4}\)</span> is odd, thus <span class="math inline">\(\left(\frac{2}{p}\right) = -1\)</span>, done.</li>
+<li>Case 2: <span class="math inline">\(p \equiv 3 \pmod 4\)</span>:
 <span class="math display">\[
   \begin{aligned}
   S &amp;\equiv 2\cdot 4\cdot 6\cdots (p-1) \\
@@ -2807,15 +2816,18 @@ done.</p></li>
 (-\frac{p-5}{2}) \cdots (-1) \pmod p \\
   &amp;\equiv (-1)^{\frac{p+1}{4}} \cdot (\frac{p-1}{2})! \pmod p \\
   \end{aligned}
-  \]</span></p>
-<p>Thus <span class="math inline">\(2^{\frac{p-1}{2}} \equiv
+  \]</span> Thus <span class="math inline">\(2^{\frac{p-1}{2}} \equiv
 (-1)^{\frac{p+1}{4}} \pmod p\)</span>, i.e.&nbsp;<span class="math inline">\(\left(\frac{2}{p}\right) =
 (-1)^{\frac{p+1}{4}}\)</span>. If <span class="math inline">\(p \equiv 3
-\pmod 8\)</span>, then <span class="math inline">\(\frac{p+1}{4}\)</span> is odd, thus <span class="math inline">\(\left(\frac{2}{p}\right) = -1\)</span>. If <span class="math inline">\(p \equiv 7 \pmod 8\)</span>, then <span class="math inline">\(\frac{p+1}{4}\)</span> is even, thus <span class="math inline">\(\left(\frac{2}{p}\right) = 1\)</span>,
-done.</p></li>
-<li><p>Thus, combine the two cases, we have <span class="math inline">\(\left(\frac{2}{p}\right) =
-(-1)^{\frac{p^2-1}{8}}\)</span>, done.</p></li>
+\pmod 8\)</span>, then <span class="math inline">\(\frac{p+1}{4}\)</span> is odd, thus <span class="math inline">\(\left(\frac{2}{p}\right) = -1\)</span>. If <span class="math inline">\(p \equiv 7 \pmod 8\)</span>, then <span class="math inline">\(\frac{p+1}{4}\)</span> is even, thus <span class="math inline">\(\left(\frac{2}{p}\right) = 1\)</span>, done.</li>
+<li>Thus, combine the two cases, we have <span class="math inline">\(\left(\frac{2}{p}\right) =
+(-1)^{\frac{p^2-1}{8}}\)</span>, done.</li>
 </ul></li>
+<li>Since <span class="math inline">\(\left(\frac{0}{p}\right) =
+0\)</span>, <span class="math inline">\(\left(\frac{a}{p}\right) =
+1\)</span> for <span class="math inline">\(\frac{p-1}{2}\)</span> <span class="math inline">\(QR\)</span> and <span class="math inline">\(\left(\frac{a}{p}\right) = -1\)</span> for <span class="math inline">\(\frac{p-1}{2}\)</span> <span class="math inline">\(QNR\)</span>, we have <span class="math inline">\(\sum_{a\in\mathbb{Z}_p} \left(\frac{a}{p}\right) =
+0 + \frac{p-1}{2} \cdot 1 + \frac{p-1}{2} \cdot (-1) = 0\)</span>,
+done.</li>
 </ol>
         </div>
       </div>
@@ -2997,7 +3009,7 @@ then <span class="math display">\[
 <h1 id="chapter-5.-polynomials">Chapter 5. Polynomials</h1>
 
     <div class="fold">
-      <div class="fold-title fold-primary collapsed" data-toggle="collapse" href="#collapse-9ad5e703" role="button" aria-expanded="false" aria-controls="collapse-9ad5e703">
+      <div class="fold-title fold-secondary collapsed" data-toggle="collapse" href="#collapse-9ad5e703" role="button" aria-expanded="false" aria-controls="collapse-9ad5e703">
         <div class="fold-arrow">▶</div>Recap of Ring and Field
       </div>
       <div class="fold-collapse collapse" id="collapse-9ad5e703">
@@ -3076,7 +3088,7 @@ commutative ring with additive identity <span class="math inline">\(0\)</span> a
 F \setminus \{0\}\)</span>.</p>
 <ul>
 <li><strong>Notation</strong>: The unit group of a ring <span class="math inline">\(R\)</span> is the set of all invertible elements
-in <span class="math inline">\(R\)</span>, denoted <span class="math inline">\(R^*\)</span>.</li>
+in <span class="math inline">\(R\)</span>, denoted by <span class="math inline">\(R^*\)</span>.</li>
 </ul>
 <p>
     </p><div class="fold">
@@ -3351,7 +3363,7 @@ d \cdot d \cdot \mathrm{lcm}\left(\frac{f}{d}, \frac{g}{d}\right) = f
 <li><p><strong>Def 5.21 Irreducible Polynomial</strong>: A non-constant
 polynomial <span class="math inline">\(f\)</span> is called
 <strong>irreducible</strong> if <span class="math inline">\(f\)</span>
-is divisible by <span class="math inline">\(a\)</span> or <span class="math inline">\(af\)</span> for some <span class="math inline">\(a
+is only divisible by <span class="math inline">\(a\)</span> or <span class="math inline">\(af\)</span> for some <span class="math inline">\(a
 \in F^*\)</span>.</p></li>
 <li><p><strong>Thm 5.22</strong>: <span class="math inline">\(f\)</span>
 is irreducible <span class="math inline">\(\iff (f\mid ab \implies f\mid
@@ -3385,13 +3397,13 @@ f\)</span> and <span class="math inline">\(p\)</span> is
 irreducible.</p>
 <p>
     </p><div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-491617e3" role="button" aria-expanded="false" aria-controls="collapse-491617e3">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-920a1f97" role="button" aria-expanded="false" aria-controls="collapse-920a1f97">
         <div class="fold-arrow">▶</div>Proof
       </div>
-      <div class="fold-collapse collapse" id="collapse-491617e3">
+      <div class="fold-collapse collapse" id="collapse-920a1f97">
         <div class="fold-content">
           <ul>
-<li>Consier the set <span class="math inline">\(S = \{\deg(u): u\mid f,
+<li>Consider the set <span class="math inline">\(S = \{\deg(u): u\mid f,
 \deg(u) \geq 1\}\)</span>, thus <span class="math inline">\(f \in
 S\)</span>, so <span class="math inline">\(S\neq\emptyset\)</span>. By
 Axiom 5.8, <span class="math inline">\(S\)</span> contains the smallest
@@ -3440,7 +3452,11 @@ Classes</h3>
 <ul>
 <li><p><strong>Def 5.27 Congruence</strong>: Let <span class="math inline">\(m \in F[x]\)</span> with <span class="math inline">\(\deg(m) \geq 1\)</span>, then two polynomials
 <span class="math inline">\(a,b \in F[x]\)</span> are said to be
-congruent modulo <span class="math inline">\(m\)</span> if <span class="math display">\[m(x) \mid a(x) - b(x)\]</span> Denoted by <span class="math inline">\(a\equiv b \pmod{m}\)</span>.</p></li>
+congruent modulo <span class="math inline">\(m\)</span> if <span class="math display">\[
+  m(x) \mid a(x) - b(x)
+  \]</span></p>
+<p>Denoted by <span class="math inline">\(a(x)\equiv b(x)
+\pmod{m(x)}\)</span>.</p></li>
 <li><p><strong>Thm 5.28 Properties of Congruence</strong>:</p>
 <ol type="1">
 <li><span class="math inline">\(a\equiv b \pmod m\)</span> and <span class="math inline">\(c\equiv d \pmod m \implies\)</span>
@@ -3468,14 +3484,14 @@ union of disjoint sets.</li>
 </ul>
 
     <div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-40328c4f" role="button" aria-expanded="false" aria-controls="collapse-40328c4f">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-83390062" role="button" aria-expanded="false" aria-controls="collapse-83390062">
         <div class="fold-arrow">▶</div>Proof of 2
       </div>
-      <div class="fold-collapse collapse" id="collapse-40328c4f">
+      <div class="fold-collapse collapse" id="collapse-83390062">
         <div class="fold-content">
           <ul>
 <li>For any <span class="math inline">\(f \in F[x]\)</span>, let <span class="math inline">\(f = q \cdot m + r\)</span> with <span class="math inline">\(\deg(r) &lt; \deg(m)\)</span>, then <span class="math inline">\(f \equiv r \pmod m\)</span>, thus <span class="math inline">\(f \in [r]_m\)</span>, thus <span class="math inline">\(F[x] \subseteq \bigcup_{\deg(r)&lt;\deg(m)}
-[r]_m\)</span>. Since <span class="math inline">\(\forall r, r[m]
+[r]_m\)</span>. Since <span class="math inline">\(\forall r, [r]_m
 \subseteq F[x]\)</span>, we have <span class="math inline">\(\bigcup_{\deg(r)&lt;\deg(m)} [r]_m \subseteq
 F[x]\)</span>. Thus <span class="math inline">\(F[x] =
 \bigcup_{\deg(r)&lt;\deg(m)} [r]_m\)</span>.</li>
@@ -3523,9 +3539,8 @@ addition <span class="math inline">\(+\)</span> and multiplication <span class="
   \]</span></p></li>
 <li><p><strong>Thm 5.33</strong>: Under the above addition and
 multiplication, <span class="math inline">\(F[x]/(m)\)</span> forms a
-<strong>commutative ring</strong> with identity the additive identity
-<span class="math inline">\(\bar{0}\)</span> and the multiplicative
-identity <span class="math inline">\(\bar{1}\)</span>.</p></li>
+<strong>commutative ring</strong> with the additive identity <span class="math inline">\(\bar{0}\)</span> and the multiplicative identity
+<span class="math inline">\(\bar{1}\)</span>.</p></li>
 <li><p><strong>Def 5.34 Invertible Element</strong>: A polynomial <span class="math inline">\(a\in F[x]\)</span> is called invertible modulo
 <span class="math inline">\(m\)</span> if <span class="math inline">\(\exists b\in F[x]\)</span> s.t. <span class="math display">\[
   a\cdot b \equiv 1 \pmod m
@@ -3559,9 +3574,9 @@ Identity, <span class="math inline">\(\exists u,v\in F[x]\)</span> s.t.
 <h3 id="euler-function-and-chinese-remainder-theorem-1">Euler Function
 and Chinese Remainder Theorem</h3>
 <ul>
-<li><p><strong>Def 5.37 Cyclotomic Polynomial (Euler Function)</strong>:
-The Euler function <span class="math inline">\(\Phi_p(m)\)</span> is
-defined to be the number of invertible elements in the ring <span class="math inline">\(\mathbb{Z}_p[x]/(m)\)</span> with <span class="math inline">\(\deg(m) \geq 1\)</span>, i.e. <span class="math display">\[
+<li><p><strong>Def 5.37 Euler Function</strong>: The Euler function
+<span class="math inline">\(\Phi_p(m)\)</span> is defined to be the
+number of invertible elements in the ring <span class="math inline">\(\mathbb{Z}_p[x]/(m)\)</span> with <span class="math inline">\(\deg(m) \geq 1\)</span>, i.e. <span class="math display">\[
   \Phi_p(m) = |(\mathbb{Z}_p[x]/(m))^*| = \#\{\bar{r} \in
 \mathbb{Z}_p[x]/(m) : \gcd(r,m) = 1\}
   \]</span></p>
@@ -3643,20 +3658,23 @@ irreducible}} \left(1 - \frac{1}{p^{\deg(q)}}\right)
 </ol>
 <p>
     </p><div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-27675956" role="button" aria-expanded="false" aria-controls="collapse-27675956">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-86d823d7" role="button" aria-expanded="false" aria-controls="collapse-86d823d7">
         <div class="fold-arrow">▶</div>Proof
       </div>
-      <div class="fold-collapse collapse" id="collapse-27675956">
+      <div class="fold-collapse collapse" id="collapse-86d823d7">
         <div class="fold-content">
           <ol type="1">
 <li>If <span class="math inline">\(m\in \mathbb{Z}_p^*\)</span>, then
 <span class="math inline">\(\Phi_p(mn) = \Phi_p(n) = \Phi_p(m) \cdot
-\Phi_p(n)\)</span>, thus we assume that <span class="math inline">\(\deg(m) \geq 1, \deg(n) \geq 1\)</span>.
+\Phi_p(n)\)</span> since <span class="math inline">\(\Phi_p(m) =
+1\)</span>. So we just need to consider the case when <span class="math inline">\(\deg(m) \geq 1\)</span> and <span class="math inline">\(\deg(n) \geq 1\)</span>:
 <ul>
-<li>Since <span class="math inline">\(\Phi_p(mn) =
-|(\mathbb{Z}_p[x]/(mn))^*|\)</span> and <span class="math inline">\(\Phi_p(m)\Phi_p(n) = |(\mathbb{Z}_p[x]/(m))^*
-\times (\mathbb{Z}_p[x]/(n))^*|\)</span>, it is sufficient to show that
-there is a bijection between <span class="math inline">\((\mathbb{Z}_p[x]/(mn))^*\)</span> and <span class="math inline">\((\mathbb{Z}_p[x]/(m))^* \times
+<li>Since <span class="math inline">\(\begin{cases}\Phi_p(mn) =
+|(\mathbb{Z}_p[x]/(mn))^*| \\ \Phi_p(m)\Phi_p(n) =
+|(\mathbb{Z}_p[x]/(m))^* \times (\mathbb{Z}_p[x]/(n))^*|
+\end{cases}\)</span>, it is sufficient to show that there is a bijection
+between <span class="math inline">\((\mathbb{Z}_p[x]/(mn))^*\)</span>
+and <span class="math inline">\((\mathbb{Z}_p[x]/(m))^* \times
 (\mathbb{Z}_p[x]/(n))^*\)</span>.</li>
 <li>Consider the map: <span class="math display">\[
   \begin{aligned}
@@ -3676,8 +3694,6 @@ S &amp;= (\mathbb{Z}_p[x]/(q^n)) \backslash (\mathbb{Z}_p[x]/(q^n))^* =
 &amp;= \{\overline{uq}: u \in \mathbb{Z}_p[x]\} \\
 &amp;= \{\overline{uq}: \deg(uq) &lt; \deg(q^n)\} \\
 &amp;= \{\overline{uq}: \deg(u) &lt; (n-1)\deg(q)\} \\
-&amp;= \{\overline{(\sum_{i=0}^l u_i x^i) q}: l &lt; (n-1)\deg(q), u_i
-\in \mathbb{Z}_p\} \\
 &amp;= \{\overline{\sum_{i=0}^{(n-1)\deg(q)-1} u_i x^i q}: u_i \in
 \mathbb{Z}_p\}
 \end{aligned}
@@ -3805,35 +3821,36 @@ modulo <span class="math inline">\(m\)</span>.</li>
         </div>
       </div>
     </div><p></p></li>
-<li><p><strong>Thm 5.46</strong>: <span class="math inline">\(\mathbb{Z}_p[x]/(m)\)</span> is a field <span class="math inline">\(\iff m\)</span> is irreducible.</p>
+<li><p><strong>Thm 5.46</strong>: <span class="math inline">\(\mathbb{Z}_p[x]/(q)\)</span> is a field <span class="math inline">\(\iff q\)</span> is irreducible.</p>
 <p>
     </p><div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-571fe436" role="button" aria-expanded="false" aria-controls="collapse-571fe436">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-011c0c97" role="button" aria-expanded="false" aria-controls="collapse-011c0c97">
         <div class="fold-arrow">▶</div>Proof
       </div>
-      <div class="fold-collapse collapse" id="collapse-571fe436">
+      <div class="fold-collapse collapse" id="collapse-011c0c97">
         <div class="fold-content">
           <ul>
-<li><span class="math inline">\(\impliedby\)</span>: Let <span class="math inline">\(u\in \mathbb{Z}_p[x]/m\)</span> with <span class="math inline">\(u \neq 0\)</span>. and <span class="math inline">\(\deg(u) &lt; \deg(m)\)</span>, since <span class="math inline">\(m\)</span> is irreducible, we have <span class="math inline">\(\gcd(u,m) = 1\)</span>, then by the Bézout’s
+<li><span class="math inline">\(\impliedby\)</span>: Let <span class="math inline">\(u\in \mathbb{Z}_p[x]/q\)</span> with <span class="math inline">\(u \neq 0\)</span>. and <span class="math inline">\(\deg(u) &lt; \deg(q)\)</span>, since <span class="math inline">\(q\)</span> is irreducible, we have <span class="math inline">\(\gcd(u,q) = 1\)</span>, then by the Bézout’s
 Identity, <span class="math inline">\(\exists a,b\in
 \mathbb{Z}_p[x]\)</span> s.t. <span class="math inline">\(a\cdot u + b
-\cdot m = 1\)</span>, thus <span class="math inline">\(a\cdot u \equiv 1
-\pmod m\)</span>, thus <span class="math inline">\(u\)</span> is a unit
-in <span class="math inline">\(\mathbb{Z}_p[x]/(m)\)</span>, thus <span class="math inline">\(\mathbb{Z}_p[x]/(m)\)</span> is a field.</li>
+\cdot q = 1\)</span>, thus <span class="math inline">\(a\cdot u \equiv 1
+\pmod q\)</span>, thus <span class="math inline">\(u\)</span> is a unit
+in <span class="math inline">\(\mathbb{Z}_p[x]/(q)\)</span>, thus <span class="math inline">\(\mathbb{Z}_p[x]/(q)\)</span> is a field.</li>
 <li><span class="math inline">\(\implies\)</span>: Suppose not, thus
-<span class="math inline">\(m\)</span> is reducible, then <span class="math inline">\(\exists u,v \in \mathbb{Z}_p[x]\)</span> with
+<span class="math inline">\(q\)</span> is reducible, then <span class="math inline">\(\exists u,v \in \mathbb{Z}_p[x]\)</span> with
 <span class="math inline">\(1 \leq \deg(u), \deg(v) &lt;
-\deg(m)\)</span> s.t. <span class="math inline">\(u\cdot v = m\)</span>,
+\deg(q)\)</span> s.t. <span class="math inline">\(u\cdot v = q\)</span>,
 thus <span class="math inline">\(\bar{u} \cdot \bar{v} =
 \bar{0}\)</span>, thus <span class="math inline">\(\bar{u}\)</span> is a
-zero divisor in <span class="math inline">\(\mathbb{Z}_p[x]/(m)\)</span>, thus <span class="math inline">\(\mathbb{Z}_p[x]/(m)\)</span> is not a field,
+zero divisor in <span class="math inline">\(\mathbb{Z}_p[x]/(q)\)</span>, thus <span class="math inline">\(\mathbb{Z}_p[x]/(q)\)</span> is not a field,
 contradiction.</li>
 </ul>
         </div>
       </div>
     </div><p></p></li>
-<li><p><strong>Thm 5.47</strong>: If <span class="math inline">\(q\)</span> is irreducible, then there exists a
-primitive element modulo <span class="math inline">\(q\)</span>.</p>
+<li><p><strong>Thm 5.47</strong>: If <span class="math inline">\(q\in
+\mathbb{Z}_p[x]\)</span> is irreducible, then there exists a primitive
+element modulo <span class="math inline">\(q\)</span>.</p>
 <p>
     </p><div class="fold">
       <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-31f2c7c4" role="button" aria-expanded="false" aria-controls="collapse-31f2c7c4">
@@ -3855,10 +3872,10 @@ it is a primitive element modulo <span class="math inline">\(q\)</span>.</li>
 <li><p><strong>Thm 5.48</strong>: If <span class="math inline">\(q\in
 \mathbb{Z}_p[x]\)</span> is irreducible and <span class="math inline">\(k \geq 2\)</span>, then there exists a primitive
 element modulo <span class="math inline">\(q^k \iff\)</span></p>
-<ol type="1">
+<ul>
 <li><span class="math inline">\(p\neq 2\)</span>, <span class="math inline">\(k=2\)</span> and <span class="math inline">\(\deg(q) = 1\)</span>, or</li>
 <li><span class="math inline">\(p=2\)</span>, <span class="math inline">\(2\leq k \leq 3\)</span> and <span class="math inline">\(\deg(q) = 1\)</span>.</li>
-</ol>
+</ul>
 <p>
     </p><div class="fold">
       <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-714793c6" role="button" aria-expanded="false" aria-controls="collapse-714793c6">
@@ -3957,22 +3974,108 @@ contradiction, thus <span class="math inline">\(k \leq 3\)</span>.</li>
     </div><p></p></li>
 <li><p><strong>Thm 5.49</strong>: Let <span class="math inline">\(m(x)
 \in \mathbb{Z}_p[x]\)</span> have the standard factorization <span class="math inline">\(m(x) = \alpha \prod_{i=1}^n q_i^{e_i}(x)\)</span>.
-There is a primitive element modulo <span class="math inline">\(m(x)\)</span> only if <span class="math inline">\(\prod_{i=1}^n \Phi_p(q_i^{e_i}) =
-\mathrm{lcm}\{\Phi_p(q_1^{e_i}), \dots, \Phi_p(q_n^{e_n})\}\)</span>,
-i.e.&nbsp;<span class="math inline">\(\forall 1 \leq i \neq j \leq
+There exists a primitive element modulo <span class="math inline">\(m(x)
+\iff\)</span></p>
+<ol type="1">
+<li><span class="math inline">\(\prod_{i=1}^n \Phi_p(q_i^{e_i}) =
+\mathrm{lcm}\{\Phi_p(q_1^{e_1}), \dots, \Phi_p(q_n^{e_n})\}\)</span>.
+I.e. <span class="math inline">\(\forall 1 \leq i \leq j \leq
 n\)</span>, <span class="math inline">\(\gcd(\Phi_p(q_i^{e_i}),
-\Phi_p(q_j^{e_j})) = 1\)</span>.</p></li>
-<li><p><strong>Thm 5.50</strong>: There is a primitive element modulo
-<span class="math inline">\(m(x) \iff\)</span></p>
+\Phi_p(q_j^{e_j})) = 1\)</span>.</li>
+<li><span class="math inline">\(\forall 1 \leq i \leq n\)</span>, there
+exists a primitive element modulo <span class="math inline">\(q_i^{e_i}\)</span>. I.e. satisfies the condition
+in Thm 5.48.</li>
+</ol>
+<p>
+    </p><div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-b1b4ad99" role="button" aria-expanded="false" aria-controls="collapse-b1b4ad99">
+        <div class="fold-arrow">▶</div>Proof
+      </div>
+      <div class="fold-collapse collapse" id="collapse-b1b4ad99">
+        <div class="fold-content">
+          <ul>
+<li>By the Chinese Remainder Theorem for rings, we have the isomorphism
+of groups of units: <span class="math display">\[
+(\mathbb{Z}_p[x]/(m(x)))^* \cong (\mathbb{Z}_p[x]/(q_1^{e_1}(x)))^*
+\times \dots \times (\mathbb{Z}_p[x]/(q_n^{e_n}(x)))^*
+\]</span> Let <span class="math inline">\(G =
+(\mathbb{Z}_p[x]/(m(x)))^*\)</span> and <span class="math inline">\(G_i
+= (\mathbb{Z}_p[x]/(q_i^{e_i}(x)))^*\)</span>.</li>
+<li>Then we have:
 <ul>
-<li><span class="math inline">\(p \neq 2\)</span>, <span class="math inline">\(m(x)\)</span> is irreducible or <span class="math inline">\(m(x) = \alpha(x-\beta)^2\)</span> for some <span class="math inline">\(\alpha\in \mathbb{Z}_p^*\)</span>, <span class="math inline">\(\beta \in \mathbb{Z}_p\)</span>; or</li>
-<li><span class="math inline">\(p = 2\)</span>, <span class="math inline">\(m(x) = \alpha(x-\beta)^e \prod q_i(x)\)</span>
-with <span class="math inline">\(\forall 1 \leq i &lt; j \leq
-n\)</span>, <span class="math inline">\(\gcd(\deg(q_i), \deg(q_j)) =
-1\)</span>, where <span class="math inline">\(0 \leq e \leq 3\)</span>,
-<span class="math inline">\(\alpha \in \mathbb{Z}_2^*\)</span>, <span class="math inline">\(\beta \in \mathbb{Z}_2\)</span>, and <span class="math inline">\(x-\beta, q_i\)</span> are distinct monic
+<li><span class="math inline">\(\qquad\)</span> A primitive element
+modulo <span class="math inline">\(m(x)\)</span> exists</li>
+<li><span class="math inline">\(\iff G\)</span> is a cyclic group</li>
+<li><span class="math inline">\(\iff G_1 \times \dots \times
+G_n\)</span> is cyclic</li>
+<li><span class="math inline">\(\iff \forall 1 \leq i \leq n,
+G_i\)</span> is cyclic and their orders <span class="math inline">\(|G_i| = \Phi_p(q_i^{e_i})\)</span> are pairwise
+coprime</li>
+<li><span class="math inline">\(\iff \forall 1 \leq i \leq n\)</span>,
+there exists a primitive element modulo <span class="math inline">\(q_i^{e_i}\)</span> and <span class="math inline">\(\forall 1 \leq i \leq j \leq n\)</span>, <span class="math inline">\(\gcd(\Phi_p(q_i^{e_i}), \Phi_p(q_j^{e_j})) =
+1\)</span>.</li>
+</ul></li>
+</ul>
+        </div>
+      </div>
+    </div><p></p></li>
+<li><p><strong>Thm 5.50</strong>: There exists a primitive element
+modulo <span class="math inline">\(m(x) \iff\)</span></p>
+<ul>
+<li><span class="math inline">\(p \neq 2\)</span>:
+<ul>
+<li><span class="math inline">\(m(x)\)</span> is irreducible;</li>
+<li><span class="math inline">\(m(x) = \alpha(x-\beta)^2\)</span> for
+some <span class="math inline">\(\alpha\in \mathbb{Z}_p^*\)</span>,
+<span class="math inline">\(\beta \in \mathbb{Z}_p\)</span>;</li>
+</ul></li>
+<li><span class="math inline">\(p = 2\)</span>: <span class="math inline">\(m(x) = \alpha(x-\beta)^e \prod q_i(x)\)</span> for
+some <span class="math inline">\(\alpha \in \mathbb{Z}_2^*\)</span>,
+<span class="math inline">\(\beta \in \mathbb{Z}_2\)</span>, satisfying:
+<ul>
+<li><span class="math inline">\(0 \leq e \leq 3\)</span>;</li>
+<li><span class="math inline">\(\forall 1 \leq i &lt; j \leq n\)</span>,
+<span class="math inline">\(\gcd(\deg(q_i), \deg(q_j)) =
+1\)</span>;</li>
+<li><span class="math inline">\(x-\beta, q_i\)</span> are distinct monic
 irreducible polynomials.</li>
 </ul></li>
+</ul>
+<p>
+    </p><div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-f313a470" role="button" aria-expanded="false" aria-controls="collapse-f313a470">
+        <div class="fold-arrow">▶</div>Proof
+      </div>
+      <div class="fold-collapse collapse" id="collapse-f313a470">
+        <div class="fold-content">
+          <ul>
+<li><span class="math inline">\(p\neq 2\)</span>:
+<ul>
+<li><span class="math inline">\(m(x)\)</span> is irreducible: Proof by
+Thm 5.46 and Thm 5.47.</li>
+<li><span class="math inline">\(m(x) = \alpha(x-\beta)^2\)</span>: Proof
+by Thm 5.48.</li>
+</ul></li>
+<li><span class="math inline">\(p=2\)</span>:
+<ul>
+<li><span class="math inline">\(m(x) = \alpha\)</span>: <span class="math inline">\(\alpha = 1 \in \mathbb{Z}_2^*\)</span>, thus <span class="math inline">\(\Phi_2(m) = 1\)</span>, thus <span class="math inline">\(1\)</span> is a primitive element modulo <span class="math inline">\(m\)</span>.</li>
+<li><span class="math inline">\(m(x) = \alpha(x-\beta)\)</span>: Proof
+by Thm 5.46 and Thm 5.47.</li>
+<li><span class="math inline">\(m(x) = \alpha(x-\beta)^2\)</span> or
+<span class="math inline">\(m(x) = \alpha(x-\beta)^3\)</span>: Proof by
+Thm 5.48.</li>
+<li><span class="math inline">\(m(x) = \alpha(x-\beta)^e \prod
+q_i(x)\)</span>: <span class="math inline">\(\deg(q_i)\)</span> are
+pairwise coprime, since <span class="math inline">\(\gcd(2^a-1, 2^b-1) =
+2^{\gcd(a,b)}-1\)</span>, thus <span class="math inline">\(\Phi_2(q_i) =
+2^{\deg(q_i)} - 1\)</span> are pairwise coprime. Since <span class="math inline">\(e \leq 3\)</span>, thus <span class="math inline">\(\Phi_2((x-\beta)^e) = 2^{e-1} \in \{1, 2,
+4\}\)</span> and is coprime to <span class="math inline">\(\Phi_2(q_i)\)</span>. Thus by Thm 5.49, there
+exists a primitive element modulo <span class="math inline">\(m\)</span>.</li>
+</ul></li>
+</ul>
+        </div>
+      </div>
+    </div><p></p></li>
 </ul>
 <h2 id="lagrange-interpolation">Lagrange interpolation</h2>
 <h3 id="roots">Roots</h3>
@@ -4011,10 +4114,10 @@ it is called a simple root.</li>
 <li><p><strong>Thm 5.56</strong>: Let <span class="math inline">\(F\)</span> be a field and <span class="math inline">\(f \in F[x]\)</span> with <span class="math inline">\(n := \deg(f) \ge 1\)</span>. Then <span class="math inline">\(F\)</span> contains at most <span class="math inline">\(n\)</span> distinct roots of <span class="math inline">\(f\)</span>.</p>
 <p>
     </p><div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-3d302b82" role="button" aria-expanded="false" aria-controls="collapse-3d302b82">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-d4d4bca5" role="button" aria-expanded="false" aria-controls="collapse-d4d4bca5">
         <div class="fold-arrow">▶</div>Proof
       </div>
-      <div class="fold-collapse collapse" id="collapse-3d302b82">
+      <div class="fold-collapse collapse" id="collapse-d4d4bca5">
         <div class="fold-content">
           <ul>
 <li>We prove by induction on <span class="math inline">\(n\)</span>. If
@@ -4026,7 +4129,7 @@ than <span class="math inline">\(n\)</span>.
 <li>If <span class="math inline">\(f\)</span> has no root, then the
 statement holds.</li>
 <li>Otherwise, let <span class="math inline">\(r\)</span> be a root of
-<span class="math inline">\(f\)</span>, then by Lemma 5.49, we have
+<span class="math inline">\(f\)</span>, then by Lemma 5.52, we have
 <span class="math inline">\(f(x) = (x-r)g(x)\)</span> with <span class="math inline">\(\deg(g) = n-1\)</span>, thus any root of <span class="math inline">\(f\)</span> is either <span class="math inline">\(r\)</span> or a root of <span class="math inline">\(g\)</span>, thus the number of distinct roots of
 <span class="math inline">\(f\)</span> is at most <span class="math inline">\((n-1) + 1 = n\)</span>, thus the statement
 holds.</li>
@@ -4041,25 +4144,30 @@ holds.</li>
 <li><p><strong>Thm 5.57</strong>: The set <span class="math inline">\(F[x]_{&lt;n} = \{f \in F[x] : \deg(f) &lt;
 n\}\)</span> forms a vector space over <span class="math inline">\(F\)</span> with <span class="math inline">\(\dim(F[x]_{&lt;n}) = n\)</span>. And It has a
 canonical basis <span class="math inline">\(\{1, x, \cdots,
-x^{n-1}\}\)</span> and a lagrange basis <span class="math inline">\(\{\prod_{j \ne i}(x-a_j)\}_{i=1}^n\)</span>, where
-<span class="math inline">\(a_1, \cdots, a_n\)</span> are <span class="math inline">\(n\)</span> distinct elements of <span class="math inline">\(F\)</span>.</p>
+x^{n-1}\}\)</span> and a lagrange basis <span class="math inline">\(\{L_i(x) = \prod_{j \ne
+i}(x-a_j)\}_{i=1}^n\)</span>, where <span class="math inline">\(a_1,
+\cdots, a_n\)</span> are <span class="math inline">\(n\)</span> distinct
+elements of <span class="math inline">\(F\)</span>.</p>
 <p>
     </p><div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-6cb4a486" role="button" aria-expanded="false" aria-controls="collapse-6cb4a486">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-e70d1bd0" role="button" aria-expanded="false" aria-controls="collapse-e70d1bd0">
         <div class="fold-arrow">▶</div>Proof of lagrange basis
       </div>
-      <div class="fold-collapse collapse" id="collapse-6cb4a486">
+      <div class="fold-collapse collapse" id="collapse-e70d1bd0">
         <div class="fold-content">
           <ul>
 <li>It is sufficient to show that they are linearly independent. Suppose
-<span class="math inline">\(\sum_{i=1}^n \lambda_i \prod_{j \ne
-i}(x-a_j) = 0\)</span> for some <span class="math inline">\(\lambda_i
-\in F\)</span>, then <span class="math inline">\(\forall k\)</span>, we
-have <span class="math display">\[
-  0 = \sum_{i=1}^n \lambda_i \prod_{j \ne i}(a_i - a_j) = \lambda_k
-\prod_{j \ne k}(a_k - a_j)
-  \]</span> Thus <span class="math inline">\(\forall k, \lambda_k =
-0\)</span>, thus they are linearly independent.</li>
+<span class="math inline">\(\sum_{i=1}^n \lambda_i L_i(x) = 0\)</span>
+for some <span class="math inline">\(\lambda_i \in F\)</span>, then
+<span class="math inline">\(\forall k\)</span>, we have <span class="math display">\[
+  0 = \sum_{i=1}^n \lambda_i \prod_{j \ne i}(a_k - a_j) = \lambda_k
+\prod_{j \ne k}(a_k - a_j), \quad \prod_{j \ne k}(a_k - a_j) \neq 0
+  \]</span> Since in the sum, when <span class="math inline">\(i \neq
+k\)</span>, the term <span class="math inline">\(\prod_{j \ne i}(a_k -
+a_j) = 0\)</span>, only when <span class="math inline">\(i = k\)</span>,
+the term <span class="math inline">\(\prod_{j \ne i}(a_k - a_j) =
+\prod_{j \ne k}(a_k - a_j) \neq 0\)</span>. Thus <span class="math inline">\(\forall k, \lambda_k = 0\)</span>, thus they are
+linearly independent.</li>
 </ul>
         </div>
       </div>
@@ -4102,19 +4210,16 @@ polynomial <span class="math inline">\(f\)</span> with <span class="math inline"
     </div><p></p>
 <p>
     </p><div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-2b5441a0" role="button" aria-expanded="false" aria-controls="collapse-2b5441a0">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-4b0bcabb" role="button" aria-expanded="false" aria-controls="collapse-4b0bcabb">
         <div class="fold-arrow">▶</div>Proof method 2
       </div>
-      <div class="fold-collapse collapse" id="collapse-2b5441a0">
+      <div class="fold-collapse collapse" id="collapse-4b0bcabb">
         <div class="fold-content">
           <ul>
-<li>Let <span class="math inline">\(f(x) = \sum_{i=1}^n \lambda_i
-\prod_{j \ne i}(x-a_j)\)</span> satisfy <span class="math inline">\(f(a_i) = b_i\)</span> for each <span class="math inline">\(i\)</span>. Then we have <span class="math display">\[
-  \begin{aligned}
-  b_k = f(a_k) &amp;= \sum_{i=1}^n \lambda_i \prod_{j \ne i}(a_k - a_j)
-\\
-  &amp;= \lambda_k \prod_{j \ne k}(a_k - a_j)
-  \end{aligned}
+<li>Let <span class="math inline">\(f(x) = \sum_{i=1}^n \lambda_i L_i(x)
+= \sum_{i=1}^n \lambda_i \prod_{j \ne i}(x-a_j)\)</span> satisfy <span class="math inline">\(f(a_i) = b_i\)</span> for each <span class="math inline">\(i\)</span>. Then we have <span class="math display">\[
+  b_k = f(a_k) = \sum_{i=1}^n \lambda_i \prod_{j \ne i}(a_k - a_j) =
+\lambda_k \prod_{j \ne k}(a_k - a_j)
   \]</span> Thus <span class="math inline">\(\lambda_k =
 \frac{b_k}{\prod_{j \ne k}(a_k - a_j)}\)</span>, thus there exists a
 unique polynomial <span class="math inline">\(f=\sum_{i=1}^n \prod_{j
@@ -4135,8 +4240,8 @@ in which every nonzero element is invertible.</p>
 \mathbb{R}, \mathbb{C}\)</span></li>
 <li><strong>Cor</strong>:
 <ul>
-<li><span class="math inline">\(\mathbb{Z}/(m)\)</span> is a field <span class="math inline">\(\iff m\)</span> is a prime.</li>
-<li><span class="math inline">\(F[x]/(m(x))\)</span> is a field <span class="math inline">\(\iff m(x)\)</span> is irreducible.</li>
+<li><span class="math inline">\(\mathbb{Z}/(p)\)</span> is a field <span class="math inline">\(\iff p\)</span> is a prime.</li>
+<li><span class="math inline">\(F[x]/(q(x))\)</span> is a field <span class="math inline">\(\iff q(x)\)</span> is irreducible.</li>
 </ul></li>
 </ul></li>
 <li><p><strong>Def 6.2 Characteristic</strong>: The characteristic of a
@@ -4202,15 +4307,17 @@ Then</p>
 <li><span class="math inline">\([E : K] = [E : F][F : K]\)</span></li>
 <li><span class="math inline">\(E/K\)</span> is a finite extension <span class="math inline">\(\iff\)</span> Both <span class="math inline">\(E/F\)</span> and <span class="math inline">\(F/K\)</span> and finite extensions.</li>
 </ul></li>
-<li><p><strong>Def 6.10 Smallest subring</strong>: Let <span class="math inline">\(E/F\)</span> be a field extension, <span class="math inline">\(\alpha\)</span> be an element of <span class="math inline">\(E\)</span>. Then the smallest subring of <span class="math inline">\(E\)</span> containing both <span class="math inline">\(F\)</span> and <span class="math inline">\(\alpha\)</span> is denoted by <span class="math inline">\(F[\alpha]\)</span>. <span class="math display">\[
+<li><p><strong>Def 6.10 Ring generation</strong>: Let <span class="math inline">\(E/F\)</span> be a field extension, <span class="math inline">\(\alpha\)</span> be an element of <span class="math inline">\(E\)</span>. Then the smallest subring of <span class="math inline">\(E\)</span> containing both <span class="math inline">\(F\)</span> and <span class="math inline">\(\alpha\)</span> is called the ring generated by
+<span class="math inline">\(\alpha\)</span> over <span class="math inline">\(F\)</span>, denoted by <span class="math inline">\(F[\alpha]\)</span>. <span class="math display">\[
   F[\alpha] = \{f(\alpha) : f \in F[x]\}
   \]</span></p></li>
-<li><p><strong>Def 6.11 Smallest subfield</strong>: Let <span class="math inline">\(E/F\)</span> be a field extension, <span class="math inline">\(\alpha\)</span> be an element of <span class="math inline">\(E\)</span>. Then the smallest subfield of <span class="math inline">\(E\)</span> containing both <span class="math inline">\(F\)</span> and <span class="math inline">\(\alpha\)</span> is denoted by <span class="math inline">\(F(\alpha)\)</span>. <span class="math display">\[
+<li><p><strong>Def 6.11 Field generation</strong>: Let <span class="math inline">\(E/F\)</span> be a field extension, <span class="math inline">\(\alpha\)</span> be an element of <span class="math inline">\(E\)</span>. Then the smallest subfield of <span class="math inline">\(E\)</span> containing both <span class="math inline">\(F\)</span> and <span class="math inline">\(\alpha\)</span> is called the field generated by
+<span class="math inline">\(\alpha\)</span> over <span class="math inline">\(F\)</span>, denoted by <span class="math inline">\(F(\alpha)\)</span>. <span class="math display">\[
   F(\alpha) = \{\frac{f(\alpha)}{g(\alpha)} : f, g \in F[x], g(\alpha)
 \ne 0\}
   \]</span></p></li>
-<li><p><strong>Thm 6.12</strong>: Let <span class="math inline">\(m(x)\)</span> be an irreducible polynomial with
-<span class="math inline">\(\deg(m) = d\)</span> over <span class="math inline">\(F\)</span> and let <span class="math inline">\(\theta\)</span> be a root of <span class="math inline">\(m(x)\)</span>. Then <span class="math display">\[
+<li><p><strong>Thm 6.12</strong>: Let <span class="math inline">\(m(x)\in F[x]\)</span> be an irreducible polynomial
+with <span class="math inline">\(\deg(m) = d\)</span> and let <span class="math inline">\(\theta\)</span> be a root of <span class="math inline">\(m(x)\)</span>. Then <span class="math display">\[
   F(\theta) = F[\theta] = \left\{\sum_{i=0}^{d-1} a_i\theta^i : a_i \in
 F\right\} = \{f(\theta) : f \in F[x], \deg(f) \le d-1\}
   \]</span></p>
@@ -4218,40 +4325,56 @@ F\right\} = \{f(\theta) : f \in F[x], \deg(f) \le d-1\}
 d\)</span>.</p>
 <p>
     </p><div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-aa6fdd58" role="button" aria-expanded="false" aria-controls="collapse-aa6fdd58">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-c4fc9f1c" role="button" aria-expanded="false" aria-controls="collapse-c4fc9f1c">
         <div class="fold-arrow">▶</div>Proof
       </div>
-      <div class="fold-collapse collapse" id="collapse-aa6fdd58">
+      <div class="fold-collapse collapse" id="collapse-c4fc9f1c">
         <div class="fold-content">
-          <ul>
-<li>Obviously, <span class="math inline">\(F[\theta] \subseteq
-F(\theta)\)</span>. It is sufficient to show that <span class="math inline">\(F[\theta]\)</span> is a field.
+          <ol type="1">
+<li><span class="math inline">\(F[θ]=\{\sum_{i=0}^{d-1} a_i\theta^i :
+a_i \in F\} = \{f(\theta) : f \in F[x], \deg(f) \le d-1\}\)</span>:
 <ul>
 <li><span class="math inline">\(\forall f(\theta) \in
 F[\theta]\)</span>, since we can write <span class="math inline">\(f(x)
 = m(x)q(x) + r(x)\)</span> with <span class="math inline">\(\deg(r) &lt;
-\deg(m) = d\)</span>. Thus <span class="math inline">\(f(\theta) = 0
+\deg(m) = d\)</span>, thus <span class="math inline">\(f(\theta) = 0
 \cdot q(\theta) + r(\theta) = r(\theta) \in \{\sum_{i=0}^{d-1}
-a_i\theta^i : a_i \in F\}\)</span>, thus <span class="math inline">\(F[\theta] = \{\sum_{i=0}^{d-1} a_i\theta^i : a_i
-\in F\}\)</span>.</li>
-<li><span class="math inline">\(\forall r(x) = \sum_{i=0}^{d-1}
-a_i\theta^i \neq 0\)</span>, we have not all <span class="math inline">\(a_i\)</span> are zero. Thus <span class="math inline">\(\gcd(r(x), m(x)) = 1\)</span>. Then there exist
-<span class="math inline">\(u,v \in F[x]\)</span> s.t. <span class="math inline">\(u(x)r(x) + v(x)m(x) = 1\)</span>. Thus <span class="math inline">\(u(\theta)r(\theta) = 1\)</span> since <span class="math inline">\(m(\theta) = 0\)</span>, thus <span class="math inline">\(r(\theta)\)</span> is a unit. Therefore, <span class="math inline">\(F[\theta]\)</span> is a field.</li>
+a_i\theta^i : a_i \in F\}\)</span>, thus <span class="math inline">\(F[\theta] \subseteq \{\sum_{i=0}^{d-1} a_i\theta^i
+: a_i \in F\} \subseteq \{f(\theta) : f \in F[x]\} =
+F[\theta]\)</span>.</li>
+<li>Thus <span class="math inline">\(F[\theta] = \{\sum_{i=0}^{d-1}
+a_i\theta^i : a_i \in F\}\)</span> = <span class="math inline">\(\{f(\theta) : f \in F[x], \deg(f) \le
+d-1\}\)</span>.</li>
 </ul></li>
-</ul>
+<li><span class="math inline">\(F(\theta) = F[\theta]\)</span>:
+<ul>
+<li>Obviously, <span class="math inline">\(F[\theta] \subseteq
+F(\theta)\)</span>. It is sufficient to show that <span class="math inline">\(F[\theta]\)</span> is a field. Consider nonzero
+element <span class="math inline">\(r(\theta) \in
+F[\theta]\)</span>.</li>
+<li><span class="math inline">\(\forall r(x) = \sum_{i=0}^{d-1}
+a_i\theta^i \neq 0\)</span>, we have not all <span class="math inline">\(a_i\)</span> are zero. Thus <span class="math inline">\(\gcd(r(x), m(x)) = 1\)</span>, then by Bézout’s
+identity, there exist <span class="math inline">\(u,v \in F[x]\)</span>
+s.t. <span class="math inline">\(u(x)r(x) + v(x)m(x) = 1\)</span>. Thus
+<span class="math inline">\(u(\theta)r(\theta) = 1\)</span> since <span class="math inline">\(m(\theta) = 0\)</span>, thus <span class="math inline">\(r(\theta)\)</span> is a unit. Therefore, <span class="math inline">\(F[\theta]\)</span> is a field, thus <span class="math inline">\(F[\theta] = F(\theta)\)</span>.</li>
+</ul></li>
+<li><span class="math inline">\([F(\theta) : F] = d\)</span>: Since
+<span class="math inline">\(\{1, \theta, \ldots, \theta^{d-1}\}\)</span>
+is a basis of <span class="math inline">\(F(\theta)\)</span> over <span class="math inline">\(F\)</span>, we have <span class="math inline">\([F(\theta) : F] = d\)</span>.</li>
+</ol>
         </div>
       </div>
     </div><p></p></li>
-<li><p><strong>Thm 6.13</strong>: Let <span class="math inline">\(m(x)\)</span> be an irreducible polynomial with
-<span class="math inline">\(\deg(m) = d\)</span> over <span class="math inline">\(F\)</span> and let <span class="math inline">\(\theta\)</span> be a root of <span class="math inline">\(m(x)\)</span>. Then <span class="math display">\[
+<li><p><strong>Thm 6.13</strong>: Let <span class="math inline">\(m(x)\in F[x]\)</span> be an irreducible polynomial
+with <span class="math inline">\(\deg(m) = d\)</span> and let <span class="math inline">\(\theta\)</span> be a root of <span class="math inline">\(m(x)\)</span>. Then <span class="math display">\[
   F[x]/(m) \simeq F(\theta) = F[\theta]
   \]</span></p>
 <p>
     </p><div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-846ada55" role="button" aria-expanded="false" aria-controls="collapse-846ada55">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-fbf5ad21" role="button" aria-expanded="false" aria-controls="collapse-fbf5ad21">
         <div class="fold-arrow">▶</div>Proof
       </div>
-      <div class="fold-collapse collapse" id="collapse-846ada55">
+      <div class="fold-collapse collapse" id="collapse-fbf5ad21">
         <div class="fold-content">
           <ul>
 <li><strong>The first isomorphism theorem</strong>: Let <span class="math inline">\(R, S\)</span> be rings and <span class="math inline">\(\pi : R \to S\)</span> be a ring homomorphism.
@@ -4270,7 +4393,7 @@ Moreover, <span class="math inline">\(R/\ker(\pi) \simeq
 homomorphism and <span class="math inline">\(\ker(\pi) = \{f(x) \in F[x]
 : \pi(f) = f(\theta) = 0\} = \{f(x) \in F[x] : m(x) \mid f(x)\} = (m) =
 m(x)F[x]\)</span>. Thus by the first isomorphism theorem, we have <span class="math display">\[
-  F[x]/(m) \simeq \mathrm{Im}(\pi) \subseteq F(\theta)
+  F[x]/(m) \simeq \mathrm{Im}(\pi) = F[\theta] = F(\theta)
   \]</span></li>
 </ul>
         </div>
@@ -4364,15 +4487,15 @@ of the multiplicative group of a field, <span class="math inline">\(F^*\)</span>
 <li><p><strong>Thm 6.17</strong>: There exists a finite field of <span class="math inline">\(q\)</span> elements <span class="math inline">\(\iff q = p^n\)</span> for some prime <span class="math inline">\(p\)</span> and integer <span class="math inline">\(n \ge 1\)</span>.</p>
 <p>
     </p><div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-1d6c4113" role="button" aria-expanded="false" aria-controls="collapse-1d6c4113">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-f48ad177" role="button" aria-expanded="false" aria-controls="collapse-f48ad177">
         <div class="fold-arrow">▶</div>Proof
       </div>
-      <div class="fold-collapse collapse" id="collapse-1d6c4113">
+      <div class="fold-collapse collapse" id="collapse-f48ad177">
         <div class="fold-content">
           <ul>
 <li><span class="math inline">\(\implies\)</span>: has been proved in
 Thm 6.16.</li>
-<li><span class="math inline">\(\impliedby\)</span>: Let <span class="math inline">\(m(x) \ in \mathbb{Z}_p[x]\)</span> be an
+<li><span class="math inline">\(\impliedby\)</span>: Let <span class="math inline">\(m(x) \in \mathbb{Z}_p[x]\)</span> be an
 irreducible polynomial with <span class="math inline">\(\deg(m) =
 n\)</span>. Then <span class="math inline">\(\mathbb{Z}_p[x]/(m) =
 \{\sum_{i=0}^{n-1} a_i x^i : a_i \in \mathbb{Z}_p\}\)</span> is a field
@@ -4415,9 +4538,9 @@ hypothesis, <span class="math inline">\(g(x)\)</span> has all roots in
 <li><p><strong>Thm 6.20</strong>: For any field <span class="math inline">\(F\)</span>, there exists an algebraically closed
 field <span class="math inline">\(\Omega\)</span> containing <span class="math inline">\(F\)</span>.</p></li>
 <li><p><strong>Thm 6.21</strong>: Let <span class="math inline">\(p\)</span> be a prime and let <span class="math inline">\(n \ge 1\)</span>, then there exists a unique
-finite field with <span class="math inline">\(p^n\)</span> elements.</p>
+finite field of <span class="math inline">\(p^n\)</span> elements.</p>
 <ul>
-<li><strong>Notation</strong>: We denote the unique finite field with
+<li><strong>Notation</strong>: We denote the unique finite field of
 <span class="math inline">\(q\)</span> elements by <span class="math inline">\(\mathbb{F}_q\)</span> or <span class="math inline">\(\mathrm{GF}_q\)</span>.</li>
 </ul>
 <p>
@@ -4456,20 +4579,20 @@ and <span class="math inline">\(x^3 + x^2 + 1 \in
         </div>
       </div>
     </div><p></p></li>
-<li><p><strong>Thm 6.22</strong>: <span class="math inline">\(\mathrm{F}_{p^n}\)</span> is a field extension of
-<span class="math inline">\(\mathrm{F}_{p^k} \iff k \mid n\)</span>.</p>
+<li><p><strong>Thm 6.22</strong>: <span class="math inline">\(\mathbb{F}_{p^n}\)</span> is a field extension of
+<span class="math inline">\(\mathbb{F}_{p^k} \iff k \mid n\)</span>.</p>
 <p>
     </p><div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-5f0710b7" role="button" aria-expanded="false" aria-controls="collapse-5f0710b7">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-caea01e0" role="button" aria-expanded="false" aria-controls="collapse-caea01e0">
         <div class="fold-arrow">▶</div>Proof
       </div>
-      <div class="fold-collapse collapse" id="collapse-5f0710b7">
+      <div class="fold-collapse collapse" id="collapse-caea01e0">
         <div class="fold-content">
           <ul>
-<li><span class="math inline">\(\implies\)</span>: Let <span class="math inline">\(E = \mathrm{F}_{p^n}\)</span> and <span class="math inline">\(F = \mathrm{F}_{p^k}\)</span>. Then <span class="math inline">\([E : F] = \frac{[E : \mathbb{Z}_p]}{[F :
+<li><span class="math inline">\(\implies\)</span>: Let <span class="math inline">\(E = \mathbb{F}_{p^n}\)</span> and <span class="math inline">\(F = \mathbb{F}_{p^k}\)</span>. Then <span class="math inline">\([E : F] = \frac{[E : \mathbb{Z}_p]}{[F :
 \mathbb{Z}_p]} = \frac{n}{k}\)</span>. Since <span class="math inline">\([E : F]\)</span> is an integer, we have <span class="math inline">\(k \mid n\)</span>.</li>
-<li><span class="math inline">\(\impliedby\)</span>: Let <span class="math inline">\(m = \frac{n}{k}\)</span>. Then <span class="math inline">\(\mathrm{F}_{p^n}\)</span> is a field extension of
-<span class="math inline">\(\mathrm{F}_{p^k}\)</span> with extension
+<li><span class="math inline">\(\impliedby\)</span>: Let <span class="math inline">\(m = \frac{n}{k}\)</span>. Then <span class="math inline">\(\mathbb{F}_{p^n}\)</span> is a field extension of
+<span class="math inline">\(\mathbb{F}_{p^k}\)</span> with extension
 degree <span class="math inline">\(m\)</span>.</li>
 </ul>
         </div>
@@ -4477,7 +4600,7 @@ degree <span class="math inline">\(m\)</span>.</li>
     </div><p></p></li>
 <li><p><strong>Alg 6.23</strong>: Construction of finite fields of <span class="math inline">\(p^n\)</span> elements:</p>
 <ol type="1">
-<li>Find an irreducible polynomial <span class="math inline">\(m(x)\)</span> with <span class="math inline">\(\deg(m) = n\)</span> over <span class="math inline">\(\mathbb{Z}_p\)</span>.</li>
+<li>Find a monic irreducible polynomial <span class="math inline">\(m(x)\)</span> with <span class="math inline">\(\deg(m) = n\)</span> over <span class="math inline">\(\mathbb{Z}_p\)</span>.</li>
 <li>Find a root <span class="math inline">\(\theta\)</span> of <span class="math inline">\(m(x)\)</span> in an algebraically closed field
 <span class="math inline">\(\Omega\)</span> containing <span class="math inline">\(\mathbb{Z}_p\)</span>.</li>
 <li>Then <span class="math inline">\(\mathbb{Z}_p[x]/(m) \simeq
@@ -4486,10 +4609,10 @@ degree <span class="math inline">\(m\)</span>.</li>
 </ol>
 <p>
     </p><div class="fold">
-      <div class="fold-title fold-primary collapsed" data-toggle="collapse" href="#collapse-ad91bfdd" role="button" aria-expanded="false" aria-controls="collapse-ad91bfdd">
+      <div class="fold-title fold-primary collapsed" data-toggle="collapse" href="#collapse-ff147dd1" role="button" aria-expanded="false" aria-controls="collapse-ff147dd1">
         <div class="fold-arrow">▶</div>Example
       </div>
-      <div class="fold-collapse collapse" id="collapse-ad91bfdd">
+      <div class="fold-collapse collapse" id="collapse-ff147dd1">
         <div class="fold-content">
           <ul>
 <li>To construct a finite field of <span class="math inline">\(16\)</span> elements, find an irreducible
@@ -4514,8 +4637,9 @@ of <span class="math inline">\(m(x)\)</span>, then <span class="math inline">\(\
 1 = (\theta^4)^2 + \theta^2 + 1 = (\theta^4 + \theta + 1)^2 =
 0\)</span>. Thus <span class="math inline">\(\theta^2\)</span> is a root
 of <span class="math inline">\(m(x)\)</span>.</li>
-<li><span class="math inline">\(m(\theta^4) = (\theta+1)^4 + (\theta+1)
-+ 1 = \theta^4 + \theta + 1 = 0\)</span>. Thus <span class="math inline">\(\theta^4\)</span> is a root of <span class="math inline">\(m(x)\)</span>.</li>
+<li><span class="math inline">\(m(\theta^4) = m(\theta + 1) =
+(\theta+1)^4 + (\theta+1) + 1 = \theta^4 + \theta + 1 = 0\)</span>. Thus
+<span class="math inline">\(\theta^4\)</span> is a root of <span class="math inline">\(m(x)\)</span>.</li>
 <li><span class="math inline">\(m(\theta^8) = m((\theta^4)^2) =
 m((\theta+1)^2) = m(\theta^2 + 1) = (\theta^2+1)^4 + (\theta^2 + 1) + 1
 = 0\)</span>. Thus <span class="math inline">\(\theta^8\)</span> is a
@@ -4535,8 +4659,8 @@ monic}\}\)</span> be the number of monic irreducible polynomials with
 <ol type="1">
 <li>Let <span class="math inline">\(n \ge 1 \in \mathbb{Z}\)</span>,
 then <span class="math display">\[
-x^{q^n} - x = \prod_{d \mid n} \prod_{g \in F_q[x] \atop \deg(g) = d,
-\text{ irr}} g(x)
+x^{q^n} - x = \prod_{d \mid n} \prod_{g \in F_q[x],  \text{ monic, irr}
+\atop \deg(g) = d} g(x)
 \]</span></li>
 <li>We have the following identity, which can help us to compute <span class="math inline">\(I_q(d)\)</span>: <span class="math display">\[
 q^n = \sum_{d \mid n} d \cdot I_q(d)
@@ -4628,7 +4752,7 @@ Möbius function defined by <span class="math display">\[
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2026年4月20日</div>
+          <div>2026年4月21日</div>
         </div>
       
       
@@ -4642,6 +4766,12 @@ Möbius function defined by <span class="math display">\[
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/_posts/%E7%8E%B0%E4%BB%A3%E5%AF%86%E7%A0%81%E5%AD%A62/" title="现代密码学Ⅱ">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">现代密码学Ⅱ</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
@@ -5073,8 +5203,8 @@ Möbius function defined by <span class="math display">\[
 
 
   <script type="text/javascript">
-  document.getElementById("g-total-word-id").innerHTML = "713k";
-  document.getElementById('g-total-posts-id').textContent ="74";
+  document.getElementById("g-total-word-id").innerHTML = "745k";
+  document.getElementById('g-total-posts-id').textContent ="75";
 </script>
 
   <noscript>
