@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis3329.webp">
 <meta property="article:published_time" content="2026-04-16T05:50:03.000Z">
-<meta property="article:modified_time" content="2026-04-21T14:51:37.656Z">
+<meta property="article:modified_time" content="2026-04-22T08:42:43.992Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU">
 <meta property="article:tag" content="抽代">
@@ -469,7 +469,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          16k 字
+          17k 字
         
       </span>
     
@@ -481,7 +481,7 @@
         
         
           <!-- compatible with older versions-->
-          138 分钟
+          139 分钟
         
       </span>
     
@@ -1398,12 +1398,14 @@ thus <span class="math inline">\(p\)</span> is a prime.</li>
 <li><p><strong>Thm 1.16</strong>: There are infinitely many primes.</p>
 <p>
     </p><div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-552646af" role="button" aria-expanded="false" aria-controls="collapse-552646af">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-a339ef64" role="button" aria-expanded="false" aria-controls="collapse-a339ef64">
         <div class="fold-arrow">▶</div>Proof by Euclid's method
       </div>
-      <div class="fold-collapse collapse" id="collapse-552646af">
+      <div class="fold-collapse collapse" id="collapse-a339ef64">
         <div class="fold-content">
-          <p>Suppose there are only finitely many primes <span class="math inline">\(p_1, p_2, \cdots, p_k\)</span>, consider <span class="math inline">\(n=\prod_{i=1}^k p_i + 1\)</span>, then <span class="math inline">\(\exists p_i\)</span> s.t. <span class="math inline">\(p_i\mid n\)</span>, thus <span class="math inline">\(p_i\mid (n-\prod_{i=1}^k p_i)\implies p_i\mid
+          <p>Suppose there are only finitely many primes <span class="math inline">\(p_1, p_2, \cdots, p_k\)</span>, consider <span class="math inline">\(n=\prod_{i=1}^k p_i + 1\)</span> must be a
+composite number, then <span class="math inline">\(\exists p_i\)</span>
+s.t. <span class="math inline">\(p_i\mid n\)</span>, thus <span class="math inline">\(p_i\mid (n-\prod_{i=1}^k p_i)\implies p_i\mid
 1\)</span>, contradiction, thus there are infinitely many primes.</p>
         </div>
       </div>
@@ -1484,25 +1486,104 @@ p^{\min\{v_p(m), v_p(n)\}}\]</span></li>
 the form <span class="math inline">\(4n+3\)</span>.</p>
 <p>
     </p><div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-8de23d94" role="button" aria-expanded="false" aria-controls="collapse-8de23d94">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-21e1cd13" role="button" aria-expanded="false" aria-controls="collapse-21e1cd13">
         <div class="fold-arrow">▶</div>Proof
       </div>
-      <div class="fold-collapse collapse" id="collapse-8de23d94">
+      <div class="fold-collapse collapse" id="collapse-21e1cd13">
         <div class="fold-content">
           <ul>
-<li>Suppose there are only finitely many primes of the form <span class="math inline">\(4n+3\)</span>, denoted by <span class="math inline">\(p_1=4n_1+3, p_2=4n_2+3, \cdots,
-p_k=4n_k+3\)</span>,
+<li>Suppose there are only finitely many primes of the form <span class="math inline">\(4n+3\)</span>, denoted by <span class="math inline">\(\{p_1, p_2, \dots, p_k\}\)</span>. Then the other
+primes must be of the form <span class="math inline">\(4n+1\)</span> or
+<span class="math inline">\(2\)</span>. Consider the number: <span class="math display">\[
+  N = 4\prod_{i=1}^k p_i - 1
+  \]</span> then we have <span class="math inline">\(N \equiv 3
+\pmod{4}\)</span>. Since <span class="math inline">\(N\)</span> is of
+the form <span class="math inline">\(4n+3\)</span>, it must be a
+composite number.</li>
+<li>Since <span class="math inline">\(N\)</span> is odd, <span class="math inline">\(2\nmid N\)</span>, suppose <span class="math inline">\(N\)</span> is a composite number. Thus, any prime
+divisor of <span class="math inline">\(N\)</span> must be of the form
+<span class="math inline">\(4n+1\)</span> or <span class="math inline">\(4n+3\)</span>.
 <ul>
-<li><strong>Case 1</strong>: <span class="math inline">\(k\)</span> is
-odd, then <span class="math inline">\(\prod_{i=1}^k p_i+4=\prod_{i=1}^k
-(4n_i+3)+4=4m+3\)</span> for some <span class="math inline">\(m\in
-\mathbb{Z}\)</span> and it is a composite number, thus <span class="math inline">\(\exists p_i\)</span> s.t. <span class="math inline">\(p_i\mid (\prod_{i=1}^k p_i+4)\)</span>, thus <span class="math inline">\(p_i\mid 4\)</span>, contradiction since <span class="math inline">\(p_i&gt;3\)</span>.</li>
-<li><strong>Case 2</strong>: <span class="math inline">\(k\)</span> is
-even, then <span class="math inline">\(\prod_{i=1}^k p_i+2=\prod_{i=1}^k
-(4n_i+3)+2=4m+3\)</span> for some <span class="math inline">\(m\in
-\mathbb{Z}\)</span> and it is a composite number, thus <span class="math inline">\(\exists p_i\)</span> s.t. <span class="math inline">\(p_i\mid (\prod_{i=1}^k p_i+2)\)</span>, thus <span class="math inline">\(p_i\mid 2\)</span>, contradiction since <span class="math inline">\(p_i&gt;3\)</span>.</li>
+<li>If all prime divisors of <span class="math inline">\(N\)</span> are
+of the form <span class="math inline">\(4n+1\)</span>, then <span class="math inline">\(N \equiv 1 \pmod{4}\)</span> since <span class="math inline">\(\prod_{i=1}^t (4n_i+1) \equiv 1 \pmod{4}\)</span>,
+contradiction.</li>
+<li>Thus, <span class="math inline">\(\exists i\in
+\{1,2,\dots,k\}\)</span> s.t. <span class="math inline">\(p_i\mid
+N\)</span>, thus <span class="math inline">\(p_i\mid (4\prod_{i=1}^k p_i
+- N)\)</span>, thus <span class="math inline">\(p_i\mid 1\)</span>,
+contradiction.</li>
 </ul></li>
-<li>Thus, there are infinitely many primes of the form <span class="math inline">\(4n+3\)</span>.</li>
+<li>Thus, <span class="math inline">\(N\)</span> is a new prime of the
+form <span class="math inline">\(4n+3\)</span>, contradiction. Thus,
+there are infinitely many primes of the form <span class="math inline">\(4n+3\)</span>.</li>
+</ul>
+        </div>
+      </div>
+    </div><p></p></li>
+<li><p><strong>Thm 1.20</strong>: There are infinitely many primes of
+the form <span class="math inline">\(3n+2\)</span>.</p>
+<p>
+    </p><div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-9d596489" role="button" aria-expanded="false" aria-controls="collapse-9d596489">
+        <div class="fold-arrow">▶</div>Proof
+      </div>
+      <div class="fold-collapse collapse" id="collapse-9d596489">
+        <div class="fold-content">
+          <ul>
+<li>Suppose there are only finitely many primes of the form <span class="math inline">\(3n+2\)</span>, denoted by <span class="math inline">\(\{p_1, p_2, \dots, p_k\}\)</span>. Then the other
+primes must be of the form <span class="math inline">\(3n+1\)</span> or
+<span class="math inline">\(3\)</span>. Consider the number: <span class="math display">\[
+  N = 3\prod_{i=1}^k p_i - 1
+  \]</span> then we have <span class="math inline">\(N \equiv 2
+\pmod{3}\)</span>. Since <span class="math inline">\(N\)</span> is of
+the form <span class="math inline">\(3n+2\)</span>, it must be a
+composite number.</li>
+<li>Since <span class="math inline">\(3\nmid N\)</span>, thus any prime
+divisor of <span class="math inline">\(N\)</span> must be of the form
+<span class="math inline">\(3n+1\)</span> or <span class="math inline">\(3n+2\)</span>.
+<ul>
+<li>If all prime divisors of <span class="math inline">\(N\)</span> are
+of the form <span class="math inline">\(3n+1\)</span>, then <span class="math inline">\(N \equiv 1 \pmod{3}\)</span> since <span class="math inline">\(\prod_{i=1}^t (3n_i+1) \equiv 1 \pmod{3}\)</span>,
+contradiction.</li>
+<li>Thus, <span class="math inline">\(\exists i\in
+\{1,2,\dots,k\}\)</span> s.t. <span class="math inline">\(p_i\mid
+N\)</span>, thus <span class="math inline">\(p_i\mid (3\prod_{i=1}^k p_i
+- N)\)</span>, thus <span class="math inline">\(p_i\mid 1\)</span>,
+contradiction.</li>
+</ul></li>
+<li>Thus, <span class="math inline">\(N\)</span> is a new prime of the
+form <span class="math inline">\(3n+2\)</span>, contradiction. Thus,
+there are infinitely many primes of the form <span class="math inline">\(3n+2\)</span>.</li>
+</ul>
+        </div>
+      </div>
+    </div><p></p></li>
+<li><p><strong>Thm 1.21</strong>: There are infinitely many primes of
+the form <span class="math inline">\(4n+1\)</span>.</p>
+<p>
+    </p><div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-41fda291" role="button" aria-expanded="false" aria-controls="collapse-41fda291">
+        <div class="fold-arrow">▶</div>Proof By Quadratic Residue
+      </div>
+      <div class="fold-collapse collapse" id="collapse-41fda291">
+        <div class="fold-content">
+          <ul>
+<li>Suppose there are only finitely many primes of the form <span class="math inline">\(4n+1\)</span>, denoted by <span class="math inline">\(\{p_1, p_2, \dots, p_k\}\)</span>. Consider the
+number: <span class="math display">\[
+  N = \left(2\prod_{i=1}^k p_i\right)^2 + 1 = 4\left(\prod_{i=1}^k
+p_i\right)^2 + 1
+  \]</span> then we have <span class="math inline">\(N \equiv 1
+\pmod{4}\)</span>. Since <span class="math inline">\(N\)</span> is of
+the form <span class="math inline">\(4n+1\)</span>, it must be a
+composite number.</li>
+<li>Let <span class="math inline">\(p\)</span> be a prime divisor of
+<span class="math inline">\(N\)</span>, obviously <span class="math inline">\(p\ne 2\)</span> since <span class="math inline">\(N\)</span> is odd and <span class="math inline">\(p\neq p_i\)</span> since <span class="math inline">\(p_i\nmid N\)</span>. Thus, we have <span class="math display">\[
+  \left(2\prod_{i=1}^k p_i\right)^2 \equiv -1 \pmod{p}
+  \]</span> which means <span class="math inline">\(-1\)</span> is a
+quadratic residue modulo <span class="math inline">\(p\)</span></li>
+<li>Thus <span class="math inline">\(\left(\frac{-1}{p}\right)=(-1)^{\frac{p-1}{2}}=1\)</span>,
+thus <span class="math inline">\(p\equiv 1 \pmod{4}\)</span>, thus <span class="math inline">\(p\)</span> is a new prime of the form <span class="math inline">\(4n+1\)</span>, contradiction. Thus, there are
+infinitely many primes of the form <span class="math inline">\(4n+1\)</span>.</li>
 </ul>
         </div>
       </div>
@@ -4752,7 +4833,7 @@ Möbius function defined by <span class="math display">\[
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2026年4月21日</div>
+          <div>2026年4月22日</div>
         </div>
       
       
