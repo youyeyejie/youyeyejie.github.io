@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis3329.webp">
 <meta property="article:published_time" content="2026-04-16T05:50:03.000Z">
-<meta property="article:modified_time" content="2026-04-22T08:42:43.992Z">
+<meta property="article:modified_time" content="2026-04-22T13:51:25.661Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU">
 <meta property="article:tag" content="抽代">
@@ -481,7 +481,7 @@
         
         
           <!-- compatible with older versions-->
-          139 分钟
+          141 分钟
         
       </span>
     
@@ -2684,6 +2684,55 @@ d\)</span>, so <span class="math inline">\(\mathrm{ord}_{p^{k-1}}(g)=d=\varphi(p
 <li><span class="math inline">\(\log_g a^n \equiv n \cdot \log_g a
 \pmod{\varphi(m)}\)</span>.</li>
 </ol></li>
+<li><p><strong>Thm 3.16</strong>: Let <span class="math inline">\(g\)</span> be a primitive root modulo <span class="math inline">\(m\)</span>, then <span class="math inline">\(\log_g a \equiv \log_g b \pmod{\varphi(m)} \iff a
+\equiv b \pmod m\)</span>.</p>
+<p>
+    </p><div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-c93a078a" role="button" aria-expanded="false" aria-controls="collapse-c93a078a">
+        <div class="fold-arrow">▶</div>Proof
+      </div>
+      <div class="fold-collapse collapse" id="collapse-c93a078a">
+        <div class="fold-content">
+          <ul>
+<li><span class="math inline">\(\implies\)</span>: Since <span class="math inline">\(g^{\log_g a} \equiv a \pmod m\)</span> and <span class="math inline">\(g^{\log_g b} \equiv b \pmod m\)</span>, thus <span class="math inline">\(a \equiv g^{\log_g a} \equiv g^{\log_g b} \equiv b
+\pmod m\)</span>.</li>
+<li><span class="math inline">\(\impliedby\)</span>: Since <span class="math inline">\(a \equiv b \pmod m\)</span>, thus <span class="math inline">\(g^{\log_g a} \equiv g^{\log_g b} \pmod m\)</span>,
+thus <span class="math inline">\(\mathrm{ord}_m(g)\mid (\log_g a -
+\log_g b)\)</span>, so <span class="math inline">\(\log_g a \equiv
+\log_g b \pmod{\varphi(m)}\)</span>.</li>
+</ul>
+        </div>
+      </div>
+    </div><p></p></li>
+<li><p><strong>Thm 3.17</strong>: Let <span class="math inline">\(g\)</span> be a primitive root modulo <span class="math inline">\(m\)</span>, then the equation <span class="math inline">\(x^b \equiv a \pmod m\)</span> has a solution <span class="math inline">\(\iff \gcd(b, \varphi(m)) \mid \log_g
+a\)</span>.</p>
+<p>
+    </p><div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-3f4e05e3" role="button" aria-expanded="false" aria-controls="collapse-3f4e05e3">
+        <div class="fold-arrow">▶</div>Proof
+      </div>
+      <div class="fold-collapse collapse" id="collapse-3f4e05e3">
+        <div class="fold-content">
+          <ul>
+<li><span class="math inline">\(\impliedby\)</span>: Since <span class="math inline">\(\gcd(b, \varphi(m)) \mid \log_g a\)</span>, thus
+<span class="math inline">\(\exists u,v\in \mathbb{Z}\)</span> s.t.
+<span class="math inline">\(ub + v\varphi(m) = \log_g a\)</span>, thus
+<span class="math inline">\(g^{ub} \equiv g^{ub + v\varphi(m)} \equiv
+g^{\log_g a} \equiv a \pmod m\)</span>, so <span class="math inline">\(x=g^u\)</span> is a solution to the equation.</li>
+<li><span class="math inline">\(\implies\)</span>: Since <span class="math inline">\(g\)</span> is a primitive root modulo <span class="math inline">\(m\)</span>, thus <span class="math inline">\(x=g^k\)</span> and <span class="math inline">\(a=g^l\)</span> for some <span class="math inline">\(1\leq k,l \leq \varphi(m)\)</span>, thus the
+equation is equivalent to <span class="math inline">\(g^{kb} \equiv g^l
+\pmod m\)</span>, thus <span class="math inline">\(kb \equiv l
+\pmod{\varphi(m)}\)</span>, let <span class="math inline">\(d=\gcd(b,
+\varphi(m))\)</span>, then <span class="math inline">\(k \equiv
+\frac{l}{d} \cdot \left(\frac{b}{d}\right)^{-1}
+\pmod{\frac{\varphi(m)}{d}}\)</span>, this requires <span class="math inline">\(\frac{l}{d} \in \mathbb{Z}\)</span>, so <span class="math inline">\(d \mid l\)</span>, i.e.&nbsp;<span class="math inline">\(\gcd(b, \varphi(m)) \mid \log_g a\)</span>.</li>
+<li>Thus, the solution to the equation is <span class="math inline">\(x
+= g^{\frac{l}{d} \cdot \left(\frac{b}{d}\right)^{-1} + t\cdot
+\frac{\varphi(m)}{d}}\)</span> for <span class="math inline">\(t=0,1,\cdots,d-1\)</span>.</li>
+</ul>
+        </div>
+      </div>
+    </div><p></p></li>
 </ul>
 <h1 id="chapter-4.-quadratic-residues">Chapter 4. Quadratic
 Residues</h1>
