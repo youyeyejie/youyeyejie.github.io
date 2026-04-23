@@ -1,0 +1,1114 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head><!-- hexo injector head_begin start --><meta name="msvalidate.01" content="DF9F232801BA9D0CABB002E4774A3228"/><meta name="google-site-verification" content="vOm5Zs9tuUlEh-wVBlpvs_spnOou-q2CoTiFQ1ZV1h4"/><script defer src="https://cloud.umami.is/script.js" data-website-id="0369421f-4354-4d7b-99c7-ae077c591b4f"></script><!-- hexo injector head_begin end -->
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar/avatar2.webp">
+  <link rel="icon" href="/img/avatar/avatar2.webp">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="youyeyejie">
+  <meta name="keywords" content="yyyj,YYYJ,youyeyejie,有野野芥">
+  
+    <meta name="description" content="基于 HarmonyOS NEXT 的日程管理与效率应用──知行 ActHub。围绕「日程 Plan、待办 Todo、专注 Focus、闪记 Idea、我的 User」构建统一工作流，让任务与想法在同一空间内自由流转。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="鸿蒙应用知行ActHub开发分享">
+<meta property="og:url" content="https://youyeyejie.github.io/_posts/%E9%B8%BF%E8%92%99%E5%BA%94%E7%94%A8%E7%9F%A5%E8%A1%8CActHub%E5%BC%80%E5%8F%91%E5%88%86%E4%BA%AB/index.html">
+<meta property="og:site_name" content="有野野芥的博客">
+<meta property="og:description" content="基于 HarmonyOS NEXT 的日程管理与效率应用──知行 ActHub。围绕「日程 Plan、待办 Todo、专注 Focus、闪记 Idea、我的 User」构建统一工作流，让任务与想法在同一空间内自由流转。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://youyeyejie.github.io/_posts/%E9%B8%BF%E8%92%99%E5%BA%94%E7%94%A8%E7%9F%A5%E8%A1%8CActHub%E5%BC%80%E5%8F%91%E5%88%86%E4%BA%AB/image-2.webp">
+<meta property="article:published_time" content="2026-04-23T13:04:29.000Z">
+<meta property="article:modified_time" content="2026-04-23T14:16:29.222Z">
+<meta property="article:author" content="youyeyejie">
+<meta property="article:tag" content="HarmonyOS">
+<meta property="article:tag" content="ZhiXing ActHub">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://youyeyejie.github.io/_posts/%E9%B8%BF%E8%92%99%E5%BA%94%E7%94%A8%E7%9F%A5%E8%A1%8CActHub%E5%BC%80%E5%8F%91%E5%88%86%E4%BA%AB/image-2.webp">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>鸿蒙应用知行ActHub开发分享 - 有野野芥的博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+<link rel="stylesheet" href="//lib.baomitu.com/font-awesome/6.1.2/css/all.min.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+
+
+  
+<link rel="stylesheet" href="/css/Background.css">
+<link rel="stylesheet" href="/css/CodeBlock.css">
+<link rel="stylesheet" href="/css/CodeInLine.css">
+<link rel="stylesheet" href="/css/Crypto.css">
+<link rel="stylesheet" href="/css/Gallery.css">
+<link rel="stylesheet" href="/css/IndexImgHover.css">
+<link rel="stylesheet" href="/css/LinkCard.css">
+<link rel="stylesheet" href="/css/ScrollAnimation.css">
+<link rel="stylesheet" href="/css/ScrollBar.css">
+<link rel="stylesheet" href="/css/StrongInDark.css">
+<link rel="stylesheet" href="/css/TitleGradient.css">
+<link rel="stylesheet" href="/css/Tooltip.css">
+<link rel="stylesheet" href="/css/UnifyImgWidth.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"youyeyejie.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":false,"default":"TEXT"},"copy_btn":false,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading/loading3.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-shiki-plugin@latest/lib/codeblock.css">
+<style>:root{--hl-color:#abb2bf;--hl-bg:#282c34;--hltools-bg:#21252b;--hltools-color:#bbbbbc;--hlnumber-bg:#282c34;--hlnumber-color:#495162;--hlscrollbar-bg:#373c47;--hlexpand-bg:linear-gradient(180deg,rgba(40,44,52,0.1),rgba(40,44,52,0.9))}</style>
+    <style>
+    .code-expand-btn:not(.expand-done) ~ div.codeblock,
+    .code-expand-btn:not(.expand-done) ~ * div.codeblock {
+      overflow: hidden;
+      height: 360px;
+    }
+    </style>
+  <!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><div id="tooltip" class="tooltip"></div><!-- hexo injector body_begin end -->
+  <div id="loader-container"> 
+    <div id="loader" class="loader"></div>
+    <div class="loader-inner">
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/RainbowLoading.js" type="text/javascript"></script>
+<link href="/css/RainbowLoading.css" type="text/css" rel="stylesheet"/><div id="rightmenu-wrapper">
+  <ul class="list-v rightmenu" id="rightmenu-content">
+	    <li class="navigation menuNavigation-Content">
+            <a class="nav icon-only fix-cursor-default" aria-label="back" onclick="history.back()"><i class="fa-solid fa-chevron-left"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="forward" onclick="history.forward()"><i class="fa-solid fa-chevron-right"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="reload" onclick="window.location.reload()"><i class="fa-solid fa-rotate-right"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="top" onclick="scrollToTopSmooth();"><i class="fa-solid fa-chevron-up"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="bottom" onclick="scrollToBottomSmooth();"><i class="fa-solid fa-chevron-down"></i></a>
+	    </li>
+
+        <hr class="menuLoad-Content" style="display: block;" id="top-line">
+
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copyLink();">
+                <span>
+                    <i class="fa-solid fa-link"></i>
+                    复制链接
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;" id="copy-selected-text" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copySelectedText();">
+                <span>
+                    <i class="fa-solid fa-copy"></i>
+                    &nbsp;复制选中
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;" id="search-selected-text-BING" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_blank" onclick="searchSelectedTextBing();">
+                <span>
+                    <i class="fa-solid fa-magnifying-glass-arrow-right"></i>
+                    &nbsp;必应搜索
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;" id="go-to-link" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_blank">
+                <span>
+                    <i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 1px;"></i>
+                    &nbsp;打开链接
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;" id="download-image" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="downloadImage();">
+                <span>
+                    <i class="fa-solid fa-image"></i>
+                    &nbsp;下载图片
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;" id="copy-image-link" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copyImageLink();">
+                <span>
+                    <i class="fa-solid fa-link"></i>
+                    复制图片链接
+                </span>
+            </a>
+        </li>
+
+		<hr class="menuLoad-Content" style="display: block;">
+
+        <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" onclick="RandomGo()">
+		        <span>
+			        <i class="fa-solid fa-paper-plane"></i>
+                    &nbsp;随便看看
+		        </span>
+		    </a>
+	    </li>
+	    <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+		        <span>
+			        <i class="fa-solid fa-magnifying-glass"></i>
+                    &nbsp;站内搜索
+		        </span>
+		    </a>
+	    </li>
+        <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" href="/categories/">
+		        <span>
+			        <i class="iconfont icon-category-fill"></i>
+                    &nbsp;博客分类
+		        </span>
+		    </a>
+	    </li>
+        <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" href="/tags/">
+		        <span>
+			        <i class="fa-solid fa-tags"></i>
+                    &nbsp;文章标签
+		        </span>
+		    </a>
+	    </li>
+        
+	    <hr class="menuLoad-Content" style="display: block;">
+
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" id="toggle-color-mode" target="_self" onclick="toggleColorMode();">
+                <span>
+                    <i id="toggle-color-mode-icon" class="fa-solid fa-circle-half-stroke"></i>
+                    &nbsp;切换昼夜
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" id="random-change-background" target="_self" onclick="randomChangeBackground();">
+                <span style="margin-left: 1px;">
+                    <i id="random-change-background-icon" class="fa-solid fa-image"></i>
+                    &nbsp;切换背景
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" id="toggle-background-mode" target="_self" onclick="toggleBackgroundMode();">
+                <span>
+                    <i id="toggle-background-mode-icon" class="fa-solid fa-toggle-on" style="margin-right: -1px;"></i>
+                    &nbsp;全屏背景
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" id="toggle-reading-mode" target="_self" onclick="toggleReadingMode();">
+                <span>
+                    <i id="toggle-reading-mode-icon" class="fa-solid fa-toggle-off" style="margin-right: -1px;"></i>
+                    &nbsp;阅读模式
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" id="toggle-tab-display" target="_self" onclick="toggleTabDisplay();">
+                <span>
+                    <i id="toggle-tab-display-icon" class="fa-solid fa-toggle-on" style="margin-right: -1px;"></i>
+                    &nbsp;自定义标签
+                </span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+<script src="/js/RightMenu.js" type="text/javascript"></script>
+<link href="/css/RightMenu.css" type="text/css" rel="stylesheet"/>
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <!-- <strong>YYYJ&#39;s Blog</strong> -->
+       <strong class="navbar-title">YYYJ&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.travellings.cn/go-by-clouds.html" target="_self">
+                <i class="fas fa-train-subway"></i>
+                <span>开往</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa-solid fa-folder-open"></i>
+                <span>更多</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/archives/" target="_self">
+                    <i class="iconfont icon-archive-fill"></i>
+                    <span>归档</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/" target="_self">
+                    <i class="fa-solid fa-tags"></i>
+                    <span>标签</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/links/" target="_self">
+                    <i class="iconfont icon-link-fill"></i>
+                    <span>友链</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/DayDream-Gallery/" target="_self">
+                    <i class="fas fa-images"></i>
+                    <span>图集</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/original/clock/" target="_self">
+                    <i class="fas fa-clock"></i>
+                    <span>专注</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/banner/random.webp') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="鸿蒙应用知行ActHub开发分享"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        youyeyejie
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-04-23 21:04" pubdate>
+          2026年4月23日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          3.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          27 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">鸿蒙应用知行ActHub开发分享</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="鸿蒙应用开发实践深度解析知行-acthub的功能与交互美学">鸿蒙应用开发实践：深度解析「知行
+ActHub」的功能与交互美学</h1>
+<p>最近两周，我和小组成员们经历了一场高强度且充满成就感的极限开发——作为
+NIS3366《项目管理与软件设计》的课程项目，我们基于 HarmonyOS NEXT
+纯血鸿蒙生态，从零到一打造了一款全新的日程管理与效率应用：<strong>知行
+ActHub</strong>。作为一款追求极致体验的独立开发项目，我们的核心愿景是打破效率软件的“孤岛效应”，打造一个真正的统一工作流。</p>
+<p>因此，在课程结束、工作落下帷幕之际，我想和大家分享一下我们在这个项目中探索的五大核心功能，以及我们在
+ArkUI 的加持下，做了哪些交互上的巧思与打磨。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/youyeyejie/ZhiXing_ActHub" logourl="/_posts/鸿蒙应用知行ActHub开发分享/image-1.webp" class="LinkCard">知行
+ActHub 开源地址</a></p>
+<h2 id="设计哲学打造个人生产力闭环">设计哲学：打造个人生产力闭环</h2>
+<p>事实上，本课程项目的选题原本是开发一个商城平台或新闻应用，但想着既然要开发，不如做一个更实用、能落地的工具类应用，于是我们就选定了效率工具这个赛道。于是在项目开始前，我便展开了头脑风暴，对市面上主流的效率工具进行了深入的分析和总结，最终提炼出了我们想要解决的核心痛点：效率工具的碎片化。</p>
+<p>以我自身使用的软件为例：在日程管理方面，我习惯使用系统自带的日历——Vivo
+的原生日历体验非常流畅，还可以语音添加日程；Mac
+的原生日历可以在桌面组件及 NotchNook
+等插件里展示日程；学校的交我办中的日程则能够自动同步课程表。在待办方面，我多端使用的均是
+Microsoft To
+Do，青睐的是他多平台的无缝同步体验（当然嘀嗒清单也是不错的选择）。在专注方面，我曾使用过
+Forest
+这款应用，对其以种树来可视化专注时间的设计印象深刻。而在灵感记录方面，我使用的是
+flomo 浮墨笔记，非常喜欢它的轻量和碎片化记录方式。</p>
+<p>由此可见，我的工作流是割裂的，也时常会面临在多个应用间来回切换的体验。因此我们想：能不能将这些实用的、有助于提高个人生产力的功能集成在一个应用中，不必实现原软件一摸一样的功能，而是确保用户在一个统一的空间内就能完成从计划、执行到复盘的完整流程？这就是「知行
+ActHub」的设计哲学：打造一个个人生产力的闭环，让任务与想法在同一空间内自由流转。
+我们将应用划分为五大核心场景：「<strong>日程 Plan、待办 Todo、专注
+Focus、闪记 Idea、我的
+User</strong>」，每个场景都针对用户在不同阶段的需求进行深度打磨，力求在功能与体验上都能满足用户的期待。</p>
+<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="image-2.webp" srcset="/img/loading/loading3.gif" lazyload></div><div class="group-image-wrap"><img src="image-4.webp" srcset="/img/loading/loading3.gif" lazyload></div></div></div>
+<h2 id="核心场景从计划到复盘的全流程覆盖">核心场景：从计划到复盘的全流程覆盖</h2>
+<p><img src="image.webp" srcset="/img/loading/loading3.gif" lazyload></p>
+<h3 id="日程-plan全局掌控时间">日程 (Plan)：全局掌控时间</h3>
+<p>在我们的设想里，日程页面是用户一天的数字看板。在这里，用户一天的日程与课程都以清晰的时间轴形态呈现。为了不必适配各学校教务系统的接口，我们选择了导入
+ICS 文件的方式来获取课程表数据。此外，我们在底层集成了系统
+Calendar（日历）能力和
+Notification（通知）服务。这意味着你在应用内创建的重要日程，不仅能得到准时的系统级本地提醒，还能与系统原生体验无缝接轨。</p>
+<h3 id="待办-todo行云流水的任务流转">待办
+(Todo)：行云流水的任务流转</h3>
+<p>相比于日程页面的强时间属性，待办页面的时间属性则弱得多，这也与其强时效性和灵活性相匹配。待办列表绝不仅仅是打个勾那么简单，更要考虑交互的舒适度与便捷性。通过页面最上方的分类筛选栏，用户可以快速切换不同类型的待办任务（如工作、学习、生活等）。而在待办列表中，交互性更是做到了极致：你不仅可以以符合直觉左划操作删除、点击打开详情卡片进行编辑，还可以通过右划一键将其送入专注页面，开启专属的计时流。这种跨页面的联动，正是“统一工作流”的最佳体现。</p>
+<h3 id="专注-focus沉浸式的深度工作">专注 (Focus)：沉浸式的深度工作</h3>
+<p>对于专注页面，我们将其定位为沉浸式的深度工作的核心场景：当你需要摒弃杂念时，专注页面提供了沉浸式的番茄钟与白噪音功能。更重要的是，我们在这个模块中调用了鸿蒙
+NEXT
+非常亮眼的LiveView（实况窗）能力。当你切出应用回复微信或浏览网页时，当前的专注状态、剩余时间会以“胶囊”或“卡片”的形式悬浮在系统状态栏。无需频繁切回应用，时间流逝尽在掌握，将“原生感”拉满。值得提醒的是，一旦离开专注页面一分钟，番茄钟的倒计时会自动暂停，并通过系统通知能力提醒你回到专注状态——这种防走神的设计也是我们在细节上的用心。</p>
+<h3 id="闪记-idea抓住转瞬即逝的灵感">闪记
+(Idea)：抓住转瞬即逝的灵感</h3>
+<p>与前几个页面不同，闪记页面强调的是快速捕捉和碎片化记录。这与日程管理以及专注并不冲突，而是在效率工具中一个非常重要的补充。人的灵感往往是碎片的，而主打轻量、快速记录的闪记页面正好满足了这一需求。为了让碎片化记录更有成就感，我们还开发了类似
+GitHub 贡献图的闪记热力图功能，直观记录你的每一份思考。为了适应 AI
+时代的需求，我们还在这里引入了 AI
+洞察功能：可以对闪记内容进行智能分析，或是对你最近的杂乱灵感进行总结归纳，或是对选中笔记进行针对性探讨，帮你把一个模糊的念头扩展成可执行的方案。</p>
+<h3 id="我的-user数据洞察与自我复盘">我的
+(User)：数据洞察与自我复盘</h3>
+<p>在个人中心页面，除了基础的账户管理，我们还实现了数据看板以及导入导出功能。用户可以清晰地看到自己在每周的专注时长，也能看到闪记数据，帮助他们更好地了解自己的效率习惯。同时，我们也提供了数据导入导出功能，方便用户备份或在不同设备或平台间迁移数据，确保他们的生产力资产不会被锁定在某个应用中。值得一说的是，我们采用基于用户维度分库的
+ORM + Repository 模式，提供清晰的数据访问层次与用户数据隔离。且除了 AI
+请求，所有业务数据遵循本地优先存储。借助
+<code>@ibestservices/ibest-orm</code>
+实现用户维度的数据分库隔离，并用系统级的
+<code>CryptoArchitectureKit</code> 为敏感信息加密护航。</p>
+<p><img src="image-5.webp" srcset="/img/loading/loading3.gif" lazyload></p>
+<h2 id="交互美学基于-arkui-的原生体验探索">交互美学：基于 ArkUI
+的原生体验探索</h2>
+<p>在两周的极限开发里，我们不仅追求能用，更追求好用。基于 ArkUI
+声明式的强大特性，我们在应用中埋入了许多提升幸福感的交互细节：</p>
+<h3 id="一致的视觉体验深浅色主题全覆盖">一致的视觉体验：深浅色主题全覆盖</h3>
+<p>我们深知，效率工具的使用场景是多样的，用户可能在清晨的第一缕阳光下规划一天，也可能在深夜的静谧中复盘总结。因此，应用全量支持系统的深浅色主题切换，也提供了跟随系统设置的选项。当你在深夜复盘时，深邃的暗黑模式能带来极其舒适的视觉包裹感；而在白天，明亮的浅色主题则能让你精神焕发地规划未来。无论何时何地，知行
+ActHub 都能以最适合的视觉氛围陪伴你的效率之旅。</p>
+<h3 id="手指的舞蹈左右划动与快捷操作">手指的舞蹈：左右划动与快捷操作</h3>
+<p>在日程、待办、闪记以及 AI
+洞察的列表中，如果每次操作都要点进详情页，效率无疑是低下的。因此，我们全面引入了丰富的手势划动交互。用户只需在列表项上左右划动或点击，即可完成完成、归档、删除、专注等操作，整个过程丝滑流畅，符合移动端最自然的肌肉记忆。</p>
+<h3 id="克制的防错机制带撤销的删除反馈">克制的防错机制：带撤销的删除反馈</h3>
+<p>效率软件中最怕的就是误删。为了平衡操作效率与数据安全，我们放弃了繁琐的确认删除二次弹窗，转而采用了带撤销机制的删除反馈。当你删除一条记录时，列表项会伴随顺滑的动画消失，并在底部短暂弹出一个轻量级的提示框。如果你是误触，只需在这几秒内点击撤销，软删除的数据瞬间恢复，以丝滑的动画回归原位，极大降低了操作的心理负担。</p>
+<h3 id="优雅的空间利用overlay-弹层导航">优雅的空间利用：Overlay
+弹层导航</h3>
+<p>对于添加任务、快速记事等高频动作，我们没有使用生硬的页面跳转，而是广泛采用了Overlay
+弹层导航和可交互卡片设计。无论是新建或是编辑，我们都让输入表单以卡片的形式从底部或中央优雅地弹出，并为页面平滑添加一层半透明遮罩。这种设计不仅保持了用户的视觉连续性，也让整个应用的空间感更加立体，提升了交互的沉浸感。</p>
+<p><img src="image-3.webp" srcset="/img/loading/loading3.gif" lazyload></p>
+<h2 id="结语与展望">结语与展望</h2>
+<p>在这个由 6
+人组成小队中，我主要负责了前期的产品需求分析与总体设计。在完成竞品调研后，我绘制了应用的原型，并操刀了整体的
+UI
+设计与规范调整。在实际编码中，我主要负责了基础通用组件的封装和核心的待办页面开发，同时作为项目管理的齿轮，兼顾了代码的分支管理与合并工作。这两周的节奏虽然紧凑，但也让我深刻体会到了
+HarmonyOS NEXT 的潜力（<del>换言之，仍需发展，毕竟ArkTS
+作为一门新生语言，AI 对他的知识储备依旧有限</del>）。</p>
+<p>虽然因为课程结课时间有限，我们目前发布的 v1.0.0
+还算是一个最小可行性产品，但「知行
+ActHub」的故事并没有结束。在未来的规划中，我们希望进一步完善它，如：</p>
+<ul>
+<li>功能完善：在现有功能的基础上，继续迭代优化用户体验，并增加更多实用的功能模块，如日程的周期性任务、待办的优先级与截止日期设置、闪记的多媒体与
+Markdown 渲染支持、AI 洞察的 API
+自主配置、用户头像自定义、账户名称及密码修改等。</li>
+<li>性能优化：持续优化应用性能，增加懒加载机制，提升启动速度与响应效率，改善用户体验。</li>
+<li>桌面组件：利用鸿蒙桌面组件能力，在桌面直接展示日程安排与待办状态，提升触达率。</li>
+<li>多端流转适配：依托鸿蒙强大的分布式能力，实现在平板、智慧屏等大屏设备上的增强视图与数据同步。</li>
+<li>更深度的本地提醒：集成系统后台通知，不再依赖日历中转，提供更原生的定时提醒功能。</li>
+<li>进阶的智能化：基于日常和待办数据，提供智能任务推荐与精力分析</li>
+</ul>
+<p>如果你对鸿蒙开发感兴趣，或者单纯想体验一下我们打磨的这些交互细节，欢迎去我们的
+<a target="_blank" rel="noopener" href="https://github.com/youyeyejie/ZhiXing_ActHub">GitHub
+仓库</a>逛逛。如果觉得这个项目对你有启发，或者喜欢我们的 UI
+设计，别忘了在 GitHub 上点个 Star 哦！也非常欢迎在评论区或通过 Issue
+与我们交流探讨。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Misc/" class="category-chain-item">Misc</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/HarmonyOS/" class="print-no-link">#HarmonyOS</a>
+      
+        <a href="/tags/ZhiXing-ActHub/" class="print-no-link">#ZhiXing ActHub</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>鸿蒙应用知行ActHub开发分享</div>
+      <div>https://youyeyejie.github.io/_posts/鸿蒙应用知行ActHub开发分享/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>youyeyejie</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2026年4月23日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2026年4月23日</div>
+        </div>
+      
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/_posts/%E7%8E%B0%E4%BB%A3%E5%AF%86%E7%A0%81%E5%AD%A62/" title="现代密码学Ⅱ">
+                        <span class="hidden-mobile">现代密码学Ⅱ</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments">
+      
+    <div id="giscus" class="giscus"></div>
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#giscus', function() {
+        var options = {"repo":"youyeyejie/youyeyejie.github.io","repo-id":"R_kgDOO-Uo1g","category":"General","category-id":"DIC_kwDOO-Uo1s4Crz5J","theme-light":"light","theme-dark":"dark","mapping":"pathname","reactions-enabled":1,"emit-metadata":0,"input-position":"top","lang":"zh-CN"};
+        var attributes = {};
+        for (let option in options) {
+          if (!option.startsWith('theme-')) {
+            var key = option.startsWith('data-') ? option : 'data-' + option;
+            attributes[key] = options[option];
+          }
+        }
+        var light = 'light';
+        var dark = 'dark';
+        window.GiscusThemeLight = light;
+        window.GiscusThemeDark = dark;
+        attributes['data-theme'] = document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ? dark : light;
+        for (let attribute in attributes) {
+          var value = attributes[attribute];
+          if (value === undefined || value === null || value === '') {
+            delete attributes[attribute];
+          }
+        }
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://giscus.app/client.js');
+        s.setAttribute('crossorigin', 'anonymous');
+        for (let attribute in attributes) {
+          s.setAttribute(attribute, attributes[attribute]);
+        }
+        var ss = document.getElementsByTagName('script');
+        var e = ss.length > 0 ? ss[ss.length - 1] : document.head || document.documentElement;
+        e.parentNode.insertBefore(s, e.nextSibling);
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+  
+  
+</div>
+<div class="footer-inner">
+    <div class="powered-by">
+        <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+        <i class="iconfont icon-love"></i>
+        <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+        <i class="iconfont icon-love"></i>
+        <a href="https://cloud.umami.is/share/1fs3cnD9TAP8JzML" target="_blank" rel="nofollow noopener"><span>Umami</span></a>
+    </div>
+    <div class="hitokoto">
+        <i class="fas fa-quote-left"></i>
+        <a target="_blank" rel="noopener" href="https://developer.hitokoto.cn/" id="hitokoto_text"><span id="hitokoto">且以群词 注解我这座荒山</span></a>
+        <script src="/js/Hitokoto.js" defer></script>
+    </div>
+    <div class="data">
+        <span class="total-word-container">
+            <i class="fas fa-chart-bar"></i>
+            <span id="g-total-word-id"></span>
+            字汇长河
+        </span>
+        &nbsp;
+        <span id="total-posts-container">
+            <i class="fas fa-file-alt"></i>
+            <span id="g-total-posts-id"></span>
+            文舟靠岸
+        </span>
+        &nbsp;
+        <span id="busuanzi_container_site_pv">
+            <i class="fas fa-eye"></i>
+            <span id="busuanzi_value_site_pv">1314</span>
+            目光所及
+        </span>
+        &nbsp;
+        <span id="busuanzi_container_site_uv">
+            <i class="fas fa-user-friends"></i>
+            <span id="busuanzi_value_site_uv">520</span>
+            访客驻足
+        </span>
+    </div>
+    <div class="duration">
+        <i class="fas fa-calendar"></i>
+        <span id="duration-container">人生缓缓&nbsp;自有答案</span>
+        <script src="/js/Duration.js"></script>
+    </div>
+</div>
+
+<link href="/css/Footer.css" type="text/css" rel="stylesheet"/>
+<script>
+    document.querySelectorAll("[id^='busuanzi_value_']").forEach(element => {
+        element.id = element.id.replace("busuanzi_value_", "vercount_value_");
+    });
+</script>
+<script defer src="https://events.vercount.one/js"></script>
+<!-- <script src="https://npm.elemecdn.com/penndu@1.0.0/bsz.js" defer></script> -->
+<!-- <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script> -->
+<!-- <script async src="https://busuanzi.icodeq.com/busuanzi.pure.mini.js"></script> -->
+<!-- <script async src="https://busuanzi.sukap.cn/busuanzi.pure.mini.js"></script> -->
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    
+      <script  src="/js/img-lazyload.js" ></script>
+    
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="/js/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="/js/Crypto.js"></script>
+<script src="/js/LinkCard.js"></script>
+<script src="/js/RandomBanner.js"></script>
+<script src="/js/Background.js"></script>
+<script src="/js/ScrollAnimation.js"></script>
+<script src="/js/TabDisplay.js"></script>
+<script src="/js/Tooltip.js"></script>
+<script src="/js/Umami.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  <script type="text/javascript">
+  document.getElementById("g-total-word-id").innerHTML = "749k";
+  document.getElementById('g-total-posts-id').textContent ="76";
+</script>
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start -->
+<script src="https://cdn.jsdelivr.net/npm/hexo-shiki-plugin@latest/lib/codeblock.js"></script>
+
+  <script>
+  const CODE_CONFIG = {
+    beautify: true,
+    highlightCopy: true,
+    highlightLang: true,
+    highlightHeightLimit: 360,
+    isHighlightShrink: false,
+    copy: {
+      success: 'Copy Success',
+      error: 'Copy Error',
+      noSupport: 'Browser Not Support',
+    }
+  };
+  console.log(
+    `%c hexo-shiki-plugin %c v1.0.27 %c https://github.com/nova1751/hexo-shiki-plugin`,
+    "color: #fff; background: #5f5f5f",
+    "color: #fff; background: #80c8f8",
+    ""
+  );
+  </script>
+  <!-- hexo injector body_end end --></body>
+</html>
