@@ -11,7 +11,7 @@ date: 2026-01-30 00:00:08
 excerpt: 大创项目论文阅读笔记与复现记录
 ---
 
-> ICLR 2026：[Tab-MIA: A Benchmark Dataset for Membership Inference Attacks on Tabular Data in LLMs](https://arxiv.org/html/2507.17259?_immersive_translate_auto_translate=1)
+> ICLR 2026：[Tab-MIA: A Benchmark Dataset for Membership Inference Attacks on Tabular Data in LLMs](https://arxiv.org/abs/2507.17259)
 
 # 论文简介
 论文提出了首个专门用于评估大语言模型（LLM）在表格数据上成员推理风险的基准测试集，深入探讨了结构化数据与非结构化文本在隐私泄露方面的差异，聚焦黑盒 MIA 和微调阶段 MIA 以及一部分预训练阶段 MIA。

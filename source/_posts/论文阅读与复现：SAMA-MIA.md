@@ -12,13 +12,13 @@ date: 2026-02-20 19:51:08
 excerpt: 大创项目论文阅读笔记与复现记录
 ---
 
-> ICLR 2026：[Membership Inference Attacks Against Fine-tuned Diffusion Language Models](https://arxiv.org/html/2601.20125?_immersive_translate_auto_translate=1)
+> ICLR 2026：[Membership Inference Attacks Against Fine-tuned Diffusion Language Models](https://arxiv.org/abs/2601.20125)
 
 # 论文简介
 论文首次系统性研究了扩散语言模型（DLMs）的隐私泄露风险，提出了 DLMs 的“掩码-预测”机制导致信号稀疏和长尾噪声问题会使传统攻击失效的观点，并基于此设计了基于子集聚合的成员攻击 SAMA（Subset-Aggregated Membership Attack）攻击框架，利用渐进式掩码和基于符号的统计方法，显著提升了针对 DLMs 的成员推理攻击效果，属于灰盒、参考模型、微调阶段 MIA。
 
 ---
-> 同个作者还有一篇发在 USENIX 2026 的 [Window-based Membership Inference Attacks Against Fine-tuned Large Language Models](https://arxiv.org/html/2601.02751?_immersive_translate_auto_translate=1)，详细介绍也可以看作者[博客](https://yuetian.me/blog/2026/wbc/)。
+> 同个作者还有一篇发在 USENIX 2026 的 [Window-based Membership Inference Attacks Against Fine-tuned Large Language Models](https://arxiv.org/abs/2601.02751)，详细介绍也可以看作者[博客](https://yuetian.me/blog/2026/wbc/)。
 > 
 > 大概读了一下感觉和这篇的原理很相似，只不过没有特别针对 DLMs，应该是这篇的前期研究。具体来说，可以和这一篇如下类比：
 > 

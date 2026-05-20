@@ -13,7 +13,7 @@ excerpt: 大创项目论文阅读笔记与复现记录
 ---
 
 # RMIA 论文解读
-> ICML 2024：[Low-Cost High-Power Membership Inference Attacks](https://arxiv.org/html/2312.03262?_immersive_translate_auto_translate=1)
+> ICML 2024：[Low-Cost High-Power Membership Inference Attacks](https://arxiv.org/abs/2312.03262)
 
 论文提出一种低成本、高性能的鲁棒成员推理攻击（RMIA），解决此前现有成员推理攻击（MIA）计算开销高、低误报率（FPR）下真阳性率（TPR）低、鲁棒性差的问题，为机器学习模型隐私风险审计提供实用工具，聚焦黑盒场景下的参考模型类攻击。
 
@@ -79,7 +79,7 @@ RMIA 将成员推理转化为假设检验问题，通过细粒度建模零假设
 5. 离线模式高效：仅用 OUT 模型（无需为每个 $x$ 训练 IN 模型）即可实现接近在线模式的性能，大幅降低计算成本。
 
 # InfoRMIA 论文解读
-> ICLR 2026：[(Token-Level) InfoRMIA: Stronger Membership Inference and Memorization Assessment for LLMs](https://arxiv.org/html/2510.05582v1?_immersive_translate_auto_translate=1)
+> ICLR 2026：[(Token-Level) InfoRMIA: Stronger Membership Inference and Memorization Assessment for LLMs](https://arxiv.org/abs/2510.05582)
 
 论文针对 RMIA 依赖大规模种群数据集、得分离散、调参复杂等问题，提出信息论驱动的 InfoRMIA，同时适配大型语言模型（LLMs）的 token 级隐私评估需求，实现更精准、高效、细粒度的成员推理，聚焦 LLMs 和 LMMs 场景下的黑盒参考模型类攻击。
 
