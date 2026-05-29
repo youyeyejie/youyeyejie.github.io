@@ -1662,34 +1662,39 @@ a=a\)</span></li>
 </ul>
 <h3 id="常用例子">常用例子</h3>
 <ul>
-<li>整数集 <span class="math inline">\(\mathbf{Z}\)</span>
-关于数的加法构成群，这个群称为整数加群</li>
-<li>全体非零有理数的集合 <span class="math inline">\(\mathbf{Q}^{*}\)</span>
-关于数的乘法构成交换群</li>
-<li>全体非零实数的集合 <span class="math inline">\(\mathbf{R}^{*}\)</span>
-关于数的乘法也构成交换群</li>
-<li>全体非零复数的集合 <span class="math inline">\(\mathbf{C}^{*}\)</span>
-关于数的乘法也构成交换群</li>
-<li>全体 <span class="math inline">\(n\)</span> 次单位根组成的集合 <span class="math display">\[
+<li><p>整数集 <span class="math inline">\(\mathbf{Z}\)</span>
+关于数的加法构成群，这个群称为整数加群</p></li>
+<li><p>全体非零有理数的集合 <span class="math inline">\(\mathbf{Q}^{*}\)</span>
+关于数的乘法构成交换群</p></li>
+<li><p>全体非零实数的集合 <span class="math inline">\(\mathbf{R}^{*}\)</span>
+关于数的乘法也构成交换群</p></li>
+<li><p>全体非零复数的集合 <span class="math inline">\(\mathbf{C}^{*}\)</span>
+关于数的乘法也构成交换群</p></li>
+<li><p>全体 <span class="math inline">\(n\)</span> 次单位根组成的集合
+<span class="math display">\[
   \begin{aligned} U_{n}
   &amp; =\left\{x \in \mathbf{C} \mid x^{n}=1\right\} \\
   &amp; =\left\{\left.\cos \frac{2 k \pi}{n}+i \sin \frac{2 k \pi}{n}
 \right\rvert\,k=0,1,2,\cdots,n-1\right\}
   \end{aligned}
-  \]</span> 关于数的乘法构成一个 <span class="math inline">\(n\)</span>
-阶交换群，通常称这个群为 <strong>n 次单位根群</strong></li>
-<li>设 <span class="math inline">\(m\)</span> 是大于 <span class="math inline">\(1\)</span> 的正整数，记 <span class="math display">\[
+  \]</span></p>
+<p>关于数的乘法构成一个 <span class="math inline">\(n\)</span>
+阶交换群，通常称这个群为 <strong>n 次单位根群</strong></p></li>
+<li><p>设 <span class="math inline">\(m\)</span> 是大于 <span class="math inline">\(1\)</span> 的正整数，记 <span class="math display">\[
   \mathbf{Z}_{m}=\{\overline{0},\overline{1},\overline{2},\cdots,\overline{m-1}\}
-  \]</span> 则 <span class="math inline">\(\mathbf{Z}_{m}\)</span>
-关于剩余类的加法构成加群，这个群称为 <span class="math inline">\(\mathbf{Z}\)</span> 的模 <span class="math inline">\(m\)</span> 剩余类加群</li>
-<li>设 <span class="math inline">\(m\)</span> 是大于 <span class="math inline">\(1\)</span> 的正整数，记 <span class="math display">\[
+  \]</span></p>
+<p>则 <span class="math inline">\(\mathbf{Z}_{m}\)</span>
+关于剩余类的加法构成加群，这个群称为 <span class="math inline">\(\mathbf{Z}\)</span> 的模 <span class="math inline">\(m\)</span> 剩余类加群</p></li>
+<li><p>设 <span class="math inline">\(m\)</span> 是大于 <span class="math inline">\(1\)</span> 的正整数，记 <span class="math display">\[
   U(m)=\left\{\bar{a} \in \mathbf{Z}_{m} \mid(a,m)=1\right\}
-  \]</span> 则 <span class="math inline">\(U(m)\)</span>
+  \]</span></p>
+<p>则 <span class="math inline">\(U(m)\)</span>
 关于剩余类的乘法构成群，群 <span class="math inline">\((U(m),\cdot)\)</span> 称为 <span class="math inline">\(\mathbf{Z}\)</span> 的模 <span class="math inline">\(m\)</span>
 单位群，显然这是一个交换群，不一定是循环群。当 <span class="math inline">\(p\)</span> 为素数时，<span class="math inline">\(U(p)\)</span> 常记作 <span class="math inline">\(\mathbf{Z}_{p}^{*}\)</span>，易知 <span class="math display">\[
   \mathbf{Z}_{p}^{*}=\{\overline{1},\overline{2},\cdots,\overline{p-1}\}
-  \]</span> 这是一个循环群，<span class="math inline">\(U(m)\)</span>
-的阶等于欧拉函数 <span class="math inline">\(\phi(m)\)</span></li>
+  \]</span></p>
+<p>这是一个循环群，<span class="math inline">\(U(m)\)</span>
+的阶等于欧拉函数 <span class="math inline">\(\phi(m)\)</span></p></li>
 </ul>
 <h2 id="子群">子群</h2>
 <h3 id="子群的定义">子群的定义</h3>
@@ -1785,7 +1790,8 @@ a_{2}^{l_{2}} \cdots a_{k}^{l_{k}} \mid a_{i} \in S, l_{i}= \pm 1, k \in
 <ul>
 <li><p>当 <span class="math inline">\(S\)</span> 只包含群 <span class="math inline">\(G\)</span> 的一个元素 <span class="math inline">\(a\)</span> 时，由于 <span class="math display">\[
   a^{l_{1}} a^{l_{2}} \cdots a^{l_{k}}=a^{\sum_{i=1}^{k} l_{i}}
-  \]</span> 所以 <span class="math display">\[
+  \]</span></p>
+<p>所以 <span class="math display">\[
   \langle a\rangle=\left\{a^{r} \mid r \in \mathbf{Z}\right\}
   \]</span></p>
 <p>这种由一个元素 <span class="math inline">\(a\)</span>
@@ -2040,15 +2046,16 @@ k_{1} &amp; k_{2} &amp; \cdots &amp; k_{n}
 \sigma=\left(i_{1} i_{2} \cdots i_{r}\right)
 \]</span></p>
 <ul>
-<li>2 轮换称为 <strong>对换</strong></li>
-<li>1 轮换就是 <strong>恒等置换</strong>，并且显然有 <span class="math inline">\((1)=(2)=\cdots=(n)\)</span></li>
-<li>轮换的表示一般不是唯一的 <span class="math inline">\(.\)</span>
+<li><p>2 轮换称为 <strong>对换</strong></p></li>
+<li><p>1 轮换就是 <strong>恒等置换</strong>，并且显然有 <span class="math inline">\((1)=(2)=\cdots=(n)\)</span></p></li>
+<li><p>轮换的表示一般不是唯一的 <span class="math inline">\(.\)</span>
 例如，置换 <span class="math display">\[
   \sigma=\left(\begin{array}{ccccccc}
   1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 \\\
   2 &amp; 4 &amp; 3 &amp; 6 &amp; 5 &amp; 1 &amp; 7
   \end{array}\right)
-  \]</span> 可分别表示为 <span class="math display">\[
+  \]</span></p>
+<p>可分别表示为 <span class="math display">\[
   \begin{aligned}
   \sigma &amp; =\left(\begin{array}{llll} 1 &amp; 2 &amp; 4 &amp; 6
 \end{array}\right) \\
@@ -2059,7 +2066,7 @@ k_{1} &amp; k_{2} &amp; \cdots &amp; k_{n}
   &amp; =\left(\begin{array}{llll} 6 &amp; 1 &amp; 2 &amp; 4
 \end{array}\right) \\
   \end{aligned}
-  \]</span></li>
+  \]</span></p></li>
 </ul>
 <h4 id="轮换的性质">轮换的性质</h4>
 <ul>
@@ -2978,20 +2985,23 @@ a=0\)</span>，则称 <span class="math inline">\(n\)</span> 为环 <span class=
 。如果这样的正整数不存在，则称环 <span class="math inline">\(R\)</span>
 的特征为 <span class="math inline">\(0\)</span>。环 <span class="math inline">\(R\)</span> 的特征记作 <span class="math inline">\(\operatorname{Char} R\)</span>。</p>
 <ul>
-<li><span class="math inline">\(\mathbf{Z},\mathbf{Q},\mathbf{R},\mathbf{C}\)</span>
-的特征都等于 <span class="math inline">\(0\)</span></li>
-<li>一般地，如果 <span class="math inline">\(R\)</span> 是一个数环，则
-<span class="math inline">\(\operatorname{Char} R=0\)</span></li>
-<li>设 <span class="math inline">\(\mathbf{Z}_{m}\)</span> 是模 <span class="math inline">\(m\)</span> 剩余类环，则对每个 <span class="math inline">\(\bar{n} \in \mathbf{Z}_{m}\)</span>，有 <span class="math display">\[
+<li><p><span class="math inline">\(\mathbf{Z},\mathbf{Q},\mathbf{R},\mathbf{C}\)</span>
+的特征都等于 <span class="math inline">\(0\)</span></p></li>
+<li><p>一般地，如果 <span class="math inline">\(R\)</span>
+是一个数环，则 <span class="math inline">\(\operatorname{Char}
+R=0\)</span></p></li>
+<li><p>设 <span class="math inline">\(\mathbf{Z}_{m}\)</span> 是模 <span class="math inline">\(m\)</span> 剩余类环，则对每个 <span class="math inline">\(\bar{n} \in \mathbf{Z}_{m}\)</span>，有 <span class="math display">\[
   m \bar{n}=\overline{m n}=\overline{0}
-  \]</span> 而对于任何正整数 <span class="math inline">\(k&lt;m\)</span>，有 <span class="math display">\[
+  \]</span></p>
+<p>而对于任何正整数 <span class="math inline">\(k&lt;m\)</span>，有
+<span class="math display">\[
   k \overline{1}=\bar{k} \neq \overline{0}
   \]</span> 所以 <span class="math inline">\(\operatorname{Char}
-\mathbf{Z}_{m}=m\)</span></li>
-<li>对于 <span class="math inline">\(\mathbf{Z}_{m}\)</span>
+\mathbf{Z}_{m}=m\)</span></p></li>
+<li><p>对于 <span class="math inline">\(\mathbf{Z}_{m}\)</span>
 上的一元多项式环 <span class="math inline">\(\mathbf{Z}_{m}[x]\)</span>，也有 <span class="math inline">\(\operatorname{Char}
-\mathbf{Z}_{m}[x]=m\)</span></li>
-<li>一个有限环的特征是一个正整数</li>
+\mathbf{Z}_{m}[x]=m\)</span></p></li>
+<li><p>一个有限环的特征是一个正整数</p></li>
 </ul>
 <h4 id="特征的性质">特征的性质</h4>
 <ul>

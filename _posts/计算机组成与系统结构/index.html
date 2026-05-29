@@ -1048,7 +1048,7 @@
 </ol></li>
 </ul>
 <h2 id="改进芯片组成和体系结构">改进芯片组成和体系结构</h2>
-<h3 id="提高处理器速度的方法">提高处理器速度的方法：</h3>
+<h3 id="提高处理器速度的方法">提高处理器速度的方法</h3>
 <ol type="1">
 <li>提高硬件速度：缩小逻辑门尺寸，提高时钟频率（CLK）
 <ul>
@@ -1071,7 +1071,7 @@
 <li>通常不同类指令的CPI不同</li>
 <li><span class="math inline">\(I_c\)</span>：规定时间内执行的机器指令总条数</li>
 <li><span class="math inline">\(CPI_i\)</span>，<span class="math inline">\(I_i\)</span>：给定程序中i类指令的CPI和执行条数</li>
-<li><span class="math inline">\(f\)</span>：时钟频率，<span class="math display">\[τ=\frac{1}{f}\]</span></li>
+<li><span class="math inline">\(f\)</span>：时钟频率，<span class="math inline">\(\tau=\frac{1}{f}\)</span></li>
 <li>有： <span class="math display">\[
   \begin{aligned}
   CPI&amp;=\frac{\sum_{i=1}^{n}(CPI_i×I_i)}{I_c}\\
@@ -1303,9 +1303,12 @@
 <li>对非随机访问存储器：定位时间</li>
 </ul></li>
 <li>存储器周期时间：随机访问存储器，访问时间+第二次访问开始前所需额外时间</li>
-<li>传输速率：通常以 <span class="math inline">\(bit/s(bps)\)</span>为单位
+<li>传输速率：通常以 <span class="math inline">\(bit/s(bps)\)</span>
+为单位
 <ul>
-<li>对随机： <span class="math display">\[\text{传输速率}=\frac{1}{\text{周期时间}}\]</span></li>
+<li>对随机： <span class="math display">\[
+  \text{传输速率}=\frac{1}{\text{周期时间}}
+  \]</span></li>
 <li>对非随机：
 <ul>
 <li><span class="math display">\[T_n=T_A+\frac{n}{R}\]</span></li>
@@ -1637,16 +1640,16 @@ Byte的short型变量的地址通常为偶数，<span class="math inline">\(4\)<
 </figure>
 <p>具体纠错过程为：</p>
 <ul>
-<li>根据右图公式计算纠错码 <span class="math inline">\(C8^\prime\
-C4\prime\ C2\prime\ C1\prime\)</span>，与存储的原纠错码 <span class="math inline">\(C8\ C4\ C2\ C1\)</span> 一一异或，得到结果 <span class="math inline">\(C8\prime\prime C4\prime\prime C2\prime\prime
-C1\prime\prime\)</span></li>
+<li>根据右图公式计算纠错码 <span class="math inline">\(C8'\ C4'\
+C2'\ C1'\)</span>，与存储的原纠错码 <span class="math inline">\(C8\ C4\ C2\ C1\)</span> 一一异或，得到结果 <span class="math inline">\(C8'' C4'' C2''
+C1''\)</span></li>
 <li>若只有一项异或结果为1，即只有一个纠错码与原纠错码不同，则错误出现在该纠错码上，翻转该纠错码即可。例如，若只有
-<span class="math inline">\(C8\prime\prime=1\)</span>，即 <span class="math inline">\(C8\prime\prime\ C4\prime\prime\ C2\prime\prime\
-C1\prime\prime=1000\)</span>，表示位置8出错，即 <span class="math inline">\(C8\)</span> 自身出错。</li>
+<span class="math inline">\(C8''=1\)</span>，即 <span class="math inline">\(C8''\ C4''\ C2''\
+C1''=1000\)</span>，表示位置8出错，即 <span class="math inline">\(C8\)</span> 自身出错。</li>
 <li>若有两项异或结果为1，即有两个纠错码与原纠错码不同，则错误出现在纠错码所表示的位置对应的数据上。例如，若
-<span class="math inline">\(C1\prime\prime=C4\prime\prime=1\)</span>，即
-<span class="math inline">\(C8\prime\prime\ C4\prime\prime\
-C2\prime\prime\ C1\prime\prime=0101\)</span>，则错误出现在位置 <span class="math inline">\(0101\)</span> 对应数据，即 <span class="math inline">\(D2\)</span> 上；从右图的公式里也可以看到，只有
+<span class="math inline">\(C1''=C4''=1\)</span>，即
+<span class="math inline">\(C8''\ C4''\ C2''\
+C1''=0101\)</span>，则错误出现在位置 <span class="math inline">\(0101\)</span> 对应数据，即 <span class="math inline">\(D2\)</span> 上；从右图的公式里也可以看到，只有
 <span class="math inline">\(D2\)</span> 能同时影响 <span class="math inline">\(C1 C4\)</span>。</li>
 </ul>
 <h1 id="ch6-外部存储器">Ch6 外部存储器</h1>

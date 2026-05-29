@@ -1109,7 +1109,8 @@ A\)</span></li>
   \begin{aligned}
   A\cup B &amp;= B\cup A\\
   AB&amp;=BA
-  \end{aligned}\]</span></li>
+  \end{aligned}
+  \]</span></li>
 <li><strong>结合律</strong> <span class="math display">\[
   \begin{aligned}
   (A\cup B)\cup C &amp;= A\cup(B\cup C)\\
@@ -1197,7 +1198,7 @@ f_n\left(\bigcup_{i=1}^{+\infty}A_i\right)=\sum_{i=1}^{+\infty}f_n(A_i)\]</span>
 <li>每个样本点的发生是<strong>等可能</strong>的， <span class="math inline">\(P(\omega_1)=P(\omega_2)=\cdots=P(\omega_N)\)</span></li>
 </ul></li>
 <li>样本空间为必然事件， <span class="math inline">\(P(\mathit\Omega)=1\)</span>， 则有 <span class="math display">\[
-  P\{\omega_i\}=\frac1N
+  P\{\omega_i\}=\frac{1}{N}
   \]</span></li>
 <li>事件 <span class="math inline">\(A=\{\omega_{i_1}，\omega_{i_2}，\cdots，\omega_{i_M}\}\)</span>
 的概率为 <span class="math display">\[
@@ -1444,7 +1445,8 @@ x_k) = F(x_k) - F(x_{k-1})\]</span></li>
 \hline
 P&amp;p&amp;1-p\\
 \hline
-\end{array}\]</span></p>
+\end{array}
+\]</span></p>
 <p>其中 <span class="math inline">\(0&lt;p&lt;1\)</span>， 称 <span class="math inline">\(X\)</span> 服从参数为 <span class="math inline">\(p\)</span> 的 <strong>0-1分布</strong></p>
 <p>也可写成 <span class="math display">\[
 P(X=k)=p^k\ (1-p)^{1-k}，\ k = 0，1
@@ -1538,7 +1540,8 @@ P(\lambda)\)</span> 或 <span class="math inline">\(\pi(\lambda)\)</span></p></l
 \Delta x\)</span></li>
 <li>若 <span class="math inline">\(a\)</span> 是随机变量 <span class="math inline">\(X\)</span> 的⼀个可能的取值， 则 <span class="math inline">\(P(X = a) = 0\)</span></li>
 <li>对任意实数 <span class="math inline">\(a，b\ (a&lt;b)\)</span>， 有
-<span class="math display">\[\begin{aligned}
+<span class="math display">\[
+\begin{aligned}
 P(a &lt; X \le b) &amp;= P(a \le X \le b) = P(a &lt; X &lt; b)\\
 &amp;= P(a\le X &lt; b) = \int_a^bf(x)\ \mathrm dx\\
 P(X\le b) &amp;= P(X&lt;b) = \int_{-\infty}^bf(x)\ \mathrm dx\\
@@ -1709,7 +1712,7 @@ P(X&gt; a，Y&gt;c) &amp;= P(a&lt;X&lt;+\infty，c&lt;y&lt;+\infty)\\
 \end{aligned}
 \]</span></li>
 </ol></li>
-<li><p><strong>边缘分布函数</strong>：设⼆维随机变量 <span class="math inline">\((X，Y)\)</span> 的分布函数为 <span class="math inline">\(F(x，y)\)</span>，分量 <span class="math inline">\(X\)</span> 和 <span class="math inline">\(Y\)</span> 也都是随机变量，各⾃的分布函数分别记为
+<li><p><strong>边缘分布函数</strong>：设二维随机变量 <span class="math inline">\((X，Y)\)</span> 的分布函数为 <span class="math inline">\(F(x，y)\)</span>，分量 <span class="math inline">\(X\)</span> 和 <span class="math inline">\(Y\)</span> 也都是随机变量，各⾃的分布函数分别记为
 <span class="math inline">\(F_X(x)，F_Y(y)\)</span>，并依次称为随机变量
 <span class="math inline">\((X，Y)\)</span> 关于 <span class="math inline">\(X，Y\)</span> 的<strong>边缘分布函数</strong>
 <span class="math display">\[
@@ -1722,12 +1725,12 @@ P(X&gt; a，Y&gt;c) &amp;= P(a&lt;X&lt;+\infty，c&lt;y&lt;+\infty)\\
 <h3 id="二维离散型随机变量">二维离散型随机变量</h3>
 <ul>
 <li><strong>定义</strong>：随机变量 <span class="math inline">\((X，Y)\)</span>
-在⼆维平⾯上所有可能的取值为有限对或可列无穷对，则称 <span class="math inline">\((X，Y)\)</span> 为
-<strong>⼆维离散型随机变量</strong></li>
-<li>设⼆维随机变量 <span class="math inline">\((X，Y)\)</span>
+在二维平⾯上所有可能的取值为有限对或可列无穷对，则称 <span class="math inline">\((X，Y)\)</span> 为
+<strong>二维离散型随机变量</strong></li>
+<li>设二维随机变量 <span class="math inline">\((X，Y)\)</span>
 的所有可能取值为 <span class="math inline">\((x_i，y_i)，i，j =
 1，2，\cdots\)</span>，则称 <span class="math inline">\(P(X=x_i，Y=y_i)=p_{ij}，i = j =
-1，2，\cdots\)</span> 为⼆维离散型随机变量 <span class="math inline">\((X，Y)\)</span>
+1，2，\cdots\)</span> 为二维离散型随机变量 <span class="math inline">\((X，Y)\)</span>
 的<strong>联合分布律</strong>或联合分布列，简称为<strong>分布律</strong></li>
 </ul>
 <p><span class="math display">\[
@@ -1769,7 +1772,7 @@ p_{1\bullet}&amp;p_{2\bullet}&amp;\cdots &amp;p_{i\bullet} &amp;\cdots
 </ul></li>
 </ul>
 <h4 id="由分布律求分布函数">由分布律求分布函数</h4>
-<p>⼆维离散型随机变量的分布函数与分布律互为确定 <span class="math display">\[
+<p>二维离散型随机变量的分布函数与分布律互为确定 <span class="math display">\[
 (x，y) = \sum_{x_i\le x}\sum_{y_j\le y}p_{ij}
 \]</span></p>
 <h4 id="二维离散型随机变量的边缘分布律">二维离散型随机变量的边缘分布律</h4>
@@ -1783,8 +1786,8 @@ j=1，2，\cdots
 \]</span></p>
 <h3 id="二维连续型随机变量">二维连续型随机变量</h3>
 <ul>
-<li><p><strong>分布函数</strong>：<strong>⼆维连续型随机变量</strong>
-<span class="math inline">\((X，Y)\)</span> 的分布函数 <span class="math inline">\(F(X，Y)\)</span> 为 <span class="math inline">\((X，Y)\)</span> 的联合概率密度函数 <span class="math inline">\(f(x，y)\)</span> (⼆元⾮负可积函数) 的二重积分
+<li><p><strong>分布函数</strong>：<strong>二维连续型随机变量</strong>
+<span class="math inline">\((X，Y)\)</span> 的分布函数 <span class="math inline">\(F(X，Y)\)</span> 为 <span class="math inline">\((X，Y)\)</span> 的联合概率密度函数 <span class="math inline">\(f(x，y)\)</span> (二元⾮负可积函数) 的二重积分
 <span class="math display">\[
   F(x，y) = \int_{-\infty}^x\int_{-\infty}^yf(u，v)\ \mathrm du\ \mathrm
 dv
@@ -1837,7 +1840,7 @@ f(x，y)=\frac{1}{2 \pi \sigma_{1} \sigma_{2} \sqrt{1-\rho^{2}}} \exp
 <h2 id="二维随机变量的条件分布">二维随机变量的条件分布</h2>
 <h3 id="二维离散型随机变量的条件分布">二维离散型随机变量的条件分布</h3>
 <ul>
-<li><strong>定义</strong>：设有⼆维离散型随机变量 <span class="math inline">\((X，Y)\)</span>
+<li><strong>定义</strong>：设有二维离散型随机变量 <span class="math inline">\((X，Y)\)</span>
 <ul>
 <li>对于固定的 <span class="math inline">\(j\)</span>，若 <span class="math inline">\(P(Y = y_j)&gt;0\)</span>，则<strong>在 <span class="math inline">\(\{Y = y_j\}\)</span> 的条件下 <span class="math inline">\(X\)</span> 的条件分布律</strong>为 <span class="math display">\[
   P(X = x_i\mid Y = y_j) = \dfrac{P(X = x_i，Y = y_j)}{P(Y = y_j)} =
@@ -1874,9 +1877,9 @@ P(X = x_i) = \sum_j P(Y = y_j)\ P(X = x_i\mid Y= y_j)，i = 1，2，\cdots
 \]</span></li>
 </ol></li>
 </ul>
-<h3 id="维连续型随机变量的条件分布">⼆维连续型随机变量的条件分布</h3>
+<h3 id="二维连续型随机变量的条件分布">二维连续型随机变量的条件分布</h3>
 <ul>
-<li><strong>定义</strong>：设⼆维随机变量 <span class="math inline">\((X，Y)\)</span> 的联合概率密度为 <span class="math inline">\(f(x，y)\)</span>，<span class="math inline">\(X，Y\)</span> 的边缘概率密度分别为 <span class="math inline">\(f_X(x)，f_Y(y)\)</span>
+<li><strong>定义</strong>：设二维随机变量 <span class="math inline">\((X，Y)\)</span> 的联合概率密度为 <span class="math inline">\(f(x，y)\)</span>，<span class="math inline">\(X，Y\)</span> 的边缘概率密度分别为 <span class="math inline">\(f_X(x)，f_Y(y)\)</span>
 <ul>
 <li>当 <span class="math inline">\(f_Y(y) &gt; 0\)</span> 时
 <ul>
@@ -1992,7 +1995,7 @@ P(\lambda_2)\)</span>，则<strong>其和也服从 Poisson 分布</strong>，即
 <span class="math display">\[
 X+Y\sim P(\lambda_1+\lambda_2)
 \]</span></li>
-<li>⼆<strong>项分布的可加性</strong>：若随机变量 <span class="math inline">\(X，Y\)</span>
+<li>二<strong>项分布的可加性</strong>：若随机变量 <span class="math inline">\(X，Y\)</span>
 <strong>相互独立</strong>，且都服从二项分布，即 <span class="math inline">\(X\sim B(n，p)，Y\sim
 B(m，p)\)</span>，则<strong>其和也服从二项分布</strong>，即 <span class="math display">\[
 X+Y\sim B(n+m，p)

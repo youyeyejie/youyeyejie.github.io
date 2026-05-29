@@ -1047,7 +1047,7 @@
 <li>显然有 <span class="math inline">\(d^{+}(v)+d^{-}(v)=d(v)\)</span></li>
 </ul></li>
 </ul>
-<h2 id="图的类别">图的类别</h2>
+<h3 id="图的类别">图的类别</h3>
 <ul>
 <li><strong>简单图</strong>：不含重边（任意两结点间最多只有一条边）和自环的无向图或有向图称为简单图</li>
 <li><strong>空图</strong>：没有任何边的简单图叫空图，用 <span class="math inline">\(N_{n}\)</span> 表示</li>
@@ -2138,69 +2138,92 @@ Q\)</span> ，又称<strong>波兰式</strong></li>
 C\)</span></li>
 </ol></li>
 </ul>
-<h3 id="等值公式">等值公式</h3>
-<h4 id="基本等值公式命题定律">基本等值公式（命题定律）</h4>
+<h2 id="等值公式">等值公式</h2>
+<h3 id="基本等值公式命题定律">基本等值公式（命题定律）</h3>
 <ul>
-<li>双重否定律 <span class="math display">\[ \neg \neg P=P\]</span></li>
-<li>结合律 <span class="math display">\[ \begin{aligned}
-  (P \vee Q) \vee R &amp;= P \vee(Q \vee R)\\\ (P \wedge Q) \wedge R
-&amp;= P \wedge(Q \wedge R)\\
+<li><p>双重否定律 <span class="math display">\[
+  \neg \neg P=P
+  \]</span></p></li>
+<li><p>结合律 <span class="math display">\[
+  \begin{aligned}
+  (P \vee Q) \vee R &amp;= P \vee(Q \vee R)\\
+  (P \wedge Q) \wedge R &amp;= P \wedge(Q \wedge R)\\
   (P \leftrightarrow Q) \leftrightarrow R &amp;= P \leftrightarrow(Q
 \leftrightarrow R)
-  \end{aligned} \]</span></li>
-<li>交换律 <span class="math display">\[ \begin{aligned}
+  \end{aligned}
+  \]</span></p></li>
+<li><p>交换律 <span class="math display">\[
+  \begin{aligned}
   P \vee Q &amp;= Q \vee P \\
   P \wedge Q &amp;= Q \wedge P \\
   P \leftrightarrow Q &amp;= Q \leftrightarrow P
-  \end{aligned}\]</span></li>
-<li>分配律 <span class="math display">\[ \begin{aligned}
+  \end{aligned}
+  \]</span></p></li>
+<li><p>分配律 <span class="math display">\[
+  \begin{aligned}
   P \vee(Q \wedge R) &amp;= (P \vee Q) \wedge(P \vee R) \\
   P \wedge(Q \vee R) &amp;= (P \wedge Q) \vee(P \wedge R) \\
   P \rightarrow(Q \rightarrow R) &amp;= (P \rightarrow Q) \rightarrow(P
 \rightarrow R) \\
   P \leftrightarrow(Q \leftrightarrow R) &amp;\neq(P \leftrightarrow Q)
 \leftrightarrow(P \leftrightarrow R)
-  \end{aligned}\]</span></li>
-<li>等幂律（恒等律） <span class="math display">\[ \begin{aligned}
+  \end{aligned}
+  \]</span></p></li>
+<li><p>等幂律（恒等律） <span class="math display">\[
+  \begin{aligned}
   P \vee P &amp;= P \\
   P \wedge P &amp;= P \\
   P \rightarrow P &amp;= T \\
   P \leftrightarrow P &amp;= T
-  \end{aligned}\]</span></li>
-<li>吸收律 <span class="math display">\[ \begin{aligned}
+  \end{aligned}
+  \]</span></p></li>
+<li><p>吸收律 <span class="math display">\[
+  \begin{aligned}
   P \vee(P \wedge Q) &amp;= P \\
   P \wedge(P \vee Q) &amp;= P
-  \end{aligned}\]</span></li>
-<li>摩根律 <span class="math display">\[ \begin{aligned}
+  \end{aligned}
+  \]</span></p></li>
+<li><p>摩根律 <span class="math display">\[
+  \begin{aligned}
   \neg(P \vee Q) &amp;= \neg P \wedge \neg Q \\
   \neg(P \wedge Q) &amp;= \neg P \vee \neg Q
-  \end{aligned}\]</span> 对蕴涵词；双条件词作否定有 <span class="math display">\[ \begin{aligned}
+  \end{aligned}
+  \]</span></p>
+<p>对蕴涵词；双条件词作否定有 <span class="math display">\[
+  \begin{aligned}
   \neg(P \rightarrow Q) &amp;= P \wedge \neg Q \\
   \neg(P \leftrightarrow Q) &amp;= \neg P \leftrightarrow Q\\
   &amp;= P \leftrightarrow \neg Q\\
   &amp;= (\neg P \wedge Q) \vee(P \wedge \neg Q)
-  \end{aligned}\]</span></li>
-<li>同一律 <span class="math display">\[ \begin{aligned}
+  \end{aligned}
+  \]</span></p></li>
+<li><p>同一律 <span class="math display">\[
+  \begin{aligned}
   P \vee F &amp;= P \\
   P \wedge T &amp;= P \\
   T \rightarrow P &amp;= P \\
   T \leftrightarrow P &amp;= P\\
   P \rightarrow F &amp;= \neg P \\
   F \leftrightarrow P &amp;= \neg P
-  \end{aligned}\]</span></li>
-<li>零律 <span class="math display">\[ \begin{aligned}
+  \end{aligned}
+  \]</span></p></li>
+<li><p>零律 <span class="math display">\[
+  \begin{aligned}
   P \vee T &amp;= T \\
   P \wedge F &amp;= F\\
   P \rightarrow T &amp;= T \\
   F \rightarrow P &amp;= T
-  \end{aligned}\]</span></li>
-<li>补余律 <span class="math display">\[ \begin{aligned}
+  \end{aligned}
+  \]</span></p></li>
+<li><p>补余律 <span class="math display">\[
+  \begin{aligned}
   P \vee \neg P &amp;= T \\
   P \wedge \neg P &amp;= F\\
   P \rightarrow \neg P &amp;= \neg P \\
   \neg P \rightarrow P &amp;= P \\
   P \leftrightarrow \neg P &amp;= F
-  \end{aligned}\]</span></li>
+  \end{aligned}
+  \]</span></p></li>
 </ul>
 <h4 id="venn图">Venn图</h4>
 <ul>
