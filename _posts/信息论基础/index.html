@@ -1749,7 +1749,7 @@ p(x)&gt;0\}\)</span> 为 <span class="math inline">\(p(x)\)</span>
   \begin{align*}
   -D(p||q)&amp;=-\sum_{x\in A}p(x)\log\frac{p(x)}{q(x)}=\sum_{x\in
 A}p(x)\log\frac{q(x)}{p(x)}\\
-  &amp;\leq\log\sum_{x\in A}p(x)\frac{q(x)}{p(x)}（由Jensen不等式）\\
+  &amp;\leq\log\sum_{x\in A}p(x)\frac{q(x)}{p(x)}(由Jensen不等式)\\
   &amp;=\log\sum_{x\in A}q(x)\\
   &amp;\leq\log\sum_{x\in X}q(x)\\
   &amp;=\log1 = 0
@@ -2028,7 +2028,7 @@ I(x_i;y_j|z_k)&amp;=\log\frac{p(x_i|y_j,z_k)}{p(x_i|z_k)}=\log(\frac{p(x_i|y_j,z
 <li><span class="math inline">\(I(X;Y,Z)=I(X;Z,Y)=I(X;Y)+I(X;Z|Y)\)</span> ①</li>
 </ul></li>
 </ul></li>
-<li><strong><span class="math inline">\(x_i，y_j\)</span>与符号对<span class="math inline">\((z_k)\)</span>间的互信息量</strong>
+<li><strong><span class="math inline">\(x_i,y_j\)</span>与符号对<span class="math inline">\((z_k)\)</span>间的互信息量</strong>
 <ul>
 <li><span class="math display">\[
 \begin{align*}
@@ -2155,7 +2155,7 @@ p(X_n|X_{n - 1})\]</span></li>
 <li><p><strong>证明</strong>：</p>
 <p><span class="math display">\[
   \begin{align*}
-  &amp;若X_1 \to X_2 \to X_3 \to X_4构成马尔可夫链，则有\\
+  &amp;若X_1 \to X_2 \to X_3 \to X_4构成马尔可夫链,则有\\
   &amp;p(x_1,x_2,x_3,x_4)p(x_2)p(x_3) =
 p(x_1,x_2)p(x_2,x_3)p(x_3,x_4)\quad ①\\
   &amp;\therefore \sum_{x_4} p(x_1,x_2,x_3,x_4)p(x_2)p(x_3) = \sum_{x_4}
@@ -2224,9 +2224,9 @@ I(X;Z)\)</span>。
   \begin{align*}
   &amp;\because I(X;YZ) = I(X;Y) + I(X;Z|Y)= I(X;Z) + I(X;Y|Z)\\
   &amp;\therefore I(X;Y)= I(X;Z) + I(X;Y|Z) - I(X;Z|Y)\\
-  &amp;又\because 马尔可夫链 X \to Y \to Z 中，I(X;Z|Y) = 0 且 I(X;Y|Z)
+  &amp;又\because 马尔可夫链 X \to Y \to Z 中,I(X;Z|Y) = 0 且 I(X;Y|Z)
 \geq 0\\
-  &amp;\therefore I(X;Y) \geq I(X;Z)，同理 I(Y;Z) \geq I(X;Z)
+  &amp;\therefore I(X;Y) \geq I(X;Z),同理 I(Y;Z) \geq I(X;Z)
   \end{align*}    
   \]</span></li>
 </ul></li>
@@ -2302,8 +2302,8 @@ P_e)=H(P_e)\)</span> 由于 <span class="math inline">\(Z\)</span> 是
   &amp;=H(Z)+\Pr(Z = 0)H(X|\hat{X}, Z = 0)+\Pr(Z = 1)H(X|\hat{X}, Z =
 1)\\
   &amp;=H(Z)+\Pr(Z = 1)H(X|\hat{X}, Z = 1)\\
-  &amp;\leq H(P_e)+P_e\log(|\mathcal{X}|-1) （其中H(X|\hat{X}, Z = 1)
-\leq \log(|\mathcal{X}|-1)）
+  &amp;\leq H(P_e)+P_e\log(|\mathcal{X}|-1) (其中H(X|\hat{X}, Z = 1)
+\leq \log(|\mathcal{X}|-1))
   \end{align*}
   \]</span> 因为 <span class="math inline">\(X \to Y \to
 \hat{X}\)</span> 构成马尔可夫链， 所以 <span class="math inline">\(I(X;Y) \geq I(X;\hat{X})\)</span>， 进而 <span class="math inline">\(H(X)-H(X|Y) \geq H(X)-H(X|\hat{X})\)</span>， 即
@@ -2445,7 +2445,7 @@ H(X)\]</span></p></li>
 <li><strong>证明</strong>：<span class="math display">\[
   \begin{align*}
   H(X_L|X_1X_2\cdots X_{L - 1})&amp;\leq H(X_L|X_2X_3\cdots X_{L - 1})\\
-  &amp;= H(X_{L - 1}|X_1X_2\cdots X_{L - 2}) \text{（平稳性）}\\
+  &amp;= H(X_{L - 1}|X_1X_2\cdots X_{L - 2}) \text{(平稳性)}\\
   &amp;\leq H(X_{L - 1}|X_2\cdots X_{L - 2})\\
   &amp;= H(X_{L - 2}|X_1\cdots X_{L - 3})\\
   &amp;\vdots\\
@@ -2950,7 +2950,7 @@ c\)</span>，则 <span class="math inline">\(f_Y(y)=f_X(y - c)\)</span>
   \]</span></li>
 </ul></li>
 <li><p><strong>缩放性质</strong> <span class="math display">\[对
-a\neq0，有h(aX)=h(X)+\log|a|\]</span></p>
+a\neq0,有h(aX)=h(X)+\log|a|\]</span></p>
 <ul>
 <li><figure>
 <img src="image-12.webp" srcset="/img/loading/loading3.gif" lazyload alt="图示">
@@ -3331,8 +3331,8 @@ p(a_i|b_j)=0\]</span></li>
   H(Y|X)&amp;=-\sum_{i,j} p(a_i, b_j)\log p(b_j|a_i)\\
   &amp;=-\sum_{i,j} p(a_i) p(b_j|a_i)\log p(b_j|a_i)\\
   &amp;=-\sum_{i} p(a_i) \sum_{j} p(b_j|a_i)\log p(b_j|a_i)\\
-  &amp;=\sum_{i} p(a_i) H(Y|a_i) （输入对称）\\
-  &amp;= H(Y|a_i)，i = 1, 2, \cdots, n
+  &amp;=\sum_{i} p(a_i) H(Y|a_i) (输入对称)\\
+  &amp;= H(Y|a_i),i = 1, 2, \cdots, n
   \end{align*}
   \]</span></li>
 <li><strong>信道容量</strong>: <span class="math display">\[C =
@@ -3587,7 +3587,7 @@ e \sigma^2) \]</span></p></li>
 = H_n(n) = (2e ^2) $。</p></li>
 <li><p><strong>求 $ H_c(Y) $ 最大值</strong>： <span class="math display">\[
   \begin{align*}
-  &amp;y = x + n , y \in (-\infty, +\infty) ，y是功率受限信号\\
+  &amp;y = x + n , y \in (-\infty, +\infty) ,y是功率受限信号\\
   &amp;\Rightarrow Y 正态分布时熵最大\\
   &amp;\Rightarrow Y 正态分布时信道容量最大\\
   \end{align*}
@@ -3731,7 +3731,7 @@ H_c(\vec{Y_{}}|\vec{X_{}})] \quad \text{bit/波形}
   \]</span></li>
 <li><strong>单位时间内的信息传输率</strong> <span class="math inline">\(R_t\)</span> 为： <span class="math display">\[
   R_t=\lim_{t_B \to \infty}\frac{1}{t_B}I(\vec{X_{}}; \vec{Y_{}})\quad
-\text{ bit/秒} \quad (t_B：\text{秒/波形})
+\text{ bit/秒} \quad (t_B:\text{秒/波形})
   \]</span></li>
 <li><strong>信道容量</strong>: <span class="math display">\[
   C_t=\max_{p(x)}[\lim_{t_B \to \infty}\frac{1}{t_B}I(\vec{X_{}};
@@ -4041,9 +4041,9 @@ D_{max} = p\}\)</span> 令 <span class="math inline">\(Z = d(X,Y) =
   \begin{align*}
   I(X;Y)&amp;=H(X)-H(X|Y)\\
   &amp;=H_b(p)-H(X|Y)\\
-  &amp;=H_b(p)-H(Z|Y)（令z=d(x,y)）\\
-  &amp;\geq H_b(p)-H(Z) （H(Z|Y)\leq H(Z)）\\
-  &amp;\geq H_b(p)-H_b(D) （H(Z) \leq H_b(D)）
+  &amp;=H_b(p)-H(Z|Y)(令z=d(x,y))\\
+  &amp;\geq H_b(p)-H(Z) (H(Z|Y)\leq H(Z))\\
+  &amp;\geq H_b(p)-H_b(D) (H(Z) \leq H_b(D))
   \end{align*}
   \]</span> 所以<span class="math inline">\(R(D) \geq
 H_b(p)-H_b(D)\)</span></li>
@@ -4498,7 +4498,7 @@ n}{\log m}\]</span>
 X_2 \cdots
 X_L)\)</span>，为独立同分布（i.i.d）随机变量序列，具有渐近均分性质（AEP，Asymptotic
 equipartition property）： <span class="math display">\[\forall
-\varepsilon &gt; 0，当 L \to \infty时，p(X_1,X_2,\cdots,X_L) \to 2^{-L
+\varepsilon &gt; 0,当 L \to \infty时,p(X_1,X_2,\cdots,X_L) \to 2^{-L
 H(X)}\]</span></li>
 <li><strong>证明</strong>：<strong>见<a href="Ch5sup_无失真信源编码定理.md/#渐进均分性定理aep">无失真信源编码定理</a></strong></li>
 </ul>
@@ -4632,7 +4632,7 @@ m}= 1 - \frac{H_{L}(X)}{\overline{K}}
 <ul>
 <li><p>香农第一定理指出了平均码长与信源熵之间的关系，同时也指出了可以通过编码使平均码长达到极限值，这是一个很重要的极限定理。</p></li>
 <li><p>香农第一定理指出，选择每个码字的长度<span class="math inline">\(l_{i}\)</span>满足下式： <span class="math display">\[l_{i} =\left\lceil
-\log\frac{1}{p(x_{i})}\right\rceil（向上取整）\]</span>或：<span class="math display">\[I(x_{i})\leq l_{i} &lt; I(x_{i}) + 1\]</span></p>
+\log\frac{1}{p(x_{i})}\right\rceil(向上取整)\]</span>或：<span class="math display">\[I(x_{i})\leq l_{i} &lt; I(x_{i}) + 1\]</span></p>
 <p>这种编码方法称为香农编码</p></li>
 <li><p><strong>编码步骤</strong></p>
 <ol type="1">
@@ -5240,7 +5240,7 @@ encoding)</h4>
 <li><p><strong>定理</strong>：<span class="math inline">\(\vec{X_{}}=(X_1 X_2 \cdots
 X_L)\)</span>，为独立同分布（i.i.d）随机变量序列，具有渐近均分性质（AEP，Asymptotic
 equipartition property）： <span class="math display">\[\forall
-\varepsilon &gt; 0，当 L \to \infty时，p(X_1,X_2,\cdots,X_L) \to 2^{-L
+\varepsilon &gt; 0,当 L \to \infty时,p(X_1,X_2,\cdots,X_L) \to 2^{-L
 H(X)}\]</span></p></li>
 <li><p><strong>信源编码模型</strong>： <img src="image-39.webp" srcset="/img/loading/loading3.gif" lazyload alt="信源模型"></p>
 <ul>
@@ -7047,7 +7047,7 @@ Redundancy Check，CRC）</h4>
 <h3 id="译码规则">译码规则</h3>
 <ul>
 <li><strong>定义译码规则</strong>：<span class="math display">\[F(y_j) =
-x_i\quad i = 1, 2, \cdots, n；j = 1, 2, \cdots, m\]</span></li>
+x_i\quad i = 1, 2, \cdots, n;j = 1, 2, \cdots, m\]</span></li>
 <li>示例：
 <ul>
 <li>设转移概率矩阵 <span class="math inline">\(P=\begin{bmatrix}0.5&amp;0.3&amp;0.2\\0.2&amp;0.3&amp;0.5\\0.3&amp;0.3&amp;0.4\end{bmatrix}_{(n\times

@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis3351.webp">
 <meta property="article:published_time" content="2025-10-25T12:25:12.000Z">
-<meta property="article:modified_time" content="2025-11-20T13:58:22.838Z">
+<meta property="article:modified_time" content="2026-05-30T16:50:45.038Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU">
 <meta property="article:tag" content="数据库">
@@ -1794,7 +1794,7 @@ Schema）：对关系的描述，格式为关系名（属性1，属性2，…，
 </ul>
 <h4 id="笛卡儿积cartesian-product">笛卡儿积（Cartesian Product）</h4>
 <ul>
-<li>定义：域上的一种集合运算。给定一组域 <span class="math inline">\(D_{1}, D_{2},…,
+<li>定义：域上的一种集合运算。给定一组域 <span class="math inline">\(D_{1}, D_{2},\cdots,
 D_{n}\)</span>，这些域中可以有相同的。其笛卡儿积为：<span class="math display">\[D_{1} × D_{2} × ... × D_{n}=\left\{\left(d_{1},
 d_{2}, ..., d_{n}\right) | d_{i} \in D_{i}, i=1,2, ...,
 n\right\}\]</span></li>
@@ -1803,15 +1803,16 @@ n\right\}\]</span></li>
 <li>所有域的所有取值的一个组合</li>
 <li>不能重复</li>
 </ul></li>
-<li>基数（Cardinal number）：若 <span class="math inline">\(D_i\)</span>（<span class="math inline">\(i=1,2,…,n\)</span>）为有限集，其基数为 <span class="math inline">\(m_i\)</span>（<span class="math inline">\(i=1,2,…,n\)</span>），则 <span class="math inline">\(D_{1} × D_{2} ×…× D_{n}\)</span> 的基数 <span class="math inline">\(M\)</span> 为：<span class="math display">\[M =
-m_1×m_2×…×m_n = \prod_{i=1}^{n} m_i\]</span></li>
+<li>基数（Cardinal number）：若 <span class="math inline">\(D_i\)</span>（<span class="math inline">\(i=1,2,\cdots,n\)</span>）为有限集，其基数为 <span class="math inline">\(m_i\)</span>（<span class="math inline">\(i=1,2,\cdots,n\)</span>），则 <span class="math inline">\(D_{1} × D_{2} ×\cdots× D_{n}\)</span> 的基数 <span class="math inline">\(M\)</span> 为：<span class="math display">\[M =
+m_1×m_2×\cdots×m_n = \prod_{i=1}^{n} m_i\]</span></li>
 <li>笛卡尔积的表示方法：笛卡儿积可表示为一个二维表，表中的每行对应一个元组，表中的每列对应一个域。</li>
 </ul>
 <h4 id="关系relation">关系（Relation）</h4>
 <ul>
-<li><strong>关系</strong>：<span class="math inline">\(D_{1} × D_{2} ×…×
-D_{n}\)</span> 的子集叫作在域 <span class="math inline">\(D_{1},
-D_{2},…, D_{n}\)</span> 上的关系，表示为 <span class="math display">\[R(D_{1}, D_{2},…, D_{n})\]</span>
+<li><strong>关系</strong>：<span class="math inline">\(D_{1} × D_{2}
+×\cdots× D_{n}\)</span> 的子集叫作在域 <span class="math inline">\(D_{1}, D_{2},\cdots, D_{n}\)</span>
+上的关系，表示为 <span class="math display">\[R(D_{1}, D_{2},\cdots,
+D_{n})\]</span>
 <ul>
 <li><span class="math inline">\(R\)</span> 为关系名</li>
 <li><span class="math inline">\(n\)</span> 为关系的目或度（Degree）</li>
@@ -3383,7 +3384,7 @@ U\)</span>，则进入第5步；</li>
 </ul></li>
 </ol></li>
 <li>示例：设有关系模式<span class="math inline">\(R(A, B,
-C)\)</span>，其中：<span class="math inline">\(F=\{B \to C，AC \to B
+C)\)</span>，其中：<span class="math inline">\(F=\{B \to C,AC \to B
 \}\)</span>，求出<span class="math inline">\(R\)</span>的所有候选码。
 <ol type="1">
 <li>列属性:
@@ -3481,7 +3482,7 @@ Sdept\}\)</span>。</li>
 <span class="math inline">\(F_m\)</span> ，称为 <span class="math inline">\(F\)</span> 的最小依赖集。</li>
 <li><strong>算法</strong>：求函数依赖集 <span class="math inline">\(F\)</span> 的最小依赖集 <span class="math inline">\(F_m\)</span>
 <ol type="1">
-<li><strong>去除右边冗余</strong>：逐一检查 <span class="math inline">\(F\)</span> 中各函数依赖 <span class="math inline">\(FD_i：X \to Y\)</span>，若 <span class="math inline">\(Y=A_1,A_2\cdots A_k, k \geq 2\)</span>，则用 <span class="math inline">\(\{X\to A_j|j=1,2,\cdots k\}\)</span> 来取代 <span class="math inline">\(Y\)</span>。</li>
+<li><strong>去除右边冗余</strong>：逐一检查 <span class="math inline">\(F\)</span> 中各函数依赖 <span class="math inline">\(FD_i:X \to Y\)</span>，若 <span class="math inline">\(Y=A_1,A_2\cdots A_k, k \geq 2\)</span>，则用 <span class="math inline">\(\{X\to A_j|j=1,2,\cdots k\}\)</span> 来取代 <span class="math inline">\(Y\)</span>。</li>
 <li><strong>去除依赖冗余</strong>：逐一检查 <span class="math inline">\(F\)</span> 中各函数依赖 <span class="math inline">\(FD_i: X \to A\)</span>，令 <span class="math inline">\(G=F-\{X\to A\}\)</span>，若 <span class="math inline">\(A\in X_{G}^{+}\)</span>，则从 <span class="math inline">\(F\)</span> 中去掉此函数依赖。</li>
 <li><strong>去除左边冗余</strong>：逐一检查 <span class="math inline">\(F\)</span> 中各函数依赖 <span class="math inline">\(FD_i: X \to A\)</span>，设 <span class="math inline">\(X=B_1B_2\cdots B_m\)</span>，逐一考查 <span class="math inline">\(B_i\)</span>，令 <span class="math inline">\(G=F-\{X\to A\} \cup \{(X-B_i)\to A\}\)</span>，若
 <span class="math inline">\(A\in (X-B_i)_{G}^{+}\)</span>，则以 <span class="math inline">\(X-B_i\)</span> 取代 <span class="math inline">\(X\)</span>。</li>
@@ -7439,7 +7440,7 @@ M\)</span>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年11月20日</div>
+          <div>2026年5月31日</div>
         </div>
       
       
