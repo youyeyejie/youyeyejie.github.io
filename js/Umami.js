@@ -23,6 +23,11 @@ function umamiTrackEvent() {
         } else if (link.href === 'https://www.travellings.cn/go-by-clouds.html') {
             link.dataset.umamiEvent = "Travelling";
             link.target = "_blank";
+        } else if (link.href === 'https://youyeyejie.github.io/SJTUnotes/') {
+            link.dataset.umamiEvent = "SJTU Notes";
+            link.target = "_blank";
+        } else if (link.href === 'https://youyeyejie.github.io/original/clock/') {
+            link.dataset.umamiEvent = "Immersive Clock";
         } else if (link.ariaLabel === "Search") {
             link.dataset.umamiEvent = "Search";
         } else if (link.ariaLabel === "Color Toggle") {
