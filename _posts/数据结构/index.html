@@ -1059,8 +1059,8 @@
 </ul></li>
 <li>渐进表示法：渐进时间复杂度
 <ul>
-<li>大O表示法</li>
-<li>小o表示法</li>
+<li>大 O 表示法</li>
+<li>小 o 表示法</li>
 <li>Θ表示法</li>
 </ul></li>
 <li>空间复杂度</li>
@@ -1848,7 +1848,7 @@ n)\)</span>，都有 <span class="math inline">\(a_i\)</span> 和 <span class="m
 <li><strong>结点</strong>
 <ul>
 <li>根结点：起始结点，没有父结点</li>
-<li>叶结点：没有子结点（度为0）</li>
+<li>叶结点：没有子结点（度为 0）</li>
 <li>子结点：结点的下一层结点</li>
 <li>父结点：结点的上一层结点</li>
 <li>兄弟结点：同一父结点的结点</li>
@@ -1861,7 +1861,7 @@ n)\)</span>，都有 <span class="math inline">\(a_i\)</span> 和 <span class="m
 </ul></li>
 <li><strong>层次/深度</strong>：结点在树的层数
 <ul>
-<li>根结点在第1层</li>
+<li>根结点在第 1 层</li>
 <li><strong>高度</strong>：树的结点中的最大层次</li>
 </ul></li>
 <li><strong>有序树与无序树</strong>
@@ -1898,7 +1898,7 @@ n)\)</span>，都有 <span class="math inline">\(a_i\)</span> 和 <span class="m
 <p><img src="image-14.webp" srcset="/img/loading/loading3.gif" lazyload></p>
 <ul>
 <li>有序树，必须严格区分左右子树</li>
-<li>任意结点的子结点数不超2</li>
+<li>任意结点的子结点数不超 2</li>
 <li><strong>满二叉树/完美树</strong>：任意一层的结点个数都达到最大值
 <ul>
 <li>高度为 <span class="math inline">\(k\)</span> 并具有 <span class="math inline">\(2k-1\)</span> 个结点的二叉树</li>
@@ -2345,9 +2345,9 @@ n\)</span>，则该结点是叶结点，否则右儿子编号为 <span class="ma
 <li>哈夫曼树：哈夫曼树是一棵最小代价的二叉树，在这棵树上，所有的字符都包含在叶结点上。要使得整棵树的代价最小，显然权值大的叶子应当尽量靠近树根，权值小的叶子可以适当离树根远一些。</li>
 <li>构建方法：从当前集合中选取并去除权值最小、次最小的两个结点，以这两个结点作为内部结点
 <span class="math inline">\(b_i\)</span> 的左右儿子，<span class="math inline">\(b_i\)</span>
-的权值为其左右儿子权值之和并加入其中。这样，在集合A中，结点个数便减少了一个。这样，在经过了
-<span class="math inline">\(n-1\)</span>
-次循环之后，集合A中只剩下了一个结点，这个结点就是根结点。</li>
+的权值为其左右儿子权值之和并加入其中。这样，在集合 A
+中，结点个数便减少了一个。这样，在经过了 <span class="math inline">\(n-1\)</span> 次循环之后，集合 A
+中只剩下了一个结点，这个结点就是根结点。</li>
 </ul>
 <p><img src="image-20.webp" srcset="/img/loading/loading3.gif" lazyload alt="哈夫曼树的构建过程"> <img src="image-21.webp" srcset="/img/loading/loading3.gif" lazyload alt="哈夫曼树的内存表示"></p>
 <h3 id="哈夫曼树类的实现">哈夫曼树类的实现</h3>
@@ -3061,9 +3061,10 @@ N)\)</span></li>
 <li><strong>运算实现</strong>
 <ul>
 <li><p>查找：与二叉查找树相同</p></li>
-<li><p><strong>插入</strong>：插入结点后检查到根结点路径上的平衡性，如果没破坏平衡性，可以直接插入，然后自下而上修改结点平衡度（若有结点平衡度没变，上面的就都不用修改）；如果破坏了平衡性，则需要调整树的结构（单旋转or双旋转），再修改平衡度</p>
+<li><p><strong>插入</strong>：插入结点后检查到根结点路径上的平衡性，如果没破坏平衡性，可以直接插入，然后自下而上修改结点平衡度（若有结点平衡度没变，上面的就都不用修改）；如果破坏了平衡性，则需要调整树的结构（单旋转
+or 双旋转），再修改平衡度</p>
 <ul>
-<li>插入方法：LL和RR、LR和RL是对称的</li>
+<li>插入方法：LL 和 RR、LR 和 RL 是对称的</li>
 <li>LL/RR：插入在危机结点的左子结点的左子树/右子结点的右子树，进行单旋转</li>
 </ul>
 <figure>
@@ -3073,8 +3074,8 @@ N)\)</span></li>
 <ul>
 <li>LR/RL：插入在危机结点的左子结点的右子树/右子结点的左子树，进行双旋转
 <ul>
-<li>LR：先对危机结点的左子树执行RR，再对危机结点自身执行LL</li>
-<li>RL：先对危机结点的右子树执行LL，再对危机结点自身执行RR</li>
+<li>LR：先对危机结点的左子树执行 RR，再对危机结点自身执行 LL</li>
+<li>RL：先对危机结点的右子树执行 LL，再对危机结点自身执行 RR</li>
 </ul></li>
 </ul>
 <figure>
@@ -3660,7 +3661,7 @@ H_1(x)+3H_2(x), \cdots\)</span></li>
 <h3 id="希尔排序">希尔排序</h3>
 <ul>
 <li>希尔排序是直接插入排序的改进版，先将待排序序列分成若干个子序列分别进行直接插入排序，然后再对全体记录进行一次直接插入排序</li>
-<li>时间复杂度：取决于步长序列的选取，一般情况下为<span class="math inline">\(O(N^{1.3})\)</span>到<span class="math inline">\(O(N^{2})\)</span>之间</li>
+<li>时间复杂度：取决于步长序列的选取，一般情况下为 <span class="math inline">\(O(N^{1.3})\)</span> 到 <span class="math inline">\(O(N^{2})\)</span> 之间</li>
 <li>不稳定</li>
 </ul>
 <figure>
@@ -4042,7 +4043,8 @@ k))\)</span>，其中 <span class="math inline">\(len\)</span>
 <h2 id="主存储器与外存储器">主存储器与外存储器</h2>
 <ul>
 <li><strong>主存储器</strong>：也被称为内存，是存储正在运行的程序代码及处理数据。</li>
-<li><strong>外存储器</strong>：用于存储长期保存的信息。常用的外存储器有磁盘、磁带、光盘、U盘等，访问速度慢，故需考虑减少访问次数。
+<li><strong>外存储器</strong>：用于存储长期保存的信息。常用的外存储器有磁盘、磁带、光盘、U
+盘等，访问速度慢，故需考虑减少访问次数。
 <ul>
 <li>外存储器中的信息以文件为单位。每个文件在内存有一个缓冲区存放正在处理的文件中的数据</li>
 <li>外存储器以数据块为单位与内存交换信息。当程序需要处理外存储器中的某个数据，则将包含该数据的数据块读入缓冲区进行处理</li>
@@ -4054,26 +4056,24 @@ k))\)</span>，其中 <span class="math inline">\(len\)</span>
 树或者为空，或者满足以下条件。</p>
 <ol type="1">
 <li><p>根结点要么是叶子，要么至少有两个儿子，至多有 <span class="math inline">\(m\)</span> 个儿子。</p></li>
-<li><p>除根结点和叶子结点之外，每个结点的儿子个数 <span class="math inline">\(s\)</span> 满足<span class="math inline">\(\lceil
+<li><p>除根结点和叶子结点之外，每个结点的儿子个数 <span class="math inline">\(s\)</span> 满足 <span class="math inline">\(\lceil
 m/2 \rceil \leq s \leq m\)</span>。</p></li>
-<li><p>有 <span class="math inline">\(s\)</span>
-个儿子的非叶结点具有<span class="math inline">\(n = s -
-1\)</span>个关键字，故<span class="math inline">\(s = n +
-1\)</span>。这些结点的数据信息为<br>
+<li><p>有 <span class="math inline">\(s\)</span> 个儿子的非叶结点具有
+<span class="math inline">\(n = s - 1\)</span> 个关键字，故 <span class="math inline">\(s = n + 1\)</span>。这些结点的数据信息为<br>
 <span class="math display">\[(n,A_0,(K_1,R_1),A_1,(K_2,R_2),A_2,\cdots,(K_n,R_n),A_n)\]</span></p>
 <p>其中：</p>
 <ul>
 <li><span class="math inline">\(n\)</span>: 关键字的个数</li>
 <li><span class="math inline">\(K_1,K_2,\cdots,K_n\)</span>:
-结点的关键字，且<span class="math inline">\(K_1 \lt K_2 \cdots \lt
+结点的关键字，且 <span class="math inline">\(K_1 \lt K_2 \cdots \lt
 K_n\)</span></li>
-<li><span class="math inline">\(A_0\)</span>: B 树中小于<span class="math inline">\(K_1\)</span>的结点的地址<br>
+<li><span class="math inline">\(A_0\)</span>: B 树中小于 <span class="math inline">\(K_1\)</span> 的结点的地址<br>
 </li>
-<li><span class="math inline">\(R_j\)</span>: 关键字值等于<span class="math inline">\(K_j(1 \leq j \leq
-n)\)</span>的数据记录在硬盘中的地址</li>
-<li><span class="math inline">\(A_j\)</span>: B 树中大于<span class="math inline">\(K_j\)</span>且小于<span class="math inline">\(K_{j
-+ 1}(1 \leq j \leq n - 1)\)</span>的结点的地址</li>
-<li><span class="math inline">\(A_n\)</span>: B 树中大于<span class="math inline">\(K_n\)</span>的结点的地址</li>
+<li><span class="math inline">\(R_j\)</span>: 关键字值等于 <span class="math inline">\(K_j(1 \leq j \leq n)\)</span>
+的数据记录在硬盘中的地址</li>
+<li><span class="math inline">\(A_j\)</span>: B 树中大于 <span class="math inline">\(K_j\)</span> 且小于 <span class="math inline">\(K_{j + 1}(1 \leq j \leq n - 1)\)</span>
+的结点的地址</li>
+<li><span class="math inline">\(A_n\)</span>: B 树中大于 <span class="math inline">\(K_n\)</span> 的结点的地址</li>
 </ul></li>
 <li><p>所有的叶子结点都出现在同一层上，即它们的深度相同，并且不带信息(可以认为是外部结点或查找失败的结点，这些结点并不存在，指向这些结点的指针为空)。</p></li>
 </ol>
@@ -4100,8 +4100,8 @@ n)\)</span>的数据记录在硬盘中的地址</li>
 <li>若该结点原有的关键字个数已经等于 <span class="math inline">\(m-1\)</span> ，必须分裂成两个结点</li>
 </ul>
 <figure>
-<img src="image-43.webp" srcset="/img/loading/loading3.gif" lazyload alt="插入39">
-<figcaption aria-hidden="true">插入39</figcaption>
+<img src="image-43.webp" srcset="/img/loading/loading3.gif" lazyload alt="插入 39">
+<figcaption aria-hidden="true">插入 39</figcaption>
 </figure>
 <h3 id="b-树的删除">B 树的删除</h3>
 <p>类似二叉查找树的删除操作，从根结点开始查找与给定关键字值 key
@@ -4126,11 +4126,11 @@ B 树的高度减少 1，即减少一层。</li>
 </ul></li>
 </ol>
 <figure>
-<img src="image-44.webp" srcset="/img/loading/loading3.gif" lazyload alt="删除31">
-<figcaption aria-hidden="true">删除31</figcaption>
+<img src="image-44.webp" srcset="/img/loading/loading3.gif" lazyload alt="删除 31">
+<figcaption aria-hidden="true">删除 31</figcaption>
 </figure>
 <h3 id="b-树占用空间的情况">B 树占用空间的情况</h3>
-<p>将一个磁盘块作为一个B树的结点。假设一个块的容量 <span class="math inline">\(max\)</span> 字节，如果每个键要占用 <span class="math inline">\(key\)</span> 个字节。在一棵 <span class="math inline">\(M\)</span> 阶 B 树中，可以有 <span class="math inline">\(M-1\)</span> 个键，总的数据量是：</p>
+<p>将一个磁盘块作为一个 B 树的结点。假设一个块的容量 <span class="math inline">\(max\)</span> 字节，如果每个键要占用 <span class="math inline">\(key\)</span> 个字节。在一棵 <span class="math inline">\(M\)</span> 阶 B 树中，可以有 <span class="math inline">\(M-1\)</span> 个键，总的数据量是：</p>
 <p><span class="math display">\[(M-1) * key + M 个分支的地址 +
 M-1个关键字对应记录的存储地址\]</span></p>
 <h2 id="b-树-1">B+ 树</h2>
@@ -4180,8 +4180,8 @@ B 树中，叶结点的孩子指针都是空指针。</li>
 </ul></li>
 </ul>
 <figure>
-<img src="image-46.webp" srcset="/img/loading/loading3.gif" lazyload alt="依次插入7、22、41">
-<figcaption aria-hidden="true">依次插入7、22、41</figcaption>
+<img src="image-46.webp" srcset="/img/loading/loading3.gif" lazyload alt="依次插入 7、22、41">
+<figcaption aria-hidden="true">依次插入 7、22、41</figcaption>
 </figure>
 <h3 id="b-树的删除-1">B+ 树的删除</h3>
 <p>删除操作首先查找到要删除的项，然后删除它。</p>
@@ -4192,13 +4192,14 @@ B 树中，叶结点的孩子指针都是空指针。</li>
 <ul>
 <li>如果邻居也处于最少的情况，就把两个结点合并成一个满的结点。</li>
 <li>在这种情况下父亲就失去了一个儿子。如果它引起父亲的儿子数少于了最小值，则需要一直向上进行过滤到根。</li>
-<li>如果根只剩下了一个儿子，就把根删除，让它的儿子作为新的树根，这也是唯一能使B树变矮的情况。</li>
+<li>如果根只剩下了一个儿子，就把根删除，让它的儿子作为新的树根，这也是唯一能使
+B 树变矮的情况。</li>
 </ul></li>
 </ul></li>
 </ul>
 <figure>
-<img src="image-47.webp" srcset="/img/loading/loading3.gif" lazyload alt="依次删除32、16、22">
-<figcaption aria-hidden="true">依次删除32、16、22</figcaption>
+<img src="image-47.webp" srcset="/img/loading/loading3.gif" lazyload alt="依次删除 32、16、22">
+<figcaption aria-hidden="true">依次删除 32、16、22</figcaption>
 </figure>
 <h2 id="外排序">外排序</h2>
 <p>在外存上进行排序的最常用的方法是利用归并排序，因为归并排序只需要访问被归并序列中的第一个元素，这非常适合于顺序文件。</p>
@@ -4214,8 +4215,8 @@ B 树中，叶结点的孩子指针都是空指针。</li>
 的初始的已排序片段。</li>
 <li>基于每个小片段采用选择排序。每次选出的最小记录直接被写到输出文件上，它所用的内存空间就可以给别的元素使用，此时可以从输入文件读入一个新记录。如果它比刚才写出去的元素大，则把它加入到优先级队列；否则，它不可能进入当前的已排序片段，该元素就被放于优先级队列的空余位置，用于下个片段的排序。</li>
 </ul></li>
-<li>文件上的数据为 <span class="math inline">\(1,4,10,2,0,5,7,6,9,12\)</span> ，内存中能够容纳 3
-个记录，这 3 个记录存放在数组 a
+<li>文件上的数据为 <span class="math inline">\(1、4、10、2、0、5、7、6、9、12\)</span>
+，内存中能够容纳 3 个记录，这 3 个记录存放在数组 a
 中。构造初始的已排序片段的过程如下图。由于采用了置换选择法，使得对 11
 个记录只生成了两个初始的已排序片段，这样只需要一次归并就能排好序。</li>
 </ul>
@@ -5038,7 +5039,8 @@ V\)</span> 和 <span class="math inline">\(E' \subseteq E\)</span>
 <span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure>
 <h3 id="关键路径">关键路径</h3>
 <ul>
-<li>AOE网：顶点表示事件，有向边的权值表示某个活动的待续时间，有向边的方向表示事件发生的先后次序，这样的有向图称为顶点事件网
+<li>AOE
+网：顶点表示事件，有向边的权值表示某个活动的待续时间，有向边的方向表示事件发生的先后次序，这样的有向图称为顶点事件网
 (Activity On Edge Network)，简称 AOE 网。
 <ul>
 <li>源点/起点：入度为 0 的顶点。</li>

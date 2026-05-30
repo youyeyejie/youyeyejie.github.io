@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/nis3301.webp">
 <meta property="article:published_time" content="2025-11-23T18:48:24.000Z">
-<meta property="article:modified_time" content="2026-05-30T16:50:45.293Z">
+<meta property="article:modified_time" content="2026-05-30T17:27:20.309Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU">
 <meta property="article:tag" content="系统安全">
@@ -1181,7 +1181,8 @@
 <tr>
 <td>核心威胁</td>
 <td>本地权限提升、软件漏洞、系统配置错误、恶意软件本地执行</td>
-<td>网络攻击、网络钓鱼、DDoS攻击、跨站脚本（XSS）、APT攻击、通过网络入侵</td>
+<td>网络攻击、网络钓鱼、DDoS 攻击、跨站脚本（XSS）、APT
+攻击、通过网络入侵</td>
 </tr>
 <tr>
 <td>主要手段</td>
@@ -1299,7 +1300,7 @@
 <ul>
 <li>定义：能<strong>自我复制</strong>的的一组计算机指令或程序代码，通过编译或者在计算机程序中插入这段代码，以达到破坏计算机功能、毁坏数据从而影响计算机使用的目的。</li>
 <li>特性：隐蔽性、传染性、潜伏性、破坏性。</li>
-<li>代码示例：死循环消耗内存（C语言）、无限弹窗（VBScript）。</li>
+<li>代码示例：死循环消耗内存（C 语言）、无限弹窗（VBScript）。</li>
 <li><strong>蠕虫</strong>：一种常见的计算机病毒，<strong>无须计算机使用者干预即可运行的独立程序</strong>，通过网络漏洞控制其他计算机并传播。
 <ul>
 <li>典型代表：happy99
@@ -1310,7 +1311,7 @@
 <ul>
 <li>定义：<strong>表面执行合法功能</strong>，实则隐藏非法操作的独立程序，无自我复制能力。</li>
 <li>成功条件：表面行为不引发怀疑、诱使用户接受、用户运行程序、为攻击者带来收益。</li>
-<li>典型代表：Mellisa（附加在邮件中，通过Outlook传播）。</li>
+<li>典型代表：Mellisa（附加在邮件中，通过 Outlook 传播）。</li>
 </ul>
 <h4 id="后门天窗">后门（天窗）</h4>
 <ul>
@@ -1380,7 +1381,8 @@
 </table></li>
 <li><p>RBAC 核心要素与原则</p>
 <ul>
-<li>核心要素：用户（唯一ID）、角色（关联权限）、权限（访问能力）；映射关系为用户与角色多对多、角色与权限多对多。</li>
+<li>核心要素：用户（唯一
+ID）、角色（关联权限）、权限（访问能力）；映射关系为用户与角色多对多、角色与权限多对多。</li>
 <li>安全原则：
 <ul>
 <li><strong>最小权限原则</strong>：角色仅配置完成任务所需的最小权限。</li>
@@ -1609,7 +1611,8 @@ EFS 等组件在用户模式下与 LSASS 通信。</li>
 <ul>
 <li><strong>安全引用监视器</strong>（Security Reference
 Monitor，SRM）：定义访问令牌数据结构，执行安全访问检查、特权检查，生成安全审核信息。</li>
-<li><strong>APPLocker</strong>：管理员控制用户和组可使用的可执行文件、DLL及脚本，包含驱动程序
+<li><strong>APPLocker</strong>：管理员控制用户和组可使用的可执行文件、DLL
+及脚本，包含驱动程序
 <code>%SystemRoot%\System32\Drivers\AppId.sys</code>和服务
 <code>%SystemRoot%\System32\AppIdSvc.dll</code>。</li>
 <li><strong>APPContainer</strong>：提供限制性进程执行环境（容器），应用及其子进程仅能访问授权资源。</li>
@@ -1780,7 +1783,8 @@ WWW、FTP、E-Mail 服务器。</li>
 </ul></li>
 <li>用户信息与密码
 <ul>
-<li><code>/etc/passwd</code>：记录所有用户信息，7个字段以 <code>:</code>
+<li><code>/etc/passwd</code>：记录所有用户信息，7 个字段以
+<code>:</code>
 分隔，分别为账号名称、密码占位符（<code>x</code>，实际密码存于
 <code>/etc/shadow</code>）、UID、GID、用户信息说明、主文件夹、shell
 程序。
@@ -1793,12 +1797,12 @@ WWW、FTP、E-Mail 服务器。</li>
 </ul></li>
 <li><code>/etc/shadow</code>：存储用户加密密码，字段以 <code>:</code>
 分隔，包括账号名称、加密密码（格式
-<code>$id$salt$hashed</code>),最近改密日期,密码不可更改天数,密码需更改天数,警告天数,宽限日,账户失效日期,保留字段.
+<code>$id$ salt$hashed</code>）、最近改密日期、密码不可更改天数、密码需更改天数、警告天数、宽限日、账户失效日期、保留字段。
 <ul>
-<li>示例:
+<li>示例：
 <ul>
 <li><code>root:!:19394:0:99999:7:::</code></li>
-<li><code>maocai:$y$j9T$LGJ8iqUm5n5F4ZTzeXXkU0$q/kF7ieVx9s0r1wZ0eFYpH/G/0GOiFLX5MXH6OBO/y3:19394:0:99999:7:::</code></li>
+<li><code>maocai:$y$ j9T $LGJ8iqUm5n5F4ZTzeXXkU0$ q/kF7ieVx9s0r1wZ0eFYpH/G/0GOiFLX5MXH6OBO/y3:19394:0:99999:7:::</code></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -1806,7 +1810,9 @@ WWW、FTP、E-Mail 服务器。</li>
 <ul>
 <li>命令：<code>authconfig --passminlen=12 --passminclass=4 --passmaxrepeat=2 --update</code>。
 <ul>
-<li>密码不少于12位，包含大写字母、小写字母、数字、其他字符四类，单个字符最多重复2次。</li>
+<li>密码不少于 12
+位，包含大写字母、小写字母、数字、其他字符四类，单个字符最多重复 2
+次。</li>
 </ul></li>
 <li>配置文件：<code>/etc/security/pwquality.conf</code>，对应参数
 <code>minlen=12</code>、<code>minclass=4</code>、<code>maxrepeat=2</code>。</li>
@@ -1868,7 +1874,7 @@ root，其它组的用户即使知道 root 密码，也无法使用 <code>su</co
 <li>EXT4（第 4 代扩展文件系统）</li>
 <li>XFS（高性能日志文件系统）。</li>
 </ul></li>
-<li>其他兼容类型：FAT16、FAT32、NTFS（Windows）、JFS、GFS等。</li>
+<li>其他兼容类型：FAT16、FAT32、NTFS（Windows）、JFS、GFS 等。</li>
 </ul></li>
 <li><p>文件系统挂载与卸载</p>
 <ul>
@@ -1987,14 +1993,15 @@ Pseudo-Filesystem）为虚拟文件系统，挂载于 <code>/proc</code>
 <td>系统内核</td>
 <td><strong>分布式微内核</strong>作为底层架构，使用开源模块进行组合</td>
 <td>基于 Linux 内核（不含 GNU 组件），<strong>宏内核</strong>架构</td>
-<td>类 Unix 系统，XNU
-内核（<strong>Darwin层</strong>），同时包含微内核和宏内核</td>
+<td>类 Unix 系统，XNU 内核（<strong>Darwin
+层</strong>），同时包含微内核和宏内核</td>
 </tr>
 <tr>
 <td>架构</td>
 <td>三层架构：系统底层、基础服务和程序框架</td>
 <td>系统结构、应用组件</td>
-<td>内核态（Darwin层）和用户态：核心操作系统层、核心服务层、媒体层、可轻触层</td>
+<td>内核态（Darwin
+层）和用户态：核心操作系统层、核心服务层、媒体层、可轻触层</td>
 </tr>
 <tr>
 <td>面向对象</td>
@@ -2089,7 +2096,8 @@ Security）：安全能力在设计之初植入，遵循“最小权限”原则
 <ul>
 <li><strong>分布式安全框架</strong>：跨设备协同安全互信，建立安全连接通道</li>
 <li><strong>可信执行环境</strong>（TEE）：与主系统隔离的硬件级安全区域，保护生物特征、支付密钥等敏感信息</li>
-<li><strong>设备身份认证</strong>：设备唯一的、基于硬件的可信身份ID，防仿冒</li>
+<li><strong>设备身份认证</strong>：设备唯一的、基于硬件的可信身份
+ID，防仿冒</li>
 </ul></li>
 <li><strong>应用生态安全</strong>：全流程治理
 <ul>
@@ -2179,7 +2187,8 @@ API，提供应用界面组件、多点触屏处理等</li>
 等基础系统服务</li>
 <li>BSD：对 Mach
 再次封装的<strong>宏内核</strong>，提供现代易用的内核接口，高负荷下仍可高效运作</li>
-<li>IOKit：硬件抽象层，<strong>驱动程序</strong>运行环境，包含电源、内存、CPU等信息</li>
+<li>IOKit：硬件抽象层，<strong>驱动程序</strong>运行环境，包含电源、内存、CPU
+等信息</li>
 </ul></li>
 <li><p>核心安全机制</p>
 <ul>
@@ -2514,7 +2523,7 @@ Firewall，下一代防火墙）：深度感知应用、用户和内容，提供
 <tr>
 <td><code>mangle</code></td>
 <td>第二</td>
-<td>修改数据包标记/属性（TTL、TOS等）</td>
+<td>修改数据包标记/属性（TTL、TOS 等）</td>
 <td>全部五链</td>
 </tr>
 <tr>
@@ -2698,7 +2707,7 @@ Firewall，下一代防火墙）：深度感知应用、用户和内容，提供
 <td>控制不同网络区域间流量</td>
 </tr>
 <tr>
-<td>WAF（Web应用防火墙）</td>
+<td>WAF（Web 应用防火墙）</td>
 <td>Web 应用前端</td>
 <td>应用层检查 HTTP 流量</td>
 <td>检查并防护 Web 特定攻击</td>
@@ -2736,7 +2745,8 @@ Firewall，下一代防火墙）：深度感知应用、用户和内容，提供
 </ol></li>
 <li>静态分析与测试的区别
 <ul>
-<li>测试（动态分析）成本高（占开发成本50%），并发/分布式系统中”海森堡缺陷”难以复现</li>
+<li>测试（动态分析）成本高（占开发成本
+50%），并发/分布式系统中”海森堡缺陷”难以复现</li>
 <li>静态分析：对程序进行推理的程序，无需执行即可分析程序属性</li>
 </ul></li>
 <li>完美程序分析器的三大特性
@@ -2806,7 +2816,7 @@ Firewall，下一代防火墙）：深度感知应用、用户和内容，提供
 <li><strong>跳转后继准则</strong>：任何紧跟在跳转或分支指令之后的指令是领导者</li>
 </ul></li>
 </ul></li>
-<li>基本块划分示例（10×10矩阵置为单位矩阵） <img src="image-9.webp" srcset="/img/loading/loading3.gif" lazyload></li>
+<li>基本块划分示例（10×10 矩阵置为单位矩阵） <img src="image-9.webp" srcset="/img/loading/loading3.gif" lazyload></li>
 </ul>
 <h2 id="数据流分析基础">数据流分析基础</h2>
 <ul>
@@ -3124,7 +3134,8 @@ learning）
 <ul>
 <li><strong>对抗攻击</strong>：破坏型攻击目的，思想是让模型在部署使用阶段犯错，其通过向测试样本中添加微小的对抗噪声来让模型做出错误的预测结果</li>
 <li><strong>后门攻击</strong>：操纵型攻击目的，通过向目标模型预先注入后门触发器的方式来控制模型在推理阶段的预测结果</li>
-<li><strong>模型窃取攻击</strong>：窃取型攻击目的，通过模型部署后的开放接口（比如查询API）对其推理行为进行模仿和近似，以此达到功能和性能窃取的目的</li>
+<li><strong>模型窃取攻击</strong>：窃取型攻击目的，通过模型部署后的开放接口（比如查询
+API）对其推理行为进行模仿和近似，以此达到功能和性能窃取的目的</li>
 </ul></li>
 </ul></li>
 <li>防御策略
@@ -3137,7 +3148,8 @@ learning）
 <h2 id="数据安全">数据安全</h2>
 <h3 id="数据投毒攻击">数据投毒攻击</h3>
 <ul>
-<li>数据投毒：<strong>训练阶段攻击</strong>，通过污染训练数据干扰模型训练，降低推理性能，是工业界最担心的AI安全问题。</li>
+<li>数据投毒：<strong>训练阶段攻击</strong>，通过污染训练数据干扰模型训练，降低推理性能，是工业界最担心的
+AI 安全问题。</li>
 <li>攻击类型
 <ul>
 <li><strong>标签投毒攻击</strong>
@@ -3977,7 +3989,7 @@ Retention）：仅在完成必要用途期间保留个人信息。</li>
 <ul>
 <li>1977
 年，数据加密标准（<strong>DES</strong>）公布，推动商用数据加密发展。</li>
-<li>1995 年，NIST公布高级加密标准（<strong>AES</strong>）。</li>
+<li>1995 年，NIST 公布高级加密标准（<strong>AES</strong>）。</li>
 <li>20 世纪 90
 年代，<strong>公钥密码成为发展新方向</strong>，满足网络保密通信、数据交换、电子签名等需求。</li>
 </ul></li>
@@ -4245,8 +4257,8 @@ Eve 测量和监听）</li>
 <li><strong>硬件设备被盗被毁</strong>：随着半导体集成技术发展，PC
 向微型化、移动化发展，这一特性在带来便捷的同时，也增加了设备被盗、被毁的风险。</li>
 <li><strong>开机密码保护被绕过</strong>：攻击者可将 PC
-硬盘挂载到其他机器，或制作 WinPE
-U盘启动盘，绕过系统开机密码读取硬盘内容。</li>
+硬盘挂载到其他机器，或制作 WinPE U
+盘启动盘，绕过系统开机密码读取硬盘内容。</li>
 <li><strong>磁盘信息被窃取</strong>：硬盘易被盗，且存储文件缺乏有效保护；文件删除仅在目录中做标记，数据未真正删除，磁介质表面残留的磁信息可能导致信息泄漏。</li>
 <li><strong>内存信息被窃取</strong>：内存条无任何防护措施，一旦被攻击者接触或获取，其中存储的信息将失去保护。</li>
 </ol>
@@ -4258,8 +4270,8 @@ U盘启动盘，绕过系统开机密码读取硬盘内容。</li>
 <ol type="1">
 <li><strong>CPU 中的恶意代码</strong>：CPU
 可能存在漏洞、后门或恶意代码。</li>
-<li><strong>存储设备中的恶意代码</strong>：硬盘、U盘等存储设备可能遭受恶意代码攻击。如
-BadUSB 通过篡改 USB
+<li><strong>存储设备中的恶意代码</strong>：硬盘、U
+盘等存储设备可能遭受恶意代码攻击。如 BadUSB 通过篡改 USB
 设备固件，使其连接电脑时被识别为键盘等设备，自动执行恶意操作，绕过传统安全软件检测。</li>
 </ol>
 <h3 id="旁路攻击">旁路攻击</h3>
@@ -4487,9 +4499,9 @@ TCM</strong>（TrustedCryptography Module）芯片</li>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/_posts/Fluid%E5%85%A8%E5%B1%8F%E8%83%8C%E6%99%AF/" title="Fluid全屏背景">
+                      <a href="/_posts/Fluid%E5%85%A8%E5%B1%8F%E8%83%8C%E6%99%AF/" title="Fluid 全屏背景">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Fluid全屏背景</span>
+                        <span class="hidden-mobile">Fluid 全屏背景</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -4497,8 +4509,8 @@ TCM</strong>（TrustedCryptography Module）芯片</li>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/_posts/%E5%88%86%E5%B1%82%E5%8F%AF%E5%AF%BC%E8%88%AA%E5%B0%8F%E4%B8%96%E7%95%8C%E5%9B%BEHNSW%E7%AE%80%E4%BB%8B/" title="分层可导航小世界图HNSW简介">
-                        <span class="hidden-mobile">分层可导航小世界图HNSW简介</span>
+                      <a href="/_posts/%E5%88%86%E5%B1%82%E5%8F%AF%E5%AF%BC%E8%88%AA%E5%B0%8F%E4%B8%96%E7%95%8C%E5%9B%BEHNSW%E7%AE%80%E4%BB%8B/" title="分层可导航小世界图 HNSW 简介">
+                        <span class="hidden-mobile">分层可导航小世界图 HNSW 简介</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

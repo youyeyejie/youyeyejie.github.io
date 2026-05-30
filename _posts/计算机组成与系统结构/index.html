@@ -1019,13 +1019,13 @@
 <li>第三代：集成电路</li>
 <li>第三代以后：超大规模集成电路</li>
 </ul>
-<h2 id="ias计算机">IAS计算机</h2>
+<h2 id="ias-计算机">IAS 计算机</h2>
 <ul>
-<li>1945年，冯·诺依曼提出的计算机体系结构</li>
+<li>1945 年，冯·诺依曼提出的计算机体系结构</li>
 </ul>
 <h2 id="摩尔定律">摩尔定律</h2>
 <ul>
-<li>集成电路的集成度每年翻一倍，后修正为18个月</li>
+<li>集成电路的集成度每年翻一倍，后修正为 18 个月</li>
 <li>影响：
 <ul>
 <li>集成度增加的同时单芯片成本几乎不变；</li>
@@ -1048,18 +1048,18 @@
 </ul>
 <h2 id="性能平衡">性能平衡</h2>
 <ul>
-<li>问题1：处理器比主存快太多
+<li>问题 1：处理器比主存快太多
 <ol type="1">
 <li>提高一次性读取数据位数；</li>
-<li>改进DRAM接口（使用cache）；</li>
-<li>减少主存访问频度（多级cache）；</li>
+<li>改进 DRAM 接口（使用 cache）；</li>
+<li>减少主存访问频度（多级 cache）；</li>
 <li>提高互联带宽（更高速的总线，改进总线层次）</li>
 </ol></li>
-<li>问题2：频繁操作、高吞吐量的IO与处理器间的数据传输
+<li>问题 2：频繁操作、高吞吐量的 IO 与处理器间的数据传输
 <ol type="1">
-<li>提高IO设备速度；</li>
-<li>减少IO操作频度（使用cache）；</li>
-<li>改进IO接口（DMA）；</li>
+<li>提高 IO 设备速度；</li>
+<li>减少 IO 操作频度（使用 cache）；</li>
+<li>改进 IO 接口（DMA）；</li>
 <li>改进互联结构（高速总线、改变互联结构）</li>
 </ol></li>
 </ul>
@@ -1068,7 +1068,8 @@
 <ol type="1">
 <li>提高硬件速度：缩小逻辑门尺寸，提高时钟频率（CLK）
 <ul>
-<li>但是时钟频率和逻辑密度的增加会造成：功率增加、RC延迟增长、内存延迟和吞吐量滞后更严重</li>
+<li>但是时钟频率和逻辑密度的增加会造成：功率增加、RC
+延迟增长、内存延迟和吞吐量滞后更严重</li>
 </ul></li>
 <li>增加处理器与主存间高速缓存的大小和速度</li>
 <li>改变体系结构：更复杂的指令执行逻辑，并行、流水线、超标量
@@ -1084,9 +1085,10 @@
 </ul></li>
 <li>CPI（程序每条机器指令所需的平均时间周期数）：
 <ul>
-<li>通常不同类指令的CPI不同</li>
+<li>通常不同类指令的 CPI 不同</li>
 <li><span class="math inline">\(I_c\)</span>：规定时间内执行的机器指令总条数</li>
-<li><span class="math inline">\(CPI_i\)</span>，<span class="math inline">\(I_i\)</span>：给定程序中i类指令的CPI和执行条数</li>
+<li><span class="math inline">\(CPI_i\)</span>，<span class="math inline">\(I_i\)</span>：给定程序中 i 类指令的 CPI
+和执行条数</li>
 <li><span class="math inline">\(f\)</span>：时钟频率，<span class="math inline">\(\tau=\frac{1}{f}\)</span></li>
 <li>有： <span class="math display">\[
   \begin{aligned}
@@ -1095,49 +1097,60 @@
   \end{aligned}
   \]</span></li>
 </ul></li>
-<li>MIPS速率（每秒执行的百万条指令的数量）：
+<li>MIPS 速率（每秒执行的百万条指令的数量）：
 <ul>
 <li><span class="math display">\[MIPS=\frac{I_c}{T\times
 10^6}=\frac{f}{CPI\times 10^6}\]</span></li>
-<li>注：关于CPI与MIPS计算，课本p43有例题</li>
+<li>注：关于 CPI 与 MIPS 计算，课本 p43 有例题</li>
 </ul></li>
-<li>MFLOPS速率（每秒执行的百万次浮点运算的数量）：
+<li>MFLOPS 速率（每秒执行的百万次浮点运算的数量）：
 <ul>
-<li>是由于CISC相比RISC，一条指令耗时更长但功能更多，用MIPS可能不合适</li>
+<li>是由于 CISC 相比 RISC，一条指令耗时更长但功能更多，用 MIPS
+可能不合适</li>
 <li><span class="math display">\[MFLOPS=\frac{\text{程序中执行的浮点操作数量}}{\text{执行时间}\times
 10^6}\]</span></li>
 </ul></li>
-<li>SPEC速度度量：
+<li>SPEC 速度度量：
 <ul>
-<li>以基准程序i在参照系统上的运行时间作为基准程序i的参考运行时间<span class="math inline">\(Tref_i\)</span></li>
-<li>以基准程序i在被测系统上的运行时间作为基准程序i的参考运行时间<span class="math inline">\(Tsut_i\)</span></li>
+<li>以基准程序 i 在参照系统上的运行时间作为基准程序 i 的参考运行时间
+<span class="math inline">\(Tref_i\)</span></li>
+<li>以基准程序 i 在被测系统上的运行时间作为基准程序 i 的参考运行时间
+<span class="math inline">\(Tsut_i\)</span></li>
 <li><span class="math display">\[r_i=\frac{Tref_i}{Tsut_i}\]</span>
 <ul>
 <li>是参考时间/被测时间，速度更快的机器比值更高</li>
 </ul></li>
 <li><span class="math display">\[r_G=(\prod_{i=1}^{n}r_i)^{\frac{1}{n}}\]</span>
 <ul>
-<li>作几何平均，作为被测机器的SPEC速度度量</li>
+<li>作几何平均，作为被测机器的 SPEC 速度度量</li>
 </ul></li>
 </ul></li>
-<li>SPEC频率度量：
+<li>SPEC 频率度量：
 <ul>
 <li>测量执行多个任务的吞吐量，多个基准程序的拷贝同时执行</li>
 <li><span class="math display">\[r_i=\frac{N×Tref_i}{Tsut_i}\]</span></li>
-<li><span class="math inline">\(Tref_i\)</span>为基准程序i在参照系统上运行的时间，N是同时执行的程序数量</li>
-<li><span class="math inline">\(Tsut_i\)</span>为N个基准程序在被测系统上从开始执行到全部完成所需时间</li>
+<li><span class="math inline">\(Tref_i\)</span> 为基准程序 i
+在参照系统上运行的时间，N 是同时执行的程序数量</li>
+<li><span class="math inline">\(Tsut_i\)</span> 为 N
+个基准程序在被测系统上从开始执行到全部完成所需时间</li>
 </ul></li>
 </ol>
-<h2 id="amdahl定律衡量多个处理器的加速比">Amdahl定律：衡量多个处理器的加速比</h2>
+<h2 id="amdahl-定律衡量多个处理器的加速比">Amdahl
+定律：衡量多个处理器的加速比</h2>
 <p><span class="math display">\[
-\text{加速比}=\frac{\text{增强前的性能(执行时间)}}{\text{增强后的性能(执行时间)}}=
+\text{加速比}=\frac{\text{增强前的性能（执行时间）}}{\text{增强后的性能（执行时间）}}=
 \frac{\text{程序在单处理器上的执行时间}}{\text{程序在N个并行处理器上的执行时间}}
 \]</span></p>
-<p>令：<span class="math inline">\(f\)</span>为程序中可以无限并行执行的部分，<span class="math inline">\(1-f\)</span>为程序中固定只能串行执行的部分，<span class="math inline">\(T\)</span>为程序在单处理器上的执行时间，<span class="math inline">\(N\)</span>为并行系统的处理器数，则：</p>
+<p>令：<span class="math inline">\(f\)</span>
+为程序中可以无限并行执行的部分，<span class="math inline">\(1-f\)</span>
+为程序中固定只能串行执行的部分，<span class="math inline">\(T\)</span>
+为程序在单处理器上的执行时间，<span class="math inline">\(N\)</span>
+为并行系统的处理器数，则：</p>
 <p><span class="math display">\[Speedup=\frac{T}{T(1-f)+\frac{Tf}{N}}=\frac{1}{(1-f)+\frac{f}{N}}\]</span></p>
 <p>结论：</p>
 <ul>
-<li><span class="math inline">\(f\)</span>非常小时并行处理意义不大；</li>
+<li><span class="math inline">\(f\)</span>
+非常小时并行处理意义不大；</li>
 <li><span class="math display">\[\lim_{N→∞}Speedup=\frac{1}{1-f}\]</span></li>
 </ul>
 <h2 id="总线数据传输率">总线数据传输率</h2>
@@ -1153,9 +1166,10 @@
 </ul>
 <h2 id="机器周期和指令周期">机器周期和指令周期</h2>
 <ol type="1">
-<li>机器周期（CPU周期）：
+<li>机器周期（CPU 周期）：
 <ul>
-<li>定义：从寄存器中取出两个数，执行一次ALU操作，并将结果存回寄存器所需时间</li>
+<li>定义：从寄存器中取出两个数，执行一次 ALU
+操作，并将结果存回寄存器所需时间</li>
 <li>人为规定的对一条指令执行过程的划分</li>
 <li>一个机器周期一般包含了多个时钟周期，一个指令周期包含了多个机器周期；一个指令周期包含多个流水线阶段，一个流水线阶段包含了一至多个机器周期。</li>
 </ul></li>
@@ -1163,11 +1177,13 @@
 <ul>
 <li>取指周期：
 <ul>
-<li>CPU从PC获得地址并读取该地址存储的指令，PC++（除非指令修改PC），指令被加载到指令寄存器IR，CPU译指</li>
+<li>CPU 从 PC 获得地址并读取该地址存储的指令，PC++（除非指令修改
+PC），指令被加载到指令寄存器 IR，CPU 译指</li>
 </ul></li>
 <li>执行周期：
 <ul>
-<li>计算操作数地址，获取操作数（从内存或IO到CPU），数据操作，数据保存（从CPU到内存或IO）</li>
+<li>计算操作数地址，获取操作数（从内存或 IO 到
+CPU），数据操作，数据保存（从 CPU 到内存或 IO）</li>
 </ul></li>
 </ul></li>
 </ol>
@@ -1179,14 +1195,16 @@
 <ol type="1">
 <li>类型：
 <ul>
-<li>程序中断（溢出、除0）</li>
-<li>CPU定时器中断</li>
-<li>IO中断</li>
+<li>程序中断（溢出、除 0）</li>
+<li>CPU 定时器中断</li>
+<li>IO 中断</li>
 <li>硬件故障</li>
 </ul></li>
 <li>无中断程序：
 <ul>
-<li>CPU必须等待IO操作完成才能执行自己的下一条指令，图中的④表示为IO操作做准备的一系列指令，⑤表示IO操作完成后用来完成操作（收尾，比如设置标志之类）的一系列指令。</li>
+<li>CPU 必须等待 IO 操作完成才能执行自己的下一条指令，图中的④表示为 IO
+操作做准备的一系列指令，⑤表示 IO
+操作完成后用来完成操作（收尾，比如设置标志之类）的一系列指令。</li>
 <li><figure>
 <img src="image.webp" srcset="/img/loading/loading3.gif" lazyload alt="无中断程序流">
 <figcaption aria-hidden="true">无中断程序流</figcaption>
@@ -1194,11 +1212,13 @@
 </ul></li>
 <li>中断：
 <ul>
-<li>CPU在调用IO时仅执行④（准备代码和实际IO指令），之后马上返回用户程序。</li>
-<li>在IO操作的过程中，CPU也在执行用户程序指令。</li>
-<li>在IO完成IO操作后，即IO准备好接受服务后，IO向处理器发出中断请求信号。</li>
+<li>CPU 在调用 IO 时仅执行④（准备代码和实际 IO
+指令），之后马上返回用户程序。</li>
+<li>在 IO 操作的过程中，CPU 也在执行用户程序指令。</li>
+<li>在 IO 完成 IO 操作后，即 IO 准备好接受服务后，IO
+向处理器发出中断请求信号。</li>
 <li>处理器响应中断请求，挂起当前程序，执行中断处理程序（图中的⑤）。</li>
-<li>中断处理程序执行完成后，CPU恢复用户程序的执行。</li>
+<li>中断处理程序执行完成后，CPU 恢复用户程序的执行。</li>
 <li><figure>
 <img src="image-1.webp" srcset="/img/loading/loading3.gif" lazyload alt="有中断程序流">
 <figcaption aria-hidden="true">有中断程序流</figcaption>
@@ -1209,7 +1229,7 @@
 <li>处理器检查是否有中断请求，若没有，则执行下一条指令；若有，则：
 <ul>
 <li>挂起当前程序，保存上下文；</li>
-<li>将PC设置为中断处理程序的起始地址；</li>
+<li>将 PC 设置为中断处理程序的起始地址；</li>
 <li>处理中断；</li>
 <li>恢复上下文并继续执行被中断的程序。</li>
 </ul></li>
@@ -1218,8 +1238,8 @@
 <ul>
 <li>禁止中断：
 <ul>
-<li>CPU在处理中断时禁止其他中断；</li>
-<li>CPU处理完当前中断后检测是否还存在未响应的中断；</li>
+<li>CPU 在处理中断时禁止其他中断；</li>
+<li>CPU 处理完当前中断后检测是否还存在未响应的中断；</li>
 <li>中断严格按照顺序处理。</li>
 </ul></li>
 <li>定义优先级：高优先级中断可中断低优先级中断，嵌套处理。</li>
@@ -1232,10 +1252,10 @@
 <li>输入：读写控制信号，地址，数据</li>
 <li>输出：数据</li>
 </ul></li>
-<li>IO模块：通过多个端口控制多个外设
+<li>IO 模块：通过多个端口控制多个外设
 <ul>
 <li>输入：读写控制信号，地址，来自计算机的数据，来自外设的数据</li>
-<li>输出：送给CPU的数据，送给外设的数据数据，中断信号</li>
+<li>输出：送给 CPU 的数据，送给外设的数据数据，中断信号</li>
 </ul></li>
 <li>CPU：
 <ul>
@@ -1269,16 +1289,18 @@
 </ul></li>
 <li>时序
 <ul>
-<li>同步时序：时钟信号决定事件发生，一个0-1变化称为一个总线周期，通常以上升沿同步，通常一个总线周期对应一个事件。</li>
+<li>同步时序：时钟信号决定事件发生，一个 0-1
+变化称为一个总线周期，通常以上升沿同步，通常一个总线周期对应一个事件。</li>
 <li>异步时序：完全依赖线路引脚通知。</li>
 </ul></li>
 <li>PCI Express
 <ul>
-<li>高带宽、独立于处理器的总线，可用于中间层和外设总线，为高速IO子系统提供了更好的性能。（图形、网络、磁盘控制器）</li>
+<li>高带宽、独立于处理器的总线，可用于中间层和外设总线，为高速 IO
+子系统提供了更好的性能。（图形、网络、磁盘控制器）</li>
 </ul></li>
 </ol>
-<h1 id="ch4-cache存储器">Ch4 Cache存储器</h1>
-<h2 id="cache的传输单位">Cache的传输单位</h2>
+<h1 id="ch4-cache-存储器">Ch4 Cache 存储器</h1>
+<h2 id="cache-的传输单位">Cache 的传输单位</h2>
 <ol type="1">
 <li>字：存储器组织的天然单位，存储器单次传输所能传输数据的宽度</li>
 <li>可寻址单元：能唯一确定地址的最小单位。一般是字或字节。
@@ -1292,7 +1314,7 @@
 <li>对外存：以块为单位</li>
 </ul></li>
 </ol>
-<h2 id="cache访问数据单元的方式">Cache访问数据单元的方式</h2>
+<h2 id="cache-访问数据单元的方式">Cache 访问数据单元的方式</h2>
 <ol type="1">
 <li>顺序访问：必须以特定线性顺序访问，访问时间高度变化。
 <ul>
@@ -1311,7 +1333,7 @@
 <li>Cache</li>
 </ul></li>
 </ol>
-<h2 id="cache性能">Cache性能</h2>
+<h2 id="cache-性能">Cache 性能</h2>
 <ol type="1">
 <li>访问时间（延迟）：
 <ul>
@@ -1328,13 +1350,14 @@
 <li>对非随机：
 <ul>
 <li><span class="math display">\[T_n=T_A+\frac{n}{R}\]</span></li>
-<li><span class="math inline">\(T_n=\)</span> 读/写n位的平均时间；</li>
+<li><span class="math inline">\(T_n=\)</span> 读/写 n
+位的平均时间；</li>
 <li><span class="math inline">\(T_A=\)</span> 平均访问时间；</li>
 <li><span class="math inline">\(n=\)</span> 位数；<span class="math inline">\(R=\)</span> 传输速率，以 <span class="math inline">\(bps\)</span> 为单位。</li>
 </ul></li>
 </ul></li>
 </ol>
-<h2 id="cache特性">Cache特性</h2>
+<h2 id="cache-特性">Cache 特性</h2>
 <ul>
 <li>越快越贵</li>
 <li>越快越耗能</li>
@@ -1344,7 +1367,9 @@
 </ul>
 <h2 id="访问局部性原理">访问局部性原理：</h2>
 <ul>
-<li>在程序执行期间，CPU对指令、数据的访问往往比较集中，即在某一段时间内，CPU对某些指令或数据的访问频率较高，这种现象称为访问局部性。
+<li>在程序执行期间，CPU
+对指令、数据的访问往往比较集中，即在某一段时间内，CPU
+对某些指令或数据的访问频率较高，这种现象称为访问局部性。
 <ul>
 <li>时间局部性：如果某个数据被访问过，那么在不久的将来，它很可能会再次被访问。</li>
 <li>空间局部性：如果某个数据被访问过，那么它附近的数据很可能会被访问。</li>
@@ -1360,30 +1385,33 @@
 <li>访问频率越来越低（依赖于访问局部性原理）</li>
 </ul></li>
 </ul>
-<h2 id="cache原理和操作">Cache原理和操作：</h2>
+<h2 id="cache-原理和操作">Cache 原理和操作：</h2>
 <ul>
 <li>主存由多个块构成，每个块包含 <span class="math inline">\(K\)</span>
 个字。</li>
-<li>Cache由多个块构成，每个块称为一行，每行包括 <span class="math inline">\(K\)</span> 个字以及若干位标签、控制位（行的大小为
+<li>Cache 由多个块构成，每个块称为一行，每行包括 <span class="math inline">\(K\)</span> 个字以及若干位标签、控制位（行的大小为
 <span class="math inline">\(K\)</span> 个字，不算标签和控制位）。</li>
-<li>主存和Cache之间以块为单位传输，Cache和CPU之间以字为单位传输。</li>
-<li>Cache读操作：
+<li>主存和 Cache 之间以块为单位传输，Cache 和 CPU
+之间以字为单位传输。</li>
+<li>Cache 读操作：
 <ul>
-<li>检查数据是否在Cache中；</li>
-<li>若命中，直接访问Cache；</li>
-<li>若缺失，从主存中加载包含这个字的块，并将这个字送到CPU中，两个操作同时发生。</li>
+<li>检查数据是否在 Cache 中；</li>
+<li>若命中，直接访问 Cache；</li>
+<li>若缺失，从主存中加载包含这个字的块，并将这个字送到 CPU
+中，两个操作同时发生。</li>
 </ul></li>
-<li>Cache写操作：
+<li>Cache 写操作：
 <ul>
-<li>检查数据是否在Cache中；</li>
-<li>若命中，直接更新Cache行；</li>
-<li>若缺失，从主存中加载包含这个字的块，并更新Cache行。</li>
+<li>检查数据是否在 Cache 中；</li>
+<li>若命中，直接更新 Cache 行；</li>
+<li>若缺失，从主存中加载包含这个字的块，并更新 Cache 行。</li>
 </ul></li>
 </ul>
-<h2 id="主存块与cache行之间的映射方式">主存块与Cache行之间的映射方式</h2>
+<h2 id="主存块与-cache-行之间的映射方式">主存块与 Cache
+行之间的映射方式</h2>
 <figure>
-<img src="image-2.webp" srcset="/img/loading/loading3.gif" lazyload alt="Cache映射">
-<figcaption aria-hidden="true">Cache映射</figcaption>
+<img src="image-2.webp" srcset="/img/loading/loading3.gif" lazyload alt="Cache 映射">
+<figcaption aria-hidden="true">Cache 映射</figcaption>
 </figure>
 <h3 id="直接映射">直接映射</h3>
 <p><span class="math display">\[i=j \mod m\]</span></p>
@@ -1406,20 +1434,21 @@
 <li>块大小=行大小 = <span class="math inline">\(2^w\)</span>
 个字/字节</li>
 </ul></li>
-<li>从Cache来看：
+<li>从 Cache 来看：
 <ul>
 <li>主存地址最高 <span class="math inline">\(s\)</span> 位 = 低 <span class="math inline">\(r\)</span> 位 + 高 <span class="math inline">\((s-r)\)</span> 位，其中低 <span class="math inline">\(r\)</span> 位指定 Cache 的 <span class="math inline">\(2^r\)</span> 行中的一行，高 <span class="math inline">\((s-r)\)</span> 位被当作标签存储。</li>
-<li>Cache行数：<span class="math inline">\(2^r\)</span> 行</li>
-<li>Cache大小：<span class="math inline">\(2^{(r+w)}\)</span>
+<li>Cache 行数：<span class="math inline">\(2^r\)</span> 行</li>
+<li>Cache 大小：<span class="math inline">\(2^{(r+w)}\)</span>
 个字/字节</li>
 <li>标签大小：<span class="math inline">\((s-r)\)</span> 位</li>
-<li>即：<span class="math inline">\((s-r)\)</span> 位标签 + <span class="math inline">\(r\)</span> 位Cache内行号 = <span class="math inline">\(s\)</span> 位主存块号</li>
+<li>即：<span class="math inline">\((s-r)\)</span> 位标签 + <span class="math inline">\(r\)</span> 位 Cache 内行号 = <span class="math inline">\(s\)</span> 位主存块号</li>
 </ul></li>
 <li>优点：简单便宜</li>
-<li>缺点：任何给定块都只有固定的Cache存储位置。若程序需要访问的两个块正好映射到同一行，这两个块就会不断交换，降低命中率，称为抖动。</li>
+<li>缺点：任何给定块都只有固定的 Cache
+存储位置。若程序需要访问的两个块正好映射到同一行，这两个块就会不断交换，降低命中率，称为抖动。</li>
 </ul>
 <h3 id="全关联映射">全关联映射：</h3>
-<p>允许每个主存块加载到任意Cache行，标签 = 主存块号</p>
+<p>允许每个主存块加载到任意 Cache 行，标签 = 主存块号</p>
 <figure>
 <img src="image-30.webp" srcset="/img/loading/loading3.gif" lazyload alt="全关联映射">
 <figcaption aria-hidden="true">全关联映射</figcaption>
@@ -1428,7 +1457,7 @@
 <li>优点：命中率提高</li>
 <li>缺点：访问时需要复杂电路并行检查全部行的标签</li>
 </ul>
-<h3 id="k路组关联映射">K路组关联映射</h3>
+<h3 id="k-路组关联映射">K 路组关联映射</h3>
 <figure>
 <img src="image-32.webp" srcset="/img/loading/loading3.gif" lazyload alt="组关联映射">
 <figcaption aria-hidden="true">组关联映射</figcaption>
@@ -1439,7 +1468,7 @@ m=v \times k\\
 i=j \mod v
 \end{aligned}
 \]</span></p>
-<p><span class="math inline">\(i\)</span> = Cache的组号；<span class="math inline">\(j\)</span> = 主存块号；<span class="math inline">\(m\)</span> = Cache中的行数；<span class="math inline">\(v\)</span> = 组数；<span class="math inline">\(k\)</span> = 每组中的行数。</p>
+<p><span class="math inline">\(i\)</span> = Cache 的组号；<span class="math inline">\(j\)</span> = 主存块号；<span class="math inline">\(m\)</span> = Cache 中的行数；<span class="math inline">\(v\)</span> = 组数；<span class="math inline">\(k\)</span> = 每组中的行数。</p>
 <ul>
 <li>从主存来看：
 <ul>
@@ -1454,29 +1483,31 @@ i=j \mod v
 <li>块大小 = 行大小 = <span class="math inline">\(2^w\)</span>
 个字/字节</li>
 </ul></li>
-<li>从Cache来看：
+<li>从 Cache 来看：
 <ul>
 <li>主存地址最高 <span class="math inline">\(s\)</span> 位 = 低 <span class="math inline">\(d\)</span> 位 + 高 <span class="math inline">\((s-d)\)</span> 位，其中低 <span class="math inline">\(d\)</span> 位指定 Cache 的 <span class="math inline">\(2^d\)</span> 组中的一组，高 <span class="math inline">\((s-d)\)</span> 位被当作标签存储。</li>
-<li>Cache组数：<span class="math inline">\(v=2^d\)</span> 行</li>
-<li>Cache行数：<span class="math inline">\(m=kv=k\times
+<li>Cache 组数：<span class="math inline">\(v=2^d\)</span> 行</li>
+<li>Cache 行数：<span class="math inline">\(m=kv=k\times
 2^d\)</span></li>
-<li>Cache大小：<span class="math inline">\(k\times 2^{(d+w)}\)</span>
+<li>Cache 大小：<span class="math inline">\(k\times 2^{(d+w)}\)</span>
 个字/字节</li>
 <li>标签大小：<span class="math inline">\((s-d)\)</span> 位</li>
-<li>即：<span class="math inline">\((s-d)\)</span> 位标签 + <span class="math inline">\(d\)</span> 位Cache内组号 = <span class="math inline">\(s\)</span> 位主存块号</li>
+<li>即：<span class="math inline">\((s-d)\)</span> 位标签 + <span class="math inline">\(d\)</span> 位 Cache 内组号 = <span class="math inline">\(s\)</span> 位主存块号</li>
 </ul></li>
 <li>优点：灵活，标签较小，且只需并行比较组内的 <span class="math inline">\(k\)</span> 个标签</li>
 </ul>
 <h2 id="替换算法">替换算法</h2>
-<p>当Cache已满而又有新块需要调入，就必须替换Cache中的块。</p>
+<p>当 Cache 已满而又有新块需要调入，就必须替换 Cache 中的块。</p>
 <ul>
 <li>最近最少使用算法（LRU）
 <ul>
-<li>替换组内在Cache中最久没有被引用过的块。以2路组关联为例，当组中一行被引用时，其USE位置1，另一行USE置0。替换时选择USE为0的行。</li>
+<li>替换组内在 Cache 中最久没有被引用过的块。以 2
+路组关联为例，当组中一行被引用时，其 USE 位置 1，另一行 USE 置
+0。替换时选择 USE 为 0 的行。</li>
 </ul></li>
 <li>先进先出算法（FIFO）
 <ul>
-<li>替换组内最早进入Cache的块。</li>
+<li>替换组内最早进入 Cache 的块。</li>
 </ul></li>
 <li>最不经常使用（LFU）：
 <ul>
@@ -1489,15 +1520,17 @@ i=j \mod v
 </ul>
 <h2 id="写策略">写策略</h2>
 <ul>
-<li>通写（写直达）：所有写都会施加于Cache和主存。任何其他处理器和Cache都可以监视到主存的改变以维护一致性。
+<li>通写（写直达）：所有写都会施加于 Cache 和主存。任何其他处理器和
+Cache 都可以监视到主存的改变以维护一致性。
 <ul>
 <li>优点：简单</li>
 <li>缺点：产生大量主存流量，让写变慢</li>
 </ul></li>
-<li>回写：CPU写的更新仅在Cache中执行，此时USE为置1。当一个块被替换时，仅当USE位为1才会被写回主存。
+<li>回写：CPU 写的更新仅在 Cache 中执行，此时 USE 为置
+1。当一个块被替换时，仅当 USE 位为 1 才会被写回主存。
 <ul>
 <li>优点：最小化主存写操作</li>
-<li>缺点：部分主存在块替换前是无效的，IO存取只能通过Cache进行。</li>
+<li>缺点：部分主存在块替换前是无效的，IO 存取只能通过 Cache 进行。</li>
 </ul></li>
 </ul>
 <h2 id="行块大小">行/块大小</h2>
@@ -1505,7 +1538,7 @@ i=j \mod v
 <ul>
 <li>原因：
 <ul>
-<li>行较大时Cache中行数较少；</li>
+<li>行较大时 Cache 中行数较少；</li>
 <li>行较大时离访问位置较远的字再次访问概率低（局部性原理）</li>
 </ul></li>
 </ul>
@@ -1537,21 +1570,21 @@ i=j \mod v
 <td>不易失</td>
 </tr>
 <tr>
-<td>可编程ROM(PROM)</td>
+<td>可编程 ROM(PROM)</td>
 <td>只读存储器</td>
 <td>不能</td>
 <td>电</td>
 <td>不易失</td>
 </tr>
 <tr>
-<td>可擦PROM(EPROM)</td>
+<td>可擦 PROM(EPROM)</td>
 <td>读多次存储器</td>
 <td>紫外线，字节级</td>
 <td>电</td>
 <td>不易失</td>
 </tr>
 <tr>
-<td>电可擦PROM(EEPROM)</td>
+<td>电可擦 PROM(EEPROM)</td>
 <td>读多次存储器</td>
 <td>电，字节级</td>
 <td>电</td>
@@ -1566,28 +1599,29 @@ i=j \mod v
 </tr>
 </tbody>
 </table>
-<p>注：SRAM和DRAM都需要持续供电。</p>
-<h2 id="dram动态ram">DRAM（动态RAM）</h2>
+<p>注：SRAM 和 DRAM 都需要持续供电。</p>
+<h2 id="dram动态-ram">DRAM（动态 RAM）</h2>
 <ul>
 <li>数据被存储为电容上的电荷</li>
-<li>由于电容有漏电的天性，DRAM需要定期充电（刷新）。</li>
+<li>由于电容有漏电的天性，DRAM 需要定期充电（刷新）。</li>
 <li>结构简单，成本较低，速度较慢。常用于主存。</li>
 </ul>
-<h2 id="sram静态ram">SRAM（静态RAM）</h2>
+<h2 id="sram静态-ram">SRAM（静态 RAM）</h2>
 <ul>
 <li>用触发器逻辑门存储数据</li>
 <li>不漏电，不需要定期刷新（但也需要持续供电！）</li>
-<li>结构更复杂，成本更高，体积更大，但速度更快。常用于Cache。</li>
+<li>结构更复杂，成本更高，体积更大，但速度更快。常用于 Cache。</li>
 </ul>
 <h2 id="存储器芯片组织">存储器芯片组织</h2>
 <ol type="1">
 <li>位扩展：增加存储模块单次传输所能传输的位
 <ul>
-<li>N块芯片读取相同的地址，每块芯片同时输出其在相同行列位置上存储的数据（假设输出
+<li>N
+块芯片读取相同的地址，每块芯片同时输出其在相同行列位置上存储的数据（假设输出
 <span class="math inline">\(m\)</span>
 bit），则存储模块的一个地址可以存储 <span class="math inline">\((N\times
 m)bit\)</span> 数据。</li>
-<li>例：位扩展前，一个芯片只能输出 <span class="math inline">\(1\)</span> bit；位扩展后，<span class="math inline">\(8\)</span> 个芯片同时根据MAR信号输出 <span class="math inline">\(8\)</span> bit数据。</li>
+<li>例：位扩展前，一个芯片只能输出 <span class="math inline">\(1\)</span> bit；位扩展后，<span class="math inline">\(8\)</span> 个芯片同时根据 MAR 信号输出 <span class="math inline">\(8\)</span> bit 数据。</li>
 <li><figure>
 <img src="image-3.webp" srcset="/img/loading/loading3.gif" lazyload alt="位扩展">
 <figcaption aria-hidden="true">位扩展</figcaption>
@@ -1604,23 +1638,26 @@ m)bit\)</span> 数据。</li>
 </ul></li>
 <li>字节级精度的访问
 <ul>
-<li>存储模块一次传输能够传输 <span class="math inline">\(N\)</span>
-bit数据（一般 <span class="math inline">\(N\)</span>
-为8的倍数）,则可以实现字节级精度访问。需要在原地址信号的基础上添加 <span class="math inline">\(\log_2 \frac{N}{8}\)</span> 位地址。</li>
+<li>存储模块一次传输能够传输 <span class="math inline">\(N\)</span> bit
+数据（一般 <span class="math inline">\(N\)</span> 为 8
+的倍数）,则可以实现字节级精度访问。需要在原地址信号的基础上添加 <span class="math inline">\(\log_2 \frac{N}{8}\)</span> 位地址。</li>
 <li>以 <span class="math inline">\(N=16\)</span> 为例，此时地址新添加
 <span class="math inline">\(1\)</span> 位作为最低位。
 <ul>
-<li>若要读取 <span class="math inline">\(16\)</span>
-bit数据，且地址为偶数，则新添加的最低位置 <span class="math inline">\(0\)</span>，可一次读取完成。</li>
-<li>若地址为奇数则新添加的最低位置 <span class="math inline">\(1\)</span>，需要两次读取：CPU先读取奇数地址上的
-<span class="math inline">\(16\)</span> bit，只保留A9-A16芯片上的 <span class="math inline">\(8\)</span> bit作为低 <span class="math inline">\(8\)</span> bit；CPU再将地址 <span class="math inline">\(+1\)</span> 读取 <span class="math inline">\(16\)</span> bit，只保留A1-A9芯片上的 <span class="math inline">\(8\)</span> bit作为高 <span class="math inline">\(8\)</span> bit。</li>
+<li>若要读取 <span class="math inline">\(16\)</span> bit
+数据，且地址为偶数，则新添加的最低位置 <span class="math inline">\(0\)</span>，可一次读取完成。</li>
+<li>若地址为奇数则新添加的最低位置 <span class="math inline">\(1\)</span>，需要两次读取：CPU 先读取奇数地址上的
+<span class="math inline">\(16\)</span> bit，只保留 A9-A16 芯片上的
+<span class="math inline">\(8\)</span> bit 作为低 <span class="math inline">\(8\)</span> bit；CPU 再将地址 <span class="math inline">\(+1\)</span> 读取 <span class="math inline">\(16\)</span> bit，只保留 A1-A9 芯片上的 <span class="math inline">\(8\)</span> bit 作为高 <span class="math inline">\(8\)</span> bit。</li>
 </ul></li>
 </ul></li>
 <li>数据对齐
 <ul>
-<li>例如，<span class="math inline">\(2\)</span>
-Byte的short型变量的地址通常为偶数，<span class="math inline">\(4\)</span> Byte的int型变量的地址通常为 <span class="math inline">\(4\)</span> 的倍数。</li>
-<li>否则，读取时CPU要进行两次读取。</li>
+<li>例如，<span class="math inline">\(2\)</span> Byte 的 short
+型变量的地址通常为偶数，<span class="math inline">\(4\)</span> Byte 的
+int 型变量的地址通常为 <span class="math inline">\(4\)</span>
+的倍数。</li>
+<li>否则，读取时 CPU 要进行两次读取。</li>
 </ul></li>
 </ol>
 <h2 id="纠错码">纠错码</h2>
@@ -1659,10 +1696,12 @@ Byte的short型变量的地址通常为偶数，<span class="math inline">\(4\)<
 <li>根据右图公式计算纠错码 <span class="math inline">\(C8'\ C4'\
 C2'\ C1'\)</span>，与存储的原纠错码 <span class="math inline">\(C8\ C4\ C2\ C1\)</span> 一一异或，得到结果 <span class="math inline">\(C8'' C4'' C2''
 C1''\)</span></li>
-<li>若只有一项异或结果为1，即只有一个纠错码与原纠错码不同，则错误出现在该纠错码上，翻转该纠错码即可。例如，若只有
+<li>若只有一项异或结果为
+1，即只有一个纠错码与原纠错码不同，则错误出现在该纠错码上，翻转该纠错码即可。例如，若只有
 <span class="math inline">\(C8''=1\)</span>，即 <span class="math inline">\(C8''\ C4''\ C2''\
-C1''=1000\)</span>，表示位置8出错，即 <span class="math inline">\(C8\)</span> 自身出错。</li>
-<li>若有两项异或结果为1，即有两个纠错码与原纠错码不同，则错误出现在纠错码所表示的位置对应的数据上。例如，若
+C1''=1000\)</span>，表示位置 8 出错，即 <span class="math inline">\(C8\)</span> 自身出错。</li>
+<li>若有两项异或结果为
+1，即有两个纠错码与原纠错码不同，则错误出现在纠错码所表示的位置对应的数据上。例如，若
 <span class="math inline">\(C1''=C4''=1\)</span>，即
 <span class="math inline">\(C8''\ C4''\ C2''\
 C1''=0101\)</span>，则错误出现在位置 <span class="math inline">\(0101\)</span> 对应数据，即 <span class="math inline">\(D2\)</span> 上；从右图的公式里也可以看到，只有
@@ -1775,11 +1814,11 @@ C1''=0101\)</span>，则错误出现在位置 <span class="math inline">\(0101\)
 
 <thead>
 <tr>
-<th>RAID级别</th>
+<th>RAID 级别</th>
 <th>描述</th>
 <th>数据可用性</th>
-<th>大型I/O数据传输能力</th>
-<th>小型I/O请求率</th>
+<th>大型 I/O 数据传输能力</th>
+<th>小型 I/O 请求率</th>
 <th>需要的磁盘数</th>
 </tr>
 </thead>
@@ -1805,14 +1844,14 @@ C1''=0101\)</span>，则错误出现在位置 <span class="math inline">\(0101\)
 <td>通过海明码冗余</td>
 <td>所有列出的选择中最高</td>
 <td>大约是单个磁盘的两倍</td>
-<td>远高于单个磁盘；可与RAID 3、4、5相比较</td>
-<td>N+m（m与logN成正比）</td>
+<td>远高于单个磁盘；可与 RAID 3、4、5 相比较</td>
+<td>N+m（m 与 logN 成正比）</td>
 </tr>
 <tr>
 <td>3</td>
 <td>位交叉奇偶校验</td>
 <td>所有列出的选择中最高</td>
-<td>远高于单个磁盘；可与RAID 2、4、5相比较</td>
+<td>远高于单个磁盘；可与 RAID 2、4、5 相比较</td>
 <td>大约是单个磁盘的两倍</td>
 <td>N+1</td>
 </tr>
@@ -1820,24 +1859,24 @@ C1''=0101\)</span>，则错误出现在位置 <span class="math inline">\(0101\)
 <td>4</td>
 <td>块交叉奇偶校验</td>
 <td>无</td>
-<td>远高于单个磁盘；可与RAID 2、3、5相比较</td>
-<td>读操作与RAID 0相同；写操作明显低于单个磁盘</td>
+<td>远高于单个磁盘；可与 RAID 2、3、5 相比较</td>
+<td>读操作与 RAID 0 相同；写操作明显低于单个磁盘</td>
 <td>N+1</td>
 </tr>
 <tr>
 <td>5</td>
 <td>块交叉分布奇偶校验</td>
 <td>高</td>
-<td>远高于单个磁盘；可与RAID 2、3、4相比较</td>
-<td>读操作与RAID 0相同；写操作一般低于单个磁盘</td>
+<td>远高于单个磁盘；可与 RAID 2、3、4 相比较</td>
+<td>读操作与 RAID 0 相同；写操作一般低于单个磁盘</td>
 <td>N+1</td>
 </tr>
 <tr>
 <td>6</td>
 <td>块交叉双分布奇偶校验</td>
 <td>所有列出的选择中最高</td>
-<td>读操作与RAID 0相同；写操作低于RAID 5</td>
-<td>读操作与RAID 0相同；写操作明显低于RAID 5</td>
+<td>读操作与 RAID 0 相同；写操作低于 RAID 5</td>
+<td>读操作与 RAID 0 相同；写操作明显低于 RAID 5</td>
 <td>N+2</td>
 </tr>
 </tbody>
@@ -1845,14 +1884,15 @@ C1''=0101\)</span>，则错误出现在位置 <span class="math inline">\(0101\)
 <h1 id="ch7-输入输出">Ch7 输入输出</h1>
 <h2 id="外部设备">外部设备</h2>
 <ul>
-<li>外部设备：计算机系统外部的设备，通常通过IO模块与计算机系统连接。</li>
+<li>外部设备：计算机系统外部的设备，通常通过 IO
+模块与计算机系统连接。</li>
 <li>人可读的
 <ul>
 <li>显示屏、打印机、键盘</li>
 </ul></li>
 <li>机器可读的
 <ul>
-<li>磁盘（功能上是存储器，但结构上被I/O模块控制）、传感器</li>
+<li>磁盘（功能上是存储器，但结构上被 I/O 模块控制）、传感器</li>
 </ul></li>
 <li>通信设备
 <ul>
@@ -1863,111 +1903,131 @@ C1''=0101\)</span>，则错误出现在位置 <span class="math inline">\(0101\)
 <img src="image-35.webp" srcset="/img/loading/loading3.gif" lazyload alt="外部设备">
 <figcaption aria-hidden="true">外部设备</figcaption>
 </figure>
-<h2 id="io模块">IO模块</h2>
+<h2 id="io-模块">IO 模块</h2>
 <ul>
-<li>为什么需要IO模块
+<li>为什么需要 IO 模块
 <ul>
-<li>各种外设操作逻辑、数据格式和字长都不一样，且运行速度比主存和CPU慢很多</li>
+<li>各种外设操作逻辑、数据格式和字长都不一样，且运行速度比主存和 CPU
+慢很多</li>
 </ul></li>
 <li>主要功能
 <ul>
-<li>通过系统总线或中央交换机与CPU和内存连接；</li>
+<li>通过系统总线或中央交换机与 CPU 和内存连接；</li>
 <li>通过定制数据线连接一至多个外设；</li>
-<li>具体包括：控制和定时，与CPU、内存和外设通信，数据缓冲，检错</li>
+<li>具体包括：控制和定时，与 CPU、内存和外设通信，数据缓冲，检错</li>
 </ul></li>
 </ul>
 <figure>
-<img src="image-34.webp" srcset="/img/loading/loading3.gif" lazyload alt="IO模块">
-<figcaption aria-hidden="true">IO模块</figcaption>
+<img src="image-34.webp" srcset="/img/loading/loading3.gif" lazyload alt="IO 模块">
+<figcaption aria-hidden="true">IO 模块</figcaption>
 </figure>
-<h2 id="读io步骤">读IO步骤</h2>
+<h2 id="读-io-步骤">读 IO 步骤</h2>
 <ul>
-<li>CPU查询IO模块状态</li>
-<li>IO返回设备状态</li>
-<li>若设备就绪，CPU请求数据传输</li>
-<li>IO从外设处获取数据</li>
-<li>IO将数据放到数据总线上传给CPU</li>
+<li>CPU 查询 IO 模块状态</li>
+<li>IO 返回设备状态</li>
+<li>若设备就绪，CPU 请求数据传输</li>
+<li>IO 从外设处获取数据</li>
+<li>IO 将数据放到数据总线上传给 CPU</li>
 </ul>
-<h2 id="io设备寻址">IO设备寻址</h2>
+<h2 id="io-设备寻址">IO 设备寻址</h2>
 <ol type="1">
 <li>内存映射寻址：
 <ul>
-<li>内存位置和IO设备共享同一个地址空间</li>
-<li>CPU把IO模块的状态和数据寄存器看作内存位置</li>
-<li>访问内存和操作IO所需机器指令相同</li>
+<li>内存位置和 IO 设备共享同一个地址空间</li>
+<li>CPU 把 IO 模块的状态和数据寄存器看作内存位置</li>
+<li>访问内存和操作 IO 所需机器指令相同</li>
 </ul></li>
 <li>独立寻址：
 <ul>
-<li>CPU将内存和IO模块看作两个独立的地址空间</li>
-<li>需要IO或内存选择线控制</li>
-<li>需要特殊的IO命令操作IO</li>
+<li>CPU 将内存和 IO 模块看作两个独立的地址空间</li>
+<li>需要 IO 或内存选择线控制</li>
+<li>需要特殊的 IO 命令操作 IO</li>
 </ul></li>
 </ol>
-<h2 id="io技术">IO技术</h2>
+<h2 id="io-技术">IO 技术</h2>
 <ol type="1">
-<li>可编程式IO：无中断，数据通过CPU传输，即IO-CPU-内存
+<li>可编程式 IO：无中断，数据通过 CPU 传输，即 IO-CPU-内存
 <ul>
-<li>在IO模块操作未完成，CPU一直保持定期检查IO状态的周期，浪费CPU时间。</li>
+<li>在 IO 模块操作未完成，CPU 一直保持定期检查 IO 状态的周期，浪费 CPU
+时间。</li>
 </ul>
 <figure>
-<img src="image-36.webp" srcset="/img/loading/loading3.gif" lazyload alt="编程式IO">
-<figcaption aria-hidden="true">编程式IO</figcaption>
+<img src="image-36.webp" srcset="/img/loading/loading3.gif" lazyload alt="编程式 IO">
+<figcaption aria-hidden="true">编程式 IO</figcaption>
 </figure></li>
-<li>中断驱动式IO：有中断，数据通过CPU传输，即IO-CPU-内存
+<li>中断驱动式 IO：有中断，数据通过 CPU 传输，即 IO-CPU-内存
 <ul>
-<li>CPU向IO模块发出命令后执行其他程序。当IO操作完成时，即IO模块就绪时，IO模块会向CPU发送中断请求，CPU响应中断请求并开始传输数据。</li>
-<li>无需CPU一直周期性检查，克服了CPU等待的问题。</li>
+<li>CPU 向 IO 模块发出命令后执行其他程序。当 IO 操作完成时，即 IO
+模块就绪时，IO 模块会向 CPU 发送中断请求，CPU
+响应中断请求并开始传输数据。</li>
+<li>无需 CPU 一直周期性检查，克服了 CPU 等待的问题。</li>
 </ul>
 <figure>
-<img src="image-37.webp" srcset="/img/loading/loading3.gif" lazyload alt="中断驱动式IO">
-<figcaption aria-hidden="true">中断驱动式IO</figcaption>
+<img src="image-37.webp" srcset="/img/loading/loading3.gif" lazyload alt="中断驱动式 IO">
+<figcaption aria-hidden="true">中断驱动式 IO</figcaption>
 </figure></li>
-<li>存储器直接存储（DMA）：有中断，数据通过DMA传输，即IO-DMA-CPU
+<li>存储器直接存储（DMA）：有中断，数据通过 DMA 传输，即 IO-DMA-CPU
 <ul>
-<li>DMA操作：CPU通知DMA相关命令，之后CPU执行其他程序；DMA负责传输数据；DMA传输完成后，向CPU发出中断请求。</li>
-<li>周期窃取：DMA必须在CPU不使用总线时，或迫使处理器挂起，才能够使用总线传输数据。一般地，CPU在访问总线前被挂起，DMA接管一个总线周期传输一个字，然后CPU继续访问总线。稍微降低了CPU速度，不是中断，CPU不用转换现场。</li>
+<li>DMA 操作：CPU 通知 DMA 相关命令，之后 CPU 执行其他程序；DMA
+负责传输数据；DMA 传输完成后，向 CPU 发出中断请求。</li>
+<li>周期窃取：DMA 必须在 CPU
+不使用总线时，或迫使处理器挂起，才能够使用总线传输数据。一般地，CPU
+在访问总线前被挂起，DMA 接管一个总线周期传输一个字，然后 CPU
+继续访问总线。稍微降低了 CPU 速度，不是中断，CPU 不用转换现场。</li>
 </ul></li>
 </ol>
 <h2 id="中断处理">中断处理</h2>
 <ul>
-<li>中断认可信号是CPU告诉发出中断的IO：我已经收到了你的中断请求信号并开始处理，你可以停止发送中断请求信号了。</li>
-<li>PSW：程序状态字，一个寄存器，存储CPU状态。</li>
+<li>中断认可信号是 CPU 告诉发出中断的
+IO：我已经收到了你的中断请求信号并开始处理，你可以停止发送中断请求信号了。</li>
+<li>PSW：程序状态字，一个寄存器，存储 CPU 状态。</li>
 <li>软件部分：即中断服务程序（ISR）。</li>
 </ul>
 <h2 id="中断请求的定位和优先级">中断请求的定位和优先级</h2>
 <ol type="1">
-<li>多中断信号线法：直接在CPU与每个IO模块之间提供多中断信号线，一般不用，硬件太复杂。</li>
-<li>软件轮询法：CPU检测到中断后，执行中断服务程序，中断服务程序挨个轮询每个IO模块，找到所有发出中断的。
+<li>多中断信号线法：直接在 CPU 与每个 IO
+模块之间提供多中断信号线，一般不用，硬件太复杂。</li>
+<li>软件轮询法：CPU
+检测到中断后，执行中断服务程序，中断服务程序挨个轮询每个 IO
+模块，找到所有发出中断的。
 <ul>
 <li>优先级：由中断服务程序决定先处理哪个。</li>
 <li>优点：硬件简单，优先级安排、修改简单，灵活。</li>
 <li>缺点：速度慢。</li>
 </ul></li>
-<li>菊花链法（硬件轮询、向量）：所有IO共享一条中断请求线，但是中断响应线以菊花链形式连接各个IO模块。
+<li>菊花链法（硬件轮询、向量）：所有 IO
+共享一条中断请求线，但是中断响应线以菊花链形式连接各个 IO 模块。
 <ul>
-<li>CPU感知到中断后，发出中断响应信号，沿菊花链传播。</li>
-<li>当中断响应信号传播到某个IO模块时：
+<li>CPU 感知到中断后，发出中断响应信号，沿菊花链传播。</li>
+<li>当中断响应信号传播到某个 IO 模块时：
 <ul>
-<li>若该IO发出了中断，则会在数据线上放向量（一个字，IO模块的地址或唯一标识符，CPU认为其指向适合的设备服务例程）。CPU会根据向量来定位IO模块并处理中断。该IO模块的中断处理完后，才会将中断响应信号传给下个IO模块；</li>
-<li>若该IO没有发出中断，则直接将中断响应信号传给下个IO模块；</li>
+<li>若该 IO 发出了中断，则会在数据线上放向量（一个字，IO
+模块的地址或唯一标识符，CPU 认为其指向适合的设备服务例程）。CPU
+会根据向量来定位 IO 模块并处理中断。该 IO
+模块的中断处理完后，才会将中断响应信号传给下个 IO 模块；</li>
+<li>若该 IO 没有发出中断，则直接将中断响应信号传给下个 IO 模块；</li>
 </ul></li>
-<li>优先级：菊花链上游的IO模块中断优先级更高。是固定的，不灵活。</li>
+<li>优先级：菊花链上游的 IO 模块中断优先级更高。是固定的，不灵活。</li>
 <li>优点：速度快。</li>
 <li>缺点：优先级固定，不灵活。</li>
 </ul></li>
-<li>总线仲裁（向量）：由中断控制器控制哪个IO模块能够获得总线控制权。IO模块只有获得总线控制权后才能发送中断，一次只有一个IO模块能发送中断，中断控制器检测到CPU的中断响应信号时，将发出中断的IO模块对应向量放到数据线上。</li>
+<li>总线仲裁（向量）：由中断控制器控制哪个 IO 模块能够获得总线控制权。IO
+模块只有获得总线控制权后才能发送中断，一次只有一个 IO
+模块能发送中断，中断控制器检测到 CPU 的中断响应信号时，将发出中断的 IO
+模块对应向量放到数据线上。</li>
 </ol>
 <h1 id="ch9-计算机算术">Ch9 计算机算术</h1>
-<h2 id="整数2的补码法">整数：2的补码法</h2>
+<h2 id="整数2-的补码法">整数：2 的补码法</h2>
 <ul>
-<li><span class="math inline">\(N\)</span>
-bit整数，最高位为符号位，0表示正数，1表示负数。</li>
-<li>正数：最高位为0，剩下 <span class="math inline">\(N-1\)</span>
+<li><span class="math inline">\(N\)</span> bit 整数，最高位为符号位，0
+表示正数，1 表示负数。</li>
+<li>正数：最高位为 0，剩下 <span class="math inline">\(N-1\)</span>
 位为二进制。</li>
 <li>负数：先写出对应正数，然后对 <span class="math inline">\(N\)</span>
 位全部按位取反，再将其视作无符号数 <span class="math inline">\(+1\)</span>。</li>
-<li>表示范围：<span class="math inline">\(N\)</span> bit能表示：<span class="math inline">\([-2^{N-1},2^{N-1}-1]\)</span>范围内的整数。</li>
-<li>符号填充：符号位移到新最高位，空余的，对正数填全0，对负数填全1。</li>
+<li>表示范围：<span class="math inline">\(N\)</span> bit 能表示：<span class="math inline">\([-2^{N-1},2^{N-1}-1]\)</span> 范围内的整数。</li>
+<li>符号填充：符号位移到新最高位，空余的，对正数填全 0，对负数填全
+1。</li>
 </ul>
 <h2 id="整数的加减法">整数的加减法</h2>
 <ul>
@@ -1981,21 +2041,23 @@ bit整数，最高位为符号位，0表示正数，1表示负数。</li>
 </figure>
 <ul>
 <li><span class="math inline">\(M\times Q=AQ\)</span>，<span class="math inline">\(M\)</span> 为被乘数，<span class="math inline">\(Q\)</span> 为乘数，<span class="math inline">\(AQ\)</span> 为结果，由寄存器 <span class="math inline">\(A\)</span> 和寄存器 <span class="math inline">\(Q\)</span> 拼接而成。</li>
-<li>每个循环，若 <span class="math inline">\(Q\)</span> 最低位为1，则将
-<span class="math inline">\(M\)</span> 加在 <span class="math inline">\(A\)</span> 上；若为0，则不相加。</li>
+<li>每个循环，若 <span class="math inline">\(Q\)</span> 最低位为 1，则将
+<span class="math inline">\(M\)</span> 加在 <span class="math inline">\(A\)</span> 上；若为 0，则不相加。</li>
 <li>然后将 <span class="math inline">\(AQ\)</span> 整体右移一位，<span class="math inline">\(Q\)</span> 最低位舍弃，<span class="math inline">\(A\)</span> 最高位为相加的溢出位。</li>
 <li><span class="math inline">\(Q\)</span> 有几位，就执行几个循环。</li>
 </ul>
-<h2 id="有符号乘法booth算法">有符号乘法：Booth算法</h2>
+<h2 id="有符号乘法booth-算法">有符号乘法：Booth 算法</h2>
 <figure>
 <img src="image-11.webp" srcset="/img/loading/loading3.gif" lazyload alt="Booth">
 <figcaption aria-hidden="true">Booth</figcaption>
 </figure>
 <ul>
-<li><span class="math inline">\(Q_0Q_{-1}=10\)</span>，则 <span class="math inline">\(A=A-M\)</span>（记忆：最高位为1，负数，减），然后shift</li>
-<li><span class="math inline">\(Q_0Q_{-1}=01\)</span>，则 <span class="math inline">\(A=A+M\)</span>（记忆：最高位为0，正数，加），溢出位舍去，然后shift</li>
-<li><span class="math inline">\(Q_0Q_{-1}=00\)</span> 或 <span class="math inline">\(11\)</span>，则直接shift</li>
-<li>Shift将<span class="math inline">\(Q_{-1}\)</span> 舍去，<span class="math inline">\(Q_0\)</span> 位移到 <span class="math inline">\(Q_{-1}\)</span>，新最高位和原最高位相同。</li>
+<li><span class="math inline">\(Q_0Q_{-1}=10\)</span>，则 <span class="math inline">\(A=A-M\)</span>（记忆：最高位为 1，负数，减），然后
+shift</li>
+<li><span class="math inline">\(Q_0Q_{-1}=01\)</span>，则 <span class="math inline">\(A=A+M\)</span>（记忆：最高位为
+0，正数，加），溢出位舍去，然后 shift</li>
+<li><span class="math inline">\(Q_0Q_{-1}=00\)</span> 或 <span class="math inline">\(11\)</span>，则直接 shift</li>
+<li>Shift 将 <span class="math inline">\(Q_{-1}\)</span> 舍去，<span class="math inline">\(Q_0\)</span> 位移到 <span class="math inline">\(Q_{-1}\)</span>，新最高位和原最高位相同。</li>
 <li><span class="math inline">\(Q\)</span>
 有几位，循环几个周期。最终结果为 <span class="math inline">\(AQ\)</span>
 相拼接，不算 <span class="math inline">\(Q_{-1}\)</span>！</li>
@@ -2005,23 +2067,25 @@ bit整数，最高位为符号位，0表示正数，1表示负数。</li>
 <figcaption aria-hidden="true">例子</figcaption>
 </figure>
 <h2 id="浮点数表示">浮点数表示</h2>
-<p>以32bit为例：</p>
+<p>以 32bit 为例：</p>
 <ul>
-<li>1bit符号位 <span class="math inline">\(m\)</span> + 8bit指数 <span class="math inline">\(E\)</span>（移码表示）+ 23bit有效数 <span class="math inline">\(B\)</span>
+<li>1bit 符号位 <span class="math inline">\(m\)</span> + 8bit 指数 <span class="math inline">\(E\)</span>（移码表示）+ 23bit 有效数 <span class="math inline">\(B\)</span>
 <ul>
-<li>移码表示：<span class="math inline">\(N\)</span>
-bit二进制，按照无符号数理解，得到在<span class="math inline">\(0~2^N-1\)</span>之间的整数，再减去一个固定的偏阶（为<span class="math inline">\(2^{N-1}-1\)</span>），得到真正的指数，范围为<span class="math inline">\(-2^{N-1}+1~2^{N-1}\)</span>
+<li>移码表示：<span class="math inline">\(N\)</span> bit
+二进制，按照无符号数理解，得到在 <span class="math inline">\(0~2^N-1\)</span>
+之间的整数，再减去一个固定的偏阶（为 <span class="math inline">\(2^{N-1}-1\)</span>），得到真正的指数，范围为 <span class="math inline">\(-2^{N-1}+1~2^{N-1}\)</span>
 <ul>
 <li>8bit 范围为-127~+128</li>
 </ul></li>
 </ul></li>
-<li>规格化数：有效数的最高位一定为1，且不实际存储到内存中。因此，23bit有效数
-<span class="math inline">\(B\)</span>
-实际表示24bit，表示一个二进制小数：1.B</li>
+<li>规格化数：有效数的最高位一定为 1，且不实际存储到内存中。因此，23bit
+有效数 <span class="math inline">\(B\)</span> 实际表示
+24bit，表示一个二进制小数：1.B</li>
 <li>综上，浮点数被表示为：<span class="math inline">\((-1)^m×1.B×2^{E-2^{N-1}+1}\)</span></li>
 <li>范围：
 <ul>
-<li>以32bit为例：正数在<span class="math inline">\(2^{-127}~(2-2^{-23})×2^{128}\)</span>，负数在<span class="math inline">\(-(2-2^{-23})×2^{128}~-2^{-127}\)</span></li>
+<li>以 32bit 为例：正数在 <span class="math inline">\(2^{-127}~(2-2^{-23})×2^{128}\)</span>，负数在
+<span class="math inline">\(-(2-2^{-23})×2^{128}~-2^{-127}\)</span></li>
 <li>因此有正上溢、正下溢、负上溢、负下溢</li>
 </ul></li>
 </ul>
@@ -2031,30 +2095,35 @@ bit二进制，按照无符号数理解，得到在<span class="math inline">\(0
 <img src="image-15.webp" srcset="/img/loading/loading3.gif" lazyload alt="32bit float">
 <figcaption aria-hidden="true">32bit float</figcaption>
 </figure>
-<h3 id="ieee754的一些特殊表示">IEEE754的一些特殊表示:</h3>
+<h3 id="ieee754-的一些特殊表示">IEEE754 的一些特殊表示:</h3>
 <ul>
-<li>当<span class="math inline">\(E=0\)</span>且<span class="math inline">\(M=0\)</span>时,表示0。</li>
-<li>当<span class="math inline">\(E=0\)</span>且<span class="math inline">\(M≠0\)</span>时,表示非规格化数(下溢数)。</li>
-<li>当<span class="math inline">\(E=255\)</span>且<span class="math inline">\(M=0\)</span>时,表示∞。</li>
-<li>当<span class="math inline">\(E=255\)</span>且<span class="math inline">\(M≠0\)</span>时, 表示NAN。</li>
+<li>当 <span class="math inline">\(E=0\)</span> 且 <span class="math inline">\(M=0\)</span> 时,表示 0。</li>
+<li>当 <span class="math inline">\(E=0\)</span> 且 <span class="math inline">\(M≠0\)</span> 时,表示非规格化数(下溢数)。</li>
+<li>当 <span class="math inline">\(E=255\)</span> 且 <span class="math inline">\(M=0\)</span> 时,表示∞。</li>
+<li>当 <span class="math inline">\(E=255\)</span> 且 <span class="math inline">\(M≠0\)</span> 时, 表示 NAN。</li>
 </ul>
 <h2 id="浮点数加减法">浮点数加减法：</h2>
 <ol type="1">
 <li>零检查
 <ul>
-<li>若是减法运算，则改变减数符号并改为加法运算。若某个操作数为0，则另一个操作数直接作为结果。否则，将存储的23bit有效数扩充成24bit实际有效数。</li>
+<li>若是减法运算，则改变减数符号并改为加法运算。若某个操作数为
+0，则另一个操作数直接作为结果。否则，将存储的 23bit 有效数扩充成 24bit
+实际有效数。</li>
 </ul></li>
 <li>对齐
 <ul>
-<li>若两数指数不相等，则增加较小的指数，并右移其有效位数。若此过程中出现有效位数为0，则另一个数直接作为结果。</li>
+<li>若两数指数不相等，则增加较小的指数，并右移其有效位数。若此过程中出现有效位数为
+0，则另一个数直接作为结果。</li>
 </ul></li>
 <li>有效数相加
 <ul>
-<li>即1.B相加。若产生上溢，则右移有效位数并增加指数。若此操作产生了指数上溢，报错。</li>
+<li>即 1.B
+相加。若产生上溢，则右移有效位数并增加指数。若此操作产生了指数上溢，报错。</li>
 </ul></li>
 <li>规格化
 <ul>
-<li>若加法结果最高位不为1，则左移有效位数并减小指数。若此操作产生了指数下溢，报错。</li>
+<li>若加法结果最高位不为
+1，则左移有效位数并减小指数。若此操作产生了指数下溢，报错。</li>
 </ul></li>
 </ol>
 <p>注：有效数右移时可以在右边增加保护位以确保精度。 <img src="image-38.webp" srcset="/img/loading/loading3.gif" lazyload alt="浮点数加减法"></p>
@@ -2109,19 +2178,19 @@ B_2\)</span>，即两个操作数的有效数相乘。</li>
 </ul>
 <h2 id="操作数个数">操作数个数</h2>
 <ul>
-<li>三地址：操作数1，操作数2，结果，<span class="math inline">\(c=a+b\)</span></li>
+<li>三地址：操作数 1，操作数 2，结果，<span class="math inline">\(c=a+b\)</span></li>
 <li>双地址：其中一个地址既是操作数也存储结果，<span class="math inline">\(a=a+b\)</span></li>
 <li>单地址：寄存器操作</li>
-<li>零地址：pop，push等</li>
-<li>更多的地址：更复杂强大的指令，更复杂的CPU，更少的程序指令数</li>
-<li>更少的地址：更简单的指令和CPU，更多的程序指令数</li>
+<li>零地址：pop，push 等</li>
+<li>更多的地址：更复杂强大的指令，更复杂的 CPU，更少的程序指令数</li>
+<li>更少的地址：更简单的指令和 CPU，更多的程序指令数</li>
 </ul>
 <h2 id="移位操作">移位操作</h2>
 <ol type="1">
 <li>逻辑移位
 <ul>
-<li>逻辑右移1位相当于：无符号整数除以2</li>
-<li>逻辑左移1位相当于：无符号整数乘以2</li>
+<li>逻辑右移 1 位相当于：无符号整数除以 2</li>
+<li>逻辑左移 1 位相当于：无符号整数乘以 2</li>
 <li><figure>
 <img src="image-16.webp" srcset="/img/loading/loading3.gif" lazyload alt="逻辑移位">
 <figcaption aria-hidden="true">逻辑移位</figcaption>
@@ -2129,8 +2198,8 @@ B_2\)</span>，即两个操作数的有效数相乘。</li>
 </ul></li>
 <li>算数移位
 <ul>
-<li>算术右移1位相当于：带符号整数除以2</li>
-<li>算术左移1位相当于：带符号整数乘以2</li>
+<li>算术右移 1 位相当于：带符号整数除以 2</li>
+<li>算术左移 1 位相当于：带符号整数乘以 2</li>
 <li><figure>
 <img src="image-17.webp" srcset="/img/loading/loading3.gif" lazyload alt="逻辑移位">
 <figcaption aria-hidden="true">逻辑移位</figcaption>
@@ -2154,7 +2223,8 @@ B_2\)</span>，即两个操作数的有效数相乘。</li>
 <h2 id="内存对齐">内存对齐</h2>
 <ul>
 <li>内存对齐是指数据在内存中存放时，地址必须是某个特定值的倍数，以提高访问效率。</li>
-<li>例如，32位数据要求在4字节对齐的地址上存放，64位数据要求在8字节对齐的地址上存放。</li>
+<li>例如，32 位数据要求在 4 字节对齐的地址上存放，64 位数据要求在 8
+字节对齐的地址上存放。</li>
 </ul>
 <h1 id="ch11-指令集寻址方式和指令模式">Ch11
 指令集：寻址方式和指令模式</h1>
@@ -2163,7 +2233,7 @@ B_2\)</span>，即两个操作数的有效数相乘。</li>
 <li><span class="math inline">\(A\)</span>：指令中出现的地址/数据的内容</li>
 <li><span class="math inline">\(R\)</span>：指令中出现的寄存器存储的地址/数据的内容</li>
 <li><span class="math inline">\(EA\)</span>：被访问位置的实际有效地址</li>
-<li><span class="math inline">\((X)\)</span>：位置<span class="math inline">\(X\)</span>的内容</li>
+<li><span class="math inline">\((X)\)</span>：位置 <span class="math inline">\(X\)</span> 的内容</li>
 </ul>
 <h2 id="立即寻址">立即寻址</h2>
 <ul>
@@ -2239,15 +2309,17 @@ A\)</span>，实际地址由寄存器内容与指令内地址相加得到。
 <li>操作数在栈顶，通过指令隐式对栈顶进行操作</li>
 <li>本质是通过存储在寄存器中的栈指针进行寄存器间接寻址，对栈顶元素进行操作。</li>
 </ul>
-<h1 id="ch12-cpu结构和功能">Ch12 CPU结构和功能</h1>
-<h2 id="cpu内部结构">CPU内部结构</h2>
+<h1 id="ch12-cpu-结构和功能">Ch12 CPU 结构和功能</h1>
+<h2 id="cpu-内部结构">CPU 内部结构</h2>
 <ul>
-<li>包含ALU（算术逻辑单元）、CU（控制单元）、寄存器组、状态标志等。</li>
-<li>内部处理器总线用于在ALU和寄存器间传递数据，因ALU仅能操作CPU内部存储数据。</li>
+<li>包含
+ALU（算术逻辑单元）、CU（控制单元）、寄存器组、状态标志等。</li>
+<li>内部处理器总线用于在 ALU 和寄存器间传递数据，因 ALU 仅能操作 CPU
+内部存储数据。</li>
 </ul>
 <figure>
-<img src="image-40.webp" srcset="/img/loading/loading3.gif" lazyload alt="CPU内部结构">
-<figcaption aria-hidden="true">CPU内部结构</figcaption>
+<img src="image-40.webp" srcset="/img/loading/loading3.gif" lazyload alt="CPU 内部结构">
+<figcaption aria-hidden="true">CPU 内部结构</figcaption>
 </figure>
 <h2 id="寄存器组织">寄存器组织</h2>
 <ol type="1">
@@ -2272,7 +2344,8 @@ A\)</span>，实际地址由寄存器内容与指令内地址相加得到。
 <li>取指周期
 <ul>
 <li>下条指令地址：PC → MAR → 地址总线 → 主存。</li>
-<li>指令：主存 → 数据总线 → MBR → IR，同时PC++（除非指令修改PC）。</li>
+<li>指令：主存 → 数据总线 → MBR → IR，同时 PC++（除非指令修改
+PC）。</li>
 <li><figure>
 <img src="image-41.webp" srcset="/img/loading/loading3.gif" lazyload alt="取值周期">
 <figcaption aria-hidden="true">取值周期</figcaption>
@@ -2280,7 +2353,7 @@ A\)</span>，实际地址由寄存器内容与指令内地址相加得到。
 </ul></li>
 <li>间接周期（如有）
 <ul>
-<li>MBR的低N位 → MAR → 地址总线。</li>
+<li>MBR 的低 N 位 → MAR → 地址总线。</li>
 <li><figure>
 <img src="image-42.webp" srcset="/img/loading/loading3.gif" lazyload alt="间接寻址">
 <figcaption aria-hidden="true">间接寻址</figcaption>
@@ -2292,8 +2365,8 @@ A\)</span>，实际地址由寄存器内容与指令内地址相加得到。
 </ul></li>
 <li>中断周期
 <ul>
-<li>PC复制到MBR，特定地址由控制单元给MAR，MBR数据存至主存。</li>
-<li>PC装载中断服务程序地址</li>
+<li>PC 复制到 MBR，特定地址由控制单元给 MAR，MBR 数据存至主存。</li>
+<li>PC 装载中断服务程序地址</li>
 <li><figure>
 <img src="image-43.webp" srcset="/img/loading/loading3.gif" lazyload alt="中断周期">
 <figcaption aria-hidden="true">中断周期</figcaption>
@@ -2326,18 +2399,18 @@ A\)</span>，实际地址由寄存器内容与指令内地址相加得到。
 <li>流水线阶段并非越多越好：阶段越多开销越大，单指令执行时间越长，且相关性更复杂。</li>
 <li>流水线性能
 <ul>
-<li>流水线周期时间：通过流水线把一组指令推进一个阶段所需时间 <span class="math display">\[\tau = \tau_m + d\]</span> 其中<span class="math inline">\(\tau_m\)</span> 为最大阶段延迟，<span class="math inline">\(d\)</span> 为锁存器延迟（通常可忽略）。</li>
-<li>n条指令总时间：<span class="math display">\[T_{k,n} = [k +
-(n-1)]\tau\]</span>（k阶段流水线，无分支）。</li>
+<li>流水线周期时间：通过流水线把一组指令推进一个阶段所需时间 <span class="math display">\[\tau = \tau_m + d\]</span> 其中 <span class="math inline">\(\tau_m\)</span> 为最大阶段延迟，<span class="math inline">\(d\)</span> 为锁存器延迟（通常可忽略）。</li>
+<li>n 条指令总时间：<span class="math display">\[T_{k,n} = [k +
+(n-1)]\tau\]</span>（k 阶段流水线，无分支）。</li>
 <li>加速比：<span class="math display">\[S_k = \frac{nk\tau}{[k +
-(n-1)]\tau} = \frac{nk}{k + n - 1}\]</span> 当<span class="math inline">\(n\rightarrow\infty\)</span>时，<span class="math inline">\(\lim S_k = k\)</span>。</li>
+(n-1)]\tau} = \frac{nk}{k + n - 1}\]</span> 当 <span class="math inline">\(n\rightarrow\infty\)</span> 时，<span class="math inline">\(\lim S_k = k\)</span>。</li>
 </ul></li>
 <li>流水线冲突：流水线由于条件不允许继续执行而停顿
 <ul>
 <li>资源冲突：
 <ul>
-<li>访存冲突（FI/FO/WO同时请求内存）</li>
-<li>ALU冲突（多条指令同时需ALU）</li>
+<li>访存冲突（FI/FO/WO 同时请求内存）</li>
+<li>ALU 冲突（多条指令同时需 ALU）</li>
 </ul></li>
 <li>数据冲突：
 <ol type="1">
@@ -2355,12 +2428,13 @@ A\)</span>，实际地址由寄存器内容与指令内地址相加得到。
 <li>分支预测：
 <ul>
 <li>静态预测：如预测从不跳转、总是跳转、按操作码预测。</li>
-<li>动态预测：如1位预测（根据上次跳转预测）、2位预测（连续两次失败才反转预测）。</li>
+<li>动态预测：如 1 位预测（根据上次跳转预测）、2
+位预测（连续两次失败才反转预测）。</li>
 </ul></li>
 </ul>
 <figure>
-<img src="image-45.webp" srcset="/img/loading/loading3.gif" lazyload alt="2位预测">
-<figcaption aria-hidden="true">2位预测</figcaption>
+<img src="image-45.webp" srcset="/img/loading/loading3.gif" lazyload alt="2 位预测">
+<figcaption aria-hidden="true">2 位预测</figcaption>
 </figure>
 <h2 id="转移历史表">转移历史表</h2>
 <ul>
@@ -2377,8 +2451,8 @@ A\)</span>，实际地址由寄存器内容与指令内地址相加得到。
 <li>如果该分支语句在表中不存在：等到操作数计算完成后，加入表中</li>
 </ul></li>
 </ul>
-<h1 id="ch13-精简指令集计算机risc">Ch13 精简指令集计算机RISC</h1>
-<h2 id="risc的主要特性">RISC的主要特性</h2>
+<h1 id="ch13-精简指令集计算机-risc">Ch13 精简指令集计算机 RISC</h1>
+<h2 id="risc-的主要特性">RISC 的主要特性</h2>
 <ul>
 <li>大量通用寄存器，使用编译器优化寄存器用法。</li>
 <li>有限、简单的指令集。</li>
@@ -2392,26 +2466,27 @@ A\)</span>，实际地址由寄存器内容与指令内地址相加得到。
 </ul>
 <h2 id="cisc">CISC</h2>
 <ol type="1">
-<li>朝向CISC的原因：
+<li>朝向 CISC 的原因：
 <ul>
 <li>出现了功能强大的复杂高级程序设计语言（HLL）</li>
 <li>导致程序设计语言与汇编语言之间的语义间隙增大</li>
-<li>出现了更复杂的机器指令、寻址方式，硬件实现的HLL语句</li>
+<li>出现了更复杂的机器指令、寻址方式，硬件实现的 HLL 语句</li>
 </ul></li>
-<li>CISC的目标：
+<li>CISC 的目标：
 <ul>
 <li>提高执行效率</li>
 <li>简化编译</li>
-<li>用复杂的机器指令执行复杂的HLL语句</li>
+<li>用复杂的机器指令执行复杂的 HLL 语句</li>
 </ul></li>
 </ol>
-<h2 id="对hll操作的研究">对HLL操作的研究</h2>
+<h2 id="对-hll-操作的研究">对 HLL 操作的研究</h2>
 <figure>
-<img src="image-23.webp" srcset="/img/loading/loading3.gif" lazyload alt="HLL操作动态频度">
-<figcaption aria-hidden="true">HLL操作动态频度</figcaption>
+<img src="image-23.webp" srcset="/img/loading/loading3.gif" lazyload alt="HLL 操作动态频度">
+<figcaption aria-hidden="true">HLL 操作动态频度</figcaption>
 </figure>
 <ul>
-<li>HLL操作动态频度：过程调用在机器指令加权和存储器加权下占比很高，尤其存储器加权场景。</li>
+<li>HLL
+操作动态频度：过程调用在机器指令加权和存储器加权下占比很高，尤其存储器加权场景。</li>
 <li>操作数：局部标量变量占多数，数组/结构次之。</li>
 <li>过程调用：
 <ul>
@@ -2424,7 +2499,7 @@ A\)</span>，实际地址由寄存器内容与指令内地址相加得到。
 </ul></li>
 <li>结论：
 <ul>
-<li>过程调用是HLL中最耗时的操作，应该优化</li>
+<li>过程调用是 HLL 中最耗时的操作，应该优化</li>
 <li>优化方法：优化寄存器的使用（从而减少访存）；优化流水线（减少分支影响）；</li>
 </ul></li>
 </ul>
@@ -2458,14 +2533,15 @@ A\)</span>，实际地址由寄存器内容与指令内地址相加得到。
 <ol type="1">
 <li>画点，每个点代表一个虚拟寄存器</li>
 <li>连线，在两个生命周期有重叠的虚拟寄存器之间连线</li>
-<li>着色，若有n个真实寄存器，则尽量用n种颜色给图上色，要求相邻（有连线）的节点颜色不能相同；无法上色的节点就存在内存里。</li>
+<li>着色，若有 n 个真实寄存器，则尽量用 n
+种颜色给图上色，要求相邻（有连线）的节点颜色不能相同；无法上色的节点就存在内存里。</li>
 </ol>
 <figure>
 <img src="image-26.webp" srcset="/img/loading/loading3.gif" lazyload alt="图着色法">
 <figcaption aria-hidden="true">图着色法</figcaption>
 </figure></li>
 </ol>
-<h2 id="risc流水线">RISC流水线</h2>
+<h2 id="risc-流水线">RISC 流水线</h2>
 <h3 id="流水线的效果">流水线的效果</h3>
 <figure>
 <img src="image-46.webp" srcset="/img/loading/loading3.gif" lazyload alt="流水线的效果">
@@ -2527,14 +2603,16 @@ A\)</span>，实际地址由寄存器内容与指令内地址相加得到。
 </ul></li>
 <li>资源相关性
 <ul>
-<li>访存冲突、ALU冲突</li>
+<li>访存冲突、ALU 冲突</li>
 </ul></li>
 </ol>
 <h2 id="乱序执行">乱序执行</h2>
 <ul>
 <li>按序发射按序完成：指令按顺序发射和完成，可能因相关性停顿。</li>
-<li>按序发射乱序完成：指令按序发射，完成顺序可乱序，可能会造成写后写相关性，引发WAW冲突。</li>
-<li>乱序发射乱序完成：指令发射顺序可乱序，需指令窗口检测相关性，可能会造成读后写相关性，引发WAR冲突。</li>
+<li>按序发射乱序完成：指令按序发射，完成顺序可乱序，可能会造成写后写相关性，引发
+WAW 冲突。</li>
+<li>乱序发射乱序完成：指令发射顺序可乱序，需指令窗口检测相关性，可能会造成读后写相关性，引发
+WAR 冲突。</li>
 </ul>
 <h2 id="寄存器重命名解决写后写和读后写相关性">寄存器重命名：解决写后写和读后写相关性</h2>
 <ul>
@@ -2546,7 +2624,7 @@ A\)</span>，实际地址由寄存器内容与指令内地址相加得到。
 <ul>
 <li>寄存器重命名
 <ul>
-<li>由CPU硬件动态分配寄存器</li>
+<li>由 CPU 硬件动态分配寄存器</li>
 <li>每产生一个新的寄存器值就分配一个新的真实寄存器</li>
 </ul></li>
 </ul></li>
@@ -2581,12 +2659,12 @@ A\)</span>，实际地址由寄存器内容与指令内地址相加得到。
 </ol>
 <h3 id="非一致性内存访问numa">非一致性内存访问（NUMA）</h3>
 <p>存储器在不同范围内的存储时间对不同处理器是不同的</p>
-<h2 id="cache一致性问题与mesi协议">Cache一致性问题与MESI协议</h2>
+<h2 id="cache-一致性问题与-mesi-协议">Cache 一致性问题与 MESI 协议</h2>
 <ol type="1">
 <li>问题：
 <ul>
-<li>同一数据在不同的Cache中都有副本</li>
-<li>CPU读取数据时会先检查Cache，导致不同的CPU眼里的内存不一样</li>
+<li>同一数据在不同的 Cache 中都有副本</li>
+<li>CPU 读取数据时会先检查 Cache，导致不同的 CPU 眼里的内存不一样</li>
 <li>回写显然会导致不一致，写直达也会，不过可以通过监听消除</li>
 </ul></li>
 <li>目录协议
@@ -2598,7 +2676,7 @@ A\)</span>，实际地址由寄存器内容与指令内地址相加得到。
 </ul></li>
 <li>监听协议
 <ul>
-<li>Cache必须识别每一行是否共享、是否与主存相同</li>
+<li>Cache 必须识别每一行是否共享、是否与主存相同</li>
 <li>优点：适合使用总线的多处理机</li>
 <li>缺点：增大了总线传输量</li>
 <li>有两种策略：
@@ -2606,39 +2684,40 @@ A\)</span>，实际地址由寄存器内容与指令内地址相加得到。
 <li>写-失效：适用于回写
 <ul>
 <li>多个监听者，单个修改者</li>
-<li>某Cache写操作时，其他Cache中的该行数据失效</li>
-<li>发出写操作的处理器将获得数据独享直到其他Cache访问该行</li>
-<li>例子：MESI协议</li>
+<li>某 Cache 写操作时，其他 Cache 中的该行数据失效</li>
+<li>发出写操作的处理器将获得数据独享直到其他 Cache 访问该行</li>
+<li>例子：MESI 协议</li>
 </ul></li>
 <li>写-更新：适用于写直达
 <ul>
 <li>多个读者，多个写者</li>
-<li>更新的字被广播到其他Cache</li>
+<li>更新的字被广播到其他 Cache</li>
 </ul></li>
 </ol></li>
 </ul></li>
 </ol>
-<h3 id="mesi协议">MESI协议</h3>
+<h3 id="mesi-协议">MESI 协议</h3>
 <ul>
-<li>M（Modified）：已修改，数据仅在本Cache，未写回主存。</li>
-<li>E（Exclusive）：独占，数据在本Cache和主存，其他Cache无副本。</li>
-<li>S（Shared）：共享，数据在本Cache和主存，其他Cache有副本。</li>
-<li>I（Invalid）：失效，数据不在本Cache或已过时。</li>
+<li>M（Modified）：已修改，数据仅在本 Cache，未写回主存。</li>
+<li>E（Exclusive）：独占，数据在本 Cache 和主存，其他 Cache
+无副本。</li>
+<li>S（Shared）：共享，数据在本 Cache 和主存，其他 Cache 有副本。</li>
+<li>I（Invalid）：失效，数据不在本 Cache 或已过时。</li>
 </ul>
-<p><img src="image-28.webp" srcset="/img/loading/loading3.gif" lazyload> <img src="image-27.webp" srcset="/img/loading/loading3.gif" lazyload alt="MESI协议状态转换"></p>
+<p><img src="image-28.webp" srcset="/img/loading/loading3.gif" lazyload> <img src="image-27.webp" srcset="/img/loading/loading3.gif" lazyload alt="MESI 协议状态转换"></p>
 <h2 id="松耦合如集群">松耦合（如集群）</h2>
 <ul>
-<li>独立处理器或SMP互联，分布式存储器，通信通过网络。</li>
+<li>独立处理器或 SMP 互联，分布式存储器，通信通过网络。</li>
 <li>优点：可扩展性强、可用性高、性价比高。</li>
 </ul>
-<h2 id="集群与smp对比">集群与SMP对比</h2>
+<h2 id="集群与-smp-对比">集群与 SMP 对比</h2>
 <ul>
 <li>共同点：
 <ul>
 <li>提供多处理器支持高端应用</li>
-<li>均商用化，SMP历史更久。</li>
+<li>均商用化，SMP 历史更久。</li>
 </ul></li>
-<li>SMP优点：
+<li>SMP 优点：
 <ul>
 <li>易于配置管理</li>
 <li>接近单处理器模型</li>
