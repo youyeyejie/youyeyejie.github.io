@@ -1487,7 +1487,8 @@ n)\)</span>，都有 <span class="math inline">\(a_i\)</span> 和 <span class="m
 <figcaption aria-hidden="true">栈的结构</figcaption>
 </figure>
 <ul>
-<li>特点：<strong>先进后出</strong>结构，最先到达栈的结点将最晚被删除</li>
+<li>特点：<strong>先进后出</strong>
+结构，最先到达栈的结点将最晚被删除</li>
 <li>相关概念：
 <ul>
 <li>栈底(bottom)：结构的首部（先进栈结点的位置）</li>
@@ -1674,7 +1675,8 @@ n)\)</span>，都有 <span class="math inline">\(a_i\)</span> 和 <span class="m
 <figcaption aria-hidden="true">队列结构</figcaption>
 </figure>
 <ul>
-<li>特点：<strong>先进先出</strong>结构，最先到达队列的结点将最早被删除</li>
+<li>特点：<strong>先进先出</strong>
+结构，最先到达队列的结点将最早被删除</li>
 <li>相关概念：
 <ul>
 <li>队列头(front)：结构的首部（先进队列结点的位置）</li>
@@ -2536,7 +2538,7 @@ T_k}\)</span> 中的树 <span class="math inline">\(T_i\)</span>
 <figcaption aria-hidden="true">二叉堆</figcaption>
 </figure>
 <ul>
-<li>又称<strong>二叉堆</strong></li>
+<li>又称 <strong>二叉堆</strong></li>
 <li>时间复杂度：<span class="math inline">\(O(\log N)\)</span></li>
 <li>分为：
 <ul>
@@ -2545,10 +2547,10 @@ T_k}\)</span> 中的树 <span class="math inline">\(T_i\)</span>
 </ul></li>
 <li>实现：
 <ul>
-<li>插入：新结点会先插入到完全二叉树最后一个结点，然后<strong>向上过滤</strong>（percolate
-up）</li>
-<li>出队：移出根结点后，最后一个结点会填补根结点的位置，然后<strong>向下过滤</strong>（percolate
-down）</li>
+<li>插入：新结点会先插入到完全二叉树最后一个结点，然后
+<strong>向上过滤</strong>（percolate up）</li>
+<li>出队：移出根结点后，最后一个结点会填补根结点的位置，然后
+<strong>向下过滤</strong>（percolate down）</li>
 </ul>
 <figure>
 <img src="image-28.webp" srcset="/img/loading/loading3.gif" lazyload alt="插入与出队">
@@ -2706,7 +2708,9 @@ down）</li>
 <h2 id="集合的定义">集合的定义</h2>
 <ul>
 <li>集合中的数据元素除了属于同一集合之外，没有任何逻辑关系。</li>
-<li>在集合中，每个数据元素有一个区别于其他元素的<strong>唯一标识</strong>，通常称为<strong>键值或关键字值</strong>。</li>
+<li>在集合中，每个数据元素有一个区别于其他元素的
+<strong>唯一标识</strong>，通常称为
+<strong>键值或关键字值</strong>。</li>
 </ul>
 <figure class="shiki cpp"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">#ifndef</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">SET_H</span></span>
 <span class="line"><span style="color: #C678DD">#define</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">SET_H</span></span>
@@ -2839,7 +2843,8 @@ N)\)</span></li>
 </ul></li>
 <li><strong>性质</strong>：
 <ul>
-<li>中序遍历一棵二叉查找树的道德访问序列<strong>按键值递增</strong></li>
+<li>中序遍历一棵二叉查找树的道德访问序列
+<strong>按键值递增</strong></li>
 </ul></li>
 </ul>
 <figure>
@@ -3348,7 +3353,7 @@ or 双旋转），再修改平衡度</p>
 <ul>
 <li>散列表的思想是用一个比集合规模略大的数组来存储这个集合，将数据元素关键字映射到这个数组的下标
 <ul>
-<li>这个映射成为<strong>散列函数</strong></li>
+<li>这个映射成为 <strong>散列函数</strong></li>
 <li>散列函数的定义域范围大于值域，可能发生冲突/碰撞</li>
 </ul></li>
 </ul>
@@ -3368,7 +3373,7 @@ or 双旋转），再修改平衡度</p>
 <li>插入：当散列发生冲突时，探测下一个单元，直到发现一个空单元，即 <span class="math inline">\(H, H+1, H+2, H+3, \cdots\)</span></li>
 <li>查找：算出来位置之后，找不到的话就向后查找，直到找到或者遇到空单元</li>
 <li>删除：采用迟删除，标记该单元活动/被删除</li>
-<li>缺点：可能产生<strong>初始聚集</strong></li>
+<li>缺点：可能产生 <strong>初始聚集</strong></li>
 </ul></li>
 </ul>
 <figure class="shiki cpp"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">#include</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"9-1-dynamicSearchTable.h"</span></span>
@@ -3454,7 +3459,8 @@ or 双旋转），再修改平衡度</p>
 <li>当散列发生冲突时，检查远离初始探测点的某一单元，即 <span class="math inline">\(H, H+1^2, H+2^2, H+3^2, \cdots\)</span></li>
 <li>定理：使用二次探测法且表的大小是一个素数，则如果表至少有一半空单元，新的元素总能被插入，且插入过程中没有一个单元被探测两次</li>
 <li>动态扩展：当负载因子超过 <span class="math inline">\(0.5\)</span>
-时，需要把数组扩大一倍，并且进行<strong>重新散列</strong>（新的数组隐含新的散列函数）</li>
+时，需要把数组扩大一倍，并且进行
+<strong>重新散列</strong>（新的数组隐含新的散列函数）</li>
 </ul></li>
 <li><strong>再散列法</strong>：
 <ul>
@@ -3581,7 +3587,8 @@ H_1(x)+3H_2(x), \cdots\)</span></li>
 <h1 id="排序">排序</h1>
 <h2 id="排序的基本概念">排序的基本概念</h2>
 <ul>
-<li><strong>排序</strong>：把集合中的数据元素按照它们的<strong>关键字</strong>的非递减或非递增序排成一个序列</li>
+<li><strong>排序</strong>：把集合中的数据元素按照它们的
+<strong>关键字</strong> 的非递减或非递增序排成一个序列</li>
 <li><strong>稳定排序与非稳定排序</strong>：多个关键字值相同的数据元素经过排序后，这些数据元素的相对次序保持不变，则稳定，反之则不稳定</li>
 <li><strong>内排序与外排序</strong>：
 <ul>
@@ -3590,8 +3597,8 @@ H_1(x)+3H_2(x), \cdots\)</span></li>
 </ul></li>
 </ul>
 <h2 id="插入排序">插入排序</h2>
-<p>首先将由第一个数据元素组成的序列看成是有序的，然后将剩余的 <span class="math inline">\(n-1\)</span>
-个元素依次<strong>插入</strong>到前面的已排好序的子序列中去，使得每次插入后的子序列也是有序的。</p>
+<p>首先将由第一个数据元素组成的序列看成是有序的，然后将剩余的 <span class="math inline">\(n-1\)</span> 个元素依次 <strong>插入</strong>
+到前面的已排好序的子序列中去，使得每次插入后的子序列也是有序的。</p>
 <figure>
 <img src="image-34.webp" srcset="/img/loading/loading3.gif" lazyload alt="插入排序">
 <figcaption aria-hidden="true">插入排序</figcaption>
@@ -3685,7 +3692,8 @@ H_1(x)+3H_2(x), \cdots\)</span></li>
 <span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure>
 <h2 id="选择排序">选择排序</h2>
 <p>从 <span class="math inline">\(n\)</span>
-个元素开始，每次从剩下的元素序列中<strong>选择</strong>关键字最小/最大的元素，依此类推，直至序列中最后只剩下一个元素为止。这样，把每次得到的元素排成一个序列，就得到了按非递减序排列的排序序列。</p>
+个元素开始，每次从剩下的元素序列中 <strong>选择</strong>
+关键字最小/最大的元素，依此类推，直至序列中最后只剩下一个元素为止。这样，把每次得到的元素排成一个序列，就得到了按非递减序排列的排序序列。</p>
 <h3 id="直接选择排序">直接选择排序</h3>
 <ul>
 <li>时间复杂度：<span class="math inline">\(O(N^2)\)</span></li>
@@ -3763,7 +3771,8 @@ H_1(x)+3H_2(x), \cdots\)</span></li>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E5C07B">data</span><span style="color: #ABB2BF">[hole] </span><span style="color: #C678DD">=</span><span style="color: #ABB2BF"> tmp;</span></span>
 <span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure>
 <h2 id="交换排序">交换排序</h2>
-<p>根据序列中两个数据元素的比较结果来确定是否要<strong>交换</strong>这两个数据元素在序列中的位置。通过交换，将关键字值较大的数据元素向序列的尾部移动，关键字值较小的数据元素向序列的头部移动。</p>
+<p>根据序列中两个数据元素的比较结果来确定是否要 <strong>交换</strong>
+这两个数据元素在序列中的位置。通过交换，将关键字值较大的数据元素向序列的尾部移动，关键字值较小的数据元素向序列的头部移动。</p>
 <h3 id="冒泡排序">冒泡排序</h3>
 <ul>
 <li>时间复杂度：
@@ -4215,8 +4224,8 @@ B 树变矮的情况。</li>
 的初始的已排序片段。</li>
 <li>基于每个小片段采用选择排序。每次选出的最小记录直接被写到输出文件上，它所用的内存空间就可以给别的元素使用，此时可以从输入文件读入一个新记录。如果它比刚才写出去的元素大，则把它加入到优先级队列；否则，它不可能进入当前的已排序片段，该元素就被放于优先级队列的空余位置，用于下个片段的排序。</li>
 </ul></li>
-<li>文件上的数据为 <span class="math inline">\(1、4、10、2、0、5、7、6、9、12\)</span>
-，内存中能够容纳 3 个记录，这 3 个记录存放在数组 a
+<li>文件上的数据为 <span class="math inline">\(1,4,10,2,0,5,7,6,9,12\)</span> ，内存中能够容纳 3
+个记录，这 3 个记录存放在数组 a
 中。构造初始的已排序片段的过程如下图。由于采用了置换选择法，使得对 11
 个记录只生成了两个初始的已排序片段，这样只需要一次归并就能排好序。</li>
 </ul>
@@ -4294,7 +4303,8 @@ V\)</span> 和 <span class="math inline">\(E' \subseteq E\)</span>
 <ul>
 <li><strong>路径</strong>：从一个顶点到另一个顶点的边的序列
 <ul>
-<li>若两个顶点之间存在路径，则称这两个顶点是<strong>连通</strong>的</li>
+<li>若两个顶点之间存在路径，则称这两个顶点是 <strong>连通</strong>
+的</li>
 <li><strong>简单路径</strong>：路径上除了起始结点和终止结点外，其余的结点都不相同</li>
 </ul></li>
 <li><strong>路径长度</strong>：
@@ -4312,7 +4322,8 @@ V\)</span> 和 <span class="math inline">\(E' \subseteq E\)</span>
 <ul>
 <li><strong>强连通图</strong>：有向图中任意两个顶点之间都有路径相连，则称该图是强连通的</li>
 <li><strong>强连通分量</strong>：有向图中一个强连通子图，且该子图不是任何其他强连通子图的子集</li>
-<li>若一个有向图不是强连通的，但把它看作无向图时是连通的，则称该有向图是<strong>弱连通的</strong></li>
+<li>若一个有向图不是强连通的，但把它看作无向图时是连通的，则称该有向图是
+<strong>弱连通的</strong></li>
 </ul></li>
 <li><strong>完全图</strong>
 <ul>

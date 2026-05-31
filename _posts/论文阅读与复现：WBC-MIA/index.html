@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://youyeyejie.github.io/_posts/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E4%B8%8E%E5%A4%8D%E7%8E%B0%EF%BC%9AWBC-MIA/image-5.webp">
 <meta property="og:image" content="https://youyeyejie.github.io/_posts/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E4%B8%8E%E5%A4%8D%E7%8E%B0%EF%BC%9AWBC-MIA/image-6.webp">
 <meta property="article:published_time" content="2026-05-20T08:32:07.000Z">
-<meta property="article:modified_time" content="2026-05-20T09:43:00.337Z">
+<meta property="article:modified_time" content="2026-05-31T07:16:36.330Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="人工智能安全">
 <meta property="article:tag" content="MIA">
@@ -817,7 +817,7 @@ epoch。训练集和参考集分别从 Cosmopedia
 <p>从上面的图中可以发现，我还实现了一个名为 WbcPro
 的改进版本。核心思路如下：</p>
 <ol type="1">
-<li><p>第一项改动发生在<strong>单个窗口长度的得分计算</strong>上。原始
+<li><p>第一项改动发生在 <strong>单个窗口长度的得分计算</strong> 上。原始
 WBC 使用的是正差窗口比例，也就是简单的 <span class="math inline">\(k_w/n_w\)</span>，其中 <span class="math inline">\(k_w\)</span> 表示满足 <span class="math inline">\(G_w(k)&gt;0\)</span> 的窗口个数，<span class="math inline">\(n_w\)</span>
 表示总窗口数。我们的增强实现保留这一二项统计框架，但把原始比例替换为
 Wilson 区间上界： <span class="math display">\[
@@ -828,7 +828,7 @@ Wilson 区间上界： <span class="math display">\[
 <span class="math inline">\(k_w/n_w\)</span>
 容易在小样本条件下波动过大。Wilson
 形式把有限窗口数带来的不确定性显式纳入打分过程，使不同窗口长度下的分数更加平滑，也有助于减弱偶然波动带来的误判。</p></li>
-<li><p>第二项改动发生在<strong>多窗口融合</strong>上。原始 WBC
+<li><p>第二项改动发生在 <strong>多窗口融合</strong> 上。原始 WBC
 通常对各个窗口长度做等权平均；而我们采用 <span class="math display">\[
 S^{\ast}(x)=\sum_{w\in W}\alpha_w \hat{s}_w, \qquad \alpha_w \propto
 \frac{1}{\sqrt{w}}, \qquad \sum_{w\in W}\alpha_w=1.
@@ -911,7 +911,7 @@ preprint arXiv:2601.02751</a>, 2026.</li>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2026年5月20日</div>
+          <div>2026年5月31日</div>
         </div>
       
       

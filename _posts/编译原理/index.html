@@ -1652,7 +1652,7 @@ state with a given label. （确定性：在给定状态下，最多有一条边
 </ul></li>
 <li><strong>Example</strong>: <img src="image-51.webp" srcset="/img/loading/loading3.gif" lazyload>
 <ul>
-<li>*<strong>(Retract)</strong>: A Token has been accepted while another
+<li><strong>*(Retract)</strong>: A Token has been accepted while another
 char has been read which must be unread. （回退：一个 Token
 已经被接受，而另一个不应读取字符已经被读取，必须回退）</li>
 </ul></li>
@@ -1829,12 +1829,12 @@ Diagram of NFA <strong>N</strong>.</li>
 <span class="line"><span style="color: #E06C75">        </span><span style="color: #61AFEF">Dtran</span><span style="color: #E06C75">(S</span><span style="color: #ABB2BF">,</span><span style="color: #E06C75"> a) </span><span style="color: #56B6C2">=</span><span style="color: #E06C75"> U </span><span style="color: #7F848E; font-style: italic">//将Dtran(S, a)设为U</span></span>
 <span class="line"><span style="color: #E06C75">    }</span></span>
 <span class="line"><span style="color: #E06C75">}</span></span></code></pre></div></div></figure></li>
-<li><strong>最后得到的 Dtran 是一个 DFA 的转换表</strong>，Dstates 是
-DFA 的状态集合。</li>
+<li><strong>最后得到的Dtran是一个DFA的转换表</strong>，Dstates 是 DFA
+的状态集合。</li>
 </ul></li>
 <li><strong>Algorithm 𝜖-closure(T) Computation</strong>:
 <ul>
-<li>上一步中<code>U = 𝝐-closure(move(S, a))</code>的实现逻辑：</li>
+<li>上一步中 <code>U = 𝝐-closure(move(S, a))</code> 的实现逻辑：</li>
 <li>Input: the State Set T</li>
 <li>Output: 𝜖-closure(T) <figure class="shiki java"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #E06C75">push all states in </span><span style="color: #E5C07B">T</span><span style="color: #E06C75"> onto Stack </span><span style="color: #7F848E; font-style: italic">//将T中的所有状态压入栈中</span></span>
 <span class="line"><span style="color: #C678DD">while</span><span style="color: #E06C75"> (</span><span style="color: #E5C07B">Stack</span><span style="color: #E06C75"> is not empty) { </span><span style="color: #7F848E; font-style: italic">//当栈不为空时</span></span>
@@ -2187,8 +2187,8 @@ lookahead at each step to make decision</li>
 (error)</li>
 <li><strong>Example: LL(1)</strong>
 <ul>
-<li>stmt → <strong>i</strong>f (expr) stmt else stmt |
-<strong>w</strong>hile (expr) stmt | <strong>{</strong> stmt_list}</li>
+<li>stmt → <strong>i</strong> f (expr) stmt else stmt |
+<strong>w</strong> hile (expr) stmt | <strong>{</strong> stmt_list}</li>
 </ul></li>
 <li><strong>How</strong>: FIRST and FOLLOW
 <ul>
@@ -2401,7 +2401,7 @@ header. （用产生式的头部替换产生式的主体）</li>
 <li>find the rightmost derivation in the reverse order: “leftmost
 reduction” （找到右侧派生的反向顺序：最左侧归约）</li>
 </ul></li>
-<li>“<strong>L</strong>eft-to-Right, <strong>R</strong>ightmost
+<li>“<strong>L</strong> eft-to-Right, <strong>R</strong> ightmost
 Derivation in Reverse”: <strong>LR Parsing</strong></li>
 </ul></li>
 <li><strong>Example</strong>： <img src="image-27.webp" srcset="/img/loading/loading3.gif" lazyload>
@@ -3120,8 +3120,8 @@ n\)</span></li>
 </ul>
 <h3 id="lalr1-parsing">LALR(1) Parsing</h3>
 <ul>
-<li><strong>What</strong>: <strong>L</strong>ook <strong>A</strong>head
-<strong>LR(1)</strong></li>
+<li><strong>What</strong>: <strong>L</strong> ook <strong>A</strong>
+head <strong>LR(1)</strong></li>
 <li><strong>Why</strong>: smaller parsing table than
 <strong>LR(1)</strong> for practice（比 LR(1)小的解析表）
 <ul>

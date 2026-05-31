@@ -1608,8 +1608,7 @@ I/O 请求表</li>
 <li>线程的概念
 <ul>
 <li>线程是进程中的一个执行单元，是操作系统调度和执行的基本单位。</li>
-<li><strong>进程是资源分配的基本单位，而线程是 CPU
-调度的基本单位。</strong></li>
+<li><strong>进程是资源分配的基本单位，而线程是CPU调度的基本单位。</strong></li>
 </ul></li>
 <li>线程的基本特征
 <ul>
@@ -1933,7 +1932,8 @@ CPU，使其获得实实在在的执行。</li>
 <h3 id="速率单调调度">速率单调调度</h3>
 <ul>
 <li>优先级最高的任务是周期最短的任务，总是调度优先级最高的就绪进程。</li>
-<li>在运行过程中，若有优先级更高的就绪进程，则<strong>剥夺</strong>当前运行进程，调度更高优先级进程运行。</li>
+<li>在运行过程中，若有优先级更高的就绪进程，则 <strong>剥夺</strong>
+当前运行进程，调度更高优先级进程运行。</li>
 <li>CPU 使用率：<span class="math inline">\(U=\frac{C}{T}\)</span></li>
 <li>时间要求
 <ul>
@@ -2055,7 +2055,7 @@ inversion）问题</h3>
 <h3 id="peterson-算法">Peterson 算法</h3>
 <ul>
 <li>假定两个互斥进程，编号为 0，1</li>
-<li>全局变量：设置进程状态数组<code>Wanted_In[2]</code>，
+<li>全局变量：设置进程状态数组 <code>Wanted_In[2]</code>，
 <ul>
 <li><code>Wanted_In[0/1] =0</code>,表示 0/1
 号进程不在临界区，也不处于希望进入临界区的状态。</li>
@@ -2101,19 +2101,24 @@ inversion）问题</h3>
 </ul></li>
 <li>信号量的定义
 <ul>
-<li>资源申请操作（<code>semWait</code>操作，<code>P</code>）（进入临界区前调用该操作）：
+<li>资源申请操作（<code>semWait</code>
+操作，<code>P</code>）（进入临界区前调用该操作）：
 <ul>
 <li>信号灯的值减 1；</li>
 <li>如果其值为负值，把进程阻塞在该信号上。</li>
 </ul></li>
-<li>资源释放操作（<code>semSignal</code>操作，<code>V</code>）（离开临界区前调用该操作）：
+<li>资源释放操作（<code>semSignal</code>
+操作，<code>V</code>）（离开临界区前调用该操作）：
 <ul>
 <li>信号灯的值增 1；</li>
 <li>如果其值为负值或
 0，表明有进程阻塞在该信号上。从阻塞的进程中，按调度原则挑选一个唤醒。</li>
 </ul></li>
 </ul></li>
-<li><code>semWait</code>和<code>semSignal</code>操作是不可中断的，一般把这种不能中断的操作称作原语。即<code>semWait</code>原语、<code>semSignal</code>原语，又称<code>P</code>，<code>V</code>操作。</li>
+<li><code>semWait</code> 和 <code>semSignal</code>
+操作是不可中断的，一般把这种不能中断的操作称作原语。即
+<code>semWait</code> 原语、<code>semSignal</code> 原语，又称
+<code>P</code>，<code>V</code> 操作。</li>
 </ul>
 <figure class="shiki text"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #abb2bf">/*信号量的定义*/</span></span>
 <span class="line"><span style="color: #abb2bf">typedef struct semaphore {</span></span>
@@ -2304,8 +2309,8 @@ m 个进程在等待进入缓存区操作。 初始值为 1</li>
 <ul>
 <li><p>匿名管道</p>
 <ul>
-<li>通过<code>pipe</code>函数创建</li>
-<li>通过<code>read</code>和<code>write</code>函数进行读写操作</li>
+<li>通过 <code>pipe</code> 函数创建</li>
+<li>通过 <code>read</code> 和 <code>write</code> 函数进行读写操作</li>
 </ul>
 <p>输入和输出端代码分别如下 </p><figure class="shiki c"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">#include</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&lt;stdio.h&gt;</span></span>
 <span class="line"><span style="color: #C678DD">#include</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&lt;unistd.h&gt;</span></span>
@@ -2367,8 +2372,8 @@ m 个进程在等待进入缓存区操作。 初始值为 1</li>
 <span class="line"><span style="color: #ABB2BF">}</span></span></code></pre></div></div></figure><p></p></li>
 <li><p>命名管道（FIFO）</p>
 <ul>
-<li>通过<code>mkfifo</code>命令创建命名管道</li>
-<li>通过<code>open</code>函数打开命名管道进行读写操作</li>
+<li>通过 <code>mkfifo</code> 命令创建命名管道</li>
+<li>通过 <code>open</code> 函数打开命名管道进行读写操作</li>
 </ul>
 <p></p><figure class="shiki c"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">#include</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&lt;stdio.h&gt;</span></span>
 <span class="line"><span style="color: #C678DD">#include</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&lt;unistd.h&gt;</span></span>
@@ -2590,7 +2595,8 @@ A_{nm}\end{array}\right]\)</span>，<span class="math inline">\(A_{ij}\)</span> 
 <li>如果找到这样的行，标记进程 i，并把 Allocation 中相应的行加到
 W，返回步骤 3。</li>
 </ul></li>
-<li>算法结束时，如果有未标记的进程，则<strong>每个未标记的进程都是可能死锁的进程</strong>。</li>
+<li>算法结束时，如果有未标记的进程，则
+<strong>每个未标记的进程都是可能死锁的进程</strong>。</li>
 </ul></li>
 </ul>
 <figure>
@@ -2744,9 +2750,8 @@ CPU 发送中断信号。</li>
 </ul></li>
 <li>I/O 通道
 <ul>
-<li>I/O
-通道是一种<strong>硬件</strong>设施，带有专用处理器的，可以独立地完成系统处理器交付的
-I/O 操作任务</li>
+<li>I/O 通道是一种 <strong>硬件</strong>
+设施，带有专用处理器的，可以独立地完成系统处理器交付的 I/O 操作任务</li>
 <li>通道具有自己专门的指令集，即通道指令。通道执行来自处理器的通道程序，完成后只需向系统处理器发出中断，请求结束。</li>
 </ul></li>
 <li>DMA 数据传输通道
@@ -2881,7 +2886,7 @@ CPU）。</li>
 </ul></li>
 <li>磁盘高速缓存
 <ul>
-<li><strong>主存</strong>中的一块空间</li>
+<li><strong>主存</strong> 中的一块空间</li>
 <li>提高进程访问磁盘的速度</li>
 <li>粒度与扇区大小相等</li>
 <li>替换策略
@@ -3236,7 +3241,8 @@ Linux 支持 Ext2，FAT 等。</li>
 <ul>
 <li>结构和 FAT12/16 完全不同</li>
 <li>FAT 表项大小 32bits，28bit 用于保存 cluster 号</li>
-<li>可支持最大磁盘容量: (2**28)*32K=8T</li>
+<li>可支持最大磁盘容量: <span class="math inline">\((2^{28}) \times 32
+\text{K} = 8\text{T}\)</span></li>
 </ul></li>
 </ul>
 <h2 id="目录结构">目录结构</h2>
@@ -3305,8 +3311,8 @@ Linux 支持 Ext2，FAT 等。</li>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">time_t</span><span style="color: #ABB2BF">       di_mtime；</span><span style="color: #7F848E; font-style: italic">     // 文件最近一次修改时间</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">time_t</span><span style="color: #ABB2BF">       di_ctime；</span><span style="color: #7F848E; font-style: italic">     // 文件创建时间</span></span>
 <span class="line"><span style="color: #ABB2BF">} dinode;</span></span></code></pre></div></div></figure>
-<p>其中的
-<code>di_addr</code>字段是一个数组，存放文件的盘块号。每三个字节表示一个磁盘号；相当于能够表示
+<p>其中的 <code>di_addr</code>
+字段是一个数组，存放文件的盘块号。每三个字节表示一个磁盘号；相当于能够表示
 13 个磁盘号的数组</p>
 <ul>
 <li>前 10 个表项是直接寻址。

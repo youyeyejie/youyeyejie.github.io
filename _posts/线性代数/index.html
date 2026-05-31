@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/math1205.webp">
 <meta property="article:published_time" content="2024-02-08T13:23:37.000Z">
-<meta property="article:modified_time" content="2026-05-30T17:27:20.328Z">
+<meta property="article:modified_time" content="2026-05-31T07:16:36.208Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="SJTU">
 <meta property="article:tag" content="线代">
@@ -1082,7 +1082,9 @@ n\)</span> 个数 <span class="math inline">\(a_{ij}\in F\)</span> 排成的
   a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn} \\
   \end{bmatrix}
   \]</span></p>
-<p>称为域数 <span class="math inline">\(F\)</span> 上一个 <span class="math inline">\(m\times n\)</span> 的矩阵，记为 <span class="math inline">\((a_{ij})_{m×n}\)</span> 或 <span class="math inline">\([a_{ij}]_{m×n}\)</span>。其中每个数称为矩阵的一个<strong>元素</strong>，<span class="math inline">\(a_{ij}\)</span> 表示第 <span class="math inline">\(i\)</span> 行第 <span class="math inline">\(j\)</span> 列交叉位置上的元素，也说成 <span class="math inline">\((i,j)\)</span> 位置上的元素。</p>
+<p>称为域数 <span class="math inline">\(F\)</span> 上一个 <span class="math inline">\(m\times n\)</span> 的矩阵，记为 <span class="math inline">\((a_{ij})_{m×n}\)</span> 或 <span class="math inline">\([a_{ij}]_{m×n}\)</span>。其中每个数称为矩阵的一个
+<strong>元素</strong>，<span class="math inline">\(a_{ij}\)</span>
+表示第 <span class="math inline">\(i\)</span> 行第 <span class="math inline">\(j\)</span> 列交叉位置上的元素，也说成 <span class="math inline">\((i,j)\)</span> 位置上的元素。</p>
 <ul>
 <li>通常也用大写的黑体英文字母 <span class="math inline">\(\boldsymbol{A},\boldsymbol{B},\boldsymbol{C},\dots\)</span>
 表示矩阵，如矩阵 <span class="math inline">\(\boldsymbol{A}_{m\times
@@ -1117,8 +1119,9 @@ s\)</span>，<span class="math inline">\(n = t\)</span>，则称矩阵 <span cla
 <li><p><strong>零矩阵</strong>：元素全为零的矩阵称为零矩阵，记为 <span class="math inline">\(\boldsymbol{O}_{m \times n}\)</span> 或 <span class="math inline">\(\boldsymbol{O}\)</span>.</p></li>
 <li><p><strong>行矩阵和列矩阵</strong>:
 仅有一行（列）的矩阵，称为行（列）矩阵，也称为行（列）向量.</p></li>
-<li><p><strong>方阵</strong>: 行数和列数相同的矩阵。<span class="math inline">\(n\)</span> 阶方阵记为 <span class="math inline">\(\boldsymbol{A}_{n}\)</span>，其中从 <span class="math inline">\((1,1)\)</span> 位置到 <span class="math inline">\((n,n)\)</span>
-位置的直线称为方阵的<strong>主对角线</strong>。主对角线上的元素称为<strong>主对角元</strong>。</p></li>
+<li><p><strong>方阵</strong>: 行数和列数相同的矩阵。<span class="math inline">\(n\)</span> 阶方阵记为 <span class="math inline">\(\boldsymbol{A}_{n}\)</span>，其中从 <span class="math inline">\((1,1)\)</span> 位置到 <span class="math inline">\((n,n)\)</span> 位置的直线称为方阵的
+<strong>主对角线</strong>。主对角线上的元素称为
+<strong>主对角元</strong>。</p></li>
 <li><p><strong>对角矩阵</strong>: <span class="math inline">\(n\)</span>
 阶方阵 <span class="math inline">\(\boldsymbol{A} = (a_{ij})_n\)</span>
 中，<span class="math inline">\(a_{ii} = 0\)</span>，<span class="math inline">\(i \neq j\)</span>，称 <span class="math inline">\(\boldsymbol{A}\)</span> 为对角矩阵，简称对角阵，即
@@ -1204,7 +1207,8 @@ r_j\)</span>）</li>
 <li>高斯消元法：线性方程组对应的增广矩阵 <span class="math inline">\(\tilde{\boldsymbol{A}}\)</span>
 通过初等行变换化为一个（简化）阶梯形矩阵，通过（简化）阶梯形矩阵求解线性方程组的方法，称为线性方程组的高斯消法.
 <ul>
-<li>线性方程组的高斯消元法得到的新方程组与原方程组<strong>同解</strong>.</li>
+<li>线性方程组的高斯消元法得到的新方程组与原方程组
+<strong>同解</strong>.</li>
 </ul></li>
 <li><strong>解的判别</strong>：对于 <span class="math inline">\(m \times
 n\)</span> 的线性方程组，设其增广矩阵化成阶梯形有 <span class="math inline">\(r\)</span> 个非零行，对应系数矩阵部分有 <span class="math inline">\(s\)</span> 个非零行，则：
@@ -1216,7 +1220,8 @@ r\)</span>，且：
 <li><span class="math inline">\(s = r &lt; n\)</span>，有无穷多解；</li>
 <li><span class="math inline">\(s &lt; r\)</span>，无解.</li>
 </ol></li>
-<li>对于<strong>齐次线性方程组</strong>，由于其增广矩阵的最后一列全为零，所以初等行变换在这一列不会引进非零元，从而增广矩阵经初等行变化到阶梯形矩阵时，其非零行必是系数矩阵的非零行，即
+<li>对于
+<strong>齐次线性方程组</strong>，由于其增广矩阵的最后一列全为零，所以初等行变换在这一列不会引进非零元，从而增广矩阵经初等行变化到阶梯形矩阵时，其非零行必是系数矩阵的非零行，即
 <span class="math inline">\(s=r\)</span> 总是成立。因此有如下推论：
 <ol type="1">
 <li><span class="math inline">\(s=n\)</span>，有唯一零解；</li>
@@ -1248,8 +1253,8 @@ r\)</span>，且：
 <h3 id="矩阵的线性运算">矩阵的线性运算</h3>
 <ul>
 <li><strong>数乘</strong>：设矩阵 <span class="math inline">\(\boldsymbol{A}=(a_{ij})_{m \times
-n}\)</span>，<span class="math inline">\(k \in F\)</span>，称矩阵 <span class="math inline">\((ka_{ij})_{m \times n}\)</span> 为矩阵 <span class="math inline">\(\boldsymbol{A}\)</span> 与数 <span class="math inline">\(k\)</span> 的数量乘积，简称数乘，记为 <span class="math inline">\(k\boldsymbol{A}\)</span>。特别地，将 <span class="math inline">\((-1)\boldsymbol{A}\)</span> 记为 <span class="math inline">\(-\boldsymbol{A}\)</span>，称为矩阵 <span class="math inline">\(\boldsymbol{A}\)</span>
-的<strong>负矩阵</strong>.</li>
+n}\)</span>，<span class="math inline">\(k \in F\)</span>，称矩阵 <span class="math inline">\((ka_{ij})_{m \times n}\)</span> 为矩阵 <span class="math inline">\(\boldsymbol{A}\)</span> 与数 <span class="math inline">\(k\)</span> 的数量乘积，简称数乘，记为 <span class="math inline">\(k\boldsymbol{A}\)</span>。特别地，将 <span class="math inline">\((-1)\boldsymbol{A}\)</span> 记为 <span class="math inline">\(-\boldsymbol{A}\)</span>，称为矩阵 <span class="math inline">\(\boldsymbol{A}\)</span> 的
+<strong>负矩阵</strong>.</li>
 <li><strong>加法</strong>：设矩阵 <span class="math inline">\(\boldsymbol{A}=(a_{ij})_{m \times
 n}\)</span>，<span class="math inline">\(\boldsymbol{B}=(b_{ij})_{m
 \times n}\)</span> 是两个同型矩阵，则称矩阵 <span class="math inline">\(\boldsymbol{C}=(a_{ij}+b_{ij})_{m \times
@@ -1602,7 +1607,7 @@ c_{2}\)</span></p></li>
   -1 &amp; 0 &amp; a_{2} - b &amp; \cdots &amp; 0 \\
   \vdots &amp; \vdots &amp; \vdots &amp; &amp; \vdots \\
   -1 &amp; 0 &amp; 0 &amp; \cdots &amp; a_{n} - b
-  \end{array}\right| （爪形）\\
+  \end{array}\right| (爪形)\\
   &amp;=\left[1 + b \sum_{i=1}^{n} \frac{1}{a_{i} - b}\right]
 \left(a_{1} - b\right)\left(a_{2} - b\right) \cdots \left(a_{n} -
 b\right)
@@ -1889,8 +1894,8 @@ r_j} \boldsymbol{E}(i,j)
 <ul>
 <li>初等矩阵都是可逆矩阵</li>
 </ul></li>
-<li><p>对任意 <span class="math inline">\(m \times n\)</span> 矩阵 <span class="math inline">\(\boldsymbol{A}\)</span>，存在一系列初等矩阵使得相乘得到<strong>标准形</strong>
-<span class="math display">\[
+<li><p>对任意 <span class="math inline">\(m \times n\)</span> 矩阵 <span class="math inline">\(\boldsymbol{A}\)</span>，存在一系列初等矩阵使得相乘得到
+<strong>标准形</strong> <span class="math display">\[
   \boldsymbol{P}_{s} \cdots \boldsymbol{P}_{2} \boldsymbol{P}_{1}
 \boldsymbol{A} \boldsymbol{Q}_{1} \boldsymbol{Q}_{2} \cdots
 \boldsymbol{Q}_{s} = \begin{pmatrix}
@@ -2349,8 +2354,8 @@ x_{1} \\ x_{2} \\ \vdots \\ x_{n}
 \]</span></p>
 <p>称 <span class="math inline">\(x_1\boldsymbol{\alpha}_{1} +
 x_2\boldsymbol{\alpha}_{2} + \cdots + x_n\boldsymbol{\alpha}_{n} =
-\boldsymbol{\beta}\)</span>
-为线性方程组的<strong>向量表示</strong>或称为<strong>向量方程</strong>。</p>
+\boldsymbol{\beta}\)</span> 为线性方程组的 <strong>向量表示</strong>
+或称为 <strong>向量方程</strong>。</p>
 <h2 id="向量的线性关系">3.2 向量的线性关系</h2>
 <h3 id="向量的线性组合">向量的线性组合</h3>
 <ul>
@@ -2364,9 +2369,9 @@ x_2\boldsymbol{\alpha}_{2} + \cdots + x_n\boldsymbol{\alpha}_{n} =
   \]</span></p>
 <p>则称向量 <span class="math inline">\(\boldsymbol{\beta}\)</span>
 是向量 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\cdots,\boldsymbol{\alpha}_m\)</span>
-的一个<strong>线性组合</strong>，或称向量 <span class="math inline">\(\boldsymbol{\beta}\)</span> 可由向量 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\cdots,\boldsymbol{\alpha}_m\)</span>
-<strong>线性表示</strong>。称 <span class="math inline">\(k_1,k_2,\cdots,k_m\)</span>
-为<strong>组合系数或表示系数</strong>。</p></li>
+的一个 <strong>线性组合</strong>，或称向量 <span class="math inline">\(\boldsymbol{\beta}\)</span> 可由向量 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\cdots,\boldsymbol{\alpha}_m\)</span>
+<strong>线性表示</strong>。称 <span class="math inline">\(k_1,k_2,\cdots,k_m\)</span> 为
+<strong>组合系数或表示系数</strong>。</p></li>
 <li><p><strong>n 维单位向量/基本向量</strong>： <span class="math display">\[
   \boldsymbol{e}_{1} = \begin{pmatrix} 1 \\ 0 \\ \vdots \\ 0
 \end{pmatrix},
@@ -2388,16 +2393,16 @@ a_1\boldsymbol{e}_1 + a_2\boldsymbol{e}_2 + \cdots + a_n\boldsymbol{e}_n
 <strong>有解</strong>，其中 <span class="math inline">\(\boldsymbol{A} =
 (\boldsymbol{\alpha}_{1},\boldsymbol{\alpha}_{2},\cdots,\boldsymbol{\alpha}_{n})\)</span></p>
 <ul>
-<li><strong>可线性表示</strong>的充分必要条件：<span class="math inline">\(r(\boldsymbol{A}) =
+<li><strong>可线性表示</strong> 的充分必要条件：<span class="math inline">\(r(\boldsymbol{A}) =
 r(\tilde{\boldsymbol{A}})\)</span>，其中 <span class="math inline">\(\boldsymbol{\tilde{A}} =
 (A,\boldsymbol{\beta})\)</span>
 <ul>
-<li><strong>可线性表示且表示系数唯一</strong>的充分必要条件：<span class="math inline">\(r(\boldsymbol{A}) = r(\tilde{\boldsymbol{A}}) =
+<li><strong>可线性表示且表示系数唯一</strong> 的充分必要条件：<span class="math inline">\(r(\boldsymbol{A}) = r(\tilde{\boldsymbol{A}}) =
 m\)</span></li>
-<li><strong>可线性表示且表示系数不唯一</strong>的充分必要条件：<span class="math inline">\(r(\boldsymbol{A}) = r(\tilde{\boldsymbol{A}}) &lt;
+<li><strong>可线性表示且表示系数不唯一</strong> 的充分必要条件：<span class="math inline">\(r(\boldsymbol{A}) = r(\tilde{\boldsymbol{A}}) &lt;
 m\)</span></li>
 </ul></li>
-<li><strong>不能线性表示</strong>的充分必要条件：<span class="math inline">\(r(\boldsymbol{A}) \neq
+<li><strong>不能线性表示</strong> 的充分必要条件：<span class="math inline">\(r(\boldsymbol{A}) \neq
 r(\tilde{\boldsymbol{A}})\)</span></li>
 </ul></li>
 </ul>
@@ -2499,9 +2504,9 @@ m\)</span> 或 <span class="math inline">\(|\boldsymbol{A}| \neq
 也线性相关。</p>
 <ul>
 <li>常称 <span class="math inline">\(\boldsymbol{\alpha}_{i}\)</span> 为
-<span class="math inline">\(\boldsymbol{\gamma}_{i}\)</span>
-的<strong>截短向量</strong>，或 <span class="math inline">\(\boldsymbol{\gamma}_{i}\)</span> 是 <span class="math inline">\(\boldsymbol{\alpha}_{i}\)</span>
-的<strong>接长向量</strong>。</li>
+<span class="math inline">\(\boldsymbol{\gamma}_{i}\)</span> 的
+<strong>截短向量</strong>，或 <span class="math inline">\(\boldsymbol{\gamma}_{i}\)</span> 是 <span class="math inline">\(\boldsymbol{\alpha}_{i}\)</span> 的
+<strong>接长向量</strong>。</li>
 <li>即：若接长向量组线性相关，则其截短向量组也线性相关。</li>
 <li>等价地：若截短向量组线性无关，则其接长向量组也线性无关。</li>
 </ul></li>
@@ -2545,8 +2550,9 @@ s\)</span></li>
 中的每一个向量都可由向量组 <span class="math inline">\(\mathrm{II}\)</span> 线性表示</li>
 </ol>
 <p>则称向量组 <span class="math inline">\(\mathrm{II}:\boldsymbol{\alpha}_{i_{1}},\boldsymbol{\alpha}_{i_{2}},\cdots,\boldsymbol{\alpha}_{i_{r}}\)</span>
-是向量组 <span class="math inline">\(\mathrm{I}\)</span>
-的一个<strong>极大线性无关组</strong>，简称<strong>极大无关组</strong>。</p></li>
+是向量组 <span class="math inline">\(\mathrm{I}\)</span> 的一个
+<strong>极大线性无关组</strong>，简称
+<strong>极大无关组</strong>。</p></li>
 <li><p><strong>性质</strong>：</p>
 <ul>
 <li>一个向量组若有极大线性无关组，则这个向量组与其极大线性无关组等价。</li>
@@ -2567,7 +2573,7 @@ s\)</span></li>
 <h3 id="向量组的秩-1">向量组的秩</h3>
 <ul>
 <li><strong>向量组的秩</strong>：向量组 <span class="math inline">\(\boldsymbol{\alpha}_{1},\boldsymbol{\alpha}_{2},\cdots,\boldsymbol{\alpha}_{m}\)</span>
-的<strong>极大线性无关组所含向量的个数</strong>称为向量组的秩，记作
+的 <strong>极大线性无关组所含向量的个数</strong> 称为向量组的秩，记作
 <span class="math inline">\(r(\boldsymbol{\alpha}_{1},\boldsymbol{\alpha}_{2},\cdots,\boldsymbol{\alpha}_{m})\)</span>。</li>
 <li><strong>性质</strong>：
 <ul>
@@ -2585,7 +2591,7 @@ s\)</span></li>
 r(\boldsymbol{\beta}_{1},\boldsymbol{\beta}_{2},\cdots,\boldsymbol{\beta}_{t}).
   \]</span></li>
 </ul></li>
-<li><strong>向量组的秩与矩阵的秩的关系</strong>：设 <span class="math inline">\(\boldsymbol{A}\)</span> 是 <span class="math inline">\(m\times n\)</span> 矩阵，则 <span class="math inline">\(\boldsymbol{A}\)</span>**** 的列向量组 <span class="math inline">\(\boldsymbol{\alpha}_{1},\boldsymbol{\alpha}_{2},\cdots,\boldsymbol{\alpha}_{n}\)</span>
+<li><strong>向量组的秩与矩阵的秩的关系</strong>：设 <span class="math inline">\(\boldsymbol{A}\)</span> 是 <span class="math inline">\(m\times n\)</span> 矩阵，则 <span class="math inline">\(\boldsymbol{A}\)</span> 的列向量组 <span class="math inline">\(\boldsymbol{\alpha}_{1},\boldsymbol{\alpha}_{2},\cdots,\boldsymbol{\alpha}_{n}\)</span>
 的秩等于矩阵 <span class="math inline">\(\boldsymbol{A}\)</span>
 的秩；<span class="math inline">\(\boldsymbol{A}\)</span>
 的行向量组的秩也等于 <span class="math inline">\(\boldsymbol{A}\)</span>
@@ -2619,7 +2625,7 @@ a_{m1}x_{1}+a_{m2}x_{2}+\cdots+a_{mn}x_{n}=0
 </ol>
 <p>则称 <span class="math inline">\(\boldsymbol{\eta}_{1},\boldsymbol{\eta}_{2},\cdots,\boldsymbol{\eta}_{p}\)</span>
 是齐次线性方程组 <span class="math inline">\(\boldsymbol{A}\boldsymbol{x}=\boldsymbol{0}\)</span>
-的一个<strong>基础解系</strong>。</p></li>
+的一个 <strong>基础解系</strong>。</p></li>
 <li><p><strong>解的性质</strong>：设有齐次线性方程组 <span class="math display">\[
   \boldsymbol{A}_{m\times n}\boldsymbol{x}=\boldsymbol{0}
   \]</span></p>
@@ -2639,7 +2645,7 @@ a_{m1}x_{1}+a_{m2}x_{2}+\cdots+a_{mn}x_{n}=0
   \bar{\boldsymbol{\eta}}=k_{1}\boldsymbol{\eta}_{1}+k_{2}\boldsymbol{\eta}_{2}+\cdots+k_{n-r}\boldsymbol{\eta}_{n-r}
   \]</span></p>
 <p>给出了齐次线性方程组 <span class="math inline">\(\boldsymbol{A}\boldsymbol{x}=\boldsymbol{0}\)</span>
-的所有解，称为该齐次线性方程组<strong>通解</strong>（也称一般解），其中
+的所有解，称为该齐次线性方程组 <strong>通解</strong>（也称一般解），其中
 <span class="math inline">\(k_{1},k_{2},\cdots,k_{n-r}\)</span>
 为任意常数。</p></li>
 <li><p><strong>基础解系求法</strong>：系数矩阵 <span class="math inline">\(\boldsymbol{A}\)</span>
@@ -2689,8 +2695,8 @@ b_{m}\end{pmatrix}
 <li><span class="math inline">\(r(\boldsymbol{\alpha}_{1},\boldsymbol{\alpha}_{2},\cdots,\boldsymbol{\alpha}_{n})=r(\boldsymbol{\alpha}_{1},\boldsymbol{\alpha}_{2},\cdots,\boldsymbol{\alpha}_{n},\boldsymbol{\beta})\)</span></li>
 <li><span class="math inline">\(r(\boldsymbol{A})=r(\boldsymbol{A},\boldsymbol{\beta})\)</span>。</li>
 </ul></li>
-<li><p><strong>导出组</strong>：对于任一非齐次线性方程组，令其常数项为零得到一个齐次线性方程组，称这个齐次线性方程组为非齐次线性方程组的<strong>导出组</strong>。
-<span class="math display">\[
+<li><p><strong>导出组</strong>：对于任一非齐次线性方程组，令其常数项为零得到一个齐次线性方程组，称这个齐次线性方程组为非齐次线性方程组的
+<strong>导出组</strong>。 <span class="math display">\[
   \begin{cases}
   a_{11}x_{1}+a_{12}x_{2}+\cdots+a_{1n}x_{n}=b_{1}\\
   a_{21}x_{1}+a_{22}x_{2}+\cdots+a_{2n}x_{n}=b_{2}\\
@@ -2735,12 +2741,12 @@ b_{m}\end{pmatrix}
 是对应的齐次线性方程组 <span class="math inline">\(\boldsymbol{A}\boldsymbol{x}=\boldsymbol{0}\)</span>
 的基础解系，<span class="math inline">\(\boldsymbol{\gamma}_{0}\)</span>
 是 <span class="math inline">\(\boldsymbol{A}\boldsymbol{x}=\boldsymbol{\beta}\)</span>
-的某个解（称之为该非齐次线性方程组的一个<strong>特解</strong>），则
+的某个解（称之为该非齐次线性方程组的一个 <strong>特解</strong>），则
 <span class="math display">\[
   \boldsymbol{x}=\boldsymbol{\gamma}_{0}+k_{1}\boldsymbol{\eta}_{1}+k_{2}\boldsymbol{\eta}_{2}+\cdots+k_{n-r}\boldsymbol{\eta}_{n-r}
   \]</span></p>
 <p>给出了 <span class="math inline">\(\boldsymbol{A}\boldsymbol{x}=\boldsymbol{\beta}\)</span>
-的所有解，称为该非齐次线性方程组的<strong>通解</strong>，其中 <span class="math inline">\(k_{1},k_{2},\cdots,k_{n-r}\)</span>
+的所有解，称为该非齐次线性方程组的 <strong>通解</strong>，其中 <span class="math inline">\(k_{1},k_{2},\cdots,k_{n-r}\)</span>
 是任意常数。</p></li>
 <li><p><strong>解的结构</strong>：非齐次线性方程组的通解 =
 非齐次线性方程组的特解 + 对应的齐次线性方程组的通解。</p></li>
@@ -2759,15 +2765,14 @@ b_{m}\end{pmatrix}
 <h2 id="线性空间的概念">4.1 线性空间的概念</h2>
 <h3 id="线性空间">线性空间</h3>
 <ul>
-<li><strong>线性空间的定义</strong>：设 <span class="math inline">\(V\)</span> 是一个非空集合，<span class="math inline">\(F\)</span>
-是数域。定义<strong>加法和纯量乘法</strong>运算并满足以下几个定律，则称集合
-<span class="math inline">\(V\)</span> 关于向量加法与纯量乘法组成数域
-<span class="math inline">\(F\)</span>
-上的一个<strong>线性空间</strong>，或称 <span class="math inline">\(V\)</span> 为 <span class="math inline">\(F\)</span> 上的一个线性空间。
+<li><strong>线性空间的定义</strong>：设 <span class="math inline">\(V\)</span> 是一个非空集合，<span class="math inline">\(F\)</span> 是数域。定义
+<strong>加法和纯量乘法</strong> 运算并满足以下几个定律，则称集合 <span class="math inline">\(V\)</span> 关于向量加法与纯量乘法组成数域 <span class="math inline">\(F\)</span> 上的一个
+<strong>线性空间</strong>，或称 <span class="math inline">\(V\)</span>
+为 <span class="math inline">\(F\)</span> 上的一个线性空间。
 <ul>
 <li>特别地，当 <span class="math inline">\(F\)</span> 为实数域时，称
-<span class="math inline">\(V\)</span>
-为<strong>实线性空间</strong>。</li>
+<span class="math inline">\(V\)</span> 为
+<strong>实线性空间</strong>。</li>
 </ul></li>
 <li><strong>加法</strong>：在 <span class="math inline">\(V\)</span>
 的元素之间定义加法运算，记作 <span class="math inline">\(+\)</span>，即对任意两个元素 <span class="math inline">\(\boldsymbol{\alpha},\boldsymbol{\beta}\in
@@ -2817,9 +2822,9 @@ V\)</span>，有 <span class="math inline">\(0\boldsymbol{\alpha}=\boldsymbol{0}
 </ul>
 <h3 id="线性子空间">线性子空间</h3>
 <ul>
-<li><p><strong>线性子空间</strong>：设 <span class="math inline">\(V\)</span> 是数域 <span class="math inline">\(F\)</span> 上的线性空间，<span class="math inline">\(W\)</span> 是 <span class="math inline">\(V\)</span> 的<strong>非空子集合</strong>，若对于
-<span class="math inline">\(V\)</span> 上的加法和乘法运算，<span class="math inline">\(W\)</span> 也是 <span class="math inline">\(F\)</span> 上的线性空间，则称 <span class="math inline">\(W\)</span> 为 <span class="math inline">\(V\)</span>
-的一个线性子空间，简称为<strong>子空间</strong>。</p></li>
+<li><p><strong>线性子空间</strong>：设 <span class="math inline">\(V\)</span> 是数域 <span class="math inline">\(F\)</span> 上的线性空间，<span class="math inline">\(W\)</span> 是 <span class="math inline">\(V\)</span> 的 <strong>非空子集合</strong>，若对于
+<span class="math inline">\(V\)</span> 上的加法和乘法运算，<span class="math inline">\(W\)</span> 也是 <span class="math inline">\(F\)</span> 上的线性空间，则称 <span class="math inline">\(W\)</span> 为 <span class="math inline">\(V\)</span> 的一个线性子空间，简称为
+<strong>子空间</strong>。</p></li>
 <li><p><strong>性质</strong>：设 <span class="math inline">\(V\)</span>
 是数域 <span class="math inline">\(F\)</span> 上的线性空间，则 <span class="math inline">\(V\)</span> 的非空子集合 <span class="math inline">\(W\)</span> 为 <span class="math inline">\(V\)</span> 的一个子空间的充分必要条件为 <span class="math inline">\(W\)</span> 对于 <span class="math inline">\(V\)</span> 的加法和纯量乘法运算封闭。</p></li>
 <li><p><strong>平凡子空间</strong></p>
@@ -2853,22 +2858,22 @@ F\}
 线性表示</li>
 </ol>
 <p>则称 <span class="math inline">\(\boldsymbol{\alpha}_{1},\boldsymbol{\alpha}_{2},\cdots,\boldsymbol{\alpha}_{n}\)</span>
-是线性空间 <span class="math inline">\(V\)</span>
-的一组<strong>基底</strong>或<strong>基</strong>。</p>
+是线性空间 <span class="math inline">\(V\)</span> 的一组
+<strong>基底</strong> 或 <strong>基</strong>。</p>
 <ul>
 <li><span class="math inline">\(n\)</span> 维线性空间中任意 <span class="math inline">\(n\)</span>
 个线性无关的向量都可以作为一组基，因此，线性空间的基并不唯一。</li>
 </ul></li>
 <li><p><strong>维数</strong>：称基 <span class="math inline">\(\boldsymbol{\alpha}_{1},\boldsymbol{\alpha}_{2},\cdots,\boldsymbol{\alpha}_{n}\)</span>
-所含向量的个数 <span class="math inline">\(n\)</span> 为线性空间 <span class="math inline">\(V\)</span> 的<strong>维数</strong>，记为 <span class="math inline">\(\dim V=n\)</span>，此时也称线性空间 <span class="math inline">\(V\)</span> 是 <strong><span class="math inline">\(n\)</span> 维线性空间</strong>，有时记作 <span class="math inline">\(V_{n}\)</span>。</p>
+所含向量的个数 <span class="math inline">\(n\)</span> 为线性空间 <span class="math inline">\(V\)</span> 的 <strong>维数</strong>，记为 <span class="math inline">\(\dim V=n\)</span>，此时也称线性空间 <span class="math inline">\(V\)</span> 是 <strong><span class="math inline">\(n\)</span> 维线性空间</strong>，有时记作 <span class="math inline">\(V_{n}\)</span>。</p>
 <ul>
 <li>因为零向量构成的线性空间 <span class="math inline">\(\{\boldsymbol{0}\}\)</span> 没有基，不妨规定 <span class="math inline">\(\dim\{\boldsymbol{0}\}=0\)</span>。</li>
-<li><span class="math inline">\(n\)</span> 维线性空间与 <span class="math inline">\(0\)</span>
-维线性空间统称为<strong>有限维线性空间</strong>，或有限生成的线性空间。</li>
+<li><span class="math inline">\(n\)</span> 维线性空间与 <span class="math inline">\(0\)</span> 维线性空间统称为
+<strong>有限维线性空间</strong>，或有限生成的线性空间。</li>
 <li>如果 <span class="math inline">\(V\)</span>
 不是有限生成的，或者说，如果 <span class="math inline">\(V\)</span>
 中含有无限多个线性无关的向量，称 <span class="math inline">\(V\)</span>
-为<strong>无限维线性空间</strong>。</li>
+为 <strong>无限维线性空间</strong>。</li>
 </ul></li>
 <li><p><strong>坐标</strong>：设 <span class="math inline">\(\boldsymbol{\alpha}_{1},\boldsymbol{\alpha}_{2},\cdots,\boldsymbol{\alpha}_{n}\)</span>
 是 <span class="math inline">\(n\)</span> 维线性空间 <span class="math inline">\(V\)</span> 的一组基，<span class="math inline">\(\boldsymbol{\gamma}\in V\)</span>，且 <span class="math display">\[
@@ -2879,11 +2884,11 @@ F\}
 x_{n}\end{pmatrix}
   \]</span></p>
 <p>称向量 <span class="math inline">\(\boldsymbol{x}\)</span> 为 <span class="math inline">\(\boldsymbol{\gamma}\)</span> 在基 <span class="math inline">\(\boldsymbol{\alpha}_{1},\boldsymbol{\alpha}_{2},\cdots,\boldsymbol{\alpha}_{n}\)</span>
-下的<strong>坐标</strong>。</p>
+下的 <strong>坐标</strong>。</p>
 <ul>
 <li>由于 <span class="math inline">\(\boldsymbol{\alpha}_{1},\boldsymbol{\alpha}_{2},\cdots,\boldsymbol{\alpha}_{n}\)</span>
 线性无关，因此 <span class="math inline">\(\boldsymbol{\gamma}\)</span>
-在此基下的坐标是<strong>唯一的</strong>。</li>
+在此基下的坐标是 <strong>唯一的</strong>。</li>
 </ul></li>
 <li><p><strong>同构映射</strong>：设 <span class="math inline">\(V\)</span> 和 <span class="math inline">\(V'\)</span> 是数域 <span class="math inline">\(F\)</span> 上的两个线性空间，如果存在 <span class="math inline">\(V\)</span> 到 <span class="math inline">\(V'\)</span> 上的一个满足下述条件的一一对应
 <span class="math inline">\(\sigma\)</span>：</p>
@@ -2892,8 +2897,8 @@ x_{n}\end{pmatrix}
 V\)</span></li>
 <li><span class="math inline">\(\sigma(k\boldsymbol{\alpha})=k\sigma(\boldsymbol{\alpha})\)</span>，<span class="math inline">\(\forall\boldsymbol{\alpha}\in V\)</span>，<span class="math inline">\(\forall k\in F\)</span></li>
 </ol>
-<p>则称 <span class="math inline">\(\sigma\)</span> 为线性空间 <span class="math inline">\(V\)</span> 到 <span class="math inline">\(V'\)</span>
-的一个<strong>同构映射</strong>，也称线性空间 <span class="math inline">\(V\)</span> 与 <span class="math inline">\(V'\)</span> <strong>同构</strong>。</p></li>
+<p>则称 <span class="math inline">\(\sigma\)</span> 为线性空间 <span class="math inline">\(V\)</span> 到 <span class="math inline">\(V'\)</span> 的一个
+<strong>同构映射</strong>，也称线性空间 <span class="math inline">\(V\)</span> 与 <span class="math inline">\(V'\)</span> <strong>同构</strong>。</p></li>
 <li><p><strong>性质</strong>：数域 <span class="math inline">\(F\)</span> 上任意一个 <span class="math inline">\(n\)</span> 维线性空间 <span class="math inline">\(V\)</span> 均与 <span class="math inline">\(F^{n}\)</span> 同构。 <strong>证明</strong>：设
 <span class="math inline">\(\sigma\)</span> 是从 <span class="math inline">\(V\)</span> 到 <span class="math inline">\(F^{n}\)</span> 的一个映射，且 <span class="math inline">\(\sigma(\boldsymbol{\gamma})=\boldsymbol{x}\)</span>，设
 <span class="math inline">\(\boldsymbol{\alpha}_{1},\boldsymbol{\alpha}_{2},\cdots,\boldsymbol{\alpha}_{n}\)</span>
@@ -2942,7 +2947,7 @@ x_{n}'\end{pmatrix}
 <ul>
 <li><p><strong>过渡矩阵</strong>：由基 <span class="math inline">\(\boldsymbol{\varepsilon}_{1},\boldsymbol{\varepsilon}_{2},\cdots,\boldsymbol{\varepsilon}_{n}\)</span>
 到基 <span class="math inline">\(\boldsymbol{\eta}_{1},\boldsymbol{\eta}_{2},\cdots,\boldsymbol{\eta}_{n}\)</span>
-的<strong>过渡矩阵</strong>为 <span class="math display">\[
+的 <strong>过渡矩阵</strong> 为 <span class="math display">\[
   \boldsymbol{C}=(c_{ij})_{n\times
 n}=\begin{pmatrix}c_{11}&amp;c_{12}&amp;\cdots&amp;c_{1n}\\
 c_{21}&amp;c_{22}&amp;\cdots&amp;c_{2n}\\
@@ -2956,7 +2961,7 @@ c_{n1}&amp;c_{n2}&amp;\cdots&amp;c_{nn}\end{pmatrix}
 </ul></li>
 <li><p><strong>基变换公式</strong>：由基 <span class="math inline">\(\boldsymbol{\varepsilon}_{1},\boldsymbol{\varepsilon}_{2},\cdots,\boldsymbol{\varepsilon}_{n}\)</span>
 到基 <span class="math inline">\(\boldsymbol{\eta}_{1},\boldsymbol{\eta}_{2},\cdots,\boldsymbol{\eta}_{n}\)</span>
-的<strong>基变换公式</strong>为 <span class="math display">\[
+的 <strong>基变换公式</strong> 为 <span class="math display">\[
   (\boldsymbol{\eta}_{1},\boldsymbol{\eta}_{2},\cdots,\boldsymbol{\eta}_{n})=(\boldsymbol{\varepsilon}_{1},\boldsymbol{\varepsilon}_{2},\cdots,\boldsymbol{\varepsilon}_{n})\boldsymbol{C}
   \]</span></p></li>
 <li><p><strong>坐标变换公式</strong>：设 <span class="math inline">\(\boldsymbol{\varepsilon}_{1},\boldsymbol{\varepsilon}_{2},\cdots,\boldsymbol{\varepsilon}_{n}\)</span>
@@ -2971,7 +2976,7 @@ x_{n}\end{pmatrix},\quad
   \boldsymbol{x}'=\begin{pmatrix}x_{1}'\\ x_{2}'\\ \vdots\\
 x_{n}'\end{pmatrix}
   \]</span></p>
-<p>则有<strong>坐标变换公式</strong> <span class="math display">\[
+<p>则有 <strong>坐标变换公式</strong> <span class="math display">\[
   \boldsymbol{x}=\boldsymbol{C}\boldsymbol{x}',\quad
   \boldsymbol{x}'=\boldsymbol{C}^{-1}\boldsymbol{x}
   \]</span></p></li>
@@ -2993,9 +2998,9 @@ V\)</span></li>
 的充分必要条件是 <span class="math inline">\(\boldsymbol{\alpha}=\boldsymbol{0}\)</span></li>
 </ol>
 则称 <span class="math inline">\((\boldsymbol{\alpha},\boldsymbol{\beta})\)</span>
-为向量 <span class="math inline">\(\boldsymbol{\alpha}\)</span> 与 <span class="math inline">\(\boldsymbol{\beta}\)</span>
-的<strong>内积</strong>，定义了内积的实线性空间 <span class="math inline">\(V\)</span>
-称之为一个<strong>欧几里得空间</strong>，简称欧氏空间。</li>
+为向量 <span class="math inline">\(\boldsymbol{\alpha}\)</span> 与 <span class="math inline">\(\boldsymbol{\beta}\)</span> 的
+<strong>内积</strong>，定义了内积的实线性空间 <span class="math inline">\(V\)</span> 称之为一个
+<strong>欧几里得空间</strong>，简称欧氏空间。</li>
 <li><strong>向量内积</strong>：设 <span class="math inline">\(V\)</span>
 为欧氏空间，对 <span class="math inline">\(V\)</span> 中任意向量 <span class="math inline">\(\boldsymbol{\alpha},\boldsymbol{\beta}\)</span>，则定义向量
 <span class="math inline">\(\boldsymbol{\alpha}\)</span> 与 <span class="math inline">\(\boldsymbol{\beta}\)</span> 的内积 <span class="math inline">\((\boldsymbol{\alpha},\boldsymbol{\beta})\)</span>
@@ -3101,11 +3106,12 @@ b_{2}\\ \vdots\\ b_{n}\end{pmatrix}
 (\boldsymbol{\varepsilon}_{n},\boldsymbol{\varepsilon}_{1})&amp;(\boldsymbol{\varepsilon}_{n},\boldsymbol{\varepsilon}_{2})&amp;\cdots&amp;(\boldsymbol{\varepsilon}_{n},\boldsymbol{\varepsilon}_{n})\end{pmatrix}
   \]</span></li>
 <li><strong>正交基</strong>：设 <span class="math inline">\(\boldsymbol{\varepsilon}_{1},\boldsymbol{\varepsilon}_{2},\cdots,\boldsymbol{\varepsilon}_{n}\)</span>
-为 <span class="math inline">\(n\)</span> 维欧氏空间 <span class="math inline">\(V\)</span> 的一个正交向量组。因此是 <span class="math inline">\(V\)</span> 的一组基，称为 <span class="math inline">\(V\)</span> 的一组<strong>正交基</strong>。
+为 <span class="math inline">\(n\)</span> 维欧氏空间 <span class="math inline">\(V\)</span> 的一个正交向量组。因此是 <span class="math inline">\(V\)</span> 的一组基，称为 <span class="math inline">\(V\)</span> 的一组 <strong>正交基</strong>。
 <ul>
 <li>性质：正交基的度量矩阵 <span class="math inline">\(\boldsymbol{A}\)</span> 为对角矩阵。</li>
 </ul></li>
-<li><strong>标准正交基</strong>：若正交基中每一个向量都是单位向量，则称此正交基为<strong>标准正交基</strong>。
+<li><strong>标准正交基</strong>：若正交基中每一个向量都是单位向量，则称此正交基为
+<strong>标准正交基</strong>。
 <ul>
 <li>性质：标准正交基的度量矩阵 <span class="math inline">\(\boldsymbol{A}\)</span> 为单位矩阵。</li>
 </ul></li>
@@ -3125,12 +3131,12 @@ b_{2}\\ \vdots\\ b_{n}\end{pmatrix}
 \end{aligned}
 \]</span></p>
 <p>则 <span class="math inline">\(\boldsymbol{\beta}_{1},\boldsymbol{\beta}_{2},\cdots,\boldsymbol{\beta}_{s}\)</span>
-是<strong>正交向量组</strong>。</p></li>
+是 <strong>正交向量组</strong>。</p></li>
 <li><p><strong>单位化</strong>：令 <span class="math display">\[
 \boldsymbol{\eta}_{i}=\frac{1}{|\boldsymbol{\beta}_{i}|}\boldsymbol{\beta}_{i}\quad(i=1,2,\cdots,s)
 \]</span></p>
 <p>则 <span class="math inline">\(\boldsymbol{\eta}_{1},\boldsymbol{\eta}_{2},\cdots,\boldsymbol{\eta}_{s}\)</span>
-为<strong>标准正交向量组</strong>。</p></li>
+为 <strong>标准正交向量组</strong>。</p></li>
 </ol></li>
 <li><strong>等价性</strong>：由向量组等价的传递性可得线性无关的向量组
 <span class="math inline">\(\boldsymbol{\alpha}_{1},\boldsymbol{\alpha}_{2},\cdots,\boldsymbol{\alpha}_{s}\)</span>
@@ -3321,8 +3327,9 @@ a_{n1}&amp;a_{n2}&amp;\cdots&amp;a_{nn}\end{pmatrix}
 <li><p><strong>特征值与特征向量</strong>：设 <span class="math inline">\(\boldsymbol{A}\)</span> 为数域 <span class="math inline">\(F\)</span> 上的一个 <span class="math inline">\(n\)</span> 阶方阵，<span class="math inline">\(\lambda\in F\)</span>，<span class="math inline">\(\boldsymbol{\alpha}\)</span> 为 <span class="math inline">\(F\)</span> 上的 <span class="math inline">\(n\)</span> 维非零列向量。若 <span class="math display">\[
   \boldsymbol{A}\boldsymbol{\alpha}=\lambda\boldsymbol{\alpha}
   \]</span></p>
-<p>则称 <span class="math inline">\(\lambda\)</span> 为方阵 <span class="math inline">\(\boldsymbol{A}\)</span>
-的一个<strong>特征值</strong>，<span class="math inline">\(\boldsymbol{\alpha}\)</span> 为 <span class="math inline">\(\boldsymbol{A}\)</span> 的对应于特征值 <span class="math inline">\(\lambda\)</span> 的<strong>特征向量</strong>。</p>
+<p>则称 <span class="math inline">\(\lambda\)</span> 为方阵 <span class="math inline">\(\boldsymbol{A}\)</span> 的一个
+<strong>特征值</strong>，<span class="math inline">\(\boldsymbol{\alpha}\)</span> 为 <span class="math inline">\(\boldsymbol{A}\)</span> 的对应于特征值 <span class="math inline">\(\lambda\)</span> 的
+<strong>特征向量</strong>。</p>
 <ul>
 <li><strong>性质</strong>：移项有 <span class="math display">\[
   (\lambda\boldsymbol{E} - \boldsymbol{A})\boldsymbol{\alpha} =
@@ -3356,8 +3363,8 @@ a_{n1}&amp;a_{n2}&amp;\cdots&amp;a_{nn}\end{pmatrix}
 的一个子空间，它是齐次线性方程组 <span class="math inline">\((\lambda_0\boldsymbol{E} -
 \boldsymbol{A})\boldsymbol{\alpha} = \boldsymbol{0}\)</span>
 的解空间，称之为矩阵 <span class="math inline">\(\boldsymbol{A}\)</span>
-的对应于特征值 <span class="math inline">\(\lambda_0\)</span>
-的<strong>特征子空间</strong>，记为 <span class="math inline">\(V_{\lambda_0}\)</span></p>
+的对应于特征值 <span class="math inline">\(\lambda_0\)</span> 的
+<strong>特征子空间</strong>，记为 <span class="math inline">\(V_{\lambda_0}\)</span></p>
 <ul>
 <li><strong>几何重数</strong>：特征子空间 <span class="math inline">\(V_{\lambda_{0}}\)</span> 的维数称为特征值 <span class="math inline">\(\lambda_{0}\)</span> 的几何重数。</li>
 </ul></li>
@@ -3369,10 +3376,10 @@ a_{n1}&amp;a_{n2}&amp;\cdots&amp;a_{nn}\end{pmatrix}
   -a_{n1}&amp;-a_{n2}&amp;\cdots&amp;\lambda-a_{nn}
   \end{vmatrix}
   \]</span></p>
-<p>为矩阵 <span class="math inline">\(\boldsymbol{A}\)</span>
-的<strong>特征多项式</strong>，<span class="math inline">\(|\lambda\boldsymbol{E}-\boldsymbol{A}|=0\)</span>
-叫作 <span class="math inline">\(\boldsymbol{A}\)</span>
-的<strong>特征方程</strong>。</p></li>
+<p>为矩阵 <span class="math inline">\(\boldsymbol{A}\)</span> 的
+<strong>特征多项式</strong>，<span class="math inline">\(|\lambda\boldsymbol{E}-\boldsymbol{A}|=0\)</span>
+叫作 <span class="math inline">\(\boldsymbol{A}\)</span> 的
+<strong>特征方程</strong>。</p></li>
 <li><p><strong>特征根</strong>：由 <span class="math inline">\(n\)</span> 阶行列式的定义可知，特征多项式的展开式
 <span class="math inline">\(f(\lambda)\)</span> 为 <span class="math inline">\(\lambda\)</span> 的 <span class="math inline">\(n\)</span> 次多项式，在复数域内恰有 <span class="math inline">\(n\)</span> 个根（重根按重数计算），所以 <span class="math inline">\(n\)</span> 阶方阵在复数域内必有 <strong><span class="math inline">\(n\)</span> 个特征值</strong>（重根按重数计算）。
 <span class="math display">\[
@@ -3386,10 +3393,10 @@ a_{n1}&amp;a_{n2}&amp;\cdots&amp;a_{nn}\end{pmatrix}
 两两不同，<span class="math inline">\(n_{1}+n_{2}+\cdots+n_{s}=n\)</span>。</p>
 <ul>
 <li><strong>代数重数</strong>：称特征值 <span class="math inline">\(\lambda_{i}\)</span> 为此特征多项式的
-<strong><span class="math inline">\(n_{i}\)</span> 重根</strong>，<span class="math inline">\(n_{i}\)</span> 叫作 <span class="math inline">\(\lambda_{i}\)</span>
-的<strong>代数重数</strong>。</li>
-<li>特别地，代数重数为 1
-的特征值也称为单特征值或特征多项式的<strong>单根</strong>。</li>
+<strong><span class="math inline">\(n_{i}\)</span> 重根</strong>，<span class="math inline">\(n_{i}\)</span> 叫作 <span class="math inline">\(\lambda_{i}\)</span> 的
+<strong>代数重数</strong>。</li>
+<li>特别地，代数重数为 1 的特征值也称为单特征值或特征多项式的
+<strong>单根</strong>。</li>
 </ul></li>
 </ul>
 <h3 id="特征值与特征向量的求法">特征值与特征向量的求法</h3>
@@ -3408,7 +3415,8 @@ a_{n1}&amp;a_{n2}&amp;\cdots&amp;a_{nn}\end{pmatrix}
 </ol></li>
 <li><strong>说明</strong>：
 <ol type="1">
-<li><strong>对角矩阵</strong>的特征值就是对角线上的所有元素，同阶的单位矩阵的列向量可分别看作是它们所对应的一个特征向量</li>
+<li><strong>对角矩阵</strong>
+的特征值就是对角线上的所有元素，同阶的单位矩阵的列向量可分别看作是它们所对应的一个特征向量</li>
 <li><strong>行和相等的方阵</strong>，这个行和一定是它的一个特征值，而分量均为
 1 的列向量必为这个特征值所对应的一个特征向量</li>
 </ol></li>
@@ -3476,7 +3484,7 @@ g(x)=a_{m}x^{m}+a_{m-1}x^{m-1}+\cdots+a_{1}x+a_{0}
 <strong>相似</strong>，记作 <span class="math inline">\(\boldsymbol{A}\sim\boldsymbol{B}\)</span>。</p></li>
 <li><p><strong>相似矩阵的性质</strong>:</p>
 <ol type="1">
-<li><p>方阵的相似关系是一种<strong>等价关系</strong>：</p>
+<li><p>方阵的相似关系是一种 <strong>等价关系</strong>：</p>
 <ol type="1">
 <li><strong>反身性</strong>：设 <span class="math inline">\(\boldsymbol{A}\in F^{n\times n}\)</span>，则 <span class="math inline">\(\boldsymbol{A}\sim\boldsymbol{A}\)</span></li>
 <li><strong>对称性</strong>：设 <span class="math inline">\(\boldsymbol{A},\boldsymbol{B}\in F^{n\times
@@ -3583,7 +3591,7 @@ i=1,2,\cdots,s
 &amp;\lambda_{2}&amp;&amp;\\ &amp;&amp;\ddots&amp;\\
 &amp;&amp;&amp;\lambda_{n}\end{pmatrix},\quad
 \lambda_{1},\lambda_{2},\cdots,\lambda_{n}\text{ 为
-}\boldsymbol{A}\text{ 的特征值}。
+}\boldsymbol{A}\text{ 的特征值}.
   \]</span></p>
 <ul>
 <li><span class="math inline">\(n\)</span> 阶实对称矩阵必有 <span class="math inline">\(n\)</span> 个线性无关的特征向量。</li>
@@ -3658,8 +3666,8 @@ x_{n}\end{pmatrix}
 为实对称矩阵，且 <span class="math display">\[
   f=\sum_{i=1}^{n}\sum_{j=1}^{n}a_{ij}x_{i}x_{j}=\boldsymbol{x}^{\mathrm{T}}\boldsymbol{A}\boldsymbol{x}
   \]</span></p>
-<p>称上式为二次型 <span class="math inline">\(f\)</span>
-的<strong>矩阵表示式</strong>，则二次型 <span class="math inline">\(f\)</span> 与实对称矩阵 <span class="math inline">\(\boldsymbol{A}\)</span> 一一对应。</p>
+<p>称上式为二次型 <span class="math inline">\(f\)</span> 的
+<strong>矩阵表示式</strong>，则二次型 <span class="math inline">\(f\)</span> 与实对称矩阵 <span class="math inline">\(\boldsymbol{A}\)</span> 一一对应。</p>
 <ul>
 <li>称实对称阵 <span class="math inline">\(\boldsymbol{A}\)</span>
 为二次型 <span class="math inline">\(f\)</span> 的矩阵，<span class="math inline">\(\boldsymbol{A}\)</span> 的秩 <span class="math inline">\(r(\boldsymbol{A})\)</span> 为 <span class="math inline">\(f\)</span> 的秩，记作 <span class="math inline">\(r(f)\)</span>，即 <span class="math display">\[
@@ -3682,7 +3690,7 @@ x_{n}\end{pmatrix}
 <li><p><strong>非奇异的线性替换</strong>：设 <span class="math inline">\(\boldsymbol{x},\boldsymbol{y}\)</span> 为 <span class="math inline">\(n\)</span> 维向量，<span class="math inline">\(n\)</span> 阶方阵 <span class="math inline">\(\boldsymbol{P}\)</span> 为可逆矩阵，称 <span class="math display">\[
   \boldsymbol{x}=\boldsymbol{P}\boldsymbol{y}
   \]</span></p>
-<p>为<strong>非奇异（非退化）的线性替换</strong>。</p></li>
+<p>为 <strong>非奇异（非退化）的线性替换</strong>。</p></li>
 </ul>
 <h3 id="合同矩阵">合同矩阵</h3>
 <ul>
@@ -3692,7 +3700,7 @@ x_{n}\end{pmatrix}
 <p>则称矩阵 <span class="math inline">\(\boldsymbol{A}\)</span> 与 <span class="math inline">\(\boldsymbol{B}\)</span> 合同。</p></li>
 <li><p><strong>合同矩阵的性质</strong>：</p>
 <ol type="1">
-<li>方阵的合同关系是一种<strong>等价关系</strong>：
+<li>方阵的合同关系是一种 <strong>等价关系</strong>：
 <ol type="1">
 <li><strong>反身性</strong>：<span class="math inline">\(\boldsymbol{A}\)</span> 合同于 <span class="math inline">\(\boldsymbol{A}\)</span></li>
 <li><strong>对称性</strong>：若 <span class="math inline">\(\boldsymbol{A}\)</span> 合同于 <span class="math inline">\(\boldsymbol{B}\)</span>，则 <span class="math inline">\(\boldsymbol{B}\)</span> 也合同于 <span class="math inline">\(\boldsymbol{A}\)</span></li>
@@ -3714,7 +3722,7 @@ x_{n}\end{pmatrix}
 化为标准二型的问题等同于实对称矩阵 <span class="math inline">\(\boldsymbol{A}\)</span>
 合同到对角矩阵的问题。</p></li>
 <li><p><strong>定理</strong>：任何一个二次型 <span class="math inline">\(f=\boldsymbol{x}^{\mathrm{T}}\boldsymbol{A}\boldsymbol{x}\)</span>
-必存在<strong>正交线性替换</strong> <span class="math inline">\(\boldsymbol{x}=\boldsymbol{Q}\boldsymbol{y}\)</span>（<span class="math inline">\(\boldsymbol{Q}\)</span>
+必存在 <strong>正交线性替换</strong> <span class="math inline">\(\boldsymbol{x}=\boldsymbol{Q}\boldsymbol{y}\)</span>（<span class="math inline">\(\boldsymbol{Q}\)</span>
 为正交矩阵），使得新变量的二次型 <span class="math inline">\(\boldsymbol{y}^{\mathrm{T}}(\boldsymbol{Q}^{\mathrm{T}}\boldsymbol{A}\boldsymbol{Q})\boldsymbol{y}=\boldsymbol{y}^{\mathrm{T}}\boldsymbol{\Lambda}\boldsymbol{y}\)</span>
 为标准二次型。即 <span class="math display">\[
   \begin{aligned}
@@ -3773,8 +3781,8 @@ f=\boldsymbol{x}^{\mathrm{T}}\boldsymbol{A}\boldsymbol{x}=\boldsymbol{y}^{\mathr
 元二次型，进而可继续用配方使余下的二次型为不含 <span class="math inline">\(x_{i-1}\)</span> 的 <span class="math inline">\(n-2\)</span>
 元二次型，依此类推，最后可化为标准形。</li>
 <li>若 <span class="math inline">\(f\)</span>
-中所有平方项的系数都为零，而 <span class="math inline">\(x_{i}x_{j}\)</span>
-的项的系数不为零，则可先用一次<strong>非奇异性替换</strong>使得 <span class="math inline">\(f\)</span>
+中所有平方项的系数都为零，而 <span class="math inline">\(x_{i}x_{j}\)</span> 的项的系数不为零，则可先用一次
+<strong>非奇异性替换</strong> 使得 <span class="math inline">\(f\)</span>
 中出现系数不为零的平方项，然后使用同样方法配方，最后可化为标准形。</li>
 </ul></li>
 </ul>
@@ -3801,8 +3809,8 @@ f=\boldsymbol{x}^{\mathrm{T}}\boldsymbol{A}\boldsymbol{x}=\boldsymbol{y}^{\mathr
   \]</span></li>
 <li>两个 <span class="math inline">\(n\)</span> 元二次型 <span class="math inline">\(f=\boldsymbol{x}^{\mathrm{T}}\boldsymbol{A}\boldsymbol{x}\)</span>
 与 <span class="math inline">\(g=\boldsymbol{y}^{\mathrm{T}}\boldsymbol{B}\boldsymbol{y}\)</span>
-有相同的秩及正惯性指数的<strong>充分必要条件</strong>为存在非奇异线性替换
-<span class="math inline">\(\boldsymbol{x}=\boldsymbol{P}\boldsymbol{y}\)</span>，使
+有相同的秩及正惯性指数的 <strong>充分必要条件</strong>
+为存在非奇异线性替换 <span class="math inline">\(\boldsymbol{x}=\boldsymbol{P}\boldsymbol{y}\)</span>，使
 <span class="math display">\[
   f=\boldsymbol{x}^{\mathrm{T}}\boldsymbol{A}\boldsymbol{x}\xlongequal{\boldsymbol{x}=\boldsymbol{P}\boldsymbol{y}}\boldsymbol{y}^{\mathrm{T}}\boldsymbol{B}\boldsymbol{y}=g
   \]</span></li>
@@ -3819,9 +3827,9 @@ f=\boldsymbol{x}^{\mathrm{T}}\boldsymbol{A}\boldsymbol{x}=\boldsymbol{y}^{\mathr
 <span class="math display">\[
   f(c_{1},c_{2},\cdots,c_{n})=\boldsymbol{x}_{0}^{\mathrm{T}}\boldsymbol{A}\boldsymbol{x}_{0}&gt;0
   \]</span></p>
-<p>则称二次型 <span class="math inline">\(f\)</span>
-为<strong>正定二次型</strong>，并称其矩阵 <span class="math inline">\(\boldsymbol{A}\)</span>
-为<strong>正定矩阵</strong>。</p>
+<p>则称二次型 <span class="math inline">\(f\)</span> 为
+<strong>正定二次型</strong>，并称其矩阵 <span class="math inline">\(\boldsymbol{A}\)</span> 为
+<strong>正定矩阵</strong>。</p>
 <ul>
 <li>性质：实二次型 <span class="math inline">\(f(x_{1},x_{2},\cdots,x_{n})=\boldsymbol{x}^{\mathrm{T}}\boldsymbol{A}\boldsymbol{x}\)</span>
 经非奇异线性替换后其正定性不改变。</li>

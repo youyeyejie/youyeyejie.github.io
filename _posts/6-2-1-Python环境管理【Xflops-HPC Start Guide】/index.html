@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/img/cover/xflops.webp">
 <meta property="article:published_time" content="2025-07-06T10:01:53.000Z">
-<meta property="article:modified_time" content="2026-05-30T17:27:19.949Z">
+<meta property="article:modified_time" content="2026-05-31T07:16:35.763Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="Xflops">
 <meta property="article:tag" content="HPC">
@@ -682,45 +682,44 @@ Conda，因此您可以运行下面的命令激活 conda 环境进行 Python 编
 <h2 id="安装-python-的官方版本">安装 Python 的官方版本</h2>
 
     <div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-4bc59d0d" role="button" aria-expanded="false" aria-controls="collapse-4bc59d0d">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-1e1b7f05" role="button" aria-expanded="false" aria-controls="collapse-1e1b7f05">
         <div class="fold-arrow">▶</div>MacOS 系统与 Linux 系统已预装 Python
       </div>
-      <div class="fold-collapse collapse" id="collapse-4bc59d0d">
+      <div class="fold-collapse collapse" id="collapse-1e1b7f05">
         <div class="fold-content">
-          <p>事实上 MacOS 系统与 Linux
-系统默认安装了<code>python</code>，可以在命令行中使用<code>python3</code>命令运行。但是预装的
-Python 是一些系统工具的依赖，通常不建议使用这个 Python
-作为您的开发环境。我们推荐您使用<code>conda</code>来创建 Python
+          <p>事实上 MacOS 系统与 Linux 系统默认安装了
+<code>python</code>，可以在命令行中使用 <code>python3</code>
+命令运行。但是预装的 Python 是一些系统工具的依赖，通常不建议使用这个
+Python 作为您的开发环境。我们推荐您使用 <code>conda</code> 来创建 Python
 开发环境。</p>
         </div>
       </div>
     </div>
 
     <div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-a539fe97" role="button" aria-expanded="false" aria-controls="collapse-a539fe97">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-f1338206" role="button" aria-expanded="false" aria-controls="collapse-f1338206">
         <div class="fold-arrow">▶</div>Windows 上快速安装 Python
       </div>
-      <div class="fold-collapse collapse" id="collapse-a539fe97">
+      <div class="fold-collapse collapse" id="collapse-f1338206">
         <div class="fold-content">
-          <p>新版本的 Windows
-上有<code>winget</code>可以用于快速安装常用工具链。运行<code>winget install Python</code>即可自动完成
-Python 的安装。但是如果有多 Python
-环境管理的需求，我们仍然建议您使用<code>conda</code>来创建 Python
+          <p>新版本的 Windows 上有 <code>winget</code>
+可以用于快速安装常用工具链。运行 <code>winget install Python</code>
+即可自动完成 Python 的安装。但是如果有多 Python
+环境管理的需求，我们仍然建议您使用 <code>conda</code> 来创建 Python
 的开发环境。</p>
         </div>
       </div>
     </div>
 <p>以下是安装 Python 官方版本的步骤：</p>
 <ol type="1">
-<li><strong>下载 Python</strong>：访问<a target="_blank" rel="noopener" href="https://www.python.org/downloads/">Python
+<li><strong>下载Python</strong>：访问<a target="_blank" rel="noopener" href="https://www.python.org/downloads/">Python
 官网</a>下载适合您操作系统的 Python 版本。建议下载最新的稳定版本。</li>
-<li><strong>安装
-Python</strong>：运行下载的安装程序，按照提示完成安装。在安装过程中，请确保勾选“Add
+<li><strong>安装Python</strong>：运行下载的安装程序，按照提示完成安装。在安装过程中，请确保勾选“Add
 Python to PATH”选项，这样可以在命令行中直接使用 Python 命令。</li>
 <li><strong>验证安装</strong>：安装完成后，在命令行中输入以下命令来验证
 Python 是否安装成功并添加到环境变量中： <figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">python</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--version</span></span></code></pre></div></div></figure>
 如果安装成功，您将看到 Python 的版本信息。</li>
-<li><strong>安装 pip</strong>：Python 3.4 及以上版本默认包含
+<li><strong>安装pip</strong>：Python 3.4 及以上版本默认包含
 <code>pip</code> ，如果您的版本不包含，可以手动安装。验证
 <code>pip</code> 是否安装成功： <figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">pip</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--version</span></span></code></pre></div></div></figure></li>
 </ol>
@@ -730,10 +729,9 @@ Python 是否安装成功并添加到环境变量中： <figure class="shiki bas
 的轻量级版本，适合需要更小安装包的用户。这里以 Miniconda
 为例介绍安装步骤：</p>
 <ol type="1">
-<li><strong>下载 Miniconda</strong>：访问 Anaconda 官网的<a target="_blank" rel="noopener" href="https://www.anaconda.com/download/success">Miniconda
+<li><strong>下载Miniconda</strong>：访问 Anaconda 官网的<a target="_blank" rel="noopener" href="https://www.anaconda.com/download/success">Miniconda
 下载界面</a>下载适合您操作系统的 Miniconda 安装包。</li>
-<li><strong>安装
-Miniconda</strong>：运行下载的安装程序，按照提示完成安装。在安装过程中，您可以选择将
+<li><strong>安装Miniconda</strong>：运行下载的安装程序，按照提示完成安装。在安装过程中，您可以选择将
 Miniconda 添加到系统的环境变量中，这样可以在命令行中直接使用
 <code>conda</code> 命令。</li>
 <li><strong>验证安装</strong>：安装完成后，在命令行中输入以下命令来验证
@@ -825,18 +823,21 @@ Python 3.8 版本。</li>
 </ul>
 
     <div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-91b1954a" role="button" aria-expanded="false" aria-controls="collapse-91b1954a">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-7a636c4c" role="button" aria-expanded="false" aria-controls="collapse-7a636c4c">
         <div class="fold-arrow">▶</div>离线 conda 环境迁移
       </div>
-      <div class="fold-collapse collapse" id="collapse-91b1954a">
+      <div class="fold-collapse collapse" id="collapse-7a636c4c">
         <div class="fold-content">
           <p>使用上述导出环境并根据依赖文件创建环境的的方式需要新 conda
 环境安装的机器上能够连接互联网下载依赖文件。如果您需要将现有的 conda
 环境迁移到无互联网连接的机器上，可以使用以下命令导出 conda
 环境到单个文件中： </p><figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">conda</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">pack</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-n</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">your_env_name</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-o</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">env_packages.tar.gz</span></span></code></pre></div></div></figure>
 将此文件上传到需要安装此环境的机器上。并运行以下命令来安装此环境：
-<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">tar</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-xzf</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">env_packages.tar.gz</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-C</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">new_env_path</span></span></code></pre></div></div></figure> 我们推荐<code>new_env_path</code>设置为该机器原有的 conda
-环境的虚拟环境管理路径。例如对于标准开发环境来说应该是<code>/home/xflops/apps/miniconda3/envs/&lt;your_env_name&gt;</code>，这样之后你可以方便的使用该机器的<code>conda</code>管理此环境。你也可以设置为一个自选的<code>new_env_path</code>。这样你将需要运行下述命令来激活此环境：
+<figure class="shiki bash"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #61AFEF">tar</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-xzf</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">env_packages.tar.gz</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-C</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">new_env_path</span></span></code></pre></div></div></figure> 我们推荐 <code>new_env_path</code> 设置为该机器原有的
+conda 环境的虚拟环境管理路径。例如对于标准开发环境来说应该是
+<code>/home/xflops/apps/miniconda3/envs/&lt;your_env_name&gt;</code>，这样之后你可以方便的使用该机器的
+<code>conda</code> 管理此环境。你也可以设置为一个自选的
+<code>new_env_path</code>。这样你将需要运行下述命令来激活此环境：
 <figure class="shiki"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #abb2bf">source new_env_path/bin/activate  # Linux/macOS</span></span>
 <span class="line"><span style="color: #abb2bf">.\new_env_path\Scripts\activate   # Windows</span></span></code></pre></div></div></figure>
 <strong>但需要注意</strong>：该迁移方式直接将依赖项的代码与二进制进行迁移，因此需保证迁移前后的系统一致处理器架构一致，例如将

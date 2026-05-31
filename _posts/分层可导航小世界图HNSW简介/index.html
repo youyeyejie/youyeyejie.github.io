@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://youyeyejie.github.io/_posts/%E5%88%86%E5%B1%82%E5%8F%AF%E5%AF%BC%E8%88%AA%E5%B0%8F%E4%B8%96%E7%95%8C%E5%9B%BEHNSW%E7%AE%80%E4%BB%8B/image-2.webp">
 <meta property="article:published_time" content="2025-11-08T03:39:11.000Z">
-<meta property="article:modified_time" content="2026-05-30T17:27:20.064Z">
+<meta property="article:modified_time" content="2026-05-31T07:16:35.888Z">
 <meta property="article:author" content="youyeyejie">
 <meta property="article:tag" content="HNSW">
 <meta property="article:tag" content="数据库">
@@ -670,7 +670,8 @@ List（概率跳表）</h2>
 </ul>
 <p><img src="image.webp" srcset="/img/loading/loading3.gif" lazyload></p>
 <ul>
-<li>结构特点：它通过<strong>引入多个层级来加速查找过程</strong>。最顶层的索引连接跨度更大的节点，可以快速跳跃，减少搜索路径长度；随着层级下降，索引的跨度逐渐变短，提供更精确的访问路径；最底层是完整的原始链表，包含所有元素。</li>
+<li>结构特点：它通过
+<strong>引入多个层级来加速查找过程</strong>。最顶层的索引连接跨度更大的节点，可以快速跳跃，减少搜索路径长度；随着层级下降，索引的跨度逐渐变短，提供更精确的访问路径；最底层是完整的原始链表，包含所有元素。</li>
 <li>插入和查找过程：插入过程是概率性的，先确定该元素首次出现在哪一层，每一层的元素出现在更高层的概率是固定的。查找时从最上层开始，每次选择下一个节点，直到遇到比目标值大的节点，然后回退到上一个节点，并进入下一层继续搜索，直到到达最底层找到目标元素。这种设计可以将查找时间复杂度从普通链表的
 <span class="math inline">\(O(n)\)</span> 降低到 <span class="math inline">\(O(\log
 n)\)</span>，代价是增加了一些存储开销。</li>
@@ -683,7 +684,8 @@ World Graphs（可导航小世界图）</h2>
 <p><img src="image-1.webp" srcset="/img/loading/loading3.gif" lazyload></p>
 <ul>
 <li>结构特点：这种图结合了小世界图的短路径和高聚集性特性，图中节点之间通常有较高的连接度，邻居节点之间往往彼此相连，形成聚集或团簇，同时任意两个节点之间的平均路径长度较短。此外，图中还包含长距离连接，这些连接对于维持小世界特性至关重要，能使在大规模数据中可以快速查找与查询点接近的节点。</li>
-<li>搜索过程：可导航小世界图通常通过<strong>启发式搜索算法</strong>进行搜索，从一个初始节点开始，根据距离向与目标节点最近的节点跳转，从而逐渐逼近目标。这种搜索方式效率较高，避免了穷举搜索的时间开销。</li>
+<li>搜索过程：可导航小世界图通常通过 <strong>启发式搜索算法</strong>
+进行搜索，从一个初始节点开始，根据距离向与目标节点最近的节点跳转，从而逐渐逼近目标。这种搜索方式效率较高，避免了穷举搜索的时间开销。</li>
 <li><strong>贪婪</strong></li>
 <li>痛点：传统近邻图（如 k-NN 图、NSW）是
 “单层结构”，搜索时需从某个起点开始，通过
@@ -730,8 +732,9 @@ Navigable Small World（分层可导航小世界图）</h1>
 <h3 id="搜索入口点enter-point从哪里开始搜索">搜索入口点（Enter
 Point）：从哪里开始搜索？</h3>
 <ul>
-<li>初始入口点：首次<strong>构建</strong>图时，第一个插入的元素就是顶层入口点；后续若插入
-“最大层数更高” 的元素（比如现有顶层是 3 层，插入一个最大层数为 4
+<li>初始入口点：首次 <strong>构建</strong>
+图时，第一个插入的元素就是顶层入口点；后续若插入 “最大层数更高”
+的元素（比如现有顶层是 3 层，插入一个最大层数为 4
 的元素），则更新入口点为这个新元素。</li>
 <li>作用：搜索时必须从 “顶层入口点” 开始 —— 因为顶层的长链接能快速
 “跨越” 大范围数据，避免从底层开始的 “盲目遍历”。</li>
@@ -744,7 +747,7 @@ Point）：从哪里开始搜索？</h3>
 “聚类隔离”（比如两个聚类的元素间没有链接，搜索时无法跨聚类）。HNSW
 用两种邻居选择方式，核心是启发式规则：
 <ul>
-<li>简单规则（Algorithm 3）：直接选离插入元素<strong>最近</strong>的
+<li>简单规则（Algorithm 3）：直接选离插入元素 <strong>最近</strong> 的
 <span class="math inline">\(M\)</span> 个候选者（<span class="math inline">\(M\)</span>
 是每层最大连接数），适合数据分布均匀的场景。</li>
 <li>启发式规则（Algorithm 4）：不仅看 “候选者与插入元素的距离”，还看
