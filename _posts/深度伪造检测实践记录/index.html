@@ -1,0 +1,1287 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head><!-- hexo injector head_begin start --><meta name="msvalidate.01" content="DF9F232801BA9D0CABB002E4774A3228"/><meta name="google-site-verification" content="vOm5Zs9tuUlEh-wVBlpvs_spnOou-q2CoTiFQ1ZV1h4"/><script defer src="https://cloud.umami.is/script.js" data-website-id="0369421f-4354-4d7b-99c7-ae077c591b4f"></script><!-- hexo injector head_begin end -->
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar/avatar2.webp">
+  <link rel="icon" href="/img/avatar/avatar2.webp">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="youyeyejie">
+  <meta name="keywords" content="yyyj,YYYJ,youyeyejie,有野野芥">
+  
+    <meta name="description" content="NIS3363 机器学习——深度伪造检测实践记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深度伪造检测实践记录">
+<meta property="og:url" content="https://youyeyejie.github.io/_posts/%E6%B7%B1%E5%BA%A6%E4%BC%AA%E9%80%A0%E6%A3%80%E6%B5%8B%E5%AE%9E%E8%B7%B5%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="有野野芥的博客">
+<meta property="og:description" content="NIS3363 机器学习——深度伪造检测实践记录">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://youyeyejie.github.io/_posts/%E6%B7%B1%E5%BA%A6%E4%BC%AA%E9%80%A0%E6%A3%80%E6%B5%8B%E5%AE%9E%E8%B7%B5%E8%AE%B0%E5%BD%95/image.webp">
+<meta property="article:published_time" content="2026-06-16T06:05:49.000Z">
+<meta property="article:modified_time" content="2026-06-16T07:00:50.235Z">
+<meta property="article:author" content="youyeyejie">
+<meta property="article:tag" content="机器学习">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://youyeyejie.github.io/_posts/%E6%B7%B1%E5%BA%A6%E4%BC%AA%E9%80%A0%E6%A3%80%E6%B5%8B%E5%AE%9E%E8%B7%B5%E8%AE%B0%E5%BD%95/image.webp">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>深度伪造检测实践记录 - 有野野芥的博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+<link rel="stylesheet" href="//lib.baomitu.com/font-awesome/6.1.2/css/all.min.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+
+
+  
+<link rel="stylesheet" href="/css/Background.css">
+<link rel="stylesheet" href="/css/CodeBlock.css">
+<link rel="stylesheet" href="/css/CodeInLine.css">
+<link rel="stylesheet" href="/css/Crypto.css">
+<link rel="stylesheet" href="/css/Gallery.css">
+<link rel="stylesheet" href="/css/IndexImgHover.css">
+<link rel="stylesheet" href="/css/LinkCard.css">
+<link rel="stylesheet" href="/css/ScrollAnimation.css">
+<link rel="stylesheet" href="/css/ScrollBar.css">
+<link rel="stylesheet" href="/css/StrongInDark.css">
+<link rel="stylesheet" href="/css/TitleGradient.css">
+<link rel="stylesheet" href="/css/Tooltip.css">
+<link rel="stylesheet" href="/css/UnifyImgWidth.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"youyeyejie.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":false,"default":"TEXT"},"copy_btn":false,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading/loading3.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-shiki-plugin@latest/lib/codeblock.css">
+<style>:root{--hl-color:#abb2bf;--hl-bg:#282c34;--hltools-bg:#21252b;--hltools-color:#bbbbbc;--hlnumber-bg:#282c34;--hlnumber-color:#495162;--hlscrollbar-bg:#373c47;--hlexpand-bg:linear-gradient(180deg,rgba(40,44,52,0.1),rgba(40,44,52,0.9))}</style>
+    <style>
+    .code-expand-btn:not(.expand-done) ~ div.codeblock,
+    .code-expand-btn:not(.expand-done) ~ * div.codeblock {
+      overflow: hidden;
+      height: 360px;
+    }
+    </style>
+  <!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><div id="tooltip" class="tooltip"></div><!-- hexo injector body_begin end -->
+  <div id="loader-container"> 
+    <div id="loader" class="loader"></div>
+    <div class="loader-inner">
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/RainbowLoading.js" type="text/javascript"></script>
+<link href="/css/RainbowLoading.css" type="text/css" rel="stylesheet"/><div id="rightmenu-wrapper">
+  <ul class="list-v rightmenu" id="rightmenu-content">
+	    <li class="navigation menuNavigation-Content">
+            <a class="nav icon-only fix-cursor-default" aria-label="back" onclick="history.back()"><i class="fa-solid fa-chevron-left"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="forward" onclick="history.forward()"><i class="fa-solid fa-chevron-right"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="reload" onclick="window.location.reload()"><i class="fa-solid fa-rotate-right"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="top" onclick="scrollToTopSmooth();"><i class="fa-solid fa-chevron-up"></i></a>
+            <a class="nav icon-only fix-cursor-default" aria-label="bottom" onclick="scrollToBottomSmooth();"><i class="fa-solid fa-chevron-down"></i></a>
+	    </li>
+
+        <hr class="menuLoad-Content" style="display: block;" id="top-line">
+
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copyLink();">
+                <span>
+                    <i class="fa-solid fa-link"></i>
+                    复制链接
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;" id="copy-selected-text" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copySelectedText();">
+                <span>
+                    <i class="fa-solid fa-copy"></i>
+                    &nbsp;复制选中
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;" id="search-selected-text-BING" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_blank" onclick="searchSelectedTextBing();">
+                <span>
+                    <i class="fa-solid fa-magnifying-glass-arrow-right"></i>
+                    &nbsp;必应搜索
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;" id="go-to-link" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_blank">
+                <span>
+                    <i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 1px;"></i>
+                    &nbsp;打开链接
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;" id="download-image" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="downloadImage();">
+                <span>
+                    <i class="fa-solid fa-image"></i>
+                    &nbsp;下载图片
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;" id="copy-image-link" hidden>
+            <a class="vlts-menu fix-cursor-default" target="_self" onclick="copyImageLink();">
+                <span>
+                    <i class="fa-solid fa-link"></i>
+                    复制图片链接
+                </span>
+            </a>
+        </li>
+
+		<hr class="menuLoad-Content" style="display: block;">
+
+        <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" onclick="RandomGo()">
+		        <span>
+			        <i class="fa-solid fa-paper-plane"></i>
+                    &nbsp;随便看看
+		        </span>
+		    </a>
+	    </li>
+	    <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+		        <span>
+			        <i class="fa-solid fa-magnifying-glass"></i>
+                    &nbsp;站内搜索
+		        </span>
+		    </a>
+	    </li>
+        <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" href="/categories/">
+		        <span>
+			        <i class="iconfont icon-category-fill"></i>
+                    &nbsp;博客分类
+		        </span>
+		    </a>
+	    </li>
+        <li class="menuLoad-Content" style="display: block;">
+		    <a class="vlts-menu fix-cursor-default" target="_self" href="/tags/">
+		        <span>
+			        <i class="fa-solid fa-tags"></i>
+                    &nbsp;文章标签
+		        </span>
+		    </a>
+	    </li>
+        
+	    <hr class="menuLoad-Content" style="display: block;">
+
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" id="toggle-color-mode" target="_self" onclick="toggleColorMode();">
+                <span>
+                    <i id="toggle-color-mode-icon" class="fa-solid fa-circle-half-stroke"></i>
+                    &nbsp;切换昼夜
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" id="random-change-background" target="_self" onclick="randomChangeBackground();">
+                <span style="margin-left: 1px;">
+                    <i id="random-change-background-icon" class="fa-solid fa-image"></i>
+                    &nbsp;切换背景
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" id="toggle-background-mode" target="_self" onclick="toggleBackgroundMode();">
+                <span>
+                    <i id="toggle-background-mode-icon" class="fa-solid fa-toggle-on" style="margin-right: -1px;"></i>
+                    &nbsp;全屏背景
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" id="toggle-reading-mode" target="_self" onclick="toggleReadingMode();">
+                <span>
+                    <i id="toggle-reading-mode-icon" class="fa-solid fa-toggle-off" style="margin-right: -1px;"></i>
+                    &nbsp;阅读模式
+                </span>
+            </a>
+        </li>
+        <li class="menuLoad-Content" style="display: block;">
+            <a class="vlts-menu fix-cursor-default" id="toggle-tab-display" target="_self" onclick="toggleTabDisplay();">
+                <span>
+                    <i id="toggle-tab-display-icon" class="fa-solid fa-toggle-on" style="margin-right: -1px;"></i>
+                    &nbsp;自定义标签
+                </span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+<script src="/js/RightMenu.js" type="text/javascript"></script>
+<link href="/css/RightMenu.css" type="text/css" rel="stylesheet"/>
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <!-- <strong>YYYJ&#39;s Blog</strong> -->
+       <strong class="navbar-title">YYYJ&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://youyeyejie.github.io/SJTUnotes/" target="_self">
+                <i class="iconfont icon-books"></i>
+                <span>笔记</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.travellings.cn/go-by-clouds.html" target="_self">
+                <i class="fas fa-train-subway"></i>
+                <span>开往</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa-solid fa-folder-open"></i>
+                <span>更多</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/" target="_self">
+                    <i class="fa-solid fa-tags"></i>
+                    <span>标签</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/links/" target="_self">
+                    <i class="iconfont icon-link-fill"></i>
+                    <span>友链</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/DayDream-Gallery/" target="_self">
+                    <i class="fas fa-images"></i>
+                    <span>图集</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/original/clock/" target="_self">
+                    <i class="fas fa-clock"></i>
+                    <span>专注</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/banner/random.webp') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="深度伪造检测实践记录"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        youyeyejie
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-06-16 14:05" pubdate>
+          2026年6月16日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          3.9k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          33 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">深度伪造检测实践记录</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <blockquote>
+<p>本文是 NIS3363
+机器学习课程的课程大作业实践报告，实验内容为深度伪造检测相关的实践操作。</p>
+</blockquote>
+<h1 id="任务目标">任务目标</h1>
+<p>本作业面向深度伪造检测任务，输入为人脸彩色图像，输出为二分类结果：真实图像记为
+Real，标签为 1；伪造图像记为 Fake，标签为
+0。根据作业要求，我分别实现了传统机器学习方法和深度学习方法，并完成训练、验证、测试、结果保存与分析。模型效果使用
+Accuracy、F1 score 和 AUC 三项指标进行评价。</p>
+<p>从工程实现角度看，本项目不仅需要得到最终分类结果，还需要覆盖完整实验流程，包括数据集解析、训练集与验证集划分、模型训练、测试评估、实验结果持久化以及训练曲线可视化。因此，本报告的重点不仅在于“选用了什么模型”，也在于“这些模型是如何被组织成可复现、可比较的实验流程”。</p>
+<h1 id="具体内容">具体内容</h1>
+<h2 id="整体流程">整体流程</h2>
+<p>整个项目的执行流程可以概括为以下五个步骤。</p>
+<ol type="1">
+<li>通过 <code>code/common.py</code> 解析数据集目录，识别
+<code>train / validation / test</code> 三类划分以及
+<code>fake / real</code> 两类标签。代码支持大小写不同的目录别名，例如
+<code>Train</code>、<code>Validation</code>、<code>Test</code>。</li>
+<li>若数据集本身存在显式验证集，则直接使用；若不存在，则从训练集内部按给定比例随机划分验证集。当前课程提供的原始数据集在实际实验中采用的是第二种方式，截取自
+Kaggle 上的 <code>deepfake and real images</code> 数据集。
+<a target="_blank" rel="noopener" href="https://www.kaggle.com/datasets/manjilkarki/deepfake-and-real-images" logourl="https://storage.googleapis.com/kaggle-datasets-images/1909705/3134515/518f185a6f33e84de78f62ed171f3c29/dataset-thumbnail.jpg?t=2022-06-01-13-24-27" class="LinkCard">deepfake
+and real images</a></li>
+<li>分别执行传统机器学习训练脚本 <code>train1.py</code>
+与深度学习训练脚本 <code>train2.py</code>。两类方法的训练结果都会写入
+<code>outputs/&lt;output-name&gt;/</code> 目录。</li>
+<li>使用 <code>test1.py</code> 与 <code>test2.py</code>
+在测试集上评估保存好的模型，并将测试指标写入对应输出目录中的
+<code>test.json</code>。</li>
+<li>对 ViT 训练过程，额外使用 <code>plot_train_metrics.py</code> 或
+<code>train2.py</code>
+内部绘图逻辑生成训练曲线图，用于辅助分析模型收敛过程。</li>
+</ol>
+<p>因此，本项目并不是单纯调用现成模型得到分数，而是实现了从原始图像到最终实验记录的完整闭环。传统方法和深度学习方法共享数据集解析逻辑，但在特征表示、训练方式和推理策略上存在明显差异，这也构成了后续对比分析的基础。</p>
+<h2 id="实施方案">实施方案</h2>
+<h3 id="传统机器学习方法">传统机器学习方法</h3>
+<p>传统方法的核心思想是先构造可解释的手工特征，再用线性分类器完成真假判别。相较于最初只使用灰度
+HOG
+的方案，当前实现对特征做了增强，将单张图像表示为以下三部分的拼接结果。</p>
+<ol type="1">
+<li>灰度 HOG 特征，用于刻画局部边缘、纹理方向和轮廓结构。</li>
+<li>LBP 纹理直方图，用于补充更细粒度的局部微纹理模式。</li>
+<li>RGB 三通道的均值与标准差，用于描述整体颜色统计信息。</li>
+</ol>
+<p>之所以采用这种组合，是因为深伪图像的异常通常不仅体现为边缘扭曲，也可能表现为肤色分布不自然、局部纹理不一致或压缩痕迹异常。单一
+HOG 虽然可解释性较好，但信息维度相对单薄，而 HOG + LBP +
+颜色统计的组合能够在不引入复杂深模型的前提下提升表征能力。</p>
+<p>在分类器选择上，项目使用 <code>StandardScaler + LinearSVC</code>
+构成训练流水线。这样做有两个原因。第一，手工特征不同维度的取值范围不一致，标准化有助于稳定线性分类器的训练过程；第二，线性
+SVM
+在中等规模特征空间中训练速度较快，作为课程作业中的传统基线具有代表性。训练脚本先在训练子集上拟合、在验证子集上评估，随后再将训练集与验证集合并，重新拟合最终模型并保存，以便测试脚本直接加载。</p>
+<h3 id="深度学习方法">深度学习方法</h3>
+<p>深度学习部分采用 Vision Transformer，参考了 MuqadasEjaz
+的相关研究，具体为 <code>timm</code> 提供的
+<code>vit_base_patch16_224</code>
+骨干网络，并在其后接入自定义二分类头。</p>
+<p><a target="_blank" rel="noopener" href="https://www.kaggle.com/code/muqaddasejaz/deepfake-image-detection/notebook#Evaluation-%E2%80%94-In-Domain-vs-Cross-Domain" logourl="https://storage.googleapis.com/kaggle-avatars/thumbnails/16996046-kg.png?t=2026-04-09-16-17-18" class="LinkCard">Deepfake
+Image Detection</a></p>
+<p>与从头训练卷积网络相比，该方案具有两个明显优势：一是预训练主干具备更强的通用视觉表征能力，二是
+Transformer
+结构在处理局部纹理与全局空间关系时更灵活，更适合深伪检测这类既依赖局部瑕疵又依赖整体一致性的任务。</p>
+<p>当前实现中的深度学习方案包括以下关键设计。</p>
+<ol type="1">
+<li>输入分辨率固定为 <code>224×224</code>，使用标准 ImageNet
+均值和方差进行归一化。</li>
+<li>训练阶段通过 Albumentations
+进行数据增强，包括水平翻转、轻微旋转、亮度/对比度扰动、轻微模糊和 JPEG
+压缩扰动。</li>
+<li>分类头由
+<code>LayerNorm + Dropout + Linear + GELU + LayerNorm + Dropout + Linear</code>
+构成，比直接接一个线性层更有表达能力。</li>
+<li>损失函数使用带类别权重和 label smoothing
+的交叉熵，以缓解类别不均衡与过拟合风险。</li>
+<li>优化器使用 AdamW，骨干网络和分类头分别设置不同学习率。</li>
+<li>学习率调度采用 warmup + cosine 退火。</li>
+<li>若检测到 CUDA，则自动启用 AMP 混合精度；若没有 GPU，则自动回退到 CPU
+训练。</li>
+<li>测试阶段默认启用水平翻转
+TTA，并将原图预测与翻转图预测取平均，以提升稳定性。</li>
+</ol>
+<p>需要说明的是，本项目虽然使用了公开预训练权重，但模型的数据读取、增强、分类头设计、训练循环、验证逻辑、测试逻辑、结果保存和曲线绘制均为自主实现，因此仍符合“模型设计、训练、测试流程需自主实现，可参考公开技术资料”的要求。</p>
+<h2 id="核心代码分析">核心代码分析</h2>
+<p>在分析具体模型之前，有必要先说明项目整体代码组织方式。<code>code/common.py</code>
+负责公共组件，包括：</p>
+<ol type="1">
+<li>数据集目录解析与大小写别名兼容。</li>
+<li>训练集/验证集的构建逻辑。</li>
+<li>传统特征提取。</li>
+<li>统一的指标计算与 JSON 保存。</li>
+<li>输出目录命名约定。</li>
+</ol>
+<p>也就是说，两条实验路线虽然模型不同，但共享了同一套数据解析与结果落盘逻辑，保证了实验流程的一致性和可比较性。</p>
+<h3 id="传统方法核心代码分析">传统方法核心代码分析</h3>
+<p>传统方法的关键实现集中在 <code>common.py</code> 与
+<code>train1.py</code>。下面这段代码体现了手工特征的核心构造方式：</p>
+<figure class="shiki python"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #C678DD">def</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">extract_hog_feature</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66; font-style: italic">path</span><span style="color: #ABB2BF">: Path, </span><span style="color: #D19A66; font-style: italic">image_size</span><span style="color: #ABB2BF">: </span><span style="color: #56B6C2">int</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">96</span><span style="color: #ABB2BF">) -&gt; np.ndarray:</span></span>
+<span class="line"><span style="color: #ABB2BF">    rgb </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">load_rgb_image</span><span style="color: #ABB2BF">(path, </span><span style="color: #E06C75; font-style: italic">image_size</span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF">image_size)</span></span>
+<span class="line"><span style="color: #ABB2BF">    gray </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> np.</span><span style="color: #61AFEF">dot</span><span style="color: #ABB2BF">(rgb[</span><span style="color: #D19A66">...</span><span style="color: #ABB2BF">, :</span><span style="color: #D19A66">3</span><span style="color: #ABB2BF">], np.</span><span style="color: #61AFEF">array</span><span style="color: #ABB2BF">([</span><span style="color: #D19A66">0.2989</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">0.5870</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">0.1140</span><span style="color: #ABB2BF">], </span><span style="color: #E06C75; font-style: italic">dtype</span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF">np.float32))</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">    hog_feature </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">hog</span><span style="color: #ABB2BF">(</span></span>
+<span class="line"><span style="color: #ABB2BF">        gray,</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75; font-style: italic">orientations</span><span style="color: #56B6C2">=</span><span style="color: #D19A66">9</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75; font-style: italic">pixels_per_cell</span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">8</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">8</span><span style="color: #ABB2BF">),</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75; font-style: italic">cells_per_block</span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">2</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">2</span><span style="color: #ABB2BF">),</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75; font-style: italic">block_norm</span><span style="color: #56B6C2">=</span><span style="color: #98C379">"L2-Hys"</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75; font-style: italic">transform_sqrt</span><span style="color: #56B6C2">=</span><span style="color: #D19A66">True</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75; font-style: italic">feature_vector</span><span style="color: #56B6C2">=</span><span style="color: #D19A66">True</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">    ).</span><span style="color: #61AFEF">astype</span><span style="color: #ABB2BF">(np.float32)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">    lbp </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">local_binary_pattern</span><span style="color: #ABB2BF">((gray </span><span style="color: #56B6C2">*</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">255.0</span><span style="color: #ABB2BF">).</span><span style="color: #61AFEF">astype</span><span style="color: #ABB2BF">(np.uint8), </span><span style="color: #E06C75; font-style: italic">P</span><span style="color: #56B6C2">=</span><span style="color: #D19A66">16</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75; font-style: italic">R</span><span style="color: #56B6C2">=</span><span style="color: #D19A66">2</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75; font-style: italic">method</span><span style="color: #56B6C2">=</span><span style="color: #98C379">"uniform"</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">    lbp_hist, _ </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> np.</span><span style="color: #61AFEF">histogram</span><span style="color: #ABB2BF">(lbp.</span><span style="color: #61AFEF">ravel</span><span style="color: #ABB2BF">(), </span><span style="color: #E06C75; font-style: italic">bins</span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF">np.</span><span style="color: #61AFEF">arange</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">19</span><span style="color: #ABB2BF">), </span><span style="color: #E06C75; font-style: italic">range</span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">18</span><span style="color: #ABB2BF">), </span><span style="color: #E06C75; font-style: italic">density</span><span style="color: #56B6C2">=</span><span style="color: #D19A66">True</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">    color_stats </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> np.</span><span style="color: #61AFEF">concatenate</span><span style="color: #ABB2BF">([rgb.</span><span style="color: #61AFEF">mean</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">axis</span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">)), rgb.</span><span style="color: #61AFEF">std</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">axis</span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">))], </span><span style="color: #E06C75; font-style: italic">dtype</span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF">np.float32)</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">return</span><span style="color: #ABB2BF"> np.</span><span style="color: #61AFEF">concatenate</span><span style="color: #ABB2BF">([hog_feature, lbp_hist.</span><span style="color: #61AFEF">astype</span><span style="color: #ABB2BF">(np.float32), color_stats.</span><span style="color: #61AFEF">astype</span><span style="color: #ABB2BF">(np.float32)])</span></span></code></pre></div></div></figure>
+<p>这段实现与报告前文中的设计完全一致：先将图像统一缩放，再构造 HOG、LBP
+和颜色统计特征，最后拼接成单个向量。当前默认
+<code>image_size=96</code>，结合 <code>9</code> 个方向、<code>8×8</code>
+cell 与 <code>2×2</code>
+block，可得到较高维度但仍可管理的手工特征表示。</p>
+<p>在训练环节，<code>train1.py</code> 中的核心分类器定义如下：</p>
+<figure class="shiki python"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">pipeline </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">Pipeline</span><span style="color: #ABB2BF">(</span></span>
+<span class="line"><span style="color: #ABB2BF">    [</span></span>
+<span class="line"><span style="color: #ABB2BF">        (</span><span style="color: #98C379">"scaler"</span><span style="color: #ABB2BF">, </span><span style="color: #61AFEF">StandardScaler</span><span style="color: #ABB2BF">()),</span></span>
+<span class="line"><span style="color: #ABB2BF">        (</span><span style="color: #98C379">"classifier"</span><span style="color: #ABB2BF">, </span><span style="color: #61AFEF">LinearSVC</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">C</span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF">args.svm_c, </span><span style="color: #E06C75; font-style: italic">class_weight</span><span style="color: #56B6C2">=</span><span style="color: #98C379">"balanced"</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75; font-style: italic">dual</span><span style="color: #56B6C2">=</span><span style="color: #98C379">"auto"</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75; font-style: italic">random_state</span><span style="color: #56B6C2">=</span><span style="color: #D19A66">42</span><span style="color: #ABB2BF">)),</span></span>
+<span class="line"><span style="color: #ABB2BF">    ]</span></span>
+<span class="line"><span style="color: #ABB2BF">)</span></span></code></pre></div></div></figure>
+<p>这里的 <code>StandardScaler</code>
+负责标准化特征，<code>LinearSVC</code>
+则完成线性判别。<code>class_weight="balanced"</code>
+可以在类别样本略有不均衡时自动调整类别权重。训练脚本会先在训练子集上拟合模型、在验证子集上计算指标，再将训练集与验证集合并，重新拟合最终模型并保存到
+<code>outputs/hog_svm/</code>
+或指定输出目录下。这种“先验证、后全量重训”的流程，是传统方法中较常见的工程化写法。</p>
+<h3 id="深度学习方法核心代码分析">深度学习方法核心代码分析</h3>
+<p>深度学习实现主要集中在
+<code>train2.py</code>。从整体流程上看，它包含数据增强、模型定义、训练循环、验证逻辑、最佳
+checkpoint 保存以及训练曲线绘制几个部分。</p>
+<p>首先是模型结构定义：</p>
+<figure class="shiki python"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #E5C07B">self</span><span style="color: #ABB2BF">.backbone </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> timm.</span><span style="color: #61AFEF">create_model</span><span style="color: #ABB2BF">(</span></span>
+<span class="line"><span style="color: #ABB2BF">    model_name, </span><span style="color: #E06C75; font-style: italic">pretrained</span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF">pretrained, </span><span style="color: #E06C75; font-style: italic">num_classes</span><span style="color: #56B6C2">=</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75; font-style: italic">global_pool</span><span style="color: #56B6C2">=</span><span style="color: #98C379">"token"</span></span>
+<span class="line"><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">feature_dim </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">self</span><span style="color: #ABB2BF">.backbone.num_features</span></span>
+<span class="line"><span style="color: #E5C07B">self</span><span style="color: #ABB2BF">.head </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> nn.</span><span style="color: #61AFEF">Sequential</span><span style="color: #ABB2BF">(</span></span>
+<span class="line"><span style="color: #ABB2BF">    nn.</span><span style="color: #61AFEF">LayerNorm</span><span style="color: #ABB2BF">(feature_dim),</span></span>
+<span class="line"><span style="color: #ABB2BF">    nn.</span><span style="color: #61AFEF">Dropout</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">p</span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF">dropout),</span></span>
+<span class="line"><span style="color: #ABB2BF">    nn.</span><span style="color: #61AFEF">Linear</span><span style="color: #ABB2BF">(feature_dim, </span><span style="color: #D19A66">512</span><span style="color: #ABB2BF">),</span></span>
+<span class="line"><span style="color: #ABB2BF">    nn.</span><span style="color: #61AFEF">GELU</span><span style="color: #ABB2BF">(),</span></span>
+<span class="line"><span style="color: #ABB2BF">    nn.</span><span style="color: #61AFEF">LayerNorm</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">512</span><span style="color: #ABB2BF">),</span></span>
+<span class="line"><span style="color: #ABB2BF">    nn.</span><span style="color: #61AFEF">Dropout</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">p</span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF">dropout </span><span style="color: #56B6C2">*</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0.67</span><span style="color: #ABB2BF">),</span></span>
+<span class="line"><span style="color: #ABB2BF">    nn.</span><span style="color: #61AFEF">Linear</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">512</span><span style="color: #ABB2BF">, num_classes),</span></span>
+<span class="line"><span style="color: #ABB2BF">)</span></span></code></pre></div></div></figure>
+<p>这里先通过 <code>timm.create_model</code> 建立
+<code>vit_base_patch16_224</code>
+主干，并移除默认分类头；随后再接入自定义二分类
+head。相比直接使用线性头，这种两层结构更适合将预训练特征映射到当前任务空间。</p>
+<p>其次是训练阶段的增强策略：</p>
+<figure class="shiki python"><div class="codeblock"><div class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div><div class="code"><pre class="shiki one-dark-pro"><code><span class="line"><span style="color: #ABB2BF">A.</span><span style="color: #61AFEF">Compose</span><span style="color: #ABB2BF">(</span></span>
+<span class="line"><span style="color: #ABB2BF">    [</span></span>
+<span class="line"><span style="color: #ABB2BF">        A.</span><span style="color: #61AFEF">Resize</span><span style="color: #ABB2BF">(image_size, image_size),</span></span>
+<span class="line"><span style="color: #ABB2BF">        A.</span><span style="color: #61AFEF">HorizontalFlip</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">p</span><span style="color: #56B6C2">=</span><span style="color: #D19A66">0.5</span><span style="color: #ABB2BF">),</span></span>
+<span class="line"><span style="color: #ABB2BF">        A.</span><span style="color: #61AFEF">Rotate</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">limit</span><span style="color: #56B6C2">=</span><span style="color: #D19A66">8</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75; font-style: italic">p</span><span style="color: #56B6C2">=</span><span style="color: #D19A66">0.25</span><span style="color: #ABB2BF">),</span></span>
+<span class="line"><span style="color: #ABB2BF">        A.</span><span style="color: #61AFEF">RandomBrightnessContrast</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">brightness_limit</span><span style="color: #56B6C2">=</span><span style="color: #D19A66">0.15</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75; font-style: italic">contrast_limit</span><span style="color: #56B6C2">=</span><span style="color: #D19A66">0.15</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75; font-style: italic">p</span><span style="color: #56B6C2">=</span><span style="color: #D19A66">0.3</span><span style="color: #ABB2BF">),</span></span>
+<span class="line"><span style="color: #ABB2BF">        A.</span><span style="color: #61AFEF">GaussianBlur</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">blur_limit</span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">3</span><span style="color: #ABB2BF">, </span><span style="color: #D19A66">5</span><span style="color: #ABB2BF">), </span><span style="color: #E06C75; font-style: italic">p</span><span style="color: #56B6C2">=</span><span style="color: #D19A66">0.1</span><span style="color: #ABB2BF">),</span></span>
+<span class="line"><span style="color: #ABB2BF">        A.</span><span style="color: #61AFEF">ImageCompression</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">quality_lower</span><span style="color: #56B6C2">=</span><span style="color: #D19A66">75</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75; font-style: italic">quality_upper</span><span style="color: #56B6C2">=</span><span style="color: #D19A66">100</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75; font-style: italic">p</span><span style="color: #56B6C2">=</span><span style="color: #D19A66">0.25</span><span style="color: #ABB2BF">),</span></span>
+<span class="line"><span style="color: #ABB2BF">        A.</span><span style="color: #61AFEF">Normalize</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75; font-style: italic">mean</span><span style="color: #56B6C2">=</span><span style="color: #D19A66">IMAGENET_MEAN</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75; font-style: italic">std</span><span style="color: #56B6C2">=</span><span style="color: #D19A66">IMAGENET_STD</span><span style="color: #ABB2BF">),</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #61AFEF">ToTensorV2</span><span style="color: #ABB2BF">(),</span></span>
+<span class="line"><span style="color: #ABB2BF">    ]</span></span>
+<span class="line"><span style="color: #ABB2BF">)</span></span></code></pre></div></div></figure>
+<p>这部分实现说明深度学习模型并不是简单地“把图片丢给
+ViT”，而是显式模拟了深伪检测任务中常见的扰动来源，例如压缩、模糊和亮度变化。这些增强对于提升模型鲁棒性和泛化能力具有实际意义。</p>
+<p>最后是训练循环中的关键优化设置。<code>train2.py</code>
+中使用了类别权重、AdamW、warmup + cosine 调度、梯度裁剪以及
+AMP。并且，脚本只会在验证准确率提升时保存 checkpoint，因此当前保存下来的
+<code>outputs/vit/model.pt</code> 对应的是“最佳验证模型”，而不是最后一个
+epoch
+的模型。这一点也解释了为什么训练轮数较少时，最佳模型往往不出现在最后一轮。</p>
+<h1 id="测试结果与分析">测试结果与分析</h1>
+<h2 id="结果来源说明">结果来源说明</h2>
+<p>使用 <code>deep_face/</code>
+数据集进行训练和测试，得到的报告对应文件如下：</p>
+<ol type="1">
+<li>传统方法训练结果：<code>outputs/hog_svm/train.json</code></li>
+<li>传统方法测试结果：<code>outputs/hog_svm/test.json</code></li>
+<li>深度学习方法测试结果：<code>outputs/vit/test.json</code></li>
+<li>深度学习训练过程记录：<code>outputs/vit/train.json</code></li>
+</ol>
+<h2 id="定量结果">定量结果</h2>
+<p>在 <code>deep_face/test/</code> 测试集上的最终结果如下表所示。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th style="text-align: right;">Accuracy</th>
+<th style="text-align: right;">F1</th>
+<th style="text-align: right;">AUC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HOG + LBP + Color + LinearSVC</td>
+<td style="text-align: right;">68.05%</td>
+<td style="text-align: right;">67.18%</td>
+<td style="text-align: right;">0.7472</td>
+</tr>
+<tr>
+<td>ViT-B/16 + 自定义分类头</td>
+<td style="text-align: right;">94.87%</td>
+<td style="text-align: right;">94.64%</td>
+<td style="text-align: right;">0.9877</td>
+</tr>
+</tbody>
+</table>
+<p>从表中可以看到，深度学习的 ViT
+方法在三项指标上都显著优于传统方法，尤其是 AUC 从 <code>0.7472</code>
+提升到了
+<code>0.9877</code>，说明深度学习模型对真假图像的排序能力明显更强。</p>
+<h2 id="训练过程分析">训练过程分析</h2>
+<p>根据 <code>outputs/vit/train.json</code>，ViT 模型当前实验共训练了 10
+个 epoch，其中：</p>
+<ol type="1">
+<li>最佳验证准确率为 <code>99.02%</code>，随对应epoch 为第
+<code>9</code> 轮</li>
+<li>第 1 轮训练准确率为 <code>86.00%</code>，验证准确率已达到
+<code>94.71%</code></li>
+<li>第 4 轮训练准确率为 <code>99.10%</code>，验证准确率已达到
+<code>98.61%</code></li>
+<li>第 10 轮训练准确率达到 <code>99.92%</code>，验证准确率为
+<code>99.01%</code></li>
+</ol>
+<p>这说明模型在前两到三轮内已经完成了主要的任务适配，之后进入性能平台期。从学习率记录可见，分类头学习率在
+warmup
+后逐渐下降，训练过程整体平稳，没有出现明显发散现象。验证准确率在第 9
+轮达到最高，而第 10
+轮略有波动，这也是脚本保存“最佳验证模型”而不是“最后一轮模型”的原因。</p>
+<figure>
+<img src="image-1.webp" srcset="/img/loading/loading3.gif" lazyload alt="ViT 训练曲线">
+<figcaption aria-hidden="true">ViT 训练曲线</figcaption>
+</figure>
+<p>从训练曲线来看，训练损失与验证损失都在前几轮快速下降，训练准确率和验证准确率同步上升，说明当前优化策略能够较快收敛。虽然训练集准确率高于验证集准确率，但两者差距并未异常扩大，而是保持在一个合理的范围内，因此判断不存在非常严重的过拟合。</p>
+<h2 id="方法差异分析">方法差异分析</h2>
+<p>传统方法与深度学习方法之间的性能差异，主要来自以下几个方面。</p>
+<p>第一，特征表达能力不同。传统方法依赖人工设计的 HOG、LBP
+与颜色统计特征，这些特征在一定程度上能反映局部纹理和整体颜色分布，但表达能力仍然有限，难以完整描述深伪图像中的复杂细节。相比之下，ViT
+可以在端到端训练中自动学习更高层次、更任务相关的表征。</p>
+<p>第二，空间建模能力不同。手工特征通常以局部统计为主，缺乏跨区域的信息整合能力；而
+ViT 通过 patch token
+与全局注意力机制，能够同时利用局部纹理和整体结构线索，这对人脸深伪检测尤其重要。</p>
+<p>第三，训练策略不同。深度学习方法引入了预训练初始化、增强策略、类别权重、label
+smoothing、学习率调度、TTA
+等工程机制，而传统方法的训练流程相对简单。两类方法在工程复杂度上存在明显差异，这也是性能差异的重要来源。</p>
+<p>当然，传统方法也并非没有价值。它的优点在于实现简单、可解释性较强、推理成本低。在资源极其有限或需要快速构造基线时，手工特征方法仍然有实际意义。但从本次作业的实验结果来看，对于深伪检测这种高复杂度视觉任务，深度学习方法显然更具优势。</p>
+<h1 id="工作总结">工作总结</h1>
+<h2 id="收获与体会">收获与体会</h2>
+<p>本次作业让我较完整地经历了两类图像分类技术路线的实现过程。传统机器学习部分强化了我对“特征设计”这一问题的理解：当模型本身表达能力有限时，特征工程往往直接决定了结果上限。深度学习部分则进一步说明，在复杂视觉任务中，数据增强策略、预训练骨干、优化器选择和推理策略往往与模型结构本身同样重要。</p>
+<p>另外，从工程实践角度看，本次作业也让我意识到“能跑通一个模型”和“能形成可复现实验流程”并不是一回事。只有把路径约定、数据划分、结果保存、曲线绘制和测试输出都统一起来，实验结果才真正具有可追踪性和可比较性。</p>
+<h2 id="遇到的问题与解决思路">遇到的问题与解决思路</h2>
+<p>在传统方法部分，单独使用灰度 HOG 时效果不理想，因此我进一步加入了 LBP
+与颜色统计特征，以增强对伪造纹理和颜色异常的刻画能力。虽然这种增强不足以追平深度学习模型，但确实提升了传统基线的完整性。</p>
+<p>在深度学习部分，较大的模型和较长的训练时间带来了实验管理问题。为避免重复训练，我额外提供了独立的曲线绘图脚本，可以直接读取训练阶段保存的
+JSON
+结果并重建曲线图。这使得结果分析与模型训练过程解耦，也让实验记录更加规范。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Misc/" class="category-chain-item">Misc</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="print-no-link">#机器学习</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>深度伪造检测实践记录</div>
+      <div>https://youyeyejie.github.io/_posts/深度伪造检测实践记录/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>youyeyejie</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2026年6月16日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2026年6月16日</div>
+        </div>
+      
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/_posts/WBC-MIA%E5%A4%8D%E7%8E%B0%E5%AE%9E%E9%AA%8C%E5%85%A8%E8%AE%B0%E5%BD%95/" title="WBC-MIA 复现实验全记录">
+                        <span class="hidden-mobile">WBC-MIA 复现实验全记录</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments">
+      
+    <div id="giscus" class="giscus"></div>
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#giscus', function() {
+        var options = {"repo":"youyeyejie/youyeyejie.github.io","repo-id":"R_kgDOO-Uo1g","category":"General","category-id":"DIC_kwDOO-Uo1s4Crz5J","theme-light":"light","theme-dark":"dark","mapping":"pathname","reactions-enabled":1,"emit-metadata":0,"input-position":"top","lang":"zh-CN"};
+        var attributes = {};
+        for (let option in options) {
+          if (!option.startsWith('theme-')) {
+            var key = option.startsWith('data-') ? option : 'data-' + option;
+            attributes[key] = options[option];
+          }
+        }
+        var light = 'light';
+        var dark = 'dark';
+        window.GiscusThemeLight = light;
+        window.GiscusThemeDark = dark;
+        attributes['data-theme'] = document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ? dark : light;
+        for (let attribute in attributes) {
+          var value = attributes[attribute];
+          if (value === undefined || value === null || value === '') {
+            delete attributes[attribute];
+          }
+        }
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://giscus.app/client.js');
+        s.setAttribute('crossorigin', 'anonymous');
+        for (let attribute in attributes) {
+          s.setAttribute(attribute, attributes[attribute]);
+        }
+        var ss = document.getElementsByTagName('script');
+        var e = ss.length > 0 ? ss[ss.length - 1] : document.head || document.documentElement;
+        e.parentNode.insertBefore(s, e.nextSibling);
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+  
+  
+</div>
+<div class="footer-inner">
+    <div class="powered-by">
+        <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+        <i class="iconfont icon-love"></i>
+        <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+        <i class="iconfont icon-love"></i>
+        <a href="https://cloud.umami.is/share/1fs3cnD9TAP8JzML" target="_blank" rel="nofollow noopener"><span>Umami</span></a>
+    </div>
+    <div class="hitokoto">
+        <i class="fas fa-quote-left"></i>
+        <a target="_blank" rel="noopener" href="https://developer.hitokoto.cn/" id="hitokoto_text"><span id="hitokoto">且以群词 注解我这座荒山</span></a>
+        <script src="/js/Hitokoto.js" defer></script>
+    </div>
+    <div class="data">
+        <span class="total-word-container">
+            <i class="fas fa-chart-bar"></i>
+            <span id="g-total-word-id"></span>
+            字汇长河
+        </span>
+        &nbsp;
+        <span id="total-posts-container">
+            <i class="fas fa-file-alt"></i>
+            <span id="g-total-posts-id"></span>
+            文舟靠岸
+        </span>
+        &nbsp;
+        <span id="busuanzi_container_site_pv">
+            <i class="fas fa-eye"></i>
+            <span id="busuanzi_value_site_pv">1314</span>
+            目光所及
+        </span>
+        &nbsp;
+        <span id="busuanzi_container_site_uv">
+            <i class="fas fa-user-friends"></i>
+            <span id="busuanzi_value_site_uv">520</span>
+            访客驻足
+        </span>
+    </div>
+    <div class="duration">
+        <i class="fas fa-calendar"></i>
+        <span id="duration-container">人生缓缓&nbsp;自有答案</span>
+        <script src="/js/Duration.js"></script>
+    </div>
+</div>
+
+<link href="/css/Footer.css" type="text/css" rel="stylesheet"/>
+<script>
+    document.querySelectorAll("[id^='busuanzi_value_']").forEach(element => {
+        element.id = element.id.replace("busuanzi_value_", "vercount_value_");
+    });
+</script>
+<script defer src="https://events.vercount.one/js"></script>
+<!-- <script src="https://npm.elemecdn.com/penndu@1.0.0/bsz.js" defer></script> -->
+<!-- <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script> -->
+<!-- <script async src="https://busuanzi.icodeq.com/busuanzi.pure.mini.js"></script> -->
+<!-- <script async src="https://busuanzi.sukap.cn/busuanzi.pure.mini.js"></script> -->
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    
+      <script  src="/js/img-lazyload.js" ></script>
+    
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="/js/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="/js/Crypto.js"></script>
+<script src="/js/LinkCard.js"></script>
+<script src="/js/RandomBanner.js"></script>
+<script src="/js/Background.js"></script>
+<script src="/js/ScrollAnimation.js"></script>
+<script src="/js/TabDisplay.js"></script>
+<script src="/js/Tooltip.js"></script>
+<script src="/js/Umami.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  <script type="text/javascript">
+  document.getElementById("g-total-word-id").innerHTML = "783k";
+  document.getElementById('g-total-posts-id').textContent ="81";
+</script>
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start -->
+<script src="https://cdn.jsdelivr.net/npm/hexo-shiki-plugin@latest/lib/codeblock.js"></script>
+
+  <script>
+  const CODE_CONFIG = {
+    beautify: true,
+    highlightCopy: true,
+    highlightLang: true,
+    highlightHeightLimit: 360,
+    isHighlightShrink: false,
+    copy: {
+      success: 'Copy Success',
+      error: 'Copy Error',
+      noSupport: 'Browser Not Support',
+    }
+  };
+  console.log(
+    `%c hexo-shiki-plugin %c v1.0.27 %c https://github.com/nova1751/hexo-shiki-plugin`,
+    "color: #fff; background: #5f5f5f",
+    "color: #fff; background: #80c8f8",
+    ""
+  );
+  </script>
+  <!-- hexo injector body_end end --></body>
+</html>
