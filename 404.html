@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>博客已迁移</title>
+<script>
+const base = '/Blog';
+if (!location.pathname.startsWith(base + '/') && location.pathname !== base) {
+  const oldBase = '/youyeyejie_blog';
+  const path = location.pathname === oldBase ? '/' :
+    location.pathname.startsWith(oldBase + '/') ? location.pathname.slice(oldBase.length) : location.pathname;
+  location.replace(base + path + location.search + location.hash);
+}
+</script>
+</head>
+<body><p>博客已迁移至<a href="https://youyeyejie.github.io/Blog/">新地址</a>。若新地址尚未上线，请稍后再试。</p></body>
+</html>
