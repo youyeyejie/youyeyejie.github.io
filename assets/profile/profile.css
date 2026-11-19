@@ -1293,6 +1293,20 @@ body { margin: 0; }
   margin: 0;
 }
 
+.awardsList {
+  margin: 24px 0 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.awardsList li {
+  padding-block: 12px;
+  border-bottom: 1px solid var(--soft-line);
+}
+
 @media (max-width: 640px) {
   .masthead .rail {
     grid-template-columns: minmax(0, 1fr) auto;
