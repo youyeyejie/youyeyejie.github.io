@@ -6,6 +6,7 @@
   <meta name="description" content="Youyeyejie’s personal site, with a blog, Shanghai Jiao Tong University course notes, and software projects." data-zh-content="有野野芥的个人主页。博客、上海交通大学课程笔记与个人软件项目。">
   <title data-zh="有野野芥 · youyeyejie">youyeyejie · Personal Site</title>
   <link rel="canonical" href="https://youyeyejie.github.io/">
+  <link rel="icon" type="image/svg+xml" href="assets/profile/favicon.svg">
   <link rel="stylesheet" href="assets/profile/profile.css">
   <script src="assets/profile/profile.js" defer></script>
   <script defer="" src="https://cloud.umami.is/script.js" data-website-id="0369421f-4354-4d7b-99c7-ae077c591b4f"></script>
@@ -16,7 +17,7 @@
 <div id="top" class="sheet">
   <header class="masthead crosslineBottom">
     <div class="rail">
-      <a class="wordmark" href="#top"><span class="wordmarkGlyph" aria-hidden="true">Y</span><span data-zh="有野野芥">youyeyejie</span></a>
+      <a class="wordmark" href="#top"><span class="wordmarkGlyph" aria-hidden="true">Y</span><span class="wordmarkLabel" data-zh="有野野芥">youyeyejie</span></a>
       <nav class="navigation" aria-label="Main navigation" data-zh-label="主导航">
         <a href="#work" data-zh="项目">Projects</a>
         <a href="#papers" data-zh="论文">Papers</a>
@@ -27,9 +28,11 @@
       <div class="headerControls">
         <button class="headerButton languageButton" type="button" aria-label="Switch to Chinese" title="Switch to Chinese" hidden>
           <span lang="zh-CN" aria-hidden="true">ZH</span>
+          <span class="headerButtonFill" aria-hidden="true"></span>
         </button>
         <button class="headerButton themeButton" type="button" aria-label="Dark mode" data-zh-label="深色模式" aria-pressed="false" hidden>
           <span aria-hidden="true">☾</span>
+          <span class="headerButtonFill" aria-hidden="true"></span>
         </button>
       </div>
     </div>
@@ -53,6 +56,7 @@
         </dl>
       </div>
       <div class="heroMark">
+        <canvas class="pointerTrail" aria-hidden="true"></canvas>
         <button class="relief-button" type="button" aria-label="Press the YYYJ relief" data-zh-label="按压 YYYJ 浮雕">
           <svg class="relief-art" viewBox="0 0 312 168" aria-hidden="true">
             <defs>
@@ -394,7 +398,7 @@
     <div class="rail">
       <div class="footerTop">
         <div class="footerLinks">
-          <a class="wordmark" href="https://github.com/youyeyejie"><span class="wordmarkGlyph" aria-hidden="true">Y</span>GitHub</a>
+          <a class="wordmark" href="https://github.com/youyeyejie"><span class="wordmarkGlyph" aria-hidden="true">Y</span><span class="wordmarkLabel">GitHub</span></a>
           <a class="wordmark" href="mailto:youyeyejie@outlook.com">
             <span class="wordmarkGlyph" aria-hidden="true">
               <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round">
@@ -402,7 +406,7 @@
                 <path d="m2 4 6 4.5L14 4"/>
               </svg>
             </span>
-            <span data-zh="邮箱">Email</span>
+            <span class="wordmarkLabel" data-zh="邮箱">Email</span>
           </a>
         </div>
         <a class="backToTop" href="#top" data-zh="回到顶部 ↑">Back to top ↑</a>
