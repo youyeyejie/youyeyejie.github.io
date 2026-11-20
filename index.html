@@ -141,7 +141,7 @@
             <span class="disclosureIcon" aria-hidden="true"></span>
           </summary>
           <div class="projectDetails">
-            <p class="projectSummaryText" data-zh="「等空一起看」是一份可以和朋友共同维护的观影清单。任何人都可浏览公开片单，协作者通过 GitHub 提交更改。">A watchlist you can maintain with friends. Anyone can browse the public lists, and collaborators save changes through GitHub.</p>
+            <p class="projectSummaryText" data-zh="「等空一起看」是和朋友共用的观影清单。访客无需登录即可浏览、筛选和搜索公开片单，也可以从照片或便笺打开作品详情。">A shared watchlist for friends. Visitors can browse, filter, and search public lists without signing in, and open title details from photos or notes.</p>
             <dl class="projectDetailGrid">
               <div>
                 <dt data-zh="添加作品">Add titles</dt>
@@ -149,15 +149,16 @@
               </div>
               <div>
                 <dt data-zh="整理片单">Organize lists</dt>
-                <dd data-zh="可跨清单添加或移动作品，看完后收进相册，需要时再钉回片单墙。">Copy or move titles between lists, archive watched titles, and pin them back to the wall later.</dd>
+                <dd data-zh="作品可以跨清单复制或移动，开看后标为「在看」，看完后收进相册，也能从相册钉回片单墙。">Copy or move titles between lists, mark them as watching, and send completed titles to the album. Archived titles can be pinned back to the wall.</dd>
               </div>
               <div>
                 <dt data-zh="存储与协作">Storage and collaboration</dt>
-                <dd data-zh="片单随 GitHub 仓库发布，浏览公开清单无需登录。协作者可通过 GitHub 提交编辑，也可以 fork 仓库部署自己的独立片单。">Lists are published from a GitHub repository and publicly readable. Collaborators save edits through GitHub, and anyone can fork the repository to deploy a separate list.</dd>
+                <dd data-zh="站点托管在 GitHub Pages，协作者通过 GitHub Discussions 保存编辑。可以 fork 仓库部署自己的片单，无需自建后端。">GitHub Pages hosts the site, and collaborators save edits to GitHub Discussions. Fork the repository to host your own list without running a backend.</dd>
               </div>
             </dl>
             <ul class="toolList">
               <li>GitHub Pages</li>
+              <li>GitHub Discussions</li>
               <li>TMDB</li>
               <li>Douban extension</li>
             </ul>
@@ -181,15 +182,15 @@
             <dl class="projectDetailGrid">
               <div>
                 <dt data-zh="窗口与访达">Windows and Finder</dt>
-                <dd data-zh="用缩略图切换窗口，在访达用 ⌘X 和 ⌘V 移动文件。">Switch windows using thumbnail previews and move files in Finder with ⌘X and ⌘V.</dd>
+                <dd data-zh="切换窗口时可看缩略图。悬停程序坞图标可预览窗口，点按可最小化或恢复窗口；在调度中心可快速关闭窗口或退出应用，访达则支持 ⌘X 和 ⌘V 移动文件。">Preview windows as you switch. Hover over Dock icons for thumbnails, click to minimize or restore windows, close windows or quit apps in Mission Control, and move files in Finder with ⌘X and ⌘V.</dd>
               </div>
               <div>
                 <dt data-zh="桌面与设备">Desktop and device</dt>
-                <dd data-zh="导入本地视频作为动态壁纸，在灵动刘海查看媒体和日程，或用清洁模式暂时锁定输入。">Import local videos as dynamic wallpapers, check media and calendar events in the notch, or temporarily lock input for cleaning.</dd>
+                <dd data-zh="导入本地视频作为动态桌面、锁屏或屏保素材。擦拭设备时，清洁模式可暂时锁定键盘、鼠标和触控板输入。">Import local videos for dynamic wallpapers, the lock screen, or the screensaver. Cleaning Mode temporarily blocks keyboard, mouse, and trackpad input while you wipe down the device.</dd>
               </div>
               <div>
-                <dt data-zh="平台与权限">Platform and permissions</dt>
-                <dd data-zh="用 SwiftUI 构建，键盘和窗口增强按需使用辅助功能权限，窗口缩略图使用屏幕录制权限。原生动态壁纸扩展需要 macOS 26。">Built with SwiftUI. Keyboard and window utilities request Accessibility access as needed, and thumbnails use Screen Recording. The native wallpaper extension requires macOS 26.</dd>
+                <dt data-zh="灵动刘海与锁屏组件">Notch and lock screen widgets</dt>
+                <dd data-zh="悬停展开刘海即可控制媒体、查看歌词与日程、暂存文件或打开终端。锁屏还能显示媒体、天气、电量等组件。">Hover over the notch for media controls, lyrics, calendar events, a file tray, and a terminal. Lock screen widgets show media, weather, battery status, and more.</dd>
               </div>
             </dl>
             <ul class="toolList">
@@ -216,16 +217,16 @@
             <p class="projectSummaryText" data-zh="上海交通大学 NIS3366 课程的团队项目。应用把日程、待办、专注计时和闪记放在一个工作台里。">A team project for SJTU’s NIS3366 course that brings scheduling, tasks, focus timers, and quick notes into one workspace.</p>
             <dl class="projectDetailGrid">
               <div>
-                <dt data-zh="交互与系统集成">Interaction and system integration</dt>
-                <dd data-zh="用卡片和滑动操作整理事项，支持删除后撤销，并接入系统通知、日历和实况窗。">Organize tasks with cards and swipe actions, undo deletions, and use system notifications, Calendar, and LiveView.</dd>
+                <dt data-zh="日程与待办">Schedule and tasks</dt>
+                <dd data-zh="用卡片管理日程和待办，滑动即可快速操作，误删也能撤销。支持系统日历和通知提醒。">Manage schedules and tasks with cards, swipe for quick actions, and undo accidental deletions. The app integrates with the system calendar and notifications.</dd>
               </div>
               <div>
-                <dt data-zh="本地优先">Local-first data</dt>
-                <dd data-zh="使用 ORM 和 Repository 分层按用户隔离数据，也可选中笔记发起 AI 对话。">An ORM and repository layer keep data separate per user. Selected notes can also be sent to an AI chat.</dd>
+                <dt data-zh="沉浸式专注">Focus timer</dt>
+                <dd data-zh="用独立的沉浸式计时界面开始专注，并通过鸿蒙实况窗查看进行中的计时。">Start a session in a dedicated focus view and check the running timer through HarmonyOS LiveView.</dd>
               </div>
               <div>
-                <dt data-zh="从设计到原型">From design to prototype</dt>
-                <dd data-zh="六人小组在两周内完成课程原型。ArkUI 实现了五个主界面及共用的卡片、弹层和反馈组件，并适配了深浅主题。">A six-person team built the course prototype in two weeks. ArkUI powers five main screens with shared cards, overlays, and feedback components, plus light and dark themes.</dd>
+                <dt data-zh="闪记与 AI 洞察">Quick notes and AI insights</dt>
+                <dd data-zh="随手记下想法，通过搜索找回笔记，也可以使用 AI 分析笔记或围绕选中的内容继续对话。">Capture ideas as they come, find notes through search, and use AI to analyze notes or ask follow-up questions about selected entries.</dd>
               </div>
             </dl>
             <ul class="toolList">
@@ -249,6 +250,20 @@
           </summary>
           <div class="projectDetails">
             <p class="projectSummaryText" data-zh="为 NIS3364 课程编写的 Python 网络嗅探器，用于学习如何观察网络流量和理解数据包结构。">A Python network sniffer for NIS3364, built to practice observing network traffic and understanding packet structure.</p>
+            <dl class="projectDetailGrid">
+              <div>
+                <dt data-zh="实时抓包">Live capture</dt>
+                <dd data-zh="在选定网卡上实时显示数据包，可开始或暂停捕获，并查看包数量和流量统计。">Capture packets on a selected network interface, pause or resume capture, and see live packet counts and traffic statistics.</dd>
+              </div>
+              <div>
+                <dt data-zh="协议解析">Protocol decoding</dt>
+                <dd data-zh="解析 IPv4、IPv6、ARP、TCP、UDP 和 ICMP，在图形界面中查看各层字段。">Inspect protocol fields for IPv4, IPv6, ARP, TCP, UDP, and ICMP in the graphical interface.</dd>
+              </div>
+              <div>
+                <dt data-zh="筛选与分片重组">Filtering and reassembly</dt>
+                <dd data-zh="按协议、源或目标 IP 地址及端口筛选数据包，并重组 IP 分片以查看完整报文。">Filter by protocol, source or destination IP address, and port, and reassemble IP fragments to inspect complete datagrams.</dd>
+              </div>
+            </dl>
             <ul class="toolList">
               <li>Python</li>
               <li data-zh="数据包分析">Packet analysis</li>
@@ -277,10 +292,6 @@
               <div>
                 <dt data-zh="维护与发布">Maintenance and publishing</dt>
                 <dd data-zh="笔记以 Markdown 编写，通过 GitHub Actions 构建并发布到 GitHub Pages，页面支持 Giscus 评论。">Notes are written in Markdown, published to GitHub Pages through GitHub Actions, and open to comments via Giscus.</dd>
-              </div>
-              <div>
-                <dt data-zh="课程实例">Course examples</dt>
-                <dd data-zh="矩阵理论记录 Jordan 标准形与最小多项式，基础数理统计整理参数估计，图与网络包含匹配与覆盖等主题。">Matrix Theory covers Jordan form and minimal polynomials. The statistics notes cover parameter estimation, and Graphs and Networks includes matching and covering.</dd>
               </div>
             </dl>
             <ul class="toolList">
@@ -349,19 +360,19 @@
             <span class="disclosureIcon" aria-hidden="true"></span>
           </summary>
           <div class="projectDetails">
-            <p class="projectSummaryText" data-zh="Duopra 是一个全双工语音智能体研究项目，探索如何在听和说的同时自主调用工具。">Duopra is a research project on full-duplex voice agents that can call tools while listening and speaking.</p>
+            <p class="projectSummaryText" data-zh="Duopra 在全双工语音对话中同时学习轮次控制和任务执行，解决模型何时调用工具、以及如何在用户改口后及时修正参数的问题。">Duopra learns turn-taking and task execution jointly in full-duplex speech, including when to invoke tools and how to revise arguments when the user corrects a request.</p>
             <dl class="projectDetailGrid">
               <div>
-                <dt data-zh="交互演示">Recorded demos</dt>
-                <dd data-zh="在录制的会话里，对照时间轴查看语音、用户改口和工具调用各自发生的时刻。">Follow recorded sessions on a timeline to see when speech, user corrections, and tool calls occur.</dd>
+                <dt data-zh="统一动作接口">Unified action interface</dt>
+                <dd data-zh="直接调用工具和委托后端共用一套动作接口。委托时，模型将后端视作工具，并传入一条可独立理解的自然语言请求。">Direct tool calls and backend delegation use the same action interface. When delegating, the model treats the backend as a tool and passes it a self-contained natural-language request.</dd>
               </div>
               <div>
-                <dt data-zh="方法与评测">Method and evaluation</dt>
-                <dd data-zh="项目页介绍了异步工具执行流程，以及在 Full-Duplex-Bench 上的会话和工具调用评测。">The project page explains asynchronous tool execution and shows conversation and tool-use results on Full-Duplex-Bench.</dd>
+                <dt data-zh="三阶段训练">Three-stage training</dt>
+                <dd data-zh="先用监督微调学习动作协议，再用全双工强化学习奖励及时、完整的任务执行。更新推理模块后，只训练投影层来修复语音生成模块的条件输入。">Protocol supervised fine-tuning teaches the action format, and full-duplex reinforcement learning rewards timely, complete execution. After the thinker is updated, projector-only training repairs the talker’s conditioning.</dd>
               </div>
               <div>
-                <dt data-zh="对话中的修正">Corrections mid-conversation</dt>
-                <dd data-zh="演示里，用户在话说到一半时更改数值，智能体将修正后的参数传给工具，同时保持语音会话。">In one recorded session, the user changes a value halfway through the request. The agent sends the corrected argument to the tool while keeping the voice session going.</dd>
+                <dt data-zh="基准结果">Benchmark results</dt>
+                <dd data-zh="在 Full-Duplex-Bench v3 上，使用相同后端时，Pass@1 从 4.7% 提升到 44.7%。直接调用工具时达到 47.7%，使用 DeepSeek 后端时达到 49.3%。">On Full-Duplex-Bench v3, Pass@1 rises from 4.7% to 44.7% with the same backend. Duopra reaches 47.7% with direct tool calls and 49.3% with a DeepSeek backend.</dd>
               </div>
             </dl>
             <ul class="toolList">
@@ -370,7 +381,8 @@
               <li>Full-Duplex-Bench</li>
             </ul>
             <div class="projectLinks">
-              <a href="https://cychen2003.github.io/duopra_history/" data-zh="访问研究项目页 ↗">Visit project page ↗</a>
+              <a href="https://arxiv.org/abs/2611.25773" data-zh="阅读论文 ↗">Read paper ↗</a>
+              <a href="https://cychen2003.github.io/duopra/" data-zh="访问研究项目页 ↗">Visit project page ↗</a>
               <a href="https://github.com/cyChen2003/duopra" data-zh="查看源码 ↗">Source code ↗</a>
             </div>
           </div>
